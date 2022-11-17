@@ -1,0 +1,49 @@
+sd = sqrt(sum2/n - (sum/n)2)
+
+Interpolation: val - B / A - B = pos - Bf / Af - Bf
+
+# Histogram
+fd = frequency / class interval * scale
+Bar {w = class interval, h = fd}
+So area = frequnecy
+
+# Skewness
+Lean left = +ve skew
+Q2 - Q1 < Q3 - Q2 OR Median < Mean skew towards arrow
+
+# Comparing data
+Location
+- Median 
+- Skewness
+Spread
+- IQR
+- SD
+- Range
+
+For skewed data, use Median & IQR
+
+# Probabilitiy
+A given that B: P(A|B) = P(AUB)/P(B)
+Independent events: P(ANB) = P(A) * P(B)
+Mutually exclusive: P(AUB) = P(A) + P(B)
+
+# Data correlation
+Strong positive correlation = Linearly displaced with +ve slope
+
+Value of PMCC (r) not affected by coding
+Practical meaning: when x ^ y ^ or v
+
+Regression line: y - y = Sxy/Sxx (x - x)
+
+# Random variables
+sum P(X=x) = 1
+E(X) = sum [x * P(X=x)]
+E(X^2) = sum [x^2 * P(X=x)]
+Var(X) = E(X^2) - E(X)^2
+
+Y = aX + b
+E(Y) = a E(X) + b
+Var(Y) = a^2 Var(X)
+
+# Normal dist
+Standardizing: P(X < x) = phi([x-mu]/sigma)

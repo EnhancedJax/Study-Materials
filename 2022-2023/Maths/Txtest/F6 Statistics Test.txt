@@ -1,0 +1,50 @@
+sd = 
+
+Interpolation: 
+
+# Histogram
+Bar {w = , h = }
+Frequency density =  * scale
+So area = 
+
+# Skewness
+Lean left = 
+Using quartiles to calculate skew: 
+Using mean media to calculate skew: 
+
+# Comparing data
+Location
+- 
+- 
+Spread
+- 
+- 
+- 
+
+For skewed data, use 
+
+# Probabilitiy
+A given that B: P(A|B) = 
+Independent events: 
+Mutually exclusive: 
+
+# Data correlation
+Strong positive correlation = 
+
+Value of PMCC (r) 
+Practical meaning: 
+
+Regression line: 
+
+# Random variables
+sum P(X=x) = 
+E(X) = 
+E(X^2) = 
+Var(X) = 
+
+Y = aX + b
+E(Y) = 
+Var(Y) = 
+
+# Normal dist
+Standardizing: P(X < x) = 

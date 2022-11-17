@@ -1,0 +1,307 @@
+============================================================
+Unit 11
+============================================================
+
+Rate of reaction - 
+Overall order of reaction - 
+
+rate & k units are 
+
+Half life: 
+[A]-t graph
+0: 
+1: 
+1/t-[A]
+0: 
+1: 
+2: 
+
+Rate determining step: 
+R in RDS = 
+mol ratio in RDS = 
+
+Arrhenius Equation: 
+
+# Catalyst types
+Homogenous: 
+
+Heterogeneous: 
+- Mechanism: 
+- Advantage: 
+
+Autocatalysis: 
+- Mechanism: 
+
+# NS mechanisms
+Sn1: degree 3 2
+- 
+- 
+- 
+- 
+
+Sn2: degree 1 2
+- 
+- 
+- 
+
+# Following rate of reactions
+> Titration
+1. 
+2. 
+3. 
+
+> Color change
+Reactions with 
+
+> Change of volume of gas
+Reactions with 
+Collecting of gas: 
+- 
+- 
+
+> Change of mass of gas
+Reactions with 
+
+> Electrical conductivity
+Reactions with 
+
+# Iodine clock reaction
+Added species: 
+Color formed: - 
+2I- reproduced - 
+Time to show color is delayed because 
+> Quenching
+Reagent: 
+Not using alkali: 
+
+============================================================
+Unit 12
+============================================================
+
+Total entropy change = 
+sys = 
+sur = 
+
+Free energy change = 
+
+2 factors increasing total entropy change
+1. 
+2. 
+
+, , reaction 
+Solubility of ionic solid deduced with 
+
+The enthalpy measured at 100Kpa 298K
+rx      - 
+combus  - 
+neu     - 
+forma   - 
+
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
+
+frm & dis:
+- 
+- 
+> 
+> 
+
+LE & Hydration: 
+
+Experimental LE: 
+Theoretical LE: 
+
+? > ? due to ?: 
+
+Due to assumptions:
+1. 
+2. 
+3. 
+
+^ ^ -> Polarization ^ 
+->  -> LE % difference -> 
+Why Ag compounds have higher solubility: 
+
+dHea 1: 
+dHea 1g0: 
+dHea 2: 
+
+============================================================
+Unit 13
+============================================================
+
+Kc = 
+1. 
+2. 
+
+Kp = 
+2. 
+
+mol fraction xa = 
+partial pressure A = 
+
+Factor affecting: 
+Factor not affecting: 
+
+Qc = 
+2. 
+
+K, Q units are 
+
+K, Q & Eq: 
+
+total entropy change = 
+
+============================================================
+Unit 14
+============================================================
+
+Acid                - 
+Base                - 
+Strong X            - dissociates 
+Weak X              - dissociates 
+Conjugate acid      - 
+Conjugate base      - 
+Acidic solution     - 
+Alkaline solution   - 
+Amphoteric          - 
+
+# pH calculations
+pH = 
+[H+] ^ 
+
+> Weak acids and bases' pH
+Ka = 
+
+> Strong bases
+Strong bases completely dissociate in water: 
+Kw = 
+
+> Assumptions
+- 
+
+# Strengths of acid and base
+Strong acids: 
+Strong bases: 
+Weak bases: 
+
+# Titration pH-conc. curve
+Vertical region of titration curve: 
+Initial increase in pH due to 
+If acid added to base: 
+At half equivalence volume pH = 
+
+# Buffer solutions
+Buffer solution - 
+Formed from: 
+Buffer solution pH: 
+
+> Resistance of change of pH
+1. 
+2. 
+3. 
+
+============================================================
+Unit 15
+============================================================
+
+Draw: Interaction diagram, NA mechanism, SN12 mechanism
+
+# Aldehydes
+- Naming for hydroxynitrile: 
+- Naturally forms acids due to 
+
+# Aldehyde & Ketones
+> Forming hydroxynitriles
+KCN alkaline solution is used: 
+Extreme pH values causes no reaction as
+* 
+* 
+
+> Test for carbonyl
+
+Derivatives are dried by 
+Identifying compounds: 
+
+> Test for CH3C=O
+
+
+> Test for aldehydes
+Reagents            Color change
+
+
+
+
+# Carboxylic acids
+> Speeding up esterification
+1. 
+2. 
+> Test for acids
+Reaction with 
+
+# Producing esters
+> Using acyl chlorides compared to acid + alchol:
+Advantages: 
+1. 
+2. 
+3. 
+Reason: 
+1. 
+2. 
+Disadvantages:
+1. 
+2. 
+
+# Producing carboxylic acids
+> Using ester under alkaline solution
+Advantages:
+1. 
+Disadvantages: 
+1. 
+Differences: 
+1. 
+
+# NS mechanisms
+Sn1: degree 
+- 
+- 
+
+Sn2: degree 
+- 
+- 
+
+# Polymerization
+This paper tests about 
+> Small molecule
+Acids + Alchols -> 
+Acids -> 
+
+# Optical isomerism: Compounds that are
+1. 
+2. 
+3. 
+
+Gas used in GC must be 
+GC separation reason: 
+Colum separation reason: 
+Rf = 
+
+Retention time depends on
+- 
+- 
+- 
+
+# NMR Spectroscopy
+Medium:             
+TMS Used because:   
+
+n of peaks:         
+ratio of peaks:     
+
+Split peaks reason: 

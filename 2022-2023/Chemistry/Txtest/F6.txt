@@ -1,0 +1,307 @@
+============================================================
+Unit 11
+============================================================
+
+Rate of reaction - Rate of change of conc. of R
+Overall order of reaction - Product of powers of all conc. of R in r8 eq
+
+rate & k units are derived
+
+Half life: time for conc. to half from last
+[A]-t graph
+0: HL unchanged
+1: HL x2
+1/t-[A]
+0: Flat
+1: Linear
+2: Curved
+
+Rate determining step: Slowest step
+R in RDS = R in eq
+mol ratio in RDS = order 
+
+Arrhenius Equation: lnk = -Ea/RT + lnA
+
+# Catalyst types
+Homogenous: Same phase as R
+
+Heterogeneous: Different phase as R
+- Mechanism: Absorption @ surface, reaction, desorption leaving surface
+- Advantage: No separation from P needed
+
+Autocatalysis: P as catalyst: [P] ^ Rate ^
+- Mechanism: Slow at start, Catalyst P formed speeding up, [R] v reaction slows down
+
+# NS mechanisms
+Sn1: degree 3 2
+- Mechanism: Nu attack C
+- Steps: 2
+- Rate eq: Step 1 RDS (slow)
+- Fastest: Tertiary RX due to stability of C+
+
+Sn2: degree 1 2
+- Mechanism: Nu attacks C with X leaving simutaneously 
+- Steps: 1
+- Fastest: Primary RX due to ease of access of C attached to X by Nu
+
+# Following rate of reactions
+> Titration
+1. Remove small samples to measure rate
+2. Quench by removing catalyst or icing
+3. Titrate with reagent
+
+> Color change
+Reactions with aq solutions
+
+> Change of volume of gas
+Reactions with gaseous P
+Collecting of gas: 
+- Over water not applicable: NH3 CO2 dissolves
+- With syringe: Higher precision
+
+> Change of mass of gas
+Reactions with high density gaseous P
+
+> Electrical conductivity
+Reactions with change of n of ions, ions ^ conductivity ^
+
+# Iodine clock reaction
+Starch and thiosulfate (S2O3) added
+Blue black color formed     - i2 rx starch
+2I- reproduced              - i2 rx s2o3
+Time to show color is delayed because thiosulfate needs to use up first
+> Quenching
+H+ neuralised by carbonates - remove acid catalyst
+not using alkali            - i2 rx
+
+============================================================
+Unit 12
+============================================================
+
+Total entropy change = sys + sur
+sys = dSproduct - dSreactant
+sur = -dH / t           dH in J
+
+Free energy change = dH - TdS
+
+2 factors increasing total entropy change
+1. n of molecules ^ / state ^ -> dSsys ^ > 0
+2. Temperature ^ -> dSsur v
+
+dG <= 0, dSt >= 0, reaction spontaneous hence feasible
+Solubility of ionic solid deduced with dSt of dissolving reaction
+
+The enthalpy measured at 100kpa and 298k
+rx      - equation quantities of materials react
+combus  - substance is completely burned in oxygen
+neu     - h2o is produced by neutralisation
+forma   - substance formed from its elements in standard states
+
+1 mol of [X] formed from 1 mol [Y]
+atom    - grd g
+el affin- g gi-
+ie      - g gi+
+
+sol     - si aqi by dissolve H2O form solution of infinite dilution
+hydr    - gi aqi by dissolve H2O form solution of infinite dilution
+LE (frm)- gi s
+LE (dis)- [frm rvse] by complete dissociation
+
+Frm & Dis:
+Same value due to measure of ionic bonding
+Diff sign due to opposite processes
+Formation -ve energy released from making bonds
+Dissociation +ve energy required to break bonds
+
+LE & Hydration: Charge density ^ -> dH mag ^
+
+Experimental LE: cal born haber cycle
+Theoretical LE: cal ionic model
+
+E > T due to additional covalent bonding
+
+Due to assumptions:
+1. Ions are touching each other
+2. Ions are perfectly spherical
+3. Charge is evenly distributed around the center
+
+Charge density difference ^ / EN difference ^ -> Polarization ^
+Polarization ^ -> Covalency ^ -> LE % difference ^ -> solubility in H2O ^
+Why Ag compounds have higher solubility: outermost shell 4d10 which offers less shielding than most cations -> Covalency ++
+
+dHea 1: always -ve: electron and proton attracted, releasing energy
+dHea 1g0: always +ve: full outermost shell, so new e would be in new shell
+dHea 2: always +ve : energy required to overcome repulsion betweens ions and e
+
+============================================================
+Unit 13
+============================================================
+
+Kc = [p()]n/[r()]n (lg)
+1. At a given temperature
+2. Concentrations at Eq
+
+Kp = (pp)n/(pr)n (g)
+2. Pressures at Eq
+
+mol fraction xa = mol A / sum mol gases
+partial pressure A = xa * total pressure
+
+Temperature shift eq -> change ratio
+Pressure and concentration do not affect K as at Eq effect balances out, since the partial pressure of all things changed
+
+Qc = Kc
+2. Concentrations defined at instance
+
+K, Q units are derived
+
+K > Q, Eq ->
+Change P -> Change Q ratio -> Opposite change for K -> Affect Eq
+
+dSt = RlnK
+
+============================================================
+Unit 14
+============================================================
+
+Acid                - proton donor 
+Base                - proton acceptor 
+Strong X            - dissociates completely to ions 
+Weak X              - dissociates to a small extent to ions 
+Conjugate acid      - species formed when base accepts a proton 
+Conjugate base      - species formed when acid donates a proton 
+Acidic solution     - [H+] > [OH-] 
+Alkaline solution   - [H+] < [OH-] 
+Amphoteric          - solution which can act as both base and acid
+
+# pH calculations
+pH = -log[H+]
+[H+] ^ pH v more acidic
+
+> Weak acids and bases' pH
+Ka = [H+]2 / [HA]
+
+> Strong bases
+Strong bases completely dissociate in water: [OH-] = [BOH]
+Kw = [H+][OH-]
+
+> Assumptions
+- Water & acid does not dissociate to change [H+]
+
+# Strengths of acid and base
+Strong acids: Halids H2SO4 HNO3
+Strong bases: MOH
+Weak bases: NH3
+
+# Titration pH-conc. curve
+Vertical region of titration curve: Equivalence point
+Initial increase in pH due to [HA] >> [A-]
+If acid added to base, [H+]^ pH v
+At half equivalence volume pH = pKa
+
+# Buffer solutions
+Buffer solution - Solution which resist changes in pH when small volumes of acid or base are added.
+Formed from: weak AB + conjugate AB / salt 
+Buffer solution pH: if conjugate formed from a weak acid or base
+
+> Resistance of change of pH
+1. Excess amounts of HA & A-
+2. Added acid reacts wit A- / added base reacts with HA
+3. Ratio of HA to A- remains unchanged
+
+============================================================
+Unit 15
+============================================================
+
+Draw: Interaction diagram, NA mechanism, SN12 mechanism
+
+# Aldehydes
+- Naming for hydroxynitrile: R + 1
+- Naturally forms acids due to oxidized by O2
+
+# Aldehyde & Ketones
+> Forming hydroxynitriles
+KCN alkaline solution is used: provide sufficient CN-
+Extreme pH values causes no reaction as
+* pH v CN- v 
+* pH ^ H+ v
+
+> Test for carbonyl
+DNPH2 -> orange solid
+Derivatives are dried by recrystallization
+Identifying compounds: Measure melting point and Compare with databook values
+
+> Test for CH3C=O
+Warm alkaline aq. solution of I2 -> yellow pp
+
+> Test for aldehydes
+Reagents            Color change
+acidified k2cr2o7   orange -> green
+fehling benedict    blue -> red
+tollen              silver mirror
+
+# Carboxylic acids
+> Speeding up esterification
+1. Acid catalyst (sulfuric acid)
+2. Heating (reflux)
+> Test for acids
+Reaction with Na2CO3 -> Sodium alkanoate CO2 H2O 
+
+# Producing esters
+> Using acyl chlorides compared to acid + alchol:
+Advantages: 
+1. No catalyst 
+2. No heating 
+3. Completion
+Due to: 
+1. C-Cl bond is weaker than C-O
+2. C in carbonyl is partially more +ve
+Disadvantages:
+1. Expensive reactants
+2. HCl toxic
+
+# Producing carboxylic acids
+> Using ester under alkaline solution
+Advantages:
+1. Completion
+Disadvantages: 
+1. Produces carboxylic salt 
+Differences: 
+1. Na+ electrophile
+
+# NS mechanisms
+Sn1: degree 3 2
+- racemic formed
+
+Sn2: degree 1 2
+- optical activity
+
+# Polymerization
+This paper tests about Condensation
+> Small molecule
+Acids + Alchols -> H2O 
+Acids -> H2
+
+# Optical isomerism: Compounds that are
+1. Non-superimposable mirror images of one another
+2. Presence of a chiral center
+3. Molecular formula with different arrangements in space.
+
+Gas used in GC must be inert
+GC separation reason: attraction of species to stationary phase
+Colum separation reason: attraction of species to stationary & mobile phase
+Rf = moved / front - base
+
+Retention time depends on
+- Nature of solvent
+- Pressure
+- Temperature
+
+# NMR Spectroscopy
+Medium:             Radio waves
+TMS Used because:   12p in same CE
+
+n of peaks:         n of X in diff CE
+ratio of peaks:     ratio of amounts of p in CE
+
+Split peaks reason: number of adjacent protons

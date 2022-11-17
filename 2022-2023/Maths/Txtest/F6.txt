@@ -1,0 +1,28 @@
+f(x+t)      t -> -x
+f(x) + t    t -> y
+f(sx)       s -> x/s
+sf(x)       s -> y
+
+2 identities for sec cosec:
+sec2 = 1+t2
+cosec2 = 1+cot2
+
+1 = s2 + c2
+### Following symbols of + - represents ± ∓
+
+s(+) = sc + cs          s2 = 2sc
+c(+) = cc - ss          c2 = c2 - s2
+
+Prove s+s = 2s(+/2)c(-/2) by: s(+) + s(-) let a b -> A
+
+For a > 0
+asx + bcx = sqrt(sumof2)s(x+K)
+acx + bsx = sqrt(sumof2)c(x-K)
+K = c^-1 a/sqrt(sumof2)
+
+f(x)        f'(x)
+e^kx        e^kx
+lnkx        x^-1
+sinkx       kcoskx
+coskx       -ksinkx
+tankx       ksec2kx

@@ -1,0 +1,114 @@
+============================================================
+Unit 6
+============================================================
+
+Electric field strength unit: 
+
+# Drawing field lines:
+1. 
+2. 
+3. 
+
+# Explain field direction
+1. 
+2. 
+3. 
+
+# Electron guns
+1. 
+2. 
+
+Capacitor resistance = 
+
+# Explain capacitor charge with e- flow
+* 
+* 
+* 
+
+Capacitor charging: 
+Capacitor discharing: 
+Charging curves: 
+Discharing curves: 
+I-t graph area under: 
+
+Magnetic poles always exists with 
+ -> 
+ ->  if center
+
+m flux density () 
+m flux () 
+
+LHR: 
+Grip rule: 
+
+For negative charge in magnetic field, current 
+
+EMF is induced when 
+Current is induced when 
+
+# Lenz's law
+
+# Faraday's law
+
+
+# Demonstrating Lenz's law
+> 
+1. 
+2. 
+3. 
+4. 
+5. 
+
+Graphs: 
+- 2nd peak
+- area under graph
+
+
+Work done due to Lenz's law: 
+
+AC Generator: 
+DC Motor: 
+
+============================================================
+Unit 7
+============================================================
+Mass number = 
+Atomic number = 
+alpha particle: 
+
+# Nuclear model of atom
+Experiment: 
+1. 
+2. 
+3. 
+
+# Bubble chambers:
+* 
+* 
+* 
+
+# Generation of mass
+Conserved quantities: 
+
+Time dilation - 
+Explaining lifetimes - 
+
+# Standard model of elementary particles
+Hadrons - 
+Leptons - 
+Fundemental - 
+
+Memorisation: 
+
+3 quarks forms 
+another formed by quark: 
+
+em force: 
+
+# Particle interactions
+Conserved quantites:
+- 
+- 
+- 
+- 
+E = 

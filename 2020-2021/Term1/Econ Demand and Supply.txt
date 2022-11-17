@@ -1,0 +1,70 @@
+Subsitutes (A) - Can replace each other
+Complements (B) - Things which people use together
+Input and output (C) - Required to produce a good
+Compeititve supply (D) -  Requires similiar factors of production
+Joint supply (E) - both items comes from the same thing (e.g. beef and lether)
+
+==================================
+12 AC
+34 AA
+56 CC 
+78 A(A/B) [People use them together]
+910 AB
+1112AA
+1314 CB
+1516 C(A/D) [Requires land]
+1718 AC
+1920 CB
+2122 EE
+2324 CC
+2526 CA
+2728 BC
+2930 CA
+3132 AC
+3334 A(A/D) [Requires tour guide]
+3536 BA
+3738 BB
+3940 DA 
+4142 A(A/D) [Gov: use land / Citizen: both can be lived in]
+4344 AC
+4546 BD [Use land to grow rice and wheat]
+
+==================================
+
+1	S^
+2	Sv
+3	Sv
+4	D^
+5	D^ Dv
+6	D^ Dv
+7	Dv D^ [Less money after tax]
+8	Sv
+9	Dv
+10	Dv
+11	D^
+12	D^
+13	D^
+14	Dv
+15	Dv [Increase cost of a private housing]
+16	Sv
+17	Dv
+18	Sv
+19	Sv
+20	Sv
+21	D^
+22	Dv
+23	Dv
+24	Sv
+25	Sv
+26	S^
+27	D^
+28	Dv
+29	Sv
+30	S^
+31	Dv Sv [Kill pigs]
+32	S^
+33	D^
+34	D^
+35	Sv Dv [No one wants to go there]
+36	D^
+37	D^

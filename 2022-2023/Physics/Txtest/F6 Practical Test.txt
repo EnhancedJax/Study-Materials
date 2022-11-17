@@ -1,0 +1,102 @@
+# Criticizing data 
+1. 
+2. 
+3. 
+4. 
+5. 
+
+# Measurement
+Calculating mean: 
+
+Stationary length apparatuses:
+- 
+- 
+- 
+
+Distance between movements: 
+Measuring temp for water bath: 
+
+Voltage: 
+Current: 
+
+## Measuring methods 
+Radius:     
+
+## Common questions
+Why measuring device suitable:   
+Accurate length measurement:   
+1. 
+2. 
+3. 
+4. 
+Determining value by measurements
+1. 
+2. 
+3. 
+4. 
+
+## Common uncertainties 
+Zero error: 
+Parallax error: 
+Uncertain position: 
+
+Using light gates to determine velocity:
+1. 
+2. 
+
+# Experiments 
+> Extension of spring
+- 
+- 
+- 
+1. 
+2. 
+3. 
+
+> Light beam
+-> denser, bend -> , v 
+-> less dense, bend <- , v 
+i = C, r = 
+
+Why monochromatic light: 
+
+> Circuits – Electrical component properties 
+Setup 
+1. 
+2. 
+3. 
+
+# Essential knowledge 
+> Unit 1 
+Friction can only be actively measured when 
+
+> Unit 2 
+Net force formula: 
+Upthrust = 
+
+**F-Δx graph**
+• 
+• 
+• 
+
+> Unit 3 
+E = 
+Only waves can show 
+The angle of incidence and refraction are 
+
+**Interference**
+• Constructive - 
+• Destructive - 
+
+Total internal reflection: 
+
+> Unit 4 
+**Distribution of current & pd in circuits**
+Series: 
+- 
+- 
+Parallel
+- 
+- 
+
+  

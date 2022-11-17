@@ -1,0 +1,113 @@
+============================================================
+Unit 6
+============================================================
+
+Electric field strength unit: NC-1
+
+# Drawing field lines:
+1. Current + -> -
+2. Straight 
+3. Evenly spaced 
+
+# Explain field direction
+1. + -> away from
+2. - -> towards
+3. Vectors
+
+# Electron guns
+1. hot metal surface causes emission of electrons
+2. Anode's +ve charge accelerates e
+
+Capacitor resistance = 0
+
+# Explain capacitor charge with e- flow
+* e move from one plate to another through external circuit
+* As capacitor charge, rate of flow of e v
+* Fully charged, equal amounts of e stored on each plate
+
+Capacitor charging: t = tc, IQV .37 0
+Capacitor discharing: t = tc, QV .63 0
+Charging curves: I down VQ up
+Discharing curves: All down
+I-t graph area under: Total charge
+
+Magnetic poles always exists with both NS
+N -> S
+S -> N if center
+
+m flux density (B T) measure of strength of m field
+m flux (Phi Wb) describes magnetic field lines passing through a given area
+
+LHR: FBI
+Grip rule: Thumb B grip I
+
+For negative charge in magnetic field, current flows in opposite direction relative to its movement
+
+EMF is induced when lines of magnetic field cut through coil
+Current is induced when coil forms a complete circuit
+
+# Lenz's law
+Direction of induced current is such as to oppose the motion causing it
+# Faraday's law
+Magnitude of induced emf = rate of change of flux linkage
+
+# Demonstrating Lenz's law
+> for magnet falling through coil of wire, coil > free
+1. magnet -> coil, dPhi through coil -> induced e I
+2. Due to Lenz's law, same pole induced to the pole of magnet approaching coil -> repulsion force slowing down
+3. magnet @ coil, dPhi = 0 -> no induced
+4. magnet <- coil, dPhi through coil -> induced e I in opposite direction
+5. Due to Lenz's law, opposite pole induced to the pole of magnet leaving coil -> attraction force slowing down
+
+Graph:
+- Magnitude of 2nd peak > 1st peak due to magnet at a higher velocity causing rate of change of flux to be greater
+- Area under the graph is change of flux linkage
+
+Work done due to Lenz's law: W = Fd so movement caused by Lenz's law does work
+
+AC Generator: induces EMF and current to coil and hence RHR
+DC Motor: exerts magnetic force onto coil and hence LHR
+
+============================================================
+Unit 7
+============================================================
+Mass number = p + n
+Atomic number = p
+alpha particle: 4 2 He+
+
+# Nuclear model of atom
+Experiment: Alpha particle scattering
+1. most no delfection -> mostly empty space
+2. small deflected -> center is +ve charge
+3. very small deflect > 90 -> center is very dense
+
+# Bubble chambers:
+* Larger radius: greater p
+* Curve away from track: Induced particle interact with particle in liquid
+* Pair of lines from nowhere: Pair production
+
+# Generation of mass
+Conserved quantities: EQp
+
+Time dilation - Time travels slower for faster moving objects
+Explaining lifetimes - If particle speed approaching c, lifetime observed stationarily > predicted, due to relativistic increase of velocity of particle
+
+# Standard model of elementary particles
+Hadrons - Formed by quarks
+Leptons - Fundimental
+Fundemental - Cannot be broken down further
+
+Memorisation: up charm strange top 2/3 -1/3 eut -1 neutrino, photon 0
+
+3 quarks forms baryons
+another formed by quark: 2 opposite quark -> mesons
+
+em force: particles pass photons back and forth between each other
+
+# Particle interactions
+Conserved quantites:
+- EQp
+- Baryon number (1, -1, 0)
+- Lepton number (1, -1 ,0)
+- Strangness (-1, 1 ,0)
+E = hc / lambda

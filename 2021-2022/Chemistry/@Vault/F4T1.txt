@@ -1,0 +1,80 @@
+Isotopes are atoms w/ same n of p but diff num of n
+ram is the average mass of the isotopes of an element compared w/ 1/12 mass of c-12
+n = A - Z
+e = n
+p = Z
+
+Ionic - m nm
+Covalent - nm
+Metallic - m
+
+M + H2O -> MOH + H2
+M2 + H2 -> 2HM
+
+G1 iD w/ water
+G2 iD w/ water
+G7 iU w/ hydrogen
+G0 unreactive
+
+G1 one e must be lost to be stable, outermost shell distance to nucleus increase down the group, weakens attractive force, easier to lose e, more reactive
+G7 one e must be GAINED, harder to gain e, less reactive
+
+low mp + (g, l) -> simple molecular
+conduct electricity (s) -> giant metallic
+conduct electricity (m, aq) -> giant ionic (s)
+high mp -> giant covalent (s)
+
+K Na / Ca Mg Al Zn Fe / Pb Cu Hg / Ag Pt Au
+7-3 (burn) 
+3-4 (steam water)
+2-5-1 (explosive bool)
+
+metal + oxygen -> metal oxide
+metal + H₂O -> metal hydroxide / oxide + hydrogen
+metal + acid -> metal acid + acid (split) [HCl / H₂SO₄]
+
+Trend (R,D)
+K 			Lilac
+Na 		Golden yellow
+Ca 		Brick-red
+Mg 		Bright white
+Fe 		Yellow spark
+Cu 		Bluish green
+
+
+NH4 -		Ammonium
+H3O -		Hydronium
+OH -		Hydroxide
+CN -		Cyanide
+OCN - 	Cyanate
+O2 2-		Peroxide
+
+N Cl Br I 				O2 -			Cl4
+S 							O3 2-
+P 							O3 3-
+
+CO3 2-	Carbonate
+HCO3 -	Hydrogen carbonate
+
+### Add this part later
+
+particles/6.02e23 = mol = g / Σ
+mol ratio to find product mass or mol
+
+1.	n[AB] = n in mol of AB
+2.	r = mol ratio A:B
+3.	n[AB] change -> r
+4.	print("n[A] mol of A would react with n[B] mol of B")
+5.	print("limitedReactant: <>, comoundInExcess: <>")
+6.	r = mol ratio limitedReactant : C
+7.	> calc
+
+Rust: 2Fe₂O₃ • nH₂O red-brown solid
+Oxygen and Water are necessary for rusting
+Rust indicator green -> blue
+
+Aluminium oxide is impermeable to Oxygen and Water -> protect Al from further corrosion
+Iron(III) oxide is permeable -> can't protect 
+
+```|====================================|========================================|```
+
