@@ -85,7 +85,7 @@ Anti-bumping granules: Revent mixtrue from overflowing to condenser
 * Separating funnel 
 Effervescence: Remove stopper to release built-up pressure 
 Species added when running off: Remove excess acid 
-Anhydrous species added: Remove water, solution goes clear 
+Anhydrous species added, visible change: Remove water, solution goes clear 
 * Final distillation 
 Distillate collected in temp range: Only target species boil within this range, above this range others will be collected
 

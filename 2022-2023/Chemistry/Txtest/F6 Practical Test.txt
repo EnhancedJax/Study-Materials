@@ -87,7 +87,7 @@ Anti-bumping granules:
 * Separating funnel 
 Effervescence: 
 Species added when running off: 
-Anhydrous species added: 
+Anhydrous species added, visible change: 
 * Final distillation 
 Distillate collected in temp range: 
 
