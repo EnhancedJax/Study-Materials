@@ -25,24 +25,23 @@ Radius:     diameter / 2
 ## Common questions
 Why measuring device suitable: Much less resolution compared to measurement, low % uncertainty   
 Accurate length measurement:   
-1. Suitable measuring device 
-2. Suitable readings in different positions
-3. Ensure measurement at widest point 
-4. Take mean 
+1. Device
+2. Reading in diff, widest pos
+3. Repeat Mean 
 Determining value by measurements
-1. Use a suitable device 
-2. Measure related variables 
-3. Use correct formula 
-4. Repeat to find mean 
+1. Device
+2. Measure 
+3. Formula
+4. Repeat Mean
 
 ## Common uncertainties 
-Zero error: Subtract y-var with value of error 
-Parallax error: Ensure measuring device is at eye-level 
-Uncertain position: Repeat and calculate mean value 
+Zero error: -y with value of error 
+Parallax error: Ensure device eye-level 
+Uncertain position: Repeat Mean 
 
 Using light gates to determine velocity:
-1. Measure length of moving object 
-2. v = length / time
+1. Measure length of object 
+2. v = l / t
 
 # Experiments 
 > Extension of spring
@@ -50,8 +49,8 @@ Using light gates to determine velocity:
 - Spring
 - Mass
 1. Measure initial length & length with load, subtract → extension 
-2. Measuring device: Ruler ensured eye-level to reduce parallax 
-3. Different masses for different values 
+2. Device -> reduce parallax
+3. Repeat Mean different mass
 
 > Light beam
 -> denser, bend -> normal, v increase
@@ -75,9 +74,9 @@ Net force formula: W = U + D
 Upthrust = vol * p * g
 
 **F-Δx graph**
-• The area under the graph is elastic strain energy
-• The slope of the graph k
-• The area between loading and unload lines is the work done → permanently deform 
+• Area under graph:                     Elastic strain energy
+• Slope:                                k
+• Area between loading and unloading:   Work done to perm deform
 
 > Unit 3 
 E = hc / lambda
@@ -85,8 +84,8 @@ Only waves can show Interference and Diffraction
 The angle of incidence and refraction are taken from the normal 
 
 **Interference**
-• Constructive - whole number wavelength difference - in phase 
-• Destructive - 0.5 wavelength difference - out of phase 
+• Constructive - n wavelength difference - in phase 
+• Destructive - 0.5n wavelength difference - out of phase 
 
 Total internal reflection 
 i > Critical -> less dense

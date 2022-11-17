@@ -1,3 +1,5 @@
+\\memory size: 100\\
+
 # Criticizing data 
 1. 
 2. 
@@ -28,7 +30,6 @@ Accurate length measurement:
 1. 
 2. 
 3. 
-4. 
 Determining value by measurements
 1. 
 2. 
@@ -75,9 +76,9 @@ Net force formula:
 Upthrust = 
 
 **F-Δx graph**
-• 
-• 
-• 
+• Area under graph:                     
+• Slope:                                
+• Area between loading and unloading:   
 
 > Unit 3 
 E = 

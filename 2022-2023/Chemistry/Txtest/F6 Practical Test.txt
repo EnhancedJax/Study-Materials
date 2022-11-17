@@ -1,3 +1,5 @@
+\\memory size: 100\\
+
 # Inorganic analysis
 > Basic test
 H2  - 

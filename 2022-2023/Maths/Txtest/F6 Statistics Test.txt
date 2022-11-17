@@ -1,3 +1,5 @@
+\\memory size: 50\\
+
 sd = 
 
 Interpolation: 
