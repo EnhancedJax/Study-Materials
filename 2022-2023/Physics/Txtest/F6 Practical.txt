@@ -49,12 +49,12 @@ Using light gates to determine velocity:
 - Spring
 - Mass
 1. Measure initial length & length with load, subtract → extension 
-2. Device -> reduce parallax
+2. Device used with reducing parallax means
 3. Repeat Mean different mass
 
 > Light beam
--> denser, bend -> normal, v increase
--> less dense, bend <- normal, v decrease
+-> denser, bend -> normal
+-> less dense, bend <- normal
 i = C, r = 90
 
 Why monochromatic light: Single lambda, more accurate measurement of r, range of lambda -> range of r
@@ -91,12 +91,19 @@ Total internal reflection
 i > Critical -> less dense
 
 > Unit 4 
+R in parallel = (sum R^-1)^-1
+
 **Distribution of current in circuits**
 Series: 
-- I Constant
-- Sum of pd = emf
+- I same
+- V sum
 Parallel
-- Sum I in all branches = total
-- V in all branches same
+- I sum
+- V same
 
-  
+**For graphs: I-V**
+Semi-conductor diode    - tip up
+Filament                - down
+Thermistor              - up
+
+LDR: Light intensity ^ resistance v

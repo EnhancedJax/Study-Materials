@@ -2,15 +2,15 @@
 
 # Inorganic analysis
 > Basic test
-H2  - 
-O2  - 
-CO2 - 
-H2O, CuSO4 =>               
-NH3, HCl(g) =>              
-NH4+, NaOH(warm aq) =>      
-Sulfate, barium =>          
-Carbonates, HCl =>          
-Iodine, Starch indicator => 
+H2          
+O2          
+CO2         
+H2O         
+NH3         
+NH4+        
+Sulfate     
+Carbonates  
+Iodine      
 
 > Group 7 test
 Method 1: 
@@ -32,7 +32,7 @@ Method 2:
 
 > Alchol & derivatives
 1 / 2 deg: 
-1 deg:     
+aldehydes: 
 CH3C=O:    
 
 # Essential knowledge
@@ -45,7 +45,7 @@ Rate of reaction of halogenoalkanes:
 
 Common drying agent: 
 
-====================================================================
+==================================================================
 
 # Enthalpy change of Rx
 ΔH = 
@@ -73,7 +73,7 @@ Mean titre:
 
 > CQ
 Reasons for washing: 
-Why burette rinsed with ttirate: 
+Why burette rinsed with tirate: 
 
 # Percentage yield of halogenoalkane
 Also test: Drawing reflux & distillation

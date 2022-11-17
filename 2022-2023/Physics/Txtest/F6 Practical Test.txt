@@ -55,8 +55,8 @@ Using light gates to determine velocity:
 3. 
 
 > Light beam
--> denser, bend -> , v 
--> less dense, bend <- , v 
+-> denser, bend 
+-> less dense, bend 
 i = C, r = 
 
 Why monochromatic light: 
@@ -92,6 +92,8 @@ The angle of incidence and refraction are
 Total internal reflection: 
 
 > Unit 4 
+R in parallel = 
+
 **Distribution of current & pd in circuits**
 Series: 
 - 
@@ -100,4 +102,9 @@ Parallel
 - 
 - 
 
-  
+For graphs: 
+Semi-conductor diode    - 
+Filament                - 
+Thermistor              - 
+
+LDR: Light intensity ^ resistance 
