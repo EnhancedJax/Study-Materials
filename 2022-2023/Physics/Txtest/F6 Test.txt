@@ -1,4 +1,4 @@
-\\memory size: 110\\
+\\memory size: 140\\
 ============================================================
 Unit 5
 ============================================================
@@ -8,6 +8,8 @@ Inelastic collision:
 
 Impulse: 
 Average force during collision: 
+
+circular velocity = 
 
 ============================================================
 Unit 6
@@ -31,7 +33,10 @@ Particle interaction V =
 1. 
 2. 
 
-Capacitor resistance = 
+# Capacitor function
+* 
+* 
+* 
 
 # Explain capacitor charge with e- flow
 * 
@@ -63,6 +68,7 @@ Current is induced when
 
 # Faraday's law
 
+Average induced emf: 
 
 # Demonstrating Lenz's law
 > 
@@ -92,22 +98,25 @@ alpha particle:
 Plum pudding model: 
 
 # Nuclear model of atom
-Experiment: 
+Experiment & disproving: 
 1. 
 2. 
 3. 
 
 # Particle accelerators
-> Linear acceleration process
+> Why increase length LINAC
+1. 
+2. 
+3. 
+4. 
+> Why t needed particles cyclotron
 1. 
 2. 
 3. 
 4. 
 
-# Bubble chambers:
-* 
-* 
-* 
+# Why high energy particles used to investigate structures
+
 
 # Generation of mass
 Conserved quantities: 
@@ -118,9 +127,9 @@ Conserved quantities:
 3. 
 
 # Standard model of elementary particles
-Hadrons - 
-Leptons - 
-Fundemental - 
+1. 
+2. 
+Fundamental - 
 
 Memorisation: 
 
