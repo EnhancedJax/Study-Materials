@@ -1,8 +1,20 @@
 ============================================================
+Unit 5
+============================================================
+
+Elastic collision: KE conserved
+Inelastic collision: KE not conserved
+
+Impulse: p = Ft
+Average force during collision: F = p / t
+
+============================================================
 Unit 6
 ============================================================
 
 Electric field strength unit: NC-1
+
+Particle interaction V = k Q/r
 
 # Drawing field lines:
 1. Current + -> -
@@ -75,11 +87,20 @@ Mass number = p + n
 Atomic number = p
 alpha particle: 4 2 He+
 
+Plum pudding model: Uniform +ve charge sphere with -ve e-
+
 # Nuclear model of atom
 Experiment: Alpha particle scattering
 1. most no delfection -> mostly empty space
 2. small deflected -> center is +ve charge
 3. very small deflect > 90 -> center is very dense
+
+# Particle accelerators
+> Linear acceleration process
+1. E field accelerate particle across gap
+2. Particle speed constant in tube
+3. pd alternate at constant Hz -> time in gaps & tubes constant
+4. Particles enter gap & tutbe with v^, so gap & tubes length ^
 
 # Bubble chambers:
 * Larger radius: greater p
@@ -89,8 +110,10 @@ Experiment: Alpha particle scattering
 # Generation of mass
 Conserved quantities: EQp
 
-Time dilation - Time travels slower for faster moving objects
-Explaining lifetimes - If particle speed approaching c, lifetime observed stationarily > predicted, due to relativistic increase of velocity of particle
+# Relativistic lifetime
+1. Initial distance propto speed
+2. At speeds approaching c, lifetime observed stationarily > predicted lifetime due to relativistic increase
+3. Particle travels further as lifetime extended
 
 # Standard model of elementary particles
 Hadrons - Formed by quarks
@@ -110,4 +133,7 @@ Conserved quantites:
 - Baryon number (1, -1, 0)
 - Lepton number (1, -1 ,0)
 - Strangness (-1, 1 ,0)
-E = hc / lambda
+
+> Energy distribution
+* Most energy converted to mass
+* Leftover energy converted to KE

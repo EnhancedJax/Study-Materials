@@ -1,10 +1,21 @@
 \\memory size: 110\\
+============================================================
+Unit 5
+============================================================
+
+Elastic collision: 
+Inelastic collision: 
+
+Impulse: 
+Average force during collision: 
 
 ============================================================
 Unit 6
 ============================================================
 
 Electric field strength unit: 
+
+Particle interaction V = 
 
 # Drawing field lines:
 1. 
@@ -78,11 +89,20 @@ Mass number =
 Atomic number = 
 alpha particle: 
 
+Plum pudding model: 
+
 # Nuclear model of atom
 Experiment: 
 1. 
 2. 
 3. 
+
+# Particle accelerators
+> Linear acceleration process
+1. 
+2. 
+3. 
+4. 
 
 # Bubble chambers:
 * 
@@ -92,8 +112,10 @@ Experiment:
 # Generation of mass
 Conserved quantities: 
 
-Time dilation - 
-Explaining lifetimes - 
+# Relativistic lifetime
+1. 
+2. 
+3. 
 
 # Standard model of elementary particles
 Hadrons - 
@@ -113,4 +135,7 @@ Conserved quantites:
 - 
 - 
 - 
-E = 
+
+> Energy distribution
+* 
+* 
