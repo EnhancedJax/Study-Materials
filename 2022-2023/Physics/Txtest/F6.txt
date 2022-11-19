@@ -42,8 +42,8 @@ Particle interaction V = k Q/r
 * As capacitor charge, rate of flow of e v
 * Fully charged, equal amounts of e stored on each plate
 
-Capacitor charging: t = tc, IQV .37 0
-Capacitor discharing: t = tc, QV .63 0
+Capacitor charging: t = tc, QV .63 0
+Capacitor discharging: t = tc, IQV .37 0
 Charging curves: I down VQ up
 Discharing curves: All down
 I-t graph area under: Total charge
