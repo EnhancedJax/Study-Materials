@@ -6,8 +6,8 @@ CO2         Lime water -> milky
 H2O         CuSO4 => B
 NH3         HCl(g) => White fumes (NH4Cl)
 NH4+        NaOH(warm aq) => Gas litmus R B (NH3)
-Sulfate     Barium => white pp
-Carbonates  HCl => Bubbles (CO2)
+Sulfate     acidified Ba2+ => white pp
+Carbonates  H+ acids => Bubbles (CO2)
 Iodine      Starch indicator => Black
 
 > Group 7 test
@@ -68,6 +68,12 @@ Mean titre: +- 0.2
 1. Dissolve solid in concial flask with distilled water
 2. Pour solution into volumetric flask with washings
 3. Add water up to the mark & shake
+
+> Titrate
+1. Prepare solution of known conc.
+2. Titrate with HCl of known conc. 
+3. Use methyl orange indicator 
+4. Repeat to obtain ±0.2cm^3 titres
 
 > CQ
 Reasons for washing: Ensure all solution is transferred

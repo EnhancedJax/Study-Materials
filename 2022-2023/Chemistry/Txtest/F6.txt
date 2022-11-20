@@ -9,8 +9,9 @@ rate & k units are derived
 
 Half life: time for conc. to half from last
 conc. t graph
-0: HL unchanged
-1: HL x2
+0: Linear
+1: HL unchanged
+2: HL x2
 rate conc. graph
 0: Flat
 1: Linear

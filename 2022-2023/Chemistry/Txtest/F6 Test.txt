@@ -13,6 +13,7 @@ Half life:
 Type: 
 0: 
 1: 
+2: 
 Type: 
 0: 
 1: 
