@@ -10,19 +10,15 @@ Overall order of reaction -
 rate & k units are 
 
 Half life: 
-[A]-t graph
+Type: 
 0: 
 1: 
-1/t-[A]
+Type: 
 0: 
 1: 
 2: 
 
 Rate determining step: 
-R in RDS = 
-mol ratio in RDS = 
-
-Arrhenius Equation: 
 
 # Catalyst types
 Homogenous: 
@@ -35,16 +31,16 @@ Autocatalysis:
 - Mechanism: 
 
 # NS mechanisms
-Sn1: degree 3 2
-- 
-- 
-- 
-- 
+Sn1: degree 
+- Mechanism: 
+- Steps: 
+- Rate eq: 
+- Fastest: 
 
-Sn2: degree 1 2
-- 
-- 
-- 
+Sn2: degree 
+- Mechanism: 
+- Steps: 
+- Fastest: 
 
 # Following rate of reactions
 > Titration
@@ -52,17 +48,9 @@ Sn2: degree 1 2
 2. 
 3. 
 
-> Color change
-Reactions with 
-
-> Change of volume of gas
-Reactions with 
 Collecting of gas: 
+- _ not applicable: 
 - 
-- 
-
-> Change of mass of gas
-Reactions with 
 
 > Electrical conductivity
 Reactions with 
@@ -95,8 +83,6 @@ Solubility of ionic solid deduced with
 
 The enthalpy measured at 100Kpa 298K
 rx      - 
-combus  - 
-neu     - 
 forma   - 
 
 - 
@@ -126,8 +112,13 @@ Due to assumptions:
 2. 
 3. 
 
-^ ^ -> Polarization ^ 
-->  -> LE % difference -> 
+Reason for difference: 
+
+# To explain difference for a molecule
+1. 
+2. 
+3. 
+
 Why Ag compounds have higher solubility: 
 
 dHea 1: 
@@ -157,6 +148,7 @@ Qc =
 K, Q units are 
 
 K, Q & Eq: 
+Explaination: 
 
 total entropy change = 
 
@@ -194,20 +186,25 @@ Strong bases:
 Weak bases: 
 
 # Titration pH-conc. curve
+> Eqv
 Vertical region of titration curve: 
-Initial increase in pH due to 
-If acid added to base: 
 At half equivalence volume pH = 
+Equivalence volume: 
+> Curve shape
+Initial increase in pH: solution
+If acid added to base: 
+Initial pH: 
 
 # Buffer solutions
 Buffer solution - 
 Formed from: 
-Buffer solution pH: 
+Buffer solution acid / base: 
 
 > Resistance of change of pH
 1. 
 2. 
 3. 
+4. 
 
 ============================================================
 Unit 15

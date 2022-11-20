@@ -8,10 +8,10 @@ Overall order of reaction - Product of powers of all conc. of R in r8 eq
 rate & k units are derived
 
 Half life: time for conc. to half from last
-[A]-t graph
+conc. t graph
 0: HL unchanged
 1: HL x2
-1/t-[A]
+rate conc. graph
 0: Flat
 1: Linear
 2: Curved
@@ -19,8 +19,6 @@ Half life: time for conc. to half from last
 Rate determining step: Slowest step
 R in RDS = R in eq
 mol ratio in RDS = order 
-
-Arrhenius Equation: lnk = -Ea/RT + lnA
 
 # Catalyst types
 Homogenous: Same phase as R
@@ -93,8 +91,6 @@ Solubility of ionic solid deduced with dSt of dissolving reaction
 
 The enthalpy measured at 100kpa and 298k
 rx      - equation quantities of materials react
-combus  - substance is completely burned in oxygen
-neu     - h2o is produced by neutralisation
 forma   - substance formed from its elements in standard states
 
 1 mol of [X] formed from 1 mol [Y]
@@ -113,7 +109,7 @@ Diff sign due to opposite processes
 Formation -ve energy released from making bonds
 Dissociation +ve energy required to break bonds
 
-LE & Hydration: Charge density ^ -> dH mag ^
+LE & Hydration: Charge density ^ → Strong forces of attraction between ions → More exothermic
 
 Experimental LE: cal born haber cycle
 Theoretical LE: cal ionic model
@@ -125,13 +121,18 @@ Due to assumptions:
 2. Ions are perfectly spherical
 3. Charge is evenly distributed around the center
 
-Charge density difference ^ / EN difference ^ -> Polarization ^
-Polarization ^ -> Covalency ^ -> LE % difference ^ -> solubility in H2O ^
+Reason for difference: Charge density difference ^ -> Polarization ^ -> Covalency ^ -> %diff ^ -> Solubility in H2O ^
+
+# To explain difference for a molecule
+1. Cation high charge density
+2. Cation polarizes anion
+3. There is some covalency in bonding
+
 Why Ag compounds have higher solubility: outermost shell 4d10 which offers less shielding than most cations -> Covalency ++
 
 dHea 1: always -ve: electron and proton attracted, releasing energy
 dHea 1g0: always +ve: full outermost shell, so new e would be in new shell
-dHea 2: always +ve : energy required to overcome repulsion betweens ions and e
+dHea 2: always +ve : energy required to overcome repulsion betweens ion and e
 
 ============================================================
 Unit 13
@@ -141,7 +142,7 @@ Kc = [p()]n/[r()]n (lg)
 1. At a given temperature
 2. Concentrations at Eq
 
-Kp = (pp)n/(pr)n (g)
+Kp = p(p)n/p(r)n (g)
 2. Pressures at Eq
 
 mol fraction xa = mol A / sum mol gases
@@ -158,7 +159,7 @@ K, Q units are derived
 K > Q, Eq ->
 Change P -> Change Q ratio -> Opposite change for K -> Affect Eq
 
-dSt = RlnK
+dSt = R ln K
 
 ============================================================
 Unit 14
@@ -194,20 +195,25 @@ Strong bases: MOH
 Weak bases: NH3
 
 # Titration pH-conc. curve
+> Eqv
 Vertical region of titration curve: Equivalence point
-Initial increase in pH due to [HA] >> [A-]
-If acid added to base, [H+]^ pH v
 At half equivalence volume pH = pKa
+Equivalence volume: Volume which starting solution reacted
+> Curve shape
+Initial increase in pH: [HA] >> [A-] which the ratio changed after adding solution
+If acid added to base: [H+]^ pH v
+Initial pH: pH of starting solution
 
 # Buffer solutions
 Buffer solution - Solution which resist changes in pH when small volumes of acid or base are added.
-Formed from: weak AB + conjugate AB / salt 
-Buffer solution pH: if conjugate formed from a weak acid or base
+Formed from: weak AB + conjugate BA / salt 
+Buffer solution acid / base: if conjugate formed from a weak acid or base
 
 > Resistance of change of pH
 1. Excess amounts of HA & A-
-2. Added acid reacts wit A- / added base reacts with HA
-3. Ratio of HA to A- remains unchanged
+2. Added acid reacts with A- / added base reacts with HA
+3. H+ + A- -> HA / OH- + HA -> H2O + A-
+4. Ratio of HA to A- remains unchanged
 
 ============================================================
 Unit 15
@@ -232,7 +238,7 @@ Derivatives are dried by recrystallization
 Identifying compounds: Measure melting point and Compare with databook values
 
 > Test for CH3C=O
-Warm alkaline aq. solution of I2 -> yellow pp
+Warm alkaline aq. solution of I2 -> yellow pp CHI3
 
 > Test for aldehydes
 Reagents            Color change
