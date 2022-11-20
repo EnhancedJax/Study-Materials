@@ -32,7 +32,7 @@ Autocatalysis: P as catalyst: [P] ^ Rate ^
 
 # NS mechanisms
 Sn1: degree 3 2
-- Mechanism: Nu attack C
+- Mechanism: X leaves
 - Steps: 2
 - Rate eq: Step 1 RDS (slow)
 - Fastest: Tertiary RX due to stability of C+
@@ -307,7 +307,7 @@ Retention time depends on
 Medium:             Radio waves
 TMS Used because:   12p in same CE
 
-n of peaks:         n of X in diff CE
-ratio of peaks:     ratio of amounts of p in CE
+n of peaks:         n of CE
+ratio of peaks:     n of p in CE
 
-Split peaks reason: number of adjacent protons
+Split peaks reason: n of adj p

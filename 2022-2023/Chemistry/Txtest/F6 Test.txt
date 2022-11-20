@@ -268,12 +268,10 @@ Differences:
 
 # NS mechanisms
 Sn1: degree 
-- 
-- 
+- Optical: 
 
 Sn2: degree 
-- 
-- 
+- Optical: 
 
 # Polymerization
 This paper tests about 

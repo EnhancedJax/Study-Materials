@@ -9,6 +9,8 @@
 
 # Measurement
 Calculating mean: 
+% uncertainty measurement: 
+% uncertainty mean value: 
 
 Stationary length apparatuses:
 - 

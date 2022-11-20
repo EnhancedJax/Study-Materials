@@ -7,6 +7,8 @@
 
 # Measurement
 Calculating mean: remove +-0.2 
+% uncertainty measurement: res/2/val
+% uncertainty mean value: (max-min)/2/val
 
 Stationary length apparatuses:
 - Meter rule 1mm
