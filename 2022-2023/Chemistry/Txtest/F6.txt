@@ -25,7 +25,9 @@ mol ratio in RDS = order
 Homogenous: Same phase as R
 
 Heterogeneous: Different phase as R
-- Mechanism: Absorption @ surface, reaction, desorption leaving surface
+1. R Adsorb onto surface
+2. weakens bond in R
+3. products then desorb
 - Advantage: No separation from P needed
 
 Autocatalysis: P as catalyst: [P] ^ Rate ^
@@ -229,6 +231,7 @@ Draw: Interaction diagram, NA mechanism, SN12 mechanism
 # Aldehyde & Ketones
 > Forming hydroxynitriles
 KCN alkaline solution is used: provide sufficient CN-
+Why racemic mixture: Molecular is planar around carbonyl C atom, Nu can attack from both sides
 Extreme pH values causes no reaction as
 * pH v CN- v 
 * pH ^ H+ v
@@ -255,6 +258,10 @@ tollen              silver mirror
 Reaction with Na2CO3 -> Sodium alkanoate CO2 H2O 
 
 # Producing esters
+> Acyl chloride reaction properties
+1. Fast
+2. Nucleophilic
+3. Produces HCl
 > Using acyl chlorides compared to acid + alchol:
 Advantages: 
 1. No catalyst 
@@ -289,10 +296,7 @@ This paper tests about Condensation
 Acids + Alchols -> H2O 
 Acids -> H2
 
-# Optical isomerism: Compounds that are
-1. Non-superimposable mirror images of one another
-2. Presence of a chiral center
-3. Molecular formula with different arrangements in space.
+Optical isomerism: Compounds with chiral center
 
 Gas used in GC must be inert
 GC separation reason: attraction of species to stationary phase

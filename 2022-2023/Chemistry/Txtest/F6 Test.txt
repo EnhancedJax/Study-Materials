@@ -25,8 +25,10 @@ Rate determining step:
 Homogenous: 
 
 Heterogeneous: 
-- Mechanism: 
-- Advantage: 
+1. 
+2. 
+3. 
+- Advantage: No separation from P needed
 
 Autocatalysis: 
 - Mechanism: 
@@ -220,6 +222,7 @@ Draw: Interaction diagram, NA mechanism, SN12 mechanism
 # Aldehyde & Ketones
 > Forming hydroxynitriles
 KCN alkaline solution is used: 
+Why racemic mixture: 
 Extreme pH values causes no reaction as
 * 
 * 
@@ -246,6 +249,10 @@ Reagents            Color change
 Reaction with 
 
 # Producing esters
+> Acyl chloride reaction properties
+1. 
+2. 
+3. 
 > Using acyl chlorides compared to acid + alchol:
 Advantages: 
 1. 
@@ -280,10 +287,7 @@ This paper tests about
 Acids + Alchols -> 
 Acids -> 
 
-# Optical isomerism: Compounds that are
-1. 
-2. 
-3. 
+Optical isomerism: 
 
 Gas used in GC must be 
 GC separation reason: 
