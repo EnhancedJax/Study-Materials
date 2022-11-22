@@ -3,7 +3,8 @@
 2. increment
 3. set
 4. range
-5. repeat mean
+5. repeat mean / only mean
+6. unit
 
 # Measurement
 Calculating mean: remove +-0.2 
@@ -21,7 +22,7 @@ Measuring temp for water bath: measure t of water
 Voltage:      Voltmeter parallel to electrical component 
 Current:      Ammeter in series 
 
-## Measuring methods 
+## Measuring methods
 Radius:     diameter / 2
 
 ## Common questions
@@ -32,9 +33,14 @@ Accurate length measurement:
 3. Repeat Mean 
 Determining value by measurements
 1. Device
-2. Measure 
+2. Measure for > 5 set results
 3. Formula
 4. Repeat Mean
+5. check no systematic error
+Why reduce % uncertainty:
+1. uncertainty in measuring device constant
+2. lower % uncertainty
+3. higher res
 
 ## Common uncertainties 
 Zero error: -y with value of error 
@@ -44,6 +50,13 @@ Uncertain position: Repeat Mean
 Using light gates to determine velocity:
 1. Measure length of object 
 2. v = l / t
+
+Completing table: same sf
+
+Finding point at which variable stops behaving normally: 
+1. Keep finding more values
+2. Identify point at which graph curves
+3. Take smaller increments
 
 # Experiments 
 > Extension of spring
@@ -89,17 +102,16 @@ The angle of incidence and refraction are taken from the normal
 • Constructive - n wavelength difference - in phase 
 • Destructive - 0.5n wavelength difference - out of phase 
 
-Total internal reflection 
-i > Critical -> less dense
+Total internal reflection: i > Critical -> less dense
 
 > Unit 4 
 R in parallel = (sum R^-1)^-1
 
-**Distribution of current in circuits**
+**Distribution of current & pd in circuits**
 Series: 
 - I same
 - V sum
-Parallel
+Parallel: 
 - I sum
 - V same
 

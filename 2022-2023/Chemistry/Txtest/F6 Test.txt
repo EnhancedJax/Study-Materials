@@ -28,7 +28,7 @@ Heterogeneous:
 1. 
 2. 
 3. 
-- Advantage: No separation from P needed
+- Advantage: 
 
 Autocatalysis: 
 - Mechanism: 

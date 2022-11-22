@@ -6,6 +6,7 @@
 3. 
 4. 
 5. 
+6. 
 
 # Measurement
 Calculating mean: 
@@ -24,10 +25,10 @@ Voltage:
 Current: 
 
 ## Measuring methods 
-Radius:     
+Radius: 
 
 ## Common questions
-Why measuring device suitable:   
+Why measuring device suitable: 
 Accurate length measurement:   
 1. 
 2. 
@@ -37,6 +38,11 @@ Determining value by measurements
 2. 
 3. 
 4. 
+5. 
+Why reduce % uncertainty: 
+1. 
+2. 
+3. 
 
 ## Common uncertainties 
 Zero error: 
@@ -46,6 +52,13 @@ Uncertain position:
 Using light gates to determine velocity:
 1. 
 2. 
+
+Completing table: 
+
+Finding point at which variable stops behaving normally: 
+1. 
+2. 
+3. 
 
 # Experiments 
 > Extension of spring
@@ -100,13 +113,13 @@ R in parallel =
 Series: 
 - 
 - 
-Parallel
+Parallel: 
 - 
 - 
 
-For graphs: 
+For graphs _: 
 Semi-conductor diode    - 
 Filament                - 
 Thermistor              - 
 
-LDR: Light intensity ^ resistance 
+LDR: Light intensity ^
