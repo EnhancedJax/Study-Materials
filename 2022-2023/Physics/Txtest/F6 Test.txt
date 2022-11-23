@@ -11,6 +11,12 @@ Average force during collision:
 
 circular velocity = 
 
+deriving acceleration of circular motion:
+1. 
+2. 
+3. 
+4. 
+
 ============================================================
 Unit 6
 ============================================================
@@ -29,6 +35,7 @@ Particle interaction V =
 2. 
 3. 
 
+What emission: 
 # Electron guns
 1. 
 2. 
@@ -82,8 +89,13 @@ Graphs:
 - 2nd peak
 - area under graph
 
-
 Work done due to Lenz's law: 
+
+# Transformer
+1. 
+2. 
+3. 
+4. 
 
 AC Generator: 
 DC Motor: 
@@ -94,8 +106,6 @@ Unit 7
 Mass number = 
 Atomic number = 
 alpha particle: 
-
-Plum pudding model: 
 
 # Nuclear model of atom
 Experiment & disproving: 
@@ -119,7 +129,8 @@ Experiment & disproving:
 
 
 # Generation of mass
-Conserved quantities: 
+Produce: 
+Destory: 
 
 # Relativistic lifetime
 1. 
@@ -136,8 +147,6 @@ Memorisation:
 3 quarks forms 
 another formed by quark: 
 
-em force: 
-
 # Particle interactions
 Conserved quantites:
 - 
@@ -148,3 +157,5 @@ Conserved quantites:
 > Energy distribution
 * 
 * 
+
+lambda = 

@@ -10,6 +10,12 @@ Average force during collision: F = p / t
 
 circular velocity = 2pir/t
 
+deriving acceleration of circular motion:
+1. draw vector
+2. theta -> 0, dtheta = dv / v
+3. dtheta = wdt
+4. dv/dt = v^2/r
+
 ============================================================
 Unit 6
 ============================================================
@@ -28,6 +34,7 @@ Particle interaction V = k Q/r
 2. - -> towards
 3. Vectors
 
+What emission: thermionic
 # Electron guns
 1. hot metal surface causes emission of electrons
 2. Anode's +ve charge accelerates e
@@ -71,7 +78,7 @@ Average induced emf: time for max V
 
 # Demonstrating Lenz's law
 > for magnet falling through coil of wire, coil > free
-1. magnet -> coil, dPhi through coil -> induced e I
+1. magnet -> coil, dPhi through coil -> induced e I (complete circuit)
 2. Due to Lenz's law, same pole induced to the pole of magnet approaching coil -> repulsion force slowing down
 3. magnet @ coil, dPhi = 0 -> no induced
 4. magnet <- coil, dPhi through coil -> induced e I in opposite direction
@@ -83,6 +90,12 @@ Graph:
 
 Work done due to Lenz's law: W = Fd so movement caused by Lenz's law does work
 
+# Transformer
+1. AC provides alternating current
+2. AC -> varying magnetic field in core
+3. dPhi through 2nd coil -> induced emf and I (complete circuit)
+4. Diode AC -> DC
+
 AC Generator: induces EMF and current to coil and hence RHR
 DC Motor: exerts magnetic force onto coil and hence LHR
 
@@ -93,12 +106,10 @@ Mass number = p + n
 Atomic number = p
 alpha particle: 4 2 He+
 
-Plum pudding model: Uniform +ve charge sphere with -ve e-
-
 # Nuclear model of atom
 Experiment: Alpha particle scattering, disprove plum-pudding model
 1. most no delfection       -> mostly empty space   ✖ atom matter spread out
-2. small deflected          -> center is +ve charge ✔ no conc. charge
+2. small deflected          -> center is charged    ✔ no conc. charge
 3. very small deflect > 90  -> center is very dense ✔ no conc. mass
 
 # Particle accelerators
@@ -117,7 +128,8 @@ Experiment: Alpha particle scattering, disprove plum-pudding model
 E^ p^ λv, wavelength needs to be comparable to nucleon size
 
 # Generation of mass
-Conserved quantities: EQp
+Produce: Pair production
+Destroy: Annihilation
 
 # Relativistic lifetime
 1. Initial distance propto speed
@@ -134,8 +146,6 @@ Memorisation: up charm strange top 2/3 -1/3 eut -1 neutrino, photon 0
 3 quarks forms baryons
 another formed by quark: 2 opposite quark -> mesons
 
-em force: particles pass photons back and forth between each other
-
 # Particle interactions
 Conserved quantites:
 - EQp
@@ -146,3 +156,5 @@ Conserved quantites:
 > Energy distribution
 * Most energy converted to mass
 * Leftover energy converted to KE
+
+lambda = hc \ e
