@@ -17,6 +17,12 @@ deriving acceleration of circular motion:
 3. 
 4. 
 
+Why does an object move with circular motion: 
+
+Vertical circular motion: 
+* F Top: 
+* F Bot: 
+
 ============================================================
 Unit 6
 ============================================================
@@ -113,6 +119,8 @@ Experiment & disproving:
 2. 
 3. 
 
+Formula to deduce closest length between charged: 
+
 # Particle accelerators
 > Why increase length LINAC
 1. 
@@ -125,6 +133,8 @@ Experiment & disproving:
 3. 
 4. 
 
+Find momentum by n of passes: 
+
 # Why high energy particles used to investigate structures
 
 
@@ -132,15 +142,18 @@ Experiment & disproving:
 Produce: 
 Destory: 
 
-# Relativistic lifetime
+# Relativistic
+> Lifetime
 1. 
 2. 
 3. 
+> Speed
+* 
 
 # Standard model of elementary particles
 1. 
 2. 
-Fundamental - 
+Anti particle - 
 
 Memorisation: 
 

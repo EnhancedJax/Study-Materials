@@ -16,6 +16,12 @@ deriving acceleration of circular motion:
 3. dtheta = wdt
 4. dv/dt = v^2/r
 
+Why does an object move with circular motion: Resultant force by other forces which acts perpendicularly to the direction of motion
+
+Vertical circular motion: 
+* F Top: T + W
+* F Bot: T - W
+
 ============================================================
 Unit 6
 ============================================================
@@ -112,17 +118,21 @@ Experiment: Alpha particle scattering, disprove plum-pudding model
 2. small deflected          -> center is charged    ✔ no conc. charge
 3. very small deflect > 90  -> center is very dense ✔ no conc. mass
 
+Formula to deduce closest length between charged: W / Q = k Q / d
+
 # Particle accelerators
 > Why increase length LINAC
 1. E field accelerate particle across gap
 2. Particle speed constant in tube
 3. pd oscillate at constant Hz -> time in gaps & tubes constant
-4. Particles enter gap & tutbe with v^, so gap & tubes length ^
+4. Particles enter gap & tutbe with v^, s=vt so gap & tubes length ^
 > Why t needed particles cyclotron
 1. v no relationship with t
 2. time in dees constant
 3. pd oscillate at constant Hz
 4. As pd across gap is in correct direction to accelerate particles each time they pass
+
+Find momentum by n of passes: E = Efield x d x Q
 
 # Why high energy particles used to investigate structures
 E^ p^ λv, wavelength needs to be comparable to nucleon size
@@ -131,15 +141,18 @@ E^ p^ λv, wavelength needs to be comparable to nucleon size
 Produce: Pair production
 Destroy: Annihilation
 
-# Relativistic lifetime
+# Relativistic 
+> Lifetime
 1. Initial distance propto speed
 2. At speeds approaching c, lifetime observed stationarily > predicted lifetime due to relativistic increase
 3. Particle travels further as lifetime extended
+> Speed
+* Approaching c, v almost constant
 
 # Standard model of elementary particles
 Hadrons - Formed by quarks
 Leptons - Fundamental
-Fundamental - Cannot be broken down further
+Anti particle - same m, equal but opposite Q & Number
 
 Memorisation: up charm strange top 2/3 -1/3 eut -1 neutrino, photon 0
 
