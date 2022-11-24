@@ -1,4 +1,6 @@
-\\memory size: 30\\
+\\memory size: 40\\
+
+When solving abs functions: 
 
 f(x+t)      
 f(x) + t    
@@ -10,14 +12,19 @@ sec2 =
 cosec2 = 
 
 1 = 
-### Following symbols of + - represents ± ∓
 
+### Following symbols of + - represents ± ∓
 s(+) = 
 c(+) = 
 s2 = 
 c2 = 
 
-Prove s+s = 2s(+/2)c(-/2) by: s(+) + s(-) let a b -> A
+Prove s+s = 2s(+/2)c(-/2) by: 
+
+# Useful formulas: 
+s^2 = 
+sc = 
+ss = 
 
 For a > 0
 as(x) + bc(x) = 
@@ -25,6 +32,7 @@ ac(x) + bs(x) =
 K = 
 
 f(x)        f'(x)
+a^x         
 e^kx        
 lnkx        
 sinkx       

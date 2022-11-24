@@ -9,7 +9,7 @@ Inelastic collision:
 Impulse: 
 Average force during collision: 
 
-circular velocity = 
+w = 
 
 deriving acceleration of circular motion:
 1. 

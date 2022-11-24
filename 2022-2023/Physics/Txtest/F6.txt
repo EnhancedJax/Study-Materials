@@ -8,7 +8,7 @@ Inelastic collision: KE not conserved
 Impulse: p = Ft
 Average force during collision: F = p / t
 
-circular velocity = 2pir/t
+w = 2pir/t
 
 deriving acceleration of circular motion:
 1. draw vector
@@ -40,7 +40,7 @@ Particle interaction V = k Q/r
 2. - -> towards
 3. Vectors
 
-What emission: thermionic
+What emission: thermionic, e- in heated metal gain energy and leave surface
 # Electron guns
 1. hot metal surface causes emission of electrons
 2. Anode's +ve charge accelerates e
@@ -170,4 +170,4 @@ Conserved quantites:
 * Most energy converted to mass
 * Leftover energy converted to KE
 
-lambda = hc \ e
+lambda = hc \ E
