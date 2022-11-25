@@ -1,8 +1,13 @@
 \\memory size: 50\\
 
 sd = 
+var = 
 
 Interpolation: 
+
+coded y = ax + b:
+mean y = 
+var y = 
 
 # Histogram
 Bar {w = , h = }
@@ -13,6 +18,7 @@ So area =
 Lean left = 
 Using quartiles to calculate skew: 
 Using mean media to calculate skew: 
+Skew towards: 
 
 # Comparing data
 Location
@@ -24,6 +30,7 @@ Spread
 - 
 
 For skewed data, use 
+because: 
 
 # Probabilitiy
 A given that B: P(A|B) = 
@@ -35,6 +42,7 @@ Strong positive correlation =
 
 Value of PMCC (r) 
 Practical meaning: 
+Absolute relationship r = 
 
 Regression line: 
 
@@ -47,6 +55,9 @@ Var(X) =
 Y = aX + b
 E(Y) = 
 Var(Y) = 
+Which value, outcome or prob, is affected by coding: 
 
 # Normal dist
 Standardizing: P(X < x) = 
+P (a < Z < b) = 
+P (Z > c) = 
