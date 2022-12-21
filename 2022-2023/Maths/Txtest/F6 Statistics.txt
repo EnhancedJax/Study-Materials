@@ -10,8 +10,8 @@ mean y = a meanx + b
 var y = a^2 varx
 
 # Histogram
-fd = frequency / class interval * scale
 Bar {w = class interval, h = fd}
+fd = frequency / class interval * scale
 So area = frequnecy
 
 # Skewness

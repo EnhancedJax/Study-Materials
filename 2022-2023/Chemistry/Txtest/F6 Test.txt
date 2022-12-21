@@ -19,7 +19,10 @@ Type:
 1: 
 2: 
 
-Rate determining step: 
+Determining the rate equation from steps
+1.	
+2.	
+3.	
 
 # Catalyst types
 Homogenous: 

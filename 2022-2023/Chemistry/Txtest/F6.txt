@@ -17,9 +17,10 @@ rate conc. graph
 1: Linear
 2: Curved
 
-Rate determining step: Slowest step
-R in RDS = R in eq
-mol ratio in RDS = order 
+Determining the rate equation from steps
+1.	
+2.	
+3.	
 
 # Catalyst types
 Homogenous: Same phase as R
