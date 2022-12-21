@@ -37,10 +37,7 @@ Determining value by measurements
 3. Formula
 4. Repeat Mean
 5. check no systematic error
-Why reduce % uncertainty:
-1. uncertainty in measuring device constant
-2. lower % uncertainty
-3. higher res
+Why reduce % uncertainty: % uncertainty in device is constant for increased measurement
 
 ## Common uncertainties 
 Zero error: -y with value of error 

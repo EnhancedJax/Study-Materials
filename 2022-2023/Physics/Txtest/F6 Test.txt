@@ -11,7 +11,7 @@ Average force during collision:
 
 w = 
 
-deriving acceleration of circular motion:
+⭐ deriving acceleration of circular motion:
 1. 
 2. 
 3. 
@@ -31,12 +31,12 @@ Electric field strength unit:
 
 Particle interaction V = 
 
-# Drawing field lines:
+# ⭐ Drawing field lines:
 1. 
 2. 
 3. 
 
-# Explain field direction
+# ⭐ Explain field direction
 1. 
 2. 
 3. 
@@ -46,12 +46,12 @@ What emission:
 1. 
 2. 
 
-# Capacitor function
+# ⭐ Capacitor function
 * 
 * 
 * 
 
-# Explain capacitor charge with e- flow
+# ⭐ Explain capacitor charge with e- flow
 * 
 * 
 * 
@@ -83,7 +83,7 @@ Current is induced when
 
 Average induced emf: 
 
-# Demonstrating Lenz's law
+# ⭐ Demonstrating Lenz's law
 > 
 1. 
 2. 
@@ -97,7 +97,7 @@ Graphs:
 
 Work done due to Lenz's law: 
 
-# Transformer
+# ⭐ Transformer
 1. 
 2. 
 3. 
@@ -121,7 +121,7 @@ Experiment & disproving:
 
 Formula to deduce closest length between charged: 
 
-# Particle accelerators
+# ⭐ Particle accelerators
 > Why increase length LINAC
 1. 
 2. 

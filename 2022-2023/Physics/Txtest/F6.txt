@@ -100,7 +100,7 @@ Work done due to Lenz's law: W = Fd so movement caused by Lenz's law does work
 1. AC provides alternating current
 2. AC -> varying magnetic field in core
 3. dPhi through 2nd coil -> induced emf and I (complete circuit)
-4. Diode AC -> DC
+4. Diode converts AC -> DC
 
 AC Generator: induces EMF and current to coil and hence RHR
 DC Motor: exerts magnetic force onto coil and hence LHR
@@ -127,7 +127,7 @@ Formula to deduce closest length between charged: W / Q = k Q / d
 3. pd oscillate at constant Hz -> time in gaps & tubes constant
 4. Particles enter gap & tutbe with v^, s=vt so gap & tubes length ^
 > Why t needed particles cyclotron
-1. v no relationship with t
+1. v independent of t
 2. time in dees constant
 3. pd oscillate at constant Hz
 4. As pd across gap is in correct direction to accelerate particles each time they pass

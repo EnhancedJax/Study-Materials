@@ -40,9 +40,6 @@ Determining value by measurements
 4. 
 5. 
 Why reduce % uncertainty: 
-1. 
-2. 
-3. 
 
 ## Common uncertainties 
 Zero error: 

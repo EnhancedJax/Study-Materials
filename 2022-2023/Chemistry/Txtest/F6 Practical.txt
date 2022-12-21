@@ -17,7 +17,7 @@ Method 2: conc. H2SO4 => White brown purple fumes (HCl, Br2, I2)
 # Organic analysis
 > C=C
 Method 1: Br2 => Decolorised
-Method 2: Acidified K2MnO4 => Decolorised
+Method 2: Acidified KMnO4 => Decolorised
 Method 3: Burn => Smoky flame
 
 > Hydroxyl group
@@ -53,7 +53,7 @@ n = mol of solute
 Latter part of temp-time graph: Heat transferred from surrounding to system
 
 > Asumptions
-1. Solution density 1gmcm-3
+1. Solution density 1gcm-3
 2. Specific heat capacity same as water
 
 > CQ 
@@ -87,7 +87,7 @@ Also test: Drawing reflux & distillation
 Slow addition of acid with cooling: Reaction exothermic, prevent boiling over 
 * Reflux 
 Powdered solid: Increase surface area, faster reaction
-Anti-bumping granules: Revent mixtrue from overflowing to condenser
+Anti-bumping granules: Prevent mixture from overflowing to condenser
 * Separating funnel 
 Effervescence: Remove stopper to release built-up pressure 
 Species added when running off: Remove excess acid 
@@ -101,5 +101,5 @@ Obtain dry crystals: Heat to crystallization, leave to crystallize, dry in oven
 
 # Indicators
 Methyl orange: ROY
-Phenolphthalein: CPR
+Phenolphthalein: CCP
 Litmus paper: RB
