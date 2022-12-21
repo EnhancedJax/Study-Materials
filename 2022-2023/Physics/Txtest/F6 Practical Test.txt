@@ -1,5 +1,3 @@
-\\memory size: 100\\
-
 # Criticizing data 
 1. 
 2. 

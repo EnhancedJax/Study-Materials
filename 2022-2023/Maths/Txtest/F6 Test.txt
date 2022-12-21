@@ -1,5 +1,3 @@
-\\memory size: 40\\
-
 When solving abs functions: 
 
 f(x+t)      
