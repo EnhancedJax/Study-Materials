@@ -30,9 +30,10 @@ ac(x) + bs(x) =
 K = 
 
 f(x)        f'(x)
+-----------------
 a^x         
-e^kx        
-lnkx        
-sinkx       
-coskx       
-tankx       
+e^x         
+lnx         
+sinx        
+cosx        
+tanx        

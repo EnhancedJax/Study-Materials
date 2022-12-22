@@ -3,7 +3,7 @@ Unit 11
 ============================================================
 
 Rate of reaction - Rate of change of conc. of R
-Overall order of reaction - Product of powers of all conc. of R in r8 eq
+Overall order of reaction - Sum of powers of all conc. of R in r8 eq
 
 rate & k units are derived
 
@@ -18,15 +18,15 @@ rate conc. graph
 2: Curved
 
 Determining the rate equation from steps
-1.	
-2.	
-3.	
+1. Remove intermediates
+2. Find RDS (Slowest)
+3. Check for equilibrium & substitute
 
 # Catalyst types
 Homogenous: Same phase as R
 
 Heterogeneous: Different phase as R
-1. R Adsorb onto surface
+1. R a(d)sorb onto surface
 2. weakens bond in R
 3. products then desorb
 - Advantage: No separation from P needed
@@ -52,17 +52,9 @@ Sn2: degree 1 2
 2. Quench by removing catalyst or icing
 3. Titrate with reagent
 
-> Color change
-Reactions with aq solutions
-
-> Change of volume of gas
-Reactions with gaseous P
 Collecting of gas: 
 - Over water not applicable: NH3 CO2 dissolves
 - With syringe: Higher precision
-
-> Change of mass of gas
-Reactions with high density gaseous P
 
 > Electrical conductivity
 Reactions with change of n of ions, ions ^ conductivity ^
@@ -82,7 +74,7 @@ Unit 12
 
 Total entropy change = sys + sur
 sys = dSproduct - dSreactant
-sur = -dH / t           dH in J
+sur = -dH / T           dH in J
 
 Free energy change = dH - TdS
 
@@ -108,10 +100,10 @@ LE (frm)- gi s
 LE (dis)- [frm rvse] by complete dissociation
 
 Frm & Dis:
-Same value due to measure of ionic bonding
-Diff sign due to opposite processes
-Formation -ve energy released from making bonds
-Dissociation +ve energy required to break bonds
+- Same value due to measure of ionic bonding
+- Diff sign due to opposite processes
+> Formation -ve energy released from making bonds
+> Dissociation +ve energy required to break bonds
 
 LE & Hydration: Charge density ^ → Strong forces of attraction between ions → More exothermic
 
@@ -125,7 +117,7 @@ Due to assumptions:
 2. Ions are perfectly spherical
 3. Charge is evenly distributed around the center
 
-Reason for difference: Charge density difference ^ -> Polarization ^ -> Covalency ^ -> %diff ^ -> Solubility in H2O ^
+Reason for difference: cd diff ^ polarization ^ covalency ^ % diff ^ solubility ^
 
 # To explain difference for a molecule
 1. Cation high charge density
@@ -194,7 +186,7 @@ Kw = [H+][OH-]
 - Water & acid does not dissociate to change [H+]
 
 # Strengths of acid and base
-Strong acids: Halids H2SO4 HNO3
+Strong acids: Halides H2SO4 HNO3
 Strong bases: MOH
 Weak bases: NH3
 
@@ -232,7 +224,7 @@ Draw: Interaction diagram, NA mechanism, SN12 mechanism
 # Aldehyde & Ketones
 > Forming hydroxynitriles
 KCN alkaline solution is used: provide sufficient CN-
-Why racemic mixture: Molecular is planar around carbonyl C atom, Nu can attack from both sides
+Why racemic mixture: Molecule is planar around carbonyl C atom, Nu can attack from both sides
 Extreme pH values causes no reaction as
 * pH v CN- v 
 * pH ^ H+ v
@@ -258,11 +250,11 @@ tollen              silver mirror
 > Test for acids
 Reaction with Na2CO3 -> Sodium alkanoate CO2 H2O 
 
-# Producing esters
 > Acyl chloride reaction properties
 1. Fast
 2. Nucleophilic
 3. Produces HCl
+# Producing esters
 > Using acyl chlorides compared to acid + alchol:
 Advantages: 
 1. No catalyst 

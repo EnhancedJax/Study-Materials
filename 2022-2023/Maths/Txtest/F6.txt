@@ -1,8 +1,8 @@
-When solving abs functions: Consider both sides
+When solving abs functions: Consider both sides with OR rel., consider cases with AND rel.
 
 f(x+t)      t -> -x
 f(x) + t    t -> y
-f(sx)       s -> x/s
+f(sx)       s -> 1/x
 sf(x)       s -> y
 
 2 identities for sec cosec:
@@ -28,9 +28,10 @@ acx + bsx = sqrt(sumof2)c(x-K)
 K = c^-1 a/sqrt(sumof2)
 
 f(x)        f'(x)
+-----------------
 a^x         lna a^x
-e^kx        e^kx
-lnkx        x^-1
-sinkx       kcoskx
-coskx       -ksinkx
-tankx       ksec2kx
+e^x         e^x
+lnx         1/x
+sinx        cosx
+cosx        -sinx
+tanx        sec^2(x)

@@ -18,9 +18,9 @@ Type:
 2: 
 
 Determining the rate equation from steps
-1.	
-2.	
-3.	
+1. 
+2. 
+3. 
 
 # Catalyst types
 Homogenous: 
@@ -89,6 +89,7 @@ The enthalpy measured at 100Kpa 298K
 rx      - 
 forma   - 
 
+1 mol of [X] formed from 1 mol [Y]
 - 
 - 
 - 
@@ -195,7 +196,7 @@ Vertical region of titration curve:
 At half equivalence volume pH = 
 Equivalence volume: 
 > Curve shape
-Initial increase in pH: solution
+Initial increase in pH: 
 If acid added to base: 
 Initial pH: 
 
@@ -249,11 +250,11 @@ Reagents            Color change
 > Test for acids
 Reaction with 
 
-# Producing esters
 > Acyl chloride reaction properties
 1. 
 2. 
 3. 
+# Producing esters
 > Using acyl chlorides compared to acid + alchol:
 Advantages: 
 1. 

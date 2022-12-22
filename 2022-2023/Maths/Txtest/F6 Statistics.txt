@@ -1,7 +1,4 @@
-
-
 sd = sqrt(sum2/n - (sum/n)2)
-var = 
 
 Interpolation: val - B / A - B = pos - Bf / Af - Bf
 
@@ -30,7 +27,7 @@ Spread
 - Range
 
 For skewed data, use Median & IQR
-beacuse: less affected by extreme values
+because: less affected by extreme values
 
 # Probabilitiy
 A given that B: P(A|B) = P(AUB)/P(B)

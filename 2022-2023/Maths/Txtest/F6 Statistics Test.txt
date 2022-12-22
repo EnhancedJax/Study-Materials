@@ -1,5 +1,4 @@
 sd = 
-var = 
 
 Interpolation: 
 
@@ -15,7 +14,7 @@ So area =
 # Skewness
 Lean left = 
 Using quartiles to calculate skew: 
-Using mean media to calculate skew: 
+Using mean median to calculate skew: 
 Skew towards: 
 
 # Comparing data
