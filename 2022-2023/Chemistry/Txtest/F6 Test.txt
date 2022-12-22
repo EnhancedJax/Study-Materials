@@ -22,6 +22,8 @@ Determining the rate equation from steps
 2. 
 3. 
 
+Temperature increases rate by: 
+
 # Catalyst types
 Homogenous: 
 
@@ -123,6 +125,7 @@ Reason for difference:
 1. 
 2. 
 3. 
+4. 
 
 Why Ag compounds have higher solubility: 
 

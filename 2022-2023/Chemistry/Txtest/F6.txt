@@ -22,6 +22,8 @@ Determining the rate equation from steps
 2. Find RDS (Slowest)
 3. Check for equilibrium & substitute
 
+Temperature increases rate by: average energy molecules ^ more particles E > Ea
+
 # Catalyst types
 Homogenous: Same phase as R
 
@@ -123,6 +125,7 @@ Reason for difference: cd diff ^ polarization ^ covalency ^ % diff ^ solubility 
 1. Cation high charge density
 2. Cation polarizes anion
 3. There is some covalency in bonding
+4. Other molecule bonding 100% ionic
 
 Why Ag compounds have higher solubility: outermost shell 4d10 which offers less shielding than most cations -> Covalency ++
 
