@@ -98,6 +98,7 @@ Distillate collected in temp range:
 # Others
 Heating stop, remove delivery tube: 
 Obtain dry crystals: 
+Produce dry samples: 
 
 # Indicators
 Methyl orange: 

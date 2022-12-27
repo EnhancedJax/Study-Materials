@@ -98,6 +98,7 @@ Distillate collected in temp range: Only target species boil within this range, 
 # Others
 Heating stop, remove delivery tube: Suck-back occurs, lower pressure in test tube, test tube will crack
 Obtain dry crystals: Heat to crystallization, leave to crystallize, dry in oven
+Produce dry samples: Use drying agent, wait until goes clear, filter off the solid
 
 # Indicators
 Methyl orange: ROY

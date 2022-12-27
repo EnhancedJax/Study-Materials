@@ -40,7 +40,6 @@ Autocatalysis: P as catalyst: [P] ^ Rate ^
 Sn1: degree 3 2
 - Mechanism: X leaves
 - Steps: 2
-- Rate eq: Step 1 RDS (slow)
 - Fastest: Tertiary RX due to stability of C+
 
 Sn2: degree 1 2
@@ -63,7 +62,7 @@ Reactions with change of n of ions, ions ^ conductivity ^
 
 # Iodine clock reaction
 Starch and thiosulfate (S2O3) added
-Blue black color formed     - i2 rx starch
+Blue black color formed     - i2 rx starch product
 2I- reproduced              - i2 rx s2o3
 Time to show color is delayed because thiosulfate needs to use up first
 > Quenching

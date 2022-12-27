@@ -40,7 +40,6 @@ Autocatalysis:
 Sn1: degree 
 - Mechanism: 
 - Steps: 
-- Rate eq: 
 - Fastest: 
 
 Sn2: degree 
@@ -87,7 +86,7 @@ Free energy change =
 , , reaction 
 Solubility of ionic solid deduced with 
 
-The enthalpy measured at 100Kpa 298K
+The enthalpy measured at: 
 rx      - 
 forma   - 
 

@@ -21,6 +21,11 @@ Why does an object move with circular motion:
 Vertical circular motion: 
 * F Top: 
 * F Bot: 
+* 
+
+Horizontal circular motion formula
+* 
+* derived from: 
 
 ============================================================
 Unit 6
@@ -49,6 +54,7 @@ What emission:
 * 
 * 
 * 
+C = Q / V = 
 
 # ⭐ Explain capacitor charge with e- flow
 * 
@@ -140,6 +146,7 @@ Find momentum by n of passes:
 # Generation of mass
 Produce: 
 Destory: 
+Calculation: 
 
 # Relativistic
 > Lifetime
@@ -155,6 +162,7 @@ Destory:
 Anti particle - 
 
 Memorisation: 
+Prediction: 
 
 3 quarks forms 
 another formed by quark: 
