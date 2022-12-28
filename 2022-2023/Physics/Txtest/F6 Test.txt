@@ -124,14 +124,29 @@ Experiment & disproving:
 2. 
 3. 
 
+Why lead box: 
+
 Formula to deduce closest length between charged: 
 
 # ⭐ Particle accelerators
+> LINAC explaination
+1. 
+2. 
+3. 
 > Why increase length LINAC
 1. 
 2. 
 3. 
 4. 
+> LINAC collisions
+* 
+- Stationary: 
+- oppo colli: 
+
+> Cyclotron explaination
+1. 
+2. 
+3. 
 > Why t needed particles cyclotron
 1. 
 2. 
@@ -153,8 +168,6 @@ Calculation:
 1. 
 2. 
 3. 
-> Speed
-* 
 
 # Standard model of elementary particles
 1. 
@@ -162,6 +175,7 @@ Calculation:
 Anti particle - 
 
 Memorisation: 
+What does +2/3 mean: 
 Prediction: 
 
 3 quarks forms 

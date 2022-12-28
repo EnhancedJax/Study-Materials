@@ -35,3 +35,4 @@ lnx         1/x
 sinx        cosx
 cosx        -sinx
 tanx        sec^2(x)
+|x|         |x|/x

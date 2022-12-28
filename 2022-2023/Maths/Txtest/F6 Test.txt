@@ -37,3 +37,4 @@ lnx
 sinx        
 cosx        
 tanx        
+|x|         
