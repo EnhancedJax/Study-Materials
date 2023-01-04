@@ -23,10 +23,6 @@ Vertical circular motion:
 * F Bot: 
 * 
 
-Horizontal circular motion formula
-* 
-* derived from: 
-
 ============================================================
 Unit 6
 ============================================================
@@ -115,8 +111,11 @@ DC Motor:
 Unit 7
 ============================================================
 Mass number = 
+Mass number also called: 
 Atomic number = 
 alpha particle: 
+beta particle: 
+gamma ray: 
 
 # Nuclear model of atom
 Experiment & disproving: 
@@ -161,7 +160,6 @@ Find momentum by n of passes:
 # Generation of mass
 Produce: 
 Destory: 
-Calculation: 
 
 # Relativistic
 > Lifetime
@@ -186,9 +184,10 @@ Conserved quantites:
 - 
 - 
 - 
-- 
 
-> Energy distribution
+> Energy and momentum conservation
+* 
+* 
 * 
 * 
 

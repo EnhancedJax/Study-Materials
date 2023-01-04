@@ -23,10 +23,6 @@ Vertical circular motion:
 * F Bot: T - W
 * F is resultant force of T and W
 
-Horizontal circular motion formula
-* tan(Theta) = v^2/rg
-* derived from: Tsin(Theta) / Tcos(Theta)
-
 ============================================================
 Unit 6
 ============================================================
@@ -115,8 +111,11 @@ DC Motor: exerts magnetic force onto coil and hence LHR
 Unit 7
 ============================================================
 Mass number = p + n
+Mass number also called: 
 Atomic number = p
 alpha particle: 4 2 He+
+beta particle: 0 -1
+gamma ray: 0 0
 
 # Nuclear model of atom
 Experiment: Alpha particle scattering, disprove plum-pudding model
@@ -161,7 +160,6 @@ E^ p^ λv, wavelength needs to be comparable to nucleon size
 # Generation of mass
 Produce: Pair production
 Destroy: Annihilation
-Calculation: x2
 
 # Relativistic 
 > Lifetime
@@ -186,10 +184,11 @@ Conserved quantites:
 - EQp
 - Baryon number (1, -1, 0)
 - Lepton number (1, -1 ,0)
-- Strangness (-1, 1 ,0)
 
-> Energy distribution
-* Most energy converted to mass
-* Leftover energy converted to KE
+> Energy and momentum conservation
+* E = mc^2
+* mass energy conserved
+* vector momentum diagram
+* componnents equal
 
 lambda = hc \ E
