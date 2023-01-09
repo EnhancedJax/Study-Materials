@@ -1,3 +1,9 @@
+# Paper checking: 
+* 
+* 
+* 
+* 
+
 When solving abs functions: 
 
 f(x+t)      

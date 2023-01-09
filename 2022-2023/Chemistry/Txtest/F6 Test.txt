@@ -21,8 +21,9 @@ Determining the rate equation from steps
 1. 
 2. 
 3. 
+4. 
 
-Temperature increases rate by: 
+Why does rate increase when t increase: 
 
 # Catalyst types
 Homogenous: 
@@ -33,7 +34,7 @@ Heterogeneous:
 3. 
 - Advantage: 
 
-Autocatalysis: 
+Autocatalysis:  
 - Mechanism: 
 
 # NS mechanisms
@@ -91,14 +92,13 @@ rx      -
 forma   - 
 
 1 mol of [X] formed from 1 mol [Y]
-- 
-- 
-- 
+-
+-
+-
 
-- 
-- 
-- 
-- 
+sol - 
+hyd - 
+LE - 
 
 frm & dis:
 - 
@@ -124,7 +124,6 @@ Reason for difference:
 1. 
 2. 
 3. 
-4. 
 
 Why Ag compounds have higher solubility: 
 
@@ -157,7 +156,11 @@ K, Q units are
 K, Q & Eq: 
 Explaination: 
 
-total entropy change = 
+dSt = 
+
+> Other methods of increasing yield
+1. 
+2. 
 
 ============================================================
 Unit 14
@@ -179,6 +182,7 @@ pH =
 
 > Weak acids and bases' pH
 Ka = 
+
 
 > Strong bases
 Strong bases completely dissociate in water: 
@@ -207,11 +211,17 @@ Buffer solution -
 Formed from: 
 Buffer solution acid / base: 
 
+Adding acids to buffer solution: 
+
 > Resistance of change of pH
 1. 
 2. 
 3. 
 4. 
+
+> Explain how solution acts as buffer with given equilibriums
+1. 
+2. 
 
 ============================================================
 Unit 15
@@ -230,6 +240,7 @@ Why racemic mixture:
 Extreme pH values causes no reaction as
 * 
 * 
+Hydroxynitriles to carboxylic acids: 
 
 > Test for carbonyl
 
@@ -239,9 +250,12 @@ Identifying compounds:
 > Test for CH3C=O
 
 
-> Test for aldehydes
+> Test for 1,2 deg alchols
 Reagents            Color change
 
+
+> Test for aldehydes
+Reagents            Color change
 
 
 
@@ -251,6 +265,8 @@ Reagents            Color change
 2. 
 > Test for acids
 Reaction with 
+
+Why organic acid stronger: 
 
 > Acyl chloride reaction properties
 1. 
@@ -287,21 +303,19 @@ Sn2: degree
 
 # Polymerization
 This paper tests about 
-> Small molecule
-Acids + Alchols -> 
+> Produced small group:
+Di-Acids + Di-ols -> 
 Acids -> 
 
 Optical isomerism: 
+Number of optical isomers: 
 
 Gas used in GC must be 
 GC separation reason: 
 Colum separation reason: 
 Rf = 
 
-Retention time depends on
-- 
-- 
-- 
+Retention time varation determined by: 
 
 # NMR Spectroscopy
 Medium:             

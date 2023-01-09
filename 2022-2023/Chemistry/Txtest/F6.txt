@@ -21,8 +21,9 @@ Determining the rate equation from steps
 1. Remove intermediates
 2. Find RDS (Slowest)
 3. Check for equilibrium & substitute
+4. mol ratio from RDS
 
-Temperature increases rate by: average energy molecules ^ more particles E > Ea
+Why does rate increase when t increase: average energy molecules ^ more particles E > Ea
 
 # Catalyst types
 Homogenous: Same phase as R
@@ -120,11 +121,11 @@ Due to assumptions:
 
 Reason for difference: cd diff ^ polarization ^ covalency ^ % diff ^ solubility ^
 
-# To explain difference for a molecule
-1. Cation high charge density
+# To explain difference:
+> Reverse applies for anion
+1. Cation size, charge -> high charge density
 2. Cation polarizes anion
 3. There is some covalency in bonding
-4. Other molecule bonding 100% ionic
 
 Why Ag compounds have higher solubility: outermost shell 4d10 which offers less shielding than most cations -> Covalency ++
 
@@ -159,6 +160,10 @@ Change P -> Change Q ratio -> Opposite change for K -> Affect Eq
 
 dSt = R ln K
 
+> Other methods of increasing yield
+1. Remove the product as they are formed; or
+2. Reuse unreacted reactants
+
 ============================================================
 Unit 14
 ============================================================
@@ -181,7 +186,7 @@ pH = -log[H+]
 Ka = [H+]2 / [HA]
 
 > Strong bases
-Strong bases completely dissociate in water: [OH-] = [BOH]
+Strong bases completely dissociate in water: [OH-] = [BOH] * mol of (OH-) in compound
 Kw = [H+][OH-]
 
 > Assumptions
@@ -207,11 +212,17 @@ Buffer solution - Solution which resist changes in pH when small volumes of acid
 Formed from: weak AB + conjugate BA / salt 
 Buffer solution acid / base: if conjugate formed from a weak acid or base
 
+Adding acids to buffer solution: [HA]^ [A-]v
+
 > Resistance of change of pH
 1. Excess amounts of HA & A-
 2. Added acid reacts with A- / added base reacts with HA
 3. H+ + A- -> HA / OH- + HA -> H2O + A-
 4. Ratio of HA to A- remains unchanged
+
+> Explain how solution acts as buffer with given equilibriums
+1. Added AB reacts with BA
+2. Eq1 and Eq2 products and moves to keep [H+] constant
 
 ============================================================
 Unit 15
@@ -230,6 +241,7 @@ Why racemic mixture: Molecule is planar around carbonyl C atom, Nu can attack fr
 Extreme pH values causes no reaction as
 * pH v CN- v 
 * pH ^ H+ v
+Hydroxynitriles to carboxylic acids: R(OH)CN + 2H2O + H+ -> R(OH)COOH + NH4+
 
 > Test for carbonyl
 DNPH2 -> orange solid
@@ -239,9 +251,12 @@ Identifying compounds: Measure melting point and Compare with databook values
 > Test for CH3C=O
 Warm alkaline aq. solution of I2 -> yellow pp CHI3
 
-> Test for aldehydes
+> Test for 1,2 deg alchols
 Reagents            Color change
 acidified k2cr2o7   orange -> green
+
+> Test for aldehydes
+Reagents            Color change
 fehling benedict    blue -> red
 tollen              silver mirror
 
@@ -250,7 +265,9 @@ tollen              silver mirror
 1. Acid catalyst (sulfuric acid)
 2. Heating (reflux)
 > Test for acids
-Reaction with Na2CO3 -> Sodium alkanoate CO2 H2O 
+Reaction with carbonates -> CO2 + H2O + ...
+
+Why organic acid stronger: acid anion more stable
 
 > Acyl chloride reaction properties
 1. Fast
@@ -287,21 +304,19 @@ Sn2: degree 1 2
 
 # Polymerization
 This paper tests about Condensation
-> Small molecule
-Acids + Alchols -> H2O 
+> Produced small group:
+Di-Acids + Di-ols -> H2O 
 Acids -> H2
 
 Optical isomerism: Compounds with chiral center
+Number of optical isomers: 2^n
 
 Gas used in GC must be inert
 GC separation reason: attraction of species to stationary phase
 Colum separation reason: attraction of species to stationary & mobile phase
 Rf = moved / front - base
 
-Retention time depends on
-- Nature of solvent
-- Pressure
-- Temperature
+Retention time varation determined by: s = vt
 
 # NMR Spectroscopy
 Medium:             Radio waves

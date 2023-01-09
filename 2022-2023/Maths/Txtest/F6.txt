@@ -1,3 +1,9 @@
+# Paper checking: 
+* sf
+* domain
+* give inverse domain
+* recalc
+
 When solving abs functions: Consider both sides with OR rel., consider cases with AND rel.
 
 f(x+t)      t -> -x
