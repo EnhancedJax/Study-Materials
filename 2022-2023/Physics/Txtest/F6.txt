@@ -1,3 +1,8 @@
+# Paper checking
+* diameter
+* revised points
+* conservation
+
 ============================================================
 Unit 5
 ============================================================
@@ -63,11 +68,8 @@ Charging curves: I down VQ up
 Discharing curves: All down
 I-t graph area under: Total charge
 
-Magnetic poles always exists with both NS
-N -> S
-S -> N if center
-
 m flux density (B T) measure of strength of m field
+Is B a vector? Yes
 m flux (Phi Wb) describes magnetic field lines passing through a given area
 
 LHR: FBI
@@ -124,6 +126,7 @@ Experiment: Alpha particle scattering, disprove plum-pudding model
 3. very small deflect > 90  -> center is very dense ✔ no conc. mass
 
 Why lead box: Lead absorbs e travelling in directions other than towards foil
+Why thin layer: fewer layers of gold, which would absorb the alpha particle
 
 Formula to deduce closest length between charged: W / Q = k Q / d
 
@@ -190,5 +193,7 @@ Conserved quantites:
 * mass energy conserved
 * vector momentum diagram
 * componnents equal
+Assumption:
+- No external forces act
 
 lambda = hc \ E

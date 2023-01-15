@@ -251,7 +251,7 @@ Identifying compounds: Measure melting point and Compare with databook values
 > Test for CH3C=O
 Warm alkaline aq. solution of I2 -> yellow pp CHI3
 
-> Test for 1,2 deg alchols
+> Test for 1,2 deg alchols & aldehydes from ketones
 Reagents            Color change
 acidified k2cr2o7   orange -> green
 

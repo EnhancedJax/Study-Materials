@@ -29,13 +29,24 @@ Spread
 For skewed data, use 
 because: 
 
+# Position of data value with Quartile criteria
+1. Added 
+2. Added 
+
 # Probabilitiy
 A given that B: P(A|B) = 
 Independent events: 
 Mutually exclusive: 
 
+# Types of distrubtion in P1
+1. 
+2. 
+
 # Data correlation
 Strong positive correlation = 
+
+Sxy = 
+Similar, but not the same as SD!
 
 Value of PMCC (r) 
 Practical meaning: 

@@ -250,7 +250,7 @@ Identifying compounds:
 > Test for CH3C=O
 
 
-> Test for 1,2 deg alchols
+> Test for 1,2 deg alchols & aldehydes from ketone
 Reagents            Color change
 
 

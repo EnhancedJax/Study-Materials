@@ -1,3 +1,8 @@
+# Paper checking
+* 
+* 
+* 
+
 ============================================================
 Unit 5
 ============================================================
@@ -63,11 +68,8 @@ Charging curves:
 Discharing curves: 
 I-t graph area under: 
 
-Magnetic poles always exists with 
- -> 
- ->  if center
-
 m flux density () 
+Is B a vector? 
 m flux () 
 
 LHR: 
@@ -124,6 +126,7 @@ Experiment & disproving:
 3. 
 
 Why lead box: 
+Why thin layer: 
 
 Formula to deduce closest length between charged: 
 
@@ -190,5 +193,7 @@ Conserved quantites:
 * 
 * 
 * 
+Assumption:
+- 
 
 lambda = 

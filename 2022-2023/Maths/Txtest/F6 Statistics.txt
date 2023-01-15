@@ -29,13 +29,24 @@ Spread
 For skewed data, use Median & IQR
 because: less affected by extreme values
 
+# Position of data value with Quartile criteria
+1. Added RHS Q inc
+2. Added both Q unchanged
+
 # Probabilitiy
 A given that B: P(A|B) = P(AUB)/P(B)
 Independent events: P(ANB) = P(A) * P(B)
 Mutually exclusive: P(AUB) = P(A) + P(B)
 
+# Types of distrubtion in P1
+1. Discrete uniform
+2. Continuous
+
 # Data correlation
 Strong positive correlation = Linearly displaced with +ve slope
+
+Sxy = Sum(xy) - Sum(x)2/n
+Similar, but not the same as SD!
 
 Value of PMCC (r) not affected by coding
 Practical meaning: when x ^ y ^ or v
