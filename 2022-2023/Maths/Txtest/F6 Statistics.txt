@@ -1,3 +1,5 @@
+Answers: 3 s.f.
+
 sd = sqrt(sum2/n - (sum/n)2)
 
 Interpolation: val - B / A - B = pos - Bf / Af - Bf
@@ -52,7 +54,9 @@ Value of PMCC (r) not affected by coding
 Practical meaning: when x ^ y ^ or v
 Absolute relationship r = 1
 
-Regression line: y - y = Sxy/Sxx (x - x)
+Regression line formula: y - y = Sxy/Sxx (x - x)
+This regression line is: y on x
+Estimation: Use values of x to estimate y. Reverse untrue
 
 # Random variables
 sum P(X=x) = 1

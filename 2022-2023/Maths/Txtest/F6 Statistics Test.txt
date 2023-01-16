@@ -1,3 +1,5 @@
+Answers: 
+
 sd = 
 
 Interpolation: 
@@ -52,7 +54,9 @@ Value of PMCC (r)
 Practical meaning: 
 Absolute relationship r = 
 
-Regression line: 
+Regression line formula: 
+This regression line is: 
+Estimation: 
 
 # Random variables
 sum P(X=x) = 
