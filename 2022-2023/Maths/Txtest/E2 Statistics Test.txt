@@ -6,6 +6,7 @@ Interpolation:
 
 coded y = ax + b:
 mean y = 
+sd y = 
 var y = 
 
 # Histogram
@@ -38,6 +39,7 @@ because:
 # Probabilitiy
 A given that B: P(A|B) = 
 Independent events: 
+Consider order? 
 Mutually exclusive: 
 
 # Types of distrubtion in P1

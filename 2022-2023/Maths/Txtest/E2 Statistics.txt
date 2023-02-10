@@ -6,6 +6,7 @@ Interpolation: val - B / A - B = pos - Bf / Af - Bf
 
 coded y = ax + b:
 mean y = a meanx + b
+sd y = a sdx
 var y = a^2 varx
 
 # Histogram
@@ -38,6 +39,7 @@ because: less affected by extreme values
 # Probabilitiy
 A given that B: P(A|B) = P(AUB)/P(B)
 Independent events: P(ANB) = P(A) * P(B)
+Consider order? No need
 Mutually exclusive: P(AUB) = P(A) + P(B)
 
 # Types of distrubtion in P1
@@ -47,7 +49,7 @@ Mutually exclusive: P(AUB) = P(A) + P(B)
 # Data correlation
 Strong positive correlation = Linearly displaced with +ve slope
 
-Sxy = Sum(xy) - Sum(x)2/n
+Sxy = Sum(xy) - Sum(x)Sum(y)/n
 Similar, but not the same as SD!
 
 Value of PMCC (r) not affected by coding

@@ -6,6 +6,11 @@
 5. repeat mean / only mean
 6. unit
 
+# Why straight line
+1. y=mx+c
+2. state m & c
+3. state const
+
 # Measurement
 Calculating mean: remove +-0.2 
 % uncertainty measurement: res/2/val
