@@ -1,0 +1,98 @@
+============================================================
+Unit 16
+============================================================
+
+Disproportionation reaction     - 
+Standard electrode potential    - 
+Standard conditions             - 
+
+Large E: 
+
+Electrolytes must be:  ()
+
+Electrocell diagram LR: 
+
+Shorthand: 
+
+dG = 
+Ecell propto 
+Kinetically stable				- 
+Thermodynamically stable		- 
+
+# Fuel cells
+Overall: 
+Membrane: 
+Electrodes coated: 
+Alkaline / acid function: 
+
+## Formula commons
+Anode ( ): 
+Cathode ( ): 
+Acidic: add 
+Alkaline: add 
+
+### Advantages
+1. 
+2. 
+3. 
+### Disadvantages
+1. 
+2. 
+3. 
+
+# Titrations
+Common color change: 
+Color change: 
+Acidic conditions are used: 
+
+Also test: Cell drawing, measure electrode drawing, fuel cell diagram
+
+============================================================
+Unit 17
+============================================================
+Transitional metals     - Metals that can form > 0 stable ions with partially filled d subshell
+Co-ordination number    - Number of c.o bonds
+Multidentate ligands    - Ligands that has > 1 lone pair of e- that can bond to t.m. ion
+
+Electronic configuration differences: More stability for half-filled subshells, so 4s2 / 3d5,10
+
+Large ligands + shape: Cl- 4 tetrahedral
+Small ligands + shape: H2O NH3 6 Octahedral
+
+Reason for number of ligands around t.m.:
+1. Ligands repel each other as far as possible
+2. Giving shape with bond angles of X
+
+### Naming
+H2O: Aqua
+NH3: Ammine
+X: Halo
+OH-: Hydroxo
+
+# Isomerism
+2 sets:
+1. Optical 3-bi
+2. cis-trans Geometric 4x2 octahedral / 2x2 square planar
+
+cis - same side | trans - opposite side
+
+# Reactions and colors
+
+## Colors
+1.	Partially filled d-orbital
+2.	Ligands cause d-d splitting
+3.	Visible spectrum radiation absorbed
+4.	Light causes d-d transitions
+5.	Complementary color observed 
+
+## Reaction types
+1. Deprotonation	    Ligands ± H+
+2. Ligand exchange	    Ligands replaced
+3. Redox		        Δ Oxidation number
+4. C.o. number change 	Δ Number of ligands in complex 
+
+## Reaction table
+D	OH-	    Reduce to 0 by H2O -> OH-		                                        All
+D	OH-(e)	H2 -> OH-                   Zn [4:2] -> [2:4]	                        Cr Zn
+D	NH3	    Reduce to 0 by H2O -> OH-	Fe2+ [4:2] -> Fe3+ [3:3]	                All
+L	NH3(e)	H2, OH- -> NH3              Cu [2:2] -> (NH3)4 && Zn [All] -> (NH3)4	Cu Co Cr Ni Zn 

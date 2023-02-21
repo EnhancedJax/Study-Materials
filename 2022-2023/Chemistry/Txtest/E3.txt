@@ -1,0 +1,98 @@
+============================================================
+Unit 16
+============================================================
+
+Disproportionation reaction     - Elements of the same compound undergoes both oxidation and reduction
+Standard electrode potential    - Potentials measured against standard hydrogen electrode at standard conditions
+Standard conditions             - 100kPa, 298K, 1 mol dm-3
+
+Large E: Reduced, stronger oxidizing
+
+Electrolytes must be: Soluble (Nitrates)
+
+Electrocell diagram LR: Oxidized -> Reduced
+
+Shorthand: S1 | S1 Oxi || S2 | S2 Red
+
+dG = -nFEcell = -RTlnK
+Ecell propto lnK
+Kinetically stable				- Ea large
+Thermodynamically stable		- Ecell > 0
+
+# Fuel cells
+Overall: 2H2 + O2 -> H2O (same Ecell)
+Membrane: Separates H2 O2 gases
+Electrodes coated: Pt as catalyst
+Alkaline / acid function: Electrolytes
+
+## Formula commons
+Anode (-): H2 + ... -> ... + 2e-
+Cathode (+): O2 + ... + 4e- -> ...
+Acidic: add OH-
+Alkaline: add H+
+
+### Advantages
+1. Env friendly
+2. No harmful product
+3. Alternative fossil
+### Disadvantages
+1. H2 flammable
+2. H2 not renewable
+3. H2 storage hazard / cost
+
+# Titrations
+Common color change: MnO4- -> Mn2+
+Color change: purple -> pale pink
+Acidic conditions are used: prevent formation of MnO2 brown pp
+
+Also test: Cell drawing, measure electrode drawing, fuel cell diagram
+
+============================================================
+Unit 17
+============================================================
+Transitional metals     - Metals that can form > 0 stable ions with partially filled d subshell
+Co-ordination number    - Number of c.o bonds
+Multidentate ligands    - Ligands that has > 1 lone pair of e- that can bond to t.m. ion
+
+Electronic configuration differences: More stability for half-filled subshells, so 4s2 / 3d5,10
+
+Large ligands + shape: Cl- 4 tetrahedral
+Small ligands + shape: H2O NH3 6 Octahedral
+
+Reason for number of ligands around t.m.:
+1. Ligands repel each other as far as possible
+2. Giving shape with bond angles of X
+
+### Naming
+H2O: Aqua
+NH3: Ammine
+X: Halo
+OH-: Hydroxo
+
+# Isomerism
+2 sets:
+1. Optical 3-bi
+2. cis-trans Geometric 4x2 octahedral / 2x2 square planar
+
+cis - same side | trans - opposite side
+
+# Reactions and colors
+
+## Colors
+1.	Partially filled d-orbital
+2.	Ligands cause d-d splitting
+3.	Visible spectrum radiation absorbed
+4.	Light causes d-d transitions
+5.	Complementary color observed 
+
+## Reaction types
+1. Deprotonation	    Ligands ± H+
+2. Ligand exchange	    Ligands replaced
+3. Redox		        Δ Oxidation number
+4. C.o. number change 	Δ Number of ligands in complex 
+
+## Reaction table
+D	OH-	    Reduce to 0 by H2O -> OH-		                                        All
+D	OH-(e)	H2 -> OH-                   Zn [4:2] -> [2:4]	                        Cr Zn
+D	NH3	    Reduce to 0 by H2O -> OH-	Fe2+ [4:2] -> Fe3+ [3:3]	                All
+L	NH3(e)	H2, OH- -> NH3              Cu [2:2] -> (NH3)4 && Zn [All] -> (NH3)4	Cu Co Cr Ni Zn 
