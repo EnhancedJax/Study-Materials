@@ -28,8 +28,8 @@ Alkaline / acid function: Electrolytes
 ## Formula commons
 Anode (-): H2 + ... -> ... + 2e-
 Cathode (+): O2 + ... + 4e- -> ...
-Acidic: add OH-
-Alkaline: add H+
+Acidic: add H+
+Alkaline: add OH-
 
 ### Advantages
 1. Env friendly
