@@ -50,6 +50,7 @@ Also test: Cell drawing, measure electrode drawing, fuel cell diagram
 ============================================================
 Unit 17
 ============================================================
+
 Transitional metals     - Metals that can form > 0 stable ions with partially filled d subshell
 Co-ordination number    - Number of c.o bonds
 Multidentate ligands    - Ligands that has > 1 lone pair of e- that can bond to t.m. ion
@@ -92,7 +93,97 @@ cis - same side | trans - opposite side
 4. C.o. number change 	Δ Number of ligands in complex 
 
 ## Reaction table
-D	OH-	    Reduce to 0 by H2O -> OH-		                                        All
-D	OH-(e)	H2 -> OH-                   Zn [4:2] -> [2:4]	                        Cr Zn
-D	NH3	    Reduce to 0 by H2O -> OH-	Fe2+ [4:2] -> Fe3+ [3:3]	                All
-L	NH3(e)	H2, OH- -> NH3              Cu [2:2] -> (NH3)4 && Zn [All] -> (NH3)4	Cu Co Cr Ni Zn 
+### Mechnaism
+D	OH-	    Reduce to 0 by H2O -> OH-		                                        
+D	OH-(e)	H2O -> OH-                  Zn [4:2] -> [2:4]	                        
+D	NH3	    Reduce to 0 by H2O -> OH-	Fe2+ [4:2] -> Fe3+ [3:3]	                
+L	NH3(e)	H2O, OH- -> NH3             Cu [2:2] -> (NH3)4 && Zn [All] -> (NH3)4	
+L   con. cl H2O -> Cl- x4               
+
+### Color & reaction table
+Cu  B       B   B  dBr
+Co  P       B   Br B
+Cr  BGYO    G G G
+Ni  G       G   B
+Fe  pG/Y    dG/Br
+
+Cr oxidation by H2O2
+Cr reduction by Zn
+Fe upon standing turns from +2 to +3
+
+# Heterogeneous catalyst Mechanism
+1. R adsorb onto surface
+2. Weakens bond in R
+3. Products then desorb
+
+## Contact process
+2SO2 + O2 <=> 2SO2
+### Mechanism
+* V2O5 [5->4] w/ SO2
+* V2O4 [4->5] w/ O2
+
+============================================================
+Unit 18
+============================================================
+
+# Disproving Kekule structure of Arene
+1. dH of reaction w/ H2 less than expected
+2. CC bond same length
+3. Br water not decolorsied
+## Explaination
+1. Delocalization of pi e -> more stable [2]
+2. More stable [1,3]
+3. Substitution instead of addition occurs -> maintain stable [3]
+
+# Explaination of reaction speeds
+Alkylarene: alkyl group donates e- to ring -> stronger nucleophile
+Phenol:
+1. OH group attached to ring
+2. O lone pair of e- overlaps with pi cloud -> donated to the ring
+3. e- density of ring increase
+
+# Arene reactions
+1. [H2SO4 + HNO3] HNO3 -> +H2O
+[Tin Sn, HCl under reflux] ArNO2 + 6[H] -> ArNH2
+2. [ArBr3 anhy.] X2
+3. [AlCl3 cat.] ROCl / RCl
+4. [Warmed sulf. acid] H2SO4 -> +H2O
+[room temp] ArOH + 3Br2 -> ArOHBr3 + 3HBr (orange -> white pp)
+
+============================================================
+Unit 19
+============================================================
+
+# Nitrile reactions
+(Study organic interconversions map)
+
+# Amino acids
+Compounds that contain:                 NH2 & COOH
+Identify different amino acids with:    Chromatography
+Peptide bond:                           CONH group by polymers
+
+## Zwitterions
+By:                                     COO-, NH3+
+Charges promote:                        strong intermolecular forces
+All amino acids are:                    neutral in solution
+Solution in water acts as:              buffer solutions
+
+============================================================
+Unit 20
+============================================================
+%carbon = m(co2) * m(c/co2) / m(total)
+
+# Method of separation
+Distilling          Get (l) w/ b.p. << others
+Steam distilling    Get insoluble (l) from (aq)
+Extracting          Get wanted organic product
+Washing             Remove impurities from (s) / (l)
+Drying              Remove H2O
+Filtration          Remove (s) from (l)
+
+# Extending carbon chains
+Preparing Grignard reagent: [dry ether, heat under reflux] RBr + Mg -> RMgBr 
+
+## Reactions (followed by reaction with H2O):
+1. CO2 -> Acid
+2. R(n-1)CO -> Alchol degree n
