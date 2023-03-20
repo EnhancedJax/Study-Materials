@@ -144,11 +144,20 @@ Phenol:
 
 # Arene reactions
 1. 
-To amine: 
+Lower temperature as: 
 2. 
 3. 
 4. 
-Phenol bromination: 
+NH2: 
+Phenol bromination: [] -> ( -> )
+
+## Mechanism
+### Step 1
+1. 
+2. 
+3. 
+### Step 2
+Arrow direction: 
 
 ============================================================
 Unit 19
@@ -158,20 +167,22 @@ Unit 19
 (Study organic interconversions map)
 
 # Amino acids
-Compounds that contain:                 NH2 & COOH
-Identify different amino acids with:    Chromatography
-Peptide bond:                           CONH group by polymers
+Compounds that contain:                 
+Identify different amino acids with:    
+Peptide bond:                           
 
 ## Zwitterions
-By:                                     COO-, NH3+
-Charges promote:                        strong intermolecular forces
-All amino acids are:                    neutral in solution
-Solution in water acts as:              buffer solutions
+By:                                     
+Charges promote:                        
+All amino acids are:                    
+Solution in water acts as:              
 
 ============================================================
 Unit 20
 ============================================================
-%carbon = 
+mass %c = 
+mass %o = 
+mol ratio = 
 
 # Method of separation
 Distilling          
@@ -184,6 +195,9 @@ Filtration
 # Extending carbon chains
 Preparing Grignard reagent: 
 
-## Reactions (followed by reaction with H2O):
 1. 
 2. 
+Followed by reaction with: H2O
+
+# Shortening carbon chains
+Reaction: 

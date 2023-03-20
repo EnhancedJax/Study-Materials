@@ -143,12 +143,21 @@ Phenol:
 3. e- density of ring increase
 
 # Arene reactions
-1. [H2SO4 + HNO3] HNO3 -> +H2O
-[Tin Sn, HCl under reflux] ArNO2 + 6[H] -> ArNH2
+1. [H2SO4, HNO3, <30C] HNO3 -> +H2O
+Low temperature as: Prevent further substitution
 2. [ArBr3 anhy.] X2
 3. [AlCl3 cat.] ROCl / RCl
 4. [Warmed sulf. acid] H2SO4 -> +H2O
-[room temp] ArOH + 3Br2 -> ArOHBr3 + 3HBr (orange -> white pp)
+NH2: [Tin Sn, HCl under reflux] ArNO2 + 6[H] -> ArNH2
+Phenol bromination: [room temp] ArOH + 3Br2 -> ArOHBr3 + 3HBr (orange -> white pp)
+
+## Mechanism
+### Step 1
+1. C has partial +ve charge
+2. E+ has lone pair e- which moves to C
+3. Bond to leftover E part breaks
+### Step 2
+Arrow direction: From H to ring as ring is e rich
 
 ============================================================
 Unit 19
@@ -171,7 +180,9 @@ Solution in water acts as:              buffer solutions
 ============================================================
 Unit 20
 ============================================================
-%carbon = m(co2) * m(c/co2) / m(total)
+mass %c = m(co2) * m(c/co2) / m(total)
+mass %o = 1 - %c - %h
+mol ratio = %c/12 : %h : %o/16
 
 # Method of separation
 Distilling          Get (l) w/ b.p. << others
@@ -182,8 +193,11 @@ Drying              Remove H2O
 Filtration          Remove (s) from (l)
 
 # Extending carbon chains
-Preparing Grignard reagent: [dry ether, heat under reflux] RBr + Mg -> RMgBr 
+Preparing Grignard reagent: [dry ether, reflux] RBr + Mg -> RMgBr 
 
-## Reactions (followed by reaction with H2O):
-1. CO2 -> Acid
-2. R(n-1)CO -> Alchol degree n
+1. R(n-1)CO -> Alchol degree n
+2. CO2 -> Acid
+Followed by reaction with: H2O
+
+# Shortening carbon chains
+Reaction: CH3C=OR + I2 + NaOH -> RCOONa + CHI3 (Warm alkaline aq. I2)
