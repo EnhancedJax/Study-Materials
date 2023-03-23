@@ -163,8 +163,31 @@ Arrow direction: From H to ring as ring is e rich
 Unit 19
 ============================================================
 
-# Nitrile reactions
-(Study organic interconversions map)
+# Amines
+They're RNH2
+## Preparation
+1. RCl + 2NH3 [Excess hot ethanolic NH3 under pressure]
+2. RCN + 4[H]
+3. RCN + 2H2 [Nickel cat.]
+## Basicity
+Stronger base: Higher availability of N lone pair e
+Trend: 2 > 1 > NH3 > Ar-
+1. Alkyl groups e pushing
+2. Lone pair pulled into arene ring
+## Reactions
+Water: H2O <=> OH-
+Acids: H+ -> NH3+
+1. RNH2 + R'OCl -> R'ONHR + HCl
+2. RNH2 + X~ - N~ + HX
+
+# Amides
+They're RCONH2
+## Preparation
+1. RCOCl + NH~ -> RCON~ + HCl
+Further: HCl + NH3 -> NH4CL
+
+# Condensation polymerization
+Nitrogen organic compounds forms CONH bonds
 
 # Amino acids
 Compounds that contain:                 NH2 & COOH
@@ -176,6 +199,14 @@ By:                                     COO-, NH3+
 Charges promote:                        strong intermolecular forces
 All amino acids are:                    neutral in solution
 Solution in water acts as:              buffer solutions
+
+# Azo compounds
+They're ArN=NAr'
+## Preparation
+From sodium nitrite
+1. Nitrous acid:        NaNO2 + HCl -> HNO2 + NaCl [Ice cold, dilute HCl]
+2. Diazonium ion:       ArNH2 + HNO2 + HCl -> ArN+===NCl- + 2H2O [Ice-water (if not phenol forms)]
+3. Coupling reaction:   Diaz + Phen -> ArN=NArOH + HCl [Alkaline]
 
 ============================================================
 Unit 20

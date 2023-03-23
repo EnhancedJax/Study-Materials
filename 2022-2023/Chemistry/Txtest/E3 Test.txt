@@ -163,8 +163,31 @@ Arrow direction:
 Unit 19
 ============================================================
 
-# Nitrile reactions
-(Study organic interconversions map)
+# Amines
+They're 
+## Preparation
+1. 
+2. 
+3. 
+## Basicity
+Stronger base: 
+Trend: 
+1. 
+2. 
+## Reactions
+Water: 
+Acids: 
+1. 
+2. 
+
+# Amides
+They're 
+## Preparation
+1. 
+Further: 
+
+# Condensation polymerization
+Nitrogen organic compounds forms 
 
 # Amino acids
 Compounds that contain:                 
@@ -176,6 +199,14 @@ By:
 Charges promote:                        
 All amino acids are:                    
 Solution in water acts as:              
+
+# Azo compounds
+They're 
+## Preparation
+From sodium nitrite
+1. Nitrous acid:        
+2. Diazonium ion:       
+3. Coupling reaction:   
 
 ============================================================
 Unit 20
