@@ -1,0 +1,40 @@
+# Old stuff
+
+f(x+t)      t -> -x
+f(x) + t    t -> y
+f(sx)       s -> 1/x
+sf(x)       s -> y
+
+2 identities for sec cosec:
+sec2 = 1+t^2
+cosec2 = 1+cot^2
+
+1 = s^2 + c^2
+
+f(x)        f'(x)
+-----------------
+a^x         lna a^x
+e^x         e^x
+lnx         1/x
+sinx        cosx
+cosx        -sinx
+tanx        sec^2(x)
+|x|         |x|/x
+
+# Prove
+Irrational: n=a/b where ab no common factor
+Infinite primes: List all and divide remainder = 1
+Even / odd: 2n + 1 / 2n
+
+# Partial fractions
+for k/fg2 = A/f + B/g + C/g2
+k = Ag2 + Bfg + Cf
+
+# Parametric
+for y = f(x) from f(t)
+Domain = Range x=f(t)
+Range = Range y=f(t)
+
+# Binominal
+For (1+kx)n: given formula * k both side
+(a+bx)n: pull a out by an
