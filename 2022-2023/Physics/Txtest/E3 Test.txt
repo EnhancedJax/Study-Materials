@@ -1,0 +1,157 @@
+# Paper checking
+* 
+* 
+* 
+
+============================================================
+Unit 8
+============================================================
+
+# Average KE per molecule
+* 
+* 
+* 
+* 
+
+# Why does increasing temperature increase the pressure?
+1. 
+2. 
+3. 
+4. 
+5. 
+
+# Ideal gas assumptions
+1. 
+2. 
+3. 
+
+Moleucles in ideal has 
+
+============================================================
+Unit 9
+============================================================
+
+# Particles
+P | C | Pentrating power
+Alpha	
+Beta	
+Gamma	
+
+## Trend of properties
+1. 
+2. 
+3. 
+
+Activity	    - 
+Random decay	- 
+Half life	    - 
+Binding E	    - 
+
+## Why can't use activity to determine age
+* 
+
+## Measuring count rate
+* 
+* 
+* 
+
+# Fission & fusion
+## Why does fission release E
+* 
+## Why does fragments of fission move away from each pother
+* 
+## Why nuclear fission is only possible for massive nuclei?
+* 
+* 
+## Why does fission of massive nuclei release large amounts of E?
+* 
+* 
+
+# Fusion as power supply
+## Advantages
+1. 
+2. 
+## Disadvantages / facts
+* 
+* 
+> 
+> 
+> 
+
+============================================================
+Unit 10
+============================================================
+
+# SHM conditions
+1. F 
+2. F 
+
+# d-t
+v-t: 
+a-t: 
+
+# Resonance
+
+
+# Damping 
+
+* What materials necessary for energy dissipation to be effective: 
+> 
+
+============================================================
+Unit 11
+============================================================
+
+Main sequence stars	  - 
+White dwarf stars	    - 
+
+# H-R diagram
+Vertical:   
+Horizontal: 
+## Age of clusters
+Lack of giants: 
+White dwarf:    
+
+# Star properties
+Size ^ 
+
+# Life cycle of low mass star
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+
+# Distance to stars
+Parallax              - 
+## Determine distance by parallax
+1. 
+2. 
+3. 
+## Determine distance by standard candle
+1. 
+2. 
+3. 
+
+# Age of universe
+## Why wavelength of light detected from orbiting bodies change?
+1. 
+2. 
+3. 
+## Determine distance to distant galaxies
+1. 
+2. 
+3. 
+4. 
+
+# Fate of everything
+Critical density - 
+
+## What is concluded from the observation of difference in values of observed mass & actual mass?
+* 
+* 
+
+## How does dark matter relate to the fate of the universe?
+* 
+* 
