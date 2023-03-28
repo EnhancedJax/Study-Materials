@@ -1,0 +1,34 @@
+# Probability distributions
+Standardizing: 
+P (a < Z < b) = 
+P (Z > c) = 
+
+## Binomial distribution
+E(X)=
+Var(X)=
+
+## Approximations
+Po  -> 
+B   -> 
+                -> Small p -> Po(np)
+
+# Continous random variables
+F(x) = 
+Mode = 
+E(Xn)= 
+F(Qp)= 
+
+## Continous uniform distribution
+for U[a,b]
+f(x) ~ 
+F(x) ~ 
+
+E(X)   = 
+Var(X) = 
+
+# Hypo tests
+1. 
+2. 
+3. 
+4. 
+5. 

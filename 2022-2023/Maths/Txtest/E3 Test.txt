@@ -1,26 +1,3 @@
-# Old stuff
-
-f(x+t)      
-f(x) + t    
-f(sx)       
-sf(x)       
-
-2 identities for sec cosec:
-sec2 = 
-cosec2 = 
-
-1 = 
-
-f(x)        f'(x)
------------------
-a^x         
-e^x         
-lnx         
-sinx        
-cosx        
-tanx        
-|x|         
-
 # Prove
 Irrational: 
 Infinite primes: 
@@ -38,3 +15,46 @@ Range =
 # Binominal
 For (1+kx)n: 
 (a+bx)n: 
+
+# Differentiation
+f(x)        f'(x)
+-----------------
+a^x         
+e^x         
+lnx         
+sinx        
+cosx        
+tanx        
+|x|         
+
+Implicit differentiation: 
+
+# Integration
+Parametric:     
+Rotating:       
+Substitution:   
+Part:           
+## Solving differential equations
+for dy/dx = f(x)g(y), 
+
+# Vectors
+Magnitude:              
+Unit vector:            
+
+Parallel if 
+Collinear if 
+
+Through a parallel b:   
+Through a and b:        
+Check if P on line:     
+Check intersection:     
+Point of intersection:  
+
+a.b:                    
+Angle between vectors:  
+    Quickhand:          
+a+\\w make angle:       
+Perpendicular:          
+
+Area:                   
+Cosine rule:            
