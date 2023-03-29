@@ -56,10 +56,14 @@ Binding E	    -
 * 
 
 # Fission & fusion
-## Why does fission release E
+## Why does continous fusion release large amounts of E?
+* 
 * 
 ## Why does fragments of fission move away from each pother
 * 
+
+Fe is the most stable element as 
+
 ## Why nuclear fission is only possible for massive nuclei?
 * 
 * 
@@ -102,19 +106,21 @@ a-t:
 Unit 11
 ============================================================
 
+# Star classifications
 Main sequence stars	  - 
-White dwarf stars	    - 
-
+## White dwarfs
+* 
+* 
+* 
+* 
 # H-R diagram
 Vertical:   
 Horizontal: 
 ## Age of clusters
 Lack of giants: 
 White dwarf:    
-
 # Star properties
 Size ^ 
-
 # Life cycle of low mass star
 1. 
 2. 
@@ -129,12 +135,18 @@ Parallax              -
 1. 
 2. 
 3. 
+4. 
 ## Determine distance by standard candle
 1. 
 2. 
 3. 
 
 # Age of universe
+## How does doppler shift prove the expansion of the universe?
+1. 
+2. 
+3. 
+4. 
 ## Why wavelength of light detected from orbiting bodies change?
 1. 
 2. 
@@ -144,14 +156,23 @@ Parallax              -
 2. 
 3. 
 4. 
+## Feasibility
+Parallax:           
+Standard candle:    
+Redshift:           
+* Standard candle can't as 
 
 # Fate of everything
-Critical density - 
-
+Critical density    - 
+Dark matter		    - 
 ## What is concluded from the observation of difference in values of observed mass & actual mass?
 * 
 * 
-
 ## How does dark matter relate to the fate of the universe?
 * 
 * 
+## Critical density
+p~pc | Expansion | Fate
+< 
+= 
+> 

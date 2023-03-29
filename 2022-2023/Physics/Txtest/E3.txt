@@ -56,10 +56,14 @@ Binding E	    - E required to split nuclues into its separate molecules
 * Longer time reduces uncertainy of decay's random nature
 
 # Fission & fusion
-## Why does fission release E
-* Mass of product lass than intial mass, E = mc2
+## Why does continous fusion release large amounts of E?
+* Mass -> E by E=mc2 where m = mass lost
+* High fusion rate compensates E per fusion
 ## Why does fragments of fission move away from each pother
 * Initial momentum 0, must be conserved
+
+Fe is the most stable element as smallest mass per nucleon
+
 ## Why nuclear fission is only possible for massive nuclei?
 * Splitting of massive nucleus ^ BE -> release E
 * Splitting of light nucleus requires E as mass per nucleus v -> release E
@@ -102,20 +106,22 @@ Reduction in E from an oscillation due to resistive F on the oscillating system 
 Unit 11
 ============================================================
 
+# Star classifications
 Main sequence stars	  - Stars that fuses H2 in core
-White dwarf stars	    - Small surface area, high T and emit white light
-
-# H-R diagram
+## White dwarfs
+* The core remnant of red giant stars
+* No fusion
+* Small surface area, not very luminous
+* Very hot, appear white
+## H-R diagram
 Vertical:   10^-4 -> 10^6
 Horizontal: 2e4 || 1e4 || 6e3 || 2.5e3
-## Age of clusters
+### Age of clusters
 Lack of giants: young
 White dwarf:    old
-
-# Star properties
+## Star properties
 Size ^ gravitational forces ^ rate of fusion ^ T ^
-
-# Life cycle of low mass star
+## Life cycle of low mass star
 1. Fusion H
 2. No buring -> Core T v
 3. Expand in size -> red giant
@@ -129,12 +135,18 @@ Parallax               - Change in position relative to background
 1. Object viewed at opposite ends of earth
 2. Change in angular positions of star against background measured
 3. Trigonometry used
+4. Radius of Earth’s orbit to the sun must be known
 ## Determine distance by standard candle
 1. Standard candle – object of known luminosity
 2. Identify object standard candle and F measured
 3. Inverse square law used
 
 # Age of universe
+## How does doppler shift prove the expansion of the universe?
+1. z=v/c to calc v
+2. Galaxies were moving away from Earth
+3. The further the galaxy the faster they move away
+4. Galaxies hence are moving away from each other
 ## Why wavelength of light detected from orbiting bodies change?
 1. Doppler shift
 2. Object moving towards and away from observer
@@ -144,14 +156,23 @@ Parallax               - Change in position relative to background
 2. Determine difference of λ of same line in lab
 3. Use z=v/c -> velocity of galaxy
 4. Hubble’s law -> distance
+## Feasibility
+Parallax:           Nearby stars
+Standard candle:    Any stars & Nearby galaxies
+Redshift:           Distant galaxies
+* Standard candle can't as flux is too small for measurement
 
 # Fate of everything
-Critical density - Density of matter in the Universe, below which universe will expand forever
-
+Critical density    - Density of matter in the Universe, below which universe will expand forever
+Dark matter		    - Matter that can’t be detected via em-interaction by has mass
 ## What is concluded from the observation of difference in values of observed mass & actual mass?
 * There must matter that doesn’t emit or absorb electromagnetic radiation
 * So dark matter must be present
-
 ## How does dark matter relate to the fate of the universe?
 * Dark matter increases density
 * Fate depends upon density, compared with a critical density value
+## Critical density
+p~pc | Expansion | Fate
+< Forever   Open
+= Stops     Flat
+> Shrinks   Closed
