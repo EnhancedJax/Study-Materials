@@ -34,6 +34,7 @@ Parametric:
 Rotating:       
 Substitution:   
 Part:           
+Try:            
 ## Solving differential equations
 for dy/dx = f(x)g(y), 
 

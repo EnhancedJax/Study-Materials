@@ -3,6 +3,10 @@ Standardizing:
 P (a < Z < b) = 
 P (Z > c) = 
 
+## Distribution assumptions
+B - 
+Po - 
+
 ## Binomial distribution
 E(X)=
 Var(X)=
@@ -10,21 +14,22 @@ Var(X)=
 ## Approximations
 Po  -> 
 B   -> 
-                -> Small p -> Po(np)
+                -> 
 
 # Continous random variables
 F(x) = 
 Mode = 
 E(Xn)= 
-F(Qp)= 
+To find Qp: 
 
 ## Continous uniform distribution
-for U[a,b]
-f(x) ~ 
-F(x) ~ 
-
 E(X)   = 
 Var(X) = 
+
+# Terminology
+Sampling frame - 
+Sampling distribution - 
+Critical region - 
 
 # Hypo tests
 1. 

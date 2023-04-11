@@ -7,6 +7,9 @@ Standard electrode potential    -
 Standard conditions             - 
 
 Large E: 
+If formula both element aq:
+* Electrode: 
+* Solution: 
 
 Electrolytes must be:  ()
 
@@ -51,76 +54,83 @@ Also test: Cell drawing, measure electrode drawing, fuel cell diagram
 Unit 17
 ============================================================
 
-Transitional metals     - Metals that can form > 0 stable ions with partially filled d subshell
-Co-ordination number    - Number of c.o bonds
-Multidentate ligands    - Ligands that has > 1 lone pair of e- that can bond to t.m. ion
+Transitional metals     - 
+Co-ordination number    - 
+Multidentate ligands    - 
 
-Electronic configuration differences: More stability for half-filled subshells, so 4s2 / 3d5,10
+Electronic configuration differences: 
 
-Large ligands + shape: Cl- 4 tetrahedral
-Small ligands + shape: H2O NH3 6 Octahedral
+Large ligands + shape: 
+Small ligands + shape: 
 
 Reason for number of ligands around t.m.:
-1. Ligands repel each other as far as possible
-2. Giving shape with bond angles of X
+1. 
+2. 
 
 ### Naming
-H2O: Aqua
-NH3: Ammine
-X: Halo
-OH-: Hydroxo
+H2O:    
+NH3:    
+X:      
+OH-:    
 
 # Isomerism
 2 sets:
-1. Optical 3-bi
-2. cis-trans Geometric 4x2 octahedral / 2x2 square planar
+1. 
+2. 
 
-cis - same side | trans - opposite side
+cis -  | trans - 
 
 # Reactions and colors
 
 ## Colors
-1.	Partially filled d-orbital
-2.	Ligands cause d-d splitting
-3.	Visible spectrum radiation absorbed
-4.	Light causes d-d transitions
-5.	Complementary color observed 
+1.	
+2.	
+3.	
+4.	
+5.	
 
 ## Reaction types
-1. Deprotonation	    Ligands ± H+
-2. Ligand exchange	    Ligands replaced
-3. Redox		        Δ Oxidation number
-4. C.o. number change 	Δ Number of ligands in complex 
+1. 
+2. 
+3. 
+4. 
 
 ## Reaction table
 ### Mechnaism
-D	OH-	    Reduce to 0 by H2O -> OH-		                                        
-D	OH-(e)	H2O -> OH-                  Zn [4:2] -> [2:4]	                        
-D	NH3	    Reduce to 0 by H2O -> OH-	Fe2+ [4:2] -> Fe3+ [3:3]	                
-L	NH3(e)	H2O, OH- -> NH3             Cu [2:2] -> (NH3)4 && Zn [All] -> (NH3)4	
-L   con. cl H2O -> Cl- x4               
+
+
+
+
+
 
 ### Color & reaction table
-Cu  B       B   B  dBr
-Co  P       B   Br B
-Cr  BGYO    G G G
-Ni  G       G   B
-Fe  pG/Y    dG/Br
 
-Cr oxidation by H2O2
-Cr reduction by Zn
-Fe upon standing turns from +2 to +3
+
+
+
+
+
+> Cr oxidation by 
+> Cr reduction by 
+* Cr color small to big: 
+* V color small to big:  
+* Cu+ shake turns to Cu2+ due to 
+* Fe upon standing 
 
 # Heterogeneous catalyst Mechanism
-1. R adsorb onto surface
-2. Weakens bond in R
-3. Products then desorb
+* 
+* 
+1. 
+2. 
+3. 
 
 ## Contact process
-2SO2 + O2 <=> 2SO2
+
 ### Mechanism
-* V2O5 [5->4] w/ SO2
-* V2O4 [4->5] w/ O2
+* 
+* 
+## Haber process mechanism
+
 
 ============================================================
 Unit 18
@@ -143,15 +153,13 @@ Phenol:
 3. 
 
 # Arene reactions
-1. 
+For [H2SO4, HNO3, <30C] HNO3 -> +H2O:
 Lower temperature as: 
-2. 
-3. 
-4. 
-NH2: 
+
 Phenol bromination: [] -> ( -> )
 
 ## Mechanism
+Prepare electrophile: 
 ### Step 1
 1. 
 2. 

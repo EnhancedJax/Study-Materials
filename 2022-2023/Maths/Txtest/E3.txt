@@ -13,7 +13,7 @@ Domain = Range x=f(t)
 Range = Range y=f(t)
 
 # Binominal
-For (1+kx)n: given formula * k both side
+For (1+kx)n: all terms of x include k in power
 (a+bx)n: pull a out by an
 
 # Differentiation
@@ -34,6 +34,7 @@ Parametric:     find dx/dt -> dx=dt -> sub dx int y
 Rotating:       V = pi * int y2
 Substitution:   dx/du -> dx=du -> sub dx
 Part:           iab = a * ib - i(da * ib)
+Try:            Partial fractions
 ## Solving differential equations
 for dy/dx = f(x)g(y), int dy/g(y) = int dxf(x) + c
 

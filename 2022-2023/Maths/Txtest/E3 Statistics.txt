@@ -3,12 +3,16 @@ Standardizing: P(X < x) = phi([x-mu]/sigma)
 P (a < Z < b) = PhiB - PhiA
 P (Z > c) = 1 - PhiC
 
+## Distribution assumptions
+B - Independent events, TF results
+Po - Single random independent events
+
 ## Binomial distribution
 E(X)=np
 Var(X)=np(1-p)
 
 ## Approximations
-Po  -> Large lambda             -> N [l,sqrt(l)2]
+Po  -> Large lambda           -> N [l,sqrt(l)2]
 B   -> Large n  -> p ~ 0.5    -> N[np,sqrt(np(1-p))2]
                 -> Small p -> Po(np)
 
@@ -16,19 +20,20 @@ B   -> Large n  -> p ~ 0.5    -> N[np,sqrt(np(1-p))2]
 F(x) = int(f(x))=1
 Mode = highest point
 E(Xn)= int(x^n*f(x))
-F(Qp)= p
+To find Qp: F(Qp)=p
 
 ## Continous uniform distribution
-for U[a,b]
-f(x) ~ 1 / (b-a)
-F(x) ~ x-a/b-a
-
 E(X)   = (a+b)/2
 Var(X) = (b-a)2/12
+
+# Terminology
+Sampling frame - A list of items
+Sampling distribution - Probability distribution of events
+Critical region - range of values for statistic that would reject H0
 
 # Hypo tests
 1. Define X
 2. Define H0 & H1
-3. Assume H0 true, substitute p to distribution model -> find P(X~t.s.)
-4. Compare: if P(X~t.s.) < s.l. -> reject H_0
+3. Assume H0 true, find P(X~t.s.)
+4. Compare if P < s.l. -> reject H0
 5. Conclude in context of question

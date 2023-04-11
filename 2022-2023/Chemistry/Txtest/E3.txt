@@ -7,6 +7,9 @@ Standard electrode potential    - Potentials measured against standard hydrogen 
 Standard conditions             - 100kPa, 298K, 1 mol dm-3
 
 Large E: Reduced, stronger oxidizing
+If formula both element aq:
+* Electrode: Pt
+* Solution: Both
 
 Electrolytes must be: Soluble (Nitrates)
 
@@ -107,11 +110,16 @@ Cr  BGYO    G G G
 Ni  G       G   B
 Fe  pG/Y    dG/Br
 
-Cr oxidation by H2O2
-Cr reduction by Zn
-Fe upon standing turns from +2 to +3
+> Cr oxidation by H2O2
+> Cr reduction by Zn
+* Cr color small to big: Blue Green Yellow / Orange
+* V color small to big: Purple Green Blue Yellow
+* Cu+ shake turns to Cu2+ due to oxidation by O2
+* Fe upon standing turns from +2 to +3
 
 # Heterogeneous catalyst Mechanism
+* Provide alternative reaction pathway with lower Ea
+* Different phase
 1. R adsorb onto surface
 2. Weakens bond in R
 3. Products then desorb
@@ -121,6 +129,8 @@ Fe upon standing turns from +2 to +3
 ### Mechanism
 * V2O5 [5->4] w/ SO2
 * V2O4 [4->5] w/ O2
+## Haber process mechanism
+Pt [4->5]
 
 ============================================================
 Unit 18
@@ -143,15 +153,13 @@ Phenol:
 3. e- density of ring increase
 
 # Arene reactions
-1. [H2SO4, HNO3, <30C] HNO3 -> +H2O
+For [H2SO4, HNO3, <30C] HNO3 -> +H2O:
 Low temperature as: Prevent further substitution
-2. [ArBr3 anhy.] X2
-3. [AlCl3 cat.] ROCl / RCl
-4. [Warmed sulf. acid] H2SO4 -> +H2O
-NH2: [Tin Sn, HCl under reflux] ArNO2 + 6[H] -> ArNH2
+
 Phenol bromination: [room temp] ArOH + 3Br2 -> ArOHBr3 + 3HBr (orange -> white pp)
 
 ## Mechanism
+Prepare electrophile: EX + AlX3 -> E+ + AlX4-
 ### Step 1
 1. C has partial +ve charge
 2. E+ has lone pair e- which moves to C
@@ -204,8 +212,8 @@ Solution in water acts as:              buffer solutions
 They're ArN=NAr'
 ## Preparation
 From sodium nitrite
-1. Nitrous acid:        NaNO2 + HCl -> HNO2 + NaCl [Ice cold, dilute HCl]
-2. Diazonium ion:       ArNH2 + HNO2 + HCl -> ArN+===NCl- + 2H2O [Ice-water (if not phenol forms)]
+1. Nitrous acid:        NaNO2 + HCl -> HNO2 + NaCl [5deg dilute HCl]
+2. Diazonium ion:       ArNH2 + HNO2 + HCl -> ArN+===NCl- + 2H2O [5deg (if not phenol forms)]
 3. Coupling reaction:   Diaz + Phen -> ArN=NArOH + HCl [Alkaline]
 
 ============================================================
