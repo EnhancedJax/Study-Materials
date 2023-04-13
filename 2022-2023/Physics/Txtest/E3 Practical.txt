@@ -1,0 +1,101 @@
+# Criticizing data 
+1. sf 
+2. increment
+3. set
+4. range
+5. repeat mean / only mean
+6. unit
+
+# Discuss whether graph supports suggested equation / test relationship
+1. Rearrange & compare equation to y=mx+c
+2. Identify gradient
+3. Calculate gradient from graph and compare
+
+# Measurement
+Calculating mean: remove +-0.2 
+% uncertainty measurement: res/2/val
+% uncertainty mean value: (max-min)/2/val
+
+Stationary length apparatuses:
+- Meter rule 1mm
+- Digital calipers 0.1mm
+- Micrometer 0.01mm
+
+# Common questions
+## Conducting measurements
+Graphical method: 
+1. Measure variable using measuring devices
+2. Repeat for same value and calculate mean
+3. Repeat for at least 5 sets of results
+4. Keep other variables constant
+5. Plot graph to check straight line
+Accurate oscillation msumt.: 
+1. Measure multiple oscillations, divide by n   -> reduce %U
+2. Repeat mean                                  -> reduce random error
+3. Use timing marker at center
+4. Start timing after a few rotations
+Accurate perpendicular dist. msumt.: 
+* Meter rule + set square
+* Read value perpendicularly                    -> reduce parallax error
+Accurate length msumt. techniques: 
+* Check for zero error                          -> reduce systematic error
+* Repeat at different positions to find mean    -> random error
+• Accurate temp. msumt.: 
+* Place thermometer close to source
+* Stir water
+## Measuring accuracy
+Why light gate:
+* Remove reaction time
+* Remove parallax error as in fixed position
+Why data logger: Many readings can be taken simultaneously in a short time
+Why motion camera: 
+* Helps with judging time when rotation is completed
+* Helps with viewing motion slowly
+## Uncertainty
+Why reduce % uncertainty: 
+* Uncertainty in measuring device constant
+* Larger measurement -> lower %U
+Why the uncertainty in … is …: 
+1. U of single measurement is half the resolution of measuring device
+2. U% = U1% * n
+
+# Experiments
+> Emission of radiation investigations
+Setup
+1. Measure background count
+2. Ensure source and detector in line
+3. Measure d with meter rule
+4. Repeat measure count then find mean
+5. Subtract background rate
+6. Plot graph
+Precaution
+1. Handle source with long tongs
+2. Maintain distance from source when useCommon questions
+Why measure bg count: Subtract from measured count as systematic error
+
+> Capacitor investigations
+Setup
+1. Capacitor connected to power supply
+2. Circuit to discharge capacitor through A & R
+3. Switch
+Precaution
+* Ensure capacitor fully discharged Determine capacitance
+Determine capacitance
+1. Choose the value of resistor to give a reasonable discharge time
+2. Measure the resistance of the resistor using a multimeter
+3. Charge the capacitors to the initial p.d.
+4. Start the stopwatch at the same time as changing the switch
+5. Plot I-t graph, find time for I to fall to 37%
+6. t=RC
+
+> Specific latent heat investigations
+Setup
+1. Power supply, Jmeter
+Determine L
+1. Wait until water boils
+2. Record values of m to E with Jmeter
+3. Plot m-E graph 
+4. Gradient is 1/L
+Source of errors
+1. Water moving
+2. Heat lost to surroundings

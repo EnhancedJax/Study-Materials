@@ -1,0 +1,101 @@
+# Criticizing data 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+
+# Discuss whether graph supports suggested equation / test relationship
+1. 
+2. 
+3. 
+
+# Measurement
+Calculating mean: 
+% uncertainty measurement: 
+% uncertainty mean value: 
+
+Stationary length apparatuses: 
+- 
+- 
+- 
+
+# Common questions
+## Conducting measurements
+Graphical method: 
+1. 
+2. 
+3. 
+4. 
+5. 
+Accurate oscillation msumt. 
+1. 
+2. 
+3. 
+4. 
+Accurate perpendicular dist. 
+* 
+* 
+Accurate length msumt. 
+* 
+* 
+• Accurate temp. 
+* 
+* 
+## Measuring accuracy
+Why light gate: 
+* 
+* 
+Why data logger: 
+Why motion camera: 
+* 
+* 
+## Uncertainty
+Why reduce % uncertainty: 
+* 
+* 
+Why the uncertainty in … is …: 
+1. 
+2. 
+
+# Experiments
+> Emission of radiation investigations
+Setup
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+Precaution
+1. 
+2. 
+Why measure bg count: 
+
+> Capacitor investigations
+Setup
+1. 
+2. 
+3. 
+Precaution
+* 
+Determine capacitance
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+
+> Specific latent heat investigations
+Setup
+1. 
+Determine L
+1. 
+2. 
+3. 
+4. 
+Source of errors
+1. 
+2. 

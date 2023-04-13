@@ -54,21 +54,21 @@ Acidified mixture titrating with KMnO4: If not MnO2 will form
 
 # Reflux to prepare stuff
 ## Prepare solution
-Cooling when addition: Reaction exothermic, prevent boiling over
+Cooling when addition:              Reaction exothermic, prevent boiling over
 ## Reflux
-Use of reflux: Give complete reaction
-Use of condenser: Prevent escape of compounds
-Continuous stirring: Reactants do not mix, ensure enough contact
+Use of reflux:                      Give complete reaction
+Use of condenser:                   Prevent escape of compounds
+Continuous stirring:                Reactants do not mix, ensure enough contact
 ## Separating funnel
-Release pressure: Invert & remove stopper
-## Buchner funnel (reduced pressure filtration)
-Advantages: Greater speed, dries produ
+Release pressure:                   Invert & remove stopper
+## Buchner funnel
+Advantages:                         Greater speed, dries produ
 
 # Find total order of reaction 
-Pouring contents between beakers: To ensure no reactants remain in one breaker
-Use phenol: React with Br2 to delay color change
-V ∝ conc.: Total volume constant
-Use ethanol in mixture: Dissolves reagents -> mix to increase rate
+Pouring contents between beakers:   To ensure no reactants remain in one breaker
+Use phenol:                         React with Br2 to delay color change
+V ∝ conc.:                          Total volume constant
+Use ethanol in mixture:             Dissolves reagents -> mix to increase rate
 ## conc. t graph
 0: Linear
 1: HL unchanged
@@ -84,18 +84,18 @@ Use ethanol in mixture: Dissolves reagents -> mix to increase rate
 3. Filter crystals → wash
 4. Dry crystals (oven)
 
-Use of preheated funnel: Prevent crystallization, remove insoluble impurities
-Use of Buchner funnel: Remove soluble impurities
-Use of desiccator instead of oven: Prevent melting
+Use of preheated funnel:            Prevent crystallization, remove insoluble impurities
+Use of Buchner funnel:              Remove soluble impurities
+Use of desiccator instead of oven:  Prevent melting
 How does x lead to crystallization: Product is less soluble in x
-Increased or > 100% yield: Damp crystals
+Increased or > 100% yield:          Damp crystals
 
 # Measure mp
-Side-arm heated: Distribute heat evenly
-Mineral oil: Allow points > 100°
-Different results: Different pressure
-Pure sample: Sharp m.p., close to book value
-Impure sample: Unsharp, lower m.p.
+Side-arm heated:                    Distribute heat evenly
+Mineral oil:                        Allow points > 100°
+Different results:                  Different pressure
+Pure sample:                        Sharp m.p., close to book value
+Impure sample:                      Unsharp, lower m.p.
 
 # Combustion analysis
 Absorb H2O: MgSO4
@@ -107,4 +107,4 @@ Absorb CO2: Soda lime
 3. Difference in mass
 
 # Misc
-Species in collection apparatus: Remove unreacted reactants
+Species in collection apparatus:    Remove unreacted reactants
