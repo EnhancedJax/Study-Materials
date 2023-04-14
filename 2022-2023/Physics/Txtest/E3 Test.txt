@@ -1,17 +1,16 @@
 # Paper checking
 * 
 * 
-* 
 
 ============================================================
 Unit 8
 ============================================================
 
 # Average KE per molecule
-* 
-* 
-* 
-* 
+* Eq shows that for same T, avg KE per molecule is 
+* During change of state, PE 
+* During change of state, T 
+* Internal energy = 
 
 # Why does increasing temperature increase the pressure?
 1. 
@@ -40,7 +39,6 @@ Gamma
 ## Trend of properties
 1. 
 2. 
-3. 
 
 Activity	    - 
 Random decay	- 
@@ -109,10 +107,10 @@ Unit 11
 # Star classifications
 Main sequence stars	  - 
 ## White dwarfs
-* 
-* 
-* 
-* 
+* Is: 
+* Has: 
+* Has: 
+* Appearance: 
 # H-R diagram
 Vertical:   
 Horizontal: 
@@ -131,6 +129,8 @@ Size ^
 
 # Distance to stars
 Parallax              - 
+Arcsec = 
+d = 
 ## Determine distance by parallax
 1. 
 2. 

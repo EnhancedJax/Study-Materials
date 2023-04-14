@@ -1,4 +1,4 @@
-_Test: Organic chemistry map, Chromate map, Fuel-cell, ES mechanism_
+_Test: Organic chemistry map, Chromate map, E-cell drawing, measure electrode drawing, fuel-cell diagram, ES mechanism, transitional metal colors table_
 
 ============================================================
 Unit 16
@@ -19,7 +19,6 @@ Electrocell diagram LR: Oxidized -> Reduced
 
 Shorthand: S1 | S1 Oxi || S2 | S2 Red
 
-dG = -nFEcell = -RTlnK
 Ecell propto lnK
 Kinetically stable				- Ea large
 Thermodynamically stable		- Ecell > 0
@@ -31,8 +30,8 @@ Electrodes coated: Pt as catalyst
 Alkaline / acid function: Electrolytes
 
 ## Formula commons
-Anode (-): H2 + ... -> ... + 2e-
-Cathode (+): O2 + ... + 4e- -> ...
+Anode (-): H2 -> 2e-
+Cathode (+): O2 + 4e- -> 
 Acidic: add H+
 Alkaline: add OH-
 
@@ -50,8 +49,6 @@ Common color change: MnO4- -> Mn2+
 Color change: purple -> pale pink
 Acidic conditions are used: prevent formation of MnO2 brown pp
 
-Also test: Cell drawing, measure electrode drawing, fuel cell diagram
-
 ============================================================
 Unit 17
 ============================================================
@@ -60,7 +57,7 @@ Transitional metals     - Metals that can form > 0 stable ions with partially fi
 Co-ordination number    - Number of c.o bonds
 Multidentate ligands    - Ligands that has > 1 lone pair of e- that can bond to t.m. ion
 
-Electronic configuration differences: More stability for half-filled subshells, so 4s2 / 3d5,10
+Electronic configuration differences: More stability for half-filled subshells, so 4s1x / 3d5,10
 
 Large ligands + shape: Cl- 4 tetrahedral
 Small ligands + shape: H2O NH3 6 Octahedral
@@ -78,7 +75,7 @@ OH-: Hydroxo
 # Isomerism
 2 sets:
 1. Optical 3-bi
-2. cis-trans Geometric 4x2 octahedral / 2x2 square planar
+2. Geometric 4x2 octahedral / 2x2 square planar
 
 cis - same side | trans - opposite side
 
@@ -86,9 +83,9 @@ cis - same side | trans - opposite side
 
 ## Colors
 1.	Partially filled d-orbital
-2.	Ligands cause d-d splitting
+2.	Ligands -> d-d splitting
 3.	Visible spectrum radiation absorbed
-4.	Light causes d-d transitions
+4.	Light -> d-d transitions
 5.	Complementary color observed 
 
 ## Reaction types
@@ -98,23 +95,7 @@ cis - same side | trans - opposite side
 4. C.o. number change 	Δ Number of ligands in complex 
 
 ## Reaction table
-### Mechnaism
-D	OH-	    Reduce to 0 by H2O -> OH-		                                        
-D	OH-(e)	H2O -> OH-                  Zn [4:2] -> [2:4]	                        
-D	NH3	    Reduce to 0 by H2O -> OH-	Fe2+ [4:2] -> Fe3+ [3:3]	                
-L	NH3(e)	H2O, OH- -> NH3             Cu [2:2] -> (NH3)4 && Zn [All] -> (NH3)4	
-L   con. cl H2O -> Cl- x4               
-
 ### Color & reaction table
-Cu  B       B   B  dBr
-Co  P       B   Br B
-Cr  BGYO    G G G
-Ni  G       G   B
-Fe  pG/Y    dG/Br
-
-> Cr oxidation by H2O2
-> Cr reduction by Zn
-* Cr color small to big: Blue Green Yellow / Orange
 * V color small to big: Purple Green Blue Yellow
 * Cu+ shake turns to Cu2+ due to oxidation by O2
 * Fe upon standing turns from +2 to +3
@@ -127,7 +108,7 @@ Fe  pG/Y    dG/Br
 3. Products then desorb
 
 ## Contact process
-2SO2 + O2 <=> 2SO2
+2SO2 + O2 <=> 2SO3
 ### Mechanism
 * V2O5 [5->4] w/ SO2
 * V2O4 [4->5] w/ O2
@@ -143,12 +124,11 @@ Unit 18
 2. CC bond same length
 3. Br water not decolorsied
 ## Explaination
-1. Delocalization of pi e -> more stable [2]
-2. More stable [1,3]
-3. Substitution instead of addition occurs -> maintain stable [3]
+1. Delocalization of pi e -> more stable
+2. Substitution instead of addition occurs -> maintain stable [3]
 
 # Explaination of reaction speeds
-Alkylarene: alkyl group donates e- to ring -> stronger nucleophile
+Alkylarene: alkyl group donates e to ring -> stronger nucleophile
 Phenol:
 1. OH group attached to ring
 2. O lone pair of e- overlaps with pi cloud -> donated to the ring
@@ -161,40 +141,33 @@ Low temperature as: Prevent further substitution
 Phenol bromination: [room temp] ArOH + 3Br2 -> ArOHBr3 + 3HBr (orange -> white pp)
 
 ## Mechanism
-Prepare electrophile: EX + AlX3 -> E+ + AlX4-
 ### Step 1
 1. C has partial +ve charge
 2. E+ has lone pair e- which moves to C
 3. Bond to leftover E part breaks
 ### Step 2
-Arrow direction: From H to ring as ring is e rich
+Arrow direction: From C-H bond to ring as ring is e rich
 
 ============================================================
 Unit 19
 ============================================================
 
-# Amines
-They're RNH2
-## Preparation
-1. RCl + 2NH3 [Excess hot ethanolic NH3 under pressure]
-2. RCN + 4[H]
-3. RCN + 2H2 [Nickel cat.]
+# Amines RNH2
 ## Basicity
-Stronger base: Higher availability of N lone pair e
-Trend: 2 > 1 > NH3 > Ar-
+Stronger base: Higher avablty of N lone pair e
+Trend: 1 > NH3 > Ar
 1. Alkyl groups e pushing
 2. Lone pair pulled into arene ring
 ## Reactions
-Water: H2O <=> OH-
-Acids: H+ -> NH3+
-1. RNH2 + R'OCl -> R'ONHR + HCl
-2. RNH2 + X~ - N~ + HX
+Water: + H2O <=> RHN3+ + OH-
+Acids: + H+ -> RNH3+
+1. + R'OCl -> R'ONHR + HCl
+2. + R'X -> RNHR' + HX
 
-# Amides
-They're RCONH2
+# Amides RONH2
 ## Preparation
-1. RCOCl + NH~ -> RCON~ + HCl
-Further: HCl + NH3 -> NH4CL
+Map: RCOCl + NH~ -> RCON~ + HCl
+Further: HCl + NH3 -> NH4Cl
 
 # Condensation polymerization
 Nitrogen organic compounds forms CONH bonds
@@ -211,7 +184,6 @@ All amino acids are:                    neutral in solution
 Solution in water acts as:              buffer solutions
 
 # Azo compounds
-They're ArN=NAr'
 ## Preparation
 From sodium nitrite
 1. Nitrous acid:        NaNO2 + HCl -> HNO2 + NaCl [5deg dilute HCl]
@@ -232,13 +204,3 @@ Extracting          Get wanted organic product
 Washing             Remove impurities from (s) / (l)
 Drying              Remove H2O
 Filtration          Remove (s) from (l)
-
-# Extending carbon chains
-Preparing Grignard reagent: [dry ether, reflux] RBr + Mg -> RMgBr 
-
-1. R(n-1)CO -> Alchol degree n
-2. CO2 -> Acid
-Followed by reaction with: H2O
-
-# Shortening carbon chains
-Reaction: CH3C=OR + I2 + NaOH -> RCOONa + CHI3 (Warm alkaline aq. I2)

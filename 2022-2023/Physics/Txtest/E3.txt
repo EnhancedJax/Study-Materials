@@ -1,6 +1,5 @@
 # Paper checking
 * diameter
-* revised points
 * conservation
 
 ============================================================
@@ -8,22 +7,22 @@ Unit 8
 ============================================================
 
 # Average KE per molecule
-* Equation shows that for same T, average KE per molecule is same of any molecule
+* Eq shows that for same T, avg KE per molecule is same of any molecule
 * During change of state, PE changes
 * During change of state, T remains constant
 * Internal energy = KE + PE
 
 # Why does increasing temperature increase the pressure?
-1. Atoms moves faster
-2. More frequent collisions
-3. State variables that are unchanged 
-4. Rate of change of momentum is greater
-5. Larger force on walls
+1. v inc
+2. f inc
+3. state var unchanged
+4. d(momentum)/dt inc
+5. F on wall inc
 
 # Ideal gas assumptions
 1. Negligible size
 2. Identical
-3. Exert no force on each other
+3. Exert no F on each other
 
 Moleucles in ideal has no PE
 
@@ -38,12 +37,11 @@ Beta	0,-1a	Few mm Al
 Gamma	0,0y	Few mm Sn
 
 ## Trend of properties
-1. Ionisation decrease propto damage
-2. Range increase
-3. Penetrating power increase
+1. Ionisation dec ~ dmg
+2. Range inc
 
 Activity	    - The rate of decay of nuclei
-Random decay	- Can't preduce which nucelus decays next
+Random decay	- Can't predict which nucelus decays next
 Half life	    - Avg time taken for activity to halve
 Binding E	    - E required to split nuclues into its separate molecules
 
@@ -51,9 +49,9 @@ Binding E	    - E required to split nuclues into its separate molecules
 * Time scale too lone, activity -> 0
 
 ## Measuring count rate
-* nparticles propto distance
+* n particles propto distance
 * Background radiation increases reading
-* Longer time reduces uncertainy of decay's random nature
+* Longer t reduces uncertainy of decay's random nature
 
 # Fission & fusion
 ## Why does continous fusion release large amounts of E?
@@ -62,13 +60,13 @@ Binding E	    - E required to split nuclues into its separate molecules
 ## Why does fragments of fission move away from each pother
 * Initial momentum 0, must be conserved
 
-Fe is the most stable element as smallest mass per nucleon
+Fe is the most stable element as smallest m/n
 
 ## Why nuclear fission is only possible for massive nuclei?
-* Splitting of massive nucleus ^ BE -> release E
-* Splitting of light nucleus requires E as mass per nucleus v -> release E
+* Split massive nucleus ^ BE -> release E
+* Split light nucleus requires E as m/n dec -> release E
 ## Why does fission of massive nuclei release large amounts of E?
-* Splitting of massive nucleus ^ BE -> release E
+* Split massive nucleus ^ BE -> release E
 * Large number of nucleons of fragments means large overall E release
 
 # Fusion as power supply
@@ -76,11 +74,11 @@ Fe is the most stable element as smallest mass per nucleon
 1. Unlimited fuel supply
 2. Hardly any radioactive waste
 ## Disadvantages / facts
-* Higher temperatures needed to give nuclei enough KE to overcome electrostatic repulsion to come near
+* Higher T -> nuclei KE to overcome electrostatic repulsion -> get close
 * High densities needed to give a high enough collision rate
 > Reaction must be contained securely along with strong magnetic field
-> If material touches container, temperature decreases
-> Stars are ideal for fusion as great G-force
+> If material touches container, T dec
+> Stars are ideal as great G-force
 
 ============================================================
 Unit 10
@@ -95,12 +93,12 @@ v-t: lambda/4
 a-t: lambda/2
 
 # Resonance
-System forced into oscillation at f0 resulting in max E transfer -> A ^
+System forced into osc system at f0 -> max E transfer -> A inc
 
 # Damping 
-Reduction in E from an oscillation due to resistive F on the oscillating system leading to decrease in A
+Reduction in E from osc system due to resistive F -> A dec
 * What materials necessary for energy dissipation to be effective: Plastic
-> They change shape and doesn't return to original shape, so energy is not returned to system
+> Shape changes & doesn't return -> E is not returned to system
 
 ============================================================
 Unit 11
@@ -131,25 +129,27 @@ Size ^ gravitational forces ^ rate of fusion ^ T ^
 
 # Distance to stars
 Parallax               - Change in position relative to background
+Arcsec = Arcdiff/2
+d = arcsec-1
 ## Determine distance by parallax
 1. Object viewed at opposite ends of earth
 2. Change in angular positions of star against background measured
-3. Trigonometry used
-4. Radius of Earth’s orbit to the sun must be known
+3. Trigo used
+4. r of Earth’s orbit <-> sun must be known
 ## Determine distance by standard candle
-1. Standard candle – object of known luminosity
-2. Identify object standard candle and F measured
+1. Standard candle = object of known luminosity
+2. Identify object standard candle + measure flux
 3. Inverse square law used
 
 # Age of universe
 ## How does doppler shift prove the expansion of the universe?
 1. z=v/c to calc v
 2. Galaxies were moving away from Earth
-3. The further the galaxy the faster they move away
-4. Galaxies hence are moving away from each other
-## Why wavelength of light detected from orbiting bodies change?
+3. Further ~ faster
+4. Galaxies moving away from each other
+## Why λ of light detected from orbiting bodies change?
 1. Doppler shift
-2. Object moving towards and away from observer
+2. Object moving towards & away from observer
 3. Approaching v leaving ^
 ## Determine distance to distant galaxies
 1. Measure λ of line in spectrum by distant galaxy
@@ -164,9 +164,9 @@ Redshift:           Distant galaxies
 
 # Fate of everything
 Critical density    - Density of matter in the Universe, below which universe will expand forever
-Dark matter		    - Matter that can’t be detected via em-interaction by has mass
+Dark matter		    - Matter that can’t be detected via em-interaction which has mass
 ## What is concluded from the observation of difference in values of observed mass & actual mass?
-* There must matter that doesn’t emit or absorb electromagnetic radiation
+* There is matter that doesn’t emit or absorb electromagnetic radiation
 * So dark matter must be present
 ## How does dark matter relate to the fate of the universe?
 * Dark matter increases density

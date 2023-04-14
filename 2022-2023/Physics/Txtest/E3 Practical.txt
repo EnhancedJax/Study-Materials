@@ -3,13 +3,13 @@
 2. increment
 3. set
 4. range
-5. repeat mean / only mean
+5. Rpt mean / only mean
 6. unit
 
 # Discuss whether graph supports suggested equation / test relationship
 1. Rearrange & compare equation to y=mx+c
 2. Identify gradient
-3. Calculate gradient from graph and compare
+3. calc gradient from graph and compare
 
 # Measurement
 Calculating mean: remove +-0.2 
@@ -24,22 +24,22 @@ Stationary length apparatuses:
 # Common questions
 ## Conducting measurements
 Graphical method: 
-1. Measure variable using measuring devices
-2. Repeat for same value and calculate mean
-3. Repeat for at least 5 sets of results
-4. Keep other variables constant
+1. Measure var using md
+2. Rpt for same value and calc mean
+3. Rpt for > 5 sets of results
+4. Keep other vars constant
 5. Plot graph to check straight line
 Accurate oscillation msumt.: 
-1. Measure multiple oscillations, divide by n   -> reduce %U
-2. Repeat mean                                  -> reduce random error
+1. Measure multiple osc / n                     -> reduce %U
+2. Rpt mean                                     -> reduce random error
 3. Use timing marker at center
 4. Start timing after a few rotations
 Accurate perpendicular dist. msumt.: 
 * Meter rule + set square
-* Read value perpendicularly                    -> reduce parallax error
+* Read value perp.                              -> reduce parallax error
 Accurate length msumt. techniques: 
 * Check for zero error                          -> reduce systematic error
-* Repeat at different positions to find mean    -> random error
+* Rpt at diff pos to find mean                  -> reduce random error
 • Accurate temp. msumt.: 
 * Place thermometer close to source
 * Stir water
@@ -53,24 +53,24 @@ Why motion camera:
 * Helps with viewing motion slowly
 ## Uncertainty
 Why reduce % uncertainty: 
-* Uncertainty in measuring device constant
+* Uncertainty in md constant
 * Larger measurement -> lower %U
 Why the uncertainty in … is …: 
-1. U of single measurement is half the resolution of measuring device
+1. U of single measurement = 1/2 the resolution of md
 2. U% = U1% * n
 
 # Experiments
 > Emission of radiation investigations
 Setup
-1. Measure background count
+1. Measure bg count
 2. Ensure source and detector in line
 3. Measure d with meter rule
-4. Repeat measure count then find mean
-5. Subtract background rate
+4. Rpt measure count then find mean
+5. Subtract bg count
 6. Plot graph
 Precaution
 1. Handle source with long tongs
-2. Maintain distance from source when useCommon questions
+2. Maintain distance from source when use
 Why measure bg count: Subtract from measured count as systematic error
 
 > Capacitor investigations
@@ -79,10 +79,10 @@ Setup
 2. Circuit to discharge capacitor through A & R
 3. Switch
 Precaution
-* Ensure capacitor fully discharged Determine capacitance
+* Ensure capacitor fully discharged
 Determine capacitance
-1. Choose the value of resistor to give a reasonable discharge time
-2. Measure the resistance of the resistor using a multimeter
+1. Choose the value of resistor -> reasonable discharge time
+2. Measure the R of the resistor using a multimeter
 3. Charge the capacitors to the initial p.d.
 4. Start the stopwatch at the same time as changing the switch
 5. Plot I-t graph, find time for I to fall to 37%

@@ -1,4 +1,4 @@
-_Test: Organic chemistry map, Chromate map, Fuel-cell, ES mechanism_
+_Test: Organic chemistry map, Chromate map, E-cell drawing, measure electrode drawing, fuel-cell diagram, ES mechanism, transitional metal colors table_
 
 ============================================================
 Unit 16
@@ -19,7 +19,6 @@ Electrocell diagram LR:
 
 Shorthand: 
 
-dG = 
 Ecell propto 
 Kinetically stable				- 
 Thermodynamically stable		- 
@@ -49,8 +48,6 @@ Alkaline: add
 Common color change: 
 Color change: 
 Acidic conditions are used: 
-
-Also test: Cell drawing, measure electrode drawing, fuel cell diagram
 
 ============================================================
 Unit 17
@@ -85,11 +82,11 @@ cis -  | trans -
 # Reactions and colors
 
 ## Colors
-1.	
-2.	
-3.	
-4.	
-5.	
+1. 
+2. 
+3. 
+4. 
+5. 
 
 ## Reaction types
 1. 
@@ -98,23 +95,7 @@ cis -  | trans -
 4. 
 
 ## Reaction table
-### Mechnaism
-
-
-
-
-
-
 ### Color & reaction table
-
-
-
-
-
-
-> Cr oxidation by 
-> Cr reduction by 
-* Cr color small to big: 
 * V color small to big:  
 * Cu+ shake turns to Cu2+ due to 
 * Fe upon standing 
@@ -145,7 +126,6 @@ Unit 18
 ## Explaination
 1. 
 2. 
-3. 
 
 # Explaination of reaction speeds
 Alkylarene: 
@@ -161,24 +141,18 @@ Lower temperature as:
 Phenol bromination: [] -> ( -> )
 
 ## Mechanism
-Prepare electrophile: 
 ### Step 1
 1. 
 2. 
 3. 
 ### Step 2
-Arrow direction: 
+Arrow direction: From C-H bond to ring as 
 
 ============================================================
 Unit 19
 ============================================================
 
 # Amines
-They're 
-## Preparation
-1. 
-2. 
-3. 
 ## Basicity
 Stronger base: 
 Trend: 
@@ -191,9 +165,8 @@ Acids:
 2. 
 
 # Amides
-They're 
 ## Preparation
-1. 
+Map: RCOCl + NH~ -> RCON~ + HCl
 Further: 
 
 # Condensation polymerization
@@ -211,7 +184,6 @@ All amino acids are:
 Solution in water acts as:              
 
 # Azo compounds
-They're 
 ## Preparation
 From sodium nitrite
 1. Nitrous acid:        
@@ -232,13 +204,3 @@ Extracting
 Washing             
 Drying              
 Filtration          
-
-# Extending carbon chains
-Preparing Grignard reagent: 
-
-1. 
-2. 
-Followed by reaction with: H2O
-
-# Shortening carbon chains
-Reaction: 
