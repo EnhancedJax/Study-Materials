@@ -41,7 +41,6 @@ n =
 
 # Titrations
 When to add starch indicator: 
-Acidified mixture titrating with KMnO4: 
 ## Procedure
 1. 
 2. 
@@ -67,13 +66,13 @@ Advantages:
 # Find total order of reaction 
 Pouring contents between beakers: 
 Use phenol: 
-V ∝ conc. 
+Why V ∝ conc.: 
 Use ethanol in mixture: 
-## conc. 
+## Graph 1: 
 0: 
 1: 
 2: 
-## rate conc. 
+## Graph 2: 
 0: 
 1: 
 2: 

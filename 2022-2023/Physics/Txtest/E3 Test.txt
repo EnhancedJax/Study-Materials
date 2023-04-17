@@ -24,7 +24,7 @@ Unit 8
 2. 
 3. 
 
-Moleucles in ideal has 
+Moleucles in ideal has no 
 
 ============================================================
 Unit 9
@@ -54,18 +54,18 @@ Binding E	    -
 * 
 
 # Fission & fusion
-## Why does continous fusion release large amounts of E?
+## cont. fusion -> ^ E released
 * 
 * 
-## Why does fragments of fission move away from each pother
+## Fission fragments <-> move away
 * 
 
 Fe is the most stable element as 
 
-## Why nuclear fission is only possible for massive nuclei?
+## Fission only for big nuclei
 * 
 * 
-## Why does fission of massive nuclei release large amounts of E?
+## Big fission -> ^ E released
 * 
 * 
 
@@ -78,7 +78,7 @@ Fe is the most stable element as
 * 
 > 
 > 
-> 
+> Stars are ideal as 
 
 ============================================================
 Unit 10
@@ -88,7 +88,7 @@ Unit 10
 1. F 
 2. F 
 
-# d-t
+# d-t shift left
 v-t: 
 a-t: 
 
@@ -98,7 +98,7 @@ a-t:
 # Damping 
 
 * What materials necessary for energy dissipation to be effective: 
-> 
+> Because: 
 
 ============================================================
 Unit 11
@@ -111,15 +111,15 @@ Main sequence stars	  -
 * Has: 
 * Has: 
 * Appearance: 
-# H-R diagram
+## H-R diagram
 Vertical:   
 Horizontal: 
-## Age of clusters
+### Age of clusters
 Lack of giants: 
 White dwarf:    
-# Star properties
+## Star properties
 Size ^ 
-# Life cycle of low mass star
+## Life cycle of low mass star
 1. 
 2. 
 3. 

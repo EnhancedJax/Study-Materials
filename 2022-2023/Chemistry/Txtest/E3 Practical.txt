@@ -19,7 +19,7 @@ Method 1: Carbonates => Bubbles (CO2)
 > Alchol & derivatives
 1 / 2 deg: acidified K2Cr2O7 => Orange, Green
 aldehydes: Benedict => B, R
-CH3C=O:    Warm alkaline sol. I2 => Yellow pp
+CH3C=O:    Warm alkaline sol. I2 => Yellow pp CHI3
 
 # Essential knowledge
 Common drying agent: MgSO4 (Anhydrous, doesn't react)
@@ -36,15 +36,14 @@ n = mol of solute
 1. Measure T / 30s
 2. Add solution at 3 min
 3. Measure T / 30s for 5 min
-4. Plot T-t graph, best fit line
-5. Extrapolate and find max temperature change
+4. Plot T-t graph -> best fit line
+5. Extrapolate -> max dT
 
 # Titrations
 When to add starch indicator: Near the end point as to avoid solid forming
-Acidified mixture titrating with KMnO4: If not MnO2 will form
 ## Procedure
 1. Indicator in burette
-2. Indicator drop by drop at end point
+2. Drop by drop at end point
 3. Record when color changes
 4. Repeat to obtain +-0.2 cm3 titres
 ## Improve accuracy
@@ -62,18 +61,18 @@ Continuous stirring:                Reactants do not mix, ensure enough contact
 ## Separating funnel
 Release pressure:                   Invert & remove stopper
 ## Buchner funnel
-Advantages:                         Greater speed, dries produ
+Advantages:                         Greater speed, dries product
 
 # Find total order of reaction 
-Pouring contents between beakers:   To ensure no reactants remain in one breaker
+Pouring contents between beakers:   Ensure no R left in one breaker
 Use phenol:                         React with Br2 to delay color change
-V ∝ conc.:                          Total volume constant
+Why V ∝ conc.:                      Total volume constant
 Use ethanol in mixture:             Dissolves reagents -> mix to increase rate
-## conc. t graph
+## Graph 1: conc. t
 0: Linear
 1: HL unchanged
 2: HL x2
-## rate conc. graph
+## Graph 2: 1/t conc.
 0: Flat
 1: Linear
 2: Curved
@@ -94,8 +93,8 @@ Increased or > 100% yield:          Damp crystals
 Side-arm heated:                    Distribute heat evenly
 Mineral oil:                        Allow points > 100°
 Different results:                  Different pressure
-Pure sample:                        Sharp m.p., close to book value
-Impure sample:                      Unsharp, lower m.p.
+Pure sample:                        Sharp, close to db
+Impure sample:                      Unsharp, lower
 
 # Combustion analysis
 Absorb H2O: MgSO4

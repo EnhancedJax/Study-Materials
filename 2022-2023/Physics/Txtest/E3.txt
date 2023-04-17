@@ -33,7 +33,7 @@ Unit 9
 # Particles
 P | C | Pentrating power
 Alpha	4,2a	Paper
-Beta	0,-1a	Few mm Al
+Beta	0,-1b	Few mm Al
 Gamma	0,0y	Few mm Sn
 
 ## Trend of properties
@@ -42,42 +42,42 @@ Gamma	0,0y	Few mm Sn
 
 Activity	    - The rate of decay of nuclei
 Random decay	- Can't predict which nucelus decays next
-Half life	    - Avg time taken for activity to halve
+Half life	    - Avg time for A to halve
 Binding E	    - E required to split nuclues into its separate molecules
 
 ## Why can't use activity to determine age
-* Time scale too lone, activity -> 0
+* Time scale too lone, A -> 0
 
 ## Measuring count rate
 * n particles propto distance
-* Background radiation increases reading
-* Longer t reduces uncertainy of decay's random nature
+* bg radiation inc reading
+* Longer t reduces uncertainy of random decay
 
 # Fission & fusion
-## Why does continous fusion release large amounts of E?
+## cont. fusion -> ^ E released
 * Mass -> E by E=mc2 where m = mass lost
-* High fusion rate compensates E per fusion
-## Why does fragments of fission move away from each pother
+* High rate compensates E / fusion
+## Fission fragments <-> move away
 * Initial momentum 0, must be conserved
 
 Fe is the most stable element as smallest m/n
 
-## Why nuclear fission is only possible for massive nuclei?
-* Split massive nucleus ^ BE -> release E
+## Fission only for big nuclei
+* Split massive nucleus inc BE -> release E
 * Split light nucleus requires E as m/n dec -> release E
-## Why does fission of massive nuclei release large amounts of E?
-* Split massive nucleus ^ BE -> release E
-* Large number of nucleons of fragments means large overall E release
+## Big fission -> ^ E released
+* Split massive nucleus inc BE -> release E
+* Large number of fragment nucleons => large total E release
 
 # Fusion as power supply
 ## Advantages
 1. Unlimited fuel supply
 2. Hardly any radioactive waste
 ## Disadvantages / facts
-* Higher T -> nuclei KE to overcome electrostatic repulsion -> get close
-* High densities needed to give a high enough collision rate
-> Reaction must be contained securely along with strong magnetic field
-> If material touches container, T dec
+* High T needed -> nuclei enough KE to overcome electrostatic repulsion -> get close
+* High densities needed -> high enough collision rate
+> Reaction must be contained securely + strong B field
+> Material touches container -> T dec
 > Stars are ideal as great G-force
 
 ============================================================
@@ -85,20 +85,20 @@ Unit 10
 ============================================================
 
 # SHM conditions
-1. F is acting towards eq pos
-2. F propto displacement from eq position
+1. F acting towards eq pos
+2. F propto s from eq pos
 
-# d-t
+# d-t shift left
 v-t: lambda/4
 a-t: lambda/2
 
 # Resonance
-System forced into osc system at f0 -> max E transfer -> A inc
+System forced into osc at natural f -> max E transfer -> A inc
 
 # Damping 
-Reduction in E from osc system due to resistive F -> A dec
+Reduction in E from osc sys due to resistive F -> A dec
 * What materials necessary for energy dissipation to be effective: Plastic
-> Shape changes & doesn't return -> E is not returned to system
+> Because: Shape changes & doesn't return -> E not returned to sys
 
 ============================================================
 Unit 11
@@ -118,59 +118,59 @@ Horizontal: 2e4 || 1e4 || 6e3 || 2.5e3
 Lack of giants: young
 White dwarf:    old
 ## Star properties
-Size ^ gravitational forces ^ rate of fusion ^ T ^
+Size ^ G-forces ^ rate of fusion ^ T ^
 ## Life cycle of low mass star
 1. Fusion H
-2. No buring -> Core T v
+2. No buring -> Core T dec
 3. Expand in size -> red giant
 4. Fusion He
-5. No burning -> T ^ < needed for fusion
+5. No burning -> T needed for fusion > T inc
 6. White dwarf
 
 # Distance to stars
-Parallax               - Change in position relative to background
+Parallax               - Change in pos relative to bg
 Arcsec = Arcdiff/2
 d = arcsec-1
 ## Determine distance by parallax
-1. Object viewed at opposite ends of earth
-2. Change in angular positions of star against background measured
-3. Trigo used
-4. r of Earth’s orbit <-> sun must be known
+1. obj viewed at oppos. ends of earth
+2. d anglar pos of star against bg measured
+3. trigo used
+4. r of earth's orbit <-> sun must be known
 ## Determine distance by standard candle
-1. Standard candle = object of known luminosity
-2. Identify object standard candle + measure flux
+1. Standard candle = object of known L
+2. Identify obj. sc + measure flux
 3. Inverse square law used
 
 # Age of universe
 ## How does doppler shift prove the expansion of the universe?
-1. z=v/c to calc v
+1. z=v/c -> calc v
 2. Galaxies were moving away from Earth
 3. Further ~ faster
 4. Galaxies moving away from each other
 ## Why λ of light detected from orbiting bodies change?
 1. Doppler shift
-2. Object moving towards & away from observer
-3. Approaching v leaving ^
+2. Object moving away & towards observer
+3. Towards dec away inc
 ## Determine distance to distant galaxies
-1. Measure λ of line in spectrum by distant galaxy
-2. Determine difference of λ of same line in lab
-3. Use z=v/c -> velocity of galaxy
+1. Measure λ of line in spectrum
+2. Find diff of λ of same line in lab
+3. z=v/c -> galaxy v
 4. Hubble’s law -> distance
 ## Feasibility
-Parallax:           Nearby stars
-Standard candle:    Any stars & Nearby galaxies
-Redshift:           Distant galaxies
+Parallax:           nS
+Standard candle:    @S + nG
+Redshift:           dG
 * Standard candle can't as flux is too small for measurement
 
 # Fate of everything
-Critical density    - Density of matter in the Universe, below which universe will expand forever
+Critical density    - Density of matter in uni below which uni expand forever
 Dark matter		    - Matter that can’t be detected via em-interaction which has mass
 ## What is concluded from the observation of difference in values of observed mass & actual mass?
-* There is matter that doesn’t emit or absorb electromagnetic radiation
+* There is matter that doesn’t emit or absorb em-radiation
 * So dark matter must be present
 ## How does dark matter relate to the fate of the universe?
 * Dark matter increases density
-* Fate depends upon density, compared with a critical density value
+* Fate depends upon density, compared with cd
 ## Critical density
 p~pc | Expansion | Fate
 < Forever   Open
