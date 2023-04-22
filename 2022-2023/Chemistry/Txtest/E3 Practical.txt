@@ -61,7 +61,7 @@ Continuous stirring:                Reactants do not mix, ensure enough contact
 ## Separating funnel
 Release pressure:                   Invert & remove stopper
 ## Buchner funnel
-Advantages:                         Greater speed, dries product
+Advantages:                         Greater speed, dries P
 
 # Find total order of reaction 
 Pouring contents between beakers:   Ensure no R left in one breaker

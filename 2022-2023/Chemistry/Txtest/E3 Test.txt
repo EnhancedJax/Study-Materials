@@ -1,4 +1,11 @@
-_Test: Organic chemistry map, Chromate map, E-cell drawing, measure electrode drawing, fuel-cell diagram, ES mechanism, transitional metal colors table_
+**Test also:**
+  \> Oragnic chemistry map
+  \> Chromate map
+  \> E-cell drawing
+  \> Measure electrode drawing
+  \> Fuel-cell diagram
+  \> ES mechanism
+  \> Transitional metal colors table
 
 ============================================================
 Unit 16
@@ -65,6 +72,7 @@ Small ligands + shape:
 Reason for number of ligands around t.m.:
 1. 
 2. 
+3. 
 
 ### Naming
 H2O:    
@@ -80,33 +88,29 @@ OH-:
 cis -  | trans - 
 
 # Reactions and colors
-
 ## Colors
 1. 
 2. 
 3. 
 4. 
 5. 
-
+## No Color
+1. 
+2. 
 ## Reaction types
 1. 
 2. 
-3. 
-4. 
+## Color & reaction table
+*  
+*  
+*  
 
-## Reaction table
-### Color & reaction table
-* V color small to big:  
-* Cu+ shake turns to Cu2+ due to 
-* Fe upon standing 
-
-# Heterogeneous catalyst Mechanism
-* 
-* 
+# Heterogeneous catalyst - Mechanism
+*  
+*  
 1. 
 2. 
 3. 
-
 ## Contact process
 
 ### Mechanism
@@ -114,6 +118,10 @@ cis -  | trans -
 * 
 ## Haber process mechanism
 
+# Homogenous catalyst - Mechanism
+*  
+1. 
+2. 
 
 ============================================================
 Unit 18
@@ -141,6 +149,8 @@ Lower temperature as:
 Phenol bromination: [] -> ( -> )
 
 ## Mechanism
+### Formation of electrophile
+HNO3, H2SO4: 
 ### Step 1
 1. 
 2. 
@@ -154,13 +164,12 @@ Unit 19
 
 # Amines
 ## Basicity
+Is base because: 
 Stronger base: 
 Trend: 
 1. 
 2. 
 ## Reactions
-Water: 
-Acids: 
 1. 
 2. 
 
@@ -188,7 +197,10 @@ Solution in water acts as:
 From sodium nitrite
 1. Nitrous acid:        
 2. Diazonium ion:       
+   |> 5deg:             
+   <| 5deg:             
 3. Coupling reaction:   
+   OH group location:   
 
 ============================================================
 Unit 20
@@ -197,10 +209,7 @@ mass %c =
 mass %o = 
 mol ratio = 
 
-# Method of separation
-Distilling          
-Steam distilling    
-Extracting          
-Washing             
-Drying              
-Filtration          
+# Calculating final oxidation state
+1. 
+2. 
+3. 

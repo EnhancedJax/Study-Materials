@@ -1,4 +1,12 @@
-_Test: Organic chemistry map, Chromate map, E-cell drawing, measure electrode drawing, fuel-cell diagram, ES mechanism, transitional metal colors table_
+**Test also:**
+  \> Oragnic chemistry map
+  \> E-cell drawing
+  \> Measure electrode drawing
+  \> Fuel-cell diagram
+  \> ES mechanism
+  \> Nucleophilic substitution mechanism
+  \> Chromate map
+  \> Transitional metal colors table
 
 ============================================================
 Unit 16
@@ -46,7 +54,7 @@ Alkaline: add OH-
 
 # Titrations
 Common color change: MnO4- -> Mn2+
-Color change: purple -> pale pink
+Color change: colorless -> pale pink
 Acidic conditions are used: prevent formation of MnO2 brown pp
 
 ============================================================
@@ -64,7 +72,8 @@ Small ligands + shape: H2O NH3 6 Octahedral
 
 Reason for number of ligands around t.m.:
 1. Ligands repel each other as far as possible
-2. Giving shape with bond angles of X
+2. n lone paris donated to metal ion
+3. Giving shape with bond angles of X
 
 ### Naming
 H2O: Aqua
@@ -80,33 +89,29 @@ OH-: Hydroxo
 cis - same side | trans - opposite side
 
 # Reactions and colors
-
 ## Colors
-1.	Partially filled d-orbital
-2.	Ligands -> d-d splitting
-3.	Visible spectrum radiation absorbed
-4.	Light -> d-d transitions
-5.	Complementary color observed 
-
+1. Partially filled d-orbitals
+2. Ligands -> d-d splitting
+3. Visible spectrum radiation absorbed
+4. Light -> d-d transitions
+5. Complementary color observed 
+## No Color
+1. No partially filled d-orbitals
+2. No d-d transition
 ## Reaction types
 1. Deprotonation	    Ligands ± H+
 2. Ligand exchange	    Ligands replaced
-3. Redox		        Δ Oxidation number
-4. C.o. number change 	Δ Number of ligands in complex 
+## Color & reaction table
+*  V color small to big: Purple Green Blue Yellow
+*  Cu+ shake turns to Cu2+ due to oxidation by O2
+*  Fe upon standing turns from +2 to +3
 
-## Reaction table
-### Color & reaction table
-* V color small to big: Purple Green Blue Yellow
-* Cu+ shake turns to Cu2+ due to oxidation by O2
-* Fe upon standing turns from +2 to +3
-
-# Heterogeneous catalyst Mechanism
-* Provide alternative reaction pathway with lower Ea
-* Different phase
+# Heterogeneous catalyst - Mechanism
+*  Provide alternative reaction pathway with lower Ea
+*  Different phase
 1. R adsorb onto surface
 2. Weakens bond in R
 3. Products then desorb
-
 ## Contact process
 2SO2 + O2 <=> 2SO3
 ### Mechanism
@@ -114,6 +119,10 @@ cis - same side | trans - opposite side
 * V2O4 [4->5] w/ O2
 ## Haber process mechanism
 Pt [4->5]
+# Homogenous catalyst - Mechanism
+*  Same phase as reactant
+1. Uncat. Rx same charge ion reacting
+2. Cat. Rx opposite charge ion reacting
 
 ============================================================
 Unit 18
@@ -141,6 +150,8 @@ Low temperature as: Prevent further substitution
 Phenol bromination: [room temp] ArOH + 3Br2 -> ArOHBr3 + 3HBr (orange -> white pp)
 
 ## Mechanism
+### Formation of electrophile
+HNO3, H2SO4: H2O HSO4- NO2+
 ### Step 1
 1. C has partial +ve charge
 2. E+ has lone pair e- which moves to C
@@ -154,13 +165,12 @@ Unit 19
 
 # Amines RNH2
 ## Basicity
+Is base because: + H2O <=> RNH3+ + OH-
 Stronger base: Higher avablty of N lone pair e
 Trend: 1 > NH3 > Ar
 1. Alkyl groups e pushing
 2. Lone pair pulled into arene ring
 ## Reactions
-Water: + H2O <=> RHN3+ + OH-
-Acids: + H+ -> RNH3+
 1. + R'OCl -> R'ONHR + HCl
 2. + R'X -> RNHR' + HX
 
@@ -187,8 +197,11 @@ Solution in water acts as:              buffer solutions
 ## Preparation
 From sodium nitrite
 1. Nitrous acid:        NaNO2 + HCl -> HNO2 + NaCl [5deg dilute HCl]
-2. Diazonium ion:       ArNH2 + HNO2 + HCl -> ArN+===NCl- + 2H2O [5deg (if not phenol forms)]
+2. Diazonium ion:       ArNH2 + HNO2 + HCl -> ArN+===NCl- + 2H2O [5deg]
+   |> 5deg:             Phenol forms
+   <| 5deg:             Reaction too slow
 3. Coupling reaction:   Diaz + Phen -> ArN=NArOH + HCl [Alkaline]
+   OH group location:   Oppo. N
 
 ============================================================
 Unit 20
@@ -197,10 +210,7 @@ mass %c = m(co2) * m(c/co2) / m(total)
 mass %o = 1 - %c - %h
 mol ratio = %c/12 : %h : %o/16
 
-# Method of separation
-Distilling          Get (l) w/ b.p. << others
-Steam distilling    Get insoluble (l) from (aq)
-Extracting          Get wanted organic product
-Washing             Remove impurities from (s) / (l)
-Drying              Remove H2O
-Filtration          Remove (s) from (l)
+# Calculating final oxidation state
+1. Identify 2 R + half-eq
+2. R:R mol ratio
+3. R:R ~ e-:e- half-eq

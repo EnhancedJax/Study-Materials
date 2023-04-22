@@ -67,17 +67,12 @@ Setup
 3. 
 4. 
 5. 
-6. 
 Precaution
 1. 
 2. 
 Why measure bg count: 
 
 > Capacitor investigations
-Setup
-1. 
-2. 
-3. 
 Precaution
 * 
 Determine capacitance
@@ -92,10 +87,10 @@ Determine capacitance
 Setup
 1. 
 Determine L
+*  
 1. 
 2. 
 3. 
-4. 
 Source of errors
 1. 
 2. 

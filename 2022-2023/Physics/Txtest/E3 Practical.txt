@@ -30,10 +30,10 @@ Graphical method:
 4. Keep other vars constant
 5. Plot graph to check straight line
 Accurate oscillation msumt.: 
-1. Measure multiple osc / n                     -> reduce %U
-2. Rpt mean                                     -> reduce random error
-3. Use timing marker at center
-4. Start timing after a few rotations
+1. Use timing marker at center
+2. Start timing after a few osc
+3. Measure multiple osc / n                     -> reduce %U
+4. Rpt mean                                     -> reduce random error
 Accurate perpendicular dist. msumt.: 
 * Meter rule + set square
 * Read value perp.                              -> reduce parallax error
@@ -62,40 +62,35 @@ Why the uncertainty in … is …:
 # Experiments
 > Emission of radiation investigations
 Setup
-1. Measure bg count
-2. Ensure source and detector in line
-3. Measure d with meter rule
-4. Rpt measure count then find mean
-5. Subtract bg count
-6. Plot graph
+1. Ensure source and detector in line
+2. Measure d with meter rule
+3. Rpt mean
+4. Measure & subtract bg count
+5. Plot graph
 Precaution
-1. Handle source with long tongs
-2. Maintain distance from source when use
+1. Handle with long tongs
+2. Keep distance from source
 Why measure bg count: Subtract from measured count as systematic error
 
 > Capacitor investigations
-Setup
-1. Capacitor connected to power supply
-2. Circuit to discharge capacitor through A & R
-3. Switch
 Precaution
 * Ensure capacitor fully discharged
 Determine capacitance
-1. Choose the value of resistor -> reasonable discharge time
-2. Measure the R of the resistor using a multimeter
-3. Charge the capacitors to the initial p.d.
-4. Start the stopwatch at the same time as changing the switch
-5. Plot I-t graph, find time for I to fall to 37%
+1. Choose val of resistor -> reasonable discharge time
+2. Measure R of resistor by multimeter
+3. Charge capacitors -> initial p.d.
+4. Start stopwatch while flipping the switch
+5. Plot I-t graph -> t when I@.37
 6. t=RC
 
 > Specific latent heat investigations
 Setup
 1. Power supply, Jmeter
 Determine L
-1. Wait until water boils
-2. Record values of m to E with Jmeter
-3. Plot m-E graph 
-4. Gradient is 1/L
+*  Wait until water boils
+1. Record values of m to E with Jmeter
+2. Plot m-E graph 
+3. Gradient = 1/L
 Source of errors
 1. Water moving
 2. Heat lost to surroundings
