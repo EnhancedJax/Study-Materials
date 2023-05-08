@@ -40,7 +40,7 @@ Accurate perpendicular dist.
 Accurate length msumt. 
 * 
 * 
-• Accurate temp. 
+Accurate temp. 
 * 
 * 
 ## Measuring accuracy

@@ -18,6 +18,8 @@ Unit 8
 3. 
 4. 
 5. 
+6. 
+7. 
 
 # Ideal gas assumptions
 1. 
@@ -54,6 +56,8 @@ Binding E	    -
 * 
 
 # Fission & fusion
+Fission         - 
+Mass deficit = 
 ## cont. fusion -> ^ E released
 * 
 * 
@@ -87,10 +91,12 @@ Unit 10
 # SHM conditions
 1. F 
 2. F 
-
-# d-t shift left
+## Graphs
+Direction: 
 v-t: 
 a-t: 
+## Energy
+GPE of bob osc = 
 
 # Resonance
 
@@ -104,6 +110,7 @@ a-t:
 Unit 11
 ============================================================
 
+dGPE = 
 # Star classifications
 Main sequence stars	  - 
 ## White dwarfs
@@ -112,11 +119,11 @@ Main sequence stars	  -
 * Has: 
 * Appearance: 
 ## H-R diagram
-Vertical:   
-Horizontal: 
+Vertical:       
+Horizontal:     
 ### Age of clusters
-Lack of giants: 
-White dwarf:    
+Young clusters: 
+Old clusters:   
 ## Star properties
 Size ^ 
 ## Life cycle of low mass star
@@ -129,8 +136,6 @@ Size ^
 
 # Distance to stars
 Parallax              - 
-Arcsec = 
-d = 
 ## Determine distance by parallax
 1. 
 2. 
@@ -142,6 +147,7 @@ d =
 3. 
 
 # Age of universe
+Redshift                - 
 ## How does doppler shift prove the expansion of the universe?
 1. 
 2. 

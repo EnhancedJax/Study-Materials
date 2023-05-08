@@ -13,11 +13,13 @@ Unit 8
 * Internal energy = KE + PE
 
 # Why does increasing temperature increase the pressure?
-1. v inc
-2. f inc
-3. state var unchanged
-4. d(momentum)/dt inc
-5. F on wall inc
+1. KE inc
+2. v inc
+3. f inc
+4. state var unchanged
+5. d(momentum)/dt inc
+6. F on wall inc
+7. p = F / A
 
 # Ideal gas assumptions
 1. Negligible size
@@ -40,10 +42,10 @@ Gamma	0,0y	Few mm Sn
 1. Ionisation dec ~ dmg
 2. Range inc
 
-Activity	    - The rate of decay of nuclei
-Random decay	- Can't predict which nucelus decays next
-Half life	    - Avg time for A to halve
-Binding E	    - E required to split nuclues into its separate molecules
+Activity	        - The rate of decay of nuclei
+Random decay	    - Can't predict which nucelus decays next
+Half life	        - Avg time for A to halve
+Binding E	        - E required to split nuclues into its separate molecules
 
 ## Why can't use activity to determine age
 * Time scale too lone, A -> 0
@@ -54,6 +56,8 @@ Binding E	    - E required to split nuclues into its separate molecules
 * Longer t reduces uncertainy of random decay
 
 # Fission & fusion
+Fission             - Large nucleus splits into smaller fragments
+Mass deficit = p + n - a - e
 ## cont. fusion -> ^ E released
 * Mass -> E by E=mc2 where m = mass lost
 * High rate compensates E / fusion
@@ -87,10 +91,12 @@ Unit 10
 # SHM conditions
 1. F acting towards eq pos
 2. F propto s from eq pos
-
-# d-t shift left
+## Graphs
+Direction: Left
 v-t: lambda/4
 a-t: lambda/2
+## Energy
+GPE of bob osc = 1/2kx2
 
 # Resonance
 System forced into osc at natural f -> max E transfer -> A inc
@@ -104,6 +110,7 @@ Reduction in E from osc sys due to resistive F -> A dec
 Unit 11
 ============================================================
 
+dGPE = Gm1m2(1/r-1/r)
 # Star classifications
 Main sequence stars	  - Stars that fuses H2 in core
 ## White dwarfs
@@ -112,27 +119,25 @@ Main sequence stars	  - Stars that fuses H2 in core
 * Small surface area, not very luminous
 * Very hot, appear white
 ## H-R diagram
-Vertical:   10^-4 -> 10^6
-Horizontal: 2e4 || 1e4 || 6e3 || 2.5e3
+Vertical:       L// 10^-4 -> 10^6
+Horizontal:     K// 6000K @ sun, x2 / 2
 ### Age of clusters
-Lack of giants: young
-White dwarf:    old
+Young clusters: Main sequence only
+Old clusters:   White dwarfs no giants
 ## Star properties
 Size ^ G-forces ^ rate of fusion ^ T ^
 ## Life cycle of low mass star
 1. Fusion H
-2. No buring -> Core T dec
+2. No buring -> Core T dec -> Size dec
 3. Expand in size -> red giant
 4. Fusion He
-5. No burning -> T needed for fusion > T inc
+5. No He -> T needed for fusion > T inc
 6. White dwarf
 
 # Distance to stars
 Parallax               - Change in pos relative to bg
-Arcsec = Arcdiff/2
-d = arcsec-1
 ## Determine distance by parallax
-1. obj viewed at oppos. ends of earth
+1. obj viewed at oppos. ends of d of earth's orbit around sun
 2. d anglar pos of star against bg measured
 3. trigo used
 4. r of earth's orbit <-> sun must be known
@@ -142,6 +147,7 @@ d = arcsec-1
 3. Inverse square law used
 
 # Age of universe
+Redshift                - The fractional wavelength inc due to source moving away from observer
 ## How does doppler shift prove the expansion of the universe?
 1. z=v/c -> calc v
 2. Galaxies were moving away from Earth
@@ -163,8 +169,8 @@ Redshift:           dG
 * Standard candle can't as flux is too small for measurement
 
 # Fate of everything
-Critical density    - Density of matter in uni below which uni expand forever
-Dark matter		    - Matter that can’t be detected via em-interaction which has mass
+Critical density        - Density of matter in uni below which uni expand forever
+Dark matter		        - Matter that can’t be detected via em-interaction which has mass
 ## What is concluded from the observation of difference in values of observed mass & actual mass?
 * There is matter that doesn’t emit or absorb em-radiation
 * So dark matter must be present

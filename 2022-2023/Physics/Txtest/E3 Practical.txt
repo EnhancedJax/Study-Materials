@@ -40,7 +40,7 @@ Accurate perpendicular dist. msumt.:
 Accurate length msumt. techniques: 
 * Check for zero error                          -> reduce systematic error
 * Rpt at diff pos to find mean                  -> reduce random error
-• Accurate temp. msumt.: 
+Accurate temp. msumt.: 
 * Place thermometer close to source
 * Stir water
 ## Measuring accuracy
