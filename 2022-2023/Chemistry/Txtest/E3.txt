@@ -84,7 +84,7 @@ OH-: Hydroxo
 # Isomerism
 2 sets:
 1. Optical 3-bi
-2. Geometric 4x2 octahedral / 2x2 square planar
+2. Geometric quad-bi octahedral / bi-bi square planar
 
 cis - same side | trans - opposite side
 
@@ -186,6 +186,7 @@ Nitrogen organic compounds forms CONH bonds
 Compounds that contain:                 NH2 & COOH
 Identify different amino acids with:    Chromatography
 Peptide bond:                           CONH group by polymers
+Solid exists in the form of:            zwitter ions
 
 ## Zwitterions
 By:                                     COO-, NH3+
@@ -209,6 +210,8 @@ Unit 20
 mass %c = m(co2) * m(c/co2) / m(total)
 mass %o = 1 - %c - %h
 mol ratio = %c/12 : %h : %o/16
+
+Arrows in mechanism diagrams represent: movement of electron pairs
 
 # Calculating final oxidation state
 1. Identify 2 R + half-eq

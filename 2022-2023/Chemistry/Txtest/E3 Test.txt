@@ -101,9 +101,9 @@ cis -  | trans -
 1. 
 2. 
 ## Color & reaction table
-*  
-*  
-*  
+*  V color small to big: 
+*  Cu+ shake turns to Cu2+ due to: 
+*  Fe upon standing: 
 
 # Heterogeneous catalyst - Mechanism
 *  
@@ -185,6 +185,7 @@ Nitrogen organic compounds forms
 Compounds that contain:                 
 Identify different amino acids with:    
 Peptide bond:                           
+Solid exists in the form of:            
 
 ## Zwitterions
 By:                                     
@@ -208,6 +209,8 @@ Unit 20
 mass %c = 
 mass %o = 
 mol ratio = 
+
+Arrows in mechanism diagrams represent: 
 
 # Calculating final oxidation state
 1. 

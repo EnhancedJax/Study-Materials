@@ -13,7 +13,7 @@ Unit 8
 * Internal energy = KE + PE
 
 # Why does increasing temperature increase the pressure?
-1. KE inc
+1. avg KE inc
 2. v inc
 3. f inc
 4. state var unchanged
@@ -109,6 +109,13 @@ Reduction in E from osc sys due to resistive F -> A dec
 ============================================================
 Unit 11
 ============================================================
+
+## Comparing e-field and g-field
+1. Infinite range
+2. Inverse square law
+3. Interaction charge > mass
+4. Charged, mass
+5. Repulsive and attractive
 
 dGPE = Gm1m2(1/r-1/r)
 # Star classifications
