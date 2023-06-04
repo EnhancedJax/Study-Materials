@@ -98,6 +98,11 @@ a-t: lambda/2
 ## Energy
 GPE of bob osc = 1/2kx2
 
+## Why does an object on the oscillation surface lose contact when the amplitude is large enough?
+* ma = W - R
+* x inc R dec 
+* When R = 0 object loses contact
+
 # Resonance
 System forced into osc at natural f -> max E transfer -> A inc
 

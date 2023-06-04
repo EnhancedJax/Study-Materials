@@ -98,6 +98,11 @@ a-t:
 ## Energy
 GPE of bob osc = 
 
+## Why does an object on the oscillation surface lose contact when the amplitude is large enough?
+* 
+* 
+* 
+
 # Resonance
 
 

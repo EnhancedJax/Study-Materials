@@ -27,6 +27,11 @@ Electrocell diagram LR: Oxidized -> Reduced
 
 Shorthand: S1 | S1 Oxi || S2 | S2 Red
 
+## Observations
+* Metal on reducing electrode
+* Paler color of reducing solution
+* Smaller size of oxidizing electrode
+
 Ecell propto lnK
 Kinetically stable				- Ea large
 Thermodynamically stable		- Ecell > 0

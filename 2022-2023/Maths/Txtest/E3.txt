@@ -56,6 +56,7 @@ Angle between vectors:  a.b = |a||b|cos(theta)
     Quickhand:          cos-1(a.b/|a||b|)
 a+\\w make angle:       a = w0, b = w1
 Perpendicular:          a.b = 0
+Closest point to line:  POINT TO LINE DOT DIR
 
 Area:                   1/2bcsinA
 Cosine rule:            a2 = b2 + c2 - 2bc cos A

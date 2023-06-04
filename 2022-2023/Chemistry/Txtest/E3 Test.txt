@@ -26,6 +26,11 @@ Electrocell diagram LR:
 
 Shorthand: 
 
+## Observations
+* 
+* 
+* 
+
 Ecell propto 
 Kinetically stable				- 
 Thermodynamically stable		- 
