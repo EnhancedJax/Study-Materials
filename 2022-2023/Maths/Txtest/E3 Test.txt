@@ -44,6 +44,7 @@ Unit vector:
 
 Parallel if 
 Collinear if 
+Skew if 
 
 Through a parallel b:   
 Through a and b:        

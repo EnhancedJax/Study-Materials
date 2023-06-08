@@ -32,9 +32,13 @@ Shorthand: S1 | S1 Oxi || S2 | S2 Red
 * Paler color of reducing solution
 * Smaller size of oxidizing electrode
 
+## Stability
 Ecell propto lnK
-Kinetically stable				- Ea large
-Thermodynamically stable		- Ecell > 0
+_Two stability:_
+1. Kinetically stable				- Ea large
+2. Thermodynamically stable		- Ecell > 0
+* Whether or not reaction occurs depends also on: Ea and rate
+* Reaction can also occur if: conditions are not standard
 
 # Fuel cells
 Overall: 2H2 + O2 -> H2O (same Ecell)

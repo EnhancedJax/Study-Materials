@@ -44,6 +44,7 @@ Unit vector:            v |v|^-1
 
 Parallel if one is scalar multiple of other
 Collinear if common point for parallel vectors
+Skew if not parallel and no common point
 
 Through a parallel b:   r = a + \\b
 Through a and b:        r = a + \\(b-a)

@@ -73,6 +73,13 @@ Fe is the most stable element as smallest m/n
 * Split massive nucleus inc BE -> release E
 * Large number of fragment nucleons => large total E release
 
+## Why is there a range of energy for particles emitted in decay (fission)?
+* Momentum is sharedl between particles
+* Energy split is random
+## Why doesn 't one particle get all the released energy?
+* Momentum is conserved
+* The particles move in opposite directions
+
 # Fusion as power supply
 ## Advantages
 1. Unlimited fuel supply
@@ -122,7 +129,7 @@ Unit 11
 4. Charged, mass
 5. Repulsive and attractive
 
-dGPE = Gm1m2(1/r-1/r)
+dGPE = -Gm1m2(1/r-1/r)
 # Star classifications
 Main sequence stars	  - Stars that fuses H2 in core
 ## White dwarfs

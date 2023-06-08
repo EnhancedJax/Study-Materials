@@ -1,10 +1,11 @@
 **Test also:**
   \> Oragnic chemistry map
-  \> Chromate map
   \> E-cell drawing
   \> Measure electrode drawing
   \> Fuel-cell diagram
   \> ES mechanism
+  \> Nucleophilic substitution mechanism
+  \> Chromate map
   \> Transitional metal colors table
 
 ============================================================
@@ -31,9 +32,13 @@ Shorthand:
 * 
 * 
 
+## Stability
 Ecell propto 
-Kinetically stable				- 
-Thermodynamically stable		- 
+_Two stability:_
+1. Kinetically stable				- 
+2. Thermodynamically stable		- 
+* Whether or not reaction occurs depends also on: 
+* Reaction can also occur if: 
 
 # Fuel cells
 Overall: 
