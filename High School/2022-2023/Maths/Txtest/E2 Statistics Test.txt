@@ -1,0 +1,77 @@
+Answers: 
+
+sd = 
+
+Interpolation: 
+
+coded y = ax + b:
+mean y = 
+sd y = 
+var y = 
+
+# Histogram
+Bar {w = , h = }
+Frequency density =  * scale
+So area = 
+
+# Skewness
+Lean left = 
+Using quartiles to calculate skew: 
+Using mean median to calculate skew: 
+Skew towards: 
+
+# Comparing data
+Location
+- 
+- 
+Spread
+- 
+- 
+- 
+
+For skewed data, use 
+because: 
+
+# Position of data value with Quartile criteria
+1. Added 
+2. Added 
+
+# Probabilitiy
+A given that B: P(A|B) = 
+Independent events: 
+Consider order? 
+Mutually exclusive: 
+
+# Types of distrubtion in P1
+1. 
+2. 
+
+# Data correlation
+Strong positive correlation = 
+
+Sxy = 
+Similar, but not the same as SD!
+
+Value of PMCC (r) 
+Practical meaning: 
+Absolute relationship r = 
+
+Regression line formula: 
+This regression line is: 
+Estimation: 
+
+# Random variables
+sum P(X=x) = 
+E(X) = 
+E(X^2) = 
+Var(X) = 
+
+Y = aX + b
+E(Y) = 
+Var(Y) = 
+Which value, outcome or prob, is affected by coding: 
+
+# Normal dist
+Standardizing: P(X < x) = 
+P (a < Z < b) = 
+P (Z > c) = 

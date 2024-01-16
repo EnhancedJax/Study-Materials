@@ -1,0 +1,63 @@
+# Prove
+Irrational: 
+Infinite primes: 
+Even / odd: 
+
+# Partial fractions
+for k/fg2 = A/f + B/g + C/g2
+k = 
+
+# Parametric
+for y = f(x) from f(t)
+Domain = 
+Range = 
+
+# Binominal
+For (1+kx)n: 
+(a+bx)n: 
+
+# Differentiation
+f(x)        f'(x)
+-----------------
+a^x         
+e^x         
+lnx         
+sinx        
+cosx        
+tanx        
+|x|         
+
+Implicit differentiation: 
+
+# Integration
+Parametric:     
+Rotating:       
+Substitution:   
+Part:           
+Try:            
+## Solving differential equations
+for dy/dx = f(x)g(y), 
+
+# Vectors
+Magnitude:              
+Unit vector:            
+
+Parallel if 
+Collinear if 
+Skew if 
+
+Through a parallel b:   
+Through a and b:        
+Check if P on line:     
+Check intersection:     
+Point of intersection:  
+
+a.b:                    
+Angle between vectors:  
+    Quickhand:          
+a+\\w make angle:       
+Perpendicular:          
+Closest point to line:  
+
+Area:                   
+Cosine rule:            

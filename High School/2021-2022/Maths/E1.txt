@@ -1,0 +1,47 @@
+quad x = -b +- sqrt(b2-4ac) / 2a
+LHS +y dir = > ^ v
+LHS +x dir = >
+f(x+t)      t -> -x
+f(x) + t    t -> y
+f(sx)       s -> x/s
+sf(x)       s -> y
+
+Cosine rule: 
+cos A = b2 + c2 - a2 / 2bc
+a2 = b2 + c2 - 2bc cos A
+Sine rule: 
+a / sin A = b / sin B
+Area: 1/2 bc sin A
+
+rad pi = 180 deg
+l = r theta
+Area: 1/2 r2 theta
+Sector area: 1/2 r2 (theta - sin theta)
+
+First principle: f'x = lim h->0 f(x+h)-f(x)/h
+
+logan=x <=> a^x = n
+nCr = n! / r!(n-r)!
+binomial expansion: (n)sum(r=0) nCr a^(n-r)b^(r)
+
+Arithmetic un = a + (n-1)d
+Arithmetic sn = n/2(a+l)
+Geometric un = ar^(n-1)
+Geometric sn = a(1-r^n)/1-r
+Sum to infinity = a/1-r
+
+Reflex > 180
+Obtuse > 90
+Acute < 90
+
+f'(x) > 0 : increasing
+f''(x) > 0 = local minimum
+f''(x) < 0 = local maximum
+f''(x) = 0 -> any
+
+Trapezium rule: 
+h = b-a/n-1
+Area: 1/2 h (y0 + yn + 2(sum y))
+Estimation of area:
+Bend inwards -> Overestimate
+Bend outward -> Underestimate

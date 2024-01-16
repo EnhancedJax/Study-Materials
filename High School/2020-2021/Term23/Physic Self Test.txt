@@ -1,0 +1,169 @@
+v=d/t
+nsin0
+n=c/v
+n0=n1/sinC
+m=v/u
+1/u+1/v=1/f (u vex+cave- u+ f vex R+V- cave -)
+f=T-1
+v=fλ
+n1>2=v1/v2
+y=λD/a
+asin0=nλ
+d=mm / lines
+dsin0=nλ
+
+smooth surface = regular
+rough surface = diffused 
+
+Dense = toward normal
+Less dense = away from normal
+|/_ slope = n
+under watere, virtual images are formed at a higher position
+total internal reflection occurs when light goes from denser medium to less dense, and with the angle of incidence is larger than C
+i = C, r = 90
+object at infinity forms image at focus
+vex f+u+v/
+cave f-u+v-
+
+move forward, doesn't move
+particles same A, diff A
+out of phase, same loop = in phase, adjacent loop = antiphase
+particles reach max @ diff times, @ same times
+energy is trasmitted from place to place, stored in the wave
+
+water wave change in f λ not affect v
+Deeper = bend towards, +vλ
+Shallower = bend away, -vλ
+dipper f = wave f
+increasse in gap width: decrease in angle of diffraction
+increase in wave frequency: increase in angle of diffraction
+constructive = nλ, nodal lines, super posititons
+destructive = .5nλ, anti-nodal lines, particles don't vibrate
+700 red 400 purple nm
+diffraction of waves is only obersable when d is comparable to λ
+bright = con, dark = des
+YDSE: evenly spaced fringes
+Diffraction grating: increasingly spaced fringes, white light at maxima genereate spectrums from purple to red, might overlap
+
+electromagnetic waves no need medium
+v = light speed
+star: all em waves
+radio: use differnet frequnecy to prevent des interference occuring at certain pos
+
+displacement-distance s-d
+displacement-time s-t
+λ - compression to compression
+A - largest displacement from original
+T - time for one complete cycle
+v - distance shifted / time used
+sound source vibrate -> air particle vibrate
+loud = con, soft = des
+noise cancelling: produce antiphase audi oto create edestructive interference to reduce noise
+speed = 340ms-1
+infrasound < 20 (audible range) 20k < ultra sound 
+further away from sound source = lower volume
+
+note = regular vibrations
+noise = irregular vibrations
+a loudness
+.λ pitch
+quality = waveforms
+0dB =/= no sound
+
+
+========================================================================================================================================================================================================================
+
+:Formulas: 
+v=
+relative of n=
+n calculate with speed of light=
+n calculate with critical=
+m=
+get object image distance and focal=
+frequency=
+speed of wave=
+relative n=
+fringe seperation of YDSE= 
+diffracted angle from YDSE=
+grating spacing=
+diffracted from diffraction grating=
+
+:Concepts: 
+smooth surface = 
+rough surface = 
+
+Dense = 
+Less dense = 
+|/_ 
+under water images:
+total internal reflection critera: 
+i = C: 
+object at infinity forms: 
+.1/u+1/v=1/f variables varies when:
+vex: 
+cave: 
+
+.Differences of travelling and stationary:
+movement: 
+particle A: 
+phases: 
+maxima: 
+energy: 
+
+change in water wave frquency: 
+Deeper = 
+Shallower = 
+dipper f =
+increasse in gap width: 
+increase in wave frequency: 
+constructive =
+destructive = 
+red purple: 
+when is diffraction wave observable: 
+bright = , dark = 
+YDSE's spacing of fringes: 
+Diffraction grating's spacing of fringes and white light: ...
+
+
+can EM waves travel in space?:
+speed of EM waves: 
+star emits: 
+radio frequency: 
+
+displacement-distance = 
+displacement-time = 
+.How to determine:
+λ - 
+A - 
+T - 
+v - 
+How to produce sound: 
+loud = , soft = 
+noise cancelling: 
+speed of sound: 
+ranges of sound: 
+further away from sound source = 
+
+note = 
+noise = 
+.change in loudness and pitch:
+loudness = 
+pitch = 
+quality = 
+0dB isn't: 
+
+========================================================================================================================================================================================================================
+
+:Variable relativity:
+n > .Cv
+f > v .b
+w > v λ
+f > .λ
+0 < .d λ (diff of water ^ spread of nodal lines)
+D > .y
+λ > y
+A > Loud
+λ > .Pitch
+
+A=Height
+λ=Width

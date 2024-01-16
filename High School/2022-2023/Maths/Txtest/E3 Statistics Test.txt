@@ -1,0 +1,39 @@
+# Probability distributions
+Standardizing: 
+P (a < Z < b) = 
+P (Z > c) = 
+
+## Distribution assumptions
+B - 
+Po - 
+
+## Binomial distribution
+E(X)=
+Var(X)=
+
+## Approximations
+Po  -> 
+B   -> 
+                -> 
+
+# Continous random variables
+F(x) = 
+Mode = 
+E(Xn)= 
+To find Qp: 
+
+## Continous uniform distribution
+E(X)   = 
+Var(X) = 
+
+# Terminology
+Sampling frame - 
+Sampling distribution - 
+Critical region - 
+
+# Hypo tests
+1. 
+2. 
+3. 
+4. 
+5. 

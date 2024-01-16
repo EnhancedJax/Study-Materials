@@ -1,0 +1,215 @@
+============================================================
+Unit 1
+============================================================
+
+# Newton's law
+1. 
+3. 
+
+> Normal force pairs act on 
+> Weight's pair is ..., and acts on...
+
+Moving object friction
+> Object -> surface: 
+> Surface -> object: 
+
+Free fall - 
+Principle of moment - 
+Center of gravity - 
+Principle of conversation of energy - 
+Eq - 
+Conversation of momentum - 
+
+# Collision types
+1. Elastic - 
+2. Inelastic - 
+3. Perfectly inelastic - 
+
+Formula for tension when pulled from a point:
+
+Lift moves up and scale:
+1. 
+2. 
+3. 
+Accelerate: 
+4. 
+5. 
+6. 
+Decelerate: 
+7. 
+8. 
+9. 
+
+============================================================
+Unit 2
+============================================================
+
+Upthrust - 
+Viscosity - 
+Terminal v - 
+L: 
+G: 
+Lower viscosity -> 
+
+Flow types: 
+1. 
+2. 
+
+Deformation types:
+1. 
+2. 
+
+Stress / strain graphs:
+A: 
+B: 
+C: 
+E: 
+
+brittle - 
+ductile - 
+strong - 
+
+============================================================
+Unit 3
+============================================================
+
+Phase difference formula: 
+Super positions - 
+Coherent - 
+Wave fronts - 
+
+Amplitude - 
+
+Transverse waves
+- 
+
+Longitudinal waves
+- 
+
+Stationary waves are formed from
+
+
+
+Interference: 
+Constructive - 
+Destructive - 
+
+Huygens' principle - 
+
+
+when i = C,
+Refraction index & velocity: 
+
+TIR only occurs when
+
+
+Diffraction condition:
+- 
+
+Polarisation
+- 
+- 
+- 
+Polarisation stress detection
+- 
+- 
+- 
+
+Reflection
+- 
+Ultrasound use of higher frequency
+- 
+- 
+
+How to use oscilloscope setup to measure speed of sound (5)
+1. 
+2. 
+3. 
+4. 
+5. 
+
+Electronscope -          -> resolution ^
+- 
+
+Electromagnetic waves
+- 
+
+Light intensity ^ 
+
+Work function - 
+Photon - 
+
+Why threshold frequency?
+- 
+
+Experimental setup of photocells
+1. 
+2. 
+3. 
+4. 
+5. 
+Stopping voltage = 
+
+Prove of particle nature for instant emission
+1. 
+2. 
+
+Explaining how observations prove the particle nature
+1. 
+P: 
+W: 
+2. 
+P: 
+W: 
+3. 
+P: 
+W: 
+
+Prove for wave nature
+1. 
+2. 
+3. 
+4. 
+
+Excited - 
+Energy levels - 
+Line spectra - 
+
+Energy level: 
+- 
+- 
+- 
+Cause of line spectrum:
+- 
+Certain lines only:
+- 
+- 
+
+============================================================
+Unit 4
+============================================================
+
+Current dQ / dT - 
+Emf W / dQ - 
+Drift velocity - 
+
+Series: 
+- 
+- 
+Parallel
+- 
+- 
+
+?-? graphs:
+4 types of conductors
+
+
+
+
+
+
+The resistance of a component depends on
+1. 
+2. 
+
+LDR - 
