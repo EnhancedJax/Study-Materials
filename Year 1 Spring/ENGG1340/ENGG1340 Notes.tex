@@ -1,0 +1,340 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/Clean}
+\newcommand{\documentdate}{Spring 2024}
+\newcommand{\documenttype}{Notes}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\begin{knBox}
+      {Notice}
+      This doesn't include C++ notes.
+\end{knBox}
+
+\section{About Linux}
+Linux is important because:
+\begin{enumerate}
+      \item Open-source software, can edit however we want.
+      \item A lot of software development tools are available, software development is easier.
+      \item Linux is free
+\end{enumerate}
+
+\subsection{Access school Linux (ubuntu)}
+Access the HKU CS server's Ubuntu Linux system to try out system commands by running the following commands on your computer:
+q
+Terminal $\to$ \Colorbox{superlightgray}{\lstinline|ssh cs_account@gatekeeper.cs.hku.hk|} $\to$ \Colorbox{superlightgray}{\lstinline|ssh cs_account@academy21.cs.hku.hk|}
+
+\section{System commands}
+
+\subsection*{Compiling C++ programs}
+Use the command \Colorbox{superlightgray}{\lstinline|g++ <input.cpp> -o <output>|} to compile the input script into the output executable (extensionless).
+
+\subsection{Basic file management}
+\begin{minipage}{0.75\textwidth}
+      \begin{table}[H]
+            \begin{tabular}{ll}
+                  \textbf{Command}                             & \textbf{Meaning}                               \\ \hline
+                  \lstinline|pwd|                              & {\bf p}rint{\bf w}orking{\bf d}irectory        \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|ls (-la)|                         & {\bf l}i{\bf s}t                               \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|cd <dir>|                         & {\bf c}hange{\bf d}irectory                    \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|mv <dir> <dir2>|                  & {\bf m}o{\bf v}e                               \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|cp (-r)  <file/dir> <file2/dir2>| & {\bf c}o{\bf p}y                               \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|rm (-rf)  <dir>|                  & {\bf r}e{\bf m}ove                             \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|mkdir <name>|                     & {\bf m}a{\bf k}e{\bf dir}ectory                \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|rmdir <dir>|                      & {\bf r}e{\bf m}ove{\bf dir}ectory (empty only) \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|touch <file>|                     & New file in .                                  \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|cat <file>|                       & Show file content                              \\ \arrayrulecolor{lightgray}\hline
+            \end{tabular}
+      \end{table}
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+      \begin{table}[H]
+            \begin{tabular}{ll}
+                  \textbf{Dir syntax} & \textbf{Meaning} \\ \hline
+                  \lstinline|~|       & Home             \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|.|       & Current          \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|..|      & Back             \\ \arrayrulecolor{lightgray}\hline
+            \end{tabular}
+      \end{table}
+
+\end{minipage}
+\begin{itemize}
+      \item The flag \Colorbox{superlightgray}{\lstinline|-r|} means to \emph{recursively} execute, which the children of the directory will be affected as well.
+      \item The flag \Colorbox{superlightgray}{\lstinline|-f|} means to forcefully execute.
+      \item The flags \Colorbox{superlightgray}{\lstinline|-la|} means to show details and hidden files in output of \Colorbox{superlightgray}{\lstinline|ls|}.
+\end{itemize}
+
+\subsection{File permissions}
+\begin{minipage}{0.7\textwidth}
+      The permission string returned by \Colorbox{superlightgray}{\lstinline|ls -l|} consists of 10 characters:
+
+      \Colorbox{superlightgray}{\lstinline|- --- --- ---|}.
+      \begin{itemize}
+            \item 1st char represents file type \Colorbox{superlightgray}{\lstinline|-/d|}
+            \item 2nd char represents \Colorbox{superlightgray}{\lstinline|u|}
+            \item 3rd char represents \Colorbox{superlightgray}{\lstinline|g|}
+            \item 4th char represents \Colorbox{superlightgray}{\lstinline|o|}
+      \end{itemize}
+      Use the following command to edit permissions:
+
+      \Colorbox{superlightgray}{\lstinline|chmod ([u/g/o][+/-/=][rwx]),... <file>|}
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+      \begin{table}[H]
+            \begin{tabular}{ll}
+                  \textbf{Key}  & \textbf{Meaning}    \\ \hline
+                  \lstinline|-| & Not / don't have    \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|d| & Directory type      \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|r| & Read permission     \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|w| & Write permission    \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|x| & Execute permission  \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|u| & User's permissions  \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|g| & Group's permissions \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|o| & Other's permissions \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|+| & Add                 \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|-| & Remove              \\ \arrayrulecolor{lightgray}\hline
+                  \lstinline|=| & Set to              \\ \arrayrulecolor{lightgray}\hline
+            \end{tabular}
+      \end{table}
+
+\end{minipage}
+
+\subsection{File reading and modification}
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Command}                         & \textbf{Description}                                                                                                                                                                                                                                                                                                                                   \\ \hline
+            \lstinline|wc (-lw)   <file>|            & \begin{tabular}{@{}l@{}}Return \Colorbox{superlightgray}{\lstinline|[lines] [words] [bytes]|}\\\Colorbox{superlightgray}{\lstinline|-l|} lines only\\\Colorbox{superlightgray}{\lstinline|-w|} words only\end{tabular}                                                                                                                                 \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|cut -d'' -f #,... <file>|     & \begin{tabular}{@{}l@{}}Return \textbf{columns of data}\\\Colorbox{superlightgray}{\lstinline|-d''|} Delimiter character\\\Colorbox{superlightgray}{\lstinline|-f #,...|} Fields / columns \#numbers array \end{tabular}                                                                                                                               \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|sort (-t'' -k# -nr)   <file>| & \begin{tabular}{@{}l@{}}Return \textbf{sorted data}\\\Colorbox{superlightgray}{\lstinline|-t''|} field separator\\\Colorbox{superlightgray}{\lstinline|-k#|} Column \#number to sort by (starting from 1)\\\Colorbox{superlightgray}{\lstinline|-n|} Numeric sort\\\Colorbox{superlightgray}{\lstinline|-r|} Reversed sort (big to small)\end{tabular} \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|uniq <file>|                  & Return \textbf{removed adjacent duplicate lines}                                                                                                                                                                                                                                                                                                       \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|diff <file> <file2>|          & Return \textbf{\textit{process} to transform file to file2}                                                                                                                                                                                                                                                                                            \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+The \Colorbox{superlightgray}{\lstinline|diff|} command outputs process, and it can inteperted with the following meaning:
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Key}                  & \textbf{Meaning}                                                                                    \\ \hline
+            \lstinline|a|                 & Add                                                                                                 \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|d|                 & Delete                                                                                              \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|c|                 & Change                                                                                              \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|#,...[a/d/c]#,...| & Operate \Colorbox{superlightgray}{\lstinline|a/d/c|} line \#number from file2 to file line \#number \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|> ''|              & Line content \Colorbox{superlightgray}{\lstinline|''|} added                                        \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|< ''|              & Line content \Colorbox{superlightgray}{\lstinline|''|} removed                                      \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+\subsection{Editing files using vi in the terminal}
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Command}      & \textbf{Description} \\ \hline
+            \lstinline|vi <file>| & Open file            \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|:w|        & Save                 \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|:q|        & Exit                 \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|:wq|       & Save and exit        \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|:q!|       & Exit without saving  \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+After opening a file in vi, the user is in command mode, which they could use the commands starting with \Colorbox{superlightgray}{\lstinline|:|} to edit the file. To enter insert mode, press \Colorbox{superlightgray}{\lstinline|i|}.
+
+\subsection{File IO}
+We can use the redirection operators to get the input and output of commands:
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Key}               & \textbf{Meaning}                          \\ \hline
+            \lstinline|> <file>|       & Save output                               \\ \arrayrulecolor{lightgray}\hline
+            \lstinline+>| <file>+      & Force overwrite output                    \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|>> <file>|      & Append output                             \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|< <file>|       & Get input from                            \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|2>/2>>|         & Save / append error                       \\ \arrayrulecolor{lightgray}\hline
+            \lstinline+<cmd> | <cmd2>+ & Send cmd output to cmd2 as input (piping) \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+Note that the commands can be chained. Here's an example: \Colorbox{superlightgray}{\lstinline|command < fileA > fileB 2>fileC|}
+
+\subsection{Searching}
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Key}                                  & \textbf{Meaning}                         \\ \hline
+            \lstinline|find <dir> -name ''|               & Find files in dir by matching name       \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|grep (-e) '<(regex)/text>' <file>| & Find lines in file matching (regex)/text \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+\subsubsection{Regular Expressions}
+
+Regular expressions, also known as regex, are a powerful tool for matching patterns in text. They are used in various programming languages and tools for tasks such as searching and replacing text.
+
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Key}       & \textbf{Matches}                      \\ \hline
+            \lstinline|.|      & any character except newline          \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|*|      & 0 or more of the preceding token      \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|+|      & 1 or more of the preceding token      \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|?|      & 0 or 1 of the preceding token         \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|[abc]|  & any character in the set              \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|[^abc]| & any character not in the set          \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|(abc)|  & the pattern abc                       \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|{n}|    & n occurances of the preceding pattern \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|^|      & the start of the line                 \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|$|      & the end of the line                   \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+Note: The above keys are some of the most commonly used in regular expressions, but there are many more. The exact syntax and features available can vary between different programming languages and tools.
+\newpage
+\section{Git version control}
+\subsection{Stage and snapshot commands}
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Command}             & \textbf{Description}                                               \\ \hline
+            \lstinline|git init|         & Initializes new Git repo                                           \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git clone|        & Clones repo into a new directory                                   \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git add . |       & Adds all file changes in the working directory to the staging area \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git commit -m ''| & Commit all changes from staging area                               \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+We can use the \Colorbox{superlightgray}{\lstinline|-m ''|} flag to add a message to the action.
+\subsection{Branching commands}
+When we initialise a repo, we are working on a single branch called the \textbf{master} branch. The latest commit is usually called \textbf{HEAD}.
+
+Branches can be created to allow changes to be made on different parts of a project \textbf{simultaneously}.
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Command}                       & \textbf{Description}                                                                    \\ \hline
+            \lstinline|git branch|                 & Lists all local branches in the current repo                                            \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git branch <name>|          & Make new branch                                                                         \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git merge <branch>|         & Combines branch history into the current branch                                         \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git checkout (-b) <branch>| & Switches branches (after creating branch \Colorbox{superlightgray}{\lstinline|branch|}) \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git log|                    & Shows commit logs                                                                       \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+We can also add messages to them: \Colorbox{superlightgray}{\lstinline|git merge master -m 'Applied changes to master'|}.
+
+If the branch we're merging from hasn't been modified (up-to-date), the merge is called a \emph{fast-forward merge}.
+\subsection{Sharing and updating commands}
+Remote repositories are versions of your project that are hosted on the Internet or network somewhere.
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Command}                        & \textbf{Description}                                                                                                                                                                       \\ \hline
+            \lstinline|git remote|                  & Lists all remote repositories for the current repo                                                                                                                                         \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git remote add <name> <url>| & Add new remote repo                                                                                                                                                                        \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git push <remote> <branch>|  & \begin{tabular}[c]{@{}l@{}}Uploads / update branch to the remote repo.\\ \Colorbox{superlightgray}{\lstinline|--force|} Push even if it results in a non-fast-forward update.\end{tabular} \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git pull <remote> <branch>|  & \begin{tabular}[c]{@{}l@{}}Downloads / update branch from the remote repo. \\ \Colorbox{superlightgray}{\lstinline|--nocommit|} Don't create new merge commit \end{tabular}                \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|git fetch <remote> <branch>| & Fetches the branch from the remote repo                                                                                                                                                    \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+\section{Shell scripting}
+A \emph{bash} shell script has the extension \Colorbox{superlightgray}{\lstinline|.sh|}. It is a file containing a series of commands that the shell will execute.
+
+All the scripts should start with \#!. It indicates which program should be used to process the shell script.
+
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Command} & \textbf{Description}                                                                                                                             \\ \hline
+            \lstinline|echo| & \begin{tabular}[c]{@{}l@{}}Print parameters as strings.\\ \Colorbox{superlightgray}{\lstinline|-n|} No trailing new line in output.\end{tabular} \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+\subsection{Basics syntax}
+
+\begin{knBox}
+      {Read user input}
+      Use \Colorbox{superlightgray}{\lstinline|read <varname>|} to read user input and store it in the variable.
+\end{knBox}
+
+\begin{knBox}
+      {Variables}
+      Define variables with \Colorbox{superlightgray}{\lstinline|varname=<val>|}. Use \Colorbox{superlightgray}{\lstinline|$varname|} to access the value of the variable.
+\end{knBox}
+
+\begin{knBox}
+      {Command line arguments}
+      We can pass in arguments to the bash file when we execute it. We can retrieve the variables by \Colorbox{superlightgray}{\lstinline|$1, $2, $3...|} and use \Colorbox{superlightgray}{\lstinline|$#|} for number of arguments.
+\end{knBox}
+
+\begin{knBox}
+      {Quotations}
+      Double quotations allows variable substitution, but single quotations doesn't.
+      \begin{lstlisting}[language=bash]
+#!/bin/bash
+val="world"
+echo "Hello $val" # Hello world
+echo 'Hello $val' # Hello $val     \end{lstlisting}
+\end{knBox}
+
+\begin{knBox}
+      {Command substitution}
+      Use \Colorbox{superlightgray}{\lstinline|$(<cmd>)|} or \Colorbox{superlightgray}{\lstinline|`<cmd>`|} to substitute the output of the command.
+\end{knBox}
+
+\begin{knBox}
+      {Calculations}
+      Use \Colorbox{superlightgray}{\lstinline|$((<expr>))|} or \Colorbox{superlightgray}{\lstinline|let "varname=<exp>"|} to evaluate the expression.
+\end{knBox}
+
+\subsection{String operations}
+For the \Colorbox{superlightgray}{\lstinline|$s|} string variable:
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Operation}           & \textbf{Description}                                        \\ \hline
+            \lstinline|${#s}|            & Get the length of \Colorbox{superlightgray}{\lstinline|$s|} \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|${s:<pos>:<len>}| & Extract substring at pos with length len                    \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|${s/<from>/<to>}| & Replace the \emph{first occurance} of matching              \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+\subsection{Control flow}
+
+\subsubsection{Conditional statements}
+\begin{lstlisting}[language=bash]
+if [ condition1 ]
+then
+      echo "condition 1 met"
+elif [ condition2 ]
+then
+      echo "condition 2 met"
+else
+      echo "No condition met"
+fi \end{lstlisting}
+
+\subsubsection{Conditional expressions}
+We must enclose the strings in double quotations so that comparison can work even if there are spaces in the strings.
+\begin{table}[H]
+      \begin{tabular}{ll}
+            \textbf{Expression}                      & \textbf{True if}                                                                                       \\ \hline
+            \lstinline|[ "" ]|                       & length > 0                                                                                             \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|[ "" = "" ]|                  & strings are equal                                                                                      \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|[ "" != "" ]|                 & strings are not equal                                                                                  \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|[ #n -eq/ne/lt/le/gt/ge #n ]| & numbers are {\bf g}reater / {\bf l}ess ({\bf t}han) (({\bf n}ot){\bf eq}ual)                           \\ \arrayrulecolor{lightgray}\hline
+            \lstinline|[ -e/f/d/s/r/w/x <dir> ]|     & dir {\bf e}xists / is\_{\bf f}ile / is\_{\bf d}ir / {\bf r}eadable / {\bf w}ritable / {\bf e}xecutable \\ \arrayrulecolor{lightgray}\hline
+      \end{tabular}
+\end{table}
+
+\subsubsection{For-loops}
+The for-loop iterates through the list of items and executes the commands in the loop body for each item.
+
+\begin{lstlisting}[language=bash]
+#!/bin/bash
+# backup.sh
+list="`ls *.cpp`"
+for fileName in $list
+do
+ cp $fileName $fileName.backup
+done \end{lstlisting}
+
+\end{document}
