@@ -24,35 +24,6 @@
     Vector can be represented by $\vec{F}$ or $\boldsymbol{F}$. The magnitude can be represented by $|F|$ or $F$.
 \end{definition}
 
-% \begin{definition}[]{Parallelogram law}
-
-%   \begin{tikzpicture}
-%     % Define the coordinates
-%     \coordinate (O) at (0,0);
-%     \coordinate (A) at (2,0);
-%     \coordinate (B) at (1,2);
-%     \coordinate (C) at ($(A)+(B)$);
-
-%     % Draw the vectors
-%     \draw[->] (O) -- (A);
-%     \draw[->] (O) -- (B);
-%     \draw[->] (O) -- (C);
-
-%     % Draw the parallelogram
-%     \draw[dashed] (A) -- (C);
-%     \draw[dashed] (B) -- (C);
-
-%     % Label the vectors and points
-%     \node[below] at (O) {$O$};
-%     \node[below] at (A) {$\mathbf{A}$};
-%     \node[left] at (B) {$\mathbf{B}$};
-%     \node[above right] at (C) {$\mathbf{A} + \mathbf{B}$};
-%   \end{tikzpicture}
-
-%   $\vec{C}=\vec{A}+\vec{B}=\sqrt{A^2+B^2-2AB\cos{\gamma}},\quad\text{where }\gamma=\angle OAC$
-
-% \end{definition}
-
 \begin{knBox}[]{Unit vectors}
     They are vectors with magnitude 1. $\hat{A}=\frac{\vec{A}}{|\vec{A}|}$
 \end{knBox}
@@ -64,7 +35,8 @@
     In two dimensions, the Cartesian unit vectors $\boldsymbol{i}, \boldsymbol{j}$ are used to designate the directions of the x and y axes respectively.
     \[F=F_x \boldsymbol{i} + F_y \boldsymbol{j}\]
     Where $F_{x/y}$ is the $x/y$ component of $F$. And to find the x/y components we can use trigonometry:
-    \[F_x=F\sin{\theta},\quad F_y=F\cos{\theta}\]
+    \[F_x=F\cos{\theta},\quad F_y=F\sin{\theta}\]
+    Where the angle $\theta$ is the angle between $F$ and the x-axis.
 \end{definition}
 
 \begin{knBox}
@@ -200,7 +172,7 @@ Couples are \emph{two parallel forces} that have the same magnitude but have \em
 \begin{definition}
     {Conditions for rigid body equilibriums}
     A rigid body is in equilibrium if:
-    \[\sum F=0,\quad\sum M_O=0\]
+    \[\sum F_x=0,\quad\sum F_y=0,\quad\sum M_O=0\]
     Where $O$ is any point.
 \end{definition}
 
@@ -212,12 +184,14 @@ The procedure to draw a free body diagram (FBD) is as follows:
     \item Identification and labelling.
 \end{enumerate}
 
+\label{sec:support}
 \subsection{Support reactions}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{./img/support.png}
     \caption*{\tiny\textit{\color{gray}Source: https://clearcalcs.com/blog/support-connection-types}}
 \end{figure}
+This will also be useful in section "\hyperref[sec:statics]{Statics and restraints}".
 \subsection{Finding forces in equilibrium systems - an example}
 \begin{center}
     Consider this equilibrium system. Let's find the reaction at supports A and B. First, we draw it's FBD as according to support reactions:
@@ -242,5 +216,226 @@ The procedure to draw a free body diagram (FBD) is as follows:
         R_{Ay}   & = 285.6N
     \end{align*}
 \end{center}
+
+\section{Axially loaded members}
+\subsection{Stress and strain}
+\begin{definition}
+    {Axial stress}
+    Axial stress is the stress that is \emph{parallel} to the cross-sectional area of the member. It is given by:
+    \[\sigma=\frac{F}{A}\quad(Nm^{-2})\]
+    Where $F$ is the force applied, and $A$ is the cross-sectional area of the member. Note that $1 Pa = 1 Nm^{-2}$.
+\end{definition}
+\begin{definition}
+    {Axial strain}
+    Axial strain is the ratio of the change in length to the original length of the member. It is given by:
+    \[\epsilon=\frac{\Delta L}{L}\quad\text{(Ratio)}\]
+    Where $\Delta L$ is the change in length, and $L$ is the original length of the member.
+\end{definition}
+
+
+\subsubsection{Materials}
+\begin{definition}
+    {Strength}
+    Material strength is defined as the maximum stress that can be resisted by the material.
+\end{definition}
+\begin{definition}
+    {Young's Modulus}
+    Young's modulus is the ratio of stress to strain, given by:
+    \[E=\frac{\sigma}{\epsilon}\quad(Pa)\]
+\end{definition}
+\begin{definition}
+    {Poisson's ratio}
+    Poisson's ratio is the ratio of lateral strain $\epsilon_l$ to axial strain $\epsilon$, given by:
+    \[\nu=\frac{\epsilon_l}{\epsilon}\quad(\text{Ratio})\]
+    \tcblower
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{./img/poisson.png}
+
+        The lateral strain $\epsilon_l$ is $\frac{\Delta d}{d_0}$.
+    \end{center}
+\end{definition}
+
+\subsubsection{Hydrostatic pressure}
+\begin{definition}
+    {Hydrostatic/water pressure}
+    The water pressure acting on any surface is \emph{always perpendicular} to the surface, and the water pressure in \emph{any directions is the same}. The pressure is given by:
+    \[p=\rho gh\quad(Pa)\]
+    Where $\rho$ is the density of water,  and $h$ is the depth of the water.
+\end{definition}
+\begin{knBox}
+    {Water pipe}
+    \begin{enumerate}
+        \item \textbf{Internal pressure} refers to the pressure inside the pipe.
+        \item \textbf{Internal force} refers to the pressure's effect onto a side of the pipe.
+        \item \textbf{Internal stress} refers to the stress caused by the internal force, acting along the \emph{circumferential direction} of the pipe. This is also called the \textbf{hoop stress}.
+
+    \end{enumerate}
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{./img/hoop.png}
+    \end{center}
+\end{knBox}
+
+\label{sec:statics}
+\section{Statics and restraints}
+\subsection{Statics}
+\begin{definition}
+    {Static equilibrium}
+    System in \textbf{Static equilibrium} experiences no acceleration when loads are applied to it.
+\end{definition}
+\begin{knBox}
+    {Supports and reaction forces}
+    \begin{table}[H]
+        \begin{tabular}{lll}
+            \textbf{Support type} & \textbf{Restricted movement and reaction forces} & \textbf{Shape} \\ \hline
+            Fixed                 & x, y, r (moment)                                 & Flat           \\ \arrayrulecolor{lightgray}\hline
+            Pinned                & x, y                                             & Triangle       \\ \arrayrulecolor{lightgray}\hline
+            Roller                & y                                                & Circle         \\ \arrayrulecolor{lightgray}\hline
+        \end{tabular}
+    \end{table}
+    Refer to section "\hyperref[sec:support]{support reactions}" for details.
+\end{knBox}
+
+\begin{definition}
+    {Static conditions}
+    \begin{enumerate}
+        \item Insufficient restraints $\to$ \textbf{non-static system} (contains mechanisms)
+        \item Sufficient restraints $\to$ \textbf{static system}
+    \end{enumerate}
+    Static systems can be further classified into \emph{statically determinate} and \emph{statically indeterminate}.
+
+    \begin{table}[H]
+        \begin{tabular}{llll}
+            \textbf{Restraints} & \textbf{Support reactions} & \textbf{Number of unknowns} & System is statically   \\ \hline
+            Just enough         & All solvable               & no. of equations            & \textbf{determinate}   \\ \arrayrulecolor{lightgray}\hline
+            More than enough    & Unsolvable                 & $>$ no. of equations        & \textbf{indeterminate} \\ \arrayrulecolor{lightgray}\hline
+        \end{tabular}
+    \end{table}
+    \begin{center}
+        If there are \textbf{3 reaction forces}, the system is statically determinate. (3 equilibriums)
+        \includegraphics[width=0.4\textwidth]{./img/3react.jpg}
+    \end{center}
+\end{definition}
+\begin{theorem}
+    {Degree of indeterminacy}
+    The degree of indeterminacy(or redundancies) is simply $R-3$ where $R$ is the number of reaction forces.
+    \tcblower
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{./img/redundant.jpg}
+
+        The number of redundancies is 3.
+    \end{center}
+\end{theorem}
+
+\subsection{Loading}
+\begin{knBox}
+    {Types of loading}
+    \begin{enumerate}
+        \item \textbf{Concentrated load} is a force applied at a single point. ($N$)
+        \item \textbf{Distributed load} is a force applied over a length. ($N/m$)
+    \end{enumerate}
+\end{knBox}
+\begin{theorem}
+    {Resultant force and moment for distributed load}
+    Intuitively, the resultant force is to simply convert the units to $N$ by $F\times area$.
+    \begin{itemize}
+        \item Unifrom $\to$ $F=wl$
+        \item Triangular $\to$ $F=\frac{1}{2}wl$
+    \end{itemize}
+
+    For $M=Fd$, $d$ is given by the distance from the \textbf{origin to the centroid} of the distributed load. The following gives the centroid for some common loads:
+    \begin{itemize}
+        \item Uniform $\to$ \textbf{middle} of the load.
+        \item Trianglular $\to$ \textbf{one third from the base} of the load.
+    \end{itemize}
+\end{theorem}
+
+\subsection{Pin-Joined Trusses}
+A \textbf{truss} is a structure that consists of \emph{straight members} connected at their ends by \emph{pin joints}.
+
+\subsubsection{Types of trusses}
+A quadrangular truss is a mechanism, and a triangular truss is a statically determinate structure.
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{./img/quadtruss.png}
+    \includegraphics[width=0.2\textwidth]{./img/tritruss.png}
+\end{center}
+
+\subsubsection{Statically determinate trusses}
+To construct an \emph{internally} statically determinate truss, we begin with a triangular pin-jointed truss and then successively adding two new members with a new joint.
+
+We say the truss is only \emph{internally} statically determinate because the external reactions are not yet known.
+
+\subsubsection{Analysing trusses}
+We make the following assumptions when analysing trusses:
+\begin{enumerate}
+    \item The loads are \emph{applied} at the joints only.
+    \item The members experience \emph{little deformation}.
+    \item The members are \emph{connected} connected with \emph{frictionless pins}.
+\end{enumerate}
+\begin{knBox}
+    {Internal vs. External}
+    \begin{itemize}
+        \item Forces acting on the members $\to$ \textbf{Internal forces}
+        \item Forces acting on joints $\to$ \textbf{External forces}
+    \end{itemize}
+\end{knBox}
+\begin{theorem}
+    {Method of joints}
+    To find the forces on the members of a truss, refer to the following steps:
+    \begin{enumerate}
+        \item Isolate a \textbf{solvable joint}.
+        \item Draw the FBD of the solvable joint by \textbf{replacing members with forces}.
+        \item Use $\sum F_x=0=\sum F_y$ to solve for the unknown forces.
+    \end{enumerate}
+    Keep in mind that \emph{the joint must be in equilibrium}. That is, the \textbf{external forces} are balanced by \textbf{internal forces}.
+    \tcblower
+    Consider the following truss system. The only solvable join is joint B. After drawing the FBD on joint B, we can solve for the forces on the members.
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{./img/trussFBD.jpg}
+        $\to$
+        \includegraphics[width=0.4\textwidth]{./img/jointFBD.jpg}
+    \end{center}
+    \begin{align*}
+        500    & =F_{BC}\sin 45^\circ \\
+        F_{BC} & =707.1N
+    \end{align*}
+    Repeating these steps on the other joints will give us the forces on the members.
+\end{theorem}
+\begin{theorem}
+    {Method of sections}
+    We cam divide the truss into sections by cutting through the selected members and analyzing the section as a rigid body.
+
+    This is used to solve for the unknown forces within specific members of a truss \emph{without solving for them all}.
+
+    The \emph{method of joints} is simply a special case of the \emph{method of sections}.
+
+\end{theorem}
+
+\begin{knBox}
+    {Tension vs. compression}
+    By convention, we always draw:
+    \begin{itemize}
+        \item Tension forces $\to$ \textbf{pointing away} from the joint
+        \item Compression forces $\to$ \textbf{pointing towards} the joint
+    \end{itemize}
+\end{knBox}
+\begin{theorem}
+    {Zero-force members}
+    The following are zero-force members given that \textbf{no external load or support reaction is applied to the joint}.
+    \begin{itemize}
+        \item \textbf{2 non-collinear members} of a two-member-joint
+        \item \textbf{3rd member} of a three-member-joint, where the other two are collinear.
+    \end{itemize}
+    Removing zero-force members allows us to simplify the truss.
+    \tcblower
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{./img/zero2.jpg}
+        \includegraphics[width=0.45\textwidth]{./img/zero3.jpg}
+    \end{center}
+\end{theorem}
+
+\subsubsection{Simple example}
+...
+
+\subsection{Cable structures}
 
 \end{document}
