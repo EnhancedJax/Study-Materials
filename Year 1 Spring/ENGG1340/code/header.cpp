@@ -5,3 +5,5 @@
 int add(int a, int b);
 
 #endif 
+
+#include "header.h"

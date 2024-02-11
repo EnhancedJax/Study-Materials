@@ -109,12 +109,13 @@ Use the command \Colorbox{superlightgray}{\lstinline|g++ <input.cpp> -o <output>
 \subsection{File reading and modification}
 \begin{table}[H]
     \begin{tabular}{ll}
-        \textbf{Command}                         & \textbf{Description}                                                                                                                                                                                                                                                                                                                                   \\ \hline
-        \lstinline|wc (-lw)   <file>|            & \begin{tabular}{@{}l@{}}Return \Colorbox{superlightgray}{\lstinline|[lines] [words] [bytes]|}\\\Colorbox{superlightgray}{\lstinline|-l|} lines only\\\Colorbox{superlightgray}{\lstinline|-w|} words only\end{tabular}                                                                                                                                 \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|cut -d'' -f #,... <file>|     & \begin{tabular}{@{}l@{}}Return \textbf{columns of data}\\\Colorbox{superlightgray}{\lstinline|-d''|} Delimiter character\\\Colorbox{superlightgray}{\lstinline|-f #,...|} Fields / columns \#numbers array \end{tabular}                                                                                                                               \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|sort (-t'' -k# -nr)   <file>| & \begin{tabular}{@{}l@{}}Return \textbf{sorted data}\\\Colorbox{superlightgray}{\lstinline|-t''|} field separator\\\Colorbox{superlightgray}{\lstinline|-k#|} Column \#number to sort by (starting from 1)\\\Colorbox{superlightgray}{\lstinline|-n|} Numeric sort\\\Colorbox{superlightgray}{\lstinline|-r|} Reversed sort (big to small)\end{tabular} \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|uniq <file>|                  & Return \textbf{removed adjacent duplicate lines}                                                                                                                                                                                                                                                                                                       \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|diff <file> <file2>|          & Return \textbf{\textit{process} to transform file to file2}                                                                                                                                                                                                                                                                                            \\ \arrayrulecolor{lightgray}\hline
+        \textbf{Command}                           & \textbf{Description}                                                                                                                                                                                                                                                                                                                                   \\ \hline
+        \lstinline|wc (-lw)   <file>|              & \begin{tabular}{@{}l@{}}Return \Colorbox{superlightgray}{\lstinline|[lines] [words] [bytes]|}\\\Colorbox{superlightgray}{\lstinline|-l|} lines only\\\Colorbox{superlightgray}{\lstinline|-w|} words only\end{tabular}                                                                                                                                 \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|cut -d'' -f #,... <file>|       & \begin{tabular}{@{}l@{}}Return \textbf{columns of data}\\\Colorbox{superlightgray}{\lstinline|-d''|} Delimiter character\\\Colorbox{superlightgray}{\lstinline|-f #,...|} Fields / columns \#numbers array \end{tabular}                                                                                                                               \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|sort (-t'' -k# -nr)   <file>|   & \begin{tabular}{@{}l@{}}Return \textbf{sorted data}\\\Colorbox{superlightgray}{\lstinline|-t''|} field separator\\\Colorbox{superlightgray}{\lstinline|-k#|} Column \#number to sort by (starting from 1)\\\Colorbox{superlightgray}{\lstinline|-n|} Numeric sort\\\Colorbox{superlightgray}{\lstinline|-r|} Reversed sort (big to small)\end{tabular} \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|sort -u -k#,# -k#,# ... <file>| & \begin{tabular}{@{}l@{}}Return \textbf{unique rows by column}\\\Colorbox{superlightgray}{\lstinline|-k#,#|} Column \#number,\#number to check unique by\end{tabular}                                                                                                                                                                                   \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|uniq <file>|                    & Return \textbf{removed adjacent duplicate lines}                                                                                                                                                                                                                                                                                                       \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|diff <file> <file2>|            & Return \textbf{\textit{process} to transform file to file2}                                                                                                                                                                                                                                                                                            \\ \arrayrulecolor{lightgray}\hline
     \end{tabular}
 \end{table}
 
@@ -128,6 +129,15 @@ The \Colorbox{superlightgray}{\lstinline|diff|} command outputs process, and it 
         \lstinline|#,...[a/d/c]#,...| & Operate \Colorbox{superlightgray}{\lstinline|a/d/c|} line \#number from file2 to file line \#number \\ \arrayrulecolor{lightgray}\hline
         \lstinline|> ''|              & Line content \Colorbox{superlightgray}{\lstinline|''|} added                                        \\ \arrayrulecolor{lightgray}\hline
         \lstinline|< ''|              & Line content \Colorbox{superlightgray}{\lstinline|''|} removed                                      \\ \arrayrulecolor{lightgray}\hline
+    \end{tabular}
+\end{table}
+
+\subsection{Searching}
+\begin{table}[H]
+    \begin{tabular}{ll}
+        \textbf{Key}                                  & \textbf{Meaning}                         \\ \hline
+        \lstinline|find <dir> -name ''|               & Find files in dir by matching name       \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|grep (-E) '<(regex)/text>' <file>| & Find lines in file matching (regex)/text \\ \arrayrulecolor{lightgray}\hline
     \end{tabular}
 \end{table}
 
@@ -158,15 +168,6 @@ We can use the redirection operators to get the input and output of commands:
     \end{tabular}
 \end{table}
 Note that the commands can be chained. Here's an example: \Colorbox{superlightgray}{\lstinline|command < fileA > fileB 2>fileC|}
-
-\subsection{Searching}
-\begin{table}[H]
-    \begin{tabular}{ll}
-        \textbf{Key}                                  & \textbf{Meaning}                         \\ \hline
-        \lstinline|find <dir> -name ''|               & Find files in dir by matching name       \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|grep (-E) '<(regex)/text>' <file>| & Find lines in file matching (regex)/text \\ \arrayrulecolor{lightgray}\hline
-    \end{tabular}
-\end{table}
 
 \subsubsection{Regular Expressions}
 
@@ -349,24 +350,26 @@ A simple C++ program looks like this:
 
 
 \section{Compilation and makefile}
-\subsection{Separate compliation}
-We can use header files to separate the declaration and implementation of functions. This allows other programs to reuse the function. 
+\subsection{Header files}
+We can use header files to separate the declaration and implementation of functions. This allows other programs to reuse the function.
 
-A header file is a file with the extension \Colorbox{superlightgray}{\lstinline|.h|} that contains the function declarations. The implementation is in the \Colorbox{superlightgray}{\lstinline|.cpp|} file. 
+A header file is a file with the extension \Colorbox{superlightgray}{\lstinline|.h|} that contains the function declarations. The implementation is in the \Colorbox{superlightgray}{\lstinline|.cpp|} file \emph{with the same name}.
 
-A simple header file looks like this:
-\lstinputlisting[language=c++]{code/header.cpp}
+A simple header file looks like this. ("header" is a placeholder name)
+\lstinputlisting[language=c++, lastline=7]{code/header.cpp}
+We then can use the header file and the functions defined in \Colorbox{superlightgray}{\lstinline|header.cpp|} in another program by including it:
+\lstinputlisting[language=c++, firstline=9, lastline=9]{code/header.cpp}
 
-Separate compliation has the following advantages:
+\subsection{Makefile}
+A \Colorbox{superlightgray}{\lstinline|Makefile|} is a file that contains a set of rules used to build a target program. The file must be named as \Colorbox{superlightgray}{\lstinline|Makefile|}.
+
 \begin{itemize}
-    \item Faster compilation
-    \item Easier to manage
-    \item Easier to debug
+    \item \Colorbox{superlightgray}{\lstinline|.o|} files are object files, which are the result of compiling the source files.
+    \item \Colorbox{superlightgray}{\lstinline|g++|} is the C++ compiler
+    \item The \Colorbox{superlightgray}{\lstinline|-c|} flag asks to compile the file into an .o file, but not to link it into an executable. The absence of it will compile and link the file.
+    \item The \Colorbox{superlightgray}{\lstinline|-o|} flag asks to name the output file
 \end{itemize}
-\subsection{Using makefile}
-\Colorbox{superlightgray}{\lstinline|makefile|} is used for describing the dependency of files for the \Colorbox{superlightgray}{\lstinline|make|} tool which smartly recompiles only the files that have changed.
-The file name is important, it must be named \Colorbox{superlightgray}{\lstinline|makefile|} or \Colorbox{superlightgray}{\lstinline|Makefile|} with no extension.
-\subsection{Makefile syntax}
+
 Here's a complete example of \Colorbox{superlightgray}{\lstinline|makefile|}, all you need to know is explained by the comments:
 \lstinputlisting[language=make]{code/makefile}
 

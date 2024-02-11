@@ -57,10 +57,20 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
 \end{minipage}
 
 \subsection{Continuity}
-\begin{theorem}
+\begin{definition}
     {Continuity}
     A function $f(x)$ is \emph{continuous} at $x=a$ if:
     \[\mathop {\lim }\limits_{x \to a} f\left( x \right) = f\left( a \right)\]
+\end{definition}
+\begin{theorem}
+    {Continuity properties}
+    For $f,g$ continuous at $c$, the following are also continuous at $c$:
+    \begin{enumerate}
+        \item $f \pm g$
+        \item $kf$
+        \item $fg$
+        \item $\frac{f}{g}$, given that $g(c)\ne 0$
+    \end{enumerate}
 \end{theorem}
 \begin{theorem}
     {Intermediate value theorem}
@@ -206,19 +216,24 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     Note that, as we are considering the negative limit of infinity, we need to add - to the abs sign on line 3.
 \end{example}
 
-% \subsection{The theorem of limit}
-% \begin{theorem}
-%   {Limit}
-%   \[\text{if there are numbers such that }\left| {f\left( x \right) - L} \right| < \varepsilon \quad{\mbox{whenever}}\quad0 < \left| {x - a} \right| < \delta\]
-%   \[\mathop {\lim }\limits_{x \to a} f\left( x \right) = L\]
-% \end{theorem} 
+\subsection{Asymptotes and limits}
+\begin{definition}
+    {Vertical asymptotes}
+    A function $f$ will have v-asymptotes at $x=a$ if any $\pm$ is true:
+    \[\lim_{x\to a^\pm}f(x)=\pm\infty\]
+\end{definition}
+\begin{definition}
+    {Horizontal asymptotes}
+    A function $f$ will have h-asymptotes at $y=L$ if any $\pm$ is true:
+    \[\lim_{x\to\pm\infty}f(x)=L\]
+\end{definition}
 
 \section{Derivatives}
-\begin{theorem}[]{First principle}
-    \begin{flalign*}
-        f'(x) & = \frac{d}{dx} f(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} &
-    \end{flalign*}
-\end{theorem}
+\begin{definition}
+    {First principle}
+    The first principle is the definition of the derivative of a function $f(x)$ at $x=a$:
+    \[f'(x) = \frac{d}{dx} f(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\]
+\end{definition}
 
 \subsection{Differentiation formulas and rules}
 \begin{knBox}
@@ -229,7 +244,11 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
         \item Derivative of a constant is 0: $\frac{d}{dx}k = 0$
         \item Power rule: $\frac{d}{dx}x^n = nx^{n-1}$
     \end{itemize}
-
+\end{knBox}
+\begin{knBox}
+    {Parametric differentiation}
+    For a parametric equation $y=f(t)$ and $x=g(t)$:
+    \[\frac{dy}{dx}=\frac{dy}{dt}\div \frac{dx}{dt}\]
 \end{knBox}
 \begin{minipage}{0.65\textwidth}
     \begin{theorem}
@@ -249,16 +268,16 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     \end{theorem}
 \end{minipage}
 \hfill
-\begin{minipage}{0.25\textwidth}
+\begin{minipage}{0.28\textwidth}
     \begin{table}[H]
         \begin{tabular}{rcc}
                 & $f(x)$    & $f'(x)$           \\ \hline
             1.  & $a^x$     & $\ln{a}\cdot a^x$ \\ \arrayrulecolor{lightgray}\hline
             2.  & $e^{kx}$  & $ke^{kx}$         \\ \arrayrulecolor{lightgray}\hline
             3.  & $\ln{kx}$ & $x^{-1}$          \\ \arrayrulecolor{lightgray}\hline
-            4.  & $\sin kx$ & $k\cos kx$        \\ \arrayrulecolor{lightgray}\hline
-            5.  & $\cos kx$ & $-k\sin kx$       \\ \arrayrulecolor{lightgray}\hline
-            6.  & $|x|$     & $\frac{|x|}{x}$   \\ \arrayrulecolor{lightgray}\hline
+            4.  & $|x|$     & $\frac{|x|}{x}$   \\ \arrayrulecolor{lightgray}\hline
+            5.  & $\sin kx$ & $k\cos kx$        \\ \arrayrulecolor{lightgray}\hline
+            6.  & $\cos kx$ & $-k\sin kx$       \\ \arrayrulecolor{lightgray}\hline
             7.  & $\tan kx$ & $k\sec^2 kx$      \\ \arrayrulecolor{lightgray}\hline
             8.  & $\csc x$  & $-\csc x \cot x$  \\ \arrayrulecolor{lightgray}\hline
             9.  & $\sec x$  & $\sec x \tan x$   \\ \arrayrulecolor{lightgray}\hline
@@ -266,6 +285,8 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
         \end{tabular}
     \end{table}
 \end{minipage}
+
+Note that the trigo derivatives can be extended to hyperbolic trigo functions, with the except of $\frac{d}{dx}\text{sech} u=-\text{sech} u\tanh u$.
 \begin{knBox}
     {Implicit differentiation}
     Differentiate all $xy$, add $\frac{dy}{dx}$ behind all differentiations of $y$.
@@ -277,6 +298,18 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
         2y\frac{dy}{dx}                         & =2x+\cos(xy)(x\frac{dy}{dx}+y)     \\
         \text{Then we simply collect terms of } & \frac{dy}{dx}                      \\
         \frac{dy}{dx}                           & =\frac{2x+y\cos(xy)}{2y-x\cos(xy)}
+    \end{align*}
+\end{knBox}
+\begin{knBox}
+    {Logarithmic differentiation}
+    For $y=f^g:\quad f'=f(g\ln f)'$
+    \tcblower
+    To find $\frac{dy}{dx}$ for $y=x^x$:
+    \begin{align*}
+        y                        & =x^x                         \\
+        \ln y                    & =x\ln x                      \\
+        \frac{1}{y}\frac{dy}{dx} & =\ln x+1                     \\
+        \frac{dy}{dx}            & =x^x(\ln x+1) = x^x(x\ln x)'
     \end{align*}
 \end{knBox}
 
@@ -342,14 +375,122 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     \caption*{\tiny\textit{\color{gray}Source: https://xaktly.com/CurveSketchSecondDeriv.html}}
 \end{figure}
 
+\section{Trigonometry review}
+\begin{theorem}
+    {Trigonometric identities}
+    \begin{enumerate}
+        \item $\sin^2x+\cos^2x=1$
+        \item $\tan x=\frac{\sin x}{\cos x}$
+        \item $\csc x=\frac{1}{\sin x}$
+        \item $\sec x=\frac{1}{\cos x}$
+        \item $\cot x=\frac{1}{\tan x}$
+        \item $\sin 2x=2\sin x\cos x$
+        \item $\cos 2x=\cos^2x-\sin^2x$
+        \item $\tan 2x=\frac{2\tan x}{1-\tan^2x}$
+        \item $\sin(x\pm y)=\sin x\cos y\pm\cos x\sin y$
+        \item $\cos(x\pm y)=\cos x\cos y\mp\sin x\sin y$
+        \item $\tan(x\pm y)=\frac{\tan x\pm\tan y}{1\mp\tan x\tan y}$
+        \item $1 + tan^2x = sec^2x$
+        \item $1 + cot^2x = csc^2x$
+    \end{enumerate}
+\end{theorem}
+
 \section{Integrals}
-\subsection{Area and Estimating with Finite Sums}
-\subsection{Definite Integrals}
-\subsection{The Fundamental Theorem of Calculus}
-\subsection{theorem of Natural Logarithms}
-\subsection{Interlude - Hyperbolic Functions}
-\section{Parametric Equations}
+\subsection{Definite integrals}
+\begin{definition}
+    {Signed areas}
+    Signed area is the area between the curve and the x-axis, where the area above the x-axis is positive and below is negative.
+\end{definition}
+\begin{knBox}
+    {Properties of definite intergrals}
+    \begin{enumerate}
+        \item $\int_{a}^{b}f(x)dx=-\int_{b}^{a}f(x)dx$
+        \item $\int_{a}^{a}f(x)dx=0$
+        \item $\int_{a}^{b}f(x)dx+\int_{b}^{c}f(x)dx=\int_{a}^{c}f(x)dx$
+        \item $\int_{a}^{b}kf(x)dx=k\int_{a}^{b}f(x)dx$
+        \item $\int_{a}^{b}(f(x)\pm g(x))dx=\int_{a}^{b}f(x)dx\pm\int_{a}^{b}g(x)dx$
+    \end{enumerate}
+\end{knBox}
+\subsection{Fundamental theorem of calculus}
+\begin{theorem}
+    {Fundamental theorem of calculus}
+    If $f(x)$ is continuous in $[a,b]$, then:
+    \[\int_{a}^{b}f(x)dx=F(b)-F(a)\]
+    Where $F(x)$ is the definite integral of $f(x)$.
+\end{theorem}
+\begin{theorem}
+    {Second fundamental theorem of calculus}
+    If $f(x)$ is continuous in $[a,b]$, then:
+    \[\frac{d}{dx}\int_{a}^{x}f(t)dt=f(x)\]
+    \tcblower
+    Find $\frac{dy}{dx}$ for $y=\int_1^{x^2}\cos t\ dt$:
+
+    We first define $F(u)=\int_1^{u}\cos t\ dt$, then we can apply the chain rule:
+    \[\frac{dy}{dx}=\frac{d}{dx}F(x^2)=F'(x^2)\cdot2x=\cos x^2\cdot2x\]
+\end{theorem}
+
+\subsection{Techniques of integration}
+\begin{knBox}
+    {Summary}
+    \begin{itemize}
+        \item By \textbf{substitution}: “sub $g(x)\to u$, find $du$ and replace all functions of $x(dx)$ with $u(du)$”
+        \item By \textbf{part}: “$\int uv=u\int v-\int (u'\times \int v)$”
+        \item By \textbf{joining recurring parts}: “$\int ab=f(ab)+\int ab\to 2\int ab = f(ab)$”
+        \item By \textbf{partial fractions}: “$\frac{k}{f(x)g(x)}=\frac{A}{f(x)}+\frac{B}{g(x)}$”
+        \item By \textbf{trigonometric identities}: “$\sin^2x+\cos^2x=1,\sin(2x)=2\sin x\cos x$”
+        \item By \textbf{multiplying fractions by one}: “Multiplying $\frac{\sec^2x}{\sec^2x}$ to fit trigo form”
+    \end{itemize}
+
+\end{knBox}
+\subsubsection{Example problems}
+% TODO: To be added
+
+\subsection{Related stuff}
+\begin{definition}
+    {Definite of natural logs}
+    \[\ln x=\int_{1}^{x}\frac{1}{t}dt,\quad x>0\]
+\end{definition}
+
 \section{Polar Coordinates}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{./img/polar.jpg}
+
+\end{center}
+\begin{definition}
+    {Equations relating Rolar and Cartesian coordinates}
+    We can convert between polar and Cartesian coordinates using:
+    \[x=r\cos\theta,\quad y=r\sin\theta\]
+    We can also see that:
+    \[r^2=x^2+y^2.\quad \tan\theta=\frac{y}{x}\]
+    The polar equation for the circle $r^2 = x^2 + y^2$ is simply $r=a$.
+\end{definition}
+\begin{knBox}
+    {Polar equations of ellipse}
+    In Cartesian form, an ellipse can be expressed as:
+    \[\frac{(x+c)^2}{a^2}+\frac{y^2}{b^2}=1,\quad\text{where }c=\sqrt{a^2+b^2}\]
+    Then we can write in polar form:
+    \[r=\frac{a(1-e^2)}{1+e\cos\theta},\quad\text{where }e=\frac{\sqrt{a^2+b^2}}{a}\]
+\end{knBox}
+\begin{theorem}
+    {Slope of polar curves}
+    The slope of a polar curve at a point is given by:
+    \[\frac{dy}{dx}=\frac{r\cos\theta+r'\sin\theta}{-r\sin\theta+r'\cos\theta}\]
+    \tcblower
+    To the the slope of the tangent to the unit circle at Cartesian coordinates $(\frac{1}{2},\frac{\sqrt{3}}{2})$:
+
+    We can find the the polar coordinates to be $(1,\frac{\pi}{3})$ using $\cos^{-1}\frac{1}{2}=\frac{\pi}{3}$, then we can use the formula to find the slope:
+    \[\frac{dy}{dx}=\frac{1\cos\frac{\pi}{3}+1'\sin\frac{\pi}{3}}{-1\sin\frac{\pi}{3}+1'\cos\frac{\pi}{3}}=-\frac{1}{\sqrt{3}}\]
+\end{theorem}
+\begin{knBox}
+    {Graphing}
+    We can easily graph any polar formula $r=f(\theta)$ following the following steps:
+    \begin{enumerate}
+        \item Plot $r\ -\ \theta$ graph. If the function involves trigo functions, we can simply translate its graph. The height at a certain point is the distance from the origin.
+        \item Then we can simply trace the graph from the left, and plot the points according to the distance from the origin at each angle.
+        \item If the graph is symmetric, we can simply copy the other half.
+    \end{enumerate}
+
+\end{knBox}
 \section{Ordinary Differential Equations}
 \subsection{1st Order Linear ODEs \& Integrating Factors}
 \subsection{Bernoulli Equations \& Riccati Equations}
