@@ -42,6 +42,8 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     {Condition for limit to exist}
     The limit for a function $f(x)$ only exists if and only if:
     \[\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)\]
+    WARNING: If the \textbf{limit is infinity} it \textbf{doesn't exist}.
+
 \end{theorem}
 
 \begin{minipage}{0.65\textwidth}
@@ -62,7 +64,7 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     A function $f(x)$ is \emph{continuous} at $x=a$ if:
     \[\mathop {\lim }\limits_{x \to a} f\left( x \right) = f\left( a \right)\]
 \end{definition}
-\begin{theorem}
+\begin{knBox}
     {Continuity properties}
     For $f,g$ continuous at $c$, the following are also continuous at $c$:
     \begin{enumerate}
@@ -71,10 +73,14 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
         \item $fg$
         \item $\frac{f}{g}$, given that $g(c)\ne 0$
     \end{enumerate}
-\end{theorem}
+\end{knBox}
 \begin{theorem}
-    {Intermediate value theorem}
+    {Intermediate value theorem (IVT)}
     If a function $f$ is continuous on $[a, b]$, there is a number $c$ in $[a, b]$ where $f(c)$ in $[f(a), f(b)]$.
+    \tcblower
+    To prove that there is a root, we can use the IVT by showing there is a \textbf{change of sign} between the interval given.
+
+    To show that there's \emph{only one solution}, check if $f'(x) > 0$ or $<0$ (strict $>$) in the interval.
 \end{theorem}
 
 \subsection{Computing limits}
@@ -90,7 +96,7 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     \begin{enumerate}
         \item $lim_{x\to a}c=c$
         \item $\bigcirc(f\pm g)=\bigcirc f\pm \bigcirc g$
-        \item $\bigcirc(k\cdot f)=k\cdot\bigcirc L$
+        \item $\bigcirc(k\cdot f)=\bigcirc k\cdot\bigcirc f$
         \item $\bigcirc(f^n)=(\bigcirc f)^n$
         \item $\bigcirc(fg)=\bigcirc f\bigcirc g$
         \item $\bigcirc(\frac{f}{g})=\frac{\bigcirc f}{\bigcirc g},\quad\text{given that }\bigcirc g\ne 0$. \emph{This strict condition prevents indeterminate forms.}
@@ -216,17 +222,20 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     Note that, as we are considering the negative limit of infinity, we need to add - to the abs sign on line 3.
 \end{example}
 
-\subsection{Asymptotes and limits}
+\label{sec:asymptotes}
+\subsection{Asymptotes}
 \begin{definition}
     {Vertical asymptotes}
-    A function $f$ will have v-asymptotes at $x=a$ if any $\pm$ is true:
+    $f$ will have v-asymptotes at $x=a$ if any $\pm$ is true:
     \[\lim_{x\to a^\pm}f(x)=\pm\infty\]
 \end{definition}
 \begin{definition}
     {Horizontal asymptotes}
-    A function $f$ will have h-asymptotes at $y=L$ if any $\pm$ is true:
+    $f$ will have h-asymptotes at $y=L$ if any $\pm$ is true:
     \[\lim_{x\to\pm\infty}f(x)=L\]
 \end{definition}
+Related: \hyperref[sec:graph]{Graphing functions}
+
 
 \section{Derivatives}
 \begin{definition}
@@ -234,6 +243,12 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     The first principle is the definition of the derivative of a function $f(x)$ at $x=a$:
     \[f'(x) = \frac{d}{dx} f(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\]
 \end{definition}
+
+\begin{theorem}
+    {Differentiability}
+    The function is differentiable at $x=a$ if:
+    \[\lim_{x\to a^-}f'=\lim_{x\to a^+}f'\]
+\end{theorem}
 
 \subsection{Differentiation formulas and rules}
 \begin{knBox}
@@ -244,11 +259,6 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
         \item Derivative of a constant is 0: $\frac{d}{dx}k = 0$
         \item Power rule: $\frac{d}{dx}x^n = nx^{n-1}$
     \end{itemize}
-\end{knBox}
-\begin{knBox}
-    {Parametric differentiation}
-    For a parametric equation $y=f(t)$ and $x=g(t)$:
-    \[\frac{dy}{dx}=\frac{dy}{dt}\div \frac{dx}{dt}\]
 \end{knBox}
 \begin{minipage}{0.65\textwidth}
     \begin{theorem}
@@ -271,38 +281,55 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
 \begin{minipage}{0.28\textwidth}
     \begin{table}[H]
         \begin{tabular}{rcc}
-                & $f(x)$    & $f'(x)$           \\ \hline
-            1.  & $a^x$     & $\ln{a}\cdot a^x$ \\ \arrayrulecolor{lightgray}\hline
-            2.  & $e^{kx}$  & $ke^{kx}$         \\ \arrayrulecolor{lightgray}\hline
-            3.  & $\ln{kx}$ & $x^{-1}$          \\ \arrayrulecolor{lightgray}\hline
-            4.  & $|x|$     & $\frac{|x|}{x}$   \\ \arrayrulecolor{lightgray}\hline
-            5.  & $\sin kx$ & $k\cos kx$        \\ \arrayrulecolor{lightgray}\hline
-            6.  & $\cos kx$ & $-k\sin kx$       \\ \arrayrulecolor{lightgray}\hline
-            7.  & $\tan kx$ & $k\sec^2 kx$      \\ \arrayrulecolor{lightgray}\hline
-            8.  & $\csc x$  & $-\csc x \cot x$  \\ \arrayrulecolor{lightgray}\hline
-            9.  & $\sec x$  & $\sec x \tan x$   \\ \arrayrulecolor{lightgray}\hline
-            10. & $\cot x$  & $-\csc^2x$
+                & $f(x)$        & $f'(x)$               \\ \hline
+            1.  & $a^x$         & $\ln{a}\cdot a^x$     \\ \arrayrulecolor{lightgray}\hline
+            2.  & $e^{kx}$      & $ke^{kx}$             \\ \arrayrulecolor{lightgray}\hline
+            3.  & $\ln{kx}$     & $x^{-1}$              \\ \arrayrulecolor{lightgray}\hline
+            4.  & $|x|$         & $\frac{|x|}{x}$       \\ \arrayrulecolor{lightgray}\hline
+            5.  & $\sin kx$     & $k\cos kx$            \\ \arrayrulecolor{lightgray}\hline
+            6.  & $\cos kx$     & $-k\sin kx$           \\ \arrayrulecolor{lightgray}\hline
+            7.  & $\tan kx$     & $k\sec^2 kx$          \\ \arrayrulecolor{lightgray}\hline
+            8.  & $\csc x$      & $-\csc x \cot x$      \\ \arrayrulecolor{lightgray}\hline
+            9.  & $\sec x$      & $\sec x \tan x$       \\ \arrayrulecolor{lightgray}\hline
+            10. & $\cot x$      & $-\csc^2x$            \\ \arrayrulecolor{lightgray}\hline
+            11. & $\sin^{-1} x$ & $(\sqrt{1-x^2})^{-1}$ \\ \arrayrulecolor{lightgray}\hline
+            12. & $\cos^{-1} x$ & $(\sqrt{1-x^2})^{-1}$ \\ \arrayrulecolor{lightgray}\hline
+            13. & $\tan^{-1} x$ & $(1+x^2)^{-1}$
         \end{tabular}
     \end{table}
 \end{minipage}
 
 Note that the trigo derivatives can be extended to hyperbolic trigo functions, with the except of $\frac{d}{dx}\text{sech} u=-\text{sech} u\tanh u$.
+
+\subsection{Techniques of differentiation}
+\begin{knBox}
+    {Parametric differentiation}
+    For a parametric equation $y=f(t)$ and $x=g(t)$:
+    \[\frac{dy}{dx}=\frac{dy}{dt}\div \frac{dx}{dt}\]
+\end{knBox}
+\begin{knBox}
+    {Derivative of Inverse functions}
+    At $c$, we first find $f'(x)$ and the value of $f^{-1}(c)$, then we apply the formula to find the value of $f^{-1'}(c)$:
+    \[f^{-1'}(c)=\frac{1}{f'(f^{-1}(c))}\]
+    $f^{-1}(c)$ can be found by solving $f(x)=c$.
+\end{knBox}
+
 \begin{knBox}
     {Implicit differentiation}
-    Differentiate all $xy$, add $\frac{dy}{dx}$ behind all differentiations of $y$.
+    Differentiate all $xy$, add $y'$ behind all differentiations of $y$.
     \tcblower
-    To find $\frac{dy}{dx}$ for $y^2=x^2+\sin(xy)$:
+    To find $y'$ for $y^2=x^2+\sin(xy)$:
     \begin{align*}
         y^2                                     & =x^2+\sin(xy)                      \\
-        2y\frac{dy}{dx}                         & =\frac{d}{dx}(\sin(xy))            \\
-        2y\frac{dy}{dx}                         & =2x+\cos(xy)(x\frac{dy}{dx}+y)     \\
-        \text{Then we simply collect terms of } & \frac{dy}{dx}                      \\
-        \frac{dy}{dx}                           & =\frac{2x+y\cos(xy)}{2y-x\cos(xy)}
+        2yy'                                    & =\frac{d}{dx}(\sin(xy))            \\
+        2yy'                                    & =2x+\cos(xy)(xy'+y)                \\
+        \text{Then we simply collect terms of } & y'                                 \\
+        y'                                      & =\frac{2x+y\cos(xy)}{2y-x\cos(xy)}
     \end{align*}
 \end{knBox}
 \begin{knBox}
     {Logarithmic differentiation}
-    For $y=f^g:\quad f'=f(g\ln f)'$
+    For $y=f(x),\quad y'=f(x)\times(\ln f(x))'$. (Takes natural log for both sides)
     \tcblower
     To find $\frac{dy}{dx}$ for $y=x^x$:
     \begin{align*}
@@ -312,48 +339,6 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
         \frac{dy}{dx}            & =x^x(\ln x+1) = x^x(x\ln x)'
     \end{align*}
 \end{knBox}
-
-\subsection{Extremum points}
-\begin{definition}
-    {Critical points}
-    A critical point is a point where $f'(x)=0$ or $f'(x)$ is undefined, or the end-points of the domain.
-\end{definition}
-\begin{definition}
-    {Absolute max/minimum points}
-    The absolute maximum/minimum points are the points where the function has the largest/smallest value in the entire domain. It can be written as:
-    \[\max_{x\in D}f(x)\quad\quad\text{or}\quad\quad\min_{x\in D}f(x)\]
-\end{definition}
-\begin{definition}
-    {Local max/minimum points}
-    The local maximum/minimum points are the points where the function has the largest/smallest value in a small interval around the point.
-\end{definition}
-\begin{theorem}
-    {Extreme value theorem}
-    For $f(x)$ that is \emph{continuous} in $[a,b]$, there must be both a abs maximum and minimum point.
-    \tcblower
-    To find the absolute extremas of $f(x)$ in $[a,b]$, we can:
-    \begin{enumerate}
-        \item Verify that $f(x)$ is continuous in $[a,b]$
-        \item Find all critical points in $[a,b]$
-        \item Evaluate the critical points as well as the end points of the interval
-    \end{enumerate}
-\end{theorem}
-\begin{theorem}
-    {Rolle's theorem}
-    For $f(x)$ that is \emph{continuous} in $[a,b]$ and \emph{differentiable} in $(a,b)$, if $f(a)=f(b)$, there must be a critical point $c$ in the interval.
-\end{theorem}
-\subsection{Other cool theorems}
-\begin{theorem}
-    {Mean value theorem}
-    For $f(x)$ that is \emph{continuous} in $[a,b]$ and \emph{differentiable} in $(a,b)$, there must be a point $c$ in $(a,b)$ where:
-    \[f'(c)=\frac{f(b)-f(a)}{b-a}\]
-    The theorem tells us that, in describe conditions, there must be a point $c$ where the slope of the \emph{tangent line} is equal to the slope of the line from $a\to b$ (secant line).
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.4\textwidth]{./img/mvt.png}
-        \caption*{\tiny\textit{\color{gray}Source: https://tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem.aspx}}
-    \end{figure}
-\end{theorem}
 \begin{theorem}
     {L'Hopital's rule}
     For any $a\in [\mathds{R}, \pm\infty]$, if $\lim_{x\to a}(\frac{f}{g})$ is in \hyperref[sec:indeterminate]{indeterminate form} after substitution, we can conclude:
@@ -368,13 +353,74 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
     \end{align*}
 \end{theorem}
 
-\subsection{Shape of graph}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./img/graph.png}
-    \caption*{\tiny\textit{\color{gray}Source: https://xaktly.com/CurveSketchSecondDeriv.html}}
-\end{figure}
+\subsection{Important theorems}
+\begin{theorem}
+    {Mean value theorem (MVT)}
+    For $f(x)$ that is \emph{continuous} in $[a,b]$ and \emph{differentiable} in $(a,b)$:
+    \[f'(c)=\frac{f(b)-f(a)}{b-a},\quad c\in(a,b)\]
+    \tcblower
+    The theorem tells us that, in describe conditions, there must be a point $c$ where the slope of the \emph{tangent line} is equal to the slope of the line from $a\to b$ (secant line).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{./img/mvt.png}
+        \caption*{\tiny\textit{\color{gray}Source: https://tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem.aspx}}
+    \end{figure}
+\end{theorem}
+\begin{theorem}
+    {Rolle's theorem}
+    For $f(x)$ that is \emph{continuous} in $[a,b]$ and \emph{differentiable} in $(a,b)$, if $f(a)=f(b)$, there exists $c\in(a,b): f'(c)=0$
+    \tcblower
+    For $F'=f$, if $F$ has 4 roots, then $f$ has 3 roots.
+\end{theorem}
 
+
+\subsection{Extremum points}
+\begin{definition}
+    {Critical points}
+    A critical point is a point where $f'(x)=0$ or $f'(x)$ is undefined, or the end-points of the domain.
+\end{definition}
+\begin{definition}
+    {Max/minimum points}
+    The \textbf{absolute maximum/minimum points} are the points where the function has the largest/smallest value in the entire domain. It can be written as:
+    \[\max_{x\in D}f(x)\quad\quad\text{or}\quad\quad\min_{x\in D}f(x)\]
+    The \textbf{local maximum/minimum points} are the points where the function has the largest/smallest value in a small interval around the point.
+\end{definition}
+% \begin{theorem}
+%     {Extreme value theorem}
+%     For $f(x)$ that is \emph{continuous} in $[a,b]$, there must be both an abs maximum and minimum point.
+%     \tcblower
+%     To find the absolute extremas of $f(x)$ in $[a,b]$, we can:
+%     \begin{enumerate}
+%         \item Verify that $f(x)$ is continuous in $[a,b]$
+%         \item Find all critical points in $[a,b]$
+%         \item Evaluate the critical points as well as the end points of the interval
+%     \end{enumerate}
+% \end{theorem}
+
+\label{sec:graph}
+\subsection{Determining shape of graph}
+
+\begin{table}[H]
+    \begin{tabular}{rll}
+           & Step                                 & Expression                                                       \\ \hline
+        1. & Determine domain of function         &                                                                  \\
+        2. & Special points without continuity?   &                                                                  \\
+        3. & Axis intercepts                      & $(f(x)=0, 0)\ (0, f(0))$                                         \\
+        4. & Critical points                      & $f'(x)=0 \Rightarrow f''(x)$ max or min ($+f''(x)$ or $-f''(x)$) \\
+        5. & Inflection points                    & $f''(x)=0$                                                       \\
+        6. & Horizontal asymptotes                & $\lim_{x\to\pm\infty}f(x)=n?$                                    \\
+        7. & Vertical asymptotes                  & $\lim_{x\to a^\pm}f(x)=\pm\infty?$                               \\
+        8. & Area strictly increasing/decreasing? & ($f'(x)>0$ or $f'(x)<0$)                                         \\
+        9. & Area concavity?                      & ($f''(x)>0$ or $f''(x)<0$)                                       \\
+    \end{tabular}
+\end{table}
+
+Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
+
+\begin{knBox}
+    {Higher derivatives}
+    Derivatives of higher order (e.g. $f''(x), f'''(x)$) can be expressed as $f^{(n)}(x)$
+\end{knBox}
 \section{Trigonometry review}
 \begin{theorem}
     {Trigonometric identities}
@@ -411,7 +457,7 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
         \item $\int_{a}^{b}(f(x)\pm g(x))dx=\int_{a}^{b}f(x)dx\pm\int_{a}^{b}g(x)dx$
     \end{enumerate}
 \end{knBox}
-\subsection{Fundamental theorem of calculus}
+\subsection{Fundamental theorem of calculus (FTC)}
 \begin{theorem}
     {Fundamental theorem of calculus}
     If $f(x)$ is continuous in $[a,b]$, then:
@@ -423,11 +469,21 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
     If $f(x)$ is continuous in $[a,b]$, then:
     \[\frac{d}{dx}\int_{a}^{x}f(t)dt=f(x)\]
     \tcblower
-    Find $\frac{dy}{dx}$ for $y=\int_1^{x^2}\cos t\ dt$:
+    Find $g'(x)$ for $g(x)=\int_1^{x^2}\cos t\ dt$:
 
-    We first define $F(u)=\int_1^{u}\cos t\ dt$, then we can apply the chain rule:
-    \[\frac{dy}{dx}=\frac{d}{dx}F(x^2)=F'(x^2)\cdot2x=\cos x^2\cdot2x\]
+    We first define $G(u)=\int_1^{u}\cos t\ dt$, then we can apply the chain rule:
+    \begin{align*}
+        g'(x) & =(G(x^2))' \\&=G'(x^2)\cdot2x\\&=\cos x^2\cdot2x
+    \end{align*}
 \end{theorem}
+\begin{knBox}
+    {Cases of area 0}
+    For $\int^{b}_{a}f(x)dx$:
+    \begin{itemize}
+        \item If $b=a$, then the area is 0 (no width)
+        \item If $f(x)=f(-x)$ and $a=-b$, then the area is 0 (symmetry)
+    \end{itemize}
+\end{knBox}
 
 \subsection{Techniques of integration}
 \begin{knBox}
