@@ -42,7 +42,7 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     {Condition for limit to exist}
     The limit for a function $f(x)$ only exists if and only if:
     \[\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)\]
-    WARNING: If the \textbf{limit is infinity} it \textbf{doesn't exist}.
+    WARNING: If the \textbf{limit is} $\mathbf{\infty}$ it \textbf{doesn't exist}.
 
 \end{theorem}
 
@@ -89,6 +89,7 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     {Indeterminate forms}
     Indeterminate forms are forms that cannot be solved by simply substituting the value of $x$ into the function. They are:
     \[\frac{0}{0},\quad\frac{\infty}{\infty},\quad0\cdot\infty,\quad\infty-\infty,\quad\infty^0,\quad1^\infty,\quad\infty^0\]
+    Note that $\infty + \infty = \infty$. Related: \hyperref[sec:lhr]{L'Hopital's rule}
 \end{definition}
 \begin{theorem}
     {Using the limit laws}
@@ -153,7 +154,7 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     {Determining infinite limits}
     If $f(x)$ gets (negatively) arbitrarily large when $x$ approaches $a$, we can say:
     \[\lim_{x\to a}f(x)=(-)\infty\]
-    After we know that the limit \emph{may} be infinity, we then have to make sure that \emph{the limit is the same from both sides}, so that the limit actually exists. We can do so by plugging numbers which are approaching the limit from both sides.
+    After we know that the limit \emph{may} be infinity, we then have to make sure that \emph{the limit is the same from both sides}, so that the limit is actually $\infty$. We can do so by plugging numbers which are approaching the limit from both sides.
 \end{knBox}
 
 \begin{minipage}{0.45\textwidth}
@@ -190,11 +191,11 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     {Determining limits of infinity}
     It is not hard to see that, for rational numbers $n$:
     \[\lim_{x\to\pm\infty}\frac{k}{x^n}=0\]
-    The easiest way to determine the limit would be to \emph{factorize} the function so that we can use the facts above.
+    The easiest way to determine the limit would be to \emph{factorize} the function so that we can use the fact above.
 \end{knBox}
 \begin{theorem}
     {Determining limits of infinity of polynomials}
-    Using the above fact, we can produce the fact, for a polynomial $p(x)$ with degree $n$ and largest coefficient $a_n$:
+    Using the above fact, we can see that for a polynomial $p(x)$ with degree $n$ and largest coefficient $a_n$:
     \[\lim_{x\to\pm\infty}p(x)=a_nx^n\]
     Which means we can \emph{only consider the largest term in a polynomial} for limits of infinity.
 \end{theorem}
@@ -214,9 +215,9 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
 
     We can simply consider the largest terms on each side and give the final answer easily.
     \begin{align*}
-        \lim_{x \to -\infty } \frac{{\sqrt {3{x^2} + 6} }}{{5 - 2x}} & =\lim_{x \to \infty }\frac{\sqrt{3x^2}}{-2x} \\
-                                                                     & =\lim_{x \to \infty }\frac{\sqrt{3}|x|}{-2x} \\
-                                                                     & =\frac{-\infty\sqrt{3}}{-2\times\infty}      \\
+        \lim_{x \to -\infty } \frac{{\sqrt {3{x^2} + 6} }}{{5 - 2x}} & =\lim_{x \to -\infty }\frac{\sqrt{3x^2}}{-2x}                           \\
+                                                                     & =\lim_{x \to -\infty }\frac{\sqrt{3}|x|}{-2x} \leftarrow \sqrt{x^2}=|x| \\
+                                                                     & =\lim_{x \to -\infty }\frac{-\sqrt{3}}{-2} \leftarrow |c|,c<0=-c        \\
                                                                      & =\frac{\sqrt{3}}{2}
     \end{align*}
     Note that, as we are considering the negative limit of infinity, we need to add - to the abs sign on line 3.
@@ -236,6 +237,25 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
 \end{definition}
 Related: \hyperref[sec:graph]{Graphing functions}
 
+\section{Trigonometry review}
+\begin{theorem}
+    {Trigonometric identities}
+    \begin{enumerate}
+        \item $\sin^2x+\cos^2x=1$
+        \item $\tan x=\frac{\sin x}{\cos x}$
+        \item $\csc x=\frac{1}{\sin x}$
+        \item $\sec x=\frac{1}{\cos x}$
+        \item $\cot x=\frac{1}{\tan x}$
+        \item $\sin 2x=2\sin x\cos x$
+        \item $\cos 2x=\cos^2x-\sin^2x$
+        \item $\tan 2x=\frac{2\tan x}{1-\tan^2x}$
+        \item $\sin(x\pm y)=\sin x\cos y\pm\cos x\sin y$
+        \item $\cos(x\pm y)=\cos x\cos y\mp\sin x\sin y$
+        \item $\tan(x\pm y)=\frac{\tan x\pm\tan y}{1\mp\tan x\tan y}$
+        \item $1 + tan^2x = sec^2x$
+        \item $1 + cot^2x = csc^2x$
+    \end{enumerate}
+\end{theorem}
 
 \section{Derivatives}
 \begin{definition}
@@ -281,19 +301,19 @@ Related: \hyperref[sec:graph]{Graphing functions}
 \begin{minipage}{0.28\textwidth}
     \begin{table}[H]
         \begin{tabular}{rcc}
-                & $f(x)$        & $f'(x)$               \\ \hline
-            1.  & $a^x$         & $\ln{a}\cdot a^x$     \\ \arrayrulecolor{lightgray}\hline
-            2.  & $e^{kx}$      & $ke^{kx}$             \\ \arrayrulecolor{lightgray}\hline
-            3.  & $\ln{kx}$     & $x^{-1}$              \\ \arrayrulecolor{lightgray}\hline
-            4.  & $|x|$         & $\frac{|x|}{x}$       \\ \arrayrulecolor{lightgray}\hline
-            5.  & $\sin kx$     & $k\cos kx$            \\ \arrayrulecolor{lightgray}\hline
-            6.  & $\cos kx$     & $-k\sin kx$           \\ \arrayrulecolor{lightgray}\hline
-            7.  & $\tan kx$     & $k\sec^2 kx$          \\ \arrayrulecolor{lightgray}\hline
-            8.  & $\csc x$      & $-\csc x \cot x$      \\ \arrayrulecolor{lightgray}\hline
-            9.  & $\sec x$      & $\sec x \tan x$       \\ \arrayrulecolor{lightgray}\hline
-            10. & $\cot x$      & $-\csc^2x$            \\ \arrayrulecolor{lightgray}\hline
-            11. & $\sin^{-1} x$ & $(\sqrt{1-x^2})^{-1}$ \\ \arrayrulecolor{lightgray}\hline
-            12. & $\cos^{-1} x$ & $(\sqrt{1-x^2})^{-1}$ \\ \arrayrulecolor{lightgray}\hline
+                & $f(x)$        & $f'(x)$                \\ \hline
+            1.  & $a^x$         & $\ln{a}\cdot a^x$      \\ \arrayrulecolor{lightgray}\hline
+            2.  & $e^{kx}$      & $ke^{kx}$              \\ \arrayrulecolor{lightgray}\hline
+            3.  & $\ln{kx}$     & $x^{-1}$               \\ \arrayrulecolor{lightgray}\hline
+            4.  & $|x|$         & $\frac{|x|}{x}$        \\ \arrayrulecolor{lightgray}\hline
+            5.  & $\sin kx$     & $k\cos kx$             \\ \arrayrulecolor{lightgray}\hline
+            6.  & $\cos kx$     & $-k\sin kx$            \\ \arrayrulecolor{lightgray}\hline
+            7.  & $\tan kx$     & $k\sec^2 kx$           \\ \arrayrulecolor{lightgray}\hline
+            8.  & $\csc x$      & $-\csc x \cot x$       \\ \arrayrulecolor{lightgray}\hline
+            9.  & $\sec x$      & $\sec x \tan x$        \\ \arrayrulecolor{lightgray}\hline
+            10. & $\cot x$      & $-\csc^2x$             \\ \arrayrulecolor{lightgray}\hline
+            11. & $\sin^{-1} x$ & $(\sqrt{1-x^2})^{-1}$  \\ \arrayrulecolor{lightgray}\hline
+            12. & $\cos^{-1} x$ & $-(\sqrt{1-x^2})^{-1}$ \\ \arrayrulecolor{lightgray}\hline
             13. & $\tan^{-1} x$ & $(1+x^2)^{-1}$
         \end{tabular}
     \end{table}
@@ -326,6 +346,7 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
         \text{Then we simply collect terms of } & y'                                 \\
         y'                                      & =\frac{2x+y\cos(xy)}{2y-x\cos(xy)}
     \end{align*}
+    To find the second derivative $y''$, differentate the expression and substitute $y'$ back in.
 \end{knBox}
 \begin{knBox}
     {Logarithmic differentiation}
@@ -339,6 +360,7 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
         \frac{dy}{dx}            & =x^x(\ln x+1) = x^x(x\ln x)'
     \end{align*}
 \end{knBox}
+\label{sec:lhr}
 \begin{theorem}
     {L'Hopital's rule}
     For any $a\in [\mathds{R}, \pm\infty]$, if $\lim_{x\to a}(\frac{f}{g})$ is in \hyperref[sec:indeterminate]{indeterminate form} after substitution, we can conclude:
@@ -359,7 +381,7 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
     For $f(x)$ that is \emph{continuous} in $[a,b]$ and \emph{differentiable} in $(a,b)$:
     \[f'(c)=\frac{f(b)-f(a)}{b-a},\quad c\in(a,b)\]
     \tcblower
-    The theorem tells us that, in describe conditions, there must be a point $c$ where the slope of the \emph{tangent line} is equal to the slope of the line from $a\to b$ (secant line).
+    The theorem tells us that, in described conditions, there must be a point $c$ where the slope of the \emph{tangent line} is equal to the slope of the line from $a\to b$ (secant line).
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.4\textwidth]{./img/mvt.png}
@@ -368,7 +390,11 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
 \end{theorem}
 \begin{theorem}
     {Rolle's theorem}
-    For $f(x)$ that is \emph{continuous} in $[a,b]$ and \emph{differentiable} in $(a,b)$, if $f(a)=f(b)$, there exists $c\in(a,b): f'(c)=0$
+    For $f(x)$ that is \emph{continuous} in $[a,b]$ and \emph{differentiable} in $(a,b)$:
+    \[\forall\ f(a)=f(b)\text{  there exists  }f'(c)=0,\quad c\in(a,b)\]
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{./img/rt.png}
+    \end{center}
     \tcblower
     For $F'=f$, if $F$ has 4 roots, then $f$ has 3 roots.
 \end{theorem}
@@ -376,13 +402,15 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
 
 \subsection{Extremum points}
 \begin{definition}
-    {Critical points}
-    A critical point is a point where $f'(x)=0$ or $f'(x)$ is undefined, or the end-points of the domain.
+    {Critical and inflection points}
+    A \textbf{critical point} is a point where $f'(x)=0$ or undefined, or the end-points of the domain if inclusive.
+
+    An \textbf{inflection point} is a point where $f''(x)=0$ or undefined, that the \hyperref[sec:concavity]{concavity} of the function changes.
 \end{definition}
 \begin{definition}
     {Max/minimum points}
-    The \textbf{absolute maximum/minimum points} are the points where the function has the largest/smallest value in the entire domain. It can be written as:
-    \[\max_{x\in D}f(x)\quad\quad\text{or}\quad\quad\min_{x\in D}f(x)\]
+    The \textbf{absolute maximum/minimum points} are the points where the function has the largest/smallest value in the entire domain.
+
     The \textbf{local maximum/minimum points} are the points where the function has the largest/smallest value in a small interval around the point.
 \end{definition}
 % \begin{theorem}
@@ -397,21 +425,35 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
 %     \end{enumerate}
 % \end{theorem}
 
-\label{sec:graph}
 \subsection{Determining shape of graph}
+
+\label{sec:concavity}
+\begin{definition}
+    {Concavity}
+    Concavity is the direction of the curve, and can be described by the values of $f'$ and $f''$:
+    \begin{table}[H]
+        \begin{tabular}{lcccc}
+            $f''$ & $-$        & $+$        & $+$        & $-$        \\
+            $f'$  & $-$        & $+$        & $-$        & $+$        \\
+            $f$   & $\searrow$ & $\swarrow$ & $\nwarrow$ & $\nearrow$
+        \end{tabular}
+    \end{table}
+    Note: Arrows goes clock-wise.
+\end{definition}
 
 \begin{table}[H]
     \begin{tabular}{rll}
-           & Step                                 & Expression                                                       \\ \hline
-        1. & Determine domain of function         &                                                                  \\
-        2. & Special points without continuity?   &                                                                  \\
-        3. & Axis intercepts                      & $(f(x)=0, 0)\ (0, f(0))$                                         \\
-        4. & Critical points                      & $f'(x)=0 \Rightarrow f''(x)$ max or min ($+f''(x)$ or $-f''(x)$) \\
-        5. & Inflection points                    & $f''(x)=0$                                                       \\
-        6. & Horizontal asymptotes                & $\lim_{x\to\pm\infty}f(x)=n?$                                    \\
-        7. & Vertical asymptotes                  & $\lim_{x\to a^\pm}f(x)=\pm\infty?$                               \\
-        8. & Area strictly increasing/decreasing? & ($f'(x)>0$ or $f'(x)<0$)                                         \\
-        9. & Area concavity?                      & ($f''(x)>0$ or $f''(x)<0$)                                       \\
+            & Step                                 & Expression                                   \\ \hline
+        1.  & Determine domain of function         &                                              \\
+        2.  & Special points without continuity?   &                                              \\
+        3.  & Axis intercepts                      & $(f(x)=0, 0)\ (0, f(0))$                     \\
+        4.  & Critical points                      & $f'(x)=0$ or undefined                       \\
+        5.  & Point maxima?                        & $+f''(x)$ or $-f''(x)$                       \\
+        6.  & Inflection points                    & $f''(x)=0$ or undefined                      \\
+        7.  & Horizontal asymptotes                & $\lim_{x\to\pm\infty}f(x)=n?$                \\
+        8.  & Vertical asymptotes                  & $\lim_{x\to a^\pm}f(x)=\pm\infty?$           \\
+        9.  & Area strictly increasing/decreasing? & $f'(x)>0$ or $f'(x)<0$                       \\
+        10. & Area concavity?                      & $-++-/-+-+/\searrow\swarrow\nwarrow\nearrow$ \\
     \end{tabular}
 \end{table}
 
@@ -421,25 +463,6 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
     {Higher derivatives}
     Derivatives of higher order (e.g. $f''(x), f'''(x)$) can be expressed as $f^{(n)}(x)$
 \end{knBox}
-\section{Trigonometry review}
-\begin{theorem}
-    {Trigonometric identities}
-    \begin{enumerate}
-        \item $\sin^2x+\cos^2x=1$
-        \item $\tan x=\frac{\sin x}{\cos x}$
-        \item $\csc x=\frac{1}{\sin x}$
-        \item $\sec x=\frac{1}{\cos x}$
-        \item $\cot x=\frac{1}{\tan x}$
-        \item $\sin 2x=2\sin x\cos x$
-        \item $\cos 2x=\cos^2x-\sin^2x$
-        \item $\tan 2x=\frac{2\tan x}{1-\tan^2x}$
-        \item $\sin(x\pm y)=\sin x\cos y\pm\cos x\sin y$
-        \item $\cos(x\pm y)=\cos x\cos y\mp\sin x\sin y$
-        \item $\tan(x\pm y)=\frac{\tan x\pm\tan y}{1\mp\tan x\tan y}$
-        \item $1 + tan^2x = sec^2x$
-        \item $1 + cot^2x = csc^2x$
-    \end{enumerate}
-\end{theorem}
 
 \section{Integrals}
 \subsection{Definite integrals}
@@ -457,9 +480,9 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
         \item $\int_{a}^{b}(f(x)\pm g(x))dx=\int_{a}^{b}f(x)dx\pm\int_{a}^{b}g(x)dx$
     \end{enumerate}
 \end{knBox}
-\subsection{Fundamental theorem of calculus (FTC)}
+\subsection{Fundamental theorem of calculus}
 \begin{theorem}
-    {Fundamental theorem of calculus}
+    {Fundamental theorem of calculus (FTC)}
     If $f(x)$ is continuous in $[a,b]$, then:
     \[\int_{a}^{b}f(x)dx=F(b)-F(a)\]
     Where $F(x)$ is the definite integral of $f(x)$.
