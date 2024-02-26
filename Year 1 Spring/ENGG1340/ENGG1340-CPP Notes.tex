@@ -1,0 +1,84 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/Clean}
+\newcommand{\documentdate}{Spring 2024}
+\newcommand{\documenttype}{C++ Notes for HKU}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\section{C++ basics}
+Basic differences to Python:
+\begin{enumerate}
+    \item C++ is a \emph{compiled} language, which means that the code needs to be compiled before it can be run.
+    \item C++ is a \emph{statically typed} language, which means that the type of a variable is known at compile time.
+    \item C++ expressions end with a semicolon \Colorbox{superlightgray}{\lstinline|;|}.
+\end{enumerate}
+\subsection{Initialization}
+For a \Colorbox{superlightgray}{\lstinline|.cpp|} file, we must include the following contents:
+\lstinputlisting[language=c++, firstline=0, lastline=7]{code/cpp.cpp}
+
+\subsection{Variables and IO}
+\subsubsection{Variables types}
+\lstinputlisting[language=c++, firstline=24, lastline=30]{code/cpp.cpp}
+Note that there are no built-in string types in C++. A string is simple an \hyperref[sec:array]{array of characters}.
+
+\subsubsection{Defining variables}
+\lstinputlisting[language=c++, firstline=8, lastline=9]{code/cpp.cpp}
+
+\subsubsection{Input and output}
+\lstinputlisting[language=c++, firstline=78, lastline=79]{code/cpp.cpp}
+\begin{enumerate}
+    \item \Colorbox{superlightgray}{\lstinline|>>|} is the \emph{extraction operator}
+    \item \Colorbox{superlightgray}{\lstinline|<<|} is the \emph{insertion operator}
+    \item We can use \Colorbox{superlightgray}{\lstinline|\|} to escape special characters
+    \item \Colorbox{superlightgray}{\lstinline|endl|} is a special character that represents a new line, equiv to \Colorbox{superlightgray}{\lstinline|\n|}
+\end{enumerate}
+
+\subsubsection{Decimal points}
+We can fix the number of decimal points by using the \Colorbox{superlightgray}{\lstinline|fixed|} and \Colorbox{superlightgray}{\lstinline|setprecision|} functions from the \Colorbox{superlightgray}{\lstinline|iomanip|} library.
+\lstinputlisting[language=c++, firstline=81, lastline=83]{code/cpp.cpp}
+
+
+\subsection{Operators}
+\lstinputlisting[language=c++, firstline=14, lastline=22]{code/cpp.cpp}
+
+
+\subsection{Control flow}
+\subsubsection{Basisc conditionals}
+\lstinputlisting[language=c++, firstline=32, lastline=39]{code/cpp.cpp}
+\subsubsection{Switches}
+\lstinputlisting[language=c++, firstline=40, lastline=47]{code/cpp.cpp}
+\subsubsection{Tentary operators}
+\lstinputlisting[language=c++, firstline=49, lastline=49]{code/cpp.cpp}
+\subsubsection{Loops}
+\lstinputlisting[language=c++, firstline=51, lastline=63]{code/cpp.cpp}
+
+\subsection{Pass by reference}
+Pass-by-reference means to pass the \textbf{reference of a variable} as the parameter of a function. The called function can \textbf{modify the value of the variable} by using its reference passed in.
+
+\lstinputlisting[language=c++, firstline=85, lastline=97]{code/cpp.cpp}
+
+\subsection{Functions}
+\lstinputlisting[language=c++, firstline=65, lastline=68]{code/cpp.cpp}
+Note that nested function declaration is not allowed.
+
+\label{sec:array}
+\subsection{Arrays}
+\lstinputlisting[language=c++, firstline=70, lastline=73]{code/cpp.cpp}
+You can also use the string library to work with strings:
+\lstinputlisting[language=c++, firstline=75, lastline=76]{code/cpp.cpp}
+
+
+\end{document}

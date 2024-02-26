@@ -92,14 +92,14 @@
 \end{definition}
 \subsection{Vectors in 3D}
 The concepts above can be extended to 3D simply by adding another variable to the system.
-\begin{knBox}
-    {Coordinate direction angles in 3D}
-    The direction of A is defined by the \emph{coordinate direction angles}: $\alpha, \beta, \gamma$, which are measured between the tail of A and the positive $x, y, z$ axes.
-    \[\alpha=\cos^{-1}\frac{A_x}{A},\quad\beta=\cos^{-1}\frac{A_y}{A},\quad\gamma=\cos^{-1}\frac{A_z}{A}\]
-    \begin{center}
-        \includegraphics[width=2cm]{img/Ax.png}\includegraphics[width=2cm]{img/Ay.png}\includegraphics[width=2cm]{img/Az.png}
-    \end{center}
-\end{knBox}
+% \begin{knBox}
+%     {Coordinate direction angles in 3D}
+%     The direction of A is defined by the \emph{coordinate direction angles}: $\alpha, \beta, \gamma$, which are measured between the tail of A and the positive $x, y, z$ axes.
+%     \[\alpha=\cos^{-1}\frac{A_x}{A},\quad\beta=\cos^{-1}\frac{A_y}{A},\quad\gamma=\cos^{-1}\frac{A_z}{A}\]
+%     \begin{center}
+%         \includegraphics[width=2cm]{img/Ax.png}\includegraphics[width=2cm]{img/Ay.png}\includegraphics[width=2cm]{img/Az.png}
+%     \end{center}
+% \end{knBox}
 
 \section{Moment of forces}
 \begin{definition}
@@ -225,11 +225,19 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
     \[\sigma=\frac{F}{A}\quad(Nm^{-2})\]
     Where $F$ is the force applied, and $A$ is the cross-sectional area of the member. Note that $1 Pa = 1 Nm^{-2}$.
 \end{definition}
+\begin{theorem}
+    {Eccentric loading and stress}
+    When a force is applied \emph{off-centre} to the member, the stress at each end is given by:
+    \[\sigma=\frac{F}{wd}\pm \frac{6F\times e}{d\times w^2}\]
+    Where $w$ is the width of the member, $d$ is the depth of the member, and $e$ is the eccentric distance from the centroid of the member to the point of application of the force.
+
+    The $\pm$ sign is used to denote the \emph{maximum} and \emph{minimum} stress on opposite sides.
+\end{theorem}
 \begin{definition}
     {Axial strain}
     Axial strain is the ratio of the change in length to the original length of the member. It is given by:
-    \[\epsilon=\frac{\Delta L}{L}\quad\text{(Ratio)}\]
-    Where $\Delta L$ is the change in length, and $L$ is the original length of the member.
+    \[\epsilon=\frac{\Delta x}{x}\quad\text{(Ratio)}\]
+    Where $\Delta x$ is the change in length, and $L$ is the original length of the member.
 \end{definition}
 
 
@@ -241,7 +249,7 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
 \begin{definition}
     {Young's Modulus}
     Young's modulus is the ratio of stress to strain, given by:
-    \[E=\frac{\sigma}{\epsilon}\quad(Pa)\]
+    \[E=\frac{\sigma}{\epsilon}=\frac{Fx}{A\Delta x}\quad(Pa, Nm^{-2})\]
 \end{definition}
 \begin{definition}
     {Poisson's ratio}
@@ -258,10 +266,18 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
 \subsubsection{Hydrostatic pressure}
 \begin{definition}
     {Hydrostatic/water pressure}
-    The water pressure acting on any surface is \emph{always perpendicular} to the surface, and the water pressure in \emph{any directions is the same}. The pressure is given by:
-    \[p=\rho gh\quad(Pa)\]
+    The water pressure acting on any surface is \emph{always perpendicular} to the surface, and the pressure is given by:
+    \[p=\rho gh\quad(Pa, Nm^{-2})\]
     Where $\rho$ is the density of water,  and $h$ is the depth of the water.
+
+    Hence, we can see that the water pressure \textbf{increases linearly with depth}.
 \end{definition}
+\begin{theorem}
+    {Water pressure load on slanted surface}
+    The load exerted on a slanted surface by water pressure F is given by and located at:
+    \[F=\frac{\rho g d w L}{2}\quad @ \frac{1}{3}L\ /\ \frac{2}{3}d\]
+    Where $d$ is the depth of water, $w$ is the width of the volume, and $L$ is the length of the surface.
+\end{theorem}
 \begin{knBox}
     {Water pipe}
     \begin{enumerate}
@@ -335,7 +351,7 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
     \end{enumerate}
 \end{knBox}
 \begin{theorem}
-    {Resultant force and moment for distributed load}
+    {Distributed load}
     Intuitively, the resultant force is to simply convert the units to $N$ by $F\times area$.
     \begin{itemize}
         \item Unifrom $\to$ $F=wl$
@@ -379,11 +395,25 @@ We make the following assumptions when analysing trusses:
     \end{itemize}
 \end{knBox}
 \begin{theorem}
+    {Zero-force members}
+    The following are zero-force members given that \textbf{no external load or support reaction is applied to the joint}.
+    \begin{itemize}
+        \item \textbf{2 non-collinear members} of a two-member-joint
+        \item \textbf{3rd member} of a three-member-joint, where the other two are collinear.
+    \end{itemize}
+    Removing zero-force members allows us to simplify the truss.
+    \tcblower
+    \begin{center}
+        \includegraphics[width=0.45\textwidth]{./img/zero2.jpg}
+        \includegraphics[width=0.45\textwidth]{./img/zero3.jpg}
+    \end{center}
+\end{theorem}
+\begin{theorem}
     {Method of joints}
     To find the forces on the members of a truss, refer to the following steps:
     \begin{enumerate}
         \item Isolate a \textbf{solvable joint}.
-        \item Draw the FBD of the solvable joint by \textbf{replacing members with forces}.
+        \item Draw the FBD of the solvable joint by \textbf{replacing members with forces}. (By convention, all forces should \emph{point towards} the joint.)
         \item Use $\sum F_x=0=\sum F_y$ to solve for the unknown forces.
     \end{enumerate}
     Keep in mind that \emph{the joint must be in equilibrium}. That is, the \textbf{external forces} are balanced by \textbf{internal forces}.
@@ -418,24 +448,12 @@ We make the following assumptions when analysing trusses:
         \item Compression forces $\to$ \textbf{pointing towards} the joint
     \end{itemize}
 \end{knBox}
-\begin{theorem}
-    {Zero-force members}
-    The following are zero-force members given that \textbf{no external load or support reaction is applied to the joint}.
-    \begin{itemize}
-        \item \textbf{2 non-collinear members} of a two-member-joint
-        \item \textbf{3rd member} of a three-member-joint, where the other two are collinear.
-    \end{itemize}
-    Removing zero-force members allows us to simplify the truss.
-    \tcblower
-    \begin{center}
-        \includegraphics[width=0.45\textwidth]{./img/zero2.jpg}
-        \includegraphics[width=0.45\textwidth]{./img/zero3.jpg}
-    \end{center}
-\end{theorem}
 
-\subsubsection{Simple example}
+\subsubsection{Examples}
 ...
 
-\subsection{Cable structures}
+\subsection{Cable anaylsis}
+
+\section{Bending internal forces}
 
 \end{document}
