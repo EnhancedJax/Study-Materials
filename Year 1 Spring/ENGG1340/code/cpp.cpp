@@ -1,12 +1,12 @@
-#include <iostream>  // lib provides the cout, endl funcs
-using namespace std; // use the standard namespace
+// include different libraries
+#include <iostream>  // iostream provides basic io functions
+using namespace std; // use the "std" namespace
 int main()
-{                                  // functions are contained in {}
-    char a;                        // limits the input to be a char
-    cin >> a;                      // read input from user
-    cout << "Hello " << a << endl; // prints Hello <input>
-    return 0;                      // return 0
+{                                  
+    // code to be ran when program starts
 }
+int a = 1, b = 2, c = 3;
+double a, b, c; // empty initialization
 
 int i = 1;
 int n = 0;
@@ -61,3 +61,37 @@ while (a < 10) { // check conditions first
 do { // execute first
     // do something
 } while (a < 10); //then check conditions
+
+//return_type func_name (type var1, type var2)
+double func_name (int a, int b) { 
+    return a + b;
+}
+
+int a[10]; // array of 10 integers
+int a[] = {1, 2, 3, 4, 5}; // array of 5 integers
+int a[10][10]; // 2D array of 10x10 integers
+char a[] = "Hello"; // array of 5 characters
+
+#include <string>
+string a = "Hello"; // string class
+
+cin >> name >> age; // read multiple inputs to variables
+cout << "Hello " << name << endl; // Hello <name>
+
+#include <iomanip>                // include iomanip library
+cout << fixed << setprecision(2);  // set precision to 2 decimal places
+cout << 3.14159;                  // 3.14
+
+void swapnum(int &i, int &j) {    // pass by reference
+  int temp = i;
+  i = j;
+  j = temp;
+}
+
+int main(void) {
+  int a = 10;
+  int b = 20;
+
+  swapnum(a, b);                  // a = 20, b = 10
+  return 0;
+}

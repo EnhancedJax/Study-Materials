@@ -237,6 +237,7 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
 \end{definition}
 Related: \hyperref[sec:graph]{Graphing functions}
 
+\label{sec:trigo}
 \section{Trigonometry review}
 \begin{theorem}
     {Trigonometric identities}
@@ -256,6 +257,7 @@ Related: \hyperref[sec:graph]{Graphing functions}
         \item $1 + cot^2x = csc^2x$
     \end{enumerate}
 \end{theorem}
+Related: \hyperref[sec:integrationtech]{Techniques of integration}
 
 \section{Derivatives}
 \begin{definition}
@@ -465,6 +467,10 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
 \end{knBox}
 
 \section{Integrals}
+\begin{knBox}
+    {Definition of natural logs}
+    \[\ln x=\int_{1}^{x}\frac{1}{t}dt,\quad x>0\]
+\end{knBox}
 \subsection{Definite integrals}
 \begin{definition}
     {Signed areas}
@@ -508,27 +514,125 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
     \end{itemize}
 \end{knBox}
 
+\label{sec:integrationtech}
 \subsection{Techniques of integration}
 \begin{knBox}
-    {Summary}
+    {Overview}
     \begin{itemize}
-        \item By \textbf{substitution}: “sub $g(x)\to u$, find $du$ and replace all functions of $x(dx)$ with $u(du)$”
-        \item By \textbf{part}: “$\int uv=u\int v-\int (u'\times \int v)$”
+        \item By \hyperref[sec:intsub]{\textbf{substitution}}: “sub $g(x)\to u$, find $du$ and replace all functions of $x(dx)$ with $u(du)$”
+        \item By \hyperref[sec:intpart]{\textbf{part}}: “$\int ab=a\int b-\int (a'\times \int b)$”
         \item By \textbf{joining recurring parts}: “$\int ab=f(ab)+\int ab\to 2\int ab = f(ab)$”
         \item By \textbf{partial fractions}: “$\frac{k}{f(x)g(x)}=\frac{A}{f(x)}+\frac{B}{g(x)}$”
-        \item By \textbf{trigonometric identities}: “$\sin^2x+\cos^2x=1,\sin(2x)=2\sin x\cos x$”
+        \item By \hyperref[sec:inttrigo]{\textbf{trigonometric identities}}
         \item By \textbf{multiplying fractions by one}: “Multiplying $\frac{\sec^2x}{\sec^2x}$ to fit trigo form”
     \end{itemize}
-
 \end{knBox}
-\subsubsection{Example problems}
-% TODO: To be added
 
-\subsection{Related stuff}
-\begin{definition}
-    {Definite of natural logs}
-    \[\ln x=\int_{1}^{x}\frac{1}{t}dt,\quad x>0\]
-\end{definition}
+\label{sec:intsub}
+\begin{theorem}
+    {Integration by substitution}
+    For $\int f(g)g'\:dx$:
+    \begin{enumerate}
+        \item Let $u=g$
+        \item Find $du=g'dx$
+        \item Change limits in terms of $u$ if definite
+        \item Replace all $g\to u$ and $g'dx\to du$
+        \item Integrate, then subsitute $u\to g$
+    \end{enumerate}
+\end{theorem}
+
+\label{sec:intpart}
+\begin{theorem}
+    {Integration by parts}
+    \[\int ab=a\int b-\int (a'\times \int b)\]
+    \emph{Tips:}
+    Let $a$ (differentiating term) to the first term you see on the list:
+    \begin{enumerate}
+        \item \textbf{L}ogarithmic
+        \item \textbf{I}nverse trigo
+        \item \textbf{A}lebratic (polynomial)
+        \item \textbf{T}rigo
+        \item \textbf{E}xponential
+    \end{enumerate}
+\end{theorem}
+\begin{knBox}
+    {Deriving the IBP formula}
+    The formula is derived from the product rule of differentiation:
+    \begin{align*}
+        (ab)'    & = a'b + b'a                     \\
+        b'a      & = (ab)' - a'b                   \\
+        \int b'a & = ab - \int a'b                 \\
+        \int ab  & =a\int b-\int (a'\times \int b)
+    \end{align*}
+\end{knBox}
+
+\label{sec:inttrigo}
+\begin{knBox}
+    {Trigo-identities substitution tips}
+    Use the following trigonometric identities to simplify the integral:
+    \begin{itemize}
+        \item $\sin^2x+\cos^2x=1$
+        \item $\sin^2x=\frac{1-\cos2x}{2}$
+        \item $\cos^2x=\frac{1+\cos2x}{2}$
+        \item $2\sin x\cos x=\sin2x$
+        \item $\cos2x=\cos^2x-\sin^2x$
+        \item $\sec^2x=1+\tan^2x$
+        \item $\csc^2x=1+\cot^2x$
+    \end{itemize}
+    Use the following substitutions for similar expressions:
+    \[
+        \text{Expressions of the form }
+        \begin{cases}
+            a^2-f(x)^2 & \to f(x)=a\sin\theta \\
+            a^2+f(x)^2 & \to f(x)=a\tan\theta \\
+            f(x)^2-a^2 & \to f(x)=a\sec\theta \\
+        \end{cases}
+    \]
+    Remember that this uses \emph{integration by substitution}, so we need to find $dx$ in terms of $\theta$.
+\end{knBox}
+\subsection{Solids of revolution}
+\begin{theorem}
+    {Volume by disk}
+    Used to find volume by rotating a \textbf{curve} around an axis.
+
+    Volume by x-axis: ($y:x\to y$)
+    \[V=\pi\int_{a}^{b}f^2(x)dx\]
+    Where $f(x)$ is the function of the curve, and $a,b$ are the limits of the curve.
+\end{theorem}
+\begin{theorem}
+    {Volume by Washers}
+    Used to find volume by rotating a \textbf{region bounded by 2 curves} around an axis.
+
+    Volume by x-axis ($y:x\to y$)
+    \[V=\pi\int_{a}^{b}R^2(x)-r^2(x)\:dx\]
+    Where $R(x)$ is the outer curve, $r(x)$ is the inner curve.
+\end{theorem}
+\begin{theorem}
+    {Volume by Cylindrical shells}
+    Used to find volume by rotating a \textbf{curve} around a \textbf{vertical line} $x=n$.
+
+    Volume is given by:
+    \[V=2\pi\int_{a}^{b}(x-n)f(x)dx\]
+    Where $n$ is the vertical line.
+\end{theorem}
+
+\subsection{Arcs and surfaces}
+\begin{theorem}
+    {Arc length}
+    The \emph{arc length} of a curve $y=f(x)$ from $x=a$ to $x=b$ is given by:
+    \[L=\int_{a}^{b}\sqrt{1+f'^2(x)}dx\]
+    And for parametized equations $x=f(t)$, $y=g(t)$:
+    \[L=\int_{a}^{b}\sqrt{f'^2(t)+g'^2(t)}dt\]
+\end{theorem}
+\begin{theorem}
+    {Area surfaces of revolution}
+    Used to find the \emph{surface area} generated by rotating a curve along an axis.
+
+    Surface area by x-axis ($y:x\to y$):
+    \[A=2\pi\int_{a}^{b}f(x)\sqrt{1+f'^2(x)}dx\]
+    And for parametized equations $x=f(t)$, $y=g(t)$:
+    \[A=2\pi\int_{a}^{b}g(t)\sqrt{f'^2(t)+g'^2(t)}dt\]
+\end{theorem}
 
 \section{Polar Coordinates}
 \begin{center}

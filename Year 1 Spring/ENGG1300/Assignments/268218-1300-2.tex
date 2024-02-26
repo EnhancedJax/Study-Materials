@@ -1,0 +1,139 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{ENGG1300}
+\newcommand{\documentnumber}{2}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 6}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{img/2-1.jpg}
+\end{center}
+\begin{align*}
+    E                                                                                                & =\frac{Fx}{A\Delta x} \\
+    \Delta x                                                                                         & = \frac{Fx}{AE}       \\
+    \Delta x_1 + \Delta x_2                                                                          & = 4mm                 \\
+    \frac{F\times 2}{0.0003\times 120000\times 10^6}+\frac{F\times 5}{0.0002\times 150000\times10^6} & =0.04                 \\
+    F                                                                                                & = 180kN
+\end{align*}
+
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{img/2-2.jpg}
+\end{center}
+Consider units in kN:
+\begin{align*}
+    \sigma                             & =\frac{6\times800\times3+6\times300\times2}{2.5\times 6^2} \\
+                                       & = 200\ Pa                                                  \\
+    \sigma_B = (500 + 800 - 300) - 200 & = 800\ Pa                                                  \\
+    \sigma_A = (500 + 800 - 300) + 200 & = 1200\ Pa                                                 \\
+\end{align*}
+% TODO: ADD TO NOTES
+
+\section*{Question 7}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{img/2-3.jpg}
+\end{center}
+The force exerted onto the gate by the water pressure is:
+\begin{align*}
+    F_p & =\frac{\rho g d w L}{2}                                        \\
+        & = \frac{1000\cdot10\cdot4\cdot5\cdot\frac{4}{\sin30^\circ}}{2} \\
+        & = 800\ kN
+\end{align*}
+$F_R$ is located at $\frac{8}{3}$ from the base.
+\begin{align*}
+    L                     & = 12m                           \\
+    \\
+    F_{py}                & = F_p\sin(60^\circ)             \\
+                          & = 692.82\ kN                    \\
+    \\
+    \sum M_A              & = 0                             \\
+    F_p\times\frac{8}{3}  & = 12F_B                         \\
+    F_B                   & = 177.78\ kN                    \\
+    \\
+    \sum F_{y} = 0                                          \\
+    F_A + F_{By} - F_{py} & = 0                             \\
+    F_A                   & = 692.82 - 177.78\sin(60^\circ) \\
+                          & = 538.86\ kN
+\end{align*}
+Note that $F_A$ and $F_B$ point perpendicular from AB.
+% FIXME:
+
+\section*{Question 8}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{img/2-4.jpg}
+\end{center}
+There are no stable structures.
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{img/2-5.jpg}
+
+\end{center}
+Highlighted all zero-force members.
+
+\includegraphics[width=0.2\textwidth]{img/2-8b.jpg}
+
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{img/2-6.jpg}
+\end{center}
+i: Number of reaction forces = 3 $\to$ degree = 0\\
+ii: Number of reaction forces = 7 $\to$ degree = 4\\
+iiii: Number of reaction forces = 4 $\to$ degree = 1\\
+iv: Number of reaction forces = 5 $\to$ degree = 2
+
+% FIXME:
+\section*{Question 9}
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{img/2-7.jpg}
+\end{center}
+\begin{align*}
+    R_C                                                                   & = -\frac{15+20+15}{2} = -25kN \\
+    \\
+    \sum F_{Cy}                                                           & = 0                           \\
+    R_C + F_{BC}\sin30^\circ                                              & = 0                           \\
+    F_{BC}                                                                & = 50\ kN                      \\
+    \\
+    \sum F_{Dx} = 0 \rightarrow (F_{BD} + F_{AD})\sin60^\circ             & = 0                           \\
+    F_{AD}                                                                & = -F_{BD}                     \\
+    \\
+    \sum F_{Bx} = 0 \rightarrow F_{BD}\cos60^\circ + F_{BA}\cos30^\circ   & = F_{BC}\cos30^\circ          \\
+    \frac{F_{BD}}{2} + \frac{F_{BA}\sqrt{3}}{2}                           & = \frac{50\sqrt{3}}{2}        \\
+    F_{BD}                                                                & = 50\sqrt{3}-F_{BA}\sqrt{3}   \\
+    \\
+    \sum F_{Ay} = 0 \rightarrow 2F_{AD}\sin60^\circ + 2F_{BA}\sin30^\circ & = 20                          \\
+    -20 + F_{AD}\sqrt{3}  + F_{BA}                                        & = 0                           \\
+    -20 - F_{BD}\sqrt{3}  + F_{BA}                                        & = 0                           \\
+    -20 - (50\sqrt{3}-F_{BA}\sqrt{3})\sqrt{3}  + F_{BA}                   & = 0                           \\
+    -20 - 150 + 3F_{BA} + F_{BA}                                          & = 0                           \\
+    F_{BA}                                                                & = 42.5\ kN                    \\
+    \\
+    F_{BD}                                                                & = 50\sqrt{3}-42.5\sqrt{3}     \\
+    F_{BD}                                                                & = 12.99\  kN                  \\
+\end{align*}
+
+\section*{Question 10}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{img/2-8.jpg}
+\end{center}
+Consider units in $kN$, moment about roller:
+\begin{align*}
+    (\frac{2}{3}\cdot 1.5\times\frac{1}{2}\cdot 4\cdot 1.5) + (8\cdot F_A) + (12\cdot 10) & = (\frac{8\cdot 3}{2}\times(6+2)+8\cdot 2\times4) \\
+    F_A                                                                                   & = 4.625\ kN
+\end{align*}
+
+
+\end{document}
