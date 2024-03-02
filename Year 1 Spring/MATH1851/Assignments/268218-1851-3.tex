@@ -26,7 +26,7 @@
 \end{align*}
 Order the definite integrals above and 1 from smallest to largest. Justify!
 \\
-The order is $K > 1 > L > J$.
+The order is $J < L < 1 < K$.
 \begin{itemize}
     \item $K > 1$ because at this interval, $\sqrt{1+x^4} \in (1,\sqrt{2})$, so the area must exceed 1.
     \item $1 > L, J$ because at this interval, $\sqrt{1-x^n} \in (0,1)$, so the area must be less than 1.
@@ -55,6 +55,7 @@ Complete the square and use trigonometric substitution to evaluate
                                                               & =\int\sec\theta\:d\theta                               \\
                                                               & =\ln|\sec\theta+\tan\theta|+c                          \\
     \sec\theta = \sqrt{1+\tan^2\theta}\rightarrow             & =\ln|\frac{t-3}{2}+\sqrt{(\frac{t-3}{2})^2+1}|+c       \\
+                                                              & = \ln|t-3+\sqrt{(t-3)^2+4}|-\ln2+c                     \\
                                                               & = \ln|t-3+\sqrt{(t-3)^2+4}|+c
 \end{align*}
 \section*{Question 4}
@@ -87,13 +88,13 @@ Use your rule to integrate quotients to evaluate the following, and verify the c
 \begin{align*}
     \text{Note that we are looking for }                                        & a'\text{ consisting }\sin(x^{-\frac{1}{2}}):                                                                     \\
     \text{Let }a                                                                & = 2\cos(x^{-\frac{1}{2}}) \rightarrow a' =x^{-\frac{3}{2}}\sin(x^{-\frac{1}{2}})                                 \\
-    \text{Let }b                                                                & = x^{-\frac{1}{2}} \rightarrow b' = \frac{1}{2}x^{-\frac{1}{2}}                                                  \\
+    \text{Let }b                                                                & = x^{\frac{1}{2}} \rightarrow b' = \frac{1}{2}x^{-\frac{1}{2}}                                                   \\
     \\
     \int\frac{a'}{b}                                                            & = \int\frac{ab'}{b^2} + \frac{a}{b}                                                                              \\
-    \int\frac{\sin{(x^{-\frac{1}{2}})}}{x^2}\:dx                                & = \int\frac{2\cos(x^{-\frac{1}{2}})\frac{1}{2}x^{-\frac{1}{2}}}{x}\:dx + \frac{2\cos(x^{-\frac{1}{2}})}{x^{1/2}} \\
+    \int\frac{\sin{(x^{-\frac{1}{2}})}}{x^{(\frac{1}{2}+\frac{3}{2})}}\:dx      & = \int\frac{2\cos(x^{-\frac{1}{2}})\frac{1}{2}x^{-\frac{1}{2}}}{x}\:dx + \frac{2\cos(x^{-\frac{1}{2}})}{x^{1/2}} \\
                                                                                 & = \int x^{-\frac{3}{2}}\cos(x^{-\frac{1}{2}})\:dx + 2\frac{\cos(x^{-1/2})}{x^{1/2}}                              \\
     \because (2\cos(x^{-\frac{1}{2}}))' =x^{-\frac{3}{2}}\sin(x^{-\frac{1}{2}}) & \rightarrow-2\sin(x^{-\frac{1}{2}}) = \int x^{-\frac{3}{2}}\cos(x^{-\frac{1}{2}})\:dx                            \\
-    \therefore                                                                  & = -2\sin(x^{-\frac{1}{2}}) + 2\frac{\cos(x^{-1/2})}{x^{1/2}} + c                                                 \\
+    \therefore                                                                  & = -2\sin(x^{-\frac{1}{2}}) + 2\frac{\cos(x^{-\frac{1}{2}})}{x^{\frac{1}{2}}} + c                                 \\
 \end{align*}
 Verification:
 \begin{align*}

@@ -15,6 +15,14 @@
 \input{../../LaTeX-Preamables/Title-V1}
 
 % ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\tableofcontents
+\newpage
+
+% ------------------------------------ %
 %               Document               %
 % ------------------------------------ %
 
@@ -168,56 +176,9 @@ Couples are \emph{two parallel forces} that have the same magnitude but have \em
 \end{minipage}
 % FIXME: This part introduces couples, but what are the actual use cases?
 
-\section{Equilibrium of rigid bodies}
-\begin{definition}
-    {Conditions for rigid body equilibriums}
-    A rigid body is in equilibrium if:
-    \[\sum F_x=0,\quad\sum F_y=0,\quad\sum M_O=0\]
-    Where $O$ is any point.
-\end{definition}
-
-\subsection{Free body diagrams}
-The procedure to draw a free body diagram (FBD) is as follows:
-\begin{enumerate}
-    \item Draw the outlined shape of the rigid body.
-    \item Show all forces acting on the rigid body. (Weight, reaction, friction, etc.)
-    \item Identification and labelling.
-\end{enumerate}
-
-\label{sec:support}
-\subsection{Support reactions}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./img/support.png}
-    \caption*{\tiny\textit{\color{gray}Source: https://clearcalcs.com/blog/support-connection-types}}
-\end{figure}
-This will also be useful in section "\hyperref[sec:statics]{Statics and restraints}".
-\subsection{Finding forces in equilibrium systems - an example}
-\begin{center}
-    Consider this equilibrium system. Let's find the reaction at supports A and B. First, we draw it's FBD as according to support reactions:
-
-    \includegraphics[width=0.45\textwidth]{./img/fbd1.png}
-    \includegraphics[width=0.45\textwidth]{./img/fbd2.jpg}
-
-    Then, we start by applying equilibrium equations. We consider the moment about $A$ to find $R_B$, then find the component support forces at $A$:
-    \begin{align*}
-        \sum M_A          & = 0                               \\
-        6R_{Bx}           & = 2R_{By} + 3\times 750           \\
-        6R_{B}\sin 60\deg & = 2R_{B}\cos 60\deg + 3\times 750 \\
-        R_B               & = 536.2N
-    \end{align*}
-    We know at any point the component resultant forces must be 0, so:
-    \begin{align*}
-        \sum F_x & = 0                      \\
-        R_{Ax}   & = 536.2\cos 60\deg       \\
-        R_{Ax}   & = 268.1N                 \\
-                 &                          \\
-        R_{Ay}   & = 750 - 536.2\sin 60\deg \\
-        R_{Ay}   & = 285.6N
-    \end{align*}
-\end{center}
 
 \section{Axially loaded members}
+Axial loading refers to the application of a force along the axis of the member.
 \subsection{Stress and strain}
 \begin{definition}
     {Axial stress}
@@ -241,10 +202,10 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
 \end{definition}
 
 
-\subsubsection{Materials}
+\subsection{Materials}
 \begin{definition}
     {Strength}
-    Material strength is defined as the maximum stress that can be resisted by the material.
+    Material strength is defined as the \textbf{maximum stress} that can be resisted by the material.
 \end{definition}
 \begin{definition}
     {Young's Modulus}
@@ -263,7 +224,7 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
     \end{center}
 \end{definition}
 
-\subsubsection{Hydrostatic pressure}
+\subsection{Hydrostatic pressure}
 \begin{definition}
     {Hydrostatic/water pressure}
     The water pressure acting on any surface is \emph{always perpendicular} to the surface, and the pressure is given by:
@@ -291,15 +252,31 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
     \end{center}
 \end{knBox}
 
-\label{sec:statics}
-\section{Statics and restraints}
-\subsection{Statics}
+\section{Statics}
+\subsection{Equilibrium of rigid bodies}
+\begin{definition}
+    {The 3 equations of equilibrium}
+    A rigid body is in equilibrium if:
+    \[\sum F_x=0,\quad\sum F_y=0,\quad\sum M_O=0\]
+    Where $O$ is any point.
+\end{definition}
 \begin{definition}
     {Static equilibrium}
-    System in \textbf{Static equilibrium} experiences no acceleration when loads are applied to it.
+    A system is in \textbf{static equilibrium} if it experiences no acceleration when loads are applied to it.
 \end{definition}
 \begin{knBox}
+    {Free body diagrams (FBD)}
+    Free body diagrams are diagrams that show all the forces acting on a body. They are useful in determining the forces that cause the body to be in equilibrium.
+\end{knBox}
+
+\subsection{Members}
+A member is a \emph{straight} and \emph{long} structural element that is subjected to axial forces. The following are the types of members:
+
+
+\subsection{Static systems}
+\begin{definition}
     {Supports and reaction forces}
+    Each support will restrict the movement of the rigid body in a certain way. If a certain degree of freedom is restricted, a reaction force will be present to counteract the force that would have caused the movement.
     \begin{table}[H]
         \begin{tabular}{lll}
             \textbf{Support type} & \textbf{Restricted movement and reaction forces} & \textbf{Shape} \\ \hline
@@ -308,32 +285,23 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
             Roller                & y                                                & Circle         \\ \arrayrulecolor{lightgray}\hline
         \end{tabular}
     \end{table}
-    Refer to section "\hyperref[sec:support]{support reactions}" for details.
-\end{knBox}
+\end{definition}
 
 \begin{definition}
-    {Static conditions}
+    {Static conditions of a system}
+    A system's state of equilibrium can be determined by the number of restraints present:
     \begin{enumerate}
         \item Insufficient restraints $\to$ \textbf{non-static system} (contains mechanisms)
         \item Sufficient restraints $\to$ \textbf{static system}
     \end{enumerate}
-    Static systems can be further classified into \emph{statically determinate} and \emph{statically indeterminate}.
-
-    \begin{table}[H]
-        \begin{tabular}{llll}
-            \textbf{Restraints} & \textbf{Support reactions} & \textbf{Number of unknowns} & System is statically   \\ \hline
-            Just enough         & All solvable               & no. of equations            & \textbf{determinate}   \\ \arrayrulecolor{lightgray}\hline
-            More than enough    & Unsolvable                 & $>$ no. of equations        & \textbf{indeterminate} \\ \arrayrulecolor{lightgray}\hline
-        \end{tabular}
-    \end{table}
+    If a static system has \textbf{3 reaction forces}, the system is \textbf{statically determinate}, if there are more, it is \textbf{statically indeterminate}.
     \begin{center}
-        If there are \textbf{3 reaction forces}, the system is statically determinate. (3 equilibriums)
         \includegraphics[width=0.4\textwidth]{./img/3react.jpg}
     \end{center}
 \end{definition}
 \begin{theorem}
     {Degree of indeterminacy}
-    The degree of indeterminacy(or redundancies) is simply $R-3$ where $R$ is the number of reaction forces.
+    For a statically indeterminate system, the degree of indeterminacy (or redundancies) is simply $R-3$ where $R$ is the number of reaction forces.
     \tcblower
     \begin{center}
         \includegraphics[width=0.4\textwidth]{./img/redundant.jpg}
@@ -352,48 +320,24 @@ This will also be useful in section "\hyperref[sec:statics]{Statics and restrain
 \end{knBox}
 \begin{theorem}
     {Distributed load}
-    Intuitively, the resultant force is to simply convert the units to $N$ by $F\times area$.
-    \begin{itemize}
-        \item Unifrom $\to$ $F=wl$
-        \item Triangular $\to$ $F=\frac{1}{2}wl$
-    \end{itemize}
+    A \emph{distributed load} $(w)$ is a force that is distributed over a length $(l)$, that has the unit $N/m$.
 
-    For $M=Fd$, $d$ is given by the distance from the \textbf{origin to the centroid} of the distributed load. The following gives the centroid for some common loads:
+    The \textbf{resultant force} is the supposed area of the load. To consider the \textbf{moment} by a distributed load, we can treat the load as a \emph{single force} acting at the \textbf{centroid} of the load.
     \begin{itemize}
-        \item Uniform $\to$ \textbf{middle} of the load.
-        \item Trianglular $\to$ \textbf{one third from the base} of the load.
+        \item Unifrom $\to$ $F=wl\quad @\frac{1}{2}l$
+        \item Triangular $\to$ $F=\frac{1}{2}wl\quad @ \frac{1}{3}l$  (from the base of the load)
     \end{itemize}
 \end{theorem}
 
-\subsection{Pin-Joined Trusses}
+\section{Structural analysis}
+\subsection{Pin-joined trusses}
 A \textbf{truss} is a structure that consists of \emph{straight members} connected at their ends by \emph{pin joints}.
 
-\subsubsection{Types of trusses}
-A quadrangular truss is a mechanism, and a triangular truss is a statically determinate structure.
+A triangular truss is a statically determinate structure, but a quadrangular truss is not.
 \begin{center}
     \includegraphics[width=0.45\textwidth]{./img/quadtruss.png}
     \includegraphics[width=0.2\textwidth]{./img/tritruss.png}
 \end{center}
-
-\subsubsection{Statically determinate trusses}
-To construct an \emph{internally} statically determinate truss, we begin with a triangular pin-jointed truss and then successively adding two new members with a new joint.
-
-We say the truss is only \emph{internally} statically determinate because the external reactions are not yet known.
-
-\subsubsection{Analysing trusses}
-We make the following assumptions when analysing trusses:
-\begin{enumerate}
-    \item The loads are \emph{applied} at the joints only.
-    \item The members experience \emph{little deformation}.
-    \item The members are \emph{connected} connected with \emph{frictionless pins}.
-\end{enumerate}
-\begin{knBox}
-    {Internal vs. External}
-    \begin{itemize}
-        \item Forces acting on the members $\to$ \textbf{Internal forces}
-        \item Forces acting on joints $\to$ \textbf{External forces}
-    \end{itemize}
-\end{knBox}
 \begin{theorem}
     {Zero-force members}
     The following are zero-force members given that \textbf{no external load or support reaction is applied to the joint}.
@@ -401,59 +345,134 @@ We make the following assumptions when analysing trusses:
         \item \textbf{2 non-collinear members} of a two-member-joint
         \item \textbf{3rd member} of a three-member-joint, where the other two are collinear.
     \end{itemize}
-    Removing zero-force members allows us to simplify the truss.
+    Removing zero-force members allows us to simplify a truss structure.
     \tcblower
     \begin{center}
         \includegraphics[width=0.45\textwidth]{./img/zero2.jpg}
         \includegraphics[width=0.45\textwidth]{./img/zero3.jpg}
     \end{center}
 \end{theorem}
-\begin{theorem}
-    {Method of joints}
-    To find the forces on the members of a truss, refer to the following steps:
-    \begin{enumerate}
-        \item Isolate a \textbf{solvable joint}.
-        \item Draw the FBD of the solvable joint by \textbf{replacing members with forces}. (By convention, all forces should \emph{point towards} the joint.)
-        \item Use $\sum F_x=0=\sum F_y$ to solve for the unknown forces.
-    \end{enumerate}
-    Keep in mind that \emph{the joint must be in equilibrium}. That is, the \textbf{external forces} are balanced by \textbf{internal forces}.
-    \tcblower
-    Consider the following truss system. The only solvable join is joint B. After drawing the FBD on joint B, we can solve for the forces on the members.
-    \begin{center}
-        \includegraphics[width=0.4\textwidth]{./img/trussFBD.jpg}
-        $\to$
-        \includegraphics[width=0.4\textwidth]{./img/jointFBD.jpg}
-    \end{center}
-    \begin{align*}
-        500    & =F_{BC}\sin 45^\circ \\
-        F_{BC} & =707.1N
-    \end{align*}
-    Repeating these steps on the other joints will give us the forces on the members.
-\end{theorem}
-\begin{theorem}
-    {Method of sections}
-    We cam divide the truss into sections by cutting through the selected members and analyzing the section as a rigid body.
 
-    This is used to solve for the unknown forces within specific members of a truss \emph{without solving for them all}.
+\subsection{Statically determinate trusses}
+To construct an \emph{internally} statically determinate truss, we begin with a triangular pin-jointed truss and then successively adding two new members with a new joint.
 
-    The \emph{method of joints} is simply a special case of the \emph{method of sections}.
+We say the truss is only \emph{internally} statically determinate because the external reactions are not yet known.
 
-\end{theorem}
-
+\subsection{Truss analysis}
+When we analyze a truss, we assume that forces are only applied at joints.
 \begin{knBox}
-    {Tension vs. compression}
-    By convention, we always draw:
+    {Internal vs. External forces}
     \begin{itemize}
-        \item Tension forces $\to$ \textbf{pointing away} from the joint
-        \item Compression forces $\to$ \textbf{pointing towards} the joint
+        \item Forces acting on the members $\to$ \textbf{Internal forces}
+        \item Forces acting on joints $\to$ \textbf{External forces}
     \end{itemize}
 \end{knBox}
+\begin{definition}
+    {Sign convention of analysis}
+    As we focus on the analysis of \textbf{internal forces acting on joints}, we always draw:
+    \begin{itemize}
+        \item Tension forces $\to$ \textbf{pointing away} from the joint $\{\leftarrow\circ\boxed{\rightarrow\ T\ \leftarrow}\circ\rightarrow\}$
+        \item Compression forces $\to$ \textbf{pointing towards} the joint $\{\rightarrow\circ\boxed{\leftarrow\ C\ \rightarrow}\circ\leftarrow\}$
+    \end{itemize}
+    During analysis, we always draw forces \textbf{pointing towards} the joint $\{\rightarrow\circ\leftarrow\}$, which means we treat \textbf{compression as positive}.
 
-\subsubsection{Examples}
-...
+    We also treat \textbf{downward forces as positive} $\{+\downarrow\}$.
+\end{definition}
+\subsection{Equilibrium sections}
+If we cut out any section of an equilibrium system, the cut will be in equilibrium. That is, the \textbf{external forces} are balanced by \textbf{internal forces}.
+
+Therefore, to solve for the forces in a system, we simply cut out a section that we deem solvable (by practice!) and draw it's FBD. The forces includes \emph{all external forces in the cut} as well as the \emph{interal forces of the cut members}.
 
 \subsection{Cable anaylsis}
+\begin{definition}
+    {Cable forces}
+    Cables are \textbf{always in tension}. The tension force is always in the direction of the cable.
+\end{definition}
+Some characteristics of cable structures:
+\begin{itemize}
+    \item Supports are always 2 inverted pinned supports
+    \item Applied forces all point downwards due to gravity
+    \item Horizontal reaction forces at supports are equal in magnitude
+\end{itemize}
+Hence, we can use the following steps to solve for cable forces:
+\begin{enumerate}
+    \item Find reaction forces by considering joint equilibrium
+    \item Tension in cables attached to a support can be found by $\sqrt{(R_x)^2+(R_y)^2}$
+    \item Tension in cables not attached to a support can be found by $\sqrt{(R_x)^2+(R_y-\sum y)^2}$
+\end{enumerate}
 
-\section{Bending internal forces}
+\section{Bending forces and stress}
+\subsection{Internal force in beams}
+When we consider the internal forces of a beam, we take a \emph{cross section} and consider the forces acting on it. The internal forces are:
+\begin{itemize}
+    \item \textbf{Shear force} $V$ is the force acting parallel to the cross-section.
+    \item \textbf{Bending moment} $M$ is the moment generated by the variation of forces acting perpendicularly to the cross-section.
+\end{itemize}
+
+\begin{definition}
+    {Sign convention of internal forces}
+    $\{+\circlearrowright\}$ The idea is that if the acting force is relatively \textbf{clockwise} to the cross-section $C$, it is \textbf{positive}.
+    The following is the signs of internal forces for a \emph{positive} moment:
+    \begin{itemize}
+        \item \textbf{V:} $\circlearrowright$ (L $\uparrow$ R $\downarrow$)
+        \item \textbf{R:} $\curvearrowright\ \curvearrowleft$ (sagging moment is \emph{positive})
+    \end{itemize}
+    \tcblower
+    \includegraphics[width=0.33\textwidth]{img/shear2.jpg}
+    \includegraphics[width=0.33\textwidth]{img/shear1.jpg}
+
+\end{definition}
+
+Couple moments can be treated as a rotational moment at clock-direction the arrows are pointing to.
+
+\begin{theorem}
+    {Finding internal forces by side}
+    To find the internal forces at cross-section $C$, we consider the \emph{left} and \emph{right} side of the section:
+    \begin{itemize}
+        \item \textbf{V:} $\sum F$ on either side
+        \item \textbf{M:} $\sum M_C$ on either side about $C$
+    \end{itemize}
+    Note that the sums are all \textbf{signed by convention}. (e.g. A force $F$ is positive if it points upwards on the left side.)
+
+    This also gives us the fact that $\sum F_L =\sum F_R$ and $\sum M_L =\sum M_R$, signed by convention on both sides.
+\end{theorem}
+
+\subsection{Diagramming internal forces}
+\begin{definition}
+    {Diagramming internal forces}
+    The two internal force diagrams are $V(x)-x$ and $M(x)-x$ diagrams. $V(x)$ gives the shear force $V$ at distance $x$ from the \emph{left side} of the beam.
+\end{definition}
+
+\begin{minipage}{0.6\textwidth}
+    Steps to follow:
+    \begin{enumerate}
+        \item Solve for reaction forces
+        \item Draw the FBD of a cut from the leftmost side to a location with distance $x$ from the leftmost force \emph{not analysed}
+        \item Analyse the FBD of the cut (solve for $V$ and $M$)
+        \item Draw the graphs in the cuts and repeat for all cuts
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+    \emph{Figurative steps:}
+    \begin{enumerate}
+        \item $\to R_A, R_B...$
+        \item $\{\overset{R}{\uparrow}\ \underbrace{=====}_x\ \overset{V}{\downarrow}\overset{M}{\circlearrowleft}\dots\}$
+        \item $\to V, M$
+        \item $\to V(x), M(x)$
+    \end{enumerate}
+\end{minipage}
+
+\vspace{1cm}
+To analyse a distributed load $w$, consider the FBD of the whole system on the left, then let $x$ be the distance from the leftmost force \emph{analysed}:
+
+\large
+\[\{\underset{\underset{R}{\uparrow}}{=}\underset{2}{==}\overset{\overset{F}{\downarrow}}{=}\underbrace{\overset{\overset{w\cdot x}{\downarrow}}{====}}_x\overset{V}{\downarrow}\overset{M}{\circlearrowleft}\dots\}\]
+
+\subsection{Bending stress}
+
+\section{Centroids and moment of inertia}
+
+
 
 \end{document}
