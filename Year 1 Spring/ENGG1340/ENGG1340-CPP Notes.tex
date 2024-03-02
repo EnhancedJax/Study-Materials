@@ -28,8 +28,9 @@ Basic differences to Python:
 \subsection{Initialization}
 For a \Colorbox{superlightgray}{\lstinline|.cpp|} file, we must include the following contents:
 \lstinputlisting[language=c++, firstline=0, lastline=7]{code/cpp.cpp}
+For this document, all codeblocks are assumed to be in the \Colorbox{superlightgray}{\lstinline|std|} namespace. Without \Colorbox{superlightgray}{\lstinline|using namespace std;|}, we can use the \Colorbox{superlightgray}{\lstinline|std::|} prefix to access the objects and functions in the standard namespace.
 
-\subsection{Variables and IO}
+\subsection{Variables}
 \subsubsection{Variables types}
 \lstinputlisting[language=c++, firstline=24, lastline=30]{code/cpp.cpp}
 Note that there are no built-in string types in C++. A string is simple an \hyperref[sec:array]{array of characters}.
@@ -37,48 +38,105 @@ Note that there are no built-in string types in C++. A string is simple an \hype
 \subsubsection{Defining variables}
 \lstinputlisting[language=c++, firstline=8, lastline=9]{code/cpp.cpp}
 
-\subsubsection{Input and output}
+\subsection{Operators}
+\lstinputlisting[language=c++, firstline=14, lastline=22]{code/cpp.cpp}
+
+\subsection{Cmath library}
+The \Colorbox{superlightgray}{\lstinline|cmath|} library contains a set of functions that can be used to perform mathematical operations.
+\lstinputlisting[language=c++, firstline=139, lastline=142]{code/cpp.cpp}
+
+\section{Streams}
+Streams are a sequence of bytes that represent a flow of data. In C++, we use the \Colorbox{superlightgray}{\lstinline|iostream|} library to work with streams. The \Colorbox{superlightgray}{\lstinline|iostream|} library contains the \Colorbox{superlightgray}{\lstinline|cin|} and \Colorbox{superlightgray}{\lstinline|cout|} objects, which are used to read and write data to the console, respectively.
+\subsection{Character I/O Stream}
 \lstinputlisting[language=c++, firstline=78, lastline=79]{code/cpp.cpp}
 \begin{enumerate}
     \item \Colorbox{superlightgray}{\lstinline|>>|} is the \emph{extraction operator}
     \item \Colorbox{superlightgray}{\lstinline|<<|} is the \emph{insertion operator}
     \item We can use \Colorbox{superlightgray}{\lstinline|\|} to escape special characters
-    \item \Colorbox{superlightgray}{\lstinline|endl|} is a special character that represents a new line, equiv to \Colorbox{superlightgray}{\lstinline|\n|}
 \end{enumerate}
+
+\subsection{File I/O Stream}
+We can also use the \Colorbox{superlightgray}{\lstinline|fstream|} library to work with files. The \Colorbox{superlightgray}{\lstinline|fstream|} library contains the \Colorbox{superlightgray}{\lstinline|ifstream|} and \Colorbox{superlightgray}{\lstinline|ofstream|} objects, which are used to read and write data to files, respectively.
+
+\subsubsection{Reading from a file}
+\lstinputlisting[language=c++, firstline=103, lastline=116]{code/cpp.cpp}
+
+\subsubsection{Write to a file}
+This following code creates \Colorbox{superlightgray}{\lstinline|output.txt|} if it doesn't exists and writes to it. If it does exist, it will be overwritten.
+\lstinputlisting[language=c++, firstline=118, lastline=125]{code/cpp.cpp}
+
+We can use the \Colorbox{superlightgray}{\lstinline|ios::app|} flag to append to the file instead of overwriting it.
+\lstinputlisting[language=c++, firstline=127, lastline=127]{code/cpp.cpp}
+
+\subsection{String Input Stream}
+We can use the \Colorbox{superlightgray}{\lstinline|sstream|} library to work with strings. The \Colorbox{superlightgray}{\lstinline|sstream|} library contains the \Colorbox{superlightgray}{\lstinline|istringstream|}, which is used to read data from a string.
+
+The following code separates the string \Colorbox{superlightgray}{\lstinline|str|} by spaces and stores the separated values in the \Colorbox{superlightgray}{\lstinline|word|} variable, then prints them line by line.
+
+\lstinputlisting[language=c++, firstline=129, lastline=137]{code/cpp.cpp}
+
+\subsection{Manipulators}
+Manipulators are special functions that can be used to format the output of the \Colorbox{superlightgray}{\lstinline|cout|} object. They are presistent, meaning that they will affect all subsequent output until they are changed.
+
+\subsubsection{End line}
+The keyword \Colorbox{superlightgray}{\lstinline|endl|} is a manipulator that represents a new line. It is equivalent to the \Colorbox{superlightgray}{\lstinline|\n|} character.
 
 \subsubsection{Decimal points}
 We can fix the number of decimal points by using the \Colorbox{superlightgray}{\lstinline|fixed|} and \Colorbox{superlightgray}{\lstinline|setprecision|} functions from the \Colorbox{superlightgray}{\lstinline|iomanip|} library.
 \lstinputlisting[language=c++, firstline=81, lastline=83]{code/cpp.cpp}
 
+\subsubsection{Width and alignment}
+We can fix the width of the output by using the \Colorbox{superlightgray}{\lstinline|setw|} function from the \Colorbox{superlightgray}{\lstinline|iomanip|} library.
+\lstinputlisting[language=c++, firstline=99, lastline=101]{code/cpp.cpp}
 
-\subsection{Operators}
-\lstinputlisting[language=c++, firstline=14, lastline=22]{code/cpp.cpp}
 
-
-\subsection{Control flow}
-\subsubsection{Basisc conditionals}
+\section{Control flow and functions}
+\subsection{Basisc conditionals}
 \lstinputlisting[language=c++, firstline=32, lastline=39]{code/cpp.cpp}
-\subsubsection{Switches}
+\subsection{Switches}
 \lstinputlisting[language=c++, firstline=40, lastline=47]{code/cpp.cpp}
-\subsubsection{Tentary operators}
+\subsection{Tentary operators}
 \lstinputlisting[language=c++, firstline=49, lastline=49]{code/cpp.cpp}
-\subsubsection{Loops}
+\subsection{Loops}
 \lstinputlisting[language=c++, firstline=51, lastline=63]{code/cpp.cpp}
-
-\subsection{Pass by reference}
-Pass-by-reference means to pass the \textbf{reference of a variable} as the parameter of a function. The called function can \textbf{modify the value of the variable} by using its reference passed in.
-
-\lstinputlisting[language=c++, firstline=85, lastline=97]{code/cpp.cpp}
 
 \subsection{Functions}
 \lstinputlisting[language=c++, firstline=65, lastline=68]{code/cpp.cpp}
 Note that nested function declaration is not allowed.
 
+\subsubsection{Pass by reference}
+Pass-by-reference means to pass the \textbf{reference of a variable} as the parameter of a function. The called function can \textbf{modify the value of the variable} by using its reference passed in.
+\lstinputlisting[language=c++, firstline=85, lastline=97]{code/cpp.cpp}
+
 \label{sec:array}
-\subsection{Arrays}
+\section{Arrays}
+An array is a collection of elements of the same type. The elements of an array are stored in contiguous memory locations. C++ is a zero-indexed language, which means that the first element of an array is at index 0.
+
 \lstinputlisting[language=c++, firstline=70, lastline=73]{code/cpp.cpp}
+
+\subsection{The string library and usage}
 You can also use the string library to work with strings:
 \lstinputlisting[language=c++, firstline=75, lastline=76]{code/cpp.cpp}
+Some useful functions for strings:
+\lstinputlisting[language=c++, firstline=171, lastline=176]{code/cpp.cpp}
 
+\subsection{Vectors}
+Vectors are a sequence container that encapsulates dynamic size arrays.
+\lstinputlisting[language=c++, firstline=178, lastline=189]{code/cpp.cpp}
+We use vectors for dynamic arrays, and arrays for static arrays.
+
+\subsection{Multi-dimensional arrays}
+\lstinputlisting[language=c++, firstline=191, lastline=191]{code/cpp.cpp}
+
+\section{Structs}
+\subsection{Structures}
+A structure is a user-defined data type that groups related variables of different types. A member is a variable within the structure.
+\lstinputlisting[language=c++, firstline=151, lastline=153]{code/cpp.cpp}
+Structure variables is declared and initialized similar to how you would for variables. We use the dot operator to access the members of a structure.
+\lstinputlisting[language=c++, firstline=155, lastline=158]{code/cpp.cpp}
+Note that we can only assign to a structure, and not perform operations on it.
+
+Structures can be nested, and we can define member functions for a structure.
+\lstinputlisting[language=c++, firstline=160, lastline=169]{code/cpp.cpp}
 
 \end{document}
