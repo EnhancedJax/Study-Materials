@@ -28,8 +28,8 @@
     E                                                                                                & =\frac{Fx}{A\Delta x} \\
     \Delta x                                                                                         & = \frac{Fx}{AE}       \\
     \Delta x_1 + \Delta x_2                                                                          & = 4mm                 \\
-    \frac{F\times 2}{0.0003\times 120000\times 10^6}+\frac{F\times 5}{0.0002\times 150000\times10^6} & =0.04                 \\
-    F                                                                                                & = 180kN
+    \frac{P\times 2}{0.0003\times 120000\times 10^6}+\frac{P\times 5}{0.0002\times 150000\times10^6} & =0.004                \\
+    P                                                                                                & = 18kN
 \end{align*}
 
 \begin{center}
@@ -37,10 +37,11 @@
 \end{center}
 Consider units in kN:
 \begin{align*}
-    \sigma                             & =\frac{6\times800\times3+6\times300\times2}{2.5\times 6^2} \\
-                                       & = 200\ Pa                                                  \\
-    \sigma_B = (500 + 800 - 300) - 200 & = 800\ Pa                                                  \\
-    \sigma_A = (500 + 800 - 300) + 200 & = 1200\ Pa                                                 \\
+    \sigma_{axial} = \frac{(500 + 800 - 300)+\frac{2450\times6\times8\times2.5\times10}{1000}}{6\times2.5} & = 262.667                                                  \\
+    \sigma_{flex}                                                                                          & =\frac{6\times800\times3+6\times300\times2}{2.5\times 6^2} \\
+                                                                                                           & = 200\ Pa                                                  \\
+    \sigma_B = \sigma_{axial} - 200                                                                        & = 62.67\ Pa                                                \\
+    \sigma_A = \sigma_{axial} + 200                                                                        & = 462.67\ Pa                                               \\
 \end{align*}
 % TODO: ADD TO NOTES
 
@@ -56,22 +57,19 @@ The force exerted onto the gate by the water pressure is:
 \end{align*}
 $F_R$ is located at $\frac{8}{3}$ from the base.
 \begin{align*}
-    L                     & = 12m                           \\
+    L                               & = 12m                               \\
     \\
-    F_{py}                & = F_p\sin(60^\circ)             \\
-                          & = 692.82\ kN                    \\
+    \sum M_B                        & = 0                                 \\
+    F_p\times(\frac{8\times2}{3}+4) & = F_{A}\sin(60^\circ)\times12       \\
+    F_{A}                           & =718.48\ kN\text{ up}               \\
     \\
-    \sum M_A              & = 0                             \\
-    F_p\times\frac{8}{3}  & = 12F_B                         \\
-    F_B                   & = 177.78\ kN                    \\
-    \\
-    \sum F_{y} = 0                                          \\
-    F_A + F_{By} - F_{py} & = 0                             \\
-    F_A                   & = 692.82 - 177.78\sin(60^\circ) \\
-                          & = 538.86\ kN
+    \sum F_{x}                      & =0                                  \\
+    F_{Bx}                          & = F_p \times \cos(60^\circ)         \\
+                                    & = 400\ kN\text{ to the left}        \\
+    \sum F_{y}                      & = 0                                 \\
+    F_{By}                          & = F_p \times \sin(60^\circ) - F_{A} \\
+                                    & = 25.66\ kN\text{ downward}         \\
 \end{align*}
-Note that $F_A$ and $F_B$ point perpendicular from AB.
-% FIXME:
 
 \section*{Question 8}
 \begin{center}
@@ -90,10 +88,11 @@ Highlighted all zero-force members.
 \begin{center}
     \includegraphics[width=0.5\textwidth]{img/2-6.jpg}
 \end{center}
-i: Number of reaction forces = 3 $\to$ degree = 0\\
-ii: Number of reaction forces = 7 $\to$ degree = 4\\
-iiii: Number of reaction forces = 4 $\to$ degree = 1\\
-iv: Number of reaction forces = 5 $\to$ degree = 2
+
+i: Reaction (r) = 3, joints (j) = 8, members (m) = 15, $(r+m)>2j\to 18>16$, Indeterminancy is 2\\
+ii: r = 7, j = 4, m = 4, $(r+m)>2j\to 11>8$, Indeterminancy is 3\\
+iii: r = 4, j = 11, m = 22, $(r+m)>2j\to 26>22$, Indeterminancy is 4\\
+iv: Indeterminancy is 3+3+2 = 8\\
 
 % FIXME:
 \section*{Question 9}
@@ -107,7 +106,7 @@ iv: Number of reaction forces = 5 $\to$ degree = 2
     R_C + F_{BC}\sin30^\circ                                              & = 0                           \\
     F_{BC}                                                                & = 50\ kN                      \\
     \\
-    \sum F_{Dx} = 0 \rightarrow (F_{BD} + F_{AD})\sin60^\circ             & = 0                           \\
+    \sum F_{Dy} = 0 \rightarrow (F_{BD} + F_{AD})\sin60^\circ             & = 0                           \\
     F_{AD}                                                                & = -F_{BD}                     \\
     \\
     \sum F_{Bx} = 0 \rightarrow F_{BD}\cos60^\circ + F_{BA}\cos30^\circ   & = F_{BC}\cos30^\circ          \\
@@ -131,8 +130,10 @@ iv: Number of reaction forces = 5 $\to$ degree = 2
 \end{center}
 Consider units in $kN$, moment about roller:
 \begin{align*}
-    (\frac{2}{3}\cdot 1.5\times\frac{1}{2}\cdot 4\cdot 1.5) + (8\cdot F_A) + (12\cdot 10) & = (\frac{8\cdot 3}{2}\times(6+2)+8\cdot 2\times4) \\
-    F_A                                                                                   & = 4.625\ kN
+    F_{Ax}=\frac{4\times1.5}{2}=3\ kN                                                                                                            \\
+    (\frac{2}{3}\cdot 1.5\times\frac{1}{2}\cdot 4\cdot 1.5) + (8\cdot F_{Ay}) + (12\cdot 10) & = (\frac{8\cdot 3}{2}\times(6+2)+8\cdot 2\times4) \\
+    F_{Ay}                                                                                   & = 4.625\ kN                                       \\
+    F_A = \sqrt{3^2+4.625^2}                                                                 & = 5.513\ kN                                       \\
 \end{align*}
 
 

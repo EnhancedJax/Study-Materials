@@ -1,0 +1,129 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{MATH1851}
+\newcommand{\documentnumber}{5}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+Solve the following differential equations by finding the complementary functions and one particular solution:
+\begin{align*}
+    y''-2y'+3y                        & =\sin x                                                                          \\
+    \\
+    F_c:\quad y''-2y'+3y              & =0\quad:\quad\text{sub }y=e^{\lambda x}                                          \\
+    \lambda^2-2\lambda+3              & =0                                                                               \\
+    \lambda                           & =\frac{2\pm\sqrt{4-4\times3}}{2}                                                 \\
+                                      & =\frac{2\pm\sqrt{-8}}{2}                                                         \\
+                                      & =\frac{2\pm2i\sqrt{2}}{2}                                                        \\
+                                      & =1\pm i\sqrt{2}                                                                  \\
+    \\
+    \therefore y                      & =c_1e^x\cos(\sqrt{2}x)+c_2e^x\sin(\sqrt{2}x)+Y_p                                 \\
+    \\
+    Y_p                               & = A\sin x+B\cos x                                                                \\
+    Y_p'                              & = A\cos x-B\sin x                                                                \\
+    Y_p''                             & = -A\sin x-B\cos x                                                               \\
+    \\
+    y                         =Y_p\to F:
+    \\-A\sin x-B\cos x-2A\cos x+2B\sin x+3A\sin x+3B\cos x & =\sin x                                          \\
+    (3A-A+2B)\sin x + (3B-B-2A)\cos x & =\sin x                                                                          \\
+    2A+2B=0\quad                      & ,\quad2B+2A=1                                                                    \\
+    A = B \implies A = \frac{1}{4}    & ,\ B = -\frac{1}{4}                                                              \\
+    \\
+    \therefore y                      & =c_1e^x\cos(\sqrt{2}x)+c_2e^x\sin(\sqrt{2}x)+\frac{1}{4}\sin x-\frac{1}{4}\cos x
+\end{align*}
+\section*{Question 2}
+\begin{align*}
+    y''-6y'+9y           & =2x                                             \\
+    \\
+    F_c:\quad y''-6y'+9y & =0\quad:\quad\text{sub }y=x^\lambda             \\
+    \lambda^2-6\lambda+9 & =0                                              \\
+    (\lambda-3)^2        & =0                                              \\
+    \lambda_{1,2}        & =3                                              \\
+    \therefore y         & =c_1x^3+c_2x^3\ln x+Y_p                         \\
+    \\
+    Y_p                  & =Ax+B                                           \\
+    Y_p'                 & =A                                              \\
+    Y_p''                & =0                                              \\
+    \\
+    y=Y_p\to F:                                                            \\
+    0-6A+9Ax+9B          & =2x                                             \\
+    9Ax-6A+9B            & =2x                                             \\
+    9A=2,\ 9B-6A=0       & \implies A=\frac{2}{9},\ B=\frac{4}{27}         \\
+    \\
+    \therefore y         & =c_1e^{3x}+c_2xe^{3x}+\frac{2}{9}x+\frac{4}{27}
+\end{align*}
+\section*{Question 3}
+\begin{align*}
+    y''-6y'+8y                                       & =3e^{2x}                                \\
+    \\
+    F_c:\quad y''-6y'+8y                             & =0\quad:\quad\text{sub }y=x^\lambda     \\
+    \lambda^2-6\lambda+8                             & =0                                      \\
+    (\lambda-4)(\lambda-2)                           & =0                                      \\
+    \lambda_{1,2}                                    & =2,4                                    \\
+    \therefore y                                     & =c_1e^{2x}+c_2e^{4x}+Y_p                \\
+    \\
+    Y_p                                              & =Axe^{2x}                               \\
+    Y_p'                                             & =Ae^{2x}+2Axe^{2x}                      \\
+    Y_p''                                            & =4Ae^{2x}+4Axe^{2x}                     \\
+    \\
+    y=Y_p\to F:                                                                                \\
+    4Ae^{2x}+4Axe^{2x}-6Ae^{2x}-12Axe^{2x}+8Axe^{2x} & =3e^{2x}                                \\
+    4Ae^{2x}-6Ae^{2x}+4Axe^{2x}-12Axe^{2x}+8Axe^{2x} & =3e^{2x}                                \\
+    -2Ae^{2x}                                        & =3e^{2x}                                \\
+    -2A                                              & =3                                      \\
+    A                                                & =-\frac{3}{2}                           \\
+    \\
+    \therefore y                                     & =c_1e^{2x}+c_2e^{4x}-\frac{3}{2}xe^{2x}
+\end{align*}
+\section*{Question 4}
+Solve the Cauchy-Euler differential equations:
+\begin{align*}
+    x^2y''-3xy'+3y                                                        & =0                                \\
+    \\
+    F_c:\text{sub }y                                                      & =x^\lambda                        \\
+    y'                                                                    & = \lambda x^{\lambda-1}           \\
+    y''                                                                   & = \lambda(\lambda-1)x^{\lambda-2} \\
+    \\
+    x^2\lambda(\lambda-1)x^{\lambda-2}-3x\lambda x^{\lambda-1}+3x^\lambda & =0                                \\
+    \lambda^2-\lambda-3\lambda+3                                          & =0                                \\
+    \lambda^2-4\lambda+3                                                  & =0                                \\
+    \lambda_1 = 1                                                         & ,\ \lambda_2 = 3                  \\
+    \therefore y                                                          & =c_1x+c_2x^3
+\end{align*}
+\section*{Question 5}
+\begin{align*}
+    x^2y''+5xy'+4y               & =0\quad:\quad F_c:\text{sub }y=x^\lambda \\
+    \lambda^2-\lambda+5\lambda+4 & =0                                       \\
+    \lambda^2+4\lambda+4         & =0                                       \\
+    (\lambda+2)^2                & =0                                       \\
+    \lambda_{1,2}                & =-2                                      \\
+    \therefore y                 & =c_1x^{-2}+c_2(\ln x) x^{-2}
+\end{align*}
+\section*{Question 6}
+\begin{align*}
+    x^2y''-3xy'+13y               & =0\quad:\quad F_c:\text{sub }y=x^\lambda \\
+    \lambda^2-\lambda-3\lambda+13 & =0                                       \\
+    \lambda^2-4\lambda+13         & =0                                       \\
+    \lambda_{1,2}                 & = \frac{4\pm\sqrt{16-4\times13}}{2}      \\
+                                  & = \frac{4\pm\sqrt{-36}}{2}               \\
+                                  & = \frac{4\pm6i}{2}                       \\
+                                  & = 2\pm3i                                 \\
+    \therefore y                  & =c_1x^2\cos(3\ln x)+c_2x^2\sin(3\ln x)
+\end{align*}
+
+\end{document}

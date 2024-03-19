@@ -174,8 +174,6 @@ Couples are \emph{two parallel forces} that have the same magnitude but have \em
 \begin{minipage}{0.3\textwidth}
     \includegraphics[width=0.95\textwidth]{img/Couple.jpg}
 \end{minipage}
-% FIXME: This part introduces couples, but what are the actual use cases?
-
 
 \section{Axially loaded members}
 Axial loading refers to the application of a force along the axis of the member.
@@ -189,7 +187,7 @@ Axial loading refers to the application of a force along the axis of the member.
 \begin{theorem}
     {Eccentric loading and stress}
     When a force is applied \emph{off-centre} to the member, the stress at each end is given by:
-    \[\sigma=\frac{F}{wd}\pm \frac{6F\times e}{d\times w^2}\]
+    \[\sigma=\frac{\sum F}{wd}\pm \frac{6F\times e}{d\times w^2}\]
     Where $w$ is the width of the member, $d$ is the depth of the member, and $e$ is the eccentric distance from the centroid of the member to the point of application of the force.
 
     The $\pm$ sign is used to denote the \emph{maximum} and \emph{minimum} stress on opposite sides.
@@ -286,6 +284,10 @@ A member is a \emph{straight} and \emph{long} structural element that is subject
         \end{tabular}
     \end{table}
 \end{definition}
+\begin{definition}
+    {Stable structures}
+    A structure is said \emph{stable} if all members remain in place under any loading conditions.
+\end{definition}
 
 \begin{definition}
     {Static conditions of a system}
@@ -294,20 +296,17 @@ A member is a \emph{straight} and \emph{long} structural element that is subject
         \item Insufficient restraints $\to$ \textbf{non-static system} (contains mechanisms)
         \item Sufficient restraints $\to$ \textbf{static system}
     \end{enumerate}
-    If a static system has \textbf{3 reaction forces}, the system is \textbf{statically determinate}, if there are more, it is \textbf{statically indeterminate}.
-    \begin{center}
-        \includegraphics[width=0.4\textwidth]{./img/3react.jpg}
-    \end{center}
+    A static system is said to be \textbf{statically indeterminate} if the number of unknowns is larger than the number of equations of equilibrium.
 \end{definition}
 \begin{theorem}
-    {Degree of indeterminacy}
-    For a statically indeterminate system, the degree of indeterminacy (or redundancies) is simply $R-3$ where $R$ is the number of reaction forces.
-    \tcblower
-    \begin{center}
-        \includegraphics[width=0.4\textwidth]{./img/redundant.jpg}
-
-        The number of redundancies is 3.
-    \end{center}
+    {Degree of indeterminacy (Trusses)}
+    \[I=m+r-2j\]
+    Where $m$ is the number of members, $r$ is the number of reaction forces, $j$ is the number of joints.
+\end{theorem}
+\begin{theorem}
+    {Degree of indeterminacy (Frames)}
+    \[I=r-3+3n\]
+    Where $n$ is the number of members that we can cut through for the frame to be statically determinate.
 \end{theorem}
 
 \subsection{Loading}
@@ -345,6 +344,8 @@ A triangular truss is a statically determinate structure, but a quadrangular tru
         \item \textbf{2 non-collinear members} of a two-member-joint
         \item \textbf{3rd member} of a three-member-joint, where the other two are collinear.
     \end{itemize}
+    Additionally, members that provide \textbf{no structural support against the applied load} are also considered to be zero-force members.
+
     Removing zero-force members allows us to simplify a truss structure.
     \tcblower
     \begin{center}
@@ -401,6 +402,66 @@ Hence, we can use the following steps to solve for cable forces:
     \item Tension in cables not attached to a support can be found by $\sqrt{(R_x)^2+(R_y-\sum y)^2}$
 \end{enumerate}
 
+
+\section{Centroids and moment of inertia}
+
+\subsection{Centroids}
+\begin{knBox}
+    {Expression of centroids}
+    We use $\bar{x}$ and $\bar{y}$ to denote the \emph{centroid} of a shape. They are the horizontal and vertical distance about a given \textbf{reference axis}.
+
+    The centroid is the \textbf{centre of mass} of the shape. For an axis that the shape is \emph{symmetric about}, the centroid will be \textbf{on the axis}.
+
+    The centroid is also known as the \emph{first moment of area}.
+\end{knBox}
+\begin{definition}
+    {Centroid of composite shapes}
+    The centroid of a shape can be found by:
+    \[\bar{x}=\frac{\sum (A_i x_i)}{\sum A_i},\quad \bar{y}=\frac{\sum (A_i y_i)}{\sum A_i}\]
+    Where $A_i$ is the area of the composition shape, and $x_i, y_i$ are the distances of the composition shape's centroid from the reference axes.
+\end{definition}
+
+\label{sec:momentinertia}
+\subsection{Moment of inertia}
+\begin{knBox}
+    {The reference axis for moment of inertia}
+    We measure the moment of inertia about a \textbf{reference axis}. This is because at different points, the moment of inertia will be different. (\emph{Unlike the use of reference axes in centroids, where the reference axes is just relative}).
+
+    For finding the moment of inertia at the centroid, we simply set the reference axis at the centroid.
+\end{knBox}
+\begin{definition}
+    {Moment of inertia / Second moment of area}
+    The moment of inertia is a measure of an object's resistance to changes in its rotation, about a reference axis. It is given by:
+    \[I_x=\int y^2\:dA,\quad I_y=\int x^2\:dA\]
+    Where $x$ and $y$ are the distances from the axis. This units are $m^4$.
+\end{definition}
+\begin{theorem}
+    {Moment of inertia for rectangles}
+    The moment of inertia for a rectangle is given by:
+    \[I_x=\frac{bh^3}{12},\quad I_y=\frac{hb^3}{12}\]
+    Where $b$ is the width of the rectangle, and $h$ is the height of the rectangle. This can be derived by the formulas above.
+
+    It is important that the \textbf{direction} where $b$ extends is \textbf{parallel to the reference axis} (so width $\ne$ longest length)
+\end{theorem}
+\begin{theorem}
+    {Moment of inertia for circles}
+    The moment of inertia for a circle is given by:
+    \[I_x=I_y=\frac{\pi r^4}{4}\]
+    Where $r$ is the radius of the circle.
+\end{theorem}
+\begin{theorem}
+    {Parallel axis theorem}
+    The moment of inertia about an axis parallel to a reference axis for a shape is given by:
+    \[I_{x'}=I_{x}+Ad^2\]
+    Where $A$ is the area of the shape, and $d$ is the distance between the \textbf{reference axis} and the \textbf{parallel axis}.
+\end{theorem}
+\begin{definition}
+    {Moment of inertia for composite shapes}
+    The moment of inertia for a composite shape is simply the sum of the moments of inertia of the individual shapes \textbf{about the same axis}. This can be expressed as:
+    \[I_x=I_{x1\to\bar{y}} + I_{x2\to\bar{y}},\quad I_y=I_{y1\to\bar{x}} + I_{y2\to\bar{x}}\]
+    Related: \hyperref[sec:bendingstress]{Bending stress}
+\end{definition}
+
 \section{Bending forces and stress}
 \subsection{Internal force in beams}
 When we consider the internal forces of a beam, we take a \emph{cross section} and consider the forces acting on it. The internal forces are:
@@ -415,7 +476,7 @@ When we consider the internal forces of a beam, we take a \emph{cross section} a
     The following is the signs of internal forces for a \emph{positive} moment:
     \begin{itemize}
         \item \textbf{V:} $\circlearrowright$ (L $\uparrow$ R $\downarrow$)
-        \item \textbf{R:} $\curvearrowright\ \curvearrowleft$ (sagging moment is \emph{positive})
+        \item \textbf{M:} $\curvearrowright\curvearrowleft$ (sagging moment is \emph{positive})
     \end{itemize}
     \tcblower
     \includegraphics[width=0.33\textwidth]{img/shear2.jpg}
@@ -442,9 +503,19 @@ Couple moments can be treated as a rotational moment at clock-direction the arro
     {Diagramming internal forces}
     The two internal force diagrams are $V(x)-x$ and $M(x)-x$ diagrams. $V(x)$ gives the shear force $V$ at distance $x$ from the \emph{left side} of the beam.
 \end{definition}
+\begin{theorem}
+    {Relation between internal forces}
+    The following is the relation between the internal forces:
+    \[\frac{dM}{dx}=V\quad \frac{dV}{dx}=-w\]
+    Where $w$ is the distributed load acting on the beam.
+    \begin{itemize}
+        \item This tells us that the slope of the $M(x)$ diagram at an interval is the value of $V$ at that interval.
+        \item This tells us that the slope of the $V(x)$ diagram at an interval is the value of $-w$ at that interval.
+    \end{itemize}
+\end{theorem}
 
+\subsubsection{Steps to follow}
 \begin{minipage}{0.6\textwidth}
-    Steps to follow:
     \begin{enumerate}
         \item Solve for reaction forces
         \item Draw the FBD of a cut from the leftmost side to a location with distance $x$ from the leftmost force \emph{not analysed}
@@ -469,10 +540,44 @@ To analyse a distributed load $w$, consider the FBD of the whole system on the l
 \large
 \[\{\underset{\underset{R}{\uparrow}}{=}\underset{2}{==}\overset{\overset{F}{\downarrow}}{=}\underbrace{\overset{\overset{w\cdot x}{\downarrow}}{====}}_x\overset{V}{\downarrow}\overset{M}{\circlearrowleft}\dots\}\]
 
+\subsubsection{Signing conventions}
+By convention, we consider the \textbf{positive convention} with respect to the cross-section. That means, if the force is \textbf{clockwise} to the cross-section, it is \textbf{positive}..
+
+\label{sec:bendingstress}
 \subsection{Bending stress}
+\begin{definition}
+    {Pure bending}
+    A \textbf{section} of the beam is said to be under \emph{pure bending} if:
+    \[V=0,\quad M\text{ constant}\]
+\end{definition}
+\begin{knBox}
+    {Netural axis}
+    The neutral axis always \textbf{passes through the centroid} of the beam. It is \emph{netural} as the \textbf{length remains unchanged} for the surface that the axis passes through.
 
-\section{Centroids and moment of inertia}
+    The distance from the netural axis is denoted $y$ (\textbf{positive downwards}).
+\end{knBox}
+\begin{knBox}
+    {Bending section modulus}
+    The bending section modulus $W$ is given by:
+    \[W=\frac{I}{y_{max}}\ m^3\]
+\end{knBox}
+\begin{theorem}
+    {Bending stress}
+    The bending stress $\sigma$ is given by:
+    \[\sigma=\frac{My}{I}\]
+    Where $M$ is the bending moment, $y$ is the distance from the \textbf{neutral axis} (centroid), and $I$ is the \textbf{moment of inertia} of the section.
 
+    The formula also tells us that the bending stress is \emph{proportional} to the distance from the neutral axis, and the neutral axis experiences \emph{no stress}.
+
+    Related: \hyperref[sec:momentinertia]{Moment of inertia}
+\end{theorem}
+\begin{theorem}
+    {Maximum tensile and compressive stress}
+    \[\sigma_{max}=\frac{M_\pm}{W_{max}}\]
+    We have to find the max/min bending moment in order to calculate the respective max/min tensile and compressive stresses. Note that \textbf{tensile stress is positive} (unlike tension which is negative).
+    \[\text{max/min }M\to \sigma^\pm_\text{max}\]
+    The max/min bending moment is found by the \textbf{extreme} of the $M(x)-x$ diagram.
+\end{theorem}
 
 
 \end{document}

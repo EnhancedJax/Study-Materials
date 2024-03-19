@@ -1,0 +1,97 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{MATH1851}
+\newcommand{\documentnumber}{4}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+\begin{align*}
+    xy'+3y                    & =x^6\quad:\quad y(1)=1          \\
+    y'+\frac{3}{x}y           & =x^5                            \\
+    x^3y' + 3x^2y             & =x^8                            \\
+    (x^3y)'                   & =x^8                            \\
+    x^3y                      & =\frac{x^9}{9} + c              \\
+    y                         & =\frac{x^6}{9} + \frac{c}{x^3}  \\
+    f(1)=1\to 1=\frac{1}{9}+c & \implies c=\frac{8}{9}          \\
+    y                         & =\frac{x^6}{9} + \frac{8}{9x^3} \\
+\end{align*}
+
+\section*{Question 2}
+\begin{align*}
+    y'+2xy                    & =x\quad:\quad y(0)=1             \\
+    y'+2xy                    & =x                               \\
+    e^{x^2}y'+2xe^{x^2}y      & =xe^{x^2}                        \\
+    (e^{x^2}y)'               & =xe^{x^2}                        \\
+    e^{x^2}y                  & =\int xe^{x^2}dx                 \\
+    e^{x^2}y                  & =\frac{1}{2}e^{x^2}+c            \\
+    y                         & =\frac{1}{2}+ce^{-x^2}           \\
+    f(0)=1\to 1=\frac{1}{2}+c & \implies c=\frac{1}{2}           \\
+    y                         & =\frac{1}{2}+\frac{1}{2}e^{-x^2} \\
+\end{align*}
+
+\section*{Question 3}
+\begin{align*}
+    xy'+y                                                                   & =x^3y^3                                                          \\
+    y^{-3}y'+\frac{1}{xy^2}                                                 & =x^2                                                             \\
+    u=y^{-2}                                                                & \implies y= u^{-\frac{1}{2}},\ y'=-\frac{1}{2}u^{-\frac{3}{2}}u' \\
+    -\frac{1}{2}u^{-\frac{3}{2}}u^\frac{3}{2}u'+x^{-1}u                     & =x^2                                                             \\
+    -\frac{1}{2}u'+x^{-1}u                                                  & =x^2                                                             \\
+    u'-2x^{-1}u                                                             & =-2x^2                                                           \\
+    e^{\int -2x^{-1}\:dx}=x^{-2}\text{ multiply} \implies x^{-2}u'-2x^{-3}u & =-2                                                              \\
+    (x^{-2}u)'                                                              & =-2                                                              \\
+    x^{-2}u                                                                 & =-2x+c                                                           \\
+    u                                                                       & =-2x^3+cx^2                                                      \\
+    y                                                                       & =(-2x^3+cx^2)^{-\frac{1}{2}}                                     \\
+\end{align*}
+
+\section*{Question 4}
+\begin{align*}
+    y'                                         & =\frac{x^2+y^2}{2x^2}                \\
+    y'                                         & =\frac{1}{2}+\frac{y^2}{2x^2}        \\
+    u =\frac{y}{x}                             & \implies y=ux,\ y'=u'x+u             \\
+    u'x+u                                      & =\frac{1}{2}+\frac{u^2}{2}           \\
+    u'x                                        & =\frac{1}{2}+\frac{u^2}{2}-u         \\
+    u'                                         & =(\frac{1}{2}+\frac{u^2}{2}-u)x^{-1} \\
+    \int (\frac{1}{2}+\frac{u^2}{2}-u)^{-1} du & =\int x^{-1}dx                       \\
+    2\int (1+u^2-2u)^{-1} du                   & =\ln x+c                             \\
+    2\int (u-1)^{-2} du                        & =\ln x+c                             \\
+    \frac{-2}{u-1}                             & =\ln x+c                             \\
+    \frac{-2}{\frac{y}{x}-1}                   & =\ln x+c                             \\
+    \frac{-2x}{y-x}                            & =\ln x+c                             \\
+    y                                          & =\frac{-2x+x\ln x + cx}{\ln x + c}
+\end{align*}
+
+\section*{Question 5}
+\begin{align*}
+    [2x - y\sin(xy)]dx+[\frac{3}{y}-x\sin(xy)]dy                                & =0                                                           \\
+    \text{Let } M=\frac{\partial F}{\partial x}=2x-y\sin(xy)                    & ,\quad N=\frac{\partial F}{\partial y}=\frac{3}{y}-x\sin(xy) \\
+    \frac{\partial M}{\partial y}                                               & =-\sin(xy)-xy\cos(xy)                                        \\
+    \frac{\partial N}{\partial x}                                               & =-\sin(xy)-xy\cos(xy) = \frac{\partial M}{\partial y}        \\
+    \therefore \text{exact}                                                     &                                                              \\
+    \frac{\partial F}{\partial x}                                               & =2x-y\sin(xy)                                                \\
+    F                                                                           & =\int 2x-y\sin(xy)dx                                         \\
+    F                                                                           & =x^2+\cos(xy)+g(y)                                           \\
+    \frac{\partial F}{\partial y}                            = -x\sin(xy)+g'(y) & = \frac{3}{y}-x\sin(xy)                                      \\
+    g'(y)                                                                       & =\frac{3}{y}                                                 \\
+    g(y)                                                                        & =3\ln y+c                                                    \\
+    F                                                                           & =x^2+\cos(xy)+3\ln y+c                                       \\
+    \therefore\ x^2+\cos(xy)+3\ln y                                             & = c                                                          \\
+\end{align*}
+
+\end{document}
