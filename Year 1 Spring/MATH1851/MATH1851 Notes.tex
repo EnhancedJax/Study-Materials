@@ -631,48 +631,197 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
     \[A=2\pi\int_{a}^{b}g(t)\sqrt{f'^2(t)+g'^2(t)}dt\]
 \end{theorem}
 
-\section{Polar Coordinates}
-\begin{center}
-    \includegraphics[width=0.6\textwidth]{./img/polar.jpg}
+% \section{Polar Coordinates}
+% \begin{center}
+%     \includegraphics[width=0.6\textwidth]{./img/polar.jpg}
 
-\end{center}
+% \end{center}
+% \begin{definition}
+%     {Equations relating Rolar and Cartesian coordinates}
+%     We can convert between polar and Cartesian coordinates using:
+%     \[x=r\cos\theta,\quad y=r\sin\theta\]
+%     We can also see that:
+%     \[r^2=x^2+y^2.\quad \tan\theta=\frac{y}{x}\]
+%     The polar equation for the circle $r^2 = x^2 + y^2$ is simply $r=a$.
+% \end{definition}
+% \begin{knBox}
+%     {Polar equations of ellipse}
+%     In Cartesian form, an ellipse can be expressed as:
+%     \[\frac{(x+c)^2}{a^2}+\frac{y^2}{b^2}=1,\quad\text{where }c=\sqrt{a^2+b^2}\]
+%     Then we can write in polar form:
+%     \[r=\frac{a(1-e^2)}{1+e\cos\theta},\quad\text{where }e=\frac{\sqrt{a^2+b^2}}{a}\]
+% \end{knBox}
+% \begin{theorem}
+%     {Slope of polar curves}
+%     The slope of a polar curve at a point is given by:
+%     \[\frac{dy}{dx}=\frac{r\cos\theta+r'\sin\theta}{-r\sin\theta+r'\cos\theta}\]
+%     \tcblower
+%     To the the slope of the tangent to the unit circle at Cartesian coordinates $(\frac{1}{2},\frac{\sqrt{3}}{2})$:
+
+%     We can find the the polar coordinates to be $(1,\frac{\pi}{3})$ using $\cos^{-1}\frac{1}{2}=\frac{\pi}{3}$, then we can use the formula to find the slope:
+%     \[\frac{dy}{dx}=\frac{1\cos\frac{\pi}{3}+1'\sin\frac{\pi}{3}}{-1\sin\frac{\pi}{3}+1'\cos\frac{\pi}{3}}=-\frac{1}{\sqrt{3}}\]
+% \end{theorem}
+% \begin{knBox}
+%     {Graphing}
+%     We can easily graph any polar formula $r=f(\theta)$ following the following steps:
+%     \begin{enumerate}
+%         \item Plot $r\ -\ \theta$ graph. If the function involves trigo functions, we can simply translate its graph. The height at a certain point is the distance from the origin.
+%         \item Then we can simply trace the graph from the left, and plot the points according to the distance from the origin at each angle.
+%         \item If the graph is symmetric, we can simply copy the other half.
+%     \end{enumerate}
+% \end{knBox}
+
+\section{First Order Differential Equations}
+Differential equations are equations that involve a function and its derivatives.
 \begin{definition}
-    {Equations relating Rolar and Cartesian coordinates}
-    We can convert between polar and Cartesian coordinates using:
-    \[x=r\cos\theta,\quad y=r\sin\theta\]
-    We can also see that:
-    \[r^2=x^2+y^2.\quad \tan\theta=\frac{y}{x}\]
-    The polar equation for the circle $r^2 = x^2 + y^2$ is simply $r=a$.
+    {Order of differential equations}
+    A \emph{n} ordered differential equation is an equation of the form:
+    \[F(x,y,y'\dots y'_n)=0\]
+    Where $y'_n$ is the nth derivative of $y$ with respect to $x$. The highest degree of the derivative is n for a n-ordered differential equation. Note that $y$ is really just $y(x)$ (A function of x)
 \end{definition}
-\begin{knBox}
-    {Polar equations of ellipse}
-    In Cartesian form, an ellipse can be expressed as:
-    \[\frac{(x+c)^2}{a^2}+\frac{y^2}{b^2}=1,\quad\text{where }c=\sqrt{a^2+b^2}\]
-    Then we can write in polar form:
-    \[r=\frac{a(1-e^2)}{1+e\cos\theta},\quad\text{where }e=\frac{\sqrt{a^2+b^2}}{a}\]
-\end{knBox}
+
+\subsection{Solving linear 1st-ODEs}
+\begin{definition}
+    {Linear differential equations}
+    Linear differential equations does not contain non-linear functions. (e.g. $\sin y$) Otherwise, it's a non-linear ODE.
+\end{definition}
 \begin{theorem}
-    {Slope of polar curves}
-    The slope of a polar curve at a point is given by:
-    \[\frac{dy}{dx}=\frac{r\cos\theta+r'\sin\theta}{-r\sin\theta+r'\cos\theta}\]
-    \tcblower
-    To the the slope of the tangent to the unit circle at Cartesian coordinates $(\frac{1}{2},\frac{\sqrt{3}}{2})$:
+    {Solving by integrating factors}
+    We can solve a linear 1st-ODE as followed, given a \textbf{particular solution} of $y(x)$:
+    \[y'+p(x)y=q(x)\quad : \quad\times\ e^{\int p(x)}\]
 
-    We can find the the polar coordinates to be $(1,\frac{\pi}{3})$ using $\cos^{-1}\frac{1}{2}=\frac{\pi}{3}$, then we can use the formula to find the slope:
-    \[\frac{dy}{dx}=\frac{1\cos\frac{\pi}{3}+1'\sin\frac{\pi}{3}}{-1\sin\frac{\pi}{3}+1'\cos\frac{\pi}{3}}=-\frac{1}{\sqrt{3}}\]
+    The multiplied integration factor $e^{p(x)}$ will give us a product of the \emph{product rule}, then we simply integrate both sides to solve for $y$. Make sure that the \textbf{coefficient of $y'$ is 1}.
 \end{theorem}
-\begin{knBox}
-    {Graphing}
-    We can easily graph any polar formula $r=f(\theta)$ following the following steps:
-    \begin{enumerate}
-        \item Plot $r\ -\ \theta$ graph. If the function involves trigo functions, we can simply translate its graph. The height at a certain point is the distance from the origin.
-        \item Then we can simply trace the graph from the left, and plot the points according to the distance from the origin at each angle.
-        \item If the graph is symmetric, we can simply copy the other half.
-    \end{enumerate}
 
+\begin{theorem}
+    {Separable equations}
+    We can solve a separable equation as followed, given a \textbf{particular solution} of $y(x)$:
+    \begin{align*}
+        \frac{dy}{dx}       & =f(x)g(y)                              \\
+        {g(y)}^{-1}dy       & =f(x)dx                                \\
+        \int{g(y)}^{-1}\:dy & =\int f(x)\:dx \Leftarrow [(x,y)\to c]
+    \end{align*}
+\end{theorem}
+
+\subsection{Solving non-linear 1st-ODEs}
+\begin{definition}
+    {Bernoulli's equation}
+    A non-linear 1st-ODE of the form can be solved by:
+    \[y'+p(x)y=q(x)y^n\quad n\in\mathds{R}\quad : \quad \text{sub }u=y^{1-n}\to y'=\frac{1}{1-n}u^{\frac{1}{1-n}-1}u'\]
+    The subsitution $u=y^{1-n}$ will turn the equation into a linear ODE, then simply solve using integrating factors.
+\end{definition}
+\begin{definition}
+    {Riccati's equation}
+    A non-linear 1st-ODE of the form can be solved by the following, given a \textbf{particular solution} of $y(x)$:
+    \[y'=p(x)y^2+q(x)y+r(x)\quad : \quad \text{sub }y=y(x) + u^{-1}\]
+\end{definition}
+\begin{definition}
+    {Homogeneous equations}
+    A homogeneous equation has it's $x$ and $y$ terms \textbf{in the same degree}. (e.g. $x^2+xy+y^2=0$)
+
+    A \emph{homogeneous} 1st-ODE of the form can be solved by the following, given a \textbf{particular solution} of $y(x)$:
+    \[y'=f(\frac{y}{x})\quad : \quad \text{sub }u=\frac{y}{x} \to y'=u + xu'\]
+    We can \textbf{divide the formula} by $x^n$ or $y^n$ to get the equation in the desired form (\emph{every term is the ratio} $\frac{y}{x}$). Otherwise, we can shift the origin using $X=x-n$ and $Y=y-m$.
+
+    After substitution, we will get a \textbf{separable equation} after the substitution, and the particular solution is used.
+\end{definition}
+
+\subsection{Exact equations}
+\begin{knBox}
+    {Partial derivatives}
+    A partial derivative is a derivative of a function with respect to one of its variables, with the others held constant. The following notation expresses the partial derivative of $f$ with respect to $x$:
+    \[\frac{\partial f}{\partial x}\]
+    \tcblower
+    \begin{align*}
+        F                             & =2x+y \\
+        \frac{\partial F}{\partial x} & =2    \\
+    \end{align*}
 \end{knBox}
-\section{Ordinary Differential Equations}
-\subsection{1st Order Linear ODEs \& Integrating Factors}
-\subsection{Bernoulli Equations \& Riccati Equations}
+\begin{definition}
+    {Exact equations}
+    An exact equation is simply a 1st-ODE where $dF=0$.
+
+    The expressed equation $dF$ is exact if:
+    \[dF=Mdx+Ndy\quad:\quad\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}\]
+\end{definition}
+\begin{theorem}
+    {Solving exact equations}
+    To find the solution of an exact equation:
+    \begin{align*}
+        M=\frac{\partial F}{\partial x}              & ,\quad N=\frac{\partial F}{\partial y} \\
+        \partial F                                   & = M\partial x                          \\
+        F                                            & = \int M dx + g(y)                     \\
+        \frac{\partial F}{\partial y}                & = N                                    \\
+        \frac{\partial \int M dx + g(y)}{\partial y} & = N \to g'(y)                          \\
+        \int g'(y)\:dy                               & = g(y) \to F
+    \end{align*}
+    $g(y)$ is present as we are integrating partially with respect to $x$, and $g(y)$ is the constant of integration.
+
+    Hence, the solution would be:
+    \[\int M dx + g(y)=c\]
+\end{theorem}
+
+\section{Second Order Differential Equations}
+
+\subsection{Solving homogeneous linear 2nd-ODEs}
+\begin{definition}
+    {Constant coefficient Homogeneous 2nd-ODEs}
+    \emph{The term homogeneous is used differently from the previous section.}
+
+    A homogeneous 2nd-ODE is of the form:
+    \[ay''+by'+cy=\mathbf{0}\]
+    Where $a,b,c$ are constants. (Coefficients are \emph{constants})
+    \tcblower
+    We first use the following substitution:
+    \[ay''+by'+cy=0:\quad y=e^{\lambda x}\implies a\lambda^2+b\lambda+c=0\to \lambda\]
+    To find the general solution, we put the $\lambda$ roots into the \textbf{quadratic characteristic equation}:
+    \begin{enumerate}
+        \item $\lambda_1\ne\lambda_2:\quad y=c_1\mathbf{e}^{\lambda_1x}+c_2\mathbf{e}^{\lambda_2x}$
+        \item $\lambda_1=\lambda_2:\quad y=c_1\mathbf{e}^{\lambda x}+c_2x\mathbf{e}^{\lambda x}$
+        \item $\{\lambda_{1,2}=\alpha\pm\beta i\}\in\mathds{C}:\quad y=c_{1}\mathbf{e}^{\alpha x}\cos(\beta x)+c_{2}\mathbf{e}^{\alpha x}\sin(\beta x)$
+    \end{enumerate}
+    If given \textbf{particular solutions} of $y$ and $y'$, we can solve for $c_1$ and $c_2$ by finding $y'$ with our general solution and substituting.
+\end{definition}
+
+\begin{definition}
+    {Cauchy-Euler equations}
+    A Cauchy-Euler equation is a slight variation of homogenous 2nd-ODEs, which is of the following form and can be solved by:
+    \[ax^2y''+bxy'+cy=0\quad:\quad y=x^\lambda\implies a(\lambda^2-\lambda)+b\lambda+c=0\]
+    The general solutions is similar to that of the homogeneous 2nd-ODEs, but with \textbf{all terms of $x\to \ln x$}:
+    \begin{enumerate}
+        \item $e^{\lambda x}\to x^\lambda$
+        \item $e^{\lambda x}\to x^\lambda,\quad x\to \ln x$
+        \item $e^{\alpha x}\to x^\alpha,\quad \beta x \to \beta \ln x$
+    \end{enumerate}
+\end{definition}
+
+\subsection{Solving non-homogeneous linear 2nd-ODEs}
+\begin{definition}
+    {Constant coefficient Non-homogeneous 2nd-ODEs}
+    A non-homogeneous 2nd-ODE is of the form:
+    \[ay''+by'+cy=g(x)\]
+    Where $a,b,c$ are constants. (Coefficients are \emph{constants})
+    \tcblower
+    We first solve for $\lambda_{1,2}$ for the \textbf{complementary homogenous function} $F_c$:
+    \[F_c:\ ay''+by'+cy=0\]
+    The general solution for the non-homogeneous 2nd-ODE $F$ is:
+    \[F=F_c+F_p\]
+    Where $F_p$ is a \textbf{particular solution} of $F$. To solve for $F_p$, we can use the following methods:
+    \begin{enumerate}
+        \item \textbf{Method of undetermined coefficients}
+        \item \textbf{Variation of parameters}
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    {Method of undetermined coefficients}
+    To solve for $F_p$ for a non-homogeneous 2nd-ODE, let $F_p$ as the following if $g(x)$ consists of:
+    \begin{itemize}
+        \item $e^{ax}\to F_p=Ae^{ax}$
+        \item $\sin x\text{ and / or }\cos x\to F_p=A\sin x+B\cos x$
+        \item $x^n\to F_p=Ax^n=A_nx^n+A_{n-1}x^{n-1}+\dots+A_0$ (polynomial of degree $n$)
+    \end{itemize}
+    Then substitute $F_p\to y$ into the non-homogeneous 2nd-ODE and solve for $A$ and $B$. Finally, the general solution is $F=F_c+F_p$.
+\end{theorem}
 
 \end{document}

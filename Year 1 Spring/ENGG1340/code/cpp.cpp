@@ -5,8 +5,8 @@ int main()
 {                                  
     // code to be ran when program starts
 }
-int a = 1, b = 2, c = 3;
-double a, b, c; // empty initialization
+int a = 1, b = 2, c = 3; // declare vars with vales
+double a, b, c; // empty declaration
 
 int i = 1;
 int n = 0;
@@ -69,11 +69,11 @@ double func_name (int a, int b) {
 
 int a[10]; // array of 10 integers
 int a[] = {1, 2, 3, 4, 5}; // array of 5 integers
-int a[10][10]; // 2D array of 10x10 integers
+int a[2][2] = {{1, 2}, {3, 4}}; // 2D array of 2x2 integers
 char a[] = "Hello"; // array of 5 characters
 
-#include <string>
-string a = "Hello"; // string class
+
+
 
 cin >> name >> age; // read multiple inputs to variables
 cout << "Hello " << name << endl; // Hello <name>
@@ -88,13 +88,13 @@ void swapnum(int &i, int &j) {    // pass by reference
   j = temp;
 }
 
-int main(void) {
-  int a = 10;
-  int b = 20;
-
+int main() {
+  int a = 10, b = 20;
   swapnum(a, b);                  // a = 20, b = 10
-  return 0;
 }
+
+
+
 
 cout << setw(6) << "123" << endl; // "   123"
 cout << setfill('%') << setw(6) << "123" << endl; // "%%%123"
@@ -168,12 +168,12 @@ struct Circle {
 
 Circle c1 = {{1, 2}, 3};
 
-a.length(); // 5
-a[0]; // 'H'
-a.substr(0, 2); // "He"
-a.find("l"); // 2
-a.replace(2, 2, "p"); // "Helpo"
-a.append(" World"); // "Hello World"
+
+
+
+
+
+
 
 #include <vector>
 
@@ -189,3 +189,156 @@ v.front(); // first element
 v.back(); // last element
 
 int a[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+rand() % N; // random number between 1 and N-1
+
+void zeroize(int a[], int n) { 
+    for (int i = 0; i < n; i++) {
+        a[i] = 0;
+    }
+}
+int[5] a = {1, 2, 3, 4, 5};
+zeroize(a, 5); // a = {0, 0, 0, 0, 0}
+
+void zeroize(int a[][5], int n) { 
+...}
+
+char letter = 'a';
+int val = letter; // 97
+cout << 'b' - 'a'; // 98 - 97 = 1
+letter++ // 'b'
+isdigit('1') // 1
+isalpha('a') // 1
+isalnum('1') // 1
+isupper('A') // 1
+islower('a') // 1
+toupper('a') // 'A'
+tolower('A') // 'a'
+
+char hi[] = "Hello"; // hi[6] = {'H', 'e', 'l', 'l', 'o', '\0'}
+hi = "World"; // raises compilation error
+
+#include <string>
+string hi = "Hello"; 
+string who = "World";
+string message = hi + " " + who; // "Hello World"
+string message = "Hello" + " World" // raises compilation error
+
+string msg1 = "Apple", msg2 = "apple";
+string msg3 = "apples", msg4 = "orange";
+bool c1 = msg1 == msg2; // false
+bool c2 = msg3 != msg4; // true
+bool c3 = msg1 < msg2; // true (A < a)
+bool c4 = msg2 < msg3; // true (0 < s)
+bool c5 = msg4 > msg3; // true (o > a)
+
+a = "Hello World!";
+
+a.length(); // 12
+a.empty(); // false
+
+a.erase(6, 6); // (from, n) "Hello "
+a.insert(5, "New "); // (after, string) "Hello New World!"
+a.replace(6, 5, "Universe"); // (from, n, string) "Hello Universe!"
+
+a.substr(6, 5); // (from, n) "World"
+a.substr(6); // "World!"
+
+a.find("World"); // (string, start) 6 (starting index)
+a.find("World", 7); // -1 (not found)
+a.rfind("o"); // 7 (search from the end)
+
+int i = 0;
+int * iPtr = &i; // iPtr = address of i
+cout << *iPtr; // 0 (dereference -> value of i)
+
+int * a = nullptr, * b = 0; // declare multiple empty pointers
+
+int n = 0;
+int & i = 0; // reference to j
+n++;
+cout << i; // 1
+
+int i = 0;
+char * badPtr = &i; // raises compile-time error
+
+struct Data {
+    int a = 1;
+}
+Data data;
+Data * dataPtr = & data;
+cout << dataPtr->a; // 1
+
+void swapnum(int *i, int *j) {    // pass by reference
+  int temp = *i;
+  *i = *j;
+  *j = temp;
+}
+int main() {
+  int a = 10, b = 20;
+  swapnum(&a, &b);                  // a = 20, b = 10
+}
+
+char x[10];
+char * xPtr = x; // pointer to x
+char * xPtr = &x[0]; // reference to x[0], same as above 
+xPtr[0] = 'a'; // x[0] = 'a'
+
+int * i = new int (42); // allocate memory for an integer
+cout << *i; // 42
+delete i; // free memory
+i = 0;
+
+int n = 10;
+int * a = new int [n]; // allocate memory for an array of 10 integers
+delete [] a; // free memory
+
+int a[2] = {0, 1};
+int * aPtr = a;
+cout << *aPtr << ' ';
+cout << *(aPtr+1) << endl; // 0 1
+
+struct Node 
+{
+    int data;
+    Node * next;
+};
+
+Node * head = new Node;
+Node * node1 = new Node;
+
+head->data = 1;
+head->next = node1;
+node1->data = 2;
+node1->next = nullptr;
+
+cout << head->data << ' ' << head->next->data << endl; // 1 2
+
+Node * current = head; // remember head is a pointer
+while (current != nullptr) {
+    cout << current->data << ' ';
+    current = current->next;
+} // 1 2
+
+Node* reverseLinkedList(Node* head) {
+    Node* prev = nullptr;
+    Node* current = head;
+    Node* next = nullptr;
+
+    while (current != nullptr) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+
+    return prev;
+}
+
+int recursion(int var) {
+    if (basecase) {
+        return var;
+    } else {
+        return recursion(var - 1);
+    }
+}
