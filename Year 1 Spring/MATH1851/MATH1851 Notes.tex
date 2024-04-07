@@ -764,6 +764,8 @@ Differential equations are equations that involve a function and its derivatives
 \section{Second Order Differential Equations}
 
 \subsection{Solving homogeneous linear 2nd-ODEs}
+
+\label{sec:homogeneous}
 \begin{definition}
     {Constant coefficient Homogeneous 2nd-ODEs}
     \emph{The term homogeneous is used differently from the previous section.}
@@ -799,14 +801,14 @@ Differential equations are equations that involve a function and its derivatives
 \begin{definition}
     {Constant coefficient Non-homogeneous 2nd-ODEs}
     A non-homogeneous 2nd-ODE is of the form:
-    \[ay''+by'+cy=g(x)\]
+    \[F:\ ay''+by'+cy=g(x)\]
     Where $a,b,c$ are constants. (Coefficients are \emph{constants})
     \tcblower
-    We first solve for $\lambda_{1,2}$ for the \textbf{complementary homogenous function} $F_c$:
-    \[F_c:\ ay''+by'+cy=0\]
-    The general solution for the non-homogeneous 2nd-ODE $F$ is:
-    \[F=F_c+F_p\]
-    Where $F_p$ is a \textbf{particular solution} of $F$. To solve for $F_p$, we can use the following methods:
+    We first solve for $\lambda_{1,2}$ for the \hyperref[sec:homogeneous]{\textbf{complementary homogenous function}} $F_c$ to get $Y_c$:
+    \[F_c:\ ay''+by'+cy=0\ \to Y_c\]
+    The general solution $y$ for the non-homogeneous 2nd-ODE $F$ is:
+    \[y=Y_c+Y_p\]
+    Where $Y_p$ is a \textbf{particular solution} of $y$. To solve for $Y_p$, we can use the following methods:
     \begin{enumerate}
         \item \textbf{Method of undetermined coefficients}
         \item \textbf{Variation of parameters}
@@ -815,13 +817,99 @@ Differential equations are equations that involve a function and its derivatives
 
 \begin{theorem}
     {Method of undetermined coefficients}
-    To solve for $F_p$ for a non-homogeneous 2nd-ODE, let $F_p$ as the following if $g(x)$ consists of:
+    To solve for $Y_p$ for a non-homogeneous 2nd-ODE, let $Y_p$ as the following if $g(x)$ consists of:
     \begin{itemize}
-        \item $e^{ax}\to F_p=Ae^{ax}$
-        \item $\sin x\text{ and / or }\cos x\to F_p=A\sin x+B\cos x$
-        \item $x^n\to F_p=Ax^n=A_nx^n+A_{n-1}x^{n-1}+\dots+A_0$ (polynomial of degree $n$)
+        \item $e^{ax}\to Y_p=Ae^{ax}$
+        \item $\sin x\text{ and / or }\cos x\to Y_p=A\sin x+B\cos x$
+        \item $x^n\to Y_p=Ax^n=A_nx^n+A_{n-1}x^{n-1}+\dots+A_0$ (polynomial of degree $n$)
     \end{itemize}
-    Then substitute $F_p\to y$ into the non-homogeneous 2nd-ODE and solve for $A$ and $B$. Finally, the general solution is $F=F_c+F_p$.
+    And if $g(x)$ is a product of multiple components, \textbf{$Y_p$ is the product of the different results}.
+
+    We then substitute $y=Y_p\to F$ and solve for $A$ and $B$.
+
+    However, if we are unable see the correct form of $Y_p$, we can use the \textbf{variation of parameters} method.
 \end{theorem}
+
+\begin{theorem}
+    {Variation of parameters}
+    Note that for $Y_c$ is in the form of $c_1y_1+c_2y_2$.
+    To solve for $Y_p$ for a non-homogeneous 2nd-ODE:
+    \[Y_{P}=-y_1\int\frac{y_2g(x)}{W}dx+y_2\int\frac{y_1g(x)}{W}dx,\quad W=y_1y_2'-y_2y_1'\]
+\end{theorem}
+
+\section{Solving ODEs with Laplace Transforms}
+\begin{definition}
+    {Laplace transform}
+    The Laplace transform is a technique used to solve linear ODEs with constant coefficients. The Laplace transform of a function $f(t)$ is defined as:
+    \[\mathcal{L}\{f(t)\}=\int_{0}^{\infty}e^{-st}f(t)dt=F(t)\]
+    Where $s$ is a complex number.
+\end{definition}
+
+\begin{minipage}{0.52\textwidth}
+    \begin{theorem}
+        {Properties of Laplace transforms}
+        The following are some properties of Laplace transforms:
+        \begin{itemize}
+            \item $\mathcal{L}\{f+g\} = \mathcal{L}\{f\}+\mathcal{L}\{g\}$
+            \item $\mathcal{L}\{kf\} = k\mathcal{L}\{f\}$
+        \end{itemize}
+    \end{theorem}
+
+    \begin{theorem}
+        {Laplace transform of derivatives}
+        The Laplace transform of the derivative of a function $f(t)$ is:
+        \begin{align*}
+            \mathcal{L}\{f'\}  & =sF(s)-f(0)          \\
+            \mathcal{L}\{f''\} & =s^2F(s)-sf(0)-f'(0)
+        \end{align*}
+        Where $f(0)$ is the initial condition of $f$.
+    \end{theorem}
+
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \begin{table}[H]
+        \begin{tabular}{rcc}
+               & $f$            & $\mathcal{L}\{f\}$                \\ \hline
+            0. & $1$            & $\frac{1}{s}$                     \\\arrayrulecolor{lightgray}\hline
+            0. & $e^{at}$       & $\frac{1}{s-a}$                   \\\arrayrulecolor{lightgray}\hline
+            1. & $t^n$          & $\frac{n!}{s^{n+1}}$              \\ \arrayrulecolor{lightgray}\hline
+            2. & $t^nf$         & $(-1)^n\frac{d^n}{ds^n}F(s)$      \\ \arrayrulecolor{lightgray}\hline
+            3. & $\sin at$      & $\frac{a}{s^2+a^2}$               \\ \arrayrulecolor{lightgray}\hline
+            4. & $\cos at$      & $\frac{s}{s^2+a^2}$               \\ \arrayrulecolor{lightgray}\hline
+            5. & $e^{at}f(t)$   & $F(s-a)$                          \\ \arrayrulecolor{lightgray}\hline
+            6. & $f(t-a)H(t-a)$ & $e^{-as}F(s)$                     \\ \arrayrulecolor{lightgray}\hline
+            7. & $f*g(t)$       & $\int_0^tf(\tau)g(t-\tau)\:d\tau$ \\ \arrayrulecolor{lightgray}\hline
+        \end{tabular}
+    \end{table}
+\end{minipage}
+
+\begin{definition}
+    {Inverse Laplace transform}
+    The inverse Laplace transform is the reverse operation of the Laplace transform.
+    \[\mathcal{L}^{-1}\{F(t)\}=f(t)\]
+    You basically think backwards like how you'd do intergration sometimes. Remember to use the rules!
+\end{definition}
+
+\begin{knBox}
+    {Partial fractions}
+    A fraction can be decomposed into partial fractions if the degree of the numerator is less than the degree of the denominator. The following are the types of partial fractions:
+    \begin{enumerate}
+        \item $\frac{f(x)}{g(x)h(x)} = \frac{A}{g(x)} + \frac{B}{h(x)}$
+        \item $\frac{f(x)}{g^2(x)h(x)} = \frac{A}{g(x)} + \frac{B}{g^2(x)} + \frac{C}{h(x)}$
+    \end{enumerate}
+    We can solve for $A$, $B$, and $C$ by multiplying the denominator (to make left side $f(x)$ only) and solving for the numerator.
+\end{knBox}
+
+\begin{definition}
+    {Solving ODEs with Laplace transforms}
+    To solve a linear ODE with constant coefficients using Laplace transforms:
+    \begin{enumerate}
+        \item Take the Laplace transform of both sides of ODE
+        \item Solve for the Laplace transform of the function
+        \item Convert into partial fractions
+        \item Find the inverse Laplace transform of the function
+    \end{enumerate}
+\end{definition}
 
 \end{document}

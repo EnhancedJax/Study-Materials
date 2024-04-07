@@ -579,5 +579,163 @@ By convention, we consider the \textbf{positive convention} with respect to the 
     The max/min bending moment is found by the \textbf{extreme} of the $M(x)-x$ diagram.
 \end{theorem}
 
+\section{Dynamics}
+
+\subsection{Newton's laws}
+\begin{definition}
+    {Newton's first law}
+    An object will remain at rest or in uniform motion unless acted upon by a force.
+\end{definition}
+
+\begin{definition}
+    {Newton's second law}
+    The acceleration of an object is directly proportional to the net force acting on it, and inversely proportional to its mass.
+    \[\sum F=ma\]
+\end{definition}
+
+\begin{definition}
+    {Newton's third law}
+    For every action, there is an equal and opposite reaction. This gives rises to forces like friction, normal and tension forces.
+\end{definition}
+
+\subsection{Motion}
+\begin{theorem}
+    {Motion equations}
+    The following are the equations of motion:
+    \begin{itemize}
+        \item \textbf{Average velocity: }$v=\frac{s}{t}$
+        \item $s=ut+\frac{1}{2}at^2$
+        \item $v=u+at$
+        \item $v^2=u^2+2as$
+        \item $s=\frac{(v+u)t}{2}$
+    \end{itemize}
+    Where $v$ is the final velocity, $u$ is the initial velocity, $a$ is the acceleration, $t$ is the time, and $s$ is the displacement.
+\end{theorem}
+
+\begin{theorem}
+    {Circular  motion}
+    The following are the equations of motion for circular  motion:
+    \begin{itemize}
+        \item $a_c = \frac{v_i^2}{r}$
+        \item $a_c = r\omega^2$
+        \item $\omega = \frac{\Delta\theta}{\Delta t}=\frac{2\pi r}{t} = \frac{v_i}{r}$
+        \item $v_i = r\omega$
+        \item $F_c = \frac{mv_i^2}{r} = ma_c$
+    \end{itemize}
+    Where $a_c$ is the centripetal acceleration, $v_i$ is the instantaneous velocity, $r$ is the radius, $\omega$ is the angular velocity, and $\theta$ is the angle.
+\end{theorem}
+
+\subsection{Momentum and impulse}
+
+\begin{definition}
+    {Momentum and conservation of momentum}
+    Momentum is the product of an object's mass and velocity. It is a vector quantity.
+    \[p=mv\]
+    The principle of conservation of momentum states that the total momentum of a system remains constant if no external forces act on it.
+    \[F_{ext}=0\ ?\ p=\text{const}\]
+    The angular momentum about $O$ is given by:
+    \[H_O=mv_i\times r\]
+\end{definition}
+
+\begin{theorem}
+    {Coefficient of restitution}
+    The coefficient of restitution is a measure of how much kinetic energy is conserved in a collision. It is given by:
+    \[e=|\frac{v_{2}-v_{1}}{u_{1}-u_{2}}|\]
+    Where $v_{1}$ and $v_{2}$ are the final velocities, and $u_{1}$ and $u_{2}$ are the initial velocities.
+    \begin{itemize}
+        \item $e=1$ is a perfectly elastic collision
+        \item $e=0$ is a perfectly inelastic collision
+        \item $0<e<1$ is a (partially) elastic collision
+    \end{itemize}
+\end{theorem}
+
+\begin{definition}
+    {Impulse}
+    Impulse is the change in momentum of an object. It is given by:
+    \[\Delta p=F\Delta t\]
+\end{definition}
+
+\subsection{Vibrations}
+
+\subsubsection{Simple harmonic motion}
+\begin{theorem}
+    {Simple Harmonic Motion equations}
+    The following are the equations of motion for simple harmonic motion:
+    \begin{itemize}
+        \item $x=A\sin(wt+\phi)$
+        \item $f=\frac{1}{T}=\frac{w}{2\pi}$
+    \end{itemize}
+    Where $A$ is the amplitude. $\phi$ represents the angle of which the motion starts. ($\Delta\phi$ for $x$ from $x=0$ to $x:t=0$ )
+\end{theorem}
+
+\begin{definition}
+    {Natural frequency}
+    The natural frequency of a spring mass system is the frequency at which the system oscillates when displaced from equilibrium.
+    \[w_0=\sqrt{\frac{k}{m}}\]
+    Where $f$ is the frequency, $k$ is the spring constant, and $m$ is the mass.
+\end{definition}
+
+\subsubsection{Spring mass system}
+
+\begin{definition}
+    {Hooke's law}
+    Hooke's law states that the force required to extend or compress a spring is directly proportional to the extension or compression.
+    \[F=-kx\]
+    Where $F$ is the force, $k$ is the spring constant, and $x$ is the extension or compression.
+\end{definition}
+
+\begin{definition}
+    {Damping \& damping coefficient}
+    Damping is the process of reducing the amplitude of an oscillation. It is given by:
+    \[F_d=-cv\]
+    Where $F_d$ is the damping force, $c$ is the \textbf{damping coefficient}, and $v$ is the velocity.
+\end{definition}
+
+\begin{theorem}
+    {Critical damping}
+    Critical damping is the minimum amount of damping required to prevent oscillation. It is given by:
+    \[c_{crit}=2\sqrt{mk}\]
+    The following gives the cases of damping:
+    \begin{itemize}
+        \item \textbf{Underdamping: }$c<c_{crit}$
+        \item \textbf{Overdamping: }$c>c_{crit}$
+        \item \textbf{Critical damping: }$c=c_{crit}$
+    \end{itemize}
+    Critical damping gives the fastest return to equilibrium.
+\end{theorem}
+
+\subsection{Energy, work and power}
+
+\begin{definition}
+    {Work}
+    Work is the product of the force acting on an object and the distance it moves in the direction of the force. It is given by:
+    \[W=Fd\]
+\end{definition}
+
+\begin{theorem}
+    {Energy}
+    The following are the types of energy:
+    \begin{itemize}
+        \item \textbf{Kinetic: }$E_k=\frac{1}{2}mv^2$
+        \item \textbf{Gravitational potential: }$E_{GP}=mgh$
+        \item \textbf{Elastic potential: }$E_{EP}=\frac{1}{2}kx^2$
+    \end{itemize}
+    The energy of a spring-mass system is given by:
+    \[E=E_k+E_{EP}\]
+\end{theorem}
+
+\begin{theorem}
+    {Conversation of energy}
+    The principle of conservation of energy states that the total energy of a system remains constant if no external forces act on it.
+    \[F_{ext}=0\ ?\ E=\text{const}\]
+\end{theorem}
+
+\begin{definition}
+    {Power}
+    Power is the rate at which work is done. It is given by:
+    \[P=\frac{W}{t}\]
+\end{definition}
+
+
 
 \end{document}
