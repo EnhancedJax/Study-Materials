@@ -15,6 +15,14 @@
 \input{../../LaTeX-Preamables/Title-V1}
 
 % ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\tableofcontents
+\newpage
+
+% ------------------------------------ %
 %               Document               %
 % ------------------------------------ %
 
@@ -181,6 +189,7 @@ There are two sides that $x$ can tend to a number. We can write it as $x\to n^-$
     \begin{enumerate}
         \item $\infty + k=\infty$
         \item For $k<0,\ k\infty=-\infty$
+        \item $-\infty\times\infty=-\infty$
     \end{enumerate}
 \end{theorem}
 \begin{knBox}
@@ -260,12 +269,14 @@ Related: \hyperref[sec:integrationtech]{Techniques of integration}
     {First principle}
     The first principle is the definition of the derivative of a function $f(x)$ at $x=a$:
     \[f'(x) = \frac{d}{dx} f(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\]
+    Note the notation of \textit{prime} ($'$), which denotes the derivative against $x$ for any function primed.
 \end{definition}
 
 \begin{theorem}
     {Differentiability}
     The function is differentiable at $x=a$ if:
     \[\lim_{x\to a^-}f'=\lim_{x\to a^+}f'\]
+    Use first principle if the function is cased.
 \end{theorem}
 
 \subsection{Differentiation formulas and rules}
@@ -431,9 +442,9 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
     Concavity is the direction of the curve, and can be described by the values of $f'$ and $f''$:
     \begin{table}[H]
         \begin{tabular}{lcccc}
-            $f''$ & $-$        & $+$        & $+$        & $-$        \\
-            $f'$  & $-$        & $+$        & $-$        & $+$        \\
-            $f$   & $\searrow$ & $\swarrow$ & $\nwarrow$ & $\nearrow$
+            $f''$ & $-$                                                                & $+$                                                                & $+$                                                               & $-$                                                              \\
+            $f'$  & $-$                                                                & $+$                                                                & $-$                                                               & $+$                                                              \\
+            $f$   & \includegraphics[width=0.3cm,origin=c, angle=270]{./img/arrow.png} & \includegraphics[width=0.3cm,origin=c, angle=180]{./img/arrow.png} & \includegraphics[width=0.3cm,origin=c, angle=90]{./img/arrow.png} & \includegraphics[width=0.3cm,origin=c, angle=0]{./img/arrow.png}
         \end{tabular}
     \end{table}
     Note: Arrows goes clock-wise.
@@ -441,17 +452,17 @@ Note that the trigo derivatives can be extended to hyperbolic trigo functions, w
 
 \begin{table}[H]
     \begin{tabular}{rll}
-            & Step                                 & Expression                                   \\ \hline
-        1.  & Determine domain of function         &                                              \\
-        2.  & Special points without continuity?   &                                              \\
-        3.  & Axis intercepts                      & $(f(x)=0, 0)\ (0, f(0))$                     \\
-        4.  & Critical points                      & $f'(x)=0$ or undefined                       \\
-        5.  & Point maxima?                        & $+f''(x)$ or $-f''(x)$                       \\
-        6.  & Inflection points                    & $f''(x)=0$ or undefined                      \\
-        7.  & Horizontal asymptotes                & $\lim_{x\to\pm\infty}f(x)=n?$                \\
-        8.  & Vertical asymptotes                  & $\lim_{x\to a^\pm}f(x)=\pm\infty?$           \\
-        9.  & Area strictly increasing/decreasing? & $f'(x)>0$ or $f'(x)<0$                       \\
-        10. & Area concavity?                      & $-++-/-+-+/\searrow\swarrow\nwarrow\nearrow$ \\
+            & Step                                 & Expression                                                                                                                                                                                                                                                                              \\ \hline
+        1.  & Determine domain of function         &                                                                                                                                                                                                                                                                                         \\
+        2.  & Special points without continuity?   &                                                                                                                                                                                                                                                                                         \\
+        3.  & Axis intercepts                      & $(f(x)=0, 0)\ (0, f(0))$                                                                                                                                                                                                                                                                \\
+        4.  & Critical points                      & $f'(x)=0$ or undefined                                                                                                                                                                                                                                                                  \\
+        5.  & Point maxima?                        & $+f''(x)$ or $-f''(x)$                                                                                                                                                                                                                                                                  \\
+        6.  & Inflection points                    & $f''(x)=0$ or undefined                                                                                                                                                                                                                                                                 \\
+        7.  & Horizontal asymptotes                & $\lim_{x\to\pm\infty}f(x)=n?$                                                                                                                                                                                                                                                           \\
+        8.  & Vertical asymptotes                  & $\lim_{x\to a^\pm}f(x)=\pm\infty?$                                                                                                                                                                                                                                                      \\
+        9.  & Area strictly increasing/decreasing? & $f'(x)>0$ or $f'(x)<0$                                                                                                                                                                                                                                                                  \\
+        10. & Area concavity?                      & $-++-/-+-+/$\includegraphics[width=0.3cm,origin=c, angle=270]{./img/arrow.png}  \includegraphics[width=0.3cm,origin=c, angle=180]{./img/arrow.png}  \includegraphics[width=0.3cm,origin=c, angle=90]{./img/arrow.png}  \includegraphics[width=0.3cm,origin=c, angle=0]{./img/arrow.png} \\
     \end{tabular}
 \end{table}
 
@@ -607,11 +618,11 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
 \begin{theorem}
     {Volume by Washers (Disk)}
     \[\{f(x)\to\ \circlearrowright x\}:\quad V=\pi\int_{a}^{b}R^2(x)-r^2(x)dx\]
-    For rotating about $y=n$: $\forall f(x)\to f(x)-n$
+    For rotating about $y=n$: $\forall R/r(x)\to n-R/r(x)$
 \end{theorem}
 \begin{theorem}
     {Volume by Cylindrical shells}
-    \[\{f(x)\to\ \circlearrowright y\}:\quad V=2\pi\int_{a}^{b}[x][R^2(x)-r^2(x)]dx\]
+    \[\{f(x)\to\ \circlearrowright y\}:\quad V=2\pi\int_{a}^{b}[x][R(x)-r(x)]dx\]
     For rotating about $x=n$: $[x]\to [x-n]$
 \end{theorem}
 
@@ -631,19 +642,19 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
     \[A=2\pi\int_{a}^{b}g(t)\sqrt{f'^2(t)+g'^2(t)}dt\]
 \end{theorem}
 
-% \section{Polar Coordinates}
-% \begin{center}
-%     \includegraphics[width=0.6\textwidth]{./img/polar.jpg}
+\section{Polar Coordinates}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{./img/polar.jpg}
 
-% \end{center}
-% \begin{definition}
-%     {Equations relating Rolar and Cartesian coordinates}
-%     We can convert between polar and Cartesian coordinates using:
-%     \[x=r\cos\theta,\quad y=r\sin\theta\]
-%     We can also see that:
-%     \[r^2=x^2+y^2.\quad \tan\theta=\frac{y}{x}\]
-%     The polar equation for the circle $r^2 = x^2 + y^2$ is simply $r=a$.
-% \end{definition}
+\end{center}
+\begin{definition}
+    {Equations relating Rolar and Cartesian coordinates}
+    We can convert between polar and Cartesian coordinates using:
+    \[x=r\cos\theta,\quad y=r\sin\theta\]
+    We can also see that:
+    \[r^2=x^2+y^2.\quad \tan\theta=\frac{y}{x}\]
+    The polar equation for the circle $r^2 = x^2 + y^2$ is simply $r=a$.
+\end{definition}
 % \begin{knBox}
 %     {Polar equations of ellipse}
 %     In Cartesian form, an ellipse can be expressed as:
@@ -651,25 +662,25 @@ Related: \hyperref[sec:asymptotes]{Definition of asymptotes}
 %     Then we can write in polar form:
 %     \[r=\frac{a(1-e^2)}{1+e\cos\theta},\quad\text{where }e=\frac{\sqrt{a^2+b^2}}{a}\]
 % \end{knBox}
-% \begin{theorem}
-%     {Slope of polar curves}
-%     The slope of a polar curve at a point is given by:
-%     \[\frac{dy}{dx}=\frac{r\cos\theta+r'\sin\theta}{-r\sin\theta+r'\cos\theta}\]
-%     \tcblower
-%     To the the slope of the tangent to the unit circle at Cartesian coordinates $(\frac{1}{2},\frac{\sqrt{3}}{2})$:
+\begin{theorem}
+    {Slope of polar curves}
+    The slope of a polar curve at a point is given by:
+    \[\frac{dy}{dx}=\frac{r\cos\theta+r'\sin\theta}{-r\sin\theta+r'\cos\theta}\]
+    \tcblower
+    To the the slope of the tangent to the unit circle at Cartesian coordinates $(\frac{1}{2},\frac{\sqrt{3}}{2})$:
 
-%     We can find the the polar coordinates to be $(1,\frac{\pi}{3})$ using $\cos^{-1}\frac{1}{2}=\frac{\pi}{3}$, then we can use the formula to find the slope:
-%     \[\frac{dy}{dx}=\frac{1\cos\frac{\pi}{3}+1'\sin\frac{\pi}{3}}{-1\sin\frac{\pi}{3}+1'\cos\frac{\pi}{3}}=-\frac{1}{\sqrt{3}}\]
-% \end{theorem}
-% \begin{knBox}
-%     {Graphing}
-%     We can easily graph any polar formula $r=f(\theta)$ following the following steps:
-%     \begin{enumerate}
-%         \item Plot $r\ -\ \theta$ graph. If the function involves trigo functions, we can simply translate its graph. The height at a certain point is the distance from the origin.
-%         \item Then we can simply trace the graph from the left, and plot the points according to the distance from the origin at each angle.
-%         \item If the graph is symmetric, we can simply copy the other half.
-%     \end{enumerate}
-% \end{knBox}
+    We can find the the polar coordinates to be $(1,\frac{\pi}{3})$ using $\cos^{-1}\frac{1}{2}=\frac{\pi}{3}$, then we can use the formula to find the slope:
+    \[\frac{dy}{dx}=\frac{1\cos\frac{\pi}{3}+1'\sin\frac{\pi}{3}}{-1\sin\frac{\pi}{3}+1'\cos\frac{\pi}{3}}=-\frac{1}{\sqrt{3}}\]
+\end{theorem}
+\begin{knBox}
+    {Graphing}
+    We can easily graph any polar formula $r=f(\theta)$ following the following steps:
+    \begin{enumerate}
+        \item Plot $r\ -\ \theta$ graph. If the function involves trigo functions, we can simply translate its graph. The height at a certain point is the distance from the origin.
+        \item Then we can simply trace the graph from the left, and plot the points according to the distance from the origin at each angle.
+        \item If the graph is symmetric, we can simply copy the other half.
+    \end{enumerate}
+\end{knBox}
 
 \section{First Order Differential Equations}
 Differential equations are equations that involve a function and its derivatives.
@@ -707,7 +718,7 @@ Differential equations are equations that involve a function and its derivatives
 \begin{definition}
     {Bernoulli's equation}
     A non-linear 1st-ODE of the form can be solved by:
-    \[y'+p(x)y=q(x)y^n\quad n\in\mathds{R}\quad : \quad \text{sub }u=y^{1-n}\to y'=\frac{1}{1-n}u^{\frac{1}{1-n}-1}u'\]
+    \[y'+p(x)y=q(x)y^n\quad n\in\mathds{R}\quad : \quad \text{sub }u=y^{1-n}\to y,y'\]
     The subsitution $u=y^{1-n}$ will turn the equation into a linear ODE, then simply solve using integrating factors.
 \end{definition}
 \begin{definition}
@@ -823,18 +834,27 @@ Differential equations are equations that involve a function and its derivatives
         \item $\sin x\text{ and / or }\cos x\to Y_p=A\sin x+B\cos x$
         \item $x^n\to Y_p=Ax^n=A_nx^n+A_{n-1}x^{n-1}+\dots+A_0$ (polynomial of degree $n$)
     \end{itemize}
-    And if $g(x)$ is a product of multiple components, \textbf{$Y_p$ is the product of the different results}.
+    Important things to note:
+
+    $\blacktriangleright $ If $g(x)$ is a product of multiple components, \textbf{$Y_p$ is the product of the different results}.
+
+    $\blacktriangleright $ If $Y_p$ consists of a non-constant \textbf{term that exists in $Y_c$}, we \textbf{must multiply} $Y_p$ by $x^i$ and repeat the process.
+
 
     We then substitute $y=Y_p\to F$ and solve for $A$ and $B$.
-
-    However, if we are unable see the correct form of $Y_p$, we can use the \textbf{variation of parameters} method.
+    \tcblower
+    For Cachy-Eular equations, we instead multiply $Y_p$ by $(\ln x)$ if $Y_p$ consists of a non-constant term that exists in $Y_c$.
 \end{theorem}
 
 \begin{theorem}
     {Variation of parameters}
+    We can use this method when we are unable to see a particular solution for $Y_p$ in the above method.
+
     Note that for $Y_c$ is in the form of $c_1y_1+c_2y_2$.
     To solve for $Y_p$ for a non-homogeneous 2nd-ODE:
     \[Y_{P}=-y_1\int\frac{y_2g(x)}{W}dx+y_2\int\frac{y_1g(x)}{W}dx,\quad W=y_1y_2'-y_2y_1'\]
+    \tcblower
+    Note that for Cachy-Eular equations, $g(x)$ is defined as the function with the coefficient of $y''$ as 1, hence, $g(x)\to \frac{g(x)}{ax^2}$.
 \end{theorem}
 
 \section{Solving ODEs with Laplace Transforms}
@@ -857,10 +877,10 @@ Differential equations are equations that involve a function and its derivatives
 
     \begin{theorem}
         {Laplace transform of derivatives}
-        The Laplace transform of the derivative of a function $f(t)$ is:
+        The Laplace transform of the derivative of a function $y(t)$ is:
         \begin{align*}
-            \mathcal{L}\{f'\}  & =sF(s)-f(0)          \\
-            \mathcal{L}\{f''\} & =s^2F(s)-sf(0)-f'(0)
+            \mathcal{L}\{y'\}  & =sY(s)-y(0)          \\
+            \mathcal{L}\{y''\} & =s^2Y(s)-sy(0)-y'(0)
         \end{align*}
         Where $f(0)$ is the initial condition of $f$.
     \end{theorem}
@@ -871,17 +891,18 @@ Differential equations are equations that involve a function and its derivatives
     \begin{table}[H]
         \begin{tabular}{rcc}
                & $f$            & $\mathcal{L}\{f\}$                \\ \hline
-            0. & $1$            & $\frac{1}{s}$                     \\\arrayrulecolor{lightgray}\hline
+            0. & $a$            & $\frac{a}{s}$                     \\\arrayrulecolor{lightgray}\hline
             0. & $e^{at}$       & $\frac{1}{s-a}$                   \\\arrayrulecolor{lightgray}\hline
+            0. & $f*g$          & $F(s)G(s)$                        \\\arrayrulecolor{lightgray}\hline
             1. & $t^n$          & $\frac{n!}{s^{n+1}}$              \\ \arrayrulecolor{lightgray}\hline
-            2. & $t^nf$         & $(-1)^n\frac{d^n}{ds^n}F(s)$      \\ \arrayrulecolor{lightgray}\hline
+            2. & $t^nf(t)$         & $(-1)^n\frac{d^n}{ds^n}\mathcal{L}\{f(t)\}$      \\ \arrayrulecolor{lightgray}\hline
             3. & $\sin at$      & $\frac{a}{s^2+a^2}$               \\ \arrayrulecolor{lightgray}\hline
             4. & $\cos at$      & $\frac{s}{s^2+a^2}$               \\ \arrayrulecolor{lightgray}\hline
             5. & $e^{at}f(t)$   & $F(s-a)$                          \\ \arrayrulecolor{lightgray}\hline
-            6. & $f(t-a)H(t-a)$ & $e^{-as}F(s)$                     \\ \arrayrulecolor{lightgray}\hline
-            7. & $f*g(t)$       & $\int_0^tf(\tau)g(t-\tau)\:d\tau$ \\ \arrayrulecolor{lightgray}\hline
+            6. & $f(t-a)H(t-a)$ & $e^{-as}\mathcal{L}\{f(t)\}$                     \\ \arrayrulecolor{lightgray}\hline
         \end{tabular}
     \end{table}
+    Convolution operator: $f*g(t)=\int_0^tf(\tau)g(t-\tau)\:d\tau$
 \end{minipage}
 
 \begin{definition}
@@ -893,7 +914,7 @@ Differential equations are equations that involve a function and its derivatives
 
 \begin{knBox}
     {Partial fractions}
-    A fraction can be decomposed into partial fractions if the degree of the numerator is less than the degree of the denominator. The following are the types of partial fractions:
+    A fraction can be decomposed into partial fractions if the degree of the numerator is \textbf{less than the degree of the denominator}. The following are the types of partial fractions:
     \begin{enumerate}
         \item $\frac{f(x)}{g(x)h(x)} = \frac{A}{g(x)} + \frac{B}{h(x)}$
         \item $\frac{f(x)}{g^2(x)h(x)} = \frac{A}{g(x)} + \frac{B}{g^2(x)} + \frac{C}{h(x)}$
@@ -905,11 +926,85 @@ Differential equations are equations that involve a function and its derivatives
     {Solving ODEs with Laplace transforms}
     To solve a linear ODE with constant coefficients using Laplace transforms:
     \begin{enumerate}
-        \item Take the Laplace transform of both sides of ODE
-        \item Solve for the Laplace transform of the function
-        \item Convert into partial fractions
-        \item Find the inverse Laplace transform of the function
+        \item Take the Laplace transform of both sides of ODE ($y(t) \to Y(s)$)
+        \item Solve for the Laplace transform of the function $Y(s)$
+        \item Convert $Y(s)$ into partial fractions
+        \item Find the inverse Laplace transform of the function ($Y(s)\to y(t)$)
     \end{enumerate}
 \end{definition}
+
+\section{Summary of formulas}
+\small
+\begin{tabular}{|l|l|}
+    \hline
+    \textbf{Concept}                    & \textbf{Formula}                                                                                                                                                                                                                                                                                     \\\hline
+    Limit exists                        & $\lim_{x\to a^+}f(x)=\lim_{x\to a^-}f(x)$                                                                                                                                                                                                                                                            \\
+    Is continuous                       & $f(a)=\lim_{x\to a}f(x)$                                                                                                                                                                                                                                                                             \\
+    Is differentiable                   & $\lim_{x\to a^-}f' = \lim_{x\to a^+}f'$ (for cased, use first principle)                                                                                                                                                                                                                             \\
+    IVT                                 & If $f$ continuous in $[a,b]$, then $\exists\ c\in[a,b]:f(c)\in[f(a),f(b)]$                                                                                                                                                                                                                           \\
+    Continuous limit law                & $\lim_{x\to a}f(g(x)) = f(\lim_{x\to a}g(x))$                                                                                                                                                                                                                                                        \\
+    Polynomial limit law                & $\lim_{x\to a}p(x) = p(a)$                                                                                                                                                                                                                                                                           \\
+    Sandwich theorem                    & $f(x)\leq g(x)\leq h(x)\to\lim_{x\to a}g(x)=L$                                                                                                                                                                                                                                                       \\
+    $\infty$ limit exists               & $\lim_{x\to a^\pm}f(x)=\infty$                                                                                                                                                                                                                                                                       \\
+    First principle                     & $f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}$                                                                                                                                                                                                                                                            \\
+    Chain rule                          & $(u(v))' = u'(v)v'$                                                                                                                                                                                                                                                                                  \\
+    Product rule                        & $(uv)' = u'v+uv'$                                                                                                                                                                                                                                                                                    \\
+    Quotient rule                       & $\left(\frac{u}{v}\right)' = \frac{u'v-uv'}{v^2}$                                                                                                                                                                                                                                                    \\
+    Inverse derivatives                 & $f^{-1'}(c) = \frac{1}{f'(f^{-1}(c))}$                                                                                                                                                                                                                                                               \\
+    Implicit differentiation            & $(y^2)' = 2yy'$                                                                                                                                                                                                                                                                                      \\
+    Logarithmic differentiation         & Take nautral log of both sides                                                                                                                                                                                                                                                                       \\
+    L'Hopital's rule                    & $\lim_{x\to a}\frac{f(x)}{g(x)}:\text{indeterminate}\implies\lim_{x\to a}\frac{f'(x)}{g'(x)}$                                                                                                                                                                                                        \\
+    MVT                                 & $ c\in(a,b):f'(c)=\frac{f(b)-f(a)}{b-a}$ given conditions                                                                                                                                                                                                                                            \\
+    Rolle's theorem                     & $c\in(a,b):f'(c)=0$ given conditions                                                                                                                                                                                                                                                                 \\
+    Axis intercepts                     & $x:\{f(x)=0,0\},\quad y:\{0,f(0)\}$                                                                                                                                                                                                                                                                  \\
+    Critical points                     & $f'(x)=0$ or undefined                                                                                                                                                                                                                                                                               \\
+    Inflection points                   & $f''(x)=0$ or undefined                                                                                                                                                                                                                                                                              \\
+    Vertical asymptotes                 & $\lim_{x\to a^\pm}f(x)=\pm\infty$                                                                                                                                                                                                                                                                    \\
+    Horizontal asymptotes               & $\lim_{x\to\pm\infty}f(x)=L$                                                                                                                                                                                                                                                                         \\
+    Area strictly increasing/decreasing & $f'(x)>0$ or $f'(x)<0$                                                                                                                                                                                                                                                                               \\
+    Concavity                           & $f''-++-\ /\ f'-+-+\ /\ f$\includegraphics[width=0.3cm,origin=c, angle=270]{./img/arrow.png}  \includegraphics[width=0.3cm,origin=c, angle=180]{./img/arrow.png}  \includegraphics[width=0.3cm,origin=c, angle=90]{./img/arrow.png}  \includegraphics[width=0.3cm,origin=c, angle=0]{./img/arrow.png} \\
+    FTC                                 & $\int_{a}^{b}f(x)dx=F(b)-F(a)$                                                                                                                                                                                                                                                                       \\
+    Second FTC                          & $\frac{d}{dx}\int_{a}^{x}f(t)dt=f(x)$                                                                                                                                                                                                                                                                \\
+    Integration by substitution         & sub $g(x)\to u$, find $du$, $x(dx)\to u(du)$                                                                                                                                                                                                                                                         \\
+    Integration by parts                & $\int ab=a\int b-\int (a'\times \int b)$, let diff term be first in $[L, I, A, T, E]$                                                                                                                                                                                                                \\
+    Joining recurring parts             & $\int ab=f(ab)+\int ab\to 2\int ab = f(ab)$                                                                                                                                                                                                                                                          \\
+    Partial fractions                   & $\frac{k}{f(x)g(x)}=\frac{A}{f(x)}+\frac{B}{g(x)}$                                                                                                                                                                                                                                                   \\
+    Trigo substitution                  & $\begin{cases}a^2-f(x)^2 & \to f(x)=a\sin\theta\\a^2+f(x)^2 & \to f(x)=a\tan\theta \\f(x)^2-a^2 & \to f(x)=a\sec\theta \\\end{cases}$                                                                                                                                                                \\
+    Volume by Washers (Disk)            & $\{f(x)\to\ \circlearrowright x\}:\quad V=\pi\int_{a}^{b}R^2(x)-r^2(x)dx$                                                                                                                                                                                                                            \\
+    Volume by Cylindrical shells        & $\{f(x)\to\ \circlearrowright y\}:\quad V=2\pi\int_{a}^{b}[x][R(x)-r(x)]dx$                                                                                                                                                                                                                          \\
+    Arc length                          & $L=\int_{a}^{b}\sqrt{1+f'^2(x)}dx$                                                                                                                                                                                                                                                                   \\
+    Area surfaces of revolution         & $\{f(x)\to\ \circlearrowright x\}:\quad A=2\pi\int_{a}^{b}f(x)\sqrt{1+f'^2(x)}dx$                                                                                                                                                                                                                    \\
+    Parametized equations (above 2)     & $\sqrt{f'^2(t)+g'^2(t)}dt$                                                                                                                                                                                                                                                                           \\\hline
+\end{tabular}
+\newpage
+\begin{tabular}{|l|l|}
+    \hline
+    \textbf{Concept}          & \textbf{Formula}                                                                                                                          \\\hline
+    ODE Integrating factors   & $y'+p(x)y=q(x)\quad : \quad\times\ e^{\int p(x)}$                                                                                         \\
+    ODE Separable             & $\frac{dy}{dx}=f(x)g(y)\quad : \quad g(y)^{-1}dy=f(x)dx$                                                                                  \\
+    ODE Bernoulli's           & $y'+p(x)y=q(x)y^n\quad n\in\mathds{R}\quad : \quad \text{sub }u=y^{1-n}\to y,y'$                                                          \\
+    ODE Riccati's             & $y'=p(x)y^2+q(x)y+r(x)\quad : \quad \text{sub }y=y(x) + u^{-1}$                                                                           \\
+    ODE Homogeneous           & $y'=f(\frac{y}{x})\quad : \quad \text{sub }u=\frac{y}{x} \to y'=u + xu'$                                                                  \\
+    Exact equations           & $dF=Mdx+Ndy\quad:\quad\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$                                                        \\
+    Solving exact equations   & $M=\frac{\partial F}{\partial x},\quad N=\frac{\partial F}{\partial y}\quad:\quad\int Mdx+g(y)=c$                                         \\
+    2ODE Homogeneous          & $ay''+by'+cy=0\quad:\quad y=e^{\lambda x}\implies a\lambda^2+b\lambda+c=0\to \lambda$                                                     \\
+    2ODE Cauchy-Euler         & $ax^2y''+bxy'+cy=0\quad:\quad y=x^\lambda\implies a(\lambda^2-\lambda)+b\lambda+c=0$                                                      \\
+    2ODE Non-homogeneous      & $ay''+by'+cy=g(x)\quad:\quad y=Y_c+Y_p$                                                                                                   \\
+    Characteristic solution   & $Y_c = \begin{cases}
+                                               \lambda_1\ne\lambda_2:                           & c_1\mathbf{e}^{\lambda_1x}+c_2\mathbf{e}^{\lambda_2x}                           \\
+                                               \lambda_1=\lambda_2:                             & c_1\mathbf{e}^{\lambda x}+c_2x\mathbf{e}^{\lambda x}                            \\
+                                               \{\lambda_{1,2}=\alpha\pm\beta i\}\in\mathds{C}: & c_{1}\mathbf{e}^{\alpha x}\cos(\beta x)+c_{2}\mathbf{e}^{\alpha x}\sin(\beta x) \\
+                                           \end{cases}$ \\
+    Method of undetermined    & $Y_p = \begin{cases}
+                                               e^{ax}:                        & Ae^{ax}                    \\
+                                               \sin x\text{ and / or }\cos x: & A\sin x+B\cos x            \\
+                                               x^n:                           & \text{n degree polynomial} \\
+                                           \end{cases}$                                                                        \\
+    Variation of parameters   & $Y_{P}=-y_1\int\frac{y_2g(x)}{W}dx+y_2\int\frac{y_1g(x)}{W}dx,\quad W=y_1y_2'-y_2y_1',Y_c=c_1y_1+c_2y_2$                                  \\
+    Cauchy $Y_c\ \&\ Y_p$     & $x \to \ln x$                                                                                                                             \\
+    Laplace derivatives       & $\mathcal{L}\{y'\}=sY(s)-y(0),\quad \mathcal{L}\{y''\}=s^2Y(s)-sy(0)-y'(0),\quad \mathcal{L}\{f*f\}=FF$                                   \\
+    Laplace rules (not given) & $\mathcal{L}\{a\} = \frac{a}{s},\quad \mathcal{L}\{e^{at}\}=\frac{1}{s-a}$                                                                \\
+    Solve by Laplace          & $y(t)\to Y(s)\to$ change subject $Y(s)\to y(t)$                                                                                           \\\hline
+\end{tabular}
 
 \end{document}

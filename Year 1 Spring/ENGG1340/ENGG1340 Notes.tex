@@ -191,48 +191,6 @@ Regular expressions, also known as regex, are a powerful tool for matching patte
 
 Note: The above keys are some of the most commonly used in regular expressions, but there are many more. The exact syntax and features available can vary between different programming languages and tools.
 \newpage
-\section{Git version control}
-\subsection{Stage and snapshot commands}
-\begin{table}[H]
-    \begin{tabular}{ll}
-        \textbf{Command}             & \textbf{Description}                                               \\ \hline
-        \lstinline|git init|         & Initializes new Git repo                                           \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git clone|        & Clones repo into a new directory                                   \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git add . |       & Adds all file changes in the working directory to the staging area \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git commit -m ''| & Commit all changes from staging area                               \\ \arrayrulecolor{lightgray}\hline
-    \end{tabular}
-\end{table}
-We can use the \Colorbox{superlightgray}{\lstinline|-m ''|} flag to add a message to the action.
-\subsection{Branching commands}
-When we initialise a repo, we are working on a single branch called the \textbf{master} branch. The latest commit is usually called \textbf{HEAD}.
-
-Branches can be created to allow changes to be made on different parts of a project \textbf{simultaneously}.
-\begin{table}[H]
-    \begin{tabular}{ll}
-        \textbf{Command}                       & \textbf{Description}                                                                    \\ \hline
-        \lstinline|git branch|                 & Lists all local branches in the current repo                                            \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git branch <name>|          & Make new branch                                                                         \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git merge <branch>|         & Combines branch history into the current branch                                         \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git checkout (-b) <branch>| & Switches branches (after creating branch \Colorbox{superlightgray}{\lstinline|branch|}) \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git log|                    & Shows commit logs                                                                       \\ \arrayrulecolor{lightgray}\hline
-    \end{tabular}
-\end{table}
-
-We can also add messages to them: \Colorbox{superlightgray}{\lstinline|git merge master -m 'Applied changes to master'|}.
-
-If the branch we're merging from hasn't been modified (up-to-date), the merge is called a \emph{fast-forward merge}.
-\subsection{Sharing and updating commands}
-Remote repositories are versions of your project that are hosted on the Internet or network somewhere.
-\begin{table}[H]
-    \begin{tabular}{ll}
-        \textbf{Command}                        & \textbf{Description}                                                                                                                                                                       \\ \hline
-        \lstinline|git remote|                  & Lists all remote repositories for the current repo                                                                                                                                         \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git remote add <name> <url>| & Add new remote repo                                                                                                                                                                        \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git push <remote> <branch>|  & \begin{tabular}[c]{@{}l@{}}Uploads / update branch to the remote repo.\\ \Colorbox{superlightgray}{\lstinline|--force|} Push even if it results in a non-fast-forward update.\end{tabular} \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git pull <remote> <branch>|  & \begin{tabular}[c]{@{}l@{}}Downloads / update branch from the remote repo. \\ \Colorbox{superlightgray}{\lstinline|--nocommit|} Don't create new merge commit \end{tabular}                \\ \arrayrulecolor{lightgray}\hline
-        \lstinline|git fetch <remote> <branch>| & Fetches the branch from the remote repo                                                                                                                                                    \\ \arrayrulecolor{lightgray}\hline
-    \end{tabular}
-\end{table}
 
 \section{Shell scripting}
 A \emph{bash} shell script has the extension \Colorbox{superlightgray}{\lstinline|.sh|}. It is a file containing a series of commands that the shell will execute.
@@ -340,5 +298,50 @@ A \Colorbox{superlightgray}{\lstinline|Makefile|} is a file that contains a set 
 
 Here's a complete example of \Colorbox{superlightgray}{\lstinline|makefile|}, all you need to know is explained by the comments:
 \lstinputlisting[language=make]{code/makefile}
+
+\section{Git version control}
+This part for general purpose. Not included in assessment. 
+\subsection{Stage and snapshot commands}
+\begin{table}[H]
+    \begin{tabular}{ll}
+        \textbf{Command}             & \textbf{Description}                                               \\ \hline
+        \lstinline|git init|         & Initializes new Git repo                                           \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git clone|        & Clones repo into a new directory                                   \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git add . |       & Adds all file changes in the working directory to the staging area \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git commit -m ''| & Commit all changes from staging area                               \\ \arrayrulecolor{lightgray}\hline
+    \end{tabular}
+\end{table}
+We can use the \Colorbox{superlightgray}{\lstinline|-m ''|} flag to add a message to the action.
+\subsection{Branching commands}
+When we initialise a repo, we are working on a single branch called the \textbf{master} branch. The latest commit is usually called \textbf{HEAD}.
+
+Branches can be created to allow changes to be made on different parts of a project \textbf{simultaneously}.
+\begin{table}[H]
+    \begin{tabular}{ll}
+        \textbf{Command}                       & \textbf{Description}                                                                    \\ \hline
+        \lstinline|git branch|                 & Lists all local branches in the current repo                                            \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git branch <name>|          & Make new branch                                                                         \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git merge <branch>|         & Combines branch history into the current branch                                         \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git checkout (-b) <branch>| & Switches branches (after creating branch \Colorbox{superlightgray}{\lstinline|branch|}) \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git log|                    & Shows commit logs                                                                       \\ \arrayrulecolor{lightgray}\hline
+    \end{tabular}
+\end{table}
+
+We can also add messages to them: \Colorbox{superlightgray}{\lstinline|git merge master -m 'Applied changes to master'|}.
+
+If the branch we're merging from hasn't been modified (up-to-date), the merge is called a \emph{fast-forward merge}.
+\subsection{Sharing and updating commands}
+Remote repositories are versions of your project that are hosted on the Internet or network somewhere.
+\begin{table}[H]
+    \begin{tabular}{ll}
+        \textbf{Command}                        & \textbf{Description}                                                                                                                                                                       \\ \hline
+        \lstinline|git remote|                  & Lists all remote repositories for the current repo                                                                                                                                         \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git remote add <name> <url>| & Add new remote repo                                                                                                                                                                        \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git push <remote> <branch>|  & \begin{tabular}[c]{@{}l@{}}Uploads / update branch to the remote repo.\\ \Colorbox{superlightgray}{\lstinline|--force|} Push even if it results in a non-fast-forward update.\end{tabular} \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git pull <remote> <branch>|  & \begin{tabular}[c]{@{}l@{}}Downloads / update branch from the remote repo. \\ \Colorbox{superlightgray}{\lstinline|--nocommit|} Don't create new merge commit \end{tabular}                \\ \arrayrulecolor{lightgray}\hline
+        \lstinline|git fetch <remote> <branch>| & Fetches the branch from the remote repo                                                                                                                                                    \\ \arrayrulecolor{lightgray}\hline
+    \end{tabular}
+\end{table}
+
 
 \end{document}

@@ -1,0 +1,26 @@
+\documentclass[a4paper, landscape]{article}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{minted}
+\usepackage{fontspec}
+
+\pagestyle{empty}
+\geometry{top=1cm, bottom=1.5cm, left=1cm, right=1cm} 
+
+\usemintedstyle{arduino}
+\setmainfont{Zed Mono}
+\setmonofont{Zed Mono}
+\setminted{
+    fontsize=\scriptsize,
+}
+
+\begin{document}
+\begin{multicols*}{3}
+    \section*{Bash}
+    \inputminted{bash}{./src.sh}
+    \section*{C++}
+    \inputminted[obeytabs=true]{cpp}{./src.cpp}
+    \section*{C}
+    \inputminted[obeytabs=true]{c}{./src.c}
+\end{multicols*}
+\end{document}
