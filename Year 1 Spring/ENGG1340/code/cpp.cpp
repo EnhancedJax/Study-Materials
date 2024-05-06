@@ -255,7 +255,7 @@ cout << *iPtr; // 0 (dereference -> value of i)
 int * a = nullptr, * b = 0; // declare multiple empty pointers
 
 int n = 0;
-int & i = 0; // reference to j
+int & i = n; // reference to n
 n++;
 cout << i; // 1
 

@@ -70,11 +70,13 @@ Resolve into partial fractions (a, b are nonzero constants and distinct from eac
     s\to b:\quad b^2                    & = C(b-a)                                                                         \\
     C                                   & = \frac{b^2}{b-a}                                                                \\
     s\to 0:\quad 0                      & = Ab^2+Bab-Ca                                                                    \\
-                                        & = \frac{a^2b^2}{(a-b)^2}+Bab-\frac{ab^2}{a-b}                                    \\
-    Bab                                 & = \frac{b^2a}{b-a}-\frac{a^2b^2}{(a-b)^2}                                        \\
-    B                                   & = \frac{b(b-a)-ab}{(b-a)^2}                                                      \\
-                                        & = \frac{b^2-2ab}{(b-a)^2}                                                        \\
-    \therefore \frac{s^2}{(s-a)(s-b)^2} & = \frac{a^2}{(a-b)^2(s-a)}+\frac{b^2-2ab}{(b-a)^2(s-b)}+\frac{b^2}{(b-a)(s-b)^2}
+    0                                   & = \frac{a^2b^2}{(a-b)^2}+Bab-\frac{ab^2}{b-a}                                    \\
+    Bab                                 & = -\frac{a^2b^2}{(a-b)^2}+\frac{ab^2}{b-a}                                       \\
+    B                                   & = -\frac{ab}{(a-b)^2}+\frac{b}{b-a}                                              \\
+    B                                   & = \frac{-b(a-b)-ab}{(a-b)^2}                                                     \\
+                                        & = \frac{-ba+b^2-ab}{(a-b)^2}                                                     \\
+                                        & = \frac{b^2-ab}{(a-b)^2}                                                         \\
+    \therefore \frac{s^2}{(s-a)(s-b)^2} & = \frac{a^2}{(a-b)^2(s-a)}+\frac{b^2-2ab}{(a-b)^2(s-b)}+\frac{b^2}{(b-a)(s-b)^2}
 \end{align*}
 \section*{Question 5}
 Solve the differential equation by the Laplace transform:

@@ -100,14 +100,14 @@
 \end{definition}
 \subsection{Vectors in 3D}
 The concepts above can be extended to 3D simply by adding another variable to the system.
-% \begin{knBox}
-%     {Coordinate direction angles in 3D}
-%     The direction of A is defined by the \emph{coordinate direction angles}: $\alpha, \beta, \gamma$, which are measured between the tail of A and the positive $x, y, z$ axes.
-%     \[\alpha=\cos^{-1}\frac{A_x}{A},\quad\beta=\cos^{-1}\frac{A_y}{A},\quad\gamma=\cos^{-1}\frac{A_z}{A}\]
-%     \begin{center}
-%         \includegraphics[width=2cm]{img/Ax.png}\includegraphics[width=2cm]{img/Ay.png}\includegraphics[width=2cm]{img/Az.png}
-%     \end{center}
-% \end{knBox}
+\begin{theorem}
+    {Coordinate direction angles}
+    The direction of A is defined by the \emph{coordinate direction angles}: $\alpha, \beta, \gamma$, which are measured between the tail of A and the positive $x, y, z$ axes.
+    \[\alpha=\cos^{-1}\frac{A_x}{A},\quad\beta=\cos^{-1}\frac{A_y}{A},\quad\gamma=\cos^{-1}\frac{A_z}{A}\]
+    \begin{center}
+        \includegraphics[width=2cm]{img/Ax.png}\includegraphics[width=2cm]{img/Ay.png}\includegraphics[width=2cm]{img/Az.png}
+    \end{center}
+\end{theorem}
 
 \section{Moment of forces}
 \begin{definition}
@@ -213,7 +213,7 @@ Axial loading refers to the application of a force along the axis of the member.
 \begin{definition}
     {Poisson's ratio}
     Poisson's ratio is the ratio of lateral strain $\epsilon_l$ to axial strain $\epsilon$, given by:
-    \[\nu=\frac{\epsilon_l}{\epsilon}\quad(\text{Ratio})\]
+    \[\nu=-\frac{\epsilon_l}{\epsilon}\quad(\text{Ratio})\]
     \tcblower
     \begin{center}
         \includegraphics[width=0.5\textwidth]{./img/poisson.png}
@@ -303,11 +303,11 @@ A member is a \emph{straight} and \emph{long} structural element that is subject
     \[I=m+r-2j\]
     Where $m$ is the number of members, $r$ is the number of reaction forces, $j$ is the number of joints.
 \end{theorem}
-\begin{theorem}
-    {Degree of indeterminacy (Frames)}
-    \[I=r-3+3n\]
-    Where $n$ is the number of members that we can cut through for the frame to be statically determinate.
-\end{theorem}
+% \begin{theorem}
+%     {Degree of indeterminacy (Frames)}
+%     \[I=r-3+3n\]
+%     Where $n$ is the number of members that we can cut through for the frame to be statically determinate.
+% \end{theorem}
 
 \subsection{Loading}
 \begin{knBox}
@@ -397,7 +397,7 @@ Some characteristics of cable structures:
 \end{itemize}
 Hence, we can use the following steps to solve for cable forces:
 \begin{enumerate}
-    \item Find reaction forces by considering joint equilibrium
+    \item Find reaction forces by considering equilibrium and moments on one side of any joints
     \item Tension in cables attached to a support can be found by $\sqrt{(R_x)^2+(R_y)^2}$
     \item Tension in cables not attached to a support can be found by $\sqrt{(R_x)^2+(R_y-\sum y)^2}$
 \end{enumerate}
@@ -556,11 +556,6 @@ By convention, we consider the \textbf{positive convention} with respect to the 
 
     The distance from the netural axis is denoted $y$ (\textbf{positive downwards}).
 \end{knBox}
-\begin{knBox}
-    {Bending section modulus}
-    The bending section modulus $W$ is given by:
-    \[W=\frac{I}{y_{max}}\ m^3\]
-\end{knBox}
 \begin{theorem}
     {Bending stress}
     The bending stress $\sigma$ is given by:
@@ -573,10 +568,8 @@ By convention, we consider the \textbf{positive convention} with respect to the 
 \end{theorem}
 \begin{theorem}
     {Maximum tensile and compressive stress}
-    \[\sigma_{max}=\frac{M_\pm}{W_{max}}\]
-    We have to find the max/min bending moment in order to calculate the respective max/min tensile and compressive stresses. Note that \textbf{tensile stress is positive} (unlike tension which is negative).
-    \[\text{max/min }M\to \sigma^\pm_\text{max}\]
-    The max/min bending moment is found by the \textbf{extreme} of the $M(x)-x$ diagram.
+    \[\sigma^\updownarrow_{max}=\frac{My_\updownarrow}{I}\]
+    The maximum tensile and compressive stress $\sigma_{max}$ at a cross section is located at the top $\sigma^\uparrow$  and bottom edge $\sigma^\downarrow$. Note that \textbf{tensile stress is positive} (unlike tension which is negative).
 \end{theorem}
 
 \section{Dynamics}
@@ -596,14 +589,24 @@ By convention, we consider the \textbf{positive convention} with respect to the 
 \begin{definition}
     {Newton's third law}
     For every action, there is an equal and opposite reaction. This gives rises to forces like friction, normal and tension forces.
+    \tcblower
+    The \textbf{interia force} acting on an object is the force that arises from the object's acceleration, and is equal to $-ma$.
 \end{definition}
+
+\begin{knBox}
+    {Friction}
+    Friction is a force that opposes the motion of an object. It is given by:
+    \[F_f=\mu mg\]
+    Where $F_f$ is the frictional force, $\mu$ is the coefficient of friction, $m$ is the mass, and $g$ is
+\end{knBox}
 
 \subsection{Motion}
 \begin{theorem}
     {Motion equations}
     The following are the equations of motion:
     \begin{itemize}
-        \item \textbf{Average velocity: }$v=\frac{s}{t}$
+        \item \textbf{Average velocity: }$v=\frac{ds_t}{dt}$
+        \item \textbf{Average acceleration: }$a=\frac{dv_t}{dt}$
         \item $s=ut+\frac{1}{2}at^2$
         \item $v=u+at$
         \item $v^2=u^2+2as$
@@ -614,16 +617,34 @@ By convention, we consider the \textbf{positive convention} with respect to the 
 
 \begin{theorem}
     {Circular  motion}
-    The following are the equations of motion for circular  motion:
+    The following are the equations of motion for circular motion:
     \begin{itemize}
-        \item $a_c = \frac{v_i^2}{r}$
-        \item $a_c = r\omega^2$
-        \item $\omega = \frac{\Delta\theta}{\Delta t}=\frac{2\pi r}{t} = \frac{v_i}{r}$
-        \item $v_i = r\omega$
-        \item $F_c = \frac{mv_i^2}{r} = ma_c$
+        \item $\omega = \frac{\Delta\theta}{\Delta t}=\frac{2\pi r}{t} = \frac{v_t}{r}$
+        \item $v_t = r\omega$
+        \item $a_c = r\omega^2 = \frac{v_t^2}{r}$
+        \item $a_t = r a_c$
+        \item $F_c = \frac{mv_t^2}{r} = ma_c$
+        \item \textbf{Total acceleration: }$a_{to} = \sqrt{a_t^2+a_c^2}$
+        \item \textbf{Accelerating cylinder/disk: }$F = \frac12mra,\ Fr=Ia_c$
+              $I_{disk}=\frac12mr^2$
     \end{itemize}
-    Where $a_c$ is the centripetal acceleration, $v_i$ is the instantaneous velocity, $r$ is the radius, $\omega$ is the angular velocity, and $\theta$ is the angle.
+    \tcblower
+    $\omega$ is the angular velocity, which describes change in angle over time\\
+    $\{v_t,\ a_t\}$ is the tangential velocity and acceleration, which is tangential to any point on the radius\\
+    $\{a_c,\ F_c\}$ is the centripetal acceleration and force, which are perpendicular to tangential quantities. They act on the object, hence they be seen as normal forces.\\
+    $a_{to}$ is the total acceleration, which is the resultant of $a_t$ and $a_c$
 \end{theorem}
+
+\begin{knBox}
+    {Instantaneous center of zero velocity}
+    The instantaneous center of zero velocity is the point on a rotating object that has zero velocity. The velocity is perpendicular to the radius (edge) at that point.
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{./img/ic.png}
+    \end{center}
+    The velocity at any point is given by:
+    \[v=\omega r\]
+    Where $r$ is the distance from the IC.
+\end{knBox}
 
 \subsection{Momentum and impulse}
 
@@ -633,8 +654,8 @@ By convention, we consider the \textbf{positive convention} with respect to the 
     \[p=mv\]
     The principle of conservation of momentum states that the total momentum of a system remains constant if no external forces act on it.
     \[F_{ext}=0\ ?\ p=\text{const}\]
-    The angular momentum about $O$ is given by:
-    \[H_O=mv_i\times r\]
+    The angular momentum about a point $O$ is given by:
+    \[H_O=Iw=mv_i\times r\]
 \end{definition}
 
 \begin{theorem}
@@ -650,7 +671,7 @@ By convention, we consider the \textbf{positive convention} with respect to the 
 \end{theorem}
 
 \begin{definition}
-    {Impulse}
+    {Impulse (impact)}
     Impulse is the change in momentum of an object. It is given by:
     \[\Delta p=F\Delta t\]
 \end{definition}
@@ -664,6 +685,8 @@ By convention, we consider the \textbf{positive convention} with respect to the 
     \begin{itemize}
         \item $x=A\sin(wt+\phi)$
         \item $f=\frac{1}{T}=\frac{w}{2\pi}$
+        \item $T_{vertical} = 2\pi\sqrt{\frac{m}{k}}$
+        \item $T_{swing} = 2\pi\sqrt{\frac{l}{g}}$
     \end{itemize}
     Where $A$ is the amplitude. $\phi$ represents the angle of which the motion starts. ($\Delta\phi$ for $x$ from $x=0$ to $x:t=0$ )
 \end{theorem}
@@ -708,7 +731,7 @@ By convention, we consider the \textbf{positive convention} with respect to the 
 
 \begin{definition}
     {Work}
-    Work is the product of the force acting on an object and the distance it moves in the direction of the force. It is given by:
+    Work done is the energy required to move an object. It is given by:
     \[W=Fd\]
 \end{definition}
 
@@ -719,6 +742,8 @@ By convention, we consider the \textbf{positive convention} with respect to the 
         \item \textbf{Kinetic: }$E_k=\frac{1}{2}mv^2$
         \item \textbf{Gravitational potential: }$E_{GP}=mgh$
         \item \textbf{Elastic potential: }$E_{EP}=\frac{1}{2}kx^2$
+        \item \textbf{Friction: } $E_{f}=F_f\times d=\mu mgd$
+        \item \textbf{Rotational: } $E_{r}=\frac{1}{2}Iw^2=\frac14mv_t^2$
     \end{itemize}
     The energy of a spring-mass system is given by:
     \[E=E_k+E_{EP}\]
@@ -736,6 +761,54 @@ By convention, we consider the \textbf{positive convention} with respect to the 
     \[P=\frac{W}{t}\]
 \end{definition}
 
+\begin{theorem}
+    {Power and acceleration}
+    The power required to accelerate an object is given by:
+    \[P=Fv\]
+    Where $F$ is the force, and $v$ is the velocity.
+\end{theorem}
 
+\section{Summary of formulas}
+\small
+\begin{tabular}{|l|l|}
+    \hline
+    \textbf{Concept}                  & \textbf{Formula}                                                                        \\\hline
+    Force components                  & $F_x=F\cos\theta,\quad F_y=F\sin\theta$                                                 \\
+    Moving Forces                     & $\vec{F}=|F|\times\frac{r}{|r|}$                                                        \\
+    Coordinate angles                 & $F\cos\alpha = F_x$                                                                     \\
+    Moment of a force                 & $M=r\times F$                                                                           \\
+    Stress                            & $\sigma=\frac{F}{A}$                                                                    \\
+    Eccentric loading and stress      & $\sigma=\frac{\sum F}{wd}\pm \frac{6F\times e}{d\times w^2}$                            \\
+    Strain                            & $\epsilon=\frac{\Delta x}{x}$                                                           \\
+    Young's Modulus                   & $E=\frac{\sigma}{\epsilon}=\frac{Fx}{A\Delta x}$                                        \\
+    Poisson's ratio                   & $\nu=-\frac{\epsilon_l}{\epsilon}$                                                      \\
+    Water pressure on surface         & $F = \frac{\rho gdwL}{2}$                                                               \\
+    Degree of indeterminacy (Trusses) & $I=m+r-2j$                                                                              \\
+    Centroids                         & $\bar{x}=\frac{\sum (A_i x_i)}{\sum A_i},\quad \bar{y}=\frac{\sum (A_i y_i)}{\sum A_i}$ \\
+    Moment of inertia for rectangles  & $I_x=\frac{bh^3}{12},\quad I_y=\frac{hb^3}{12}$                                         \\
+    Parallel axis theorem             & $I_{x'}=I_{x}+Ad^2$                                                                     \\
+    Moment of inertia for composites  & $I_x=I_{x1\to\bar{y}} + I_{x2\to\bar{y}},\quad I_y=I_{y1\to\bar{x}} + I_{y2\to\bar{x}}$ \\
+    Internal forces relationship      & $\frac{dM}{dx}=V,\quad \frac{dV}{dx}=-w$                                                \\
+    Bending stress                    & $\sigma=\frac{My}{I}$                                                                   \\
+    Friction                          & $F_f=\mu mg$                                                                            \\
+    Motion equations                  & $s=ut+\frac{1}{2}at^2,\ v=u+at,\ v^2=u^2+2as,\ s=\frac{(v+u)t}{2}$                      \\
+    Angular velocity                  & $\omega = \frac{\Delta\theta}{\Delta t}=\frac{2\pi r}{t} = \frac{v_t}{r}$               \\
+    Tangential quantities             & $v_t = r\omega,\quad a_t = r a_c$                                                       \\
+    Centripetal quantities            & $a_c = r\omega^2 = \frac{v_t^2}{r},\quad F_c = \frac{mv_t^2}{r} = ma_c$                 \\
+    Torque                            & $Fr = Ia_c$                                                                             \\
+    Momentum                          & $p=mv, \quad H_O=Iw=mv_i\times r,e=|\frac{v_{2}-v_{1}}{u_{1}-u_{2}}|$                   \\
+    Impulse (impact)                  & $\Delta p=F\Delta t$                                                                    \\
+    Natural frequency                 & $w_0=\sqrt{\frac{k}{m}}$                                                                \\
+    Harmonic periods                  & $T_{vertical} = 2\pi\sqrt{\frac{m}{k}},\quad T_{swing} = 2\pi\sqrt{\frac{l}{g}}$        \\
+    Hooke's law                       & $F=-kx,F_d=-cv$                                                                         \\
+    Critical damping                  & $c_{crit}=2\sqrt{mk}$                                                                   \\
+    Work                              & $W=Fd$                                                                                  \\
+    Kinetic energy                    & $E_k=\frac{1}{2}mv^2$                                                                   \\
+    Gravitational potential energy    & $E_{GP}=mgh$                                                                            \\
+    Elastic potential energy          & $E_{EP}=\frac{1}{2}kx^2$                                                                \\
+    Friction energy                   & $E_{f}=F_f\times d=\mu mgd$                                                             \\
+    Rotational energy                 & $E_{r}=\frac{1}{2}Iw^2=\frac14mv_t^2$                                                   \\
+    Power                             & $P=\frac{W}{t},\quad P=Fv$                                                              \\\hline
+\end{tabular}
 
 \end{document}
