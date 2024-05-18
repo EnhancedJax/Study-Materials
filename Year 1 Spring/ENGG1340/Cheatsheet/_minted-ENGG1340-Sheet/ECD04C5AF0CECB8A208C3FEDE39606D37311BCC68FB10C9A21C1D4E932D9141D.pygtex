@@ -33,5 +33,10 @@
 \PYG{c+cm}{/* \PYGZhy{} Dynamic memory allocation in C \PYGZhy{} */}
 \PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdlib.h\PYGZgt{}}\PYG{c+c1}{                         // Include standard library}
 \PYG{k+kt}{int}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{a}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{malloc}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{));}\PYG{+w}{   }\PYG{c+c1}{// Allocate memory for 10 integers}
+\PYG{c+c1}{// A is an array of 10 integers}
 \PYG{n}{free}\PYG{p}{(}\PYG{n}{a}\PYG{p}{);}\PYG{+w}{                                    }\PYG{c+c1}{// Free memory}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{argc}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{argv}\PYG{p}{[])}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{}}\PYG{+w}{ }
+\PYG{c+c1}{// argc number of arguments (including program name)}
+\PYG{c+c1}{// argv array of arguments}
 \end{Verbatim}

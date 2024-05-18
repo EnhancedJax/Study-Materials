@@ -1,0 +1,138 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Declarations \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}!/bin/bash}
+\PYG{n+nb}{read}\PYG{+w}{ }varname\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Read input into varname}
+\PYG{c+c1}{\PYGZsh{} variable declaration explicitly no space around =}
+\PYG{n+nv}{varname}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}hello\PYGZdq{}}
+\PYG{n+nv}{varname}\PYG{o}{=}\PYG{l+m}{1}
+\PYG{n+nv}{varname}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{n+nb}{command}\PYG{k}{)}
+\PYG{n+nv}{varname}\PYG{o}{=}\PYG{k}{\PYGZdl{}((}\PYG{l+m}{1}\PYG{o}{+}\PYG{l+m}{2}\PYG{k}{))}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Arguments \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+\PYG{n+nv}{\PYGZdl{}0}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Command}
+\PYG{n+nv}{\PYGZdl{}1}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} First argument}
+\PYG{n+nv}{\PYGZdl{}\PYGZsh{}}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Number of arguments}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Conditionals \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}n}\PYG{+w}{ }\PYGZhy{}\PYGZsh{}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}n}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{             }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}n is eq/ne/lt/le/gt/ge than \PYGZdl{}n}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}var}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}var is not empty}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}var}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}hello\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}var is equal to \PYGZdq{}hello\PYGZdq{}}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}var}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }!\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}hello\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}var is not equal to \PYGZdq{}hello\PYGZdq{}}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}var}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}\PYGZgt{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}hello\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}var is sorted after \PYGZdq{}hello\PYGZdq{}}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}var}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}hello\PYGZdq{}}\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}var is sorted before \PYGZdq{}hello\PYGZdq{}}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}e\PYG{+w}{ }dir\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} dir exists}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}d\PYG{+w}{ }dir\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} dir is a directory}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }file\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} file is a regular file}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }file\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} file is readable}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }file\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} file is writable}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}x\PYG{+w}{ }file\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} file is executable}
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }file\PYG{+w}{ }\PYG{o}{]}\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} file is not empty}
+
+\PYG{k}{if}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }condition1\PYG{+w}{ }\PYG{o}{]}
+\PYG{k}{then}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} }
+\PYG{k}{elif}\PYG{+w}{ }\PYG{o}{[}\PYG{+w}{ }condition2\PYG{+w}{ }\PYG{o}{]}
+\PYG{k}{then}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} }
+\PYG{k}{else}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{}}
+\PYG{k}{fi}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Piping and redirection \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+command1\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }command2\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Pipe output of command1 to input of command2}
+\PYG{n+nb}{command}\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }file\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} Redirect output of command to file}
+\PYG{n+nb}{command}\PYG{+w}{ }\PYGZlt{}\PYG{+w}{ }file\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} Redirect input of command from file}
+\PYG{n+nb}{command}\PYG{+w}{ }\PYGZgt{}\PYGZgt{}\PYG{+w}{ }file\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Append output of command to file}
+\PYG{n+nb}{command}\PYG{+w}{ }\PYG{l+m}{2}\PYGZgt{}\PYG{+w}{ }file\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Redirect error of command to file}
+\PYG{n+nb}{command}\PYG{+w}{ }\PYGZlt{}\PYG{+w}{ }file1\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }file2\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Redirect input from file1 and output to file2}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} String operations \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+\PYG{n+nv}{s}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}hello\PYGZdq{}}
+\PYG{l+s+si}{\PYGZdl{}\PYGZob{}\PYGZsh{}}\PYG{n+nv}{s}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Length of string}
+\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{s}\PYG{p}{:}\PYG{n+nv}{1}\PYG{p}{:}\PYG{n+nv}{4}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Substring: \PYGZdq{}ello\PYGZdq{}}
+\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{s}\PYG{p}{//o/a}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Replace all o with a}
+\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nv}{s}\PYG{p}{/o/a}\PYG{l+s+si}{\PYGZcb{}}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Replace first o with a}
+\PYG{c+c1}{\PYGZsh{} The replacements are case sensitive}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Basic commands \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+g++\PYG{+w}{ }input.cpp\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }output\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Compile input.cpp to output}
+
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}varname}\PYG{l+s+s2}{ world\PYGZdq{}}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} hello world}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}varname world\PYGZsq{}}\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}varname world}
+
+\PYG{n+nb}{pwd}\PYG{+w}{             }\PYG{c+c1}{\PYGZsh{} Print working directory}
+ls\PYG{+w}{              }\PYG{c+c1}{\PYGZsh{} List files in directory}
+ls\PYG{+w}{ }\PYGZhy{}l\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} List files in directory with details}
+ls\PYG{+w}{ }\PYGZhy{}a\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} List all files in directory}
+ls\PYG{+w}{ }\PYGZhy{}al\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} List all files in directory with details}
+ls\PYG{+w}{ }*.txt\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} List all txt files}
+\PYG{n+nb}{cd}\PYG{+w}{ }path\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Change directory to path}
+mv\PYG{+w}{ }old\PYG{+w}{ }new\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Rename old to new}
+cp\PYG{+w}{ }old\PYG{+w}{ }new\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Copy old to new}
+cp\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }old\PYG{+w}{ }new\PYG{+w}{   }\PYG{c+c1}{\PYGZsh{} Copy old to new recursively}
+rm\PYG{+w}{ }file\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Remove file}
+touch\PYG{+w}{ }file\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} Create file}
+cat\PYG{+w}{ }file\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Print file content}
+man\PYG{+w}{ }\PYG{n+nb}{command}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} Manual for command}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{} File reading and modification \PYGZhy{}\PYGZhy{} \PYGZsh{}}
+chmod\PYG{+w}{ }\PYG{o}{[}u/g/o\PYG{o}{][}+/\PYGZhy{}/\PYG{o}{=][}r/w/x\PYG{o}{]}\PYG{+w}{ }file\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} Change file permissions}
+chmod\PYG{+w}{ }\PYG{l+m}{777}\PYG{+w}{ }file\PYG{+w}{                      }\PYG{c+c1}{\PYGZsh{} Give all permissions to file}
+\PYG{c+c1}{\PYGZsh{} for each digit, it is made up of the sum of numbers 4, 2, 1}
+\PYG{c+c1}{\PYGZsh{} for each number used in the sum, the represents permission r, w, x}
+\PYG{c+c1}{\PYGZsh{} the digits represents u, g, o}
+
+cat\PYG{+w}{ }file\PYG{+w}{                }\PYG{c+c1}{\PYGZsh{} File content}
+wc\PYG{+w}{                      }\PYG{c+c1}{\PYGZsh{} Word count}
+wc\PYG{+w}{ }\PYGZhy{}l\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} Line count}
+wc\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} Word count}
+wc\PYG{+w}{ }\PYGZhy{}m\PYG{+w}{                   }\PYG{c+c1}{\PYGZsh{} Character count}
+cut\PYG{+w}{ }\PYGZhy{}d\PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{+w}{ }\PYGZhy{}f1\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} Gets only first column}
+sort\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} Sort alphabetically}
+sort\PYG{+w}{ }\PYGZhy{}nr\PYG{+w}{                }\PYG{c+c1}{\PYGZsh{} Sort numerically reversed}
+sort\PYG{+w}{ }\PYGZhy{}t\PYG{l+s+s1}{\PYGZsq{},\PYGZsq{}}\PYG{+w}{ }\PYGZhy{}k2\PYG{+w}{          }\PYG{c+c1}{\PYGZsh{} Sort by second column with delimiter \PYGZsq{},\PYGZsq{}}
+uniq\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} Remove adjacent duplicate lines}
+uniq\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{                 }\PYG{c+c1}{\PYGZsh{} Prefix each output line w/ count of repeat}
+grep\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}text\PYGZsq{}}\PYG{+w}{             }\PYG{c+c1}{\PYGZsh{} Print lines containing \PYGZsq{}text\PYGZsq{}}
+grep\PYG{+w}{ }\PYGZhy{}E\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}regex\PYGZsq{}}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} Print lines matching regex}
+grep\PYG{+w}{ }\PYGZhy{}oE\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}regex\PYGZsq{}}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Print only matching text on differnet lines}
+head\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{5}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} Print first 5 lines}
+tr\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}[:upper:]\PYGZsq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}[:lower:]\PYGZsq{}}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Convert uppercase to lowercase}
+tr\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}[:space:]\PYGZsq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Replace spaces with newlines}
+sed\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}s/old/new/g\PYGZsq{}}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} Replace old with new}
+awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}1\PYGZcb{}\PYGZsq{}}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} Print first column separated by space}
+awk\PYG{+w}{ }\PYGZhy{}F\PYG{l+s+s1}{\PYGZsq{},\PYGZsq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}2\PYGZcb{}\PYGZsq{}}\PYG{+w}{  }\PYG{c+c1}{\PYGZsh{} Print second column separated by comma}
+awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}/super/ \PYGZob{}print \PYGZdl{}1\PYGZcb{}\PYGZsq{}}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} Print first column of lines containing \PYGZsq{}super\PYGZsq{}}
+awk\PYG{+w}{ }\PYGZhy{}v\PYG{+w}{ }\PYG{n+nv}{max}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}max\PYGZus{}count}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}1 == max \PYGZob{}print \PYGZdl{}2\PYGZcb{}\PYGZsq{}}
+\PYG{c+c1}{\PYGZsh{} Print second column of lines with first column equal to max\PYGZus{}count}
+
+\PYG{k}{while}\PYG{+w}{ }\PYG{n+nb}{read}\PYG{+w}{ }\PYGZhy{}r\PYG{+w}{ }line\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }word\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}line}\PYG{p}{;}\PYG{+w}{ }\PYG{k}{do}
+\PYG{+w}{        }\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}word}\PYG{l+s+s2}{\PYGZdq{}}
+\PYG{+w}{    }\PYG{k}{done}
+\PYG{k}{done}\PYG{+w}{ }\PYGZlt{}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}myfile.txt\PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Examples \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+cat\PYG{+w}{ }file\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }uniq\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }sort\PYG{+w}{ }\PYGZhy{}nr\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }head\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{5}\PYG{+w}{ }
+\PYG{c+c1}{\PYGZsh{} Top 5 most frequent lines with count prefix}
+\PYG{n+nv}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}hi HI hi hi1\PYGZdq{}}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}s}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }tr\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}[:upper:]\PYGZsq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}[:lower:]\PYGZsq{}}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} hi hi hi hi1}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}s}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oE\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}hi\PYGZsq{}}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} hi\PYGZbs{}n hi\PYGZbs{}n hi}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}s}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}E\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}hi\PYGZsq{}}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} hi HI hi hi1 (matches line)}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}s}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }grep\PYG{+w}{ }\PYGZhy{}oE\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZbs{}bhi\PYGZbs{}b\PYGZsq{}}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} hi\PYGZbs{}nhi}
+
+\PYG{c+c1}{\PYGZsh{} Get each word in the file}
+\PYG{n+nv}{words}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}cat\PYG{+w}{ }myfile.txt\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }tr\PYG{+w}{ }\PYGZhy{}s\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}[:space:]\PYGZsq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{k}{)}
+\PYG{c+c1}{\PYGZsh{} Count the occurrence of each word}
+\PYG{n+nv}{word\PYGZus{}counts}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}words}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }sort\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }uniq\PYG{+w}{ }\PYGZhy{}c\PYG{k}{)}
+\PYG{c+c1}{\PYGZsh{} Sort the word counts in descending order}
+\PYG{n+nv}{sorted\PYGZus{}counts}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}word\PYGZus{}counts}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }sort\PYG{+w}{ }\PYGZhy{}nr\PYG{k}{)}
+\PYG{c+c1}{\PYGZsh{} Find the maximum count}
+\PYG{n+nv}{max\PYGZus{}count}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}sorted\PYGZus{}counts}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }head\PYG{+w}{ }\PYGZhy{}n\PYG{+w}{ }\PYG{l+m}{1}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }awk\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZob{}print \PYGZdl{}1\PYGZcb{}\PYGZsq{}}\PYG{k}{)}\PYG{o}{]}
+\PYG{c+c1}{\PYGZsh{} Filter the words with the maximum count }
+\PYG{n+nv}{frequent}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}sorted\PYGZus{}counts}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }awk\PYG{+w}{ }\PYGZhy{}v\PYG{+w}{ }\PYG{n+nv}{max}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}max\PYGZus{}count}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}1 == max \PYGZob{}print \PYGZdl{}2\PYGZcb{}\PYGZsq{}}\PYG{k}{)}
+\PYG{c+c1}{\PYGZsh{} Sort the most frequent words alphabetically}
+\PYG{n+nv}{sorted\PYGZus{}words}\PYG{o}{=}\PYG{k}{\PYGZdl{}(}\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}frequent}\PYG{l+s+s2}{\PYGZdq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }sort\PYG{k}{)}
+\PYG{c+c1}{\PYGZsh{} Print the most frequent words}
+\PYG{n+nb}{echo}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}}\PYG{n+nv}{\PYGZdl{}sorted\PYGZus{}words}\PYG{l+s+s2}{\PYGZdq{}}
+\end{Verbatim}

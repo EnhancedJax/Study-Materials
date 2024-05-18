@@ -32,4 +32,9 @@ sprintf(s, "%s%d", "hello", 123);           // Concatenate string and int
 /* - Dynamic memory allocation in C - */
 #include <stdlib.h>                         // Include standard library
 int *a = (int*) malloc(10 * sizeof(int));   // Allocate memory for 10 integers
+// A is an array of 10 integers
 free(a);                                    // Free memory
+
+int main(int argc, char *argv[]) {} 
+// argc number of arguments (including program name)
+// argv array of arguments
