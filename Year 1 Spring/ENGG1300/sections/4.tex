@@ -17,15 +17,30 @@
 \begin{definition}
     {Newton's third law}
     For every action, there is an equal and opposite reaction. This gives rises to forces like friction, normal and tension forces.
-    \tcblower
-    The \textbf{interia force} acting on an object is the force that arises from the object's acceleration, and is equal to $-ma$.
 \end{definition}
 
 \begin{knBox}
     {Friction}
     Friction is a force that opposes the motion of an object. It is given by:
-    \[F_f=\mu mg\]
-    Where $F_f$ is the frictional force, $\mu$ is the coefficient of friction, $m$ is the mass, and $g$ is
+    \[F_f=\mu N\]
+    Where $\mu$ is the coefficient of friction and $N$ is the normal force experienced by the object.
+\end{knBox}
+
+\begin{knBox}
+    {Conservative force}
+    Conservative forces are forces that do not depend on the path taken by an object. They also have no lost in energy. They include:
+    \begin{enumerate}
+        \item Gravitational force
+        \item Elastic force
+        \item Electric force
+    \end{enumerate}
+\end{knBox}
+
+\begin{knBox}
+    {Inertia force}
+    Inertia force is the preceived force from the perspective of an accelerating object.
+    \tcblower
+    For a person in an elevator accelerating upwards at $a$, the inertia force is $ma$ downwards.
 \end{knBox}
 
 \subsection{Motion}
@@ -64,14 +79,19 @@
 \end{theorem}
 
 \begin{knBox}
+    {Direction of angular velocity}
+    The direction of the angular velocity is given by the right-hand rule. If the fingers of the right hand curl in the direction of rotation, the thumb points in the direction of the angular velocity.
+\end{knBox}
+
+\begin{knBox}
     {Instantaneous center of zero velocity}
     The instantaneous center of zero velocity is the point on a rotating object that has zero velocity. The velocity is perpendicular to the radius (edge) at that point.
     \begin{center}
         \includegraphics[width=0.5\textwidth]{./img/ic.png}
     \end{center}
     The velocity at any point is given by:
-    \[v=\omega r\]
-    Where $r$ is the distance from the IC.
+    \[v=\omega d\]
+    Where $d$ is the distance from the IC.
 \end{knBox}
 
 \subsection{Momentum and impulse}
@@ -170,7 +190,7 @@
         \item \textbf{Kinetic: }$E_k=\frac{1}{2}mv^2$
         \item \textbf{Gravitational potential: }$E_{GP}=mgh$
         \item \textbf{Elastic potential: }$E_{EP}=\frac{1}{2}kx^2$
-        \item \textbf{Friction: } $E_{f}=F_f\times d=\mu mgd$
+        \item \textbf{Friction: } $E_{f}=F_f\times d=\mu Nd$
         \item \textbf{Rotational: } $E_{r}=\frac{1}{2}Iw^2=\frac14mv_t^2$
     \end{itemize}
     The energy of a spring-mass system is given by:
@@ -181,6 +201,7 @@
     {Conversation of energy}
     The principle of conservation of energy states that the total energy of a system remains constant if no external forces act on it.
     \[F_{ext}=0\ ?\ E=\text{const}\]
+    This means in a system, energy is converted from one form to another. Use this fact to solve for unknowns.
 \end{theorem}
 
 \begin{definition}

@@ -1,0 +1,51 @@
+\section{Recursion}
+
+Solves a problem by breaking it down into smaller instances of the same problem. If you can solve a smaller instance of the problem, you can solve a larger one.
+
+\begin{enumerate}
+    \item \textbf{Base Case(s)}: The simplest instance(s) of the problem that can be solved directly without further recursion.
+    \item \textbf{Recursive Case(s)}: More complex instances of the problem that are solved by breaking them down and making recursive calls.
+\end{enumerate}
+
+\subsection{Recurrence relation}
+
+\begin{definition}
+    {Recurrence relation / equation}
+    A mathematical equation which is defined in terms of itself.
+    \[f(n)=\begin{cases}\quad1&n=1\\2f(n-1)+1&n>1\end{cases}\]
+\end{definition}
+
+\begin{theorem}
+    {Solve a recurrence relation - subsitution method}
+    We "solve" a recurrence relation by finding a closed-form expression for $f(n)$ in terms of $n$.
+    \begin{enumerate}
+        \item Expand the relation as $f(n)$ to 3 levels
+        \item Observe the pattern of $f(n)$
+        \item Generalize the pattern in terms of the level $k$
+        \item Using the base case to define $k$ in terms of $n$
+        \item Subsitute $k$ back into the generalization
+    \end{enumerate}
+    \tcblower
+    \ref{eg:solve_re_1}
+    \label{thm:solve_re}
+\end{theorem}
+
+% \begin{theorem}
+%     {The master theorem}
+%     The master theorem can give us the order of growth (Big Theta) of a recurrence relation.
+%     % For $T(n) = a\cdot T(\frac{n}{b}) + f(n),\quad a > 0,\ b > 1$, we have:
+% \end{theorem}
+
+\subsection{Mathematical induction}
+
+\begin{definition}
+    {Mathematical induction}
+    A method of mathematical proof that proves a statement for all natural numbers.
+    \begin{enumerate}
+        \item \textbf{Base case}: Prove the statement for the first natural number in the statement's range.
+        \item \textbf{Inductive step}: Prove that if the statement is true for $n$, then it is also true for $n+1$.
+    \end{enumerate}
+    \tcblower
+    \ref{eg:mi_1}
+    \label{def:mi}
+\end{definition}

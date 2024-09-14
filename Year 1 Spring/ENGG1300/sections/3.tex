@@ -80,19 +80,31 @@ When we consider the internal forces of a beam, we take a \emph{cross section} a
 
 \end{definition}
 
-Couple moments can be treated as a rotational moment at clock-direction the arrows are pointing to.
+\begin{knBox}
+    {Couple moments}
+    When considering couple moments, their effect is \textbf{independent} of the point of application, but they have no effect if they are not in the cut of the beam during analysis. They \textbf{do not exert any force} on the beam, but will affect the reaction forces at supports.
+\end{knBox}
 
 \begin{theorem}
     {Finding internal forces by side}
-    To find the internal forces at cross-section $C$, we consider the \emph{left} and \emph{right} side of the section:
+    To find the internal forces at cross-section $C$ \emph{where no loads apply}, we consider the \emph{left} and \emph{right} side of the section:
     \begin{itemize}
         \item \textbf{V:} $\sum F$ on either side
         \item \textbf{M:} $\sum M_C$ on either side about $C$
     \end{itemize}
     Note that the sums are all \textbf{signed by convention}. (e.g. A force $F$ is positive if it points upwards on the left side.)
-
+    
     This also gives us the fact that $\sum F_L =\sum F_R$ and $\sum M_L =\sum M_R$, signed by convention on both sides.
 \end{theorem}
+
+\begin{knBox}
+    {Finding interal forces on left and right sides}
+    To find the interal forces at the left and right cross-section at a point $C$ where loads or moments apply:
+    \begin{enumerate}
+        \item Left side: $\{\overset{R}{\uparrow}====\overset{V}{\downarrow}\overset{M}{\circlearrowleft}\dots\}$
+        \item Right side: $\{\dots\overset{V}{\uparrow}\overset{M}{\circlearrowright}====\overset{R}{\uparrow}\}$
+    \end{enumerate}
+\end{knBox}
 
 \subsection{Diagramming internal forces}
 \begin{definition}
@@ -151,6 +163,11 @@ By convention, we consider the \textbf{positive convention} with respect to the 
     The neutral axis always \textbf{passes through the centroid} of the beam. It is \emph{netural} as the \textbf{length remains unchanged} for the surface that the axis passes through.
 
     The distance from the netural axis is denoted $y$ (\textbf{positive downwards}).
+\end{knBox}
+\begin{knBox}
+    {Section modulus}
+    The section modulus is given by:
+    \[Z=W_z=\frac{I}{y}\]
 \end{knBox}
 \begin{theorem}
     {Bending stress}
