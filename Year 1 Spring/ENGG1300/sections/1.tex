@@ -8,6 +8,14 @@
 \begin{knBox}[]{Unit vectors}
     They are vectors with magnitude 1. $\hat{A}=\frac{\vec{A}}{|\vec{A}|}$
 \end{knBox}
+\begin{knBox}
+    {Relative vectors (resultant vectors)}
+    We can find the direction in which another object moves relative to you (your movement vector) by the following steps:
+    \begin{enumerate}
+        \item Draw the two vectors pointing head-to-head
+        \item Draw the resultant vector from the tail of the other vector to your vector
+    \end{enumerate}
+\end{knBox}
 
 \subsection{Coplanar vectors}
 \begin{definition}
@@ -34,51 +42,22 @@
     {Magnitude of forces}
     The magnitude will simply be the square root of the sum of squared components of the force:
     \[|F|=\sqrt{F_x^2+F_y^2+\dots}\]
-
 \end{knBox}
-\begin{definition}
-    {Moving vectors by their position vectors}
-    We can move a force $F$ to a point using its position vector $r$ (pointing to their tail), using the following definition:
-    \[\vec{F}=|F|\times\hat{F}=|F|\times\frac{r}{|r|}\]
-    The position vectors are in Cartesian form, so the moved vectors will also be in Cartesian form.
-    \tcblower
-    \begin{center}
-        Consider the following graph:
-        \begin{figure}[H]
-            \centering
-            \resizebox{0.15\textwidth}{!}{%
-                \begin{circuitikz}
-                    \tikzstyle{every node}=[font=\normalsize]
-                    \node [font=\normalsize] at (10.5,10) {F = 100N};
-                    \draw [->, >=Stealth] (8.25,11) .. controls (9.75,9.75) and (9.75,9.75) .. (11,8.5);
-                    \draw [dashed] (8.25,11) .. controls (8.25,9.75) and (8.25,9.75) .. (8.25,8.5);
-                    \draw [dashed] (8.25,8.5) .. controls (9.75,8.5) and (9.75,8.5) .. (11,8.5);
-                    \node [font=\normalsize] at (7.75,9.5) {4};
-                    \node [font=\normalsize] at (9.5,8) {4};
-                    \node [font=\normalsize] at (8.25,11.25) {A};
-                    \node [font=\normalsize] at (11.25,8.25) {B};
-                \end{circuitikz}
-            }%
-        \end{figure}
 
-        First, we consider $r_{AB}$. From the graph:
-        \[\vec{r_{AB}}=4\boldsymbol{i}+4\boldsymbol{j}\]
-        Then, we find the magnitude of $r_{AB}$:
-        \[|r_{AB}|=\sqrt{4^2+4^2}=5.65\dots\]
-        Finally, we apply our formula for $F$:
-        \begin{align*}
-            \vec{F}=|F|\times\frac{r_{AB}}{|r_{AB}|} & =100\times(\frac{r_x}{5.65}\boldsymbol{i}+\frac{r_y}{5.65}\boldsymbol{j}) \\&=100\times(\frac{4}{5.65}\boldsymbol{i}+\frac{4}{5.65}\boldsymbol{j})\\&=70.7\boldsymbol{i}+70.7\boldsymbol{j}N
-        \end{align*}
-    \end{center}
+\begin{definition}
+    {Converting vectors to Cartesian form}
+    Given a vector $F$ with magnitude $|F|$ and angle $\theta$:
+    \[\vec{F}=|F|\times\hat{F}=|F|\times\frac{r}{|r|}\]
+    Where $r$ is the position vector of the point.
 \end{definition}
 \subsection{Vectors in 3D}
 The concepts above can be extended to 3D simply by adding another variable to the system.
 \begin{theorem}
     {Coordinate direction angles}
     The direction of A is defined by the \emph{coordinate direction angles}: $\alpha, \beta, \gamma$, which are measured between the tail of A and the positive $x, y, z$ axes.
-    \[\alpha=\cos^{-1}\frac{A_x}{A},\quad\beta=\cos^{-1}\frac{A_y}{A},\quad\gamma=\cos^{-1}\frac{A_z}{A}\]
+    \[A\cos\alpha=A_x,\quad A\cos\beta=A_y,\quad A\cos\gamma=A_z\]
     \begin{center}
-        \includegraphics[width=2cm]{img/Ax.png}\includegraphics[width=2cm]{img/Ay.png}\includegraphics[width=2cm]{img/Az.png}
+        \includegraphics[width=2.5cm]{img/Ax.png}
     \end{center}
 \end{theorem}
 
@@ -130,6 +109,15 @@ One simple way is to find the \emph{components} of the force, and sum their indi
     The resultant moment is simply the \textbf{sum} of \emph{couple moments} and moments of forces:
     \[(M_R)_O=\sum M_O + \sum M\]
     You can interpret $(M_R)_O$ as the resultant moment about point $O$.
+\end{knBox}
+\begin{knBox}
+    {Finding moments by force perpendicular to plane}
+    (Exam question) Given a force $F$ acting perpendicular to a plane $ABO$ at $O$, determine the moment about a point $A$.
+    \begin{enumerate}
+        \item Find the \emph{position vector} $\{r=OD\}$ of the force. ($AC\times BC=OD$)
+        \item Convert force to Cartesian form. ($F=|F|\times\frac{r}{|r|}$)
+        \item Find the \emph{cross product} of the vector from point to the force. ($M_A=OA\times F$)
+    \end{enumerate}
 \end{knBox}
 
 \subsection{Couple moments}
@@ -212,15 +200,12 @@ Axial loading refers to the application of a force along the axis of the member.
     \[F=\frac{\rho g d w L}{2}\quad @ \frac{1}{3}L\ /\ \frac{2}{3}d\]
     Where $d$ is the depth of water, $w$ is the width of the volume, and $L$ is the length of the surface.
 \end{theorem}
-\begin{knBox}
-    {Water pipe}
-    \begin{enumerate}
-        \item \textbf{Internal pressure} refers to the pressure inside the pipe.
-        \item \textbf{Internal force} refers to the pressure's effect onto a side of the pipe.
-        \item \textbf{Internal stress} refers to the stress caused by the internal force, acting along the \emph{circumferential direction} of the pipe. This is also called the \textbf{hoop stress}.
-
-    \end{enumerate}
+\begin{definition}
+    {Internal tensile stress}
+    Internal tensile stress (hoop stress) refers to the stress caused by the internal force, acting along the \emph{circumferential direction} of a cross section. 
+    \[\sigma_{\text{pipe}}=\frac{Pd}{2t},\quad\sigma_{\text{sphere}}=\frac{Pr}{2t}\]
+    Where $P$ is the internal pressure, and $t$ is the thickness. 
     \begin{center}
         \includegraphics[width=0.7\textwidth]{./img/hoop.png}
     \end{center}
-\end{knBox}
+\end{definition}

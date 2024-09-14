@@ -15,6 +15,15 @@
     {Free body diagrams (FBD)}
     Free body diagrams are diagrams that show all the forces acting on a body. They are useful in determining the forces that cause the body to be in equilibrium.
 \end{knBox}
+\begin{definition}
+    {Static systems}
+    A static system:
+    \begin{enumerate}
+        \item Must be in equilibrium
+        \item Does not experience any acceleration
+        \item Can have mechanisms that doesn't undergo movements
+    \end{enumerate}
+\end{definition}
 
 \subsection{Members}
 A member is a \emph{straight} and \emph{long} structural element that is subjected to axial forces. The following are the types of members:
@@ -35,14 +44,14 @@ A member is a \emph{straight} and \emph{long} structural element that is subject
 \end{definition}
 \begin{definition}
     {Stable structures}
-    A structure is said \emph{stable} if all members remain in place under any loading conditions.
+    A structure is said \emph{stable} if all members remain in place under any loading conditions. (No mechanisms)
 \end{definition}
 
 \begin{definition}
     {Static conditions of a system}
     A system's state of equilibrium can be determined by the number of restraints present:
     \begin{enumerate}
-        \item Insufficient restraints $\to$ \textbf{non-static system} (contains mechanisms)
+        \item Insufficient restraints $\to$ \textbf{non-static system}
         \item Sufficient restraints $\to$ \textbf{static system}
     \end{enumerate}
     A static system is said to be \textbf{statically indeterminate} if the number of unknowns is larger than the number of equations of equilibrium.
@@ -138,6 +147,8 @@ If we cut out any section of an equilibrium system, the cut will be in equilibri
 
 Therefore, to solve for the forces in a system, we simply cut out a section that we deem solvable (by practice!) and draw it's FBD. The forces includes \emph{all external forces in the cut} as well as the \emph{interal forces of the cut members}.
 
+Note that to solve for a joint, the number of unknowns must be equal to the number of equations of equilibrium.
+
 \subsection{Cable anaylsis}
 \begin{definition}
     {Cable forces}
@@ -149,9 +160,3 @@ Some characteristics of cable structures:
     \item Applied forces all point downwards due to gravity
     \item Horizontal reaction forces at supports are equal in magnitude
 \end{itemize}
-Hence, we can use the following steps to solve for cable forces:
-\begin{enumerate}
-    \item Find reaction forces by considering equilibrium and moments on one side of any joints
-    \item Tension in cables attached to a support can be found by $\sqrt{(R_x)^2+(R_y)^2}$
-    \item Tension in cables not attached to a support can be found by $\sqrt{(R_x)^2+(R_y-\sum y)^2}$
-\end{enumerate}

@@ -1,0 +1,227 @@
+\section{Bookkeeping}
+\label{sec:record}
+
+Bookkeeping is the process of recording transactions in a systematic way.
+
+\begin{small}
+    \textit{For convenience, in the notes "you" refers to "the company"}
+\end{small}
+
+\subsection{Identifying transactions}
+\label{subsec:identify}
+
+\begin{definition}
+    {Accounts}
+    An account stores all transactions related to a group of related items.
+    \label{def:acc}
+\end{definition}
+
+\begin{theorem}
+    {The 6 types of accounts}
+    There are 6 types of accounts:
+    \begin{itemize}
+        \item \textbf{A}sset - Stuff you own
+        \item \textbf{L}iability - Stuff you owe 3rd parties
+        \item \textbf{E}quity (Stockholders' Equity) - Stuff for owners
+              \begin{itemize}
+                  \item \textbf{R}evenue - Money you earn from selling stuff
+                  \item \textbf{E}xpense - Costs of doing business
+                  \item \textbf{D}ividend - Money given to owners
+              \end{itemize}
+    \end{itemize}
+    \label{thm:acc_types}
+    R,E,D all feed into Equity. This will be further explored in \nameref{sec:financial_statements}.
+\end{theorem}
+
+\begin{knBox}
+    {Current vs non-current A\&L}
+    \begin{itemize}
+        \item \textbf{Current A\&L} - Due within 1 year
+        \item \textbf{Non-current A\&L} - Stuff that stays with you for more than 1 year
+    \end{itemize}
+\end{knBox}
+
+\subsubsection{Categorizing transactions}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.1\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
+        \hline
+                    & \textbf{A}             & \textbf{L}                          \\
+        \hline
+        \textbf{C}  & Cash                   & Accounts Payable                    \\
+                    & Short-Term Investments & Accrued Expenses Payable            \\
+                    & Accounts Receivable    & Notes Payable                       \\
+                    & Notes Receivable       & Taxes Payable                       \\
+                    & Inventory (to be sold) & Unearned Revenue                    \\
+                    & Supplies               & Bonds Payable (short-term)          \\
+                    & Prepaid Expenses       &                                     \\
+        \hline
+        \textbf{NC} & Long-Term Investments  & Bonds Payable (long-term)           \\
+                    & Equipment              &                                     \\
+                    & Buildings              &                                     \\
+                    & Land                   &                                     \\
+                    & Intangibles            &                                     \\
+        \hline
+        Keywords    &                        & payable, unearned, accured expenses \\
+        \hline
+    \end{tabular}
+    \caption{Classification of typical account titles (A,L)}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
+        \hline
+        \textbf{Revenue}       & \textbf{Expenses}         & \textbf{Equity}                             \\
+        \hline
+        Sales Revenue          & Cost of Goods Sold (COGS) & Common Stock \textbf{(CS)}                  \\
+        Service Revenue        & Salaries Expense          & Retained Earnings \textbf{(RE)}             \\
+        Interest Revenue       & Rent Expense              & \href{def:apic}{Additional Paid-in Capital} \\
+        Dividend Revenue       & Utilities Expense         & Treasury Stock                              \\
+        Gain on Sale of Assets & Depreciation Expense      &                                             \\
+                               & Interest Expense          &                                             \\
+                               & Advertising Expense       &                                             \\
+                               & Insurance Expense         &                                             \\
+                               & Loss on Sale of Assets    &                                             \\
+        \hline
+    \end{tabular}
+    \caption{Common Revenue, Expense, and Equity accounts}
+\end{table}
+
+\begin{knBox}
+    {Accounts Receivable / Payable}
+    The money a company’s customers owe for goods or services they have received but not yet paid for.
+    \tcblower
+    \textit{Example 1: } You sold a car to a customer on credit, so they owe you money. (Receivable)
+
+    \textit{Example 2: } You bought a car from a supplier on credit, so you owe them money. (Payable)
+\end{knBox}
+\label{def:arp}
+
+\begin{knBox}
+    {Notes Receivable / Payable}
+    The money you owe / own with an interest rate.
+    \tcblower
+    \textit{Example 1: } You borrowed \$1000 from a bank. (Payable)
+\end{knBox}
+\label{def:nrp}
+
+\begin{knBox}
+    {Common Stock}
+    A stock represent a share in the ownership of a company.
+\end{knBox}
+\label{def:ts}
+
+\begin{knBox}
+    {Additional Paid-in Capital}
+    The amount of money that shareholders have invested in the company beyond the par value of the shares they own.
+    \tcblower
+    \textit{Example: }
+\end{knBox}
+\label{def:apic}
+
+\subsection{Preparing journal entries}
+\label{subsec:prepare}
+\begin{definition}
+    {The accounting equation}
+    \[A = L + E\]
+    This equation is based on the principle that \textbf{Stuff that you OWN = Stuff that you OWE}.
+    \label{def:account_equation}
+\end{definition}
+
+\begin{theorem}
+    {Double-entry bookkeeping}
+    From money to go to one account \textit{(source)}, it must come from another \textit{(destination)}. This is the \textit{duality} of every transaction in accounting.
+
+    $\uparrow$ \textbf{Debit (Dr)} is the term to describe the \textbf{destination} of money flow, whereas $\downarrow$ \textbf{Credit (Cr)} is the term to describe the \textbf{source} of money flow.
+    \tcblower
+\end{theorem}
+
+\begin{knBox}
+    {Categorizing transactions as Dr / Cr}
+    We can categorize transactions as debits or credits by their accounts' type:
+    \vspace{0.5em}
+    \begin{center}
+        \small
+        Dr - Cr
+        \normalsize
+
+        \textbf{DEALER}
+
+        Dividend, Expense, Asset - Liability, Equity, Revenue
+    \end{center}
+    They would be a Dr / Cr if their value was positive. Otherwise, they would be the other way around.
+
+    \textit{This is based on rearranging the accounting equation and expanding its terms.}
+\end{knBox}
+
+\subsubsection{Journal entry}
+
+\begin{definition}
+    {Journal entry}
+    A journal entry is a record of a transaction in the journal. The following is the format:
+    \begin{itemize}
+        \item Date
+        \item Account
+        \item Description
+    \end{itemize}
+    Amounts credited are usually \textbf{indented}.
+\end{definition}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Journal Entry]
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}                                                               & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+                      & \textit{in thousands}                                                          &             &             \\
+        Jan 1, 2023   & Cash                                                                           & \$1         &             \\
+                      & \quad Common Stock                                                             &             & \$1         \\
+                      & \multicolumn{3}{l}{\textit{(To record the issuance of common stock for cash)}}                             \\
+    \end{tabular}
+\end{tcolorbox}
+\normalsize
+
+\subsection{Posting to general ledger}
+\label{subsec:post}
+
+\begin{knBox}
+    {T-accounts}
+    T-account is a way to visualize an account. \textbf{Dr} goes on the left, \textbf{Cr} goes on the right. The closing balance is displayed on the corresponding side.
+    \tcblower
+    \taccount{Cash}
+    {\$1000\\\hline\underline{\underline{\$1000}}}
+    {}
+    \taccount{Common Stock}
+    {\\}
+    {\$1000\\\hline\underline{\underline{\$1000}}}
+\end{knBox}
+
+\begin{definition}
+    {General ledger}
+    A general ledger is a collection / database of accounts that store all transactions for you. Each account has their own general ledger.
+    \label{def:gl}
+\end{definition}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example General Ledger]
+    \textbf{Cash} \\
+    \begin{tabular}{llrrr}
+        Date  & Description       & Debit   & Credit & Balance \\
+        \hline
+        Jan 1 & Issuance of stock & \$1,000 &        & \$1,000 \\
+        \hline
+              & Ending Balance    &         &        & \$1,000 \\
+    \end{tabular}
+
+    \vspace{0.5em}
+    \textbf{Common Stock}\\
+    \begin{tabular}{llrrr}
+        Date  & Description       & Debit & Credit  & Balance \\
+        \hline
+        Jan 1 & Issuance of stock &       & \$1,000 & \$1,000 \\
+        \hline
+              & Ending Balance    &       &         & \$1,000 \\
+    \end{tabular}
+\end{tcolorbox}
+\normalsize

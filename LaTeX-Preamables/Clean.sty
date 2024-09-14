@@ -27,7 +27,7 @@
     frame=single,	                   % adds a frame around the code
     keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
     keywordstyle=\color{blue},       % keyword style
-    numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+    numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
     % numbersep=5pt,                   % how far the line-numbers are from the code
     % numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
     rulecolor=\color{gray},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
@@ -119,6 +119,7 @@
 \newcommand{\documentname}{\substring{\jobname}{1}{9}}
 \newcommand{\documentauthor}{Jax}
 \newcommand{\documentauthorcontact}{enhanjax@connect.hku.hk}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
 
 \definecolor{superlightgray}{rgb}{0.9,0.9,0.9}
 
