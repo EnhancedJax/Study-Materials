@@ -41,6 +41,38 @@ Bookkeeping is the process of recording transactions in a systematic way.
     \end{itemize}
 \end{knBox}
 
+\begin{knBox}
+    {Operating vs non-operating R\&E}
+    \begin{itemize}
+        \item \textbf{Operating} - Central focus of business
+        \item \textbf{Non-operating} - Not related to the main business
+    \end{itemize}
+\end{knBox}
+
+\subsubsection{Stockholder's Equity Items}
+
+\begin{knBox}
+    {Common Stock}
+    The shares of the company that are owned by the public.
+    \begin{center}
+        $\Delta$\textbf{C}ommon \textbf{S}tock = Stock Issurance = Number of shares $\times$ Par value
+    \end{center}
+    \tcblower
+    "Issued 200m additional shares of \$0.01 par value" $\implies\ \Delta$\textbf{CS} = 2m
+    \label{def:cs}
+\end{knBox}
+
+\begin{knBox}
+    {Additional Paid-in Capital}
+    The amount of money that shareholders have contributed to the company less the stock issurance.
+    \begin{center}
+        $\Delta$Additional Paid-in Capital = Value - Stock Issurance
+    \end{center}
+    \tcblower
+    "Issued 200m additional shares of \$0.01 par value for \$16m" $\implies\ \Delta$APC = 14m
+    \label{def:apic}
+\end{knBox}
+
 \subsubsection{Categorizing transactions}
 
 \begin{table}[H]
@@ -63,7 +95,7 @@ Bookkeeping is the process of recording transactions in a systematic way.
                     & Land                   &                                     \\
                     & Intangibles            &                                     \\
         \hline
-        Keywords    &                        & payable, unearned, accured expenses \\
+        Keywords    &                        & payable, unearned, accrued expenses \\
         \hline
     \end{tabular}
     \caption{Classification of typical account titles (A,L)}
@@ -71,33 +103,61 @@ Bookkeeping is the process of recording transactions in a systematic way.
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
+    \begin{tabular}{|p{0.9\textwidth}|}
         \hline
-        \textbf{Revenue}       & \textbf{Expenses}         & \textbf{Equity}                             \\
+        \textbf{Equity}                                 \\
         \hline
-        Sales Revenue          & Cost of Goods Sold (COGS) & Common Stock \textbf{(CS)}                  \\
-        Service Revenue        & Salaries Expense          & Retained Earnings \textbf{(RE)}             \\
-        Interest Revenue       & Rent Expense              & \href{def:apic}{Additional Paid-in Capital} \\
-        Dividend Revenue       & Utilities Expense         & Treasury Stock                              \\
-        Gain on Sale of Assets & Depreciation Expense      &                                             \\
-                               & Interest Expense          &                                             \\
-                               & Advertising Expense       &                                             \\
-                               & Insurance Expense         &                                             \\
-                               & Loss on Sale of Assets    &                                             \\
+        Common Stock \textbf{(CS)}                      \\
+        Retained Earnings \textbf{(RE)}                 \\
+        \hyperref[def:apic]{Additional Paid-in Capital} \\
+        Treasury Stock                                  \\
         \hline
     \end{tabular}
-    \caption{Common Revenue, Expense, and Equity accounts}
+    \caption{Common Equity accounts}
 \end{table}
 
-\begin{knBox}
-    {Accounts Receivable / Payable}
-    The money a company’s customers owe for goods or services they have received but not yet paid for.
-    \tcblower
-    \textit{Example 1: } You sold a car to a customer on credit, so they owe you money. (Receivable)
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.3\textwidth}|p{0.3\textwidth}|}
+        \hline
+                    & \textbf{Revenue}       & \textbf{Expenses}         \\
+        \hline
+        \textbf{O}  & Sales Revenue          & Cost of Goods Sold (COGS) \\
+                    & Service Revenue        & Supplies expense          \\
+                    &                        & Wages expense             \\
+                    &                        & Rent expense              \\
+                    &                        & Insurance expense         \\
+                    &                        & Repairs expense           \\
+        \hline
+        \textbf{NO} & Interest Revenue       & Interest Expense          \\
+                    & Dividend Revenue       & Tax Expense               \\
+                    & Gain on Sale of Assets &                           \\
+                    & Tax Revenue            &                           \\
+        \hline
+    \end{tabular}
+    \caption{Common Revenue and Expense accounts categorized by operation}
+\end{table}
 
-    \textit{Example 2: } You bought a car from a supplier on credit, so you owe them money. (Payable)
-\end{knBox}
-\label{def:arp}
+% \begin{theorem}
+%     {Respecting the Accural Method \& Unearned Revenue \& Accounts Receivable}
+%     If cash is received \textit{before} the service is provided, it is recorded as \textbf{Unearned Revenue}.
+
+%     If the service is provided \textit{before} cash is received, it is recorded as \textbf{Accounts Receivable}.
+
+%     \tcblower
+%     Consider the example of a food delivery service:
+%     \begin{itemize}
+%         \item You're a customer.
+%         \item You deposit \$100 to the ordering service: Cash +100, \textbf{Unearned Revenue} +100
+%         \item You receive the order: \textbf{Unearned Revenue} -100, \textbf{Accounts Receivable} +100
+%     \end{itemize}
+%     \begin{itemize}
+%         \item You're a delivery driver.
+%         \item You deliver the order: \textbf{Accounts Receivable} +100, \textbf{Revenue} +100
+%         \item You receive the payment: \textbf{Accounts Receivable} -100, \textbf{Cash} +100
+%     \end{itemize}
+% \end{theorem}
+% \label{def:arp}
 
 \begin{knBox}
     {Notes Receivable / Payable}
@@ -106,20 +166,6 @@ Bookkeeping is the process of recording transactions in a systematic way.
     \textit{Example 1: } You borrowed \$1000 from a bank. (Payable)
 \end{knBox}
 \label{def:nrp}
-
-\begin{knBox}
-    {Common Stock}
-    A stock represent a share in the ownership of a company.
-\end{knBox}
-\label{def:ts}
-
-\begin{knBox}
-    {Additional Paid-in Capital}
-    The amount of money that shareholders have invested in the company beyond the par value of the shares they own.
-    \tcblower
-    \textit{Example: }
-\end{knBox}
-\label{def:apic}
 
 \subsection{Preparing journal entries}
 \label{subsec:prepare}
@@ -135,8 +181,8 @@ Bookkeeping is the process of recording transactions in a systematic way.
     From money to go to one account \textit{(source)}, it must come from another \textit{(destination)}. This is the \textit{duality} of every transaction in accounting.
 
     $\uparrow$ \textbf{Debit (Dr)} is the term to describe the \textbf{destination} of money flow, whereas $\downarrow$ \textbf{Credit (Cr)} is the term to describe the \textbf{source} of money flow.
-    \tcblower
 \end{theorem}
+\label{thm:debit_credit}
 
 \begin{knBox}
     {Categorizing transactions as Dr / Cr}
@@ -156,11 +202,9 @@ Bookkeeping is the process of recording transactions in a systematic way.
     \textit{This is based on rearranging the accounting equation and expanding its terms.}
 \end{knBox}
 
-\subsubsection{Journal entry}
-
 \begin{definition}
     {Journal entry}
-    A journal entry is a record of a transaction in the journal. The following is the format:
+    A record of a transaction in the journal \underline{during the accounting period}. The following is the format:
     \begin{itemize}
         \item Date
         \item Account

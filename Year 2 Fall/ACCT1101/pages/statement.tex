@@ -21,10 +21,16 @@ The financial statements are the primary means of communication between a compan
     Some conventions for styling:
     \begin{itemize}
         \item Dollar sign for first and total amounts
-        \item Underline for sub-totals
+        \item Line above sub-totals
         \item Double underline for totals
+        \item Brackets for negative numbers
     \end{itemize}
 \end{knBox}
+
+\begin{theorem}
+    {Classified vs. Unclassified Financial Statements}
+    A classified financial statement would break accounts into different classes (e.g. current / non-current A\&L), whereas an unclassified financial statement would list all accounts in the same class together.
+\end{theorem}
 
 We can build financial statements by referencing your adjusted trial balance.
 
@@ -50,22 +56,78 @@ We can build financial statements by referencing your adjusted trial balance.
     \label{thm:relations}
 \end{theorem}
 
-\newpage
+\subsection{Income Statement}
+\label{sec:income_statement}
+
+Principle: \hyperref[thm:relations]{\textbf{RE} = \textbf{R} - \textbf{E}}
+
+Reports profit / loss \underline{over a period of time}. \textit{Income before / after taxes must be displayed separately}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Income Statement (Classified by Operating \& Non-operating)]
+    \begin{center}
+        \textbf{XYZ Corporation}\\
+        \textbf{Income Statement}\\
+        For the Year Ended December 31, 2025\\
+        (In millions of dollars)
+    \end{center}
+
+    \textbf{Operating Revenue}
+    \begin{itemize}[label={}, leftmargin=*]
+        \item Sales Revenue \hfill \underline{\$3}
+    \end{itemize}
+
+    Total operating revenue \hfill 3
+
+    \textbf{Operating Expenses}
+    \begin{itemize}[label={}, leftmargin=*]
+        \item Supplies Expense \hfill \$1
+        \item Training Expenses \hfill \underline{1}
+    \end{itemize}
+    Total operating expenses \hfill 2
+
+    \textbf{Income from operations} \hfill \underline{\underline{\$1}}
+
+
+    Other items:
+    \begin{itemize}[label={}, leftmargin=*]
+        \item Interest Revenue \hfill \$3
+        \item Dividend Expense \hfill \underline{1}
+    \end{itemize}
+    \textbf{Income before taxes} \hfill \underline{\underline{\$3}}
+
+    Tax Expense \hfill \underline{1}
+
+
+    \textbf{Net Income} \hfill \underline{\underline{\$2}}
+
+    Earnings per share (2 million shares) \hfill \underline{\underline{\$1}}
+
+    \vspace{1em}
+
+    \textit{\footnotesize{The notes are an integral part of these financial statements. (Operating revenue can simplify be "Sales Revenue" as there is only one item, but expanded for clarity.)}}
+\end{tcolorbox}
+
+\begin{knBox}
+    {Key items of the Income Statement}
+    \begin{itemize}
+        \item Operating R\&E $\rightarrow$ Income from operations
+        \item Other Revenue / Expense $\rightarrow$ Income before taxes
+        \item Tax Expense $\rightarrow$ Net Income \& EPS
+    \end{itemize}
+\end{knBox}
 
 \subsection{Balance Sheet}
 \label{sec:balance_sheet}
 
 Principle: \hyperref[thm:relations]{\textbf{A} = \textbf{L} + \textbf{E}}
 
+The balance sheet is prepared \textbf{after creating the \nameref{sec:closing_entries}}.
+
 Reports the financial position of a company at a \underline{specific point in time}. Helpful for demonstrating the \hyperref[def:current_ratio]{current ratio}.
 
-\begin{theorem}
-    {Classified vs. Unclassified Balance Sheet}
-    A classified balance sheet would break accounts into different classes (e.g. current / non-current A\&L), whereas an unclassified balance sheet would list all accounts in the same class together.
-\end{theorem}
-
 \small
-\begin{tcolorbox}[colframe=black,colback=white,title=Example Balance Sheet (Classified)]
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Balance Sheet (Classified by Current \& Non-current)]
     \begin{center}
         \textbf{XYZ Corporation}\\
         \textbf{Balance Sheet}\\
@@ -79,16 +141,16 @@ Reports the financial position of a company at a \underline{specific point in ti
         \begin{itemize}
             \item Cash and Cash Equivalents \hfill \$14
             \item Accounts Receivable \hfill 3
-            \item Inventory \hfill 7
+            \item Inventory \hfill \underline{7}
         \end{itemize}
-        Total Current Assets \hfill \underline{24}
+        Total Current Assets \hfill 24
 
         Non-Current Assets:
         \begin{itemize}
             \item Property, Plant, and Equipment \hfill 35
-            \item Intangible Assets \hfill 5
+            \item Intangible Assets \hfill \underline{5}
         \end{itemize}
-        Total Non-Current Assets \hfill \underline{40}
+        Total Non-Current Assets \hfill 40
         \vfill
         \textbf{Total Assets} \hfill \underline{\underline{\$64}}
 
@@ -106,72 +168,31 @@ Reports the financial position of a company at a \underline{specific point in ti
         Non-Current Liabilities:
         \begin{itemize}
             \item Long-term Debt \hfill 20
-            \item Deferred Tax Liabilities \hfill 5
+            \item Deferred Tax Liabilities \hfill \underline{5}
         \end{itemize}
-        Total Non-Current Liabilities \hfill \underline{25}
+        Total Non-Current Liabilities \hfill 25
 
         Total Liabilities \hfill \underline{31}
 
         Stockholders' Equity:
         \begin{itemize}
             \item Common Stock \hfill 20
-            \item Retained Earnings \hfill 13
+            \item Retained Earnings \hfill \underline{13}
         \end{itemize}
-        Total Stockholders' Equity \hfill \underline{33}\\
+        Total Stockholders' Equity \hfill 33\\
         {\textbf{Total Liabilities and Stockholders' Equity}} \hfill \underline{\underline{\$64}}
     \end{multicols}
+
+    \vspace{1em}
 
     \textit{\footnotesize{The notes are an integral part of these financial statements.}}
 \end{tcolorbox}
 
 \normalsize
 
+It is called a \textbf{balance sheet} because the \textbf{left side} (assets) is equal to the \textbf{right side} (liabilities + equity).
+
 \newpage
-
-\subsection{Income Statement}
-\label{sec:income_statement}
-
-Principle: \hyperref[thm:relations]{\textbf{RE} = \textbf{R} - \textbf{E}}
-
-Reports profit / loss \underline{over a period of time}. \textit{Income before / after taxes must be displayed separately}
-
-\small
-\begin{tcolorbox}[colframe=black,colback=white,title=Example Income Statement]
-    \begin{center}
-        \textbf{XYZ Corporation}\\
-        \textbf{Income Statement}\\
-        For the Year Ended December 31, 2025\\
-        (In millions of dollars)
-    \end{center}
-
-    \begin{multicols}{2}
-        \textbf{Revenue}
-        \begin{itemize}[label={}, leftmargin=*]
-            \item Sales Revenue \hfill \$100
-            \item Interest Revenue \hfill 5
-        \end{itemize}
-        \vfill
-        Total Revenue \hfill \underline{105}
-
-        \columnbreak
-
-        \textbf{Expenses}
-        \begin{itemize}[label={}, leftmargin=*]
-            \item Cost of Goods Sold \hfill \$40
-            \item Operating Expenses \hfill 30
-            \item Interest Expense \hfill \underline{10}
-        \end{itemize}
-        \colorbox{yellow}{Income before taxes} \hfill 25
-        \begin{itemize}[label={}, leftmargin=*]
-            \item \colorbox{yellow}{Income tax expense} \hfill \underline{10}
-        \end{itemize}
-
-        \vfill
-        \textbf{Net Income} \hfill \underline{\underline{\$10}}
-    \end{multicols}
-
-    \textit{\footnotesize{The notes are an integral part of these financial statements.}}
-\end{tcolorbox}
 
 \subsection{Statement of Stockholder's Equity}
 \label{sec:statement_se}
@@ -201,9 +222,11 @@ Reports changes in stockholder's equity over a period of time.
         \textbf{Balance, January 1, 2025}   & \$50                         & \$100                         \\
         Net Income                          & --                           & 25                            \\
         Dividends                           & --                           & (10)                          \\
-        Stock Issuance                      & \underline{20}               & --                            \\
+        Stock Issuance                      & 20                           & --                            \\
         \textbf{Balance, December 31, 2025} & \underline{\underline{\$70}} & \underline{\underline{\$115}} \\
     \end{tabular}
+
+    \vspace{1em}
 
     \textit{\footnotesize{The notes are an integral part of these financial statements.}}
 \end{tcolorbox}

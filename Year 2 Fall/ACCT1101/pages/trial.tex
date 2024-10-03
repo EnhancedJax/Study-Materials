@@ -27,13 +27,161 @@
 \end{tcolorbox}
 \normalsize
 
-\begin{theorem}
-    {Unadjusted vs Adjusted Trial Balance}
+\subsection{Posting adjusting entries}
+\label{subsec:post_adjust}
 
+\begin{theorem}
+    {Adjusting our Trial Balance}
+    In the account cycle, after preparing an unadjusted trial balance, we make adjustments to respect the \hyperref[thm:accrual_basis]{Accrual Basis of Accounting} for different types of expense and revenues.
+
+    This adjustment is necessary when the two sides of a transaction (remember \hyperref[thm:debit_credit]{double-sided nature}) happens in a \underline{different accounting period}. (So no adjustments necessary if same period)
 \end{theorem}
 
-% \subsection{Post adjusting entries}
-% \label{subsec:post_adjust}
+\begin{theorem}
+    {A typical transaction}
+    In a transaction there are two parties: a buyer and a seller.
 
-% \subsection{Adjusted trial balance}
-% \label{subsec:adjusted}
+    Seller $\xrightleftharpoons[\text{cash}]{\text{services}}$ Buyer
+
+    In the case of the \textbf{buyer}, the transaction will always be an \textbf{expense}.
+
+    In the case of the \textbf{seller}, the transaction will always be \textbf{revenue}.
+\end{theorem}
+
+\begin{definition}
+    {Categorizing E\&R as prepayments / accruals}
+    We need to categorize E\&R as either \textbf{Prepayments} or \textbf{Accruals} before making an adjusting entry as part of the analysis.
+    \begin{itemize}
+        \item \textbf{Prepayments}: services paid for before received (by buyer), also called \textbf{Deferrals}
+        \item \textbf{Accrued}: services received before paid for (by buyer)
+    \end{itemize}
+
+\end{definition}
+
+Hence, there will be \textit{4 titles} for the adjusting entries as follows, along with examples:
+\begin{itemize}
+    \item \textbf{Deferred Expense} (A, Dr)\\
+          \textit{Example}: As a buyer, you drive a car. Your car warranty is for a year, but you pay for it the year prior. The service (car warranty) is paid for before received, hence, this is a prepaid expense.
+
+          \vspace{1em}
+    \item \textbf{Deferred Revenue} (L, Cr)\\
+          \textit{Example}: As a seller, you sell car warranty. The service (car warranty) is paid for by the customer before it becomes active in the next year, hence, this is a deferred (prepaid) revenue.
+
+          \vspace{1em}
+    \item \textbf{Accrued Expense} (L, Cr)\\
+          \textit{Example}: As a buyer, you consume water. Water bills are paid every 3 months, but you use water every month and your accounting period is a month. The service (water) is received before paying for by the customer, hence, this is an accrued expense.
+
+          \vspace{1em}
+    \item \textbf{Accrued Revenue} (A, Dr)\\
+          \textit{Example}: As a seller, you provide water. The service (water) is provided before paying for by the customer, hence, this is an accrued revenue.
+
+          \vspace{1em}
+\end{itemize}
+
+\begin{theorem}
+    {What the adjusting entry does}
+    As we recorded our transaction on the cash basis initially, it \textbf{overstates} the corresponding E/R. The purpose of the adjusting entry is to \textbf{correct this overstatement} by converting the transaction to either \textbf{A/L}. This conversion moves the transaction to the \hyperref[def:temp_perm]{\textbf{permanent accounts}}, which carries forward to the next period for adjustment again.
+
+    To determine if the overstated transaction is A/L:
+    \begin{itemize}
+        \item \textbf{Asset (Dr)}: Future economic
+        \item \textbf{Liability (Cr)}: Future economic
+    \end{itemize}
+    \label{thm:adjusting_entry}
+\end{theorem}
+
+\begin{theorem}
+    {Releasing prepayments and accruals}
+    As we record by the accrual basis, when we consume the / a part of the service, or the payment is made, we need to record the transaction accordingly. If only a part of the service is consumed, \underline{calculate the consumed amount by time period}.
+
+    This moves the transaction back to the \hyperref[def:temp_perm]{\textbf{temporary accounts}}.
+\end{theorem}
+\label{thm:release}
+
+\begin{knBox}
+    {Summary}
+    \begin{center}
+        \begin{tabular}{c|c|c|c}
+            Dr & Cr & Cr & Dr \\
+            \hline
+            DE & DR & AE & AR \\
+        \end{tabular}
+
+        \begin{tikzpicture}[overlay, remember picture]
+            % Draw the line
+            \draw[thick] (-1.5,0) -- (-1.5,-0.25) -- (0.5,-0.25) -- (0.5,0);
+            % Add the label
+            \node at (-0.5, -0.5) {Buyer};
+            % Draw the line
+            \draw[thick] (0.6,-0.25) -- (0.6,-0.5) -- (1.5,-0.5) -- (1.5,-0.25);
+            % Add the label
+            \node at (1, -1) {Received before paid for};
+        \end{tikzpicture}
+
+        \vspace{3em}
+    \end{center}
+\end{knBox}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Adjusting Entry (Prepaid Expense)]
+    We make the following adjusting entry for car warranty (example above) that we paid for in the month prior.
+
+    \vspace{1em}
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}      & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+                      & \textit{in thousands} &             &             \\
+        Dec 31, 2023  & Prepaid expense       & \$12        &             \\
+                      & \quad Cash            &             & \$12        \\
+    \end{tabular}
+    \vspace{1em}
+
+    Then each month, we will make the following adjusting entry to recognize the usage of the prepaid expense and release it gradually.
+
+    \vspace{1em}
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}      & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+                      & \textit{in thousands} &             &             \\
+        XXX 31, 2024  & Utility expense       & \$1         &             \\
+                      & \quad Prepaid expense &             & \$1         \\
+    \end{tabular}
+    \vspace{1em}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Adjusting Entry (Accrued Expense)]
+    We make the following adjusting entry for water bills (example above) in the first and second month. By the history average, we assume each month costs around \$1000.
+
+    Remember that \textit{accrued expense} is a \textbf{liability}, as it would be a future economic sacrifice.
+
+    \vspace{1em}
+
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}                                   & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+                      & \textit{in thousands}                              &             &             \\
+        Jan 31, 2023  & Utility expense                                    & \$1         &             \\
+                      & \quad Accrued expense                              &             & \$1         \\
+                      & \multicolumn{3}{l}{\textit{(Water bills accrued)}}                             \\
+        Feb 28, 2023  & Utility expense                                    & \$1         &             \\
+                      & \quad Accrued expense                              &             & \$1         \\
+                      & \multicolumn{3}{l}{\textit{(Water bills accrued)}}                             \\
+    \end{tabular}
+    \vspace{1em}
+
+    We get the receipt for the water bills in the end of the third month. It was \$4. We record the utility expense and cash usage accordingly, then \hyperref[thm:release]{release} the accrued expense.
+
+    \vspace{1em}
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}                                       & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+                      & \textit{in thousands}                                  &             &             \\
+        Mar 31, 2023  & Utility expense                                        & \$4         &             \\
+                      & \quad Cash                                             &             & \$4         \\
+                      & \multicolumn{3}{l}{\textit{(Water bills payment)}}                                 \\
+        Mar 31, 2023  & Accrued expense                                        & \$2         &             \\
+                      & \quad Utility expense                                  &             & \$2         \\
+                      & \multicolumn{3}{l}{\textit{(Release accrued expense)}}                             \\
+    \end{tabular}
+\end{tcolorbox}
+\normalsize

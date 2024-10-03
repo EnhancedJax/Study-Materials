@@ -30,11 +30,31 @@ Solves a problem by breaking it down into smaller instances of the same problem.
     \label{thm:solve_re}
 \end{theorem}
 
-% \begin{theorem}
-%     {The master theorem}
-%     The master theorem can give us the order of growth (Big Theta) of a recurrence relation.
-%     % For $T(n) = a\cdot T(\frac{n}{b}) + f(n),\quad a > 0,\ b > 1$, we have:
-% \end{theorem}
+\begin{knBox}
+    {Relevant mathematics}
+    \begin{enumerate}
+        \item Geometric series: $S_n = a + ar + ar^2 + \cdots + ar^{n-1} = a\frac{r^n - 1}{r-1}$
+        \item Arithmetic series: $S_n = n(\frac{a_1+a_n}{2}),\quad n=\text{number of terms}, a=\text{first / last term}$
+        \item Sum of first $n$ numbers: $\sum_{i=1}^n i = \frac{n(n+1)}{2}$
+        \item Sum of first $n$ squares: $\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$
+        \item Logarithm: $a^k=b\implies k=\log_a b$
+        \item Logarithm property: $k^{\log a} = a^{\log k}$
+    \end{enumerate}
+\end{knBox}
+
+\begin{theorem}
+    {The master theorem}
+    The master theorem can give us the order of growth (Big Theta) of a recurrence relation.
+
+    For $T(n) = a\cdot T(\frac{n}{b}) + f(n),\quad T(1) = c,\quad a, c > 0,\ b > 1,\ f(n)\in \Theta(n^k),\ d\geq 0$, we have:
+    \[T(n) = \begin{cases}
+            \Theta(n^{\log_b a}) & \text{if } a > b^k \\
+            \Theta(n^k \log n)   & \text{if } a = b^k \\
+            \Theta(n^k)          & \text{if } a < b^k
+        \end{cases}\]
+    \tcblower
+    \label{thm:master_theorem}
+\end{theorem}
 
 \subsection{Mathematical induction}
 

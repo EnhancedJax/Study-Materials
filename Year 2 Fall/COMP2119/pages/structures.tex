@@ -1,0 +1,212 @@
+\section{Data Structures}
+
+The purpose of a programme is to process data \textit{efficiently}.
+A data structure is a way to group \& store data in a computer, and have pros and cons which make them suitable for different scenarios.
+
+\begin{knBox}
+    {Operations}
+    A data structure has the following operations:
+    \begin{itemize}
+        \item \textbf{Access}
+        \item \textbf{Insertion \& deletion} (start, end, middle)
+        \item \textbf{Search}
+        \item \textbf{Sorting}
+        \item \textbf{Merging}
+    \end{itemize}
+\end{knBox}
+
+\subsection{Overview of data structures}
+
+\begin{definition}
+    {Linear vs. Non-linear}
+    A Linear Data Structure has each item only relates to it's front and back item.
+
+    A Non-linear Data Structure has each item can relate to multiple other items.
+\end{definition}
+
+\begin{theorem}
+    {Abstract vs. Concrete data types}
+    \textbf{Abstract data types} (ADT) is a concept which defines the operations that can be performed on a data structure, without specifying the implementation details.
+
+    \textbf{Concrete data types} (CDT) is the implementation of the ADT.
+\end{theorem}
+
+The following is an overview of the ADTs that is dicussed in the course:
+
+\begin{itemize}
+    \item \nameref{subsec:core-implementations}
+          \begin{itemize}
+              \item \textbf{Arrays}
+              \item \textbf{Nodes / linked list}
+          \end{itemize}
+    \item Structure types
+          \begin{itemize}
+              \item \nameref{subsec:linear-structures}
+                    \begin{itemize}
+                        \item \textbf{Linked list}
+                        \item \textbf{Stack}
+                        \item \textbf{Queues}
+                    \end{itemize}
+              \item \nameref{subsec:nonlinear-structures}
+                    \begin{itemize}
+                        \item \textbf{Trees}
+                        \item \textbf{Graphs}
+                        \item \textbf{Hash tables}
+                    \end{itemize}
+          \end{itemize}
+\end{itemize}
+
+\subsection{Core implementations}
+\label{subsec:core-implementations}
+
+The following ADTs can be used to implement other data structures that will be introduced in the following sections.
+
+\begin{definition}
+    {Array}
+    Set number of items stored in \textit{adjacent} memory locations. Identified by the first item.
+    \begin{itemize}
+        \item \textbf{Access:} Simple access by index. $O(1)$
+        \item \textbf{Insertion \& deletion:} Slow, as it involves shifting the surrounding items and creating a new array. $O(n)$
+    \end{itemize}
+\end{definition}
+
+\begin{knBox}
+    {Node}
+    A node is an item, which can be connected to other nodes by \textbf{edges}. In order to access an item in a node-based data structure, we have to traverse the nodes by following the edges.
+
+    Nodes can be directional (one-way access) or non-directional (two-way access).
+\end{knBox}
+
+\begin{definition}
+    {Linked list}
+    Nodes that are connected to the next node. Identified by the first node.
+    \begin{itemize}
+        \item \textbf{Access:} Slow, as we have to traverse the list from the start. $O(n)$
+        \item \textbf{Insertion \& deletion:} Fast, as we only need to change the pointers of the neighbouring nodes. $O(1)$
+    \end{itemize}
+\end{definition}
+
+\subsection{Linear structures}
+\label{subsec:linear-structures}
+
+\begin{definition}
+    {Push pop \& access}
+
+    Stacks and queues are concepts that extend from a linear list of items.
+
+    They have the following characteristics:
+    \begin{itemize}
+        \item \textbf{Only one item can be accessed} at an instance of the data structure.
+        \item \textbf{Items cannot be inserted or removed} freely.
+    \end{itemize}
+
+    In a stack / queue, \textbf{push / enqueue (in)} means adding an item, and \textbf{pop / dequeue (out)} means removing an item. Only the \textbf{out} item can be accessed.
+\end{definition}
+
+\begin{definition}
+    {Stacks \& Queues}
+    \begin{itemize}
+        \item \textbf{Stack}: \textit{First In, First Out (FIFO)}.
+        \item \textbf{Queue}: \textit{Last In, First Out (LIFO)}.
+    \end{itemize}
+    Accessing out items is $O(1)$. Accessing / operating on other items is $O(n)$.
+\end{definition}
+
+\subsection{Non-linear structures}
+\label{subsec:nonlinear-structures}
+
+\subsubsection{Graph}
+
+\begin{definition}
+    {Graph}
+    Nodes which can connect to multiple other nodes. (Allow loops)
+\end{definition}
+
+\textbf{Implementations}:
+
+\begin{theorem}
+    {Adjacency matrix}
+    For a node with $n$ nodes, we have a $n \times n$ matrix. If nodes $i,j$ is connected, then the element $M_{ij}$ is $1$. If the connection edge is non-directional, then $M_{ij} = M_{ji} = 1$.
+
+    \begin{itemize}
+        \item \textbf{Space:} $O(n^2)$ - better for dense graphs (more edges).
+        \item \textbf{Access (check):} $O(1)$ for determining if there is a connection between two nodes.
+        \item \textbf{Access (process)}: $O(n^2)$ for processing all edges of the graph.
+    \end{itemize}
+
+    \tcblower
+
+    \begin{center}
+        \begin{tikzpicture}
+            \node[circle, draw] (1) at (0,0) {0};
+            \node[circle, draw] (2) at (2,0) {1};
+            \node[circle, draw] (3) at (4,0) {2};
+            \draw[-] (1) -- (2);
+            \draw[-] (2) -- (3);
+        \end{tikzpicture}
+        \hspace{1cm}
+        $
+            \begin{bmatrix}
+                0 & 1 & 0 \\
+                1 & 0 & 1 \\
+                0 & 1 & 0 \\
+            \end{bmatrix}
+        $
+    \end{center}
+
+\end{theorem}
+
+\begin{theorem}
+    {Adjacency list}
+    For a node with $n$ nodes, we have an array with $n$ items. Each item in the array is a list of nodes that the current node is connected to.
+
+    \begin{itemize}
+        \item \textbf{Space:} $O(n+e)$ - better for sparse graphs (less edges).
+        \item \textbf{Access (check):} $O(e)$ for determining if there is a connection between two nodes.
+        \item \textbf{Access (process)}: Better for sparse graphs as less than $n^2$ elements.
+    \end{itemize}
+
+    \tcblower
+
+    \begin{center}
+        \begin{tikzpicture}
+            \node[circle, draw] (1) at (0,0) {0};
+            \node[circle, draw] (2) at (2,0) {1};
+            \node[circle, draw] (3) at (4,0) {2};
+            \draw[-] (1) -- (2);
+            \draw[-] (2) -- (3);
+        \end{tikzpicture}
+        \hspace{1cm}
+        $
+            [
+                    [2],
+                    [1,3],
+                    [2]
+                ]
+        $
+    \end{center}
+\end{theorem}
+
+\textbf{Traversal}:
+
+\begin{theorem}
+    {Breadth-first search (BFS)}
+    Visits nodes at the increasing order of distance from the starting node.
+    \begin{itemize}
+        \item Put the starting node into the queue.
+        \item For each node taken from the queue, visit the node, then put all unvisited adjacent nodes into the queue.
+        \item Continue as long as there are nodes in the queue.
+    \end{itemize}
+    \tcblower
+    Example implementation: \ref{eg:graph_bfs}
+\end{theorem}
+
+\label{thm:graph_bfs}
+
+\subsubsection{Trees}
+
+\begin{definition}
+    {Trees}
+    Nodes which has \textbf{one parent} and can connect to \textbf{multiple children}.
+\end{definition}
+

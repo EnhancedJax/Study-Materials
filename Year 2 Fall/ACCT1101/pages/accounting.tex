@@ -4,29 +4,41 @@ The process of identifying, recording, summarizing \& analyzing an entity's fina
 
 \subsection{The accounting cycle}
 
-The whole process consists of 8 steps, categorized in 3 actions:
+\begin{definition}
+    {Accounting period}
+    The period of time over which financial statements are prepared.
+\end{definition}
+
+\begin{knBox}
+    {Entries}
+    A record of a transaction. In the accounting cycle, there are 3 types of entries:
+    \begin{itemize}
+        \item \textbf{Journal Entry}
+        \item \textbf{Adjusting Entry}
+        \item \textbf{Closing Entry}
+    \end{itemize}
+\end{knBox}
 
 \begin{center}
     \begin{tikzpicture}
         \node[anchor=center] (list) {
             \begin{minipage}{0.4\textwidth}
                 \begin{itemize}
-                    \item \textit{Record} \ref{sec:record}
+                    \item \textit{Record (During the period)} \ref{sec:record}
                           \begin{enumerate}
                               \item Identify transactions \ref{subsec:identify}
                               \item Prepare journal entries \ref{subsec:prepare}
                               \item Post to general ledger \ref{subsec:post}
                           \end{enumerate}
-                    \item \textit{Trial} \ref{sec:trial}
+                    \item \textit{Trial (At the end of the period)} \ref{sec:trial}
                           \begin{enumerate}[resume]
-                              \item Unadjusted trial balance \ref{subsec:unadjusted}
+                              \item Unadjusted trial balance
                               \item Post adjusting entries \ref{subsec:post_adjust}
-                              \item Adjusted trial balance \ref{subsec:adjusted}
+                              \item Adjusted trial balance
                           \end{enumerate}
                     \item \textit{Post}
                           \begin{enumerate}[resume]
-                              \item Create finanical statements \ref{sec:financial_statements}
-                              \item Post closing entries \ref{sec:closing_entries}
+                              \item Create finanical statements \ref{sec:financial_statements} \& Post closing entries \ref{sec:closing_entries}
                           \end{enumerate}
                 \end{itemize}
             \end{minipage}
@@ -38,23 +50,24 @@ The whole process consists of 8 steps, categorized in 3 actions:
     \end{tikzpicture}
 \end{center}
 
-It starts from recording all your transactions accordingly, then making sure that the in's and out's are equal by using a trial balance. Finally, statements will be published so that stakeholders can make decisions based on the financial information.
+During the period, the cycle records all your transactions accordingly by the \hyperref[thm:cash_basis]{Cash Basis of Accounting}. At the end of a period, we test for errors and respect our transactions by the \hyperref[thm:accrual_basis]{Accural Method of Accounting}. Finally, we create finanical statements that will be published, so that stakeholders can make decisions based on the financial information.
 
 \subsection{Accounting principles}
 Accounting principles are to make sure that companies' statements are \textit{true and fair}.
 \begin{theorem}
     {Accural method of accounting}
-    Most accounting rules, like GAAP, are based on the \textbf{accrual basis of accounting}.
+    Most accounting rules, like the \textbf{G}enerally \textbf{A}ccepted \textbf{A}ccounting \textbf{P}rinciples (GAAP), are based on the \textbf{accrual basis of accounting}.
     \vspace{0.5em}
 
     This mean that \underline{revenue is recognized when it is \textbf{earned}},\\and \underline{expenses are recognized when they are \textbf{incurred}}, regardless of when cash is received or paid.
+    \label{thm:accrual_basis}
 \end{theorem}
 \begin{knBox}
     {Cash basis of accounting}
     This is a method of accounting where \underline{revenue is recognized when cash is received} and \underline{expenses are recognized when cash is paid}.
-
-    This method is only used for \textbf{small businesses} and \textbf{individuals}.
+    \label{thm:cash_basis}
 \end{knBox}
+
 The following gives a list of other principles:
 \begin{table}[H]
     \centering

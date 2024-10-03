@@ -1,0 +1,61 @@
+\section{Closing Entries}
+\label{sec:closing_entries}
+
+\begin{definition}
+    {Categorizing accounts as Temporary / Permanent}
+    A permanent account carries balance forward to the next period, while a temporary account resets to zero at the end of the period.
+
+    \vspace{0.5em}
+    \begin{center}
+        \small
+        Temp - Perm
+        \normalsize
+
+        \textbf{RED ALE}
+
+        Revenue, Expense, Dividend - Asset, Liability, Equity
+    \end{center}
+    \label{def:temp_perm}
+    \tcblower
+    \textit{Related: } \hyperref[thm:adjusting_entry]{Adjusting entry}
+\end{definition}
+
+\begin{definition}
+    {Closing entries}
+    Entry to reset temporary accounts to zero by transferring their balances to \textbf{Retained Earnings}.
+
+    The entry is created after the \nameref{sec:income_statement}, and before the \nameref{sec:balance_sheet}, as otherwise there will be nothing to display.
+\end{definition}
+
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Closing Entry]
+    Considering the following adjusted trial balance at the end of the period:
+
+    \vspace{1em}
+
+    \begin{tabular}{lrr}
+        \textbf{Account} & \textbf{Debit} & \textbf{Credit} \\
+        \hline
+        Cash             & \$5            &                 \\
+        Revenue          &                & \$15            \\
+        Expense          & \$5            &                 \\
+        Dividends        & \$5            &                 \\
+        \hline
+        \textbf{Total}   & \$15           & \$15            \\
+    \end{tabular}
+
+    \vspace{1em}
+
+    We make the following closing entry:
+
+    \vspace{1em}
+
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}           & \textbf{Dr} & \textbf{Cr}  \\
+        \hline
+                      & \textit{in thousands}      &             &              \\
+        Dec 31, 2023  & Revenue                    & \$15        &              \\
+                      & \textbf{Retained Earnings} &             & \textbf{\$5} \\
+                      & $\quad$Expense             &             & \$5          \\
+                      & $\quad$Dividends           &             & \$5          \\
+    \end{tabular}
+\end{tcolorbox}

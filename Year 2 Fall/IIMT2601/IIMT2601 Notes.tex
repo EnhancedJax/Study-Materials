@@ -26,9 +26,136 @@
 %               Document               %
 % ------------------------------------ %
 
-% \include{pages/recursion}
-% \include{pages/analysis}
+\section{Digital Economy}
 
+Digital economy can be thought of as the economy that is based on the internet and digital technologies.
+
+There are two types of digital economy:
+
+\begin{itemize}
+    \item \textbf{E-commerce}: The buying and selling of goods and services using the internet, and the transfer of money and data to execute these transactions.
+    \item \textbf{E-business}: The use of the internet to conduct business activities, such as marketing, sales, and customer service.
+\end{itemize}
+
+\subsection{Key characteristics}
+
+\subsubsection{Data integration to the product process}
+
+The traditional production process is as followed:
+
+Design\quad\rightarrowfill\quad
+Raw Material\quad\rightarrowfill\quad
+Manufacturing\quad\rightarrowfill\quad
+Finished Product\quad\rightarrowfill\quad
+Consumer
+
+We can \textbf{monetize data} that we collect from the \textit{consumers} by analyzing it and apply in the processes during production.
+
+\subsubsection{Digital products}
+
+A digital good has the following distinctive characteristics:
+
+\begin{itemize}
+    \item \textbf{Zero marginal cost}: There is no cost to produce additional units of a digital good.
+    \item \textbf{Quality uncertainty}: Consumers cannot determine the value of digital goods before using it.
+\end{itemize}
+
+Some digital goods also increase in value the more people use it, known as \textbf{network goods}.
+
+\begin{itemize}
+    \item \textbf{Homogeneous}: Users perform the same action. (e.g. Whatsapp)
+    \item \textbf{Two-side}: Distinct user groups (e.g. Carousell)
+\end{itemize}
+
+\section{Internet infrastructure}
+
+\begin{theorem}
+    {Moore's Law}
+    The number of transistors on an integrated circuit doubles about every two years.
+\end{theorem}
+
+\subsection{Extranet vs Intranet}
+
+\begin{itemize}
+    \item \textbf{Extranet}: A network that is connected to the internet.
+    \item \textbf{Intranet}: A network that is not connected to the internet.
+\end{itemize}
+
+\subsection{Architecture}
+
+\begin{definition}
+    {ISP}
+    The global internet is connected by fiber optic cables, with \textbf{Internet Service Providers (ISP)} connecting devices to the internet. The optic cables are prone to natural hazards as well as human activities like ship anchoring.
+\end{definition}
+
+\begin{definition}
+    {NAP}
+    The ISPs connect to the internet through \textbf{Network Access Points (NAP)}. They are high speed routers that connect to the internet.
+\end{definition}
+
+\subsection{Speed}
+
+\begin{definition}
+    {Bandwidth}
+    The amount of data that can be transmitted through a network per unit of time.
+\end{definition}
+
+\subsection{Network protocols}
+
+\begin{definition}
+    {Protocol}
+    A format for transmitting packets (data) that has been agreed by a standard organization or industry.
+
+    \textbf{IP}: Internet Protocol
+
+    \textbf{TCP}: Transmission Control Protocol
+\end{definition}
+
+\begin{theorem}
+    {Packet switching}
+    \begin{enumerate}
+        \item The data is divided into packets.
+        \item Each packet is transmitted to the destination through the network by different paths.
+        \item The destination is responsible for reassembling the packets into the original data.
+    \end{enumerate}
+    \begin{itemize}
+        \item \textbf{TCP}: Ordering packets\\
+              Forming packets (adding headers and control information), dividing and reassembling, collision control (error checking)
+        \item \textbf{IP}: Routing packets\\
+              Send to proper destination, addresses
+    \end{itemize}
+\end{theorem}
+
+\subsection{IP Addresses}
+
+\begin{definition}
+    {IP Address}
+    A unique identifier for a device on the internet. Generic form called \textbf{IPv4}.
+
+    x.x.x.x where x is a number between 0 and 255.
+\end{definition}
+
+\begin{theorem}
+    {Dynamic IP addresses}
+    When device connected to internet, it is assigned a temporary IP address. When the connection is lost, the IP address is released and assigned to another device.
+\end{theorem}
+
+\begin{definition}
+    {Domain Name}
+    A human-readable name for an IP address.
+\end{definition}
+
+\begin{definition}
+    {Domain Name System (DNS)}
+    A distributed database that translates domain names to IP addresses. It is stored by your \textbf{ISPs}.
+\end{definition}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/tld.png}
+    \caption{Structure of Domains Names}
+    \label{fig:tld_structure}
+\end{figure}
 
 
 \end{document}

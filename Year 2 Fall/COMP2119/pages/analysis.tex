@@ -8,11 +8,6 @@ We usually determine the efficiency of an algorithm by analyzing its time and sp
     The \textbf{size} of an input is the number $\mathbf{n}$ of elements in the input.
 \end{definition}
 
-\begin{definition}
-    {Space complexity}
-    We measure the space complexity by the amount of memory an algorithm uses as a function of the size of the input.
-\end{definition}
-
 \subsection{How do we assess time complexity?}
 
 When we analyize time complexity, we are interested in the efficiency of an algorithm as a function of the size of the input.
@@ -22,6 +17,17 @@ As different machines have varying speeds of processors, time is not a good fit 
 We can consider the number of operations an algorithm performs relative to the size of the input, which will isolate the algorithm from the performing machines.
 
 However, different operations have varying efficiencies, so instead we consider the \textbf{growth rate} of the \textbf{total number of operations} as a function of the input size. The analysis of such is called \textbf{Asymptotic analysis}.
+
+
+\begin{definition}
+    {Time complexity}
+    The \textbf{rate of growth} of the \textbf{total number of operations} an algorithm performs relative to \textbf{size of input}.
+\end{definition}
+
+\begin{definition}
+    {Space complexity}
+    The \textbf{rate of growth} of the \textbf{total amount of memory} an algorithm uses relative to \textbf{size of input}.
+\end{definition}
 
 \subsection{Asymptotic notation}
 
