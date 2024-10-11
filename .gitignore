@@ -20,3 +20,7 @@
 # BibTeX
 *.bbl
 *.blg
+
+*.pdf
+*.env
+node_modules
