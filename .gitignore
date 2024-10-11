@@ -17,6 +17,7 @@
 *.vrb
 *.nav
 *.out
+*.upa
 
 # BibTeX
 *.bbl
