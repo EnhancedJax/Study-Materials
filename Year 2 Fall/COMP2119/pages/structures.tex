@@ -210,3 +210,52 @@ The following ADTs can be used to implement other data structures that will be i
     Nodes which has \textbf{one parent} and can connect to \textbf{multiple children}.
 \end{definition}
 
+\subsubsection{Hash tables}
+
+\begin{definition}
+    {Hash table}
+    \textbf{Dynamic set} of key-value pairs, where items are stored in an array with \textbf{fixed size}. To access an item, the index is found by a \hyperref[thm:hash-function]{hash function}.
+
+    A \textbf{collision} occurs when $h(k_1) = h(k_2)$. We deal with it by different \hyperref[thm:collision-resolution]{methods}.
+    
+    \begin{itemize}
+        \item \textbf{Access:} $\Theta(1)$, $O(n)$
+        \item \textbf{Insertion \& deletion:} $\Theta(1)$, $O(n)$
+    \end{itemize}
+    \textit{Note: Hash tables are a specific implementation of a dictionary. Each item in the hash table table is called a bucket or a slot}
+\end{definition}
+
+\begin{theorem}
+    {Hash function}
+    A hash function is a function that takes a key and returns an index. It should be in relation to the \textbf{size of the table} $m$.
+    
+    The most basic hash function is the \textbf{division method}:
+    \[
+        h(k) = k \% m
+    \]
+\end{theorem}
+\label{thm:hash-function}
+
+\begin{theorem}
+    {Collision \& resolution}
+    When $h(k_1) = h(k_2)$, we have a \textbf{collision}. We can resolve it by:
+    \begin{itemize}
+        \item \textbf{Chaining}: Store items in the same slot by \textbf{appending} them to the linked list in the slot.
+        \item \textbf{Open addressing}: Store items in another slot.
+    \end{itemize}
+    For opening addressing, we have the following implementations and the slot where the item is stored is:
+
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Method} & \textbf{Slot} \\
+        \hline
+        Linear probing & $A[h(k) + i]$ \\
+        Quadratic probing & $A[h(k) + i^2]$ \\
+        Double hashing & $A[h(k) + i \cdot h'(k)]$ \\
+        \hline
+    \end{tabular}
+
+    Where $i$ is the number of collisions.
+\end{theorem}
+
+\label{thm:collision-resolution}

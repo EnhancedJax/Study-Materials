@@ -4,6 +4,7 @@ public static void print(String str) {
 print("Hello World");
 
 public static void main(String[] args) {} // entry point of the program
+// args: string array of arguments passed to the program
 
 //#region Data Type
 /* ---------------------------------- */
@@ -129,10 +130,11 @@ package examplepackage; // package is a collection of classes, defined in a fold
 public class Programme {
     String attribute = "Hello"; // attribute of the class (variable)
     static int num = 1; // value is shared across all instances of the class
+    static final int num2 = 2; // constant value that cannot be changed
 
     /* -------- Access modifiers -------- */
 
-    public int var1; // accessible by Programme.var1
+    public int var1; // accessible by all with Programme.var1
     int var2; // accessible to classes in the same package
     private int var3; // accessible within this class only
 
@@ -148,6 +150,10 @@ public class Programme {
         return 1;
     }
     // int is the return type, method is the name
+
+    static final void methodName2() { // final method cannot be overridden
+        print("This is a final method");
+    }
 
     /* ----------- Overloading ---------- */
     // same method name, different parameters
@@ -196,6 +202,13 @@ public class Student extends Person {
         this.id = id;
         setName(name); // method from Person
         print(super.name); // access superclass attribute
+    }
+}
+
+public final class ClassName { // final class cannot be extended
+    // final class methods cannot be overridden
+    public void methodName() {
+        print("This is a final method");
     }
 }
 
@@ -249,6 +262,7 @@ public class DemoClass implements FirstInterface, SecondInterface {
     }
 }
 
+//#region Memory
 /* ---------------------------------- */
 /*         Java Heap vs Stack         */
 /* ---------------------------------- */
@@ -256,19 +270,18 @@ public class DemoClass implements FirstInterface, SecondInterface {
 /* Stack */
 // Stores local variables and method call information
 // Fast access, limited size
-// Automatically managed by JVM
 
 int x = 5; // Primitive types are stored directly on the stack
-Student student = new Student(); // Reference is stored on the stack
+Student student = new Student(); // References is stored on the stack
 
 /* Heap */
 // Stores objects and class instances
 // Slower access, larger size
-// Managed by garbage collector
+// Managed by __Garbage Collector__: Automatically frees memory (unlike C++ needs manual delete)
 
 // Objects are stored on the heap
 Student anotherStudent = new Student(); // 'anotherStudent' reference on stack, object on heap
-String str = "Hello"; // String object is stored on the heap
+String str = "Hello"; 
 
 // Example of memory allocation
 public void exampleMethod() {

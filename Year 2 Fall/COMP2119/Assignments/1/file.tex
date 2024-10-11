@@ -1,0 +1,123 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../../LaTeX-Preamables/Clean}
+\usepackage[makeroom]{cancel}
+\begin{document}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+
+\begin{center}
+    \includegraphics[width=\linewidth]{img/1.png}
+\end{center}
+
+\subsection*{(a)}
+The function checks from the start of the list A if the number is greater than the next number. If it is, then $k$ is number of elements after the current indice, given by $n-i-1$ where $i$ is the current indice.
+
+It's worst time case complexity is $O(n)$ for when $k$ is 0. 
+
+\subsection*{(b)}
+
+\begin{lstlisting}[language=Python]
+function REORDER2(A, n)
+    k = 0
+    for (i=0 to n-2)
+        if (A[i] > A[i + 1])
+            k = n - i - 1
+            break 
+    return k
+\end{lstlisting}
+
+Asymptotically faster means that the algo is more efficient 
+
+The code is identical to REORDER1 with the addition of the break statement. This algorithm is faster than REORDER1 in the sense that it's average time complexity 
+
+\section*{Question 2}
+
+\includegraphics[width=\linewidth]{img/2.png}
+
+\lstinputlisting[language=Java, basicstyle=\footnotesize\ttfamily]{2.js}
+
+\section*{Question 3}
+
+\includegraphics[width=\linewidth]{img/3.png}
+
+\subsection*{(a)}
+
+\lstinputlisting[language=Java, basicstyle=\footnotesize\ttfamily]{3.js}
+
+\subsection*{(b)}
+
+The worst case time complexity of push is O(1) and the worst case time complexity of pop is O(n).
+
+\section*{Question 4}
+
+\includegraphics[width=\linewidth]{img/4.png}
+
+\subsection*{(a)}
+
+$m = 7,\quad h(k) = k \mod 7$ with chaining.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Key} & 17 & 94 & 86 & 22 & 98 & 79 & 54 & 38 \\
+        \hline
+        \textbf{Hash} & 3 & 3 & 2 & 1 & 0 & 2 & 5 & 3 \\
+        \hline
+        \textbf{Slot} & 3[0] & 3[1] & 2[0] & 1[0] & 0[0] & 2[1] & 5[0] & 3[2] \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Average number of slots inspected is $\frac{1+2+1+1+1+2+1+3}{8} = 1.5$.
+
+\subsection*{(b)}
+
+$m = 11,\quad h(k) = k \mod 11$ with linear probing $f(i) = 3i$.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Key} & 17 & 94 & 86 & 22 & 98 & 79 & 54 & 38 \\
+        \hline
+        \textbf{Hash} & 6 & 6 & 9 & 0 & 10 & 2 & 10 & 5 \\
+        \hline
+        \textbf{Slot} & 6 & \xcancel{6} 9 & \xcancel{9} 1 & 0 & 10 & 2 & \xcancel{10} \xcancel{2} 5 & \xcancel{5} 8 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Average number of slots inspected is $\frac{1+2+2+1+1+1+3+2}{8} = 1.625$.
+
+\subsection*{(c)}
+
+$m = 11,\quad h(k) = k \mod 11$ with double hashing $f(i) = i \cdot h'(k),\quad h'(k) = 2 - (k \mod 2)$.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Key} & 17 & 94 & 86 & 22 & 98 & 79 & 54 & 38 \\
+        \hline
+        \textbf{Hash} & 6 & 6 & 9 & 0 & 10 & 2 & 10 & 5 \\
+        \hline
+        \textbf{Slot} & 6 & \xcancel{6} 8 & 9 & 0 & 10 & 2 & \xcancel{10} 1 & 5 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Average number of slots inspected is $\frac{1+2+2+1+1+1+2+1}{8} = 1.25$.
+
+\end{document}

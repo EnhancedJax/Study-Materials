@@ -185,3 +185,168 @@ Hence, there will be \textit{4 titles} for the adjusting entries as follows, alo
     \end{tabular}
 \end{tcolorbox}
 \normalsize
+
+\subsection{Depreciation}
+\label{subsec:depreciation}
+
+\subsubsection{Recording as adjustijng entry}
+
+\begin{definition}
+    {Depreciation}
+    The process of reducing the book value of a tangible fixed asset over time
+\end{definition}
+
+\begin{knBox}
+    {Recording depreciation expense}
+    Depreciation expense is an \textbf{accrued expense}, as the service is received before payment.
+
+    \vspace{1em}
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}      & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+        Dec 31, 2023  & Depreciation expense  & \$12        &             \\
+                      & \quad Accumulated depreciation &             & \$12         \\
+    \end{tabular}
+
+    \vspace{1em}
+    
+    Accumulated depreciation is a \hyperref[def:contra]{\textbf{contra asset}}, as it has a normal balance opposite to the asset. We record it like the following in the balance sheet:
+    
+    \vspace{1em}    
+
+    \begin{tabular}{lr}
+            \textbf{Assets} &  \\
+            \hline
+            Equipment       & \$100          \\
+            \quad Accumulated depreciation & (12)               \\
+            \hline
+            \textbf{Total}   & \$88           \\
+        \end{tabular}
+\end{knBox}
+
+\subsubsection{Calculating depreciation expense}
+
+
+\subsection{Sales revenue \& Bad debt expenses}
+
+\subsubsection{Net sales revenue}
+
+When considering the net sales revenue, we need to recognize some of the following deductions. They are not expenses, but a \hyperref[def:contra]{\textbf{contra revenue}} of \textbf{credit sales revenue}.
+
+The following are three common contra accounts of sales revenue. When they occur, we \textbf{debit} the contra revenue account and \textbf{credit} sales revenue.
+
+\begin{theorem}
+    {Credit card discount}
+    When paying with a credit card, the merchant will be charged a fee by the credit card company. This fee is typically a percentage of the transaction amount.
+\end{theorem}
+
+\begin{theorem}
+    {Sales discounts}
+    Discounts given to customers for early payment, called a \textbf{early repayment incentive}. For the following terms:
+    \[2/10, n/30 \implies \text{2\% discount if paid within 10 days, otherwise net due in 30 days}\]
+\end{theorem}
+
+\begin{theorem}
+    {Sales returns and allowances}
+    Discounts given to customers for price discounts, or the total sales price of the returned goods.
+\end{theorem}
+
+\begin{knBox}
+    {Presenting in income statement}
+    We simply present as a \hyperref[def:contra]{\textbf{contra revenue}} of \textbf{sales revenue}.
+
+    \begin{tabular}{lccc}
+        \textbf{Sales revenue} & \$1000 \\
+        \quad Sales returns and allowances & (100) \\
+        \quad Sales discounts & (50) \\
+        \quad Credit card discount & \underline{(20)} \\
+        \textbf{Net sales revenue} & \$830 \\
+    \end{tabular}
+\end{knBox}
+
+\subsubsection{Bad debts}
+
+To keep track of each customer's account receivables, we usually assign an individual account for each customer (a \textbf{subsidiary account}).
+
+\textbf{Bad debts} result from credit customers who will not pay the amount they owe (accounts receivable), regardless of collection efforts. For example, a customer who is bankrupt.
+
+\begin{definition}
+    {Account: Bad debt expense}
+    An expense account for the amount of money that is not likely to be paid. There are two methods to do so:
+\end{definition}
+
+
+\subsubsection{Accounting bad debt expenses}
+
+\begin{definition}
+    {Account: Allowance for doubtful accounts}
+    An \hyperref[def:contra]{\textbf{contra account}} for the \textbf{accounts receivable} to estimate the amount of money that will not be paid.
+\end{definition}
+
+\begin{theorem}
+    {Credit sales}
+    Credit sales are \textit{sales revenue} that \textbf{debit accounts receivable} (credit sales is not an account).
+\end{theorem}
+
+\begin{knBox}
+    {Write-offs \& estimating bad debt expense}
+    We record an \hyperref[thm:bad_debt_est]{\textbf{estimated}} bad debt expense at the end of the period of the credit sales as an adjusting entry.
+
+    \vspace{0.3em}
+
+    During the next period, we \textbf{write-off} the bad debt expense of the previous period, when we have \textbf{confirmed} that the customer will not pay, by deducting from \textbf{accounts receivable} to \textbf{allowance for doubtful accounts}.
+    
+    \vspace{0.3em}
+    
+    \textit{A write-off has no effects on the \textbf{net income}, as it is already recorded as an expense in the previous period.}
+    
+    \begin{itemize}
+        \item End of period of sales: Allowance (\textbf{Cr}) $\rightarrow$ Bad debt expense (\textbf{Dr})
+        \item Next period write-offs (confirmed bad debts): Accounts receivable (\textbf{Cr}) $\rightarrow$ Allowance (\textbf{Dr})
+    \end{itemize}
+    
+\end{knBox}
+
+\begin{knBox}
+    {Recoveries}
+    When a customer who has a bad debt previously pays, we simply revert the write-off entry:
+
+    \vspace{1em}
+
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}      & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+        Dec 31, 2023  & Cash & \$12        &             \\
+                      & \quad Allowance for doubtful accounts &             & \$12         \\
+    \end{tabular}
+\end{knBox}
+
+There are two methods to estimate the bad debt expense:
+\begin{itemize}
+    \item \textbf{Percentage of sales}
+    \item \textbf{Aging method}
+\end{itemize}
+\label{thm:bad_debt_est}
+
+\begin{theorem}
+    {Estimate bad debt by Percentage of sales}
+    Bad debt expense adjustment = \textbf{Credit} sales revenue (minus returns and allowances) $\times$ \textit{Historial} loss rate
+\end{theorem}
+
+\begin{theorem}
+    {Estimate bad debt by Aging method}
+    We estimate the \textbf{ending balance} of the allowance by the age of receivables, and calculate the adjustment by finding the \textbf{difference} between the (beginning balance - write-offs) and the ending balance.
+
+    \begin{tabular}{lccc}
+        \textbf{Age of receivable} & \textbf{Amount} & \textbf{Estimated loss rate} & \textbf{Estimated loss} \\
+        \hline
+        0-30 days & \$1000 & 1\% & \$10 \\
+        31-60 days & \$2000 & 2\% & \$40 \\
+        61-90 days & \$1500 & 3\% & \underline{\$45} \\
+        \textbf{Estimated ending balance} &  &  & \$95 \\
+        Write-offs (Debit of allowance) &  &  & \$5 \\
+        Beginning balance of bad debt expense &  &  & \underline{(\$10)} \\
+        \textbf{Bad debt expense adjustment} &  &  & \$90 \\
+    \end{tabular}
+\end{theorem}
+
