@@ -3,6 +3,7 @@
 *.log
 *.toc
 *.fls
+*.xdv
 *.synctex.gz
 
 # Latexmk
