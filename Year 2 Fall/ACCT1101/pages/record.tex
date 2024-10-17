@@ -52,40 +52,16 @@ Bookkeeping is the process of recording transactions in a systematic way.
 \begin{knBox}
     {Contra accounts}
     Contra accounts are accounts that have a normal balance \textbf{opposite} to the account type. The following is how we present them in a financial statement:
-    
+
     \tcblower
 
     \begin{tabular}{ll}
-        \textbf{Assets} & \\
-        Accounts receivable & \$10\\
-        \quad Less: Allowance for doubtful accounts & (\$1)\\
+        \textbf{Assets}                             &       \\
+        Accounts receivable                         & \$10  \\
+        \quad Less: Allowance for doubtful accounts & (\$1) \\
     \end{tabular}
 \end{knBox}
 \label{def:contra}
-
-\subsubsection{Stockholder's Equity Items}
-
-\begin{knBox}
-    {Common Stock}
-    The shares of the company that are owned by the public.
-    \begin{center}
-        $\Delta$\textbf{C}ommon \textbf{S}tock = Stock Issurance = Number of shares $\times$ Par value
-    \end{center}
-    \tcblower
-    "Issued 200m additional shares of \$0.01 par value" $\implies\ \Delta$\textbf{CS} = 2m
-    \label{def:cs}
-\end{knBox}
-
-\begin{knBox}
-    {Additional Paid-in Capital}
-    The amount of money that shareholders have contributed to the company less the stock issurance.
-    \begin{center}
-        $\Delta$Additional Paid-in Capital = Value - Stock Issurance
-    \end{center}
-    \tcblower
-    "Issued 200m additional shares of \$0.01 par value for \$16m" $\implies\ \Delta$APC = 14m
-    \label{def:apic}
-\end{knBox}
 
 \subsubsection{Categorizing transactions}
 
@@ -154,7 +130,7 @@ Bookkeeping is the process of recording transactions in a systematic way.
 
 \begin{knBox}
     {Cash and cash equivalents}
-    The most liquid assets that can be \textbf{quickly converted to cash}. We usually group these into a single \textit{cash} account. 
+    The most liquid assets that can be \textbf{quickly converted to cash}. We usually group these into a single \textit{cash} account.
 \end{knBox}
 
 \begin{knBox}
@@ -164,6 +140,206 @@ Bookkeeping is the process of recording transactions in a systematic way.
     \textit{Example 1: } You borrowed \$1000 from a bank. (Payable)
 \end{knBox}
 \label{def:nrp}
+
+\subsubsection{Stockholder's Equity Items}
+
+\begin{knBox}
+    {Common Stock}
+    The shares of the company that are owned by the public.
+    \begin{center}
+        $\Delta$\textbf{C}ommon \textbf{S}tock = Stock Issurance = Number of shares $\times$ Par value
+    \end{center}
+    \tcblower
+    "Issued 200m additional shares of \$0.01 par value" $\implies\ \Delta$\textbf{CS} = 2m
+    \label{def:cs}
+\end{knBox}
+
+\begin{knBox}
+    {Additional Paid-in Capital}
+    The amount of money that shareholders have contributed to the company less the stock issurance.
+    \begin{center}
+        $\Delta$Additional Paid-in Capital = Value - Stock Issurance
+    \end{center}
+    \tcblower
+    "Issued 200m additional shares of \$0.01 par value for \$16m" $\implies\ \Delta$APC = 14m
+    \label{def:apic}
+\end{knBox}
+
+\subsubsection{Recording inventories \& COGS}
+
+\begin{definition}
+    {Inventory}
+    The goods that you have for sale as a retailer, or the raw materials that you have for sale as a manufacturer.
+\end{definition}
+
+As a retailer, you purchase the goods to sell as inventory from a supplier, and make a sale to a customer. We need to record this purchase, sale, COGS and the change in inventory.
+
+\begin{theorem}
+    {Recording inventories and COGS (Inventory system)}
+    There are two ways we can record COGS and inventory in an according period:
+    \begin{itemize}
+        \item \textbf{As the goods are sold / purchased} (Perpetual)
+              \begin{itemize}
+                  \item[] $\checkmark$ Updates accounts in real-time
+                  \item[] $\times$ More complex, more costly
+              \end{itemize}
+        \item \textbf{At the end of the period} (Periodic)
+              \begin{itemize}
+                  \item[] $\times$ Does not update accounts in real-time
+                  \item[] $\checkmark$ Less complex, less costly
+              \end{itemize}
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example to compare the two inventory systems]
+    \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Perpetual System:}
+
+        \vspace{1.3em}
+
+        When we restock our inventory:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}           & \textbf{Dr} & \textbf{Cr} \\
+            \hline
+            Jan 1, 2023   & \colorbox{lime}{Inventory} & \$1         &             \\
+                          & \quad {Cash}               &             & \$1         \\
+        \end{tabular}
+
+        \vspace{1.3em}
+
+        When we make a sale:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}                                                 & \textbf{Dr}            & \textbf{Cr} \\
+            \hline
+            Jan 2, 2023   & Cash                                                             & \$2                    &             \\
+                          & \quad Sales Revenue                                              &                        & \$2         \\
+                          & \multicolumn{3}{l}{\textit{(To record the sale of goods)}}                                              \\
+            Jan 2, 2023   & Cost of Goods Sold                                               & \colorbox{yellow}{\$1} &             \\
+                          & \quad Inventory                                                  &                        & \$1         \\
+                          & \multicolumn{3}{l}{\textit{(\colorbox{lime}{Update real-time})}}                                        \\
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Periodic System:}
+
+        \vspace{1.3em}
+
+        When we restock our inventory:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}           & \textbf{Dr} & \textbf{Cr} \\
+            \hline
+            Jan 1, 2023   & \colorbox{lime}{Purchases} & \$1         &             \\
+                          & \quad Cash                 &             & \$1         \\
+        \end{tabular}
+
+        \vspace{1.3em}
+
+        When we make a sale:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}                                           & \textbf{Dr} & \textbf{Cr} \\
+            \hline
+            Jan 2, 2023   & Cash                                                       & \$2         &             \\
+                          & \quad Sales Revenue                                        &             & \$2         \\
+                          & \multicolumn{3}{l}{\textit{(To record the sale of goods)}}                             \\
+        \end{tabular}
+
+        \vspace{1.3em}
+
+        At the end of the period:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}                                                               & \textbf{Dr}            & \textbf{Cr} \\
+            \hline
+            Dec 31, 2023  & Inventory                                                                      & \$1                    &             \\
+                          & \quad Purchases                                                                &                        & \$1         \\
+                          & \multicolumn{3}{l}{\textit{(\colorbox{lime}{Update inventory restock first})}}                                        \\
+                          & Cost of Goods Sold                                                             & \colorbox{yellow}{\$1} &             \\
+                          & \quad Inventory                                                                &                        & \$1         \\
+                          & \multicolumn{3}{l}{\textit{(Update COGS after)}}                                                                      \\
+        \end{tabular}
+    \end{minipage}
+\end{tcolorbox}
+\normalsize
+
+The difference between the COGS and the revenue will reflect the profit accordingly when we produce the \hyperref[sec:income_statement]{income statement}.
+
+The above example assumes that the \colorbox{yellow}{cost of inventory} is the same for each unit on every restock, which is not always the case.
+
+\begin{theorem}
+    {Inventory cost flow table}
+    Reflects the changes in inventory during an accounting period, with the total cost of good sold depending on \hyperref[thm:cost_flow]{cost flow assumptions}.
+\end{theorem}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example of inventory cost flow table]
+    During the period, the following transactions occurred:
+    \begin{enumerate}
+        \item 1/1: First purchase of goods 100 units at \$1 each
+        \item 1/2: Restocked 200 units by \$400
+        \item 1/3: Sold 150 units for \$450
+    \end{enumerate}
+
+    \vspace{1em}
+
+    \begin{tabular}{l|l|c|c|c}
+        \textbf{Date} & \textbf{Action}          & \textbf{Quantity} & \textbf{Unit cost} & \textbf{Total cost}                               \\
+        \hline
+        Jan 1, 2023   & Opening                  & 100               & \$1                & \$100                                             \\
+        Jan 2, 2023   & Purchase                 & 200               & 2                  & 400                                               \\
+        \hline
+                      & Goods available for sale & 300               & /                  & 500                                               \\
+        Jan 3, 2023   & Sale                     & (150)             & /                  & (\colorbox{yellow}{?}) $\leftarrow$ \textit{COGS} \\
+        \hline
+                      & Ending inventory         & 150               & /                  & $500-?$                                           \\
+    \end{tabular}
+
+    \vspace{1em}
+
+    \textit{\colorbox{yellow}{?} COGS depends on the \hyperref[thm:cost_flow]{cost flow assumptions}.}
+\end{tcolorbox}
+\normalsize
+
+\begin{theorem}
+    {Cost flow assumptions}
+    To determine the COGS when we purchased the goods at different costs, we can use the following assumptions:
+    \begin{itemize}
+        \item \textbf{FIFO} - First In, First Out
+        \item \textbf{LIFO} - Last In, First Out
+        \item \textbf{AVCO} - Average cost of all units (Total cost / Available units)
+        \item \textbf{Specific Identification} - Ratio / quantity specified
+    \end{itemize}
+    They are assumptions because we do not know which physical units were sold.
+    \tcblower
+    \begin{enumerate}
+        \item \colorbox{yellow}{?}$\ =1(100)+2(50)=200$
+        \item \colorbox{yellow}{?}$\ =2(100)+1(50)=250$
+        \item \colorbox{yellow}{?}$\ =\frac{500}{300}(150)=250$
+    \end{enumerate}
+\end{theorem}
+\label{thm:cost_flow}
+
+\begin{knBox}
+    {Which assumption is better?}
+    We must take into account for the \textbf{rise / drop in inventory prices during the period} when considering which assumption is better.
+
+    In a period of \textbf{rising prices}:
+    \begin{itemize}
+        \item FIFO - Higher net income (less COGS expenses)
+        \item LIFO - Lower net income (more COGS expenses)
+    \end{itemize}
+    \textit{Note: Accounting rules require companies to apply their accounting methods on a consistent basis over time. (Can't change frequently)}
+\end{knBox}
+
+\begin{theorem}
+    {Lower of costs}
+\end{theorem}
 
 \subsection{Preparing journal entries}
 \label{subsec:prepare}
