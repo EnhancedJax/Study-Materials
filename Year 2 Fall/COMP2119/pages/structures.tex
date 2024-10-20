@@ -217,22 +217,34 @@ The following ADTs can be used to implement other data structures that will be i
     \textbf{Dynamic set} of key-value pairs, where items are stored in an array with \textbf{fixed size}. To access an item, the index is found by a \hyperref[thm:hash-function]{hash function}.
 
     A \textbf{collision} occurs when $h(k_1) = h(k_2)$. We deal with it by different \hyperref[thm:collision-resolution]{methods}.
-    
+
     \begin{itemize}
         \item \textbf{Access:} $\Theta(1)$, $O(n)$
         \item \textbf{Insertion \& deletion:} $\Theta(1)$, $O(n)$
     \end{itemize}
+
+    Where $h$ is the hash function and $k$ is the key.
+
     \textit{Note: Hash tables are a specific implementation of a dictionary. Each item in the hash table table is called a bucket or a slot}
 \end{definition}
+
+\begin{knBox}
+    {Load factor}
+    \[
+        \alpha = \frac{n}{m}
+    \]
+    Where $n$ is the number of items, and $m$ is the size of the table.
+\end{knBox}
 
 \begin{theorem}
     {Hash function}
     A hash function is a function that takes a key and returns an index. It should be in relation to the \textbf{size of the table} $m$.
-    
+
     The most basic hash function is the \textbf{division method}:
     \[
         h(k) = k \% m
     \]
+    A good value of $m$ should be a \textbf{prime number} that is not close to a power of 2.
 \end{theorem}
 \label{thm:hash-function}
 
@@ -247,15 +259,30 @@ The following ADTs can be used to implement other data structures that will be i
 
     \begin{tabular}{|l|l|}
         \hline
-        \textbf{Method} & \textbf{Slot} \\
+        \textbf{Method}   & \textbf{Slot}             \\
         \hline
-        Linear probing & $A[h(k) + i]$ \\
-        Quadratic probing & $A[h(k) + i^2]$ \\
-        Double hashing & $A[h(k) + i \cdot h'(k)]$ \\
+        Linear probing    & $A[h(k) + i]$             \\
+        Quadratic probing & $A[h(k) + i^2]$           \\
+        Double hashing    & $A[h(k) + i \cdot h'(k)]$ \\
         \hline
     \end{tabular}
 
     Where $i$ is the number of collisions.
 \end{theorem}
+
+\begin{theorem}
+    {Average number of slots inspected for an unsuccessful search}
+    \begin{itemize}
+        \item Chaining: $\alpha$
+        \item Open addressing: $\frac{1}{1-\alpha}$
+    \end{itemize}
+\end{theorem}
+
+\begin{knBox}
+    {Primary clustering}
+    Primary clustering occurs in \textbf{open-addressing} hash tables that use \textbf{linear probing} for collision resolution, which can lead to clusters of occupied slots.
+
+    This can lead to \textbf{longer search times} for items that are stored in the same cluster.
+\end{knBox}
 
 \label{thm:collision-resolution}

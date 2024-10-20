@@ -26,23 +26,28 @@
 \subsection*{(a)}
 The function checks from the start of the list A if the number is greater than the next number. If it is, then $k$ is number of elements after the current indice, given by $n-i-1$ where $i$ is the current indice.
 
-It's worst time case complexity is $O(n)$ for when $k$ is 0. 
+It's worst time case complexity is $O(n)$ for when $k$ is 0.
 
 \subsection*{(b)}
 
 \begin{lstlisting}[language=Python]
 function REORDER2(A, n)
-    k = 0
-    for (i=0 to n-2)
-        if (A[i] > A[i + 1])
-            k = n - i - 1
-            break 
-    return k
+    if (n <= 1 or A[0] < A[n-1])
+        return 0
+    left = 0
+    right = n - 1
+    while (left + 1 < right)
+        middle = (left + right) / 2
+        if (A[middle] < A[n-1])
+            right = middle
+        else
+            left = middle
+    return n - right
 \end{lstlisting}
 
-Asymptotically faster means that the algo is more efficient 
+The worst time case complexity is $O(\log n)$, as the search space is halved each time.
 
-The code is identical to REORDER1 with the addition of the break statement. This algorithm is faster than REORDER1 in the sense that it's average time complexity 
+The code returns 0 if the list is sorted in ascending order, as there is no read scripts, otherwise, it works by checking if the middle element is less than the last element. If it is, then the pivot point is in the left half of the list (inclusive), otherwise, it's in the right half. This is because the pivot point is the smallest element in the list. We repeat this process until the search space is reduced to 2 elements, at which point we return the index of the smaller element.
 
 \section*{Question 2}
 
@@ -73,16 +78,16 @@ $m = 7,\quad h(k) = k \mod 7$ with chaining.
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Key} & 17 & 94 & 86 & 22 & 98 & 79 & 54 & 38 \\
+        \textbf{Key}  & 17   & 94   & 86   & 22   & 98   & 79   & 54   & 38   \\
         \hline
-        \textbf{Hash} & 3 & 3 & 2 & 1 & 0 & 2 & 5 & 3 \\
+        \textbf{Hash} & 3    & 3    & 2    & 1    & 0    & 2    & 5    & 3    \\
         \hline
         \textbf{Slot} & 3[0] & 3[1] & 2[0] & 1[0] & 0[0] & 2[1] & 5[0] & 3[2] \\
         \hline
     \end{tabular}
 \end{center}
 
-Average number of slots inspected is $\frac{1+2+1+1+1+2+1+3}{8} = 1.5$.
+Average number of slots inspected for unsuccessful search: $\frac{8}{7}$
 
 \subsection*{(b)}
 
@@ -91,16 +96,16 @@ $m = 11,\quad h(k) = k \mod 11$ with linear probing $f(i) = 3i$.
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Key} & 17 & 94 & 86 & 22 & 98 & 79 & 54 & 38 \\
+        \textbf{Key}  & 17 & 94            & 86            & 22 & 98 & 79 & 54                         & 38            \\
         \hline
-        \textbf{Hash} & 6 & 6 & 9 & 0 & 10 & 2 & 10 & 5 \\
+        \textbf{Hash} & 6  & 6             & 9             & 0  & 10 & 2  & 10                         & 5             \\
         \hline
-        \textbf{Slot} & 6 & \xcancel{6} 9 & \xcancel{9} 1 & 0 & 10 & 2 & \xcancel{10} \xcancel{2} 5 & \xcancel{5} 8 \\
+        \textbf{Slot} & 6  & \xcancel{6} 9 & \xcancel{9} 1 & 0  & 10 & 2  & \xcancel{10} \xcancel{2} 5 & \xcancel{5} 8 \\
         \hline
     \end{tabular}
 \end{center}
 
-Average number of slots inspected is $\frac{1+2+2+1+1+1+3+2}{8} = 1.625$.
+Average number of slots inspected for unsuccessful search: $\frac1{1-\frac{8}{11}}=\frac{11}3$
 
 \subsection*{(c)}
 
@@ -109,15 +114,15 @@ $m = 11,\quad h(k) = k \mod 11$ with double hashing $f(i) = i \cdot h'(k),\quad 
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Key} & 17 & 94 & 86 & 22 & 98 & 79 & 54 & 38 \\
+        \textbf{Key}  & 17 & 94            & 86 & 22 & 98 & 79 & 54             & 38 \\
         \hline
-        \textbf{Hash} & 6 & 6 & 9 & 0 & 10 & 2 & 10 & 5 \\
+        \textbf{Hash} & 6  & 6             & 9  & 0  & 10 & 2  & 10             & 5  \\
         \hline
-        \textbf{Slot} & 6 & \xcancel{6} 8 & 9 & 0 & 10 & 2 & \xcancel{10} 1 & 5 \\
+        \textbf{Slot} & 6  & \xcancel{6} 8 & 9  & 0  & 10 & 2  & \xcancel{10} 1 & 5  \\
         \hline
     \end{tabular}
 \end{center}
 
-Average number of slots inspected is $\frac{1+2+2+1+1+1+2+1}{8} = 1.25$.
+Average number of slots inspected for unsuccessful search: $\frac{1}{1-\frac{8}{11}}=\frac{11}3$
 
 \end{document}
