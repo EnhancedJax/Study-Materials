@@ -64,6 +64,7 @@ However, different operations have varying efficiencies, so instead we consider 
     \[T(n) \simeq c\cdot g(n)\ \forall\ n \geq n_0\]
     Note that the $\in$ is interchangable with $=$. The meaning does not really matter.
     \tcblower
+    To prove non-strict boundaries, we need to show the existence of constants $c, n_0$ that satisfies the inequality.
     \label{def:asym}
     \ref{eg:asym_1} \ref{eg:asym_2}
 \end{definition}
@@ -90,6 +91,8 @@ However, different operations have varying efficiencies, so instead we consider 
     You can use the same logic to determine if some $f(n)$ is $A/a$ of $g(n)$.
 
     Note that as the defintions are specified by an \textbf{inequality}, there could be \textbf{multiple satisfying} $g(n)$ for the same $T(n)$ and all of them are valid. However, keep in mind the only useful $g(n)$ for analysis would be closest to the condition boundary.
+
+    If the function functuates, there is not a consistent growth rate unless a boundary is specified.
     \tcblower
     \label{thm:iasym}
     \ref{eg:iasym_1}

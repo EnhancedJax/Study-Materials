@@ -85,6 +85,19 @@ $m = 7,\quad h(k) = k \mod 7$ with chaining.
         \textbf{Slot} & 3[0] & 3[1] & 2[0] & 1[0] & 0[0] & 2[1] & 5[0] & 3[2] \\
         \hline
     \end{tabular}
+    \begin{tabular}{|r|l|}
+        \hline
+        \textbf{Slot} & \textbf{Linked List} \\
+        \hline
+        0 & 98 $\to$ null \\
+        1 & 22 $\to$ null \\
+        2 & 86 $\to$ 79 $\to$ null \\
+        3 & 17 $\to$ 94 $\to$ 38 $\to$ null \\
+        4 & null \\
+        5 & 54 $\to$ null \\
+        6 & null \\
+        \hline
+    \end{tabular}
 \end{center}
 
 Average number of slots inspected for unsuccessful search: $\frac{8}{7}$
@@ -103,6 +116,23 @@ $m = 11,\quad h(k) = k \mod 11$ with linear probing $f(i) = 3i$.
         \textbf{Slot} & 6  & \xcancel{6} 9 & \xcancel{9} 1 & 0  & 10 & 2  & \xcancel{10} \xcancel{2} 5 & \xcancel{5} 8 \\
         \hline
     \end{tabular}
+    \begin{tabular}{|r|l|}
+        \hline
+        \textbf{Slot} & \textbf{Value} \\
+        \hline
+        0 & 22 \\
+        1 & 86 \\
+        2 & 79 \\
+        3 & null \\
+        4 & null \\
+        5 & 54 \\
+        6 & 17 \\
+        7 & null \\
+        8 & 38 \\
+        9 & 94 \\
+        10 & 98 \\
+        \hline
+    \end{tabular}
 \end{center}
 
 Average number of slots inspected for unsuccessful search: $\frac1{1-\frac{8}{11}}=\frac{11}3$
@@ -119,6 +149,23 @@ $m = 11,\quad h(k) = k \mod 11$ with double hashing $f(i) = i \cdot h'(k),\quad 
         \textbf{Hash} & 6  & 6             & 9  & 0  & 10 & 2  & 10             & 5  \\
         \hline
         \textbf{Slot} & 6  & \xcancel{6} 8 & 9  & 0  & 10 & 2  & \xcancel{10} 1 & 5  \\
+        \hline
+    \end{tabular}
+    \begin{tabular}{|r|l|}
+        \hline
+        \textbf{Slot} & \textbf{Value} \\
+        \hline
+        0 & 22 \\
+        1 & 54 \\
+        2 & 79 \\
+        3 & null \\
+        4 & null \\
+        5 & 38 \\
+        6 & 17 \\
+        7 & null \\
+        8 & 94 \\
+        9 & 86 \\
+        10 & 98 \\
         \hline
     \end{tabular}
 \end{center}
