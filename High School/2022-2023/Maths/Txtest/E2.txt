@@ -1,0 +1,44 @@
+# Paper checking: 
+* sf
+* domain
+* give inverse domain
+* recalc
+
+When solving abs functions: Consider both sides with OR rel., consider cases with AND rel.
+
+f(x+t)      t -> -x
+f(x) + t    t -> y
+f(sx)       s -> 1/x
+sf(x)       s -> y
+
+2 identities for sec cosec:
+sec2 = 1+t^2
+cosec2 = 1+cot^2
+
+1 = s^2 + c^2
+
+> Following symbols of + - represents ± ∓
+s(+) = sc + cs          s2 = 2sc
+c(+) = cc - ss          c2 = c^2 - s^2
+
+Prove s+s = 2s(+/2)c(-/2) by: s(+) + s(-) let a b -> A
+
+# Useful formulas: 
+s^2 = (1-c2)/2
+sc = s(+) - s(-)
+ss = c(+) - c(-)
+
+For a > 0
+asx + bcx = sqrt(sumof2)s(x+K)
+acx + bsx = sqrt(sumof2)c(x-K)
+K = c^-1 a/sqrt(sumof2)
+
+f(x)        f'(x)
+-----------------
+a^x         lna a^x
+e^x         e^x
+lnx         1/x
+sinx        cosx
+cosx        -sinx
+tanx        sec^2(x)
+|x|         |x|/x

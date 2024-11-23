@@ -1,0 +1,333 @@
+====================================================================================================================
+====================================================================================================================
+
+OC: Highest optioned value forgone
+Positive statements: can be refuted by facts
+Normative statements: can't be refuted by facts
+
+## To produce (3)
+What - type
+How - resource
+For whom - consumer
+
+## Economies + resource allocation, economic decision (2)
+Market-oriented - price signal - private individuals
+command - govt cmd - govt decision
+
+## Private property rights (3)
+Exclusive right to use and receive income
+Right to transfer
+
+## Public enterprise (2)
+Government department
+Public corporation
+
+## Private enterprise (4)
+Sole proprietorship | Partnership | Limited companies
+
+## Properties of private enterprise: (6)
+NUM
+Decision making
+Legal status
+Tax rate
+Setup procedure
+Transferring ownership
+Disclosure of accounting info
+Power to issue share and bonds
+
+## For S&B to buyer: (3)
+Rate of return
+Influencing company decisions in stakeholder's meeting
+Maturity date
+
+## For S&B to company: (3)
+Obligation to pay interest
+Obligation to redeem bonds
+diluted control of existing shareholders
+
+Limited liability: If there is a loss, owner's liability is confined to amount of investments to the firm
+
+>> Relative law of demand: 
+Ceteris paribus, vice versa
+Given increase in price of good by quota
+Relative price of HPG in terms of LPG decrease
+People would consume more HPG in terms of LPG
+The proportion of HPG consumed would increase
+The average quality increase
+
+Price functions + trailing explanation: (3)
+Consumer: Rationing - Goods were distributed to consumers who were willing to pay the market price
+Producer: Allocative - Resources allocated according to change in RP
+* : Price - Price help transmit info about consumer's demand of good relative to producer's supply
+
+## Other factors affecting D: (1+3)
+related goods: income -> iDn dDi
+Competitive - P : iDr
+Joint - P : dDr
+Derived - Dp : Di
+
+## Other factors affecting S: (3)
+Competitive - P : dSr
+Joint - P : iSr
+Factors of production - Pi : dSp
+
+Elasticity Calc: %ΔQ / %ΔP
+Arc Calc: ΔQ/ΔP * (P1+P2)/(Q1+Q2)
+
+## List elasticities:  (5)
+>1 %ΔQ > %ΔP
+=1 %ΔQ = %ΔP
+<1 %ΔQ = %ΔP
+= Inf ΔP = Inf ΔQ
+= 0 ΔP = 0ΔQ
+
+?? Positive factors affecting elasticity: List 6
+1. (D)Substitutes
+2. (D)Prop of income
+3. (D)Durability
+4. (B)Time for adjusting
+5. (S)Flexibility of production
+6. (S)Ease of entry
+
+?? Negative factors affecting elasticity: List 3
+1. (D)Necessity
+2. (D)Habit forming goods
+3. (S)Capital intensiveness
+
+Price ceiling: !P !Q !TR
+Price Floor: P !Q ?TR
+Quota: P !Q ?TR !S
+
+## Per-unit tax (PQ[1], Elasticity & TR[3], TRType & Change[2], Burden[2])
+P !Q 
+
+TR including tax
+Ed > 1 increase
+Ed = 1 unchanged
+Ed < 1 decrease
+
+TR excluding tax decrease
+
+C / P
+
+## Subsidy (PQ[1], Elasticity & TR[3], TRType & Change[2], Burden[2])
+!P Q
+
+TR excluding subsidy
+Ed > 1 decrease
+Ed = 1 unchanged
+Ed < 1 increase
+
+TR including subsidy increase
+
+P / C
+
+## Burden relationship with elasticity (Comparison [1//3], Extreme [2], Equation[1])
+Ed > Es : P > C
+Ed = 0 : C | P
+Es = Inf : P | S
+P/C=Ed/Es
+
+## Inputs (4,4)
+Land - rent
+Capital - interest
+Labour - wage
+Entrepreneurship - profit
+
+## Division of labour (3)
+Simple - produce good
+Complex - produce stage
+Regional
+
+## Advantages and disadvantages (2,3)
+Practice makes perfect
+Save time on training and job rotation
+
+Work becomes monotonous and boring
+Higher risk of unemployment
+Excessive standardization
+
+## Types of production (3)
+Primary - raw materials
+Secondary - Finished products, producer goods
+Tertiary - services
+
+## Classification of goods (2,3)
+Rivalry in consumption - reduce amount available to others 
+excludability in consumption - ability to prevent others to use at affordable cost
+
+## Labour: Q & productivity (1,1,3,3)
+Q of labour = QT
+Size of population
+Proportion of working population
+Number of working hours
+
+Productivity of labour = U/QT
+Education & training
+working environment
+rewards & benefits to workers
+
+## Labour: payment system (2,4,3) //,,..
+Time rate
+Piece rate
+
+Labour productivity
+Cost to calculate wage
+Cost of supervising against shirk
+Shared business risk
+
+Wage stability
+Increase income by working harder
+Shared business risk
+
+## Entrepreneurship (3)
+Risk bearing
+Decision making
+Coordinating and managing production
+
+## Mobility (2)  
+Occupational - job rotation
+Geographical - place to place
+
+
+## Total, average, marginal product formula (4)
+Q*AP, Sum of MP
+TP / Q
+Change in TP by increase in varFactor
+
+>> Law of diminishing marginal returns:
+In the short run, holding tech constant
+When more varFactors are added to a given Q of fixFactor
+MP would eventually decrease
+
+>> LoDM answering:
+Production is short run with fixFactor and varFactor.
+Production illustrates the law because law applies when the unit of varFactors is employed, MP drops from . to .
+
+## Economies of scale (effect[1], reason[3])
+production scale != average cost
+
+Larger discounts given to bulk purchase of inputs
+Better credibility results in lower interest rate
+Marketing expenses are spread over increase output
+
+## Types of market (2)
+Product market, goods services
+Factor market, factors of production
+
+## Types of exchange (2)
+Barter, good - good
+Monetary, money medium of exchange good service
+
+## Reasons why a market isn't perfect competition (3)
+Imperfect info
+Sellers provide heterogeneous services
+Non-price competition exists
+
+## Monopoly features (3)
+Sellers are price searchers
+there is only one seller
+Entry to market is restricted
+
+
+
+====================================================================================================================
+====================================================================================================================
+
+OC: 
+Positive statements: 
+Normative statements: 
+
+## To produce (3)
+
+## Economies + resource allocation, economic decision (2)
+
+## Private property rights (3)
+
+## Public enterprise (2)
+
+## Private enterprise (4)
+
+## Properties of private enterprise: (6)
+
+## For S&B to buyer: (3)
+
+## For S&B to company: (3)
+
+Limited liability: 
+
+>> Relative law of demand: 
+...
+
+## Price functions + trailing explanation: (3)
+
+## Other factors affecting D: (1+3)
+
+## Other factors affecting S: (3)
+
+Elasticity Calc: 
+Arc Calc: 
+
+## List elasticities:  (5)
+
+?? Positive factors affecting elasticity: List 6
+1. ()
+2. ()
+3. ()
+4. ()
+5. ()
+6. ()
+
+?? Negative factors affecting elasticity: List 3
+1. ()
+2. ()
+3. ()
+
+Price ceiling: 
+Price Floor: 
+Price Quota: 
+
+## Per-unit tax (PQ[1], Elasticity & TR[3], TRType & Change[2], Burden[2])
+
+## Subsidy (PQ[1], Elasticity & TR[3], TRType & Change[2], Burden[2])
+
+## Burden relationship with elasticity (Comparison [1//3], Extreme [2], Equation[1])
+
+
+
+## Inputs (4,4)
+
+## Division of labour (3)
+
+## Advantages and disadvantages (2,3)
+
+## Types of production (3)
+
+## Classification of goods (2,3)
+
+## Labour: Q & productivity (1,1,3,3)
+
+## Labour: payment system (2,4,3) //,,..
+
+## Entrepreneurship (3)
+
+## Mobility (2)  
+
+
+## Total, average, marginal product formula (4)
+
+>> Law of diminishing marginal returns:
+...
+>> LoDM answering:
+...
+
+## Economies of scale (effect[1], reason[3])
+
+## Types of market (2)
+
+## Types of exchange (2)
+
+## Reasons why a market isn't perfect competition (3)
+
+## Monopoly features (3)
+

@@ -1,0 +1,131 @@
+\newpage
+
+\section{Examples \& questions bank}
+
+\begin{example}
+    \label{eg:solve_re_1}
+    Solving a recurrence relation with subsitution method \ref{thm:solve_re}
+    \begin{align*}
+        (\text{lvl }1):\ f(n)   & =2f(n-1)+1             \\
+        (\text{lvl }2):\ f(n-1) & =2f(n-2)+1             \\
+        \uparrow\ f(n)          & =2(2f(n-2)+1)+1        \\
+                                & = 4f(n-2)+2+1          \\
+        (\text{lvl }3):\ f(n)   & =2(2(2f(n-3)+1)+1)+1   \\
+                                & = 8f(n-3)+4+2+1        \\
+        \\
+        (\text{lvl }k):\ f(n)   & =2^kf(n-k)+2^k-1       \\
+        \\
+        f(1) = f(n-k)           & =1 \implies k=n-1      \\
+        \therefore f(n)         & =2^{n-1}f(1)+2^{n-1}-1 \\
+                                & =2\times2^{n-1}-1      \\
+                                & =2^n-1
+    \end{align*}
+\end{example}
+
+\begin{example}
+    \label{eg:mi_1}
+    Proving with MI \ref{def:mi}
+    \begin{align*}
+                              & \text{Prove } f(n) = 1\cdot2^1 + 2\cdot2^2 + \cdots + n\cdot2^n = (n-1) \cdot 2^{n+1} + 2 \\
+                              & \text{Base case: } n = 1                                                                  \\
+        \text{LHS:\ }         & f(1) = 1\cdot2^1 = 2                                                                      \\
+        \text{RHS:\ }         & (1-1) \cdot 2^{1+1} + 2 = 0 \cdot 2^2 + 2 = 2                                             \\
+                              & \text{Inductive step: Assume }f(n)\text{ holds true }\forall n \leq k:                    \\
+        f(k+1):\ \text{LHS\ } & = f(k) + (k+1)\cdot2^{k+1}                                                                \\
+                              & = [(k-1) \cdot 2^{k+1} + 2] + (k+1)\cdot2^{k+1}                                           \\
+                              & = (k-1) \cdot 2^{k+1} + (k+1)\cdot2^{k+1} + 2                                             \\
+                              & = (2k) \cdot 2^{k+1} + 2                                                                  \\
+                              & = k \cdot 2^{k+2} + 2                                                                     \\
+                              & = ((k+1)-1) \cdot 2^{(k+1)+1} + 2                                                         \\
+                              & = \text{RHS}                                                                              \\
+        \therefore\           & \text{Statement holds true }\forall\ n > 0
+    \end{align*}
+
+\end{example}
+
+\begin{example}
+    \label{eg:asym_1}
+    {Disproving Big O notation} \ref{def:asym}
+
+    Consider $T(n) = 3n^3 + 1$, to show that $T(n) \neq O(n^2)$:
+    \begin{align*}
+        3n^3 + 1           & \leq c \cdot n^2 & \forall\ n \geq n_0 \\
+        3n^3 + 1           & \leq c\cdot n^2  & \forall\ n \geq 2   \\
+        3n + \frac{1}{n^2} & \leq c           & \forall\ n \geq 2   \\
+    \end{align*}
+    As this expression cannot hold true for all $n \geq 2$ for a specific $c$ value, we can conclude that $T(n) \neq O(n^2)$.
+
+    (Example: if $c = 10$ the equation does not hold when let's say $n = 100$)
+\end{example}
+
+\begin{example}
+    \label{eg:asym_2}
+    {Proving Little o notation} \ref{def:asym}
+
+    To show that $T(n) \in o(n^4)$:
+    \begin{align*}
+        3n^3 + 1                    & < c \cdot n^4 & \forall\ n \geq n_0 \\
+        \frac{3}{n} + \frac{1}{n^4} & < c           & \forall\ n \geq n_0 \\
+    \end{align*}
+    As this express can hold true for any $c > 0$ with sufficiently large $n_0$, we can conclude that $T(n) \in o(n^4)$.
+
+    (Example: if $c = 1$ the equation holds with $n_0 = 100$)
+\end{example}
+
+\begin{example}
+    \label{eg:iasym_1}
+    Identifying asymptotic growths \ref{thm:iasym}
+
+    \textit{Example 1: }$T(n)=3n^3+1\implies O(n^3)\ \Omega(n^3)\ \Theta(n^3)\ o(n^4)\ \omega(n^2)$
+
+    \textit{Example 2: }$n^2 \in O(2^n)$ ($n^2 \mathcolorbox{yellow}{\leq} 2^n$ order of growth. This is one of the many satisfying $g(n)$. The useful $g(n)$ would be: $n^2 \in O(n^2)$)
+
+    \textit{Example 3: }$n\log n \in \Omega(e^{\log n})$  ($n\log n \mathcolorbox{yellow}{\geq} n$)
+\end{example}
+
+\begin{example}
+    \label{eg:linked_list_reverse}
+    Example implementation of reversing a linked list \ref{thm:linked_list_reverse}
+\end{example}
+\lstinputlisting[language=python, firstline=1, lastline=9]{code/linkedlist.py}
+
+\begin{example}
+    \label{eg:linked_list_find_middle}
+    Example implementation of finding the middle node of a linked list \ref{thm:linked_list_find_middle}
+\end{example}
+\lstinputlisting[language=python, firstline=11, lastline=17]{code/linkedlist.py}
+
+\begin{example}
+    \label{eg:graph_bfs}
+    Example implementation of BFS \ref{thm:graph_bfs}
+\end{example}
+\lstinputlisting[language=python]{code/graph.py}
+
+\begin{example}
+    \label{eg:hash_unsuccessful_double_hashing}
+    Example of finding the average number of slots inspected for unsuccessful search of built hash table with resolution method double hashing \ref{thm:collision-hash_unsuccessful_average_slots_inspected}
+
+    $m = 5,\quad h(k) = k \mod 5$ with double hashing $f(i) = i \cdot h'(k),\quad h'(k) = 2 - (k \mod 2)$.
+    \begin{center}
+        \begin{tabular}{|r|l|}
+            \hline
+            \textbf{Slot} & \textbf{Value} \\
+            \hline
+            0             & 79             \\
+            1             &                \\
+            2             & 22             \\
+            3             &                \\
+            4             & 54             \\
+            \hline
+        \end{tabular}
+        \begin{tabular}{|l|ccccc|}
+            \hline
+            \textbf{num \textbackslash Slot} & 0 & 1 & 2 & 3 & 4 \\
+            \hline
+            count($k \mod 2=0$)              & 4 & 1 & 3 & 1 & 2 \\
+            count($k \mod 2=1$)              & 2 & 1 & 2 & 1 & 3 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    Therefore the average is $\frac{(4+1+3+1+2)+(2+1+2+1+3)}{5\times 2} = 2$
+\end{example}

@@ -1,0 +1,25 @@
+class MedianFinder:
+    set max-pq low # to store the smaller half of the numbers. top (peek) of a max-pq gives the largest number
+    set min-pq high # to store the larger half of the numbers. top (peek) of a min-pq gives the smallest number
+
+    function addNum(num):
+        if isEmpty(low) or num <= low.top: # read is O(1)
+            low.queue(num) # queue / enqueue is O(log n)
+        else:
+            high.queue(num)
+
+        # Balance heaps, so that when we access median, the values can be found in O(1).
+        # size() is O(1)
+
+        # difference of low to high must be at most 1, as allow for odd number of elements
+        if size(low) > size(high) + 1: 
+            high.queue(dequeue(low)) # 2 * O(log n)
+        # different of high to low must be at most 0, as to rebalance the heaps
+        else if size(high) > size(low):
+            low.queue(dequeue(high)) 
+        
+    function findMedian():
+        if size(low) > size(high): # if odd number of elements (refer to balancing)
+            return low.top
+        else: # if even number of elements
+            return (low.top + high.top) / 2

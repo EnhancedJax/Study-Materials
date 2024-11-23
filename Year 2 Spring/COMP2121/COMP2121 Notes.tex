@@ -1,0 +1,82 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/Clean}
+\newcommand{\documentdate}{Fall 2025}
+\newcommand{\documenttype}{Notes for HKU}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\tableofcontents
+\newpage
+
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\begin{definition}
+    {General definition of asymptotic notations}
+    For non-strict boundaries:
+    \[T(n) = A(g(n))\ \text{iff}\ \mathcolorbox{yellow}{\exists\ c > 0}:\]
+    \[T(n) \simeq c\cdot g(n)\ \forall\ n \geq n_0 > 0\]
+    For strict boundaries:
+    \[T(n) = a(g(n))\ \text{if}\ \mathcolorbox{yellow}{\forall\ c > 0\ \exists\ n_0 \geq 0}:\]
+    \[T(n) \simeq c\cdot g(n)\ \forall\ n \geq n_0\]
+\end{definition}
+
+\begin{definition}
+    {Asymptotic notations / growth rate}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Notation} & \textbf{Condition}                                                                         & \textbf{Asymptotic boundary} & \textbf{Name}               \\ \hline
+        $O(g)$            & $T(n) \mathcolorbox{yellow}{\leq} c\cdot g(n)$                                             & Upper                        & Big O                       \\
+        $\Omega(g)$       & $T(n) \mathcolorbox{yellow}{\geq} c\cdot g(n)$                                             & Lower                        & Big Omega                   \\
+        $\Theta(g)$       & $ c_1\cdot g(n)\mathcolorbox{yellow}{\leq} T(n) \mathcolorbox{yellow}{\leq} c_2\cdot g(n)$ & Tight                        & Big Theta / Order of growth \\
+        $o(g)$            & $T(n) \mathcolorbox{yellow}{<} c\cdot g(n)$                                                & Strictly upper               & Little o                    \\
+        $\omega(g)$       & $T(n) \mathcolorbox{yellow}{>} c\cdot g(n)$                                                & Strictly lower               & Little omega                \\ \hline
+    \end{tabular}
+    We can easily identify the growth rate of $T(n)$ by looking for the highest order of growth term in the expression, then checking for the condition.
+\end{definition}
+
+\begin{example}
+    {Disproving Big O notation}
+
+    Consider $T(n) = 3n^3 + 1$, to show that $T(n) \neq O(n^2)$:
+    \begin{align*}
+        3n^3 + 1           & \leq c \cdot n^2 & \forall\ n \geq n_0 \\
+        3n^3 + 1           & \leq c\cdot n^2  & \forall\ n \geq 2   \\
+        3n + \frac{1}{n^2} & \leq c           & \forall\ n \geq 2   \\
+    \end{align*}
+    As this expression cannot hold true for all $n \geq 2$ for a specific $c$ value, we can conclude that $T(n) \neq O(n^2)$.
+
+    (Example: if $c = 10$ the equation does not hold when let's say $n = 100$)
+\end{example}
+
+\begin{example}
+    {Proving Little o notation}
+
+    To show that $T(n) \in o(n^4)$:
+    \begin{align*}
+        3n^3 + 1                    & < c \cdot n^4 & \forall\ n \geq n_0 \\
+        \frac{3}{n} + \frac{1}{n^4} & < c           & \forall\ n \geq n_0 \\
+    \end{align*}
+    As this express can hold true for any $c > 0$ with sufficiently large $n_0$, we can conclude that $T(n) \in o(n^4)$.
+
+    (Example: if $c = 1$ the equation holds with $n_0 = 100$)
+\end{example}
+
+
+
+\end{document}

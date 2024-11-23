@@ -1,0 +1,518 @@
+\section{Bookkeeping}
+\label{sec:record}
+
+Bookkeeping is the process of recording transactions in a systematic way.
+
+\begin{small}
+    \textit{For convenience, in the notes "you" refers to "the company"}
+\end{small}
+
+\subsection{Identifying transactions}
+\label{subsec:identify}
+
+\begin{definition}
+    {Accounts}
+    An account stores all transactions related to a group of related items.
+    \label{def:acc}
+\end{definition}
+
+\begin{theorem}
+    {The 6 types of accounts}
+    There are 6 types of accounts:
+    \begin{itemize}
+        \item \textbf{A}sset - Stuff you own
+        \item \textbf{L}iability - Stuff you owe 3rd parties
+        \item \textbf{E}quity (Stockholders' Equity) - Stuff for owners
+              \begin{itemize}
+                  \item \textbf{R}evenue - Money you earn from selling stuff
+                  \item \textbf{E}xpense - Costs of doing business
+                  \item \textbf{D}ividend - Money given to owners
+              \end{itemize}
+    \end{itemize}
+    \label{thm:acc_types}
+    R,E,D all feed into Equity. This will be further explored in \nameref{sec:financial_statements}.
+\end{theorem}
+
+\begin{knBox}
+    {Current vs non-current A\&L}
+    \begin{itemize}
+        \item \textbf{Current A\&L} - Due within 1 year
+        \item \textbf{Non-current A\&L} - Stuff that stays with you for more than 1 year
+    \end{itemize}
+\end{knBox}
+
+\begin{knBox}
+    {Operating vs non-operating R\&E}
+    \begin{itemize}
+        \item \textbf{Operating} - Central focus of business
+        \item \textbf{Non-operating} - Not related to the main business
+    \end{itemize}
+\end{knBox}
+
+\begin{knBox}
+    {Contra accounts}
+    Contra accounts are accounts that have a normal balance \textbf{opposite} to the account type. The following is how we present them in a financial statement:
+
+    \tcblower
+
+    \begin{tabular}{ll}
+        \textbf{Assets}                             &       \\
+        Accounts receivable                         & \$10  \\
+        \quad Less: Allowance for doubtful accounts & (\$1) \\
+    \end{tabular}
+\end{knBox}
+\label{def:contra}
+
+\subsubsection{Categorizing transactions}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.1\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
+        \hline
+                    & \textbf{A}                       & \textbf{L}                                 \\
+        \hline
+        \textbf{C}  & Cash                             & Accounts Payable                           \\
+                    & Short-Term Investments           & Accrued Expenses Payable                   \\
+                    & Accounts Receivable              & Notes Payable                              \\
+                    & Notes Receivable                 & Taxes Payable                              \\
+                    & Inventory (to be sold)           & Unearned Revenue                           \\
+                    & Supplies                         & Bonds Payable (short-term)                 \\
+                    & Prepaid Expenses                 & Short term debts                           \\
+                    &                                  & Dividends payable                          \\
+        \hline
+        \textbf{NC} & Long-Term Investments            & Bonds Payable (long-term)                  \\
+                    & Equipment                        & Long term debts                            \\
+                    & Buildings                        &                                            \\
+                    & Land                             &                                            \\
+                    & Intangibles                      &                                            \\
+        \hline
+        Keywords    & prepaid expense, accrued revenue & payable, prepaid revenue, accrued expenses \\
+        \hline
+    \end{tabular}
+    \caption{Classification of typical account titles (A,L)}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{0.9\textwidth}|}
+        \hline
+        \textbf{Equity}                                 \\
+        \hline
+        Common Stock \textbf{(CS)}                      \\
+        Retained Earnings \textbf{(RE)}                 \\
+        \hyperref[def:apic]{Additional Paid-in Capital} \\
+        Treasury Stock                                  \\
+        \hline
+    \end{tabular}
+    \caption{Common Equity accounts}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.3\textwidth}|p{0.3\textwidth}|}
+        \hline
+                    & \textbf{Revenue}       & \textbf{Expenses}         \\
+        \hline
+        \textbf{O}  & Sales Revenue          & Cost of Goods Sold (COGS) \\
+                    & Service Revenue        & Depreciation expense      \\
+                    &                        & Wages expense             \\
+                    &                        & Rent expense              \\
+                    &                        & Insurance expense         \\
+                    &                        & Repairs expense           \\
+        \hline
+        \textbf{NO} & Interest Revenue       & Interest Expense          \\
+                    & Dividend Revenue       & Tax Expense               \\
+                    & Gain on Sale of Assets &                           \\
+                    & Tax Revenue            &                           \\
+        \hline
+    \end{tabular}
+    \caption{Common Revenue and Expense accounts categorized by operation}
+\end{table}
+
+\begin{knBox}
+    {Cash and cash equivalents}
+    The most liquid assets that can be \textbf{quickly converted to cash}. We usually group these into a single \textit{cash} account.
+\end{knBox}
+
+\begin{knBox}
+    {Notes Receivable / Payable}
+    The money you own / owe with an interest rate.
+    \tcblower
+    \textit{Example 1: } You borrowed \$1000 from a bank. (Payable)
+\end{knBox}
+\label{def:nrp}
+
+\begin{knBox}
+    {Debts}
+    The money you borrow from a bank.
+\end{knBox}
+
+\subsection{Preparing journal entries}
+\label{subsec:prepare}
+\begin{definition}
+    {The accounting equation}
+    \[A = L + E\]
+    This equation is based on the principle that \textbf{Stuff that you OWN = Stuff that you OWE}.
+    \label{def:account_equation}
+\end{definition}
+
+\begin{theorem}
+    {Double-entry bookkeeping}
+    From money to go to one account \textit{(source)}, it must come from another \textit{(destination)}. This is the \textit{duality} of every transaction in accounting.
+
+    $\uparrow$ \textbf{Debit (Dr)} is the term to describe the \textbf{destination} of money flow, whereas $\downarrow$ \textbf{Credit (Cr)} is the term to describe the \textbf{source} of money flow.
+\end{theorem}
+\label{thm:debit_credit}
+
+\begin{knBox}
+    {Categorizing transactions as Dr / Cr}
+    We can categorize transactions as debits or credits by their accounts' type:
+    \vspace{0.5em}
+    \begin{center}
+        \small
+        Dr - Cr
+        \normalsize
+
+        \textbf{DEALER}
+
+        Dividend, Expense, Asset - Liability, Equity, Revenue
+    \end{center}
+    They would be a Dr / Cr if their value was positive. Otherwise, they would be the other way around.
+
+    \textit{This is based on rearranging the accounting equation and expanding its terms.}
+\end{knBox}
+
+\begin{definition}
+    {Journal entry}
+    A record of a transaction in the journal \underline{during the accounting period}. The following is the format:
+    \begin{itemize}
+        \item Date
+        \item Account
+        \item Description
+    \end{itemize}
+    Amounts credited are usually \textbf{indented}.
+\end{definition}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Journal Entry]
+    \begin{tabular}{llll}
+        \textbf{Date} & \textbf{Account}                                                               & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+                      & \textit{in thousands}                                                          &             &             \\
+        Jan 1, 2023   & Cash                                                                           & \$1         &             \\
+                      & \quad Common Stock                                                             &             & \$1         \\
+                      & \multicolumn{3}{l}{\textit{(To record the issuance of common stock for cash)}}                             \\
+    \end{tabular}
+\end{tcolorbox}
+\normalsize
+
+\subsection{Posting to general ledger}
+\label{subsec:post}
+
+\begin{knBox}
+    {T-accounts}
+    T-account is a way to visualize an account. \textbf{Dr} goes on the left, \textbf{Cr} goes on the right. The closing balance is displayed on the corresponding side.
+    \tcblower
+    \taccount{Cash}
+    {\$1000\\\hline\underline{\underline{\$1000}}}
+    {}
+    \taccount{Common Stock}
+    {\\}
+    {\$1000\\\hline\underline{\underline{\$1000}}}
+\end{knBox}
+
+\begin{definition}
+    {General ledger}
+    A general ledger is a collection / database of accounts that store all transactions for you. Each account has their own general ledger.
+    \label{def:gl}
+\end{definition}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example General Ledger]
+    \textbf{Cash} \\
+    \begin{tabular}{llrrr}
+        Date  & Description       & Debit   & Credit & Balance \\
+        \hline
+        Jan 1 & Issuance of stock & \$1,000 &        & \$1,000 \\
+        \hline
+              & Ending Balance    &         &        & \$1,000 \\
+    \end{tabular}
+
+    \vspace{0.5em}
+    \textbf{Common Stock}\\
+    \begin{tabular}{llrrr}
+        Date  & Description       & Debit & Credit  & Balance \\
+        \hline
+        Jan 1 & Issuance of stock &       & \$1,000 & \$1,000 \\
+        \hline
+              & Ending Balance    &       &         & \$1,000 \\
+    \end{tabular}
+\end{tcolorbox}
+\normalsize
+
+\subsection{Recording stockholder's equity items}
+
+\begin{knBox}
+    {Common Stock}
+    The shares of the company that are owned by the public.
+    \begin{center}
+        $\Delta$\textbf{C}ommon \textbf{S}tock = Stock Issurance = Number of shares $\times$ Par value
+    \end{center}
+    \tcblower
+    "Issued 200m additional shares of \$0.01 par value" $\implies\ \Delta$\textbf{CS} = 2m
+    \label{def:cs}
+\end{knBox}
+
+\begin{knBox}
+    {Additional Paid-in Capital}
+    The amount of money that shareholders have \textbf{contributed} to the company less the stock issurance.
+    \begin{center}
+        $\Delta$Additional Paid-in Capital = Value - Stock Issurance
+    \end{center}
+    \tcblower
+    "Issued 200m additional shares of \$0.01 par value for \$16m" $\implies\ \Delta$APC = 14m
+
+    \vspace{1em}
+    \textit{Example \hyperref[subsec:prepare]{journal entry}:}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Cash                             & \$16 &    \\
+        \hline
+        \quad Common Stock               &      & 2  \\
+        \hline
+        \quad Additional Paid-in Capital &      & 14 \\
+        \hline
+    \end{tabular}
+    \label{def:apic}
+\end{knBox}
+
+\begin{knBox}
+    {Declaring dividends}
+    When we declare a dividend, we \textbf{allocate money} to the owners from retained earnings.
+    \tcblower
+    "Declared dividends of \$2m"
+
+    \vspace{1em}
+    \textit{Example \hyperref[subsec:prepare]{journal entry}:}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Retained earnings       & \$2 &   \\
+        \hline
+        \quad Dividends payable &     & 2 \\
+        \hline
+    \end{tabular}
+\end{knBox}
+
+These concepts make up the \hyperref[sec:statement_se]{statement of stockholder's equity}.
+
+\subsection{Recording inventories \& COGS}
+
+\begin{definition}
+    {Inventory}
+    The goods that you have for sale as a retailer, or the raw materials that you have for sale as a manufacturer.
+\end{definition}
+
+\begin{knBox}
+    {Supplies vs. Inventory}
+    Supplies are consumables (such as paper, boxes etc.) for the business.
+\end{knBox}
+
+As a retailer, you purchase the goods to sell as inventory from a supplier, and make a sale to a customer. We need to record this purchase, sale, COGS and the change in inventory.
+
+\begin{theorem}
+    {Recording inventories and COGS (Inventory system)}
+    There are two ways we can record COGS and inventory in an according period:
+    \begin{itemize}
+        \item \textbf{As the goods are sold / purchased} (Perpetual)
+              \begin{itemize}
+                  \item[] $\checkmark$ Updates accounts in real-time
+                  \item[] $\times$ More complex, more costly
+              \end{itemize}
+        \item \textbf{At the end of the period} (Periodic)
+              \begin{itemize}
+                  \item[] $\times$ Does not update accounts in real-time
+                  \item[] $\checkmark$ Less complex, less costly
+              \end{itemize}
+    \end{itemize}
+\end{theorem}
+
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example to compare the two inventory systems]
+    \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Perpetual System:}
+
+        \vspace{1.3em}
+
+        When we restock our inventory:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}           & \textbf{Dr} & \textbf{Cr} \\
+            \hline
+            Jan 1, 2023   & \colorbox{lime}{Inventory} & \$1         &             \\
+                          & \quad {Cash}               &             & \$1         \\
+        \end{tabular}
+
+        \vspace{1.3em}
+
+        When we make a sale:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}                                                 & \textbf{Dr}            & \textbf{Cr} \\
+            \hline
+            Jan 2, 2023   & Cash                                                             & \$2                    &             \\
+                          & \quad Sales Revenue                                              &                        & \$2         \\
+                          & \multicolumn{3}{l}{\textit{(To record the sale of goods)}}                                              \\
+            Jan 2, 2023   & Cost of Goods Sold                                               & \colorbox{yellow}{\$1} &             \\
+                          & \quad Inventory                                                  &                        & \$1         \\
+                          & \multicolumn{3}{l}{\textit{(\colorbox{lime}{Update real-time})}}                                        \\
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \textbf{Periodic System:}
+
+        \vspace{1.3em}
+
+        When we restock our inventory:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}           & \textbf{Dr} & \textbf{Cr} \\
+            \hline
+            Jan 1, 2023   & \colorbox{lime}{Purchases} & \$1         &             \\
+                          & \quad Cash                 &             & \$1         \\
+        \end{tabular}
+
+        \vspace{1.3em}
+
+        When we make a sale:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}                                           & \textbf{Dr} & \textbf{Cr} \\
+            \hline
+            Jan 2, 2023   & Cash                                                       & \$2         &             \\
+                          & \quad Sales Revenue                                        &             & \$2         \\
+                          & \multicolumn{3}{l}{\textit{(To record the sale of goods)}}                             \\
+        \end{tabular}
+
+        \vspace{1.3em}
+
+        At the end of the period:
+
+        \begin{tabular}{llll}
+            \textbf{Date} & \textbf{Account}                                                               & \textbf{Dr}            & \textbf{Cr} \\
+            \hline
+            Dec 31, 2023  & Inventory                                                                      & \$1                    &             \\
+                          & \quad Purchases                                                                &                        & \$1         \\
+                          & \multicolumn{3}{l}{\textit{(\colorbox{lime}{Update inventory restock first})}}                                        \\
+                          & Cost of Goods Sold                                                             & \colorbox{yellow}{\$1} &             \\
+                          & \quad Inventory                                                                &                        & \$1         \\
+                          & \multicolumn{3}{l}{\textit{(Update COGS after)}}                                                                      \\
+        \end{tabular}
+    \end{minipage}
+\end{tcolorbox}
+\normalsize
+
+The difference between the COGS and the revenue will reflect the profit accordingly when we produce the \hyperref[sec:income_statement]{income statement}.
+
+The above example assumes that the \colorbox{yellow}{cost of inventory} is the same for each unit on every restock, which is not always the case.
+
+\begin{theorem}
+    {Inventory cost flow table}
+    Reflects the changes in inventory during an accounting period, with the total cost of good sold depending on \hyperref[thm:cost_flow]{cost flow assumptions}.
+\end{theorem}
+
+\small
+\begin{tcolorbox}[colframe=black,colback=white,title=Example of inventory cost flow table]
+    During the period, the following transactions occurred:
+    \begin{enumerate}
+        \item 1/1: First purchase of goods 100 units at \$1 each
+        \item 1/2: Restocked 200 units by \$400
+        \item 1/3: Sold 150 units for \$450
+    \end{enumerate}
+
+    \vspace{1em}
+
+    \begin{tabular}{l|l|c|c|c}
+        \textbf{Date} & \textbf{Action}          & \textbf{Quantity} & \textbf{Unit cost} & \textbf{Total cost}                               \\
+        \hline
+        Jan 1, 2023   & Opening                  & 100               & \$1                & \$100                                             \\
+        Jan 2, 2023   & Purchase                 & 200               & 2                  & 400                                               \\
+        \hline
+                      & Goods available for sale & 300               & /                  & 500                                               \\
+        Jan 3, 2023   & Sale                     & (150)             & /                  & (\colorbox{yellow}{?}) $\leftarrow$ \textit{COGS} \\
+        \hline
+                      & Ending inventory         & 150               & /                  & $500-?$                                           \\
+    \end{tabular}
+
+    \vspace{1em}
+
+    \textit{\colorbox{yellow}{?} COGS depends on the \hyperref[thm:cost_flow]{cost flow assumptions}.}
+\end{tcolorbox}
+\normalsize
+
+\begin{theorem}
+    {Cost flow assumptions}
+    To determine the COGS when we purchased the goods at different costs, we can use the following assumptions:
+    \begin{itemize}
+        \item \textbf{FIFO} - First In, First Out
+        \item \textbf{LIFO} - Last In, First Out
+        \item \textbf{AVCO} - Average cost of all units (Total cost / Available units)
+        \item \textbf{Specific Identification} - Ratio / quantity specified
+    \end{itemize}
+    They are assumptions because we do not know which physical units were sold.
+    \tcblower
+    \begin{enumerate}
+        \item \colorbox{yellow}{?}$\ =1(100)+2(50)=200$
+        \item \colorbox{yellow}{?}$\ =2(100)+1(50)=250$
+        \item \colorbox{yellow}{?}$\ =\frac{500}{300}(150)=250$
+    \end{enumerate}
+\end{theorem}
+\label{thm:cost_flow}
+
+\begin{knBox}
+    {Which assumption is better?}
+    We must take into account for the \textbf{rise / drop in inventory prices during the period} when considering which assumption is better.
+
+    In a period of \textbf{rising prices}:
+    \begin{itemize}
+        \item FIFO - Higher net income (less COGS expenses)
+        \item LIFO - Lower net income (more COGS expenses)
+    \end{itemize}
+    \textit{Note: Accounting rules require companies to apply their accounting methods on a consistent basis over time. (Can't change frequently)}
+\end{knBox}
+
+% \begin{theorem}
+%     {Lower of costs}
+% \end{theorem}
+
+\subsection{Recording asset disposal}
+\label{subsec:asset_disposal}
+
+Prerequisite: \hyperref[subsec:depreciation]{Depreciation}
+
+\begin{theorem}
+    {Recording asset disposal}
+    \begin{enumerate}
+        \item Record \textbf{DE} of the item for this period
+        \item Calculate and write-off \textbf{AC} (Calculated with DE, Debit)
+        \item Record the disposal of the asset by crediting it
+        \item Record "gain on sale" or "loss on sale" by balancing the entry
+    \end{enumerate}
+    \tcblower
+    \textit{Example: Southwest Airlines sold flight equipment for \$11 cash at the end of its 17th year of use. The flight equipment originally cost \$30 and was depreciated using the straight-line method with zero residual value and a useful life of 25 years.}
+
+    \begin{tabular}{llll}
+           & \textbf{Account}                 & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+        1. & Depreciation expense             & \$1.2       &             \\
+           & $\quad$ Accumulated depreciation &             & \$1.2       \\
+           & (${30}/{25}=1.2$)                &             &             \\
+        \hline
+        2. & Cash                             & \$11        &             \\
+           & Accumulated depreciation         & 20.4        &             \\
+           & $\quad$ Equipment                &             & 30          \\
+           & $\quad$ Gain on sale             &             & 1.4         \\
+           & ($1.2 \times 17=20.4$)           &             &             \\
+    \end{tabular}
+\end{theorem}

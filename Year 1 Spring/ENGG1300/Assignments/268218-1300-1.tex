@@ -1,0 +1,130 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{ENGG1300}
+\newcommand{\documentnumber}{1}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+\begin{align*}
+    r_{BA}                                                                                                 & = -3.6j + 5.2k                                 \\
+    |r_{BA}|                                                                                               & = \sqrt{(-3.6)^2 + 5.2^2}                      \\
+                                                                                                           & = 6.32 m                                       \\
+    \vec{F_{BA}}                                                                                           & = F_{BA} \frac{r_{BA}}{|r_{BA}|}               \\
+                                                                                                           & = 152.03 \times \frac{-3.6j+5.2k}{6.32}        \\
+                                                                                                           & = \{-86.60j + 125.09k\}\  N                    \\
+    \mathbf{\therefore W_{pot}}                                                                            & = \mathbf{125.09 N}                            \\ \hrulefill \\
+    r_{AC}                                                                                                 & = 2.2i -2.7j,\quad|r_{AC}|=3.48                \\
+    r_{AD}                                                                                                 & = -1.5i -2.7j,\quad|r_{AC}|=3.09               \\ \hrulefill \\
+    \vec{F_{AC}}                                                                                           & = F_{AC} \times \frac{2.2i-2.7j}{3.48}         \\
+    \vec{F_{AD}}                                                                                           & = F_{AD} \times \frac{-1.5i-2.7j}{3.09}        \\
+    \vec{F_{BA}}                                                                                           & =  \vec{F_{AC}} + \vec{F_{AD}}                 \\
+    \vec{F_{AC}} + \vec{F_{AD}}                                                                            & =  -86.6j\ N                                   \\
+    F_{AC} \times \frac{2.2i-2.7j}{3.48} + F_{AD} \times \frac{-1.5i-2.7j}{3.09}                           & = -86.6j\ N                                    \\ \hrulefill \\
+    \begin{cases}
+        \frac{2.2F_{AC}}{3.48} - \frac{1.5F_{AD}}{3.09}  & = 0\quad(1)     \\
+        -\frac{2.7F_{AC}}{3.48} - \frac{2.7F_{AD}}{3.09} & = -86.6\quad(2)
+    \end{cases}                                              \\
+    (1)\quad F_{AC}                                                                                        & =\frac{1.5}{3.09}\times\frac{3.48}{2.2} F_{AD} \\
+    (2)\quad -\frac{2.7}{3.48}\times\frac{1.5}{3.09}\times\frac{3.48}{2.2} F_{AD} - \frac{2.7}{3.09}F_{AD} & = -86.6                                        \\
+    \mathbf{F_{AD}}                                                                                        & =  \mathbf{58.85\ N}                           \\
+    \mathbf{F_{AC}}                                                                                        & =  \mathbf{45.19\ N}                           \\
+\end{align*}
+
+\section*{Question 2}
+\begin{align*}
+    \vec{F_A} & = 243k\ N                                                 \\
+    \vec{F_C} & = 46j\ N                                                  \\
+    \vec{F_B} & = 145\cos 32^\circ i - 145\sin 32^\circ k\ N              \\
+              & = 122.97i - 76.84k\ N                                     \\
+    \vec{F_R} & = \vec{F_A} + \vec{F_B} + \vec{F_C}                       \\
+              & = \mathbf{122.97i + 46j + 166.16k\ N}                     \\ \hrulefill \\
+    M         & = 98k +56\cos 32^\circ i - 56\sin 32^\circ k\ Nm          \\
+              & = 98k + 47.49i - 29.68k\ Nm                               \\
+              & = 47.49i + 68.32k\ Nm                                     \\ \hrulefill \\
+    \sum{M_O} & = 0.6j\times 243k  + 1.9j \times (122.97i - 76.84k)       \\
+              & = |\begin{smallmatrix}
+                       i & j   & k   \\
+                       0 & 0.6 & 0   \\
+                       0 & 0   & 243\end{smallmatrix}| + |\begin{smallmatrix}
+                                                          i     & j     & k   \\
+                                                          0      & 1.9    & 0 \\
+                                                          122.97 & 0 & -76.84
+                                                      \end{smallmatrix}| \\
+              & = 145.8i + (-146.00i -233.64k)\ Nm                        \\
+              & = -0.2i - 233.64k\ Nm                                     \\ \hrulefill \\
+    (M_R)_O   & = \sum{M_O} + M                                           \\
+              & = -0.2i - 233.64k + 47.49i + 68.32k                       \\
+              & = \mathbf{47.29i - 165.32k\ Nm}                           \\
+\end{align*}
+
+\newpage
+\section*{Question 3}
+\begin{figure}[H]
+    \centering
+    \resizebox{0.3\textwidth}{!}{%
+        \begin{circuitikz}
+            \tikzstyle{every node}=[font=\footnotesize]
+            \draw [line width=0.8pt, short] (7.75,13) -- (7.75,10.75);
+            \draw [line width=0.8pt, short] (6.25,13) -- (7.75,13);
+            \draw [ color={rgb,255:red,0; green,110; blue,255}, ->, >=Stealth] (7.75,10) -- (7.75,10.75);
+            \draw [ color={rgb,255:red,0; green,110; blue,255}, ->, >=Stealth] (5.5,13) -- (6.25,13);
+            \draw [ color={rgb,255:red,0; green,110; blue,255}, ->, >=Stealth] (6.25,12) -- (6.25,13);
+            \node [font=\small, color={rgb,255:red,0; green,110; blue,255}] at (5.75,13.25) {$R_{A,x}$};
+            \node [font=\small, color={rgb,255:red,0; green,110; blue,255}] at (6.25,11.75) {$R_{A,y}$};
+            \node [font=\small, color={rgb,255:red,0; green,110; blue,255}] at (8.5,10.25) {$R_{C,y}$};
+            \draw [ color={rgb,255:red,203; green,92; blue,255}, ->, >=Stealth] (8.75,12.25) -- (7.75,11.5);
+            \node [font=\small, color={rgb,255:red,203; green,92; blue,255}] at (8.75,12.5) {156 kN};
+            \draw [ color={rgb,255:red,203; green,92; blue,255}, dashed] (7.75,11.5) -- (9.25,11.5);
+            \node [font=\small, color={rgb,255:red,203; green,92; blue,255}] at (8.5,11.75) {$36^\circ$};
+            \draw [ color={rgb,255:red,77; green,77; blue,77}, line width=0.3pt, <->, >=Stealth] (8,11.5) -- (8,10.75);
+            \node [font=\footnotesize, color={rgb,255:red,77; green,77; blue,77}] at (8.5,11) {1.3m};
+            \draw [ color={rgb,255:red,77; green,77; blue,77}, line width=0.3pt, <->, >=Stealth] (6.25,13.75) -- (7,13.75);
+            \draw [ color={rgb,255:red,77; green,77; blue,77}, line width=0.3pt, <->, >=Stealth] (6.25,12.75) -- (7.75,12.75);
+            \draw [ color={rgb,255:red,77; green,77; blue,77}, line width=0.3pt, <->, >=Stealth] (7.5,13) -- (7.5,10.75);
+            \node [font=\footnotesize, color={rgb,255:red,77; green,77; blue,77}] at (7,12.5) {2.4m};
+            \node [font=\footnotesize, color={rgb,255:red,77; green,77; blue,77}] at (7,11.25) {3.2m};
+            \node [font=\footnotesize, color={rgb,255:red,77; green,77; blue,77}] at (6.5,14) {0.75m};
+            \draw [ color={rgb,255:red,205; green,92; blue,255}, ->, >=Stealth] (7,13.75) -- (7,13);
+            \node [font=\normalsize, color={rgb,255:red,205; green,92; blue,255}] at (7.75,13.25) {97 kN};
+            \node [font=\footnotesize, color={rgb,255:red,255; green,36; blue,112}] at (5.75,12.75) {A};
+            \node [font=\footnotesize, color={rgb,255:red,255; green,36; blue,112}] at (8,13) {B};
+            \node [font=\footnotesize, color={rgb,255:red,255; green,36; blue,112}] at (7.5,10.5) {C};
+        \end{circuitikz}
+    }%
+
+    \label{fig:my_label}
+\end{figure}
+The moment about point $A$ must be 0. Consider units in $kN$:
+\begin{align*}
+    0.75\times 97 + 1.9\times 156\cos 36^\circ + 2.4\times 56\sin 36^\circ & = 2.4\times R_{C,y}                          \\
+    \mathbf{R_{C,y}}                                                       & = \mathbf{221.92\ kN\text{ upwards}\quad(b)}
+\end{align*}
+The net horizontal force is 0. Consider units in $kN$:
+\begin{align*}
+    \mathbf{R_{A,x}} & = 156\cos 36^\circ                              \\
+                     & = \mathbf{126.21\ kN\text{ rightwards}\quad(c)}
+\end{align*}
+The net vertical force is 0. Consider units in $kN$:
+\begin{align*}
+    97 + 156\sin 36^\circ & = 221.92 + R_{a,y}                            \\
+    \mathbf{R_{A,y}}      & = -33.23\ kN                                  \\
+                          & = \mathbf{33.23\ kN\text{ downwards}\quad(d)}
+\end{align*}
+
+\end{document}

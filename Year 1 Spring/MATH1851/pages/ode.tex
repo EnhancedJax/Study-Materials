@@ -1,0 +1,251 @@
+
+\section{First Order Differential Equations}
+Differential equations are equations that involve a function and its derivatives.
+\begin{definition}
+    {Order of differential equations}
+    A \emph{n} ordered differential equation is an equation of the form:
+    \[F(x,y,y'\dots y'_n)=0\]
+    Where $y'_n$ is the nth derivative of $y$ with respect to $x$. The highest degree of the derivative is n for a n-ordered differential equation. Note that $y$ is really just $y(x)$ (A function of x)
+\end{definition}
+
+\subsection{Solving linear 1st-ODEs}
+\begin{definition}
+    {Linear differential equations}
+    Linear differential equations does not contain non-linear functions. (e.g. $\sin y$) Otherwise, it's a non-linear ODE.
+\end{definition}
+\begin{theorem}
+    {Solving by integrating factors}
+    We can solve a linear 1st-ODE as followed, given a \textbf{particular solution} of $y(x)$:
+    \[y'+p(x)y=q(x)\quad : \quad\times\ e^{\int p(x)}\]
+
+    The multiplied integration factor $e^{p(x)}$ will give us a product of the \emph{product rule}, then we simply integrate both sides to solve for $y$. Make sure that the \textbf{coefficient of $y'$ is 1}.
+\end{theorem}
+
+\begin{theorem}
+    {Separable equations}
+    We can solve a separable equation as followed, given a \textbf{particular solution} of $y(x)$:
+    \begin{align*}
+        \frac{dy}{dx}       & =f(x)g(y)                              \\
+        {g(y)}^{-1}dy       & =f(x)dx                                \\
+        \int{g(y)}^{-1}\:dy & =\int f(x)\:dx \Leftarrow [(x,y)\to c]
+    \end{align*}
+\end{theorem}
+
+\subsection{Solving non-linear 1st-ODEs}
+\begin{definition}
+    {Bernoulli's equation}
+    A non-linear 1st-ODE of the form can be solved by:
+    \[y'+p(x)y=q(x)y^n\quad n\in\mathds{R}\quad : \quad \text{sub }u=y^{1-n}\to y,y'\]
+    The subsitution $u=y^{1-n}$ will turn the equation into a linear ODE, then simply solve using integrating factors.
+\end{definition}
+\begin{definition}
+    {Riccati's equation}
+    A non-linear 1st-ODE of the form can be solved by the following, given a \textbf{particular solution} of $y(x)$:
+    \[y'=p(x)y^2+q(x)y+r(x)\quad : \quad \text{sub }y=y(x) + u^{-1}\]
+\end{definition}
+\begin{definition}
+    {Homogeneous equations}
+    A homogeneous equation has it's $x$ and $y$ terms \textbf{in the same degree}. (e.g. $x^2+xy+y^2=0$)
+
+    A \emph{homogeneous} 1st-ODE of the form can be solved by the following, given a \textbf{particular solution} of $y(x)$:
+    \[y'=f(\frac{y}{x})\quad : \quad \text{sub }u=\frac{y}{x} \to y'=u + xu'\]
+    We can \textbf{divide the formula} by $x^n$ or $y^n$ to get the equation in the desired form (\emph{every term is the ratio} $\frac{y}{x}$). Otherwise, we can shift the origin using $X=x-n$ and $Y=y-m$.
+
+    After substitution, we will get a \textbf{separable equation} after the substitution, and the particular solution is used.
+\end{definition}
+
+\subsection{Exact equations}
+\begin{knBox}
+    {Partial derivatives}
+    A partial derivative is a derivative of a function with respect to one of its variables, with the others held constant. The following notation expresses the partial derivative of $f$ with respect to $x$:
+    \[\frac{\partial f}{\partial x}\]
+    \tcblower
+    \begin{align*}
+        F                             & =2x+y \\
+        \frac{\partial F}{\partial x} & =2    \\
+    \end{align*}
+\end{knBox}
+\begin{definition}
+    {Exact equations}
+    An exact equation is simply a 1st-ODE where $dF=0$.
+
+    The expressed equation $dF$ is exact if:
+    \[dF=Mdx+Ndy\quad:\quad\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}\]
+\end{definition}
+\begin{theorem}
+    {Solving exact equations}
+    To find the solution of an exact equation:
+    \begin{align*}
+        M=\frac{\partial F}{\partial x}              & ,\quad N=\frac{\partial F}{\partial y} \\
+        \partial F                                   & = M\partial x                          \\
+        F                                            & = \int M dx + g(y)                     \\
+        \frac{\partial F}{\partial y}                & = N                                    \\
+        \frac{\partial \int M dx + g(y)}{\partial y} & = N \to g'(y)                          \\
+        \int g'(y)\:dy                               & = g(y) \to F
+    \end{align*}
+    $g(y)$ is present as we are integrating partially with respect to $x$, and $g(y)$ is the constant of integration.
+
+    Hence, the solution would be:
+    \[\int M dx + g(y)=c\]
+\end{theorem}
+
+\section{Second Order Differential Equations}
+
+\subsection{Solving homogeneous linear 2nd-ODEs}
+
+\label{sec:homogeneous}
+\begin{definition}
+    {Constant coefficient Homogeneous 2nd-ODEs}
+    \emph{The term homogeneous is used differently from the previous section.}
+
+    A homogeneous 2nd-ODE is of the form:
+    \[ay''+by'+cy=\mathbf{0}\]
+    Where $a,b,c$ are constants. (Coefficients are \emph{constants})
+    \tcblower
+    We first use the following substitution:
+    \[ay''+by'+cy=0:\quad y=e^{\lambda x}\implies a\lambda^2+b\lambda+c=0\to \lambda\]
+    To find the general solution, we put the $\lambda$ roots into the \textbf{quadratic characteristic equation}:
+    \begin{enumerate}
+        \item $\lambda_1\ne\lambda_2:\quad y=c_1\mathbf{e}^{\lambda_1x}+c_2\mathbf{e}^{\lambda_2x}$
+        \item $\lambda_1=\lambda_2:\quad y=c_1\mathbf{e}^{\lambda x}+c_2x\mathbf{e}^{\lambda x}$
+        \item $\{\lambda_{1,2}=\alpha\pm\beta i\}\in\mathds{C}:\quad y=c_{1}\mathbf{e}^{\alpha x}\cos(\beta x)+c_{2}\mathbf{e}^{\alpha x}\sin(\beta x)$
+    \end{enumerate}
+    If given \textbf{particular solutions} of $y$ and $y'$, we can solve for $c_1$ and $c_2$ by finding $y'$ with our general solution and substituting.
+\end{definition}
+
+\begin{definition}
+    {Cauchy-Euler equations}
+    A Cauchy-Euler equation is a slight variation of homogenous 2nd-ODEs, which is of the following form and can be solved by:
+    \[ax^2y''+bxy'+cy=0\quad:\quad y=x^\lambda\implies a(\lambda^2-\lambda)+b\lambda+c=0\]
+    The general solutions is similar to that of the homogeneous 2nd-ODEs, but with \textbf{all terms of $x\to \ln x$}:
+    \begin{enumerate}
+        \item $e^{\lambda x}\to x^\lambda$
+        \item $e^{\lambda x}\to x^\lambda,\quad x\to \ln x$
+        \item $e^{\alpha x}\to x^\alpha,\quad \beta x \to \beta \ln x$
+    \end{enumerate}
+\end{definition}
+
+\subsection{Solving non-homogeneous linear 2nd-ODEs}
+\begin{definition}
+    {Constant coefficient Non-homogeneous 2nd-ODEs}
+    A non-homogeneous 2nd-ODE is of the form:
+    \[F:\ ay''+by'+cy=g(x)\]
+    Where $a,b,c$ are constants. (Coefficients are \emph{constants})
+    \tcblower
+    We first solve for $\lambda_{1,2}$ for the \hyperref[sec:homogeneous]{\textbf{complementary homogenous function}} $F_c$ to get $Y_c$:
+    \[F_c:\ ay''+by'+cy=0\ \to Y_c\]
+    The general solution $y$ for the non-homogeneous 2nd-ODE $F$ is:
+    \[y=Y_c+Y_p\]
+    Where $Y_p$ is a \textbf{particular solution} of $y$. To solve for $Y_p$, we can use the following methods:
+\end{definition}
+
+\begin{theorem}
+    {Method of undetermined coefficients}
+    To solve for $Y_p$ for a non-homogeneous 2nd-ODE, let $Y_p$ as the following if $g(x)$ consists of:
+    \begin{itemize}
+        \item $e^{ax}\to Y_p=Ae^{ax}$
+        \item $\sin x\text{ and / or }\cos x\to Y_p=A\sin x+B\cos x$
+        \item $x^n\to Y_p=Ax^n=A_nx^n+A_{n-1}x^{n-1}+\dots+A_0$ (polynomial of degree $n$)
+    \end{itemize}
+    Important things to note:
+
+    $\blacktriangleright $ If $g(x)$ is a product of multiple components, \textbf{$Y_p$ is the product of the different results}.
+
+    $\blacktriangleright $ If $Y_p$ consists of a non-constant \textbf{term that exists in $Y_c$}, we \textbf{must multiply} $Y_p$ by $x^i$ and repeat the process.
+
+
+    We then substitute $y=Y_p\to F$ and solve for $A$ and $B$.
+    \tcblower
+    For Cachy-Eular equations, we instead multiply $Y_p$ by $(\ln x)$ if $Y_p$ consists of a non-constant term that exists in $Y_c$.
+\end{theorem}
+
+\begin{theorem}
+    {Variation of parameters}
+    We can use this method when we are unable to see a particular solution for $Y_p$ in the above method.
+
+    Note that for $Y_c$ is in the form of $c_1y_1+c_2y_2$.
+    To solve for $Y_p$ for a non-homogeneous 2nd-ODE:
+    \[Y_{P}=-y_1\int\frac{y_2g(x)}{W}dx+y_2\int\frac{y_1g(x)}{W}dx,\quad W=y_1y_2'-y_2y_1'\]
+    \tcblower
+    Note that for Cachy-Eular equations, $g(x)$ is defined as the function with the coefficient of $y''$ as 1, hence, $g(x)\to \frac{g(x)}{ax^2}$.
+
+    If $Y_p$ consists of a non-constant term that exists in $Y_c$, we simply discard it (merging constants).
+\end{theorem}
+
+\section{Solving ODEs with Laplace Transforms}
+\begin{definition}
+    {Laplace transform}
+    The Laplace transform is a technique used to solve linear ODEs with constant coefficients. The Laplace transform of a function $f(t)$ is defined as:
+    \[\mathcal{L}\{f(t)\}=\int_{0}^{\infty}e^{-st}f(t)dt=F(t)\]
+    Where $s$ is a complex number.
+\end{definition}
+
+\begin{minipage}{0.52\textwidth}
+    \begin{theorem}
+        {Properties of Laplace transforms}
+        The following are some properties of Laplace transforms:
+        \begin{itemize}
+            \item $\mathcal{L}\{f+g\} = \mathcal{L}\{f\}+\mathcal{L}\{g\}$
+            \item $\mathcal{L}\{kf\} = k\mathcal{L}\{f\}$
+        \end{itemize}
+    \end{theorem}
+
+    \begin{theorem}
+        {Laplace transform of derivatives}
+        The Laplace transform of the derivative of a function $y(t)$ is:
+        \begin{align*}
+            \mathcal{L}\{y'\}  & =sY(s)-y(0)          \\
+            \mathcal{L}\{y''\} & =s^2Y(s)-sy(0)-y'(0)
+        \end{align*}
+        Where $f(0)$ is the initial condition of $f$.
+    \end{theorem}
+
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \begin{table}[H]
+        \begin{tabular}{rcc}
+               & $f$            & $\mathcal{L}\{f\}$                          \\ \hline
+            0. & $a$            & $\frac{a}{s}$                               \\\arrayrulecolor{lightgray}\hline
+            0. & $e^{at}$       & $\frac{1}{s-a}$                             \\\arrayrulecolor{lightgray}\hline
+            0. & $f*g$          & $F(s)G(s)$                                  \\\arrayrulecolor{lightgray}\hline
+            1. & $t^n$          & $\frac{n!}{s^{n+1}}$                        \\ \arrayrulecolor{lightgray}\hline
+            2. & $t^nf(t)$      & $(-1)^n\frac{d^n}{ds^n}\mathcal{L}\{f(t)\}$ \\ \arrayrulecolor{lightgray}\hline
+            3. & $\sin at$      & $\frac{a}{s^2+a^2}$                         \\ \arrayrulecolor{lightgray}\hline
+            4. & $\cos at$      & $\frac{s}{s^2+a^2}$                         \\ \arrayrulecolor{lightgray}\hline
+            5. & $e^{at}f(t)$   & $F(s-a)$                                    \\ \arrayrulecolor{lightgray}\hline
+            6. & $f(t-a)H(t-a)$ & $e^{-as}\mathcal{L}\{f(t)\}$                \\ \arrayrulecolor{lightgray}\hline
+        \end{tabular}
+    \end{table}
+    Convolution operator:\\
+    $f*g(t)=\int_0^tf(\tau)g(t-\tau)\:d\tau$
+\end{minipage}
+
+\begin{definition}
+    {Inverse Laplace transform}
+    The inverse Laplace transform is the reverse operation of the Laplace transform.
+    \[\mathcal{L}^{-1}\{F(t)\}=f(t)\]
+    You basically think backwards like how you'd do intergration sometimes. Remember to use the rules!
+\end{definition}
+
+\begin{knBox}
+    {Partial fractions}
+    A fraction can be decomposed into partial fractions if the degree of the numerator is \textbf{less than the degree of the denominator}. If not, then perform \textbf{long division} first.
+    \begin{enumerate}
+        \item $\frac{f(x)}{g(x)h(x)} = \frac{A}{g(x)} + \frac{B}{h(x)}$
+        \item $\frac{f(x)}{g^2(x)h(x)} = \frac{A}{g(x)} + \frac{B}{g^2(x)} + \frac{C}{h(x)}$
+        \item $\frac{f(x)}{(x^2+1)} = \frac{Ax+B}{x^2+1}$
+    \end{enumerate}
+    We can solve for $A$, $B$, and $C$ by multiplying the denominator (to make left side $f(x)$ only) and solving for the numerator.
+\end{knBox}
+
+\begin{definition}
+    {Solving ODEs with Laplace transforms}
+    To solve a linear ODE with constant coefficients using Laplace transforms:
+    \begin{enumerate}
+        \item Take the Laplace transform of both sides of ODE ($y(t) \to Y(s)$)
+        \item Solve for the Laplace transform of the function $Y(s)$
+        \item Convert $Y(s)$ into partial fractions
+        \item Find the inverse Laplace transform of the function ($Y(s)\to y(t)$)
+    \end{enumerate}
+\end{definition}

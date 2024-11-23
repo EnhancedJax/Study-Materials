@@ -1,0 +1,26 @@
+\documentclass[a4paper, landscape]{article}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{minted}
+\usepackage{fontspec}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+\geometry{top=0.8cm, bottom=0.8cm, left=0.8cm, right=0.8cm} 
+
+\usemintedstyle{algol}
+\setmainfont{Zed Mono}
+\setmonofont{Zed Mono}
+\setminted{
+    fontsize=\tiny,
+}
+
+\begin{document}
+\begin{multicols*}{4}
+    \inputminted{bash}{./src.sh}
+    \inputminted[obeytabs=true]{cpp}{./src.cpp}
+    \inputminted[obeytabs=true]{c}{./src.c}
+    \inputminted[obeytabs=true]{make}{./makefile}
+    \includegraphics[width=0.8\linewidth]{./regex.png}
+\end{multicols*}
+\end{document}

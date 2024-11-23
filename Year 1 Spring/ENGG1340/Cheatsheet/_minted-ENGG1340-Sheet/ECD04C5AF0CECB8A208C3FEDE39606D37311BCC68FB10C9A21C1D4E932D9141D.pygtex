@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s}{\PYGZdq{}Compared to C++, C does not have:\PYGZdq{}}\PYG{p}{;}
+\PYG{c+c1}{// Classes and objects}
+\PYG{c+c1}{// New/delete operators (use malloc/free instead)}
+\PYG{c+c1}{// Namespace}
+\PYG{c+c1}{// String class}
+\PYG{c+c1}{// Pass by reference (use pointers instead)}
+
+\PYG{c+cm}{/* \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} I/O in C \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}\PYG{c+c1}{                          // Include standard I/O library}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{;}\PYG{+w}{                                   }\PYG{c+c1}{// Declare variables}
+\PYG{n}{gets}\PYG{p}{(}\PYG{n}{s}\PYG{p}{);}\PYG{+w}{                                    }\PYG{c+c1}{// Read line from stdin}
+\PYG{n}{scanf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZpc{}d \PYGZpc{}d\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{y}\PYG{p}{);}\PYG{+w}{                     }\PYG{c+c1}{// Read integers x and y from stdin}
+\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}x=\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{);}\PYG{+w}{                        }\PYG{c+c1}{// Write line to stdout}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZdq{}}\PYG{+w}{    }\PYG{c+c1}{// Integer}
+\PYG{l+s}{\PYGZdq{}.3\PYGZpc{}f\PYGZdq{}}\PYG{+w}{    }\PYG{c+c1}{// Float with 3 decimal places}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}g\PYGZdq{}}\PYG{+w}{    }\PYG{c+c1}{// No trailing 0 (scientific notation)}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}lf\PYGZdq{}}\PYG{+w}{   }\PYG{c+c1}{// Double}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}c\PYGZdq{}}\PYG{+w}{    }\PYG{c+c1}{// Character}
+\PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZdq{}}\PYG{+w}{    }\PYG{c+c1}{// String}
+
+\PYG{c+cm}{/* \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Strings in C \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} */}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}string.h\PYGZgt{}}\PYG{c+c1}{                         // Include string library}
+\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{p}{];}\PYG{+w}{                                }\PYG{c+c1}{// Allocate memory for a string}
+\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{[]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}hello\PYGZdq{}}\PYG{p}{;}\PYG{+w}{                         }\PYG{c+c1}{// Declare and initialize a string}
+\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{[]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+sc}{\PYGZsq{}h\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}e\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}l\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}l\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}o\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{}\PYGZbs{}0\PYGZsq{}}\PYG{p}{];}\PYG{+w}{ }\PYG{c+c1}{// Same as above}
+\PYG{n}{strlen}\PYG{p}{(}\PYG{n}{s}\PYG{p}{);}\PYG{+w}{                                  }\PYG{c+c1}{// Number of characters: 5}
+\PYG{n}{strcpy}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}world\PYGZdq{}}\PYG{p}{);}\PYG{+w}{                         }\PYG{c+c1}{// Copy \PYGZdq{}world\PYGZdq{} to s}
+\PYG{n}{strcmp}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}world\PYGZdq{}}\PYG{p}{);}\PYG{+w}{                         }\PYG{c+c1}{// \PYGZlt{}: \PYGZhy{}1, =: 0, \PYGZgt{}: 1}
+\PYG{n}{sprintf}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZpc{}d\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{123}\PYG{p}{);}\PYG{+w}{                      }\PYG{c+c1}{// Convert int to string}
+\PYG{n}{sprintf}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZpc{}s\PYGZpc{}d\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}hello\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{123}\PYG{p}{);}\PYG{+w}{           }\PYG{c+c1}{// Concatenate string and int}
+
+\PYG{c+cm}{/* \PYGZhy{} Dynamic memory allocation in C \PYGZhy{} */}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdlib.h\PYGZgt{}}\PYG{c+c1}{                         // Include standard library}
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{a}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{o}{*}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{malloc}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{));}\PYG{+w}{   }\PYG{c+c1}{// Allocate memory for 10 integers}
+\PYG{c+c1}{// A is an array of 10 integers}
+\PYG{n}{free}\PYG{p}{(}\PYG{n}{a}\PYG{p}{);}\PYG{+w}{                                    }\PYG{c+c1}{// Free memory}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{argc}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{argv}\PYG{p}{[])}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{}}\PYG{+w}{ }
+\PYG{c+c1}{// argc number of arguments (including program name)}
+\PYG{c+c1}{// argv array of arguments}
+\end{Verbatim}

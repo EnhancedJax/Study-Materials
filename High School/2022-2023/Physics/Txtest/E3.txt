@@ -1,0 +1,203 @@
+# Paper checking
+* diameter
+* conservation
+
+============================================================
+Unit 8
+============================================================
+
+# Average KE per molecule
+* Eq shows that for same T, avg KE per molecule is same of any molecule
+* During change of state, PE changes
+* During change of state, T remains constant
+* Internal energy = KE + PE
+
+# Why does increasing temperature increase the pressure?
+1. avg KE inc
+2. v inc
+3. f inc
+4. state var unchanged
+5. d(momentum)/dt inc
+6. F on wall inc
+7. p = F / A
+
+# Ideal gas assumptions
+1. Negligible size
+2. Identical
+3. Exert no F on each other
+
+Moleucles in ideal has no PE
+
+============================================================
+Unit 9
+============================================================
+
+# Particles
+P | C | Pentrating power
+Alpha	4,2a	Paper
+Beta	0,-1b	Few mm Al
+Gamma	0,0y	Few mm Sn
+
+## Trend of properties
+1. Ionisation dec ~ dmg
+2. Range inc
+
+Activity	        - The rate of decay of nuclei
+Random decay	    - Can't predict which nucelus decays next
+Half life	        - Avg time for A to halve
+Binding E	        - E required to split nuclues into its separate molecules
+
+## Why can't use activity to determine age
+* Time scale too lone, A -> 0
+
+## Measuring count rate
+* n particles propto distance
+* bg radiation inc reading
+* Longer t reduces uncertainy of random decay
+
+# Fission & fusion
+Fission             - Large nucleus splits into smaller fragments
+Mass deficit = p + n - a - e
+## cont. fusion -> ^ E released
+* Mass -> E by E=mc2 where m = mass lost
+* High rate compensates E / fusion
+## Fission fragments <-> move away
+* Initial momentum 0, must be conserved
+
+Fe is the most stable element as smallest m/n
+
+## Fission only for big nuclei
+* Split massive nucleus inc BE -> release E
+* Split light nucleus requires E as m/n dec -> release E
+## Big fission -> ^ E released
+* Split massive nucleus inc BE -> release E
+* Large number of fragment nucleons => large total E release
+
+## Why is there a range of energy for particles emitted in decay (fission)?
+* Momentum is sharedl between particles
+* Energy split is random
+## Why doesn 't one particle get all the released energy?
+* Momentum is conserved
+* The particles move in opposite directions
+
+# Fusion as power supply
+## Advantages
+1. Unlimited fuel supply
+2. Hardly any radioactive waste
+## Disadvantages / facts
+* High T needed -> nuclei enough KE to overcome electrostatic repulsion -> get close
+* High densities needed -> high enough collision rate
+> Reaction must be contained securely + strong B field
+> Material touches container -> T dec
+> Stars are ideal as great G-force
+
+============================================================
+Unit 10
+============================================================
+
+# SHM conditions
+1. F acting towards eq pos
+2. F propto s from eq pos
+## Graphs
+Direction: Left
+v-t: lambda/4
+a-t: lambda/2
+## Energy
+GPE of bob osc = 1/2kx2
+
+## Why does an object on the oscillation surface lose contact when the amplitude is large enough?
+* ma = W - R
+* x inc R dec 
+* When R = 0 object loses contact
+
+# Resonance
+System forced into osc at natural f -> max E transfer -> A inc
+
+# Damping 
+Reduction in E from osc sys due to resistive F -> A dec
+* What materials necessary for energy dissipation to be effective: Plastic
+> Because: Shape changes & doesn't return -> E not returned to sys
+
+============================================================
+Unit 11
+============================================================
+
+## Comparing e-field and g-field
+1. Infinite range
+2. Inverse square law
+3. Interaction charge > mass
+4. Charged, mass
+5. Repulsive and attractive
+
+dGPE = -Gm1m2(1/r-1/r)
+# Star classifications
+Main sequence stars	  - Stars that fuses H2 in core
+## White dwarfs
+* The core remnant of red giant stars
+* No fusion
+* Small surface area, not very luminous
+* Very hot, appear white
+## H-R diagram
+Vertical:       L// 10^-4 -> 10^6
+Horizontal:     K// 6000K @ sun, x2 / 2
+### Age of clusters
+Young clusters: Main sequence only
+Old clusters:   White dwarfs no giants
+## Star properties
+Size ^ G-forces ^ rate of fusion ^ T ^
+## Life cycle of low mass star
+1. Fusion H
+2. No buring -> Core T dec -> Size dec
+3. Expand in size -> red giant
+4. Fusion He
+5. No He -> T needed for fusion > T inc
+6. White dwarf
+
+# Distance to stars
+Parallax               - Change in pos relative to bg
+## Determine distance by parallax
+1. obj viewed at oppos. ends of d of earth's orbit around sun
+2. d anglar pos of star against bg measured
+3. trigo used
+4. r of earth's orbit <-> sun must be known
+## Determine distance by standard candle
+1. Standard candle = object of known L
+2. Identify obj. sc + measure flux
+3. Inverse square law used
+
+# Age of universe
+Redshift                - The fractional wavelength inc due to source moving away from observer
+## How does doppler shift prove the expansion of the universe?
+1. z=v/c -> calc v
+2. Galaxies were moving away from Earth
+3. Further ~ faster
+4. Galaxies moving away from each other
+## Why λ of light detected from orbiting bodies change?
+1. Doppler shift
+2. Object moving away & towards observer
+3. Towards dec away inc
+## Determine distance to distant galaxies
+1. Measure λ of line in spectrum
+2. Find diff of λ of same line in lab
+3. z=v/c -> galaxy v
+4. Hubble’s law -> distance
+## Feasibility
+Parallax:           nS
+Standard candle:    @S + nG
+Redshift:           dG
+* Standard candle can't as flux is too small for measurement
+
+# Fate of everything
+Critical density        - Density of matter in uni below which uni expand forever
+Dark matter		        - Matter that can’t be detected via em-interaction which has mass
+## What is concluded from the observation of difference in values of observed mass & actual mass?
+* There is matter that doesn’t emit or absorb em-radiation
+* So dark matter must be present
+## How does dark matter relate to the fate of the universe?
+* Dark matter increases density
+* Fate depends upon density, compared with cd
+## Critical density
+p~pc | Expansion | Fate
+< Forever   Open
+= Stops     Flat
+> Shrinks   Closed

@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Makefile \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} \PYGZsh{}}
+\PYG{n+nf}{gcd.o}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{gcd}.\PYG{n}{cpp} \PYG{n}{gcd}.\PYG{n}{h} 
+\PYG{c}{\PYGZsh{} target: dependencies}
+\PYG{+w}{    }g++\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}FLAGS\PYG{k}{)}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }gcd.cpp\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} action}
+\PYG{c}{\PYGZsh{} Compiles gcd.cpp into gcd.o without linking}
+\PYG{n+nf}{gcd\PYGZus{}main.o}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{gcd\PYGZus{}main}.\PYG{n}{cpp} \PYG{n}{gcd}.\PYG{n}{h}
+\PYG{+w}{    }g++\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}FLAGS\PYG{k}{)}\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }\PYGZdl{}\PYGZlt{}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{} \PYGZdl{}\PYGZlt{} first dependency}
+\PYG{n+nf}{gcd}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{gcd}.\PYG{n}{o} \PYG{n}{gcd\PYGZus{}main}.\PYG{n}{o} \PYG{c}{\PYGZsh{} Links the object files}
+\PYG{+w}{    }g++\PYG{+w}{ }\PYG{k}{\PYGZdl{}(}FLAGS\PYG{k}{)}\PYG{+w}{ }\PYGZdl{}\PYGZca{}\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }\PYG{n+nv}{\PYGZdl{}@}\PYG{+w}{ }
+\PYG{c}{    \PYGZsh{} \PYGZdl{}\PYGZca{}: all dependencies (gc.o gcd\PYGZus{}main.o)}
+\PYG{c}{    \PYGZsh{} \PYGZdl{}@: target (gcd)}
+\PYG{n+nf}{clean}\PYG{o}{:}\PYG{+w}{ }\PYG{c}{\PYGZsh{} a shorthand function to clean up}
+\PYG{+w}{    }rm\PYG{+w}{ }\PYGZhy{}f\PYG{+w}{ }gcd\PYG{+w}{ }gcd.o\PYG{+w}{ }gcd\PYGZus{}main.o\PYG{+w}{ }gcd.tgz
+\PYG{n+nf}{.PHONY}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{clean} \PYG{n}{tar} \PYG{c}{\PYGZsh{} Declare shorthands}
+\end{Verbatim}

@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.txt": "markdown",
+      "string": "cpp",
+      "iomanip": "cpp",
+      "fstream": "cpp",
+      "iosfwd": "cpp",
+      "locale": "cpp"
+    },
+    "editor.wordWrap": "on"
+  }
+}

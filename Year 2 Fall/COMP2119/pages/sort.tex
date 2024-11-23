@@ -1,0 +1,163 @@
+\section{Sorting}
+
+We usually sort elements in accending order.
+A sorting algorithm can have the following proerties:
+\begin{itemize}
+    \item \textbf{Stable:} Elements with the same value appear in the same order in the sorted list.
+    \item \textbf{In place:} The algorithm uses a constant amount ($O(1)$) of extra memory.
+    \item \textbf{Non Comparative:} The algorithm doesn't compare elements.
+\end{itemize}
+
+\begin{knBox}
+    {Bubble sort}
+    For each element in the list, compare it with the next element and swap if necessary, continuing until next element is greater.
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n^2)}$ (quadratic time).
+    \tcblower
+    \begin{lstlisting}
+5 3 2 1 4
+3 2 1 4 5
+2 1 3 4 5
+1 2 3 4 5\end{lstlisting}
+\end{knBox}
+
+\begin{knBox}
+    {Selection Sort}
+    For each element, find the minimum value in the subarray after it, and swap it with the current element.
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega(n^2),\Theta(n^2),O(n^2)}$.
+    \tcblower
+    \begin{lstlisting}
+5 3 2 1 4
+1 3 2 5 4
+1 2 3 5 4
+1 2 3 4 5\end{lstlisting}
+\end{knBox}
+
+\begin{definition}
+    {Insertion sort}
+    For each element, for all previous numbers, if the previous number is smaller than current, swap, else break.
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega(n),\Theta(n^2),O(n^2)}$
+
+    \textbf{Notes:} Efficient for small datasets and nearly sorted arrays. $\Omega(n)$ for when the array is already sorted.
+    \tcblower
+    \begin{lstlisting}
+5 3 2 1 4
+3 5 2 1 4
+2 3 5 1 4
+1 2 3 5 4
+1 2 3 4 5\end{lstlisting}
+\end{definition}
+
+\begin{definition}
+    {Merge Sort}
+    A divide-and-conquer algorithm that breaks the array into subarrays, sorts them, and merges them back.
+
+    \begin{itemize}
+        \item \textbf{Base case}: Array length is less than 2, return array.
+        \item \textbf{Recursion:} Split the array into halves and (merge)sort them.
+        \item Merge the sorted arrays using a helper function, which:
+              \begin{itemize}
+                  \item Create result array
+                  \item Until one array ran out of elements, compare foremost element in each array, add smaller to list, and increment index.
+                  \item Add remaining elements to the result array.
+              \end{itemize}
+    \end{itemize}
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n \log n)}$.
+
+    \textbf{Notes:} The array is divided into halves, so the time complexity is $O(\log n)$ for the number of divisions and $O(n)$ for the merge step.
+    \begin{itemize}
+        \item Performs better than simple sorts.
+        \item Requires extra space as it doesn't sort in place: $O(n)$.
+    \end{itemize}
+    \tcblower
+    \begin{lstlisting}
+5 3 2 1 4
+[5 3 2] [1 4]
+[5 3] [2] [1] [4]
+[5] [3] [2] [1] [4]
+[3 5] [2] [1] [4]
+[2 3 5] [1] [4]
+[2 3 5] [1 4]
+1 2 3 4 5\end{lstlisting}
+\end{definition}
+
+\begin{definition}
+    {Quick Sort}
+    A divide-and-conquer algorithm that picks a pivot, partitions the array, and recursively sorts the subarrays. \textbf{Partition} is the process of rearranging the array so that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+
+    \begin{itemize}
+        \item \textbf{Base case}: Array length is less than 2
+        \item Partition the array using a helper function, which for each element:
+              \begin{itemize}
+                  \item Pass if current element is greater than pivot.
+                  \item Else, increment swap index (start with -1).
+                  \item If current index greater than swap index, swap.
+              \end{itemize}
+        \item \textbf{Recursion:} Split and sort the sub-arrays according to pivot index.
+    \end{itemize}
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta(n \log n),O(n^2)}$. The partition function is always $O(n)$.
+
+    \textbf{Notes:} The time complexity depends on the pivot selection. Worst case is $O(n^2)$ when the pivot is the \textbf{smallest or largest} element, as the array is not divided.
+
+    The pivot can be selected in different ways:
+    \begin{itemize}
+        \item Randomized quicksort: Randomly select a pivot.
+        \item Median of three: Select the median of the first, middle, and last element.
+        \item First / middle / last element: Select the first, middle, or last element as the pivot.
+    \end{itemize}
+    \tcblower
+    Consider rightmost element as pivot:
+    \begin{lstlisting}
+5 3 2 1 4
+3 2 1 4 5
+1 2 3 4 5\end{lstlisting}
+\end{definition}
+
+\begin{knBox}
+    {Counting sort}
+    A stable, non-comparative sorting algorithm.
+    \begin{enumerate}
+        \item Create a new counter array of length $k$ (max element in array).
+        \item For each element, increment the counter array at the index of the element.
+        \item Then, for each counter item, store current, then set the current value to the sum of the previous value and the stored value.
+        \item Create a new result array of length $n$.
+        \item For each element in the original array, add it to the result array at the index of the counter array, then increment the counter array.
+    \end{enumerate}
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n+k)}$.
+
+    \textbf{Space Complexity:} $O(n+k)$, as we need a counter array of length $k$ and a result array of length $n$.
+
+    \textbf{Notes:} The algorithm is stable as it loops through the original array at the end in order.
+\end{knBox}
+
+\begin{definition}
+    {Radix sort}
+    Find the maximum number of digits $d$ in the array, then sort the array using counting sort for each digit.
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(d(n+k))}$.
+
+    \textbf{Space Complexity:} $O(n+k)$.
+
+    \textbf{Notes:} The algorithm is stable as counting sort is stable.
+\end{definition}
+
+\begin{definition}
+    {Heap sort}
+    Call \textit{create\_max\_heap} on the array, then for each element from the right, swap the first element with the current element, then call \textit{heapify} on the array excluding the current element.
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n \log n)}$.
+
+    \textbf{Notes:}
+    \begin{itemize}
+        \item Both functions convert an array into a \hyperref[subsubsec:heaps]{max heap}, where the \textbf{first element must be the largest}. This is why we swap the first element with the current element.
+        \item \textit{create\_max\_heap} is $O(n)$, and \textit{heapify} is $O(\log n)$, which is ran $n-1$ times for each element.
+        \item \textit{Heapify} is used to maintain the heap property, so it is more efficient as it assumes the array is already a heap.
+    \end{itemize}
+\end{definition}
+
+\label{def:heapsort}

@@ -1,0 +1,20 @@
+{
+  "name": "auto",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --no-deprecation app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "enquirer": "^2.4.1",
+    "form-data": "^4.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}

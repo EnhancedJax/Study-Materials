@@ -1,0 +1,109 @@
+# Inorganic analysis
+> Basic test
+NH3         HCl(g) => White fumes (NH4Cl)
+NH4+        NaOH(warm aq) => Gas litmus R B (NH3)
+Sulfate     acidified Ba2+ => white pp
+Carbonates  H+ acids => Bubbles (CO2)
+
+> Group 7 test
+Method 1: Acidified silver nitrate => White cream yellow pp (HX)
+Method 2: conc. H2SO4 => White brown purple fumes (HCl, Br2, I2)
+
+# Organic analysis
+> Hydroxyl group
+Method 1: PCl5 => White fumes (HCl)
+
+> Acids
+Method 1: Carbonates => Bubbles (CO2)
+
+> Alchol & derivatives
+1 / 2 deg: acidified K2Cr2O7 => Orange, Green
+aldehydes: Benedict => B, R
+CH3C=O:    Warm alkaline sol. I2 => Yellow pp CHI3
+
+# Essential knowledge
+Common drying agent: MgSO4 (Anhydrous, doesn't react)
+
+==================================================================
+
+_Test: Buchner funnel, reflux, Thiele tube_
+
+# Enthalpy change of Rx
+ΔH = -mcΔt/n
+m = mass of solvent
+n = mol of solute
+## Procedure
+1. Measure T / 30s
+2. Add solution at 3 min
+3. Measure T / 30s for 5 min
+4. Plot T-t graph -> best fit line
+5. Extrapolate -> max dT
+
+# Titrations
+When to add starch indicator: Near the end point as to avoid solid forming
+## Procedure
+1. Indicator in burette
+2. Drop by drop at end point
+3. Record when color changes
+4. Repeat to obtain +-0.2 cm3 titres
+## Improve accuracy
+* White tile
+* Swirl close to end point
+* Rinse conical flask with distilled water
+
+# Reflux to prepare stuff
+## Prepare solution
+Cooling when addition:              Reaction exothermic, prevent boiling over
+## Reflux
+Use of reflux:                      Give complete reaction
+Use of condenser:                   Prevent escape of compounds
+Continuous stirring:                Reactants do not mix, ensure enough contact
+## Separating funnel
+Release pressure:                   Invert & remove stopper
+## Buchner funnel
+Advantages:                         Greater speed, dries P
+
+# Find total order of reaction 
+Pouring contents between beakers:   Ensure no R left in one breaker
+Use phenol:                         React with Br2 to delay color change
+Why V ∝ conc.:                      Total volume constant
+Use ethanol in mixture:             Dissolves reagents -> mix to increase rate
+## Graph 1: conc. t
+0: Linear
+1: HL unchanged
+2: HL x2
+## Graph 2: 1/t conc.
+0: Flat
+1: Linear
+2: Curved
+
+# Recrystallize
+1. Dissolve in min amount of hot solvent → saturated solution
+2. Filter solution → cool
+3. Filter crystals → wash
+4. Dry crystals (oven)
+
+Use of preheated funnel:            Prevent crystallization, remove insoluble impurities
+Use of Buchner funnel:              Remove soluble impurities
+Use of desiccator instead of oven:  Prevent melting
+How does x lead to crystallization: Product is less soluble in x
+Increased or > 100% yield:          Damp crystals
+
+# Measure mp
+Side-arm heated:                    Distribute heat evenly
+Mineral oil:                        Allow points > 100°
+Different results:                  Different pressure
+Pure sample:                        Sharp, close to db
+Impure sample:                      Unsharp, lower
+
+# Combustion analysis
+Absorb H2O: MgSO4
+Absorb CO2: Soda lime
+
+# Find mole of water of hydrated compound
+1. Measure mass of sample
+2. Heat sample in crucible until mass constant
+3. Difference in mass
+
+# Misc
+Species in collection apparatus:    Remove unreacted reactants

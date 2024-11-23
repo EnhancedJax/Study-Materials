@@ -1,0 +1,15 @@
+{
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "*.txt": "markdown",
+    "ostream": "cpp",
+    "string": "cpp",
+    "array": "cpp",
+    "string_view": "cpp",
+    "vector": "cpp",
+    "__bit_reference": "cpp",
+    "__split_buffer": "cpp",
+    "bitset": "cpp",
+    "initializer_list": "cpp"
+  }
+}

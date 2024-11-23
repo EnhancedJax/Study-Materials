@@ -1,0 +1,262 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/Clean}
+\newcommand{\documentdate}{Spring 2024}
+\newcommand{\documenttype}{C++ Notes for HKU}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\tableofcontents
+\newpage
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\section{C++ basics}
+Basic differences to Python:
+\begin{enumerate}
+    \item C++ is a \emph{compiled} language, which means that the code needs to be compiled before it can be run.
+    \item C++ is a \emph{statically typed} language, which means that the type of a variable is known at compile time.
+    \item C++ expressions end with a semicolon \Colorbox{superlightgray}{\lstinline|;|}.
+\end{enumerate}
+\subsection{Initialization}
+For a \Colorbox{superlightgray}{\lstinline|.cpp|} file, we must include the following contents:
+\lstinputlisting[language=c++, firstline=0, lastline=7]{code/cpp.cpp}
+For this document, all codeblocks are assumed to be in the \Colorbox{superlightgray}{\lstinline|std|} namespace.
+
+Without \Colorbox{superlightgray}{\lstinline|using namespace std;|}, we can use the \Colorbox{superlightgray}{\lstinline|std::|} prefix to access the objects and functions in the standard namespace.
+
+\subsection{Types}
+C++ is a statically typed language, which means that the type of a variable is known at compile time. The following are the basic types in C++:
+\lstinputlisting[language=c++, firstline=24, lastline=30]{code/cpp.cpp}
+\subsubsection{Chars}
+We use single quotes to represent a \Colorbox{superlightgray}{\lstinline|char|}.
+Note that there are no built-in string types in C++. A string is simple an \hyperref[sec:array]{array of characters}.
+
+\Colorbox{superlightgray}{\lstinline|char|} stores a single character as a number, and the ASCII value of the character is stored in the \Colorbox{superlightgray}{\lstinline|char|} variable. If we assign a char to an interger, the ASCII value of the character is stored in the integer variable. This means that if we perform arithmetic operations on a \Colorbox{superlightgray}{\lstinline|char|}, the ASCII value of the character is used, and the result is stored as an integer.
+\lstinputlisting[language=c++, firstline=206, lastline=209]{code/cpp.cpp}
+\lstinputlisting[language=c++, firstline=210, lastline=216]{code/cpp.cpp}
+
+\subsection{Variable declaration}
+\lstinputlisting[language=c++, firstline=8, lastline=9]{code/cpp.cpp}
+
+\subsection{Operators}
+\lstinputlisting[language=c++, firstline=14, lastline=22]{code/cpp.cpp}
+
+\subsection{cmath library}
+The \Colorbox{superlightgray}{\lstinline|cmath|} library contains a set of functions that can be used to perform mathematical operations.
+\lstinputlisting[language=c++, firstline=139, lastline=142]{code/cpp.cpp}
+
+\subsection{cstdlib library}
+The \Colorbox{superlightgray}{\lstinline|cstdlib|} library provides the \Colorbox{superlightgray}{\lstinline|rand()|} function, which returns a random number.
+\lstinputlisting[language=c++, firstline=193, lastline=193]{code/cpp.cpp}
+
+\section{Streams}
+Streams are a sequence of bytes that represent a flow of data. In C++, we use the \Colorbox{superlightgray}{\lstinline|iostream|} library to work with streams. The \Colorbox{superlightgray}{\lstinline|iostream|} library contains the \Colorbox{superlightgray}{\lstinline|cin|} and \Colorbox{superlightgray}{\lstinline|cout|} objects, which are used to read and write data to the console, respectively.
+\subsection{Character I/O Stream}
+\lstinputlisting[language=c++, firstline=78, lastline=79]{code/cpp.cpp}
+\begin{enumerate}
+    \item \Colorbox{superlightgray}{\lstinline|>>|} is the \emph{extraction operator}
+    \item \Colorbox{superlightgray}{\lstinline|<<|} is the \emph{insertion operator}
+    \item We can use \Colorbox{superlightgray}{\lstinline|\|} to escape special characters
+\end{enumerate}
+
+\subsection{File I/O Stream}
+We can also use the \Colorbox{superlightgray}{\lstinline|fstream|} library to work with files. The \Colorbox{superlightgray}{\lstinline|fstream|} library contains the \Colorbox{superlightgray}{\lstinline|ifstream|} and \Colorbox{superlightgray}{\lstinline|ofstream|} objects, which are used to read and write data to files, respectively.
+
+\subsubsection{Reading from a file}
+\lstinputlisting[language=c++, firstline=103, lastline=116]{code/cpp.cpp}
+
+\subsubsection{Write to a file}
+This following code creates \Colorbox{superlightgray}{\lstinline|output.txt|} if it doesn't exists and writes to it. If it does exist, it will be overwritten.
+\lstinputlisting[language=c++, firstline=118, lastline=125]{code/cpp.cpp}
+
+We can use the \Colorbox{superlightgray}{\lstinline|ios::app|} flag to append to the file instead of overwriting it.
+\lstinputlisting[language=c++, firstline=127, lastline=127]{code/cpp.cpp}
+
+\subsection{String Input Stream}
+We can use the \Colorbox{superlightgray}{\lstinline|sstream|} library to work with strings. The \Colorbox{superlightgray}{\lstinline|sstream|} library contains the \Colorbox{superlightgray}{\lstinline|istringstream|}, which is used to read data from a string.
+
+The following code separates the string \Colorbox{superlightgray}{\lstinline|str|} by spaces and stores the separated values in the \Colorbox{superlightgray}{\lstinline|word|} variable, then prints them line by line.
+
+\lstinputlisting[language=c++, firstline=129, lastline=137]{code/cpp.cpp}
+
+\subsection{Manipulators}
+Manipulators are special functions that can be used to format the output of the \Colorbox{superlightgray}{\lstinline|cout|} object. They are presistent, meaning that they will affect all subsequent output until they are changed.
+
+\subsubsection{End line}
+The keyword \Colorbox{superlightgray}{\lstinline|endl|} is a manipulator that represents a new line. It is equivalent to the \Colorbox{superlightgray}{\lstinline|\n|} character.
+
+\subsubsection{Decimal points}
+We can fix the number of decimal points by using the \Colorbox{superlightgray}{\lstinline|fixed|} and \Colorbox{superlightgray}{\lstinline|setprecision|} functions from the \Colorbox{superlightgray}{\lstinline|iomanip|} library.
+\lstinputlisting[language=c++, firstline=81, lastline=83]{code/cpp.cpp}
+
+\subsubsection{Width and alignment}
+We can fix the width of the output by using the \Colorbox{superlightgray}{\lstinline|setw|} function from the \Colorbox{superlightgray}{\lstinline|iomanip|} library.
+\lstinputlisting[language=c++, firstline=99, lastline=101]{code/cpp.cpp}
+
+
+\section{Control flow and functions}
+\subsection{Basisc conditionals}
+\lstinputlisting[language=c++, firstline=32, lastline=39]{code/cpp.cpp}
+\subsection{Switches}
+\lstinputlisting[language=c++, firstline=40, lastline=47]{code/cpp.cpp}
+\subsection{Tentary operators}
+\lstinputlisting[language=c++, firstline=49, lastline=49]{code/cpp.cpp}
+\subsection{Loops}
+\lstinputlisting[language=c++, firstline=51, lastline=63]{code/cpp.cpp}
+
+\subsection{Functions}
+\lstinputlisting[language=c++, firstline=65, lastline=68]{code/cpp.cpp}
+Note that nested function declaration is not allowed.
+
+\subsubsection{Pass by reference}
+Pass-by-reference means to pass the \textbf{reference of a variable} as the parameter of a function. The called function can \textbf{modify the value of the variable} by using its reference passed in.
+
+This example uses reference arguments:
+\lstinputlisting[language=c++, firstline=85, lastline=94]{code/cpp.cpp}
+This other example uses pointer arguments, so referenes are passed in:
+\lstinputlisting[language=c++, firstline=272, lastline=280]{code/cpp.cpp}
+More in \hyperref[sec:pointers]{reference operators}.
+
+\label{sec:array}
+\section{Arrays}
+An array is a collection of elements of \textbf{the same type}. The elements of an array are stored in contiguous memory locations. C++ is a zero-indexed language, which means that the first element of an array is at index 0.
+
+Arrays are static, so arrays cannot be variable-lengthed**. Additionally, only one element of an array can be changed at a time. \textbf{You cannot assign entire arrays to each other.}
+
+\emph{** not part of the standard, but some compilers allow it.} Also check out \hyperref[sec:dynamicarrays]{dynamic arrays}.
+
+\lstinputlisting[language=c++, firstline=70, lastline=73]{code/cpp.cpp}
+
+\subsection{Function array parameters}
+We can tell the function to expect an array as a parameter by using the square brackets \Colorbox{superlightgray}{\lstinline|[]|}.
+
+Arrays passed into functions are \textbf{passed by reference}, so any changes made to the array in the function will be reflected in the original array.
+\lstinputlisting[language=c++, firstline=195, lastline=201]{code/cpp.cpp}
+For 2D arrays, we must specify the number of columns in the function parameter.
+\lstinputlisting[language=c++, firstline=203, lastline=211]{code/cpp.cpp}
+
+\subsection{Character arrays (C-string)}
+A string is simply an array of characters. The last character of a string is the null character \Colorbox{superlightgray}{\lstinline|\0|}, which is used to denote the end of a string. The null character is automatically added to the end of a string when it is declared.
+\lstinputlisting[language=c++, firstline=218, lastline=218]{code/cpp.cpp}
+This also means that you cannot directly assign a string to the variable after declaration, as the same of arrays.
+\lstinputlisting[language=c++, firstline=219, lastline=219]{code/cpp.cpp}
+
+\subsection{The string class}
+You can also use the string library to work with strings. The library provides the \Colorbox{superlightgray}{\lstinline|string|}class, as well as functions for working with strings.
+
+\subsubsection{String concatenation}
+We can use the \Colorbox{superlightgray}{\lstinline|+|} operator to concatenate strings. Note that at least one of the operands must be a string object.
+\lstinputlisting[language=c++, firstline=221, lastline=225]{code/cpp.cpp}
+
+\subsubsection{String comparison}
+String comparisons are carried out character by character, and stops when a difference is found. The comparison is by ANSCII value.
+\lstinputlisting[language=c++, firstline=227, lastline=233]{code/cpp.cpp}
+
+\subsubsection{Member functions}
+\lstinputlisting[language=c++, firstline=235, lastline=249]{code/cpp.cpp}
+
+\subsection{Vectors}
+Vectors are a sequence container that encapsulates dynamic size arrays.
+\lstinputlisting[language=c++, firstline=178, lastline=189]{code/cpp.cpp}
+We use vectors for dynamic arrays, and arrays for static arrays.
+
+\section{Structures}
+A structure is a user-defined data type that groups related variables of different types. A member is a variable within the structure.
+\lstinputlisting[language=c++, firstline=151, lastline=153]{code/cpp.cpp}
+Structure variables is declared and initialized similar to how you would for variables. We use the dot operator to access the members of a structure.
+\lstinputlisting[language=c++, firstline=155, lastline=158]{code/cpp.cpp}
+Note that we can only assign to a structure, and not perform operations on it.
+
+Structures can be nested, and we can define member functions for a structure.
+\lstinputlisting[language=c++, firstline=160, lastline=169]{code/cpp.cpp}
+
+\section{Dynamic memory management}
+\label{sec:pointers}
+\subsection{Pointers}
+A pointer is a variable that stores the \emph{memory address} of another variable.
+
+\subsubsection{The reference operator}
+\Colorbox{superlightgray}{\lstinline|&|} after the type name during delcaration indicates the variable serves as an alias to a variable (providing a \textbf{reference}).
+\lstinputlisting[language=c++, firstline=257, lastline=260]{code/cpp.cpp}
+
+\subsubsection{Pointer declaration and usage}
+\Colorbox{superlightgray}{\lstinline|*|} after the type name during declaration indicates the variable is a pointer.
+
+\Colorbox{superlightgray}{\lstinline|*|} before the variable name \textbf{dereferences} the pointer and gets the value stored in the memory address.
+
+\Colorbox{superlightgray}{\lstinline|&|} before the variable name gives the \textbf{memory address} of the variable.
+
+\lstinputlisting[language=c++, firstline=251, lastline=253]{code/cpp.cpp}
+
+\subsubsection{Possible errors}
+Note that pointers \textbf{must have the same type} as the variable they point to.
+\lstinputlisting[language=c++, firstline=262, lastline=263]{code/cpp.cpp}
+We must initialize a pointer to \Colorbox{superlightgray}{\lstinline|nullptr|} (same as 0) or a valid memory address before using it. If we don't, the pointer will be a \textbf{dangling pointer}.
+\lstinputlisting[language=c++, firstline=255, lastline=255]{code/cpp.cpp}
+Dereferencing a dangling pointer raises a \textbf{compile-time error}.
+
+\subsubsection{Pointer operations}
+We can carry out \emph{addition} and \emph{subtraction} on pointers, which will move the pointer to next or previous memory addresses. We can also carry out \emph{subtraction} on two pointers, which will give the number of elements between the two pointers.
+\lstinputlisting[language=c++, firstline=296, lastline=299]{code/cpp.cpp}
+We can also compare pointers with \Colorbox{superlightgray}{\lstinline|==|} and \Colorbox{superlightgray}{\lstinline|!=|}.
+
+
+\subsubsection{Member access operator}
+We can use the \Colorbox{superlightgray}{\lstinline|->|} operator to access the members of a structure that a pointer points to.
+\lstinputlisting[language=c++, firstline=265, lastline=270]{code/cpp.cpp}
+
+\subsubsection{Array pointers}
+The name of an array is a \textbf{pointer to the first element} of the array. Therefore, we can use pointers to access the elements of an array as well.
+\lstinputlisting[language=c++, firstline=282, lastline=285]{code/cpp.cpp}
+
+
+\subsection{Dynamic variables and memory allocation}
+Dynamic variables are variables that are allocated memory at runtime. We use the \Colorbox{superlightgray}{\lstinline|new|} operator to allocate memory for a dynamic variable, and the statement returns the memory address of the allocated memory. We can then store the address in a pointer to access the dynamic variable.
+\lstinputlisting[language=c++, firstline=287, lastline=288]{code/cpp.cpp}
+A dynamic variable is deallocated using the \Colorbox{superlightgray}{\lstinline|delete|} operator. It is important to deallocate memory when it is no longer needed to prevent memory leaks. Additionally, the pointer to the memory should be set to \Colorbox{superlightgray}{\lstinline|0|} after deallocation to prevent the pointer from becoming a \emph{dangling pointer}.
+\lstinputlisting[language=c++, firstline=289, lastline=290]{code/cpp.cpp}
+
+\label{sec:dynamicarrays}
+\subsubsection{Dynamic arrays}
+Unlike static arrays, dynamic arrays can have their size changed at runtime.
+\lstinputlisting[language=c++, firstline=292, lastline=294]{code/cpp.cpp}
+
+\subsection{Linked lists}
+A linked list is a data structure that consists of a sequence of nodes (elements), where \textbf{each node points to the next node} in the sequence. The last node points to \Colorbox{superlightgray}{\lstinline|nullptr|}. Therefore, items \textbf{need not be stored in contiguous memory locations}.
+
+This allows for \textbf{efficient insertion and deletion} of nodes, as we only need to change the pointers of the nodes around the element we want to insert or delete.
+
+However, a linked list is a \textbf{sequential access} data structure, so to access the $n$th element, we must traverse the list from the first element. This is different from an array, where you can access the $n$th element directly.
+
+\subsubsection{Implementation}
+\lstinputlisting[language=c++, firstline=301, lastline=313]{code/cpp.cpp}
+We tranverse through the linked list from \Colorbox{superlightgray}{\lstinline|head|} to access the data stored in the elements.
+\lstinputlisting[language=c++, firstline=315, lastline=315]{code/cpp.cpp}
+We can also use a while loop to do so:
+\lstinputlisting[language=c++, firstline=317, lastline=321]{code/cpp.cpp}
+
+\section{Recursion}
+A recursion function can be defined by the following:
+\begin{enumerate}
+    \item $f(b)=k$ A basecase and it's result
+    \item $f(a)=f(b)$ A recursive case which breaks the problem down into smaller problems for when it's not the basecase.
+\end{enumerate}
+We can implement a recursive function as followed:
+\lstinputlisting[language=c++, firstline=338, lastline=344]{code/cpp.cpp}
+
+\end{document}

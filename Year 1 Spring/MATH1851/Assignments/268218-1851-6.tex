@@ -1,0 +1,132 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{MATH1851}
+\newcommand{\documentnumber}{6}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+Solve the following differential equation by variation of parameters:
+\begin{align*}
+    y''-9y'+18y            & =e^{2x}                                                                              \\
+    F_c: y''-9y'+18y       & =0\quad:\quad\text{sub }y=e^{\lambda x}                                              \\
+    \lambda^2-9\lambda+18  & =0                                                                                   \\
+    (\lambda-3)(\lambda-6) & =0                                                                                   \\
+    \lambda_{1,2}          & =3,6                                                                                 \\
+    \\
+    \therefore y           & =c_1e^{3x}+c_2e^{6x}+Y_p                                                             \\
+    \\
+    Y_{P}                  & =-y_1\int\frac{y_2g(x)}{W}dx+y_2\int\frac{y_1g(x)}{W}dx,\quad W=y_1y_2'-y_2y_1'      \\
+    W                      & = e^{3x}\times 6e^{6x} - e^{6x}\times3e^{3x}                                         \\
+                           & = 3e^{9x}                                                                            \\
+    Y_p                    & = -e^{3x}\int\frac{e^{6x}e^{2x}}{3e^{9x}}dx+e^{6x}\int\frac{e^{3x}e^{2x}}{3e^{9x}}dx \\
+                           & = -\frac{1}{3}e^{3x}\int e^{-x}dx+\frac{1}{3}e^{6x}\int e^{-4x}dx                    \\
+                           & = -\frac{1}{3}e^{3x}(-e^{-x})+\frac{1}{3}e^{6x}(-\frac{1}{4}e^{-4x})                 \\
+                           & = \frac{e^{2x}}{4}                                                                   \\
+    \\
+    \therefore y           & = c_1e^{3x}+c_2e^{6x}+\frac{e^{2x}}{4}                                               \\
+\end{align*}
+\section*{Question 2}
+Find the Laplace transform of (a, b = constants)
+\begin{align*}
+    \mathcal{L}\{t^2e^{at}\sin{(bt)}\} & = (-1)^2(\mathcal{L}\{e^{at}\sin(bt)\})''                  \\
+                                       & = (\frac{b}{(s-a)^2+b^2})''                                \\
+                                       & = (-b((s-a)^2+b^2)^{-2}(2s-2a))'                           \\
+                                       & = (-2b((s-a)^2+b^2)^{-2}(s-a))'                            \\
+                                       & = -4b(s-a)((s-a)^2+b^2)^{-3}(2s-2a) - 2b((s-a)^2+b^2)^{-2} \\
+                                       & = 8b(s-a)^2((s-a)^2+b^2)^{-3} - 2b((s-a)^2+b^2)^{-2}       \\
+\end{align*}
+\section*{Question 3}
+\begin{align*}
+    \mathcal{L}^{-1}\{\frac{as}{(s-a)^2+b^2}\}                                                                          \\
+    \text{Guess } \implies F                                            & = ae^{at}\cos{bt}                             \\
+    \mathcal{L}\{F\}                                                    & = \frac{a(s-a)}{(s-a)^2+b^2}                  \\
+                                                                        & = \frac{as-a^2)}{(s-a)^2+b^2}                 \\
+    \text{Need +}\frac{a^2}{(s-a)^2+b^2}: \mathcal{L}\{e^{at}\sin(bt)\} & = \frac{b}{(s-a)^2+b^2}                       \\
+    \therefore \mathcal{L}^{-1}\{\frac{as}{(s-a)^2+b^2}\}               & = \frac{a^2}{b}e^{at}\sin(bt)+ae^{at}\cos{bt} \\
+\end{align*}
+\section*{Question 4}
+Resolve into partial fractions (a, b are nonzero constants and distinct from each other)
+\begin{align*}
+    \frac{s^2}{(s-a)(s-b)^2}            & = \frac{A}{s-a}+\frac{B}{s-b}+\frac{C}{(s-b)^2}                                  \\
+    s^2                                 & = A(s-b)^2+B(s-a)(s-b)+C(s-a)                                                    \\
+    s\to a:\quad a^2                    & = A(a-b)^2                                                                       \\
+    A                                   & = \frac{a^2}{(a-b)^2}                                                            \\
+    s\to b:\quad b^2                    & = C(b-a)                                                                         \\
+    C                                   & = \frac{b^2}{b-a}                                                                \\
+    s\to 0:\quad 0                      & = Ab^2+Bab-Ca                                                                    \\
+    0                                   & = \frac{a^2b^2}{(a-b)^2}+Bab-\frac{ab^2}{b-a}                                    \\
+    Bab                                 & = -\frac{a^2b^2}{(a-b)^2}+\frac{ab^2}{b-a}                                       \\
+    B                                   & = -\frac{ab}{(a-b)^2}+\frac{b}{b-a}                                              \\
+    B                                   & = \frac{-b(a-b)-ab}{(a-b)^2}                                                     \\
+                                        & = \frac{-ba+b^2-ab}{(a-b)^2}                                                     \\
+                                        & = \frac{b^2-ab}{(a-b)^2}                                                         \\
+    \therefore \frac{s^2}{(s-a)(s-b)^2} & = \frac{a^2}{(a-b)^2(s-a)}+\frac{b^2-2ab}{(a-b)^2(s-b)}+\frac{b^2}{(b-a)(s-b)^2}
+\end{align*}
+\section*{Question 5}
+Solve the differential equation by the Laplace transform:
+\begin{align*}
+    y''-6y'+8y                               & =3e^{2t}\quad:\quad y(0)=0,\ y'(0)=\frac{1}{2}          \\
+    s^2Y(s)-sy(0)-y'(0) -6(sY(s)-y(0))+8Y(s) & = \frac{3}{s-2}                                         \\
+    s^2Y(s)-\frac{1}{2} -6sY(s)+8Y(s)        & = \frac{3}{s-2}                                         \\
+    Y(s)(s^2-6s+8)                           & = \frac{3}{s-2}+\frac{1}{2}                             \\
+    Y(s)(s^2-6s+8)                           & = \frac{3+\frac{1}{2}s-1}{s-2}                          \\
+    Y(s)                                     & = \frac{2+\frac12s}{(s-2)^2(s-4)}                       \\
+    Y(s)                                     & = \frac{A}{s-2}+\frac{B}{(s-2)^2}+\frac{C}{s-4}         \\
+    2+\frac12s                               & = A(s-2)(s-4)+B(s-4)+C(s-2)^2                           \\
+    s\to2:\quad 2+1                          & = -2B                                                   \\
+    B                                        & = -\frac{3}{2}                                          \\
+    s\to4:\quad 2+2                          & = 4C                                                    \\
+    C                                        & = 1                                                     \\
+    s\to0:\quad 2                            & = A(-2)(-4) -\frac32(-4)+(-2)^2                         \\
+    2                                        & = 8A+6+4                                                \\
+    A                                        & = -1                                                    \\
+    \therefore Y(s)                          & = \frac{-1}{s-2}+\frac{-\frac32}{(s-2)^2}+\frac{1}{s-4} \\
+    y(t)                                     & = -e^{2t}-\frac32te^{2t}+e^{4t}                         \\
+\end{align*}
+\section*{Question 6}
+Solve the differential equation by the Laplace transform:
+\begin{align*}
+    y''-6y'+9y                              & =3\cos{(3t)}\quad:\quad y(0)=1,\ y'(0)=4                       \\
+    s^2Y(s)-sy(0)-y'(0)-6(sY(s)-y(0))+9Y(s) & = \frac{3s}{s^2+9}                                             \\
+    s^2Y(s)-s1-4-6sY(s)+6+9Y(s)             & = \frac{3s}{s^2+9}                                             \\
+    Y(s)(s^2-6s+9)                          & = \frac{3s}{s^2+9}+s-2                                         \\
+    Y(s)(s-3)^2                             & = \frac{3s+(s-2)(s^2+9)}{s^2+9}                                \\
+    Y(s)                                    & = \frac{3s+s^3+9s-2s^2-18}{(s-3)^2(s^2+9)}                     \\
+    Y(s)                                    & = \frac{s^3-2s^2+12s-18}{(s-3)^2(s^2+9)}                       \\
+    Y(s)                                    & = \frac{A}{s^2+9}+\frac{B}{(s-3)}+\frac{C}{(s-3)^2}            \\
+    s^3-2s^2+12s-18                         & = A(s-3)^2+B(s-3)(s^2+9)+C(s^2+9)                              \\
+    s\to3:\quad 27-18+36-18                 & = 18C                                                          \\
+    C                                       & = \frac{3}{2}                                                  \\
+    s\to0:\quad -18                         & =9A+B(-3)(9)+\frac{3}{2}(9)                                    \\
+    -2                                      & =A-3B+\frac{3}{2}                                              \\
+    A                                       & = -\frac{7}{2}+3B                                              \\
+    s\to1:\quad 1-2+12-18                   & = 4A+B(-20)+\frac{3}{2}(10)                                    \\
+    -7                                      & = 4A-20B+15                                                    \\
+    -7                                      & = 4(-\frac{7}{2}+3B)-20B+15                                    \\
+    -7                                      & = -14+12B-20B+15                                               \\
+    -8                                      & = -8B                                                          \\
+    B                                       & = 1                                                            \\
+    A                                       & = -\frac{7}{2}+3                                               \\
+                                            & = -\frac12                                                     \\
+    \therefore Y(s)                         & = \frac{-\frac12}{s^2+9}+\frac{1}{s-3}+\frac{\frac32}{(s-3)^2} \\
+    y(t)                                    & = -\frac{1}{2\times3}\sin{3t}+e^{3t}+\frac32te^{3t}            \\
+                                            & = -\frac{1}{6}\sin{3t}+e^{3t}+\frac32te^{3t}                   \\
+\end{align*}
+
+\end{document}

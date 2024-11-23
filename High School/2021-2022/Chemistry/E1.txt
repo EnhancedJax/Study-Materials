@@ -1,0 +1,453 @@
+============================================================
+Unit 1
+============================================================
+
+A = p + n
+Z = p
+n = A - Z
+p = Z
+e = p
+
+RAM - average weighted mass of the isotopes of an element ratio to 1/12 mass of C-12
+a sample is a mixture of isotopes in diff abundance
+RMM - the average weighted mass of a molecule
+emp - the smallest whole number ratio of atoms of ech element in compound
+mol - the actual number of atoms of each elemetn of molecule
+
+Solid g / gmol-1
+Liquid M v
+Gas mV / 24
+mV = volume / mol
+mass concentration g dm-3
+Molarity mol dm-3
+moles = particles / 6.02e23
+%yield = actual / theoretical (g)
+atom economy = wanted / all (gmol-1)
+ppm = solute e6 / solvent
+Ideal gas: pV=nRT
+V=m3
+T=C+273
+p=Pa
+
+number of atoms: incident 
+number of compounds in a mol: mol * const
+number of atoms in compounds in a mol: incident * mol * const
+
+Test for:
+Lead: Iodine - yellow pre
+Chlorine gas: Damp blue litmus paper - red
+Li Red
+Na Golden Yellow
+K Lilac
+Ca Brick-Red
+Mg Bright-White
+Fe Yellow sparks
+
+Ca(OH)2 + CO2 -> CaCO3 + H2O
+
+Solubility of sulphate decrease down the group, Ba insoluble
+Solubility of hydroxides increase down the group, Mg insoluble
+All NO3 soluble
+
+============================================================
+Unit 2
+============================================================
+
+Isotopes are atoms w/ same n of p but diff num of n
+RIM - the mass of an individual atom of a particular isotope
+FIE: energy required to remove one mol of e from gaseous atoms
+Orbital: region within an atom which an e is likely to be found
+Periodicity - Trend which is repeated.
+
+bombarded with high energy e, remove e to form positive ions
+electric field accelerate
+magnetic field deflect
+
+lighter, higher charge, further
+
+Highest peak = molecular ion peak
+which is: the molecular mass
+
+attraction force from neucleus +
+distance of e to nucleus (size) -
+shielding -
+
+same : electron are being removed from an increasingly positive ion
+change: electron is removed from a lower shell, which is closer to the nucleus
+
+(.)override (+)greater (/)ignored
+Decrease down a group (change in period) : 1+ 2+. 3+.
+general increase : 1+. 2+ 3/
+
+s -> p : first e- removed is in p orbital, e is partially shielded by s e
+p3 -> p4 : p shell has a pair of e, ee repulsion exists between the 2 paired electrons
+
+Deducing electronic structure from successive ionisation energies
+How
+1. State electronic structure
+2. Jumps of IE indicate the change of shells
+3. State jumps
+What
+1. Number of shells
+2. Number of electrons, by electronic arrangement
+3. in each shell
+
+atomic radius decrease from left to right, number of p increase + nuclear charge increase -> attraction, distance from nucleus to e decrease
+
+
+============================================================
+Unit 3
+============================================================
+
+i-bond - attraction between oppositely charged ions
+c-bond - attraction of shared pair of e and nuclei
+m-bond - attraction between delocalised electrons and cations
+iso-el - same number of e
+d-bond - element donate pair of e to share with element
+elec-n - power of an atom to attract e in c-bond
+p-bond - one element is more electronegative than other
+
+Ionic bonds
+- Size ! Electronstatic attraction ! Strength
+- n of p / nuclear charge ! size
+
+Polarisation power
+- size - charge +
+- P-power ^ covalent character
+Polarisability 
+- size + charge + (more negative)
+
+
+Covalent bonds
+σ-bond: end on overlap
+π-bond: overlap of 2 p orbitals
+sigma-pipi
+
+Trend of EN: top right 
+Electron deficient: EN high δ- lower δ+
+EN difference +polarity
+
+
+Metallic bonds
+Lattice surrounded by sea of delocalised electrons, they travel thru solid when a potential is applied to conduct electricity
+Strength: FOR IONS: size v charge ^ charge density ^ number of de- ^ attraction ^ de and ions ^
+Thermal: Delocalised electrons and closely packged cations transfer KE
+Malleable: Metal layers can slide over one another
+
+
+Explain why different AX have different bonding than BX: 
+A smaller ionic radius (doesn't compare with number of protons as they aren't isoelectronic) -> A more EN than B -> AX EN diff is less than BX EN diff -> AX covalent degree ^
+
+
+Electron pair repulsion theory
+LL > LB > BB pair repulsion
+
+Explaining bond angles
+1. State bonding pair
+2. EPR theory
+3. As far as possible
+4. To form the molecule shape
+
+Sym -> Dipoles cancel each other -> non-polar
+Non-sym -> Dipoles reinforce each other -> polar
+
+20 Linear 180
+30 Trigonal planar 120
+40 Tetrahedral 109.5
+50 Trigonal bipyramidal 90,120
+60 Octahedral 90,180
+31 Trigonal pyramidal 107,109.5
+22 V-shaped 104.5
+
+low mp + (g, l) -> simple molecular
+conduct electricity (s) -> giant metallic
+conduct electricity (m, aq) -> giant ionic (s)
+high mp -> giant covalent (s)
+
+
+============================================================
+Unit 4-5
+============================================================
+
+Alkane 		- CnH2n+2
+Alkene 		- CnH2n
+Haloalkane 	- CnH2n+1X
+Alchol 		- CnH2n+1OH
+Aldehyde    - RCOH
+Ketone      - CH3COR
+Acid   		- RCOOH
+
+Homologus series - same general formula that differ by ch2 with the same functional group
+
+Structural isomerism - same molecular formula, diff structural formulas
+Stereoisomers - same structural formulas, diff arrangement in space
+
+Stereoisomers arise:
+- There is no rotation around C=C bond
+Yes: Each end of the C=C bond has 2 different groups
+No: One end of the C=C bond has the same group
+E trans - priority group opposite side | Z cis - same side
+
+Free radical - paritucle with unpaired electrons
+Half arrow: Movement of e, forming radicals
+Full arrow: Movement of e pair, forming ions
+
+Homolytic fission - breaking of c-bond, each bondinge- leaves with each atom
+Heterolyic fission - breaking of c-bond, both bonding e- taken by one atom
+Nucleophile - e- pair donor 
+Electrophile - molecule which can accept pair of electrons
+
+Addition reaction stability: Tertiary carboncation is the most stable.
+Major minor: Most electronegative element attached to higher degree carboncation
+
+Alkane substitution steps:
+Initiation		1 molecule -> 2 radical
+Propagation 	1 molecule + 1 radical -> diff molecule & radical
+Termination 	2 radical -> 1 molecule
+Further reactions - H atoms can still be replaced by Halogens forming other products
+
+Alkenes react faster than alkanes, ene has sigma and pi bonds, ane only has sigma bonds, pi < sigma in strength. C-H bonds must be broken.
+
+Pollution of Sulfuric acid and Nitric acid
+S + O2 -> SO2 / 2So2 + O2 -> 2SO3
+SO3 + H2O -> H2SO4 / SO2 + H2O -> H2SO3
+N2+O2 -> 2NO / 2NO + O2 -> 2NO2
+2No2 + H2O -> HNO2 + HNO3
+
+How to obtain sample from crude oil:
+Vaporised, the vapour condenses and collected at a temperature
+
+Biodegradable - can be broken down by organisms
+
+Alkane
+-------------------------------
++ X2 -> Haloalkane + HX [UV] [Free radical substitution]
+
+Alkene
+-------------------------------
++ H2 -> Alkane [Addition] [Pt]
++ HX / X2 -> (Di)haloalkane [Brown -> Colorless] [Electrophilic addition]
++ H2O(g) -h2so4(catalyst)-> alchol [Electrophilic addition]
++ Acidifed KMnO4 -> Diols [Purple -> Colorless]
+
+Cr2O72- Color: Yellow
+Cr3+ Color: Green
+
+============================================================
+Unit 10
+============================================================
+
+Haloalkane reaction rate: break X-H bonds, EN of halogen v bond polarity v  X-H strength v rate ^
+
+Haloalkane
+-------------------------------
+All mechanism are [nucleophilic substitution]
+Reflux with aqueous OH- -> Alchols + X-
+Reflux with ethanolic OH- solution -> Alkenes + X- [Elimination]
+Reflux with cyanide CN- -> Nitriles + X-
+Heating in sealed tube with ammonia -> RNH2 + NH4X
+------------
+Second-last rx product naming: alkane-nitrile
+Last rx product naming: alkan-amine
+
+Alchols
+-------------------------------
+Halogenation: Nucleophilic substitution
+------------
+ROH + PCl5 -> RCl + POCl3 + HCl(g) // can be used to test 
+ROH{3} + HCl -> RCl + H2O
+ROH + HBr -> RBr + H2O [50% concentrated H2SO4]
+3ROH + PI3 -> 3RI + H3PO3
+------------
+Dehydration -> Alkenes + water [conc. sul.] [elimination]
+------------
+Oxidation of {1} to aldehyde        ROH + [O] -> RCHO + water [Distil instantly]
+Oxidation reflux to acid            ROH + 2[O] -> RCOOH + water [Reflux]
+Oxidation reflux {2} to ketones     ROH + [O] -> CH3COR + water
+ROH + Na -> RONa(s) + 1/2 H2(g) [white solid]
+------------
+[O]: acidifed Cr2O72-
+------------
+Heat under reflux setup:
+- vertical condenser water in bottom
+- reactant solution and anti-bumping granules
+- heat
+------------
+Test for aldehyde: 
+Benedict's solution -> Blue to red pp
+K2Cr2O7 red -> green
+Test for COOH: Alchol + H2SO4 -> Fruity smell
+
+============================================================
+Unit 6
+============================================================
+
+Exothermic - increase temp
+Endothermic - decrease temp 
+Hess Law - enthalpy change of a reaction is independent of the route
+Formula: Jmol-1 = - mass of water * c dt / mol of solute
+
+Enthalpy change of reaction can't be measured directly?
+- If reversible reaction, endo can't be measured since hard to measure decrease temp when heating
+- Hard to measure temp of solid
+- Some substance might evaporate
+
+The values obtained by experiments that are used in calculation are different than accurate
+1. Heat loss
+2. Specific heat capacity is estimated
+
+Experiment setup affection on values
+1. Heat loss
+2. Evaporation of reactants
+3. Incomplete combustion
+
+Why is something in excess?
+To allow full reaction of compound
+
+The enthalpy measured at 100kpa and 298k
+rx      - when equation quantities of materials react
+combus  - when 1 mol of substance is completely burned in oxygen
+neu     - when 1 mol of h2o is produced by nutralisation
+forma   - when 1 mol of substance formed its element in standard states
+atom    - when 1 mol of gaseous atoms is formed from ground state
+
+solution - ionic compound s -> aq
+hydration - ion g -> aq
+LE - ionic compound s -> g
+
+Mean bond enthalpy - dH of breaking 1 mol of bond in gas state, averaged over different molecules
+
+Mean bond enthalpy calculations are inaccurate because:
+1. They vary with environment
+2. THey does not include enthalpies for change of state
+
+bond enthalpy = bonds broken - bonds made
+
+============================================================
+Unit 7
+============================================================
+
+Hydrogen bonds form: Hydrogen is bonded with a small electronegative element
+
+Hydrocarbon boiling point depends on
+1. number of points of contact
+2. number of electrons
+3. hydrogen bonds
+
+hydrogen halides bp:
+HF HI HBr HCl
+
+Solubility:
+- Compare the bond strengths between H2O & compound and within H2O & compound, if the strengths are similar -> dissolve
+- Solubility is less if bond strength differences are greater
+
+============================================================
+Unit 8
+============================================================
+
+Oxidation - lose e gain #o
+Reduction - gain e lose #o
+Oxidizing agent - gain e more easily -> stronger
+Reducing agent - lose e more easily -> stronger
+
+Dispropotionation reaction - element of same compound redox
+
+Strengths of alkali - More alkali -> + OH- - H+ in solution
+
+Reactivity of group 1 2 increases down the group
+Solubility of sulphate decrease down the group, Ba insoluble
+Solubility of hydroxides increase down the group, Mg insoluble
+All NO3 soluble
+
+Mg + H2O -> MgO + H2
+M + H2O -> MOH + H2
+
+Metal oxides react with water to form metal hydroxide
+Metal oxides react with h2so4 to form metal sulfate + water
+
+Thermal stability ^ = Decompose v
+Thermal stability ^ when charge density decrease => metal ion polarision power decrease => C-O bond strength increase
+Group 2 carbonates and nitrates are white solids
+
+When carbonates are heated, they don't decompose or decompose if 2+ or Li+ & give off CO2
+When nitrates are heated, the decompose and gives off oxygen, if 2+ or Li+ they also give off NO2
+
+Sulfate can be tested by adding BaCl -> White solid
+
+Flame test problems
+1. Impurities may hide other colors
+2. Colors are subjective
+
+Cause of flame colors
+When an electron excites and deexcites, it releases energy. The wavelength of the energy is in the visible range.
+
+Reactive of group 7 decreases down the group
+
+Halogen color position in cyclohexane:
+bottom top top
+
+Dispropotionation reactions
+Halogen + Water                     cl- + hclo
+Halogen + dilute cold oh            cl- + hclo + water
+Halogen + concentrated hot oh       cl- + hclo3 + water
+
+Halides + sulfuric acid
+cl-br-i 1-3-5 colorless-brown-purple
+hydrogen halide - halogen - so2 - s - h2s
+Info: other than HX reaction all redox
+
+Acified Silver nitrate + halide     white-cream-yellow
+dilute nh3                          clear-insoluble-insoluble
+concentrated nh3                    clear-clearl-insoluble
+ag+ + X- -> AgX(s)
+hx + nh3 -> nh4x(S)
+
+Why is a burette's tip is full?
+- When level goes down, the liquid will fill this space instead of going out
+Why do we stop adding solution when indicator change color?
+- Increase accuracy
+Why are there no further titre done?
+- concordant titres have been achieved
+Why is fist titre's result greater?
+1. Air bubble in burette
+2. First titre might be rough run
+
+Volume of water to add: Volume of liquid - volume of acid
+
+============================================================
+Unit 9
+============================================================
+
+Activation energy - Min energy that colliding particles must possess for a reaction to occur
+Reaction rate - the change in product over time
+
+Collision theory: Two particles must
+1. Collide in the right direction
+2. with at least the activation energy
+to react
+
+MBD graph: number of molecules / kinetic energy
+EP diagram: enthalpy / process of reaction
+
+Increase rate of reaction: ALL
+-------------------------------
+Temperature: The MBD graph peak shifts to the right and lowers in height
+- more particles will have energy higher than Ea on average, they'll collide with higher frequnecy
+Concentration: No change to MBD graph
+- particles will have a higher frequnecy of collision as there are more particles in a volume
+Pressure: Affects gas only
+Surface area: Affects heterogeneous reactions w/ solids only -> cause for powder
+Catalysts: Activation energy shifts to the left
+- it provides an alternative reaction pathway with a lower activation energy
+
+Reversible reactions can only happen for closed systems.
+Equilibrium: rate of forward = backward reaction -> the concentrations of R & P const
+-------------------------------
+Temperature: Shift to endothermic side
+Concentration: Shift to side with less 
+Pressure: Shift to side with less
+Catalysts: No change (increases reaction rate of both sides)
+
+To achieve a greater yield:
+1. Remove the product as they are formed
+2. Reuse unreacted reactants

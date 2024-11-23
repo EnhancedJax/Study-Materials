@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{pdflscape}
+\usepackage{multicol} % Import package for multiple columns
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{array,ragged2e}
+\newlength\tcolumnwidth
+\setlength\tcolumnwidth{1.75cm} % default width of t-column
+\newlength\taccountwidth
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/Clean}
+\newcommand{\documentdate}{Fall 2025}
+\newcommand{\documenttype}{Notes for HKU}
+
+\newcommand\taccount[4][\tcolumnwidth]{% 
+  \renewcommand\arraystretch{1.333} % default value: 1
+  \setlength\tabcolsep{3pt}         % default value: 6pt
+  \setlength\taccountwidth{\dimexpr#1+#1+2\tabcolsep+1\arrayrulewidth\relax}
+  \begin{tabular}[t]{@{}l|l@{}}
+  \multicolumn{2}{>{\Centering}p{\taccountwidth}}{#2}\\
+  \hline
+  \begin{tabular}[t]{@{}>{\RaggedRight\hspace{0pt}}p{#1}} 
+  #3 \end{tabular} 
+  &
+  \begin{tabular}[t]{>{\RaggedRight\hspace{0pt}}p{#1}@{}} 
+  #4 \end{tabular}
+  \end{tabular}}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\tableofcontents
+\newpage
+
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\include{pages/accounting}
+\include{pages/record}
+\include{pages/trial}
+\include{pages/statement}
+\include{pages/closing}
+\include{pages/ratios}
+\include{pages/concepts}
+
+\section{Resources}
+\href{https://youtu.be/yYX4bvQSqbo?si=JNw8xPh7I50bIBxX}{ACCOUNTING BASICS: a Guide to (Almost) Everything \& Accounting Stuff's channel}
+
+
+\end{document}

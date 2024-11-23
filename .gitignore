@@ -1,0 +1,33 @@
+# LaTeX temporary files
+*.aux
+*.log
+*.toc
+*.fls
+*.xdv
+*.synctex.gz
+
+# Latexmk
+*.fdb_latexmk
+
+# SyncTeX
+*.synctex.gz
+
+# LaTeX Beamer
+*.snm
+*.vrb
+*.nav
+*.out
+*.upa
+
+# BibTeX
+*.bbl
+*.blg
+*.bcf
+*.bbl
+*.run.xml
+
+*.pdf
+*.env
+node_modules
+private*/
+.git_old/
