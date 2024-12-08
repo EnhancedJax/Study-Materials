@@ -8,12 +8,12 @@ A data structure is a way to group \& store data in a computer, and have pros an
     A data structure has the following operations:
     \begin{itemize}
         \item \textbf{Access}
-        \item \textbf{Insertion \& deletion} (start, end, middle)
+        \item \textbf{Insertion \& deletion}
         \item \textbf{Search}
-        \item \textbf{Sorting}
-        \item \textbf{Merging}
     \end{itemize}
 \end{knBox}
+
+We use $\Omega, \Theta, O$ to describe the best, average and worst case time complexity of an algorithm.
 
 \subsection{Overview of data structures}
 
@@ -62,7 +62,7 @@ The following is an overview of the ADTs that is dicussed in the course:
 The following ADTs can be used to implement other data structures that will be introduced in the following sections.
 
 \begin{definition}
-    {Array}
+    {Array / Direct access table}
     Set number of items stored in \textit{adjacent} memory locations. Identified by the first item.
     \begin{itemize}
         \item \textbf{Access:} Simple access by index. $O(1)$
@@ -267,6 +267,8 @@ Priority queues are a special type of queue, know more about them in the \namere
     Example implementation: \ref{eg:graph_bfs}
 \end{theorem}
 
+\label{thm:graph_bfs}
+
 \begin{theorem}
     {Depth-first search (DFS)}
     Visit the furthest nodes and backtrack.
@@ -301,7 +303,52 @@ Priority queues are a special type of queue, know more about them in the \namere
     \end{itemize}
 
     Thouhg a tree-based data structure, we usually implement heaps as arrays, which is useful such as in the case of \hyperref[def:heapsort]{heap sort}.
+    \begin{itemize}
+        \item Root at index 0
+        \item Left child at $2i + 1$
+        \item Right child at $2i + 2$
+        \item Parent at $(i - 1) / 2$
+    \end{itemize}
 \end{definition}
+
+\begin{theorem}
+    {Heapify and building heaps}
+    We can build (max) heaps using \textbf{heapify}, which converts a binary tree into a heap, \underline{given that its children are already heaps}. This takes $O(\log n)$ time.
+    \begin{enumerate}
+        \item If largest node is not the root node, swap the largest node and the root
+        \item Heapify the new root node recursively
+    \end{enumerate}
+    Due to the limitation of heapify, we must build the heap from the \textbf{bottom up}. Heapifying leaf-nodes does nothing. Observe that the last non-leaf node is at index $n/2 - 1$, we just have to heapify all nodes before that index to build the complete heap. As items further down the array is deeper in the heap:
+    \begin{enumerate}
+        \item Iterate through the array from the last non-leaf node to the root node.
+        \item Heapify the current node.
+    \end{enumerate}
+    This takes $O(n)$ time.
+\end{theorem}
+
+\begin{knBox}
+    {Finding k largest and smallest elements}
+    Heaps are especially useful for finding the largest and smallest elements. To find the largest k elements:
+    \begin{enumerate}
+        \item Put first k elements in a min-heap.
+        \item For each remaining element, peek the min-heap and check if the current element is greater than the peeked element. If so, remove the peeked element and add the current element to the min-heap.
+    \end{enumerate}
+\end{knBox}
+
+\begin{knBox}
+    {Merging sorted arrays}
+    We can also use heaps to merge sorted arrays.
+    \begin{enumerate}
+        \item Put the first element of each array into a min-heap.
+        \item Pop the min-heap to the result, and add the next element of the array that the popped element came from.
+        \item Repeat until all elements are added.
+    \end{enumerate}
+    \textbf{Time complexity:} $O(n \log k)$ where $n$ is the total number of elements and $k$ is the number of arrays.
+
+    We had inserted $n$ elements into the heap, and each insertion takes $O(\log k)$ time.
+
+    \textbf{Space complexity:} $O(n+k)$ as the heap have at most $k$ elements, and result array has $n$ elements.
+\end{knBox}
 
 \subsubsection{Trees}
 
@@ -322,10 +369,10 @@ Priority queues are a special type of queue, know more about them in the \namere
               \item\textbf{Sub tree}: A tree that is a child of a node.
         \item \textbf{Degree of node}: The number of immediate children of the node.
         \item \textbf{Degree of tree}: The maximum degree of all nodes.
+        \item \textbf{(Proper) ancestor}: Node that has the current node as a child. If not proper, a node can be an ancestor of itself.
+        \item \textbf{(Proper) Descendant}: Node that has the current node as a parent. If not proper, a node can be a descendant of itself.
     \end{itemize}
 \end{knBox}
-
-\label{thm:graph_bfs}
 
 \subsubsection{Hash tables}
 
@@ -359,9 +406,9 @@ Priority queues are a special type of queue, know more about them in the \namere
 
     The most basic hash function is the \textbf{division method}:
     \[
-        h(k) = k \% m
+        h(k) = k \% prime
     \]
-    A good value of $m$ should be a \textbf{prime number} that is not close to a power of 2.
+    A good value of $prime$ should be a \textbf{prime number} that is not close to a power of 2.
 \end{theorem}
 \label{thm:hash-function}
 
@@ -412,11 +459,28 @@ Priority queues are a special type of queue, know more about them in the \namere
 \label{thm:hash_unsuccessful_average_slots_inspected}
 
 \begin{theorem}
-    {Average number of slots inspected for successful search}
+    {Finding the average number of slots inspected for successful search}
     General steps:
     \begin{enumerate}
         \item For each slot, count the number of items in the slot.
         \item Sum and divide by $m$
     \end{enumerate}
 \end{theorem}
+
+\begin{knBox}
+    {Averages and spaces}
+    For chaining:
+    \begin{itemize}
+        \item $S_n=1+\frac{a}{2}$
+        \item $U_n=\alpha$
+        \item Space $=mp_s+n(p_s+e_s)$
+    \end{itemize}
+    For open addressing:
+    \begin{itemize}
+        \item $S_n=\frac12(1+\frac{1}{1-\alpha})$
+        \item $U_n=\frac12(1+\frac{1}{(1-\alpha)^2})$
+        \item Space $=ne_s$
+    \end{itemize}
+    Where $S_n$ is the average number of slots inspected, $U_n$ is the average number of slots inspected for successful search, $m$ is the size of the table, $n$ is the number of items, $p_s$ is the space for a pointer, $e_s$ is the space for an element, and $\alpha$ is the load factor.
+\end{knBox}
 

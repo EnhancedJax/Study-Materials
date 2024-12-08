@@ -1,0 +1,10 @@
+function bubble_sort(array, n): 
+    for i in 0 to n - 1:
+        swapped = False
+        for j in 0 to before n - i - 1:
+            if current element > next element:
+                swap(current, next)
+                swapped = True
+        if not swapped break 
+        # if no two elements were swapped, the array is sorted
+    return A

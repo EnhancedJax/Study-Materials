@@ -50,19 +50,19 @@ However, different operations have varying efficiencies, so instead we consider 
     \tcblower
     To prove non-strict boundaries, we need to show the existence of constants $c, n_0$ that satisfies the inequality.
     \label{def:asym}
-    \ref{eg:asym_1} \ref{eg:asym_2}
+    \ref{eg:asym_1} \ref{eg:asym_2} \ref{eg:asym_3}
 \end{definition}
 
 \begin{definition}
     {Definition of all asymptotic notations}
     \begin{tabular}{|c|c|c|c|}
         \hline
-        \textbf{Notation} & \textbf{Condition}                                                                         & \textbf{Asymptotic boundary} & \textbf{Name}               \\ \hline
-        $O(g)$            & $T(n) \mathcolorbox{pink}{\leq} c\cdot g(n)$                                             & Upper                        & Big O                       \\
-        $\Omega(g)$       & $T(n) \mathcolorbox{pink}{\geq} c\cdot g(n)$                                             & Lower                        & Big Omega                   \\
+        \textbf{Notation} & \textbf{Condition}                                                                     & \textbf{Asymptotic boundary} & \textbf{Name}               \\ \hline
+        $O(g)$            & $T(n) \mathcolorbox{pink}{\leq} c\cdot g(n)$                                           & Upper                        & Big O                       \\
+        $\Omega(g)$       & $T(n) \mathcolorbox{pink}{\geq} c\cdot g(n)$                                           & Lower                        & Big Omega                   \\
         $\Theta(g)$       & $ c_1\cdot g(n)\mathcolorbox{pink}{\leq} T(n) \mathcolorbox{pink}{\leq} c_2\cdot g(n)$ & Tight                        & Big Theta / Order of growth \\
-        $o(g)$            & $T(n) \mathcolorbox{pink}{<} c\cdot g(n)$                                                & Strictly upper               & Little o                    \\
-        $\omega(g)$       & $T(n) \mathcolorbox{pink}{>} c\cdot g(n)$                                                & Strictly lower               & Little omega                \\ \hline
+        $o(g)$            & $T(n) \mathcolorbox{pink}{<} c\cdot g(n)$                                              & Strictly upper               & Little o                    \\
+        $\omega(g)$       & $T(n) \mathcolorbox{pink}{>} c\cdot g(n)$                                              & Strictly lower               & Little omega                \\ \hline
     \end{tabular}
 \end{definition}
 
@@ -78,7 +78,7 @@ However, different operations have varying efficiencies, so instead we consider 
 
     Note the following growth rate equivilencies:
     \begin{itemize}
-        \item $\log(n!)=\Theta(n\log(n))$ (no need to prove)
+        \item $\log(n!)=\Theta(n\log(n))$ (prove not needed, related to \hyperref[thm:lower_bound_sort]{lower bound of sorting algorithms})
         \item $\Theta(\log_2n)=\Theta(\log_{10}n)$ as $\log_2n = \frac{\log n}{\log 2} = c\times\log n$
     \end{itemize}
 \end{knBox}
@@ -98,6 +98,20 @@ However, different operations have varying efficiencies, so instead we consider 
     \label{thm:iasym}
     \ref{eg:iasym_1}
 \end{theorem}
+
+\subsubsection{Big Theta of resursive relations}
+
+When tasked to find find the asymptotic notation of a recursive relation, we are required to give the Big Theta notation of the relation.
+
+The straight forward way is to find the closed-form expression and identify the growth rate. However, this is not always possible.
+
+\begin{knBox}
+    {Useful growth rates}
+    \begin{itemize}
+        \item \textbf{Sum of square series}: $\sum_{i=1}^{k}f(n, i)^2\in \Theta(n^3)$
+        \item \textbf{Sum of series}: $\sum_{i=1}^{k}f(n, i)\in \Theta(n^2)$
+    \end{itemize}
+\end{knBox}
 
 \subsection{Time complexity of code}
 

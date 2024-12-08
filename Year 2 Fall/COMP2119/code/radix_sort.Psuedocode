@@ -1,0 +1,25 @@
+function radix_sort(array, b=10):
+    function countin_sort_exp(i):
+        function get_key(n):
+            return ith digit of n in base b (0 based)
+            # (n // b**i) % b
+
+        counter = Array(b)
+        for i in array:
+            key = get_key(i)
+            counter[key] += 1
+            
+            for i in counter after 0:
+                counter[i] += counter[i-1]
+            
+            result = Array(len(array))
+            for x in array:
+                key = get_key(x)
+                result[counter[key]] = x
+                counter[key] -= 1
+            array = result
+
+    d = len(max(array))
+
+    for i from 0 to d - 1:
+        counting_sort_exp(i)

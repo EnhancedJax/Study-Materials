@@ -1,0 +1,17 @@
+function merge_sort(array):
+    function merge(A1, A2):
+        result = []
+        while A1 and A2:
+            if A1[0] < A2[0]:
+                result.append(A1.pop(0))
+            else:
+                result.append(A2.pop(0))
+        return result + A1 + A2
+    
+    if len(array) < 2 return array
+
+    mid = len(array) // 2
+    left = merge_sort(array to mid)
+    right = merge_sort(array after mid)
+
+    return merge(left, right)

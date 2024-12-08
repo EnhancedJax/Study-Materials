@@ -1,0 +1,20 @@
+function quick_sort(array):
+    function partition(array):
+        pivot = random index from array
+        swap = -1
+
+        for j in array:
+            if current element > pivot element:
+                swap += 1
+                swap(arr, swap, current)
+        
+        # move pivot element to its correct position
+        pivot_index = swap + 1
+        swap(arr, pivot_index, pivot) 
+        return pivot_index
+    
+    if len(array) < 2 return array
+
+    pivot = partition(array)
+    quickSort(array before pivot)
+    quickSort(array after pivot)

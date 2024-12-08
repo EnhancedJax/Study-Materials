@@ -1,0 +1,10 @@
+function insertion_sort(array):
+    for i in array after 0:
+        for j in array before i:
+            if array[j] > array[i]:
+                swap(array, i, j)
+            else:
+                break
+    return array
+    
+            

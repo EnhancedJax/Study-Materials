@@ -46,10 +46,10 @@
             \node {20}
             child {node {10}
                     child {node {5}}
-                    child {node {25}}
+                    child[missing]
                 }
             child {node {30}
-                    child[missing]
+                    child {node {25}}
                     child {node {40}}
                 };
         \end{scope}
@@ -60,9 +60,12 @@
             \node {20}
             child {node {10}
                     child {node {5}}
-                    child {node {25}}
+                    child[missing]
                 }
-            child {node {40}};
+            child {node {40}
+                    child {node {25}}
+                    child[missing]
+                };
         \end{scope}
     \end{tikzpicture}
 \end{center}
@@ -77,7 +80,7 @@
     \item[(i)] $O(n)$ as the algorithm is linear.
     \item[(ii)] $O(n^2)$ as picked smallest / largest element as pivot.
     \item[(iii)] $O(n^2)$ as picked smallest element as pivot.
-    \item[(iv)] $O(n^2)$ as picked largest element as pivot.
+    \item[(iv)] $O(n^2)$ as $n-2$ partitions.
     \item[(v)] $O(n \log n)$ as standard.
 \end{enumerate}
 

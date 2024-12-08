@@ -8,47 +8,59 @@ A sorting algorithm can have the following proerties:
     \item \textbf{Non Comparative:} The algorithm doesn't compare elements.
 \end{itemize}
 
-\begin{knBox}
-    {Bubble sort}
-    For each element in the list, compare it with the next element and swap if necessary, continuing until next element is greater.
+\begin{theorem}
+    {Lower bound (worse case) of comparison based sorting}
+    The \textbf{minimum number of comparisons required} to sort an array of $n$ elements in the \textbf{worse case} (can't assume sorted) is
+    \[
+        \log_2(n!) \in \Theta(n \log n)
+    \]
+\end{theorem}
+\label{thm:lower_bound_sort}
 
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n^2)}$ (quadratic time).
-    \tcblower
-    \begin{lstlisting}
-5 3 2 1 4
-3 2 1 4 5
-2 1 3 4 5
-1 2 3 4 5\end{lstlisting}
-\end{knBox}
+\subsection{Algorithms}
 
 \begin{knBox}
     {Selection Sort}
-    For each element, find the minimum value in the subarray after it, and swap it with the current element.
+    For each element, find the minimum value in the subarray after it (including itself), and swap it with the current element.
 
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega(n^2),\Theta(n^2),O(n^2)}$.
-    \tcblower
-    \begin{lstlisting}
-5 3 2 1 4
-1 3 2 5 4
-1 2 3 5 4
-1 2 3 4 5\end{lstlisting}
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(n^2)}$
+    %     \tcblower
+    %     \begin{lstlisting}
+    % 5 3 2 1 4
+    % 1 3 2 5 4
+    % 1 2 3 5 4
+    % 1 2 3 4 5\end{lstlisting}
+\end{knBox}
+
+\begin{knBox}
+    {Bubble sort}
+    For each element with index i, for elements in array till before the element $n-i-1$, check if current element is greater than the next, and swap if true.  Repeat until no swaps are made for an element.
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Theta(n^2),\Omega(n)}$
+    %     \tcblower
+    %     \begin{lstlisting}
+    % 5 3 2 1 4
+    % 3 2 1 4 5
+    % 2 1 3 4 5
+    % 1 2 3 4 5\end{lstlisting}
 \end{knBox}
 
 \begin{definition}
     {Insertion sort}
-    For each element, for all previous numbers, if the previous number is smaller than current, swap, else break.
+    For each element, for each previous element, if current element smaller than current previous element, swap them.
 
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega(n),\Theta(n^2),O(n^2)}$
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Theta(n^2),\Omega(n)}$
 
-    \textbf{Notes:} Efficient for small datasets and nearly sorted arrays. $\Omega(n)$ for when the array is already sorted.
-    \tcblower
-    \begin{lstlisting}
-5 3 2 1 4
-3 5 2 1 4
-2 3 5 1 4
-1 2 3 5 4
-1 2 3 4 5\end{lstlisting}
+    \textbf{Notes:} Efficient for small datasets and nearly sorted arrays. $O(n)$ for when the array is already sorted.
+    %     \tcblower
+    %     \begin{lstlisting}
+    % 5 3 2 1 4
+    % 3 5 2 1 4
+    % 2 3 5 1 4
+    % 1 2 3 5 4
+    % 1 2 3 4 5\end{lstlisting}
 \end{definition}
+
 
 \begin{definition}
     {Merge Sort}
@@ -65,41 +77,55 @@ A sorting algorithm can have the following proerties:
               \end{itemize}
     \end{itemize}
 
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n \log n)}$.
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(n \log n)}$
+
+    \textbf{Space Complexity:} $\mathcolorbox{yellow}{O(n)}$
 
     \textbf{Notes:} The array is divided into halves, so the time complexity is $O(\log n)$ for the number of divisions and $O(n)$ for the merge step.
     \begin{itemize}
         \item Performs better than simple sorts.
-        \item Requires extra space as it doesn't sort in place: $O(n)$.
+        \item Requires extra space as it doesn't sort in place
     \end{itemize}
-    \tcblower
-    \begin{lstlisting}
-5 3 2 1 4
-[5 3 2] [1 4]
-[5 3] [2] [1] [4]
-[5] [3] [2] [1] [4]
-[3 5] [2] [1] [4]
-[2 3 5] [1] [4]
-[2 3 5] [1 4]
-1 2 3 4 5\end{lstlisting}
+    %     \tcblower
+    %     \begin{lstlisting}
+    % 5 3 2 1 4
+    % [5 3 2] [1 4]
+    % [5 3] [2] [1] [4]
+    % [5] [3] [2] [1] [4]
+    % [3 5] [2] [1] [4]
+    % [2 3 5] [1] [4]
+    % [2 3 5] [1 4]
+    % 1 2 3 4 5\end{lstlisting}
 \end{definition}
+
+\begin{theorem}
+    {Parition}
+    The process of rearranging the array so that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+
+    \begin{enumerate}
+        \item Pick index as pivot
+        \item Initialze swap index as -1
+        \item For each element, if element $\leq$ pivot, increment swap, and swap element with swap index.
+        \item Pivot element is at $swap + 1$. Move it to the pivot index by swapping.
+        \item Return pivot index.
+    \end{enumerate}
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(n)}$
+\end{theorem}
 
 \begin{definition}
     {Quick Sort}
-    A divide-and-conquer algorithm that picks a pivot, partitions the array, and recursively sorts the subarrays. \textbf{Partition} is the process of rearranging the array so that all elements with values less than the pivot come before the pivot, and all elements with values greater than the pivot come after it.
+    A divide-and-conquer algorithm that picks a pivot, \textbf{partitions} the array, and recursively sorts the subarrays.
 
     \begin{itemize}
         \item \textbf{Base case}: Array length is less than 2
-        \item Partition the array using a helper function, which for each element:
-              \begin{itemize}
-                  \item Pass if current element is greater than pivot.
-                  \item Else, increment swap index (start with -1).
-                  \item If current index greater than swap index, swap.
-              \end{itemize}
+        \item Get pivot index by paritioning array (randomly)
         \item \textbf{Recursion:} Split and sort the sub-arrays according to pivot index.
     \end{itemize}
 
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta(n \log n),O(n^2)}$. The partition function is always $O(n)$.
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(n^2),\Theta(n \log n)}$
+
+    \textbf{Space Complexity:} $\mathcolorbox{yellow}{O(\log n)}$ (recursion call stack)
 
     \textbf{Notes:} The time complexity depends on the pivot selection. Worst case is $O(n^2)$ when the pivot is the \textbf{smallest or largest} element, as the array is not divided.
 
@@ -109,48 +135,22 @@ A sorting algorithm can have the following proerties:
         \item Median of three: Select the median of the first, middle, and last element.
         \item First / middle / last element: Select the first, middle, or last element as the pivot.
     \end{itemize}
-    \tcblower
-    Consider rightmost element as pivot:
-    \begin{lstlisting}
-5 3 2 1 4
-3 2 1 4 5
-1 2 3 4 5\end{lstlisting}
-\end{definition}
 
-\begin{knBox}
-    {Counting sort}
-    A stable, non-comparative sorting algorithm.
-    \begin{enumerate}
-        \item Create a new counter array of length $k$ (max element in array).
-        \item For each element, increment the counter array at the index of the element.
-        \item Then, for each counter item, store current, then set the current value to the sum of the previous value and the stored value.
-        \item Create a new result array of length $n$.
-        \item For each element in the original array, add it to the result array at the index of the counter array, then increment the counter array.
-    \end{enumerate}
+    If we choose \textbf{randomized quicksort}, the expected time complexity must be $O(n \log n)$, as we don't expect to choose the largest / smallest element every parition.
 
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n+k)}$.
-
-    \textbf{Space Complexity:} $O(n+k)$, as we need a counter array of length $k$ and a result array of length $n$.
-
-    \textbf{Notes:} The algorithm is stable as it loops through the original array at the end in order.
-\end{knBox}
-
-\begin{definition}
-    {Radix sort}
-    Find the maximum number of digits $d$ in the array, then sort the array using counting sort for each digit.
-
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(d(n+k))}$.
-
-    \textbf{Space Complexity:} $O(n+k)$.
-
-    \textbf{Notes:} The algorithm is stable as counting sort is stable.
+    %     \tcblower
+    %     Consider rightmost element as pivot:
+    %     \begin{lstlisting}
+    % 5 3 2 1 4
+    % 3 2 1 4 5
+    % 1 2 3 4 5\end{lstlisting}
 \end{definition}
 
 \begin{definition}
     {Heap sort}
     Call \textit{create\_max\_heap} on the array, then for each element from the right, swap the first element with the current element, then call \textit{heapify} on the array excluding the current element.
 
-    \textbf{Time Complexity:} $\mathcolorbox{pink}{\Omega,\Theta,O(n \log n)}$.
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(n \log n)}$.
 
     \textbf{Notes:}
     \begin{itemize}
@@ -159,5 +159,102 @@ A sorting algorithm can have the following proerties:
         \item \textit{Heapify} is used to maintain the heap property, so it is more efficient as it assumes the array is already a heap.
     \end{itemize}
 \end{definition}
-
 \label{def:heapsort}
+
+\begin{definition}
+    {Counting sort}
+    A stable, non-comparative sorting algorithm.
+    \begin{enumerate}
+        \item Create a new counter array of length $k$ (max element in array / number of distinct elements).
+        \item For each element, increment the counter array at the index of the element.
+        \item Then, for each counter item, add their previous value to the current value.
+        \item Create a new result array of length $n$.
+        \item For each element in the original array, add it to the result array at the index of the counter array, then decrement the counter array.
+    \end{enumerate}
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(n+k)}$
+
+    \textbf{Space Complexity:} $\mathcolorbox{yellow}{O(n+k)}$, as we need a counter array of length $k$ and a result array of length $n$.
+
+    \textbf{Notes:} The algorithm is stable as it loops through the original array at the end in order.
+\end{definition}
+
+\begin{definition}
+    {Radix sort}
+    Find the maximum number of digits $d$ in the array, then sort the array using \textbf{exp} counting sort for each digit.
+
+    Instead of using the element value as the key, we use the ith digit (0-based) by $n // 10^i\ \%\ 10$.
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(d(n+k))}$
+
+    \textbf{Space Complexity:} $\mathcolorbox{yellow}{O(n+k)}$
+
+    \textbf{Notes:} The algorithm is stable as counting sort is stable. Radix sort works best for arrays with elements ${0,1,2,...,b^d}$ with fixed length $d$.
+\end{definition}
+
+\subsection{Summary}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|cc|c|c|l|c|}
+        \hline
+        \textbf{Algorithm}    & \textbf{Average Time}         & \textbf{Special Time}         & \textbf{Space}              & \textbf{Stable}    & \textbf{Use when}       & \textbf{Ex}                     \\
+        \hline
+        Selection Sort        & \colorbox{pink}{$n^2$}        & -                             & \colorbox{green}{$1$}       & \colorbox{gray}{N} & -                       & \hyperref[eg:selection_sort]{e} \\
+        Bubble Sort           & \colorbox{pink}{$n^2$}        & \colorbox{green}{$\Omega(n)$} & \colorbox{green}{$1$}       & Y                  & Nearly sorted data      & \hyperref[eg:bubble_sort]{e}    \\
+        Insertion Sort        & \colorbox{pink}{$n^2$}        & \colorbox{green}{$\Omega(n)$} & \colorbox{green}{$1$}       & Y                  & Nearly sorted data      & \hyperref[eg:insertion_sort]{e} \\
+        \hline
+        Heap Sort             & \colorbox{yellow}{$n \log n$} & -                             & \colorbox{green}{$1$}       & \colorbox{gray}{N} & Limited space           & \hyperref[eg:heap_sort]{e}      \\
+        Merge Sort            & \colorbox{yellow}{$n \log n$} & -                             & \colorbox{pink}{$n$}        & Y                  & Stable $n\log n$        & \hyperref[eg:merge_sort]{e}     \\
+        Randomized Quick Sort & \colorbox{yellow}{$n \log n$} & -                             & \colorbox{yellow}{$\log n$} & \colorbox{gray}{N} & Best performance        & \hyperref[eg:quick_sort]{e}     \\
+        Quick Sort            & \colorbox{yellow}{$n \log n$} & \colorbox{pink}{$O(n^2)$}     & \colorbox{yellow}{$\log n$} & \colorbox{gray}{N} & -                       & \hyperref[eg:quick_sort]{e}     \\
+        \hline
+        Counting Sort         & \colorbox{green}{$n+k$}       & -                             & \colorbox{pink}{$n+k$}      & Y                  & Small range of integers & \hyperref[eg:count_sort]{e}     \\
+        Radix Sort            & \colorbox{yellow}{$d(n+k)$}   & -                             & \colorbox{pink}{$n+k$}      & Y                  & Fixed-length integers   & \hyperref[eg:radix_sort]{e}     \\
+        \hline
+    \end{tabular}
+\end{table}
+\label{subsec:sort_summary}
+
+\subsection{K-sorted arrays}
+
+\textbf{k-sorted arrays} are arrays where each element is at most $k$ positions away from its sorted position.
+
+\begin{knBox}
+    {Sorting k-sorted arrays - modified selection sort}
+    For each element, find the minimum value within the next $k$ elements after (including itself), and swap it with the current element.
+
+    \textbf{Time complexity: } $\mathcolorbox{pink}{O(nk)}$
+\end{knBox}
+
+\begin{knBox}
+    {Sorting k-sorted arrays - heaps}
+    \begin{enumerate}
+        \item Put the first $k$ elements of each array into a min-heap.
+        \item For each remaining element, pop the min element from heap back to array from the start, then add current to the heap.
+        \item Pop remaining elements to array.
+    \end{enumerate}
+
+    \textbf{Time complexity: } $\mathcolorbox{pink}{O(n\log k)}$ time as the heap always has at most $k$ elements, and we processed all $n$ elements to the heap.
+
+    \textbf{Space complexity: } $\mathcolorbox{yellow}{O(k)}$ as the heap always has at most $k$ elements, and we used the original array as we process the remaining elements.
+\end{knBox}
+
+\subsection{Other related non-sorting algorithms}
+
+\begin{knBox}
+    {Quickselect}
+    A selection algorithm that selects the $k$th smallest element in an unordered list.
+    \begin{itemize}
+        \item \textbf{Base case}: One element only, return it.
+        \item Get pivot index by paritioning array (randomly)
+        \item \textbf{Recursive}: Check if pivot index is $k$, return if true
+        \item If not, see if pivot index is less than $k$, then search right subarray, else search left subarray.
+    \end{itemize}
+
+    \textbf{Time Complexity:} $\mathcolorbox{pink}{O(n^2),\Theta(n)}$.
+
+    \textbf{Notes:} Because the pivot index is already sorted, it must be the $k$th smallest element. But if it's not, we know that the smaller elements are on the left, and larger elements are on the right. If we're unlucky and never get the pivot index as $k$, the base case will eventually be reached.
+
+    The algorithm can achieve $\Theta(n)$ as we only need to search one side of the array.
+\end{knBox}

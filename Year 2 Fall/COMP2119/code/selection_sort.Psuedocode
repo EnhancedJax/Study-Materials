@@ -1,0 +1,8 @@
+function selection_sort(array):
+    for i in array:
+        min_index = i
+        for j in array after i:
+            if current element < min element:
+                min_index = j
+        swap(A, i, min_index)
+    return A

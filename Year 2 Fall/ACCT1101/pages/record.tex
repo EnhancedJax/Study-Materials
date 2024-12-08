@@ -96,16 +96,18 @@ Bookkeeping is the process of recording transactions in a systematic way.
     \centering
     \begin{tabular}{|p{0.9\textwidth}|}
         \hline
-        \textbf{Equity}                                 \\
+        \textbf{Equity}                 \\
         \hline
-        Common Stock \textbf{(CS)}                      \\
-        Retained Earnings \textbf{(RE)}                 \\
-        \hyperref[def:apic]{Additional Paid-in Capital} \\
-        Treasury Stock                                  \\
+        Common Stock \textbf{(CS)}      \\
+        Retained Earnings \textbf{(RE)} \\
+        Additional Paid-in Capital      \\
+        Treasury Stock                  \\
         \hline
     \end{tabular}
     \caption{Common Equity accounts}
 \end{table}
+
+\hyperref[subsec:stockholder]{Learn more} about Stockholder's Equity.
 
 \begin{table}[H]
     \centering
@@ -250,62 +252,173 @@ Bookkeeping is the process of recording transactions in a systematic way.
 \end{tcolorbox}
 \normalsize
 
-\subsection{Recording stockholder's equity items}
+\subsection{Reporting and intepreting Stockholder's Equity}
+\label{subsec:stockholder}
+
+Corporate businesses has an advantage over proprietorships of the ease of participation in ownership. This is done through the issuance of \textbf{common stock}. Owners of common stock are known as \textit{stockholders / shareholders}.
+
+\textbf{Dividends} are the money paid to the shareholders from the company's profits, when the company decides to distribute them.
+
+\subsubsection{Benefits of stock ownership}
+
+Stockholders have the following benefits:
+
+\begin{itemize}
+    \item Voice in management
+    \item Dividends
+    \item Claim of assets upon liquidation of company
+\end{itemize}
+
+\subsubsection{Authorized, issue and outstanding shares}
+
+The following are the categorization of stocks:
+
+\begin{itemize}
+    \item Authorized - Max. number that can be sold
+          \begin{itemize}
+              \item Issued - Sold to the public
+                    \begin{itemize}
+                        \item \colorbox{pink}{\textbf{Common stock}} - Currently held by the public (Outstanding stock)
+                        \item \colorbox{pink}{\textbf{Treasury stock}} - Bought back by the company from the public
+                        \item \hyperref[def:preferred_stock]{Preferred stock}
+                    \end{itemize}
+              \item Unissued - Never been sold
+          \end{itemize}
+\end{itemize}
+
+\begin{definition}
+    {Common stock}
+    The shares currently held by public.
+\end{definition}
+
+\begin{definition}
+    {Treasury stock}
+    The shares bought back by the company from the public. This is a \hyperref[def:contra]{contra}-equity account, as can be thought of as being opposite to common stock.
+\end{definition}
 
 \begin{knBox}
-    {Common Stock}
-    The shares of the company that are owned by the public.
+    {Par vs market value}
+    \begin{itemize}
+        \item \textbf{Par value} - The minimum price of the stock
+        \item \textbf{Market value} - The price of the stock in the market
+    \end{itemize}
+\end{knBox}
+\label{def:par_market}
+
+\begin{theorem}
+    {Preferred stock}
+    A special category of stocks. They have a \textit{fixed dividend rate} which is \textit{paid before common stockholders}. However, they do not have voting rights.
+
+    The preferred stock holders offers two \textbf{dividend options}:
+    \begin{enumerate}
+        \item \textbf{Current} - Paid in the current period, limits to before common stockholders
+        \item \textbf{Cummulative} - Paid in the future if not paid in the current period. This amount is called \textbf{dividends in arrears}.
+    \end{enumerate}
+    Preferred stock has a \textbf{fixed dividend rate}, which is given by:
+    \[\text{\textbf{P}referred \textbf{D}ividends} = \text{Par value} \times \text{Dividend rate} \times \text{Number of shares}\]
+    They have a separate par value from common stock.
+
+    As their dividends are paid first:
+    \[\text{\textbf{C}ommon \textbf{D}ividends} = D - PD\]
+
+    \tcblower
+
+    "Preferred stock: \$20 par value, 6\% rate, 1000 shares. Common stock: \$10 par value, 5000 shares." $\implies$ PD = $20 \times 1000 \times 0.1 = 2000$
+
+    Consider a issurance of \$3000 dividends, for \textit{current} preference:
+
+    $\text{PD}=2000$,
+
+    $\text{CD} = 3000 - \text{PD} = 1000$
+
+    Consider a issurance of \$10000 dividends, for \textit{cummulative} preference, dividends in arrears for 2 years:
+
+    $\text{PD} = 2000 + 2000 * 2 = 4000$ (first 2000 is the current year's),
+
+    $\text{CD} = 10000 - \text{PD} = 6000$
+
+
+\end{theorem}
+\label{def:preferred_stock}
+
+\subsubsection{Reporting stockholder's equity}
+
+\begin{theorem}
+    {Sale of stock}
+    When a stock is sold. Other than recording the stock issurance, we also need to record the \colorbox{pink}{\textbf{additional paid-in capital}} (APC) when the stock is sold for more than the \hyperref[def:par_market]{par value}.
+
     \begin{center}
         $\Delta$\textbf{C}ommon \textbf{S}tock = Stock Issurance = Number of shares $\times$ Par value
-    \end{center}
-    \tcblower
-    "Issued 200m additional shares of \$0.01 par value" $\implies\ \Delta$\textbf{CS} = 2m
-    \label{def:cs}
-\end{knBox}
 
-\begin{knBox}
-    {Additional Paid-in Capital}
-    The amount of money that shareholders have \textbf{contributed} to the company less the stock issurance.
-    \begin{center}
-        $\Delta$Additional Paid-in Capital = Value - Stock Issurance
+        $\Delta$\textbf{APC} = Value - Stock Issurance
     \end{center}
     \tcblower
-    "Issued 200m additional shares of \$0.01 par value for \$16m" $\implies\ \Delta$APC = 14m
+    "Issued 200m additional shares of \$0.01 par value for \$16m" $\implies\ \Delta$APC = 14m, $\Delta$CS = 2m
 
     \vspace{1em}
-    \textit{Example \hyperref[subsec:prepare]{journal entry}:}
-    \begin{tabular}{|l|l|l|}
+
+    \textit{Example entry:}
+    \begin{tabular}{|lll|}
         \hline
         Cash                             & \$16 &    \\
-        \hline
         \quad Common Stock               &      & 2  \\
-        \hline
         \quad Additional Paid-in Capital &      & 14 \\
         \hline
     \end{tabular}
-    \label{def:apic}
-\end{knBox}
+    \label{def:sale_of_stock}
+\end{theorem}
 
-\begin{knBox}
+\begin{theorem}
     {Declaring dividends}
     When we declare a dividend, we \textbf{allocate money} to the owners from retained earnings.
     \tcblower
     "Declared dividends of \$2m"
 
     \vspace{1em}
-    \textit{Example \hyperref[subsec:prepare]{journal entry}:}
-    \begin{tabular}{|l|l|l|}
+    \textit{Example entry:}
+    \begin{tabular}{|lll|}
         \hline
         Retained earnings       & \$2 &   \\
-        \hline
         \quad Dividends payable &     & 2 \\
         \hline
     \end{tabular}
-\end{knBox}
+\end{theorem}
+
+\begin{theorem}
+    {Repurchase and reissurance of stock}
+    When we \textit{re}issure stock, we need to credit treasury stock instead of common stock, as we pull from our own stock. We also need to record the \hyperref[def:sale_of_stock]{additional paid-in capital} when we sell the stock for more than its par value.
+    \tcblower
+    "Reacquired 10 shares of common stock when selling for \$14 per share." $\implies \Delta$Treasury = 140
+
+    \vspace{1em}
+
+    \textit{Example entry:}
+    \begin{tabular}{|lll|}
+        \hline
+        Treasury stock & \$140 &     \\
+        \quad Cash     &       & 140 \\
+        \hline
+    \end{tabular}
+
+    \vspace{2em}
+
+    "Reissued 1 shares of treasury stock at \$13 per share" $\implies \Delta$APC = -1 (less than par value), $\Delta$Treasury = 14
+
+    \vspace{1em}
+
+    \textit{Example entry:}
+    \begin{tabular}{|lll|}
+        \hline
+        Cash                       & \$13 &    \\
+        Additional paid-in capital & 1    &    \\
+        \quad Treasury             &      & 14 \\
+        \hline
+    \end{tabular}
+\end{theorem}
 
 These concepts make up the \hyperref[sec:statement_se]{statement of stockholder's equity}.
 
-\subsection{Recording inventories \& COGS}
+\subsection{Reporting inventories \& COGS}
 
 \begin{definition}
     {Inventory}
@@ -320,7 +433,7 @@ These concepts make up the \hyperref[sec:statement_se]{statement of stockholder'
 As a retailer, you purchase the goods to sell as inventory from a supplier, and make a sale to a customer. We need to record this purchase, sale, COGS and the change in inventory.
 
 \begin{theorem}
-    {Recording inventories and COGS (Inventory system)}
+    {Reporting inventories and COGS (Inventory system)}
     There are two ways we can record COGS and inventory in an according period:
     \begin{itemize}
         \item \textbf{As the goods are sold / purchased} (Perpetual)
@@ -482,22 +595,74 @@ The above example assumes that the \colorbox{yellow}{cost of inventory} is the s
     \textit{Note: Accounting rules require companies to apply their accounting methods on a consistent basis over time. (Can't change frequently)}
 \end{knBox}
 
-% \begin{theorem}
-%     {Lower of costs}
-% \end{theorem}
+\subsubsection{Net realizable value of inventory}
 
-\subsection{Recording asset disposal}
-\label{subsec:asset_disposal}
-
-Prerequisite: \hyperref[subsec:depreciation]{Depreciation}
+\begin{definition}
+    {Net realizable value}
+    The actual of the inventory that the company can profit from.
+    \[NRV = \text{Selling price} - \text{Cost to sell}\]
+\end{definition}
 
 \begin{theorem}
-    {Recording asset disposal}
+    {Reporting Inventory at Lower of Cost or Net Realizable Value}
+    We need to report inventory at its \textbf{minimum} of the \textit{cost} or NRV. This is to prevent \textbf{overstating} the value of inventory.
+
+    If $NRV < Cost$, the company would make a \textbf{“write-down” entry} of $(Cost - NRV) \times units$ to reduce the inventory balance to NRV. (As they are originally recorded at cost).
+    \tcblower
+    \textit{Example: The company has 1000 units of inventory at \$10 each. The NRV is \$8.}
+
+    The valuation used at the end of this period would be $1000 \times 8 = 8000$. As $NRV < Cost$, we need to make the following entry:
+
+    \begin{tabular}{llll}
+        \textbf{Account}  & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+        COGS              & 2000        &             \\
+        $\quad$ Inventory &             & 2000        \\
+    \end{tabular}
+
+    $(10-8)\times1000=2000$
+\end{theorem}
+
+\subsection{Reporting equipments}
+
+\begin{definition}
+    {Acquisition costs}
+    We include the following \textbf{acquisition costs} in the value of an equipment upon acquisition:
+    \begin{itemize}
+        \item Purchase price
+        \item Sales taxes
+        \item Legal fees
+        \item Transportation costs
+        \item Installation and preparation costs
+    \end{itemize}
+    The act of inclusion is also called \textbf{capitalization}.
+    \tcblower
+    \textit{Example: Soutwest Airlines purchased aircraft of \$20, and paid \$1 for transportation and \$2 for installation.}
+
+    \begin{tabular}{llll}
+        \textbf{Account} & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+        Equipment        & \$23        &             \\
+        $\quad$ Cash     &             & \$23        \\
+    \end{tabular}
+\end{definition}
+
+\begin{theorem}
+    {Reporting maintenance and improvements of equipment}
+    \begin{itemize}
+        \item \textbf{Maintenance} - Expense
+        \item \textbf{Improvements} - Capitalized
+    \end{itemize}
+    Some identifying characteristics of improvements are \textit{large sums of money}, \textit{longer useful life}, and \textit{increased efficiency}.
+\end{theorem}
+
+\begin{theorem}
+    {Reporting asset disposal}
     \begin{enumerate}
-        \item Record \textbf{DE} of the item for this period
-        \item Calculate and write-off \textbf{AC} (Calculated with DE, Debit)
+        \item Record \textbf{\hyperref[subsec:depreciation]{depreciation} expense} of the item for this period
+        \item Calculate and write-off \textbf{accumulated depreciation} for this item
         \item Record the disposal of the asset by crediting it
-        \item Record "gain on sale" or "loss on sale" by balancing the entry
+        \item Record "gain on sale of assets" (revenue) or "loss on sale of assets" (expense) by balancing the entry
     \end{enumerate}
     \tcblower
     \textit{Example: Southwest Airlines sold flight equipment for \$11 cash at the end of its 17th year of use. The flight equipment originally cost \$30 and was depreciated using the straight-line method with zero residual value and a useful life of 25 years.}
@@ -512,7 +677,42 @@ Prerequisite: \hyperref[subsec:depreciation]{Depreciation}
         2. & Cash                             & \$11        &             \\
            & Accumulated depreciation         & 20.4        &             \\
            & $\quad$ Equipment                &             & 30          \\
-           & $\quad$ Gain on sale             &             & 1.4         \\
+           & $\quad$ Gain on sale of assets   &             & 1.4         \\
            & ($1.2 \times 17=20.4$)           &             &             \\
     \end{tabular}
 \end{theorem}
+\label{subsec:asset_disposal}
+
+\begin{knBox}
+    {Change in estimates}
+    If we change the estimates of the useful life or residual value of an asset, we need to \textbf{recalculate the net book value} of the asset.
+
+    \tcblower
+
+    \textit{Example: Southwest Airlines spent \$200 improving the flight equipment of \$1000, changing the useful life of the flight equipment from 25 years to 30 years, with 0 residual value. It was in service for 2 years. Find the new net book value and calculate depreciation for this period.}
+
+    Computation for change in estimates:
+    \begin{itemize}
+        \item Original cost: \$1000
+        \item Less: Accumulated depreciation: $\frac{1000}{25}\times2=\$80$
+        \item Improvement capitalized cost: \$200
+        \item \textbf{New cost}: \$1120
+    \end{itemize}
+    Depreciation expense: $\frac{1120}{30-2}=\$40$
+\end{knBox}
+
+\subsection{Reporting taxes}
+
+\begin{definition}
+    {Income tax}
+    The tax that you pay on your income. It is calculated as a percentage of your income. We usually record it as \textbf{tax payable} until we actually pay the tax.
+    \tcblower
+    \textit{Example: Southwest Airlines has a tax rate of 30\%. They earned \$1000 in revenue. Record the tax expense.}
+
+    \begin{tabular}{llll}
+        \textbf{Account}           & \textbf{Dr} & \textbf{Cr} \\
+        \hline
+        Income tax expense         & \$300       &             \\
+        $\quad$ Income tax payable &             & \$300       \\
+    \end{tabular}
+\end{definition}

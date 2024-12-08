@@ -1,0 +1,8 @@
+function heap_sort(array):
+    create_max_heap(array)
+
+    for i from right in array:
+        swap(array, 0, i)
+        heapify(array from 0 to i - 1)
+    
+    return array

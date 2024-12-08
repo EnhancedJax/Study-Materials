@@ -72,17 +72,17 @@ Reports profit / loss \underline{over a period of time}. \textit{Income before /
         (In millions of dollars)
     \end{center}
 
-    \textbf{Operating Revenue}
+    Sales Revenue \hfill \underline{\$5}
     \begin{itemize}[label={}, leftmargin=*]
-        \item Sales Revenue \hfill \underline{\$3}
+        \item Less: Credit card discounts \hfill (1)
+        \item Less: Cost of goods sold \hfill (1)
     \end{itemize}
-
-    Total operating revenue \hfill 3
+    Gross profit \hfill 3
 
     \textbf{Operating Expenses}
     \begin{itemize}[label={}, leftmargin=*]
         \item Supplies Expense \hfill \$1
-        \item Training Expenses \hfill \underline{1}
+        \item Loss on sale of assets \hfill \underline{1}
     \end{itemize}
     Total operating expenses \hfill 2
 
@@ -115,6 +115,11 @@ Reports profit / loss \underline{over a period of time}. \textit{Income before /
         \item Other Revenue / Expense $\rightarrow$ Income before taxes
         \item Tax Expense $\rightarrow$ Net Income \& EPS
     \end{itemize}
+\end{knBox}
+
+\begin{knBox}
+    {Gross profit}
+    The difference between \textbf{Sales Revenue} and \textbf{Cost of Goods Sold}.
 \end{knBox}
 
 \subsection{Balance Sheet}
@@ -200,7 +205,7 @@ It is called a \textbf{balance sheet} because the \textbf{left side} (assets) is
 Principles:
 
 \begin{itemize}
-    \item \hyperref[def:cs]{Beginning \textbf{CS} + \textbf{Stock Issurance} = Ending \textbf{CS}}
+    \item \hyperref[def:sale_of_stock]{Beginning \textbf{CS} + \textbf{Stock Issurance} = Ending \textbf{CS}}
     \item \hyperref[thm:relations]{Beginnging \textbf{RE} + \textbf{NI} - \textbf{D} = Ending \textbf{RE}}
 \end{itemize}
 
@@ -241,13 +246,95 @@ Reports changes in stockholder's equity over a period of time.
     {Identifying types of cash flows activities}
     The following is a general way to categorize cash flows:
     \begin{itemize}
-        \item \textbf{Financing}: Equality-accounts related / Cash borrowed / Repay dividends
-        \item \textbf{Investing}: Non-current assets (long-term)
-        \item \textbf{Operating}: Day to day activities
+        \item \textbf{Financing}: Changes in shares, borrowing money or repayment of long term debt
+        \item \textbf{Investing}: The purchase / sale of long-term assets that sit outside of the businessses' core operations
+        \item \textbf{Operating}: Revenue generating activities of a business
     \end{itemize}
     An entry has \textbf{no effect} on cash flow if it doesn't involve cash.
 
     The direction of cash flow: cash is \textbf{debited} (cash outflow) or \textbf{credited} (cash inflow).
 \end{theorem}
 
+\subsubsection{Information needed for preparing cash flow statement}
+\begin{itemize}
+    \item \textit{Comparative} balance sheets (showing current and previous years)
+    \item Income statement
+\end{itemize}
+
+\subsubsection{Preparing statement with indirect method}
+
+Principle: Calculate cash flows and check with the change in cash balance.
+
+We generally use \textbf{indirect} method, which is more convenient to prepare. The only difference between the indirect and direct method is the operating activities section. We're just going to focus on the indirect method.
+
+We can calculate the \textbf{cash flow from operating activities by}:
+\[ \mathcolorbox{lime}{\text{Net Income}} + \mathcolorbox{pink}{\text{Non-cash expenses} + \text{Gain/Loss on sale of non-current A}} - \mathcolorbox{yellow}{\Delta\text{A\&L}} \]
+Which we will do inside the statement. The general steps to prepare the statement are:
+\begin{itemize}
+    \item Calculate change and label type of cash flow (FIO) on the balance sheet, as well as for any additional information
+    \item Identify the non-cash expenses (depreciation, amortization)
+    \item Identify if there are any gains or losses on the sale of non-current assets
+    \item Use the changes in [O] and \textbf{reverse their effects} on the cash flow statement\\
+          (e.g. $\uparrow A \rightarrow -ve,\quad\downarrow L \rightarrow -ve$ )
+    \item Fill in the rest
+\end{itemize}
+
+Note that we use \textbf{payments} and \textbf{proceeds} for financing activities to describe cash outflows and inflows, respectively.
+
+\small
+
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Statement of Cash Flow]
+    \begin{center}
+        \textbf{XYZ Corporation}\\
+        \textbf{Statement of Cash Flows}\\
+        For the Year Ended December 31, 2025\\
+        (In millions of dollars)
+    \end{center}
+
+    \textbf{Cash flows from operating activities}
+    \begin{itemize}[label={}, leftmargin=*]
+        \item \colorbox{lime}{Net Income} \hfill \$2
+        \item \colorbox{pink}{Adjustments for non-cash items}:
+              \begin{itemize}[label={}, leftmargin=*]
+                  \item Depreciation Expense \hfill 1
+                  \item Amortization Expense \hfill 1
+                  \item Loss on Sale of Equipment \hfill 1
+              \end{itemize}
+        \item \colorbox{yellow}{Changes in asset and liabilities}:
+              \begin{itemize}[label={}, leftmargin=*]
+                  \item Increase in Accounts Receivable \hfill (1)
+                  \item Decrease in Inventory \hfill 2
+                  \item Increase in Accounts Payable \hfill \underline{1}
+              \end{itemize}
+    \end{itemize}
+    Net cash used by operating activities \hfill 7
+
+    \textbf{Cash flows from investing activities}
+    \begin{itemize}[label={}, leftmargin=*]
+        \item Acquisition of businesses \hfill (5)
+        \item Purchase of Equipment \hfill (5)
+        \item Sale of Equipment \hfill \underline{2}
+    \end{itemize}
+    Net cash used in investing activities \hfill (8)
+
+    \textbf{Cash flows from financing activities}
+    \begin{itemize}[label={}, leftmargin=*]
+        \item Issuance of Common Stock \hfill 4
+        \item Payment of Dividends \hfill (1)
+        \item Payments on revolving line of bank credit \hfill (1)
+        \item Purchases of treasury stock \hfill (1)
+        \item Proceeds from stock issued under share-based compensation plans \hfill \underline{1}
+    \end{itemize}
+    Net cash used by financing activities \hfill 2
+
+    \textbf{Net increase (decrease) in cash} \hfill \underline{\underline{\$1}}
+
+    Cash at beginning of period \hfill 13
+
+    Cash at end of period \hfill 14
+
+    \vspace{1em}
+
+    \textit{\footnotesize{The notes are an integral part of these financial statements.}}
+\end{tcolorbox}
 \newpage

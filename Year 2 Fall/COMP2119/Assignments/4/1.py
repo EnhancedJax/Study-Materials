@@ -81,6 +81,14 @@ if __name__ == "__main__":
         ).value  # finding the lowest common ancestor of 4 and 14
     )
 
+    bst = BST()
+    bst.insert(TreeNode(10))
+    bst.insert(TreeNode(5))
+    bst.insert(TreeNode(6))
+    print(
+        find_lowest_common_ancestor(bst.root, bst.root.left, bst.root.left.right).value
+    )
+
     avl = BST()
     avl.insert(TreeNode(20))
     avl.insert(TreeNode(10))
