@@ -1,0 +1,39 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{minted}
+\usepackage{fontspec}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+\geometry{top=0.8cm, bottom=0.8cm, left=0.8cm, right=0.8cm} 
+
+\usemintedstyle{algol}
+\setmainfont{Zed Mono}
+\setmonofont{Zed Mono}
+\setminted{
+    fontsize=\tiny,
+    breaklines=true, 
+    breaksymbolleft=\textbackslash,
+    frame=single, 
+    framesep=1pt,
+    % obeytabs=true,
+    % tabsize=2,
+}
+
+\setlength{\columnsep}{1pt} % Remove space between columns
+
+\begin{document}
+\begin{multicols*}{3}
+    \inputminted[rulecolor=green]{java}{./Basic.java}
+    \vspace{-0.5cm}
+    \inputminted[rulecolor=red]{java}{./OOP.java}
+    \vspace{-0.5cm}
+    \inputminted[rulecolor=blue]{java}{./Seralization.java}
+    \inputminted[rulecolor=orange]{java}{./GUI.java}
+    \includegraphics[width=0.27\textwidth]{./threading.png}
+    \inputminted[rulecolor=magenta]{java}{./Socket.java}
+    \vspace{-0.5cm}
+    \inputminted[rulecolor=black]{java}{./Garbage.java}
+\end{multicols*}
+\end{document}

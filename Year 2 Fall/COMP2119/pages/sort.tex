@@ -105,7 +105,7 @@ A sorting algorithm can have the following proerties:
     \begin{enumerate}
         \item Pick index as pivot
         \item Initialze swap index as -1
-        \item For each element, if element $\leq$ pivot, increment swap, and swap element with swap index.
+        \item For each element, if element $<$ pivot, increment swap, and swap current element with swap index.
         \item Pivot element is at $swap + 1$. Move it to the pivot index by swapping.
         \item Return pivot index.
     \end{enumerate}

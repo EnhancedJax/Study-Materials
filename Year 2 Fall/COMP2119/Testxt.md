@@ -55,7 +55,7 @@ Heapify: `O(logn)`
 def heapify(node):
     if node children c greater than node value:
         swap node and children
-        heapify()
+        heapify(largest)
 ```
 
 Build heap: `O(n)`
@@ -173,7 +173,7 @@ def bubble(a, n):
         swapped = False
         for j in a before i - n - 1:
             if a[j] > a[j+1]:
-                swap(a, i, j)
+                swap(a, j, j+1)
         if not swapped break
 ```
 
@@ -218,7 +218,7 @@ def mergesort(a, n):
     return merge(mergesort(a before mid, mid), mergesort(a from mid, n - mid))
 ```
 
-**Quick**: `Theta(nlogn) O(n^2) // O(logn) all stack`
+**Quick**: `Theta(nlogn) O(n^2) // O(logn) call stack`
 
 ```py
 def quicksort(a):
@@ -320,5 +320,4 @@ def ksortheap(a,k):
     while heap:
         a[i] = minheap.pop()
         i += 1
-
 ```

@@ -4,7 +4,7 @@ function quick_sort(array):
         swap = -1
 
         for j in array:
-            if current element > pivot element:
+            if current element < pivot element:
                 swap += 1
                 swap(arr, swap, current)
         

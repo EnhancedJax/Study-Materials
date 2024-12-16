@@ -4,18 +4,20 @@
 
 ## Discounts
 
-Credit card discount:
-Sales discount:
-Sales returns and allowances:
+Three types of discount accounts:
 
-- They are \_
+-
+-
+-
+
+* They are \_
 
 ## Bad debt
 
 End of period:
 During period:
 
-Estimation:
+Estimation methods:
 
 - **Percentage of sales**
 - **Aging method**
@@ -35,20 +37,28 @@ Estimation:
 
 ## Cost flow assumptions, table
 
+Three types of assumptions:
+
 -
 -
 - ()
 
-Rising prices:
+Rising prices use:
 
 Table colums and rows:
 
 -
 -
 
+## Lower of cost or NRV
+
+NRV =
+
+**Write-down**:
+
 ## Free on board
 
-Ownership transferred:
+Two types of ownership transfer:
 
 -
 -
@@ -63,7 +73,7 @@ Pa =
 
 Straight line:
 UoProduction:
-Double declining:
+Double-declining:
 
 ## Disposal
 
@@ -72,7 +82,7 @@ Double declining:
 
 ## Amoritzation
 
-Intangible decided at the start:
+Types of intangibles decided at purchase:
 
 -
 -
@@ -97,12 +107,20 @@ Annuity:
 
 # SE
 
+Sets of stocks:
+
+```py
+
+```
+
 CS =
 APC =
 
 Issue:
 Declare dividends:
 Repurchase:
+
+Treasury is a \_
 
 PD =
 CD =
@@ -119,6 +137,7 @@ Preparing:
 
 - O:
 
+<!--
 # Ratios
 
 ## Profitability ratios
@@ -153,4 +172,4 @@ Preparing:
 ## Market ratios
 
 - Dividend yield:
-- P/E:
+- P/E: -->

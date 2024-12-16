@@ -38,13 +38,14 @@ The process of identifying, recording, summarizing \& analyzing an entity's fina
                           \end{enumerate}
                     \item \textit{Post}
                           \begin{enumerate}[resume]
-                              \item Create finanical statements \ref{sec:financial_statements} \& Post closing entries \ref{sec:closing_entries}
+                              \item Create finanical statements \ref{sec:financial_statements}
+                              \item Post closing entries \ref{sec:closing_entries}
                           \end{enumerate}
                 \end{itemize}
             \end{minipage}
         };
 
-        \draw[->, thick] (list.north west) -- (list.south west);
+        \draw[->, thick] (list.north west) to[bend right] (list.south west);
 
         \draw[->, thick] (list.south east) to[bend right] (list.north east);
     \end{tikzpicture}

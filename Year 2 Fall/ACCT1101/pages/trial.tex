@@ -243,17 +243,19 @@ Before calculation, you need to identify \textit{some} of the following quantiti
 
 \begin{theorem}
     {Depreciation estimation methods}
-    \begin{tabular}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
+    \begin{tabular}{|p{0.3\textwidth}|p{0.3\textwidth}|p{0.3\textwidth}|}
         \hline
-        \textit{Method}          & \textit{Formula}                            & \textit{Per period}                        \\
+        \textit{Method}          & \textit{Formula}                  & \textit{Per period}            \\
         \hline
-        Straight-line            & \[\frac{C - RV}{UL}\]                       & Constant amount each period.               \\
+        Straight-line            & \[\frac{C - RV}{UL}\]             & Constant amount each period.   \\
         \hline
-        Units-of-production      & \[(C - RV)\times\frac{P_A}{P_T}\]           & Based on production level.                 \\
+        Units-of-production      & \[(C - RV)\times\frac{P_A}{P_T}\] & Based on production level.     \\
         \hline
-        Double-declining balance & \[2 \times \text{Straight line} \times AD\] & Double the straight-line rate each period. \\
+        Double-declining balance & \[2\times\frac{C-AD}{UL}\]        & Decreasing amount each period. \\
         \hline
     \end{tabular}
+
+    For the final year of double-declining balance, the depreciation must set the book value to residual value. Hence, the formula is $(C-RV)- AD$.
 \end{theorem}
 
 Related: \hyperref[subsec:asset_disposal]{Asset disposal}
@@ -289,6 +291,8 @@ Related: \hyperref[subsec:asset_disposal]{Asset disposal}
 When considering the net sales revenue, we need to recognize some of the following deductions. They are not expenses, but a \hyperref[def:contra]{\textbf{contra revenue}} of \textbf{credit sales revenue}.
 
 The following are three common contra accounts of sales revenue. When they occur, we \textbf{debit} the contra revenue account and \textbf{credit} sales revenue.
+
+These discounts \textbf{should not include} the \hyperref[subsec:equipments]{capitalized} costs.
 
 \begin{theorem}
     {Credit card discount}
@@ -376,12 +380,7 @@ To keep track of each customer's account receivables, we usually assign an indiv
     \end{tabular}
 \end{knBox}
 
-There are two methods to estimate the bad debt expense:
-\begin{itemize}
-    \item \textbf{Percentage of sales}
-    \item \textbf{Aging method}
-\end{itemize}
-\label{thm:bad_debt_est}
+\subsubsection{Estimating bad debt expenses}
 
 \begin{theorem}
     {Estimate bad debt by Percentage of sales}
@@ -403,6 +402,11 @@ There are two methods to estimate the bad debt expense:
         \textbf{Bad debt expense adjustment}         &                 &                              & \$90                    \\
     \end{tabular}
 \end{theorem}
+
+\begin{knBox}
+    {Estimate bad debt by Percentage of receivables}
+    Estimated ending balance of allowance $=$ Accounts receivables balance $\times$ rate of loss
+\end{knBox}
 
 \begin{knBox}
     {Presenting in income statement}

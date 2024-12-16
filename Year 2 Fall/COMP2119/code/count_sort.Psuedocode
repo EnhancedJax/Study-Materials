@@ -9,7 +9,7 @@ function counting_sort(array):
     
     result = Array(len(array))
     for i, x in array:
-        result[counter[x]] = x
+        result[counter[x]-1] = x
         counter[x] -= 1
     
     return result

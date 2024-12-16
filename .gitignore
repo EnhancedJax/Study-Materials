@@ -5,6 +5,8 @@
 *.fls
 *.xdv
 *.synctex.gz
+*pygtex
+*pygstyle
 
 # Latexmk
 *.fdb_latexmk

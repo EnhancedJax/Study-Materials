@@ -122,6 +122,45 @@ Reports profit / loss \underline{over a period of time}. \textit{Income before /
     The difference between \textbf{Sales Revenue} and \textbf{Cost of Goods Sold}.
 \end{knBox}
 
+\subsection{Statement of Stockholder's Equity}
+\label{sec:statement_se}
+
+Principles:
+
+\begin{itemize}
+    \item \hyperref[def:sale_of_stock]{Beginning \textbf{CS} + \textbf{Stock Issurance} = Ending \textbf{CS}}
+    \item \hyperref[thm:relations]{Beginnging \textbf{RE} + \textbf{NI} - \textbf{D} = Ending \textbf{RE}}
+\end{itemize}
+
+
+Reports changes in stockholder's equity over a period of time.
+
+\small
+
+\begin{tcolorbox}[colframe=black,colback=white,title=Example Statement of Stockholder's Equity]
+    \begin{center}
+        \textbf{XYZ Corporation}\\
+        \textbf{Statement of Stockholder's Equity}\\
+        For the Year Ended December 31, 2025\\
+        (In millions of dollars)
+    \end{center}
+
+    \begin{tabular}{lcccc}
+                                            & \textbf{CS}      & \textbf{RE}       & \textbf{APC}    & \textbf{Total}                \\
+        \textbf{Balance, January 1, 2025}   & \$50             & \$100             & \$2             & \$152                         \\
+        Net Income                          & --               & 25                & --              & 25                            \\
+        Dividends                           & --               & (10)              & --              & (10)                          \\
+        Stock Issuance                      & 20               & --                & 2               & 22                            \\
+        \textbf{Balance, December 31, 2025} & \underline{\$70} & \underline{\$115} & \underline{\$4} & \underline{\underline{\$189}} \\
+    \end{tabular}
+
+    \vspace{1em}
+
+    \textit{\footnotesize{The notes are an integral part of these financial statements.}}
+\end{tcolorbox}
+
+\normalsize
+
 \subsection{Balance Sheet}
 \label{sec:balance_sheet}
 
@@ -182,7 +221,8 @@ Reports the financial position of a company at a \underline{specific point in ti
         Stockholders' Equity:
         \begin{itemize}
             \item Common Stock \hfill 20
-            \item Retained Earnings \hfill \underline{13}
+            \item Less: Treasury stock \hfill (4)
+            \item Retained Earnings \hfill \underline{17}
         \end{itemize}
         Total Stockholders' Equity \hfill 33\\
         {\textbf{Total Liabilities and Stockholders' Equity}} \hfill \underline{\underline{\$64}}
@@ -196,47 +236,6 @@ Reports the financial position of a company at a \underline{specific point in ti
 \normalsize
 
 It is called a \textbf{balance sheet} because the \textbf{left side} (assets) is equal to the \textbf{right side} (liabilities + equity).
-
-\newpage
-
-\subsection{Statement of Stockholder's Equity}
-\label{sec:statement_se}
-
-Principles:
-
-\begin{itemize}
-    \item \hyperref[def:sale_of_stock]{Beginning \textbf{CS} + \textbf{Stock Issurance} = Ending \textbf{CS}}
-    \item \hyperref[thm:relations]{Beginnging \textbf{RE} + \textbf{NI} - \textbf{D} = Ending \textbf{RE}}
-\end{itemize}
-
-
-Reports changes in stockholder's equity over a period of time.
-
-\small
-
-\begin{tcolorbox}[colframe=black,colback=white,title=Example Statement of Stockholder's Equity]
-    \begin{center}
-        \textbf{XYZ Corporation}\\
-        \textbf{Statement of Stockholder's Equity}\\
-        For the Year Ended December 31, 2025\\
-        (In millions of dollars)
-    \end{center}
-
-    \begin{tabular}{lcccc}
-                                            & \textbf{CS}      & \textbf{RE}       & \textbf{APC}    & \textbf{Total}                \\
-        \textbf{Balance, January 1, 2025}   & \$50             & \$100             & \$2             & \$152                         \\
-        Net Income                          & --               & 25                & --              & 25                            \\
-        Dividends                           & --               & (10)              & --              & (10)                          \\
-        Stock Issuance                      & 20               & --                & 2               & 22                            \\
-        \textbf{Balance, December 31, 2025} & \underline{\$70} & \underline{\$115} & \underline{\$4} & \underline{\underline{\$189}} \\
-    \end{tabular}
-
-    \vspace{1em}
-
-    \textit{\footnotesize{The notes are an integral part of these financial statements.}}
-\end{tcolorbox}
-
-\normalsize
 
 \subsection{Cash flow statement}
 
@@ -268,7 +267,7 @@ Principle: Calculate cash flows and check with the change in cash balance.
 We generally use \textbf{indirect} method, which is more convenient to prepare. The only difference between the indirect and direct method is the operating activities section. We're just going to focus on the indirect method.
 
 We can calculate the \textbf{cash flow from operating activities by}:
-\[ \mathcolorbox{lime}{\text{Net Income}} + \mathcolorbox{pink}{\text{Non-cash expenses} + \text{Gain/Loss on sale of non-current A}} - \mathcolorbox{yellow}{\Delta\text{A\&L}} \]
+\[ \mathcolorbox{lime}{\text{Net Income}} + \mathcolorbox{pink}{\text{Non-cash expenses} + \text{Gain/Loss on sale of non-current A}} - \mathcolorbox{yellow}{\Delta\text{cA\&cL}} \]
 Which we will do inside the statement. The general steps to prepare the statement are:
 \begin{itemize}
     \item Calculate change and label type of cash flow (FIO) on the balance sheet, as well as for any additional information
@@ -300,7 +299,7 @@ Note that we use \textbf{payments} and \textbf{proceeds} for financing activitie
                   \item Amortization Expense \hfill 1
                   \item Loss on Sale of Equipment \hfill 1
               \end{itemize}
-        \item \colorbox{yellow}{Changes in asset and liabilities}:
+        \item \colorbox{yellow}{Changes in current asset and liabilities}:
               \begin{itemize}[label={}, leftmargin=*]
                   \item Increase in Accounts Receivable \hfill (1)
                   \item Decrease in Inventory \hfill 2
@@ -337,4 +336,13 @@ Note that we use \textbf{payments} and \textbf{proceeds} for financing activitie
 
     \textit{\footnotesize{The notes are an integral part of these financial statements.}}
 \end{tcolorbox}
-\newpage
+
+\subsection{Order of creation}
+
+Note the importance of the order of creation of the statements as listed:
+\begin{enumerate}
+    \item Income Statement: Provides the \textbf{Net Income} $\downarrow$
+    \item Statement of Stockholder's Equity: Provides the \textbf{Ending RE} $\downarrow$
+    \item Balance Sheet: Provides the \textbf{Ending A, L, E} to compare with the previous year $\downarrow$
+    \item Statement of Cash Flows:
+\end{enumerate}

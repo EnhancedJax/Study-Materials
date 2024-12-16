@@ -4,18 +4,20 @@ Supplies, Inventory, Prepaid expense || buildings
 
 ## Discounts
 
-Credit card discount: Merchant fee
-Sales discount: rate/day, n/day
-Sales returns and allowances: Returned goods or price sales
+Three types of discount accounts:
 
-- They are contra revenues
+- Credit card discount: Merchant fee
+- Sales discount: rate/day, n/day
+- Sales returns and allowances: Returned goods or price sales
+
+* They are contra revenues
 
 ## Bad debt
 
 End of period: Bad debt expense / Allowance
 During period: Allowance for doubtful accounts / Accounts receivables
 
-Estimation:
+Estimation methods:
 
 - **Percentage of sales** credit sales \* rate -> bad debt expense
 - **Aging method** category: amount \* rate -> ending balance allowance
@@ -26,28 +28,37 @@ Estimation:
 - **Perpetual** Update inventory real time
   Restock: Inventory / Cash
   Sale: COGS / Inventory
+  End: ..
 
 - **Periodic** Update inventory at the end of the period
   Restock: Purchases / Cash
-  Sale: \*
+  Sale: ..
   End: Inventory / Purchases, Inventory / COGS
 
 ## Cost flow assumptions, table
+
+Three types of assumptions:
 
 - FIFO
 - LIFO
 - AVCO (Total cost / units)
 
-Rising prices: FIFO higher income (less COGS)
+Rising prices: LIFO lower income lower tax
 
 Table colums and rows:
 
 - Date, Action, Quantitiy, Unit cost, Total cost
 - Start | Purchase -> Goods available for sale -> Sales | End
 
+## Lower of cost or NRV
+
+NRV = Selling - COGS
+
+**Write-down**: If `NRV < Cost`, write down inventory `(cost-nrv)units`
+
 ## Free on board
 
-Ownership transferred:
+Two types of ownership transfer:
 
 - Destination: Arrived
 - Shipping point: Left origin
@@ -62,7 +73,7 @@ Pa = Annual production
 
 Straight line: `(cost - residual) / life`
 UoProduction: `(cost - residual) (Pa / Pt)`
-Double declining: `2  * straight * ad`
+Double-declining: `2 (cost-ad) / life`
 
 ## Disposal
 
@@ -71,7 +82,7 @@ Double declining: `2  * straight * ad`
 
 ## Amoritzation
 
-Intangible decided at the start:
+Types of intangibles decided at purchase:
 
 - Definite life: Amoritzed
 - Indefinite life: Tested for impairment
@@ -84,8 +95,8 @@ Impairment: `carrying - fair`
 Potential liabilities:
 | Probable, estimable | |
 | YY | record |
-| YN | disclose |
-| Nx | nth |
+| RX | disclose |
+| NX | nothing |
 
 FV future value, i interest rate, n periods
 Lump sum: Single payment
@@ -96,12 +107,20 @@ Annuity: Series of equal payments at regular time
 
 # SE
 
-CS = `shares - par value`
+Sets of stocks:
+
+```py
+[Authorized[Issued[Outstanding, Treasury, Preferred]][Unissued]]
+```
+
+CS = `n shares * par value`
 APC = `amount - CS`
 
 Issue: Cash / CS APC
-Declare dividends: Dividends payable / Retained earnings
+Declare dividends: Retained earnings / Dividends payable
 Repurchase: Treasury / Cash
+
+Treasury is a contra-equity account
 
 PD = `rate% * par * number`
 CD = `D - PD`
