@@ -28,17 +28,17 @@ Types:
 
 Advantages:
 
-- H
-- C
-- C
-- F
+-
+-
+-
+-
 
 Disadvantages:
 
-- L
-- D
-- S
-- L
+-
+-
+-
+-
 
 ## Platform economy
 
@@ -67,6 +67,7 @@ Advantages:
 -
 -
 -
+-
 
 Disadvantages:
 
@@ -85,6 +86,14 @@ Disadvantages:
 DIKW:
 
 Personal information -
+
+Five Vs of Big data:
+
+1.
+2.
+3.
+4.
+5.
 
 ## Business analytics
 
@@ -109,7 +118,7 @@ Techniques:
 
 Beware of challenges:
 
-- W
-- B
-- C
-- H
+-
+-
+-
+-

@@ -22,7 +22,6 @@ The following modifications are ok:
 * Change access modifier of instance var
 * Add / remove classes from inheritance hierarchy
 """
-
 // Must implement the Serializable interface
 class SerializableStudent implements Serializable {
     private String name;
@@ -31,7 +30,6 @@ class SerializableStudent implements Serializable {
     private static final long serialVersionUID = 1L; // version control
     Student() {...} // constructor... 
 }
-
 // Example of serialization and de-s
 public class SerializationExample {
     public static void main(String[] args) {
@@ -75,3 +73,13 @@ try { // Reading from
     }
     bufferedReader.close();
 } catch (IOException e) {...};
+
+try { // Scanner reader
+    File file = new File("file.txt");
+    Scanner scanner = new Scanner(file);
+    while (scanner.hasNext()) {
+        String word = scanner.next();
+        System.out.println(word);
+    }
+    scanner.close();
+} catch (FileNotFoundException e) {...}

@@ -24,7 +24,7 @@ public class Main implements Runnable {
   }
   // synchronized: only one thread can access this method at a time
   public static synchronized void transfer() {
-    (a > b ? a--;b++ : a++;b--);
+    // do sth
   }
 """
 Obj’s Lock
@@ -50,7 +50,6 @@ public class Client {
       Socket sock = new Socket("localhost", 1234); 
       // localhost: server IP, 1234: port number
       System.out.println("Connected to server");
-
       // Create a thread to listen for messages from the server
       new Thread(() -> {
         try {
@@ -71,12 +70,9 @@ public class Client {
       while ((clientMessage = userInput.readLine()) != null) {
         out.println(clientMessage);
       }
-
       // Close the socket
       sock.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    } catch (IOException e) {...}
   }
 }
 public class Server {
@@ -88,7 +84,6 @@ public class Server {
         // Wait for client to connect
         Socket sock = serverSock.accept(); // waits for client to connect, returns a socket
         System.out.println("Client connected");
-
         // Create a thread to listen for messages from the client
         new Thread(() -> {
           try {
@@ -101,7 +96,6 @@ public class Server {
             e.printStackTrace();
           }
         }).start();
-
         // Send messages to the client
         PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
         BufferedReader serverInput = new BufferedReader(new InputStreamReader(System.in));
@@ -109,12 +103,8 @@ public class Server {
         while ((serverMessage = serverInput.readLine()) != null) {
           out.println(serverMessage);
         }
-
-        // Close the socket
         sock.close();
       }
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    } catch (IOException e) {...}
   }
 }

@@ -28,17 +28,17 @@ Types:
 
 Advantages:
 
-- High accessibility
+- Accessibility
 - Convenience
 - Cost efficiency
 - Flexible business models
 
 Disadvantages:
 
-- Lack of physical experience
-- Delivery delays
-- Security concerns
-- LImited personal interaction
+- Physical experience
+- Immediate product
+- Security
+- Personal interaction
 
 ## Platform economy
 
@@ -64,16 +64,16 @@ Characteristic: Strong network effect, high switching cost
 
 Advantages:
 
-- Higher reach
-- Better user tracking
+- Reach
 - Target audience
+- User tracking
 - User engagement
 
 Disadvantages:
 
 - Negative feedback
-- Mistakes spread fast
 - Biased feedback
+- Mistakes spread fast
 
 ## Metrics
 
@@ -86,6 +86,14 @@ Disadvantages:
 DIKW: Data -> Information -> Knowledge -> Wisdom
 
 Personal information - Use cookie to store about you on your deivce, ISP and website always have your acitivity info
+
+Five Vs of Big data:
+
+1. Volume
+2. Velocity
+3. Variety
+4. Veracity
+5. Value
 
 ## Business analytics
 
@@ -110,7 +118,7 @@ Techniques:
 
 Beware of challenges:
 
-- Wrong prediction -> Risk
 - Bad data wrong estimates
+- Wrong prediction -> Risk
 - Changed market
 - Historical inconsistency

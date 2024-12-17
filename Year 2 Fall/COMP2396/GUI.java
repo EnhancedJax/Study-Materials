@@ -7,10 +7,8 @@ OVERVIEW:
 - JFrame is the main window.
 - JPanel is a container for other components.
 """
-    JPanel panel;
-    JButton button;
-    JButton button2;
-    JFrame frame;
+    JPanel panel; JButton button; JButton button2;
+    JFrame frame; JLabel label;
     public static void main(String[] args) {
         frame = new JFrame("My Frame"); 
         // Window title as "My frame"
@@ -57,9 +55,7 @@ GridBagLayout: most flexible. Key idea: set the contraints before adding the com
 
         panel.add(button, c);
         c.gridx = 1;
-        c.insets = new Insets(0, 10, 0, 0);
-        panel.add(button2, c); // add to cell (1,0) with padding
-
+        panel.add(button2, c); // add to cell (1,0)
 """
 EVENT HANDLING:
 - Event source: Calls event handlers with an event obj
@@ -71,13 +67,13 @@ EVENT HANDLING:
         class buttonListener implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Button clicked");
+                label.setText("Button clicked");
+                e.getSource(); // get variable of event source (buttin)
             }
         }
         button.addActionListener(new buttonListener());
         // method 2 - lambda
         button.addActionListener(e -> System.out.println("Button clicked"));
-    
 """
 Drawing on JPanel:
 - Override paintComponent method
@@ -89,15 +85,14 @@ Drawing on JPanel:
                 g.setColor(Color.RED);
                 g.fillRect(10, 10, 100, 100);
                 Graphics2D g2d = (Graphics2D) g;
-                int x = 150;
-                int y = 150;
-                int diameter = 100;
-                GradientPaint gradient = new GradientPaint(x, y, Color.BLUE, x + diameter, y + diameter, Color.GREEN);
+                int x = 150; int y = 150; int d = 100;
+                GradientPaint gradient = new GradientPaint(x, y, Color.BLUE, x + d, y + d, Color.GREEN);
                 g2d.setPaint(gradient);
-                g2d.fillOval(x, y, diameter, diameter);
+                g2d.fillOval(x, y, d, d);
             }
         }
         panel.add(new MyPanel());
+        frame.repaint(); // call all paintComponent
     }
 }
 class GUI extends JFrame {} // can also extend JPanel
