@@ -1,4 +1,3 @@
-
 /* ---------------------------------- */
 /*               Classes              */
 /* ---------------------------------- */
@@ -73,12 +72,6 @@ public | YYYY
 protected | YYYN
 no modifier | YYNN
 private | YNNN
-/* ---- Common method of objects ---- */
-// override these methods to customize object behaviour
-obj.equals(obj2); // compares two objects for equality
-obj.hashCode(); // returns a hash code value
-obj.toString(); // returns hexadeciaml representation
-obj.getClass(); // returns the runtime class of the object
 /* ---------------------------------- */
 /*                 OOP                */
 /* ---------------------------------- */
@@ -157,6 +150,7 @@ public class A extends B implements C, D {} // valid
 """
 INHERITANCE:
 - Reuse code from a parent class
+- Every class inherits from Object class!!!
 > "extends" or "implements"
 """
 // Student is a __subclass__ of Person (__superclass__ of Student)
@@ -173,6 +167,8 @@ public class Student extends Person {
     }
 }
 // Construction: SUPER -> SUB
+Student student = new Student(1, "Alice");
+// Constructors invoked: Object -> Person -> Student
 """
 POLYMORPHISM:
 - Objs sharing behaviors, taking > 1 form
@@ -199,3 +195,10 @@ x = y; y = x; // error; valid (X⊃Y)
 X z = new Y(); // valid, (X⊃Y)
 // z can only access overriden methods of Y
 // z is still of type Y
+
+/* ---- Common method of objects ---- */
+// as all classes inherit from Object
+obj.equals(obj2); // compares two objects for equality
+obj.hashCode(); // returns a hash code value
+obj.toString(); // returns hexadeciaml representation
+obj.getClass(); // returns the runtime class of the object

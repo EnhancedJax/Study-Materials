@@ -1,0 +1,239 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{COMP2120}
+\newcommand{\documentnumber}{1}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Problem 1}
+\hrule
+\vspace{0.5cm}
+
+Write down the logic expression $P = f (A, B, C)$ corresponding to the following truth table (simplification of
+logical expression is not required):
+
+\[
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \text{A} & \text{B} & \text{C} & \text{P} \\
+        \hline
+        0        & 0        & 0        & 1        \\
+        0        & 0        & 1        & 0        \\
+        0        & 1        & 0        & 0        \\
+        0        & 1        & 1        & 1        \\
+        1        & 0        & 0        & 0        \\
+        1        & 0        & 1        & 1        \\
+        1        & 1        & 0        & 1        \\
+        1        & 1        & 1        & 1        \\
+        \hline
+    \end{tabular}
+\]
+
+\subsection*{Solution}
+
+Use POS as mostly 1s:
+
+$P(A,B,C)=(\overline{A} + \overline{B} + C)(\overline{A} + B + \overline{C})(A + \overline{B} + \overline{C})$
+
+\section*{Problem 2}
+\hrule
+\vspace{0.5cm}
+
+Consider a 16-bit 2’s complement representation
+
+\begin{enumerate}
+    \item[(a).] What is the largest (most positive) value and the smallest (most negative) value in this representation scheme?
+    \item[(b).] Write down the bit-pattern representing 18, -18, 25, and -25, respectively.
+    \item[(c).] What are the values of the above bit patterns if they are treated as unsigned numbers?
+    \item[(d).] Add the bit patterns together for the following:
+        \begin{enumerate}
+            \item[(1).] $18 + 25$
+            \item[(2).] $18 + (-25)$
+            \item[(3).] $(-18) + 25$
+            \item[(4).] $(-18) + (-25)$
+        \end{enumerate}
+\end{enumerate}
+
+\subsection*{Solution}
+
+
+\begin{enumerate}
+    \item[(a).] Range is given by $r(n) = [-2^{n-1}, 2^{n-1}-1]$. Hence, smallest and largest values are $-2^{15}$ and $2^{15}-1$ respectively. (-32768 and 32767)
+    \item[(b).] Bit patterns are as follows:
+        \begin{enumerate}
+            \item[] 18 = 0000 0000 0001 0010
+            \item[] -18 = 1111 1111 1110 1110
+            \item[] 25 = 0000 0000 0001 1001
+            \item[] -25 = 1111 1111 1110 0111
+        \end{enumerate}
+    \item[(c).] Their values are 18, 65518, 25, and 65511 respectively.
+    \item[(d).] We join the bit patterns, ignoring computation and sign:
+        \begin{enumerate}
+            \item[(1).] 18 + 25 = 0000 0000 0010 1011
+            \item[(2).] 18 - 25 = 1111 1111 1111 1001
+            \item[(3).] -18 + 25 = 1 0000 0000 0000 0111
+            \item[(4).] -18 - 25 = 1 1111 1111 1101 0101
+        \end{enumerate}
+        Keep overflow as didn't specify if we should find the resulting value or simply add bit patterns.
+\end{enumerate}
+
+\section*{Problem 3}
+\hrule
+\vspace{0.5cm}
+
+Prove that the multiplication of an n-bit binary number A and an m-bit binary number B gives a product A $\times$ B of no more than n + m bits.
+
+\subsection*{Solution}
+
+Largest n-bit binary number $A=2^{n}-1$ and largest m-bit binary number $B=2^m-1$.
+
+Their product is given by:
+
+\[\begin{aligned}
+        A \times B & = (2^n-1) \times (2^m-1)                             \\
+                   & = 2^{n+m} - 2^n - 2^m + 1                            \\
+                   & < 2^{n+m} -1              & \text{ as } 2^n, 2^m > 1 \\
+    \end{aligned}\]
+
+$\therefore$ The product of an n-bit binary number A and an m-bit binary number B gives a product A $\times$ B of no more than n + m bits.
+
+\section*{Problem 4}
+\hrule
+\vspace{0.5cm}
+
+Verify the validity of the multiplication of integers (2’s complement) procedure in the lecture note. (Give the proof)
+\begin{itemize}
+    \item Calculate the partial product for each bit in the multiplier except the sign bit
+    \item Sign-extend the number to become a double precision number 2n-bit.
+    \item Sign bit of multiplier: if sign bit= 0, do nothing; If sign bit= 1, take two’s complement of multiplicand and sign extend. Add this to the partial sum
+    \item Ignore carry out.
+\end{itemize}
+
+\subsection*{Solution}
+
+\begin{itemize}
+    \item Let $A$ be a $m$ multiplicand and $B$ be a $n$ bit multiplier.
+    \item We know that the two's complement of a number is $2^n-A$, where $n$ is the number of bits.
+    \item The value of a binary integer can be expressed as $\sum_{i=0}^{n-1} b_i$ where $b_i$ is a bit at a position.
+    \item A two's complement number integer can be expressed as $-b_{n-1}2^{n-1}+\sum_{i=0}^{n-2}b_i2^i$.
+    \item Let's now multiply $A$ and $B$: \[\begin{aligned}
+                  A\times B & =A\times(-b_{n-1}2^{n-1}+\sum_{i=0}^{n-2}b_i\:2^i)                  \\
+                            & =\sum_{i=0}^{n-2}A\cdot b_i\:2^i\quad-\quad A\cdot b_{n-1}\:2^{n-1}
+              \end{aligned}\]
+    \item By analysing the equation, the left side is the \textbf{contribution of unsigned bits}. The summation clearly gives the \textbf{partial product} of bits from $0$ to $n-2$, up before reaching the sign bit.
+    \item When $b_n-1$, the sign bit of the multiplier, is $1$, the right side will be $A \times 2^{n-1}$. This is the \textbf{two's complement of the multiplicand}.
+    \item The two's complement of the multiplicand is added to the partial sum, which is the \textbf{contribution of the sign bit}.
+    \item The procedure is valid as it correctly calculates the product of two integers.
+    \item Note that for the sign extension and ignoring carry out, it is needed for manual computation, as it ensures computation is done correctly when precision is enlarged to at most $2n$ bits.
+\end{itemize}
+
+\section*{Problem 5}
+\hrule
+\vspace{0.5cm}
+
+Any floating-point representation used in a computer can represent only certain real numbers exactly; all others must be approximated. If $A'$ is the stored value approximating the real value $A$, then the relative error $r$ is expressed as
+
+\[
+    r = \frac{A - A'}{A}
+\]
+
+Represent the decimal quantity $+0.4$ in the following floating-point format: base = 2; exponent: biased, 4 bits; significand, 7 bits. What is the relative error?
+
+\subsection*{Solution}
+
+\[\begin{aligned}
+        0.4 \times 2 & = 0.8 \text{ integer } 0 \\
+        0.8 \times 2 & = 1.6 \text{ integer } 1 \\
+        0.6 \times 2 & = 1.2 \text{ integer } 1 \\
+        0.2 \times 2 & = 0.4 \text{ integer } 0 \\
+        0.4 \times 2 & = 0.8 \text{ integer } 0 \\
+        0.8 \times 2 & = 1.6 \text{ integer } 1 \\
+        0.6 \times 2 & = 1.2 \text{ integer } 1 \\
+        0.2 \times 2 & = 0.4 \text{ integer } 0 \\
+                     & \vdots
+    \end{aligned}\]
+
+Therefore, $0.4 = 0.0110\ 0110\ 0110\dots_2$. As significand is 7 bits, normalized value is $0.4 \approx 1.1001101_2 \times 2^{-2}$, rounded off. Converting to decimal:
+
+\[
+    1.1001101_2 \times 2^{-2} = 0.011001101_2 = \sum_{i=1}^{7} b_i2^{-i} = 0.400390625
+\]
+
+Relative error is given by
+
+\[
+    r = |\frac{0.4 - 0.400390625}{0.4}| = 0.09765625\% = 0.098\%
+\]
+
+\section*{Problem 6}
+\hrule
+\vspace{0.5cm}
+
+Consider a 40-bit floating point representation with a sign bit $S$, an exponent $E$ (biased, 11 bits), and a
+significand $f$ (28 bits). The value is
+
+\[
+    V = (-1)^{S} \times 1.f \times 2^{E - 1023}
+\]
+
+Here $E = 11 \ldots 1$ and $00 \ldots 0$ don’t have special meanings.
+
+\begin{enumerate}
+    \item[(a)] Write down the largest positive number that can be represented.
+    \item[(b)] Write down the smallest positive number other than zero that can be represented.
+    \item[(c)] Write down the bit pattern representing the value 15.3125.
+    \item[(d)] Write down the value represented by the bit pattern \texttt{c06f800000} (hex).
+    \item[(e)] If we assign 16 bits and 23 bits for exponent $E$ and significand $f$, respectively, what is the largest positive number that can be represented? Discuss what is the relation between range and precision in floating point number representation.
+\end{enumerate}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+    \item[(a)] Largest number is given by $(2-2^{-f.bits}) \cdot 2^{2^{E}-1-(2^{E-1}-1)}$, which is $(2-2^{-28}) \cdot 2^{1024}$
+    \item[(b)] Smallest positive number is given by $2^{-2^{E.bits-1}+1}$, which is $2^{-2^{10}+1} = 2^{-1023}$
+    \item[(c)] \begin{itemize}
+            \item $15.3125 \equiv 1111.0101_2$
+            \item Sign bit: $0$ (positive)
+            \item Normalize: $+1.1110101_2 \times 2^3$
+                  \begin{itemize}
+                      \item $f=1110\ 101$
+                      \item Significand: \texttt{1110 1010 0000 0000 0000 0000 0000} (add trailing zeros)
+                  \end{itemize}
+            \item Exponent: 3
+                  \begin{itemize}
+                      \item Biased Exponent: $3+1023=1026 \equiv 10000000010_2$
+                  \end{itemize}
+            \item Bit pattern: \texttt{0100 0000 0010 1110 1010 0000 0000 0000 0000 0000}
+        \end{itemize}
+    \item[(d)]
+        \begin{itemize}
+            \item Bit pattern: \texttt{c06f800000} (hex)
+            \item Convert to binary: \texttt{1100 0000 0110 1111 1000 0000 0000 0000 0000 0000}
+            \item Sign bit: $1$ (negative)
+            \item Exponent: $100\ 0000\ 0110_2 = 1030 \rightarrow 1030 - 1023 = 7$
+            \item Significand:
+                  \begin{itemize}
+                      \item Remove trailing 0s and add leading "1."
+                      \item $1.111\ 1100_2 = 1.96875_{10}$
+                  \end{itemize}
+            \item Value: $-1.96875 \times 2^7 = -252$
+        \end{itemize}
+    \item[(e)] New largest number is $(2-2^{-23}) \cdot 2^{2^{16}-1-(2^{16-1}-1)} = (2-2^{-23}) \cdot 2^{32768}$. The relation between range and precision is that as the range increases, the precision decreases (for a set number of bits). Exponent bits is proportional to range, while significand bits is proportional to precision.
+\end{enumerate}
+
+\end{document}

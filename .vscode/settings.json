@@ -11,5 +11,13 @@
     "__split_buffer": "cpp",
     "bitset": "cpp",
     "initializer_list": "cpp"
-  }
+  },
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#e7e7e799",
+    "titleBar.activeBackground": "#796038",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#79603899",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#796038"
 }

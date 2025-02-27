@@ -1,0 +1,67 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{IIMT2641}
+\newcommand{\documentnumber}{1}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+
+Consider two boxes, one containing one black and one white marble, the other, two black and one white marble. A box is selected at random and a marble is drawn at random from the selected box.
+
+The probability that the marble drawn is black is:
+$ P(B) = P(B|B_1)P(B_1) + P(B|B_2)P(B_2) = \frac{1}{2} \cdot \frac{1}{2} + \frac{2}{3} \cdot \frac{1}{2} = \frac{7}{12} $
+
+\section*{Question 2}
+
+The probability that the first box was the one selected given that the marble is white is:
+$P(B_1|W) = \frac{P(W|B_1)P(B_1)}{P(W)} = \frac{\frac{1}{2} \cdot \frac{1}{2}}{\frac{5}{12}} = \frac{6}{10} = \frac{3}{5}$
+
+\section*{Question 3}
+
+Suppose we have ten coins which are such that if the ith one is flipped then heads will appear with probability i/10, i = 1, 2, ..., 10. When one of the coins is randomly selected and flipped, it shows heads. The  probability that it was the fifth coin is:
+
+$\begin{aligned}
+        P(n=5|H) & = \frac{P(H|n=5)P(n=5)}{P(H)}                                                  \\
+        P(H|n=5) & = \frac{5}{10},\quad\text{ as given by question}                               \\
+        P(n=5)   & = \frac{1}{10},\quad\text{ as each coin has equal probability of being chosen} \\
+        P(H)     & = \sum_{i=1}^{10} P(H|n=i)P(n=i)                                               \\
+                 & = \sum_{i=1}^{10} \frac{i}{10} \cdot \frac{1}{10}                              \\
+                 & = \frac{1}{100} \sum_{i=1}^{10} i                                              \\
+                 & = \frac{55}{100}                                                               \\
+        P(n=5|H) & = \frac{\frac{5}{10} \cdot \frac{1}{10}}{\frac{55}{100}}                       \\
+                 & = \frac{1}{11}
+    \end{aligned}
+$
+
+\section*{Question 4}
+
+Urn 1 has five white and seven black balls. Urn 2 has three white and twelve black balls. We flip a fair coin. If the outcome is heads, then a ball from urn 1 is selected, while if the outcome is tails, then a ball from urn 2 is selected. Suppose that a white ball is selected. The probability that the coin landed tails is:
+
+$\begin{aligned}
+        P(T|W) & = \frac{P(W|T)P(T)}{P(W)}                                             \\
+        P(W|T) & = \frac{3}{15}                                                        \\
+        P(T)   & = \frac{1}{2}                                                         \\
+        P(W)   & = P(W|H)P(H) + P(W|T)P(T)                                             \\
+               & = (\frac{5}{12} \cdot \frac{1}{2}) + (\frac{3}{15} \cdot \frac{1}{2}) \\
+               & = \frac{37}{120}                                                      \\
+        P(T|W) & = \frac{\frac{3}{15} \cdot \frac{1}{2}}{\frac{37}{120}}               \\
+               & = \frac{12}{37}
+    \end{aligned}$
+
+\end{document}

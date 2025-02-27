@@ -1,0 +1,58 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{COMP2120}
+\newcommand{\documentnumber}{1}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+11-bit exponent, 24-bit significand
+\begin{enumerate}
+    \item[(a)] Write down the bit pattern representing the value 7.375.
+    \item[(b)] Write down the value represented by the bit pattern \texttt{C05D00000} (hex).
+    \item[(c)] Write down the largest positive number that can be represented.
+    \item[(d)] Write down the smallest positive number other than zero that can be represented.
+\end{enumerate}
+
+\subsection*{Solution}
+
+\begin{enumerate}
+    \item[(a)] \begin{itemize}
+            \item $7.375 \equiv 111.011_2$
+            \item Sign bit: $0$ (positive)
+            \item Normalize: $+1.11011_2 \times 2^2$
+                  \begin{itemize}
+                      \item $f=110\ 1100\ 0000\ 0000\ 0000\ 0000$
+                      \item Significand: \texttt{1101 1000 0000 0000 0000 0000} (add trailing zeros)
+                  \end{itemize}
+            \item Exponent: 2
+                  \begin{itemize}
+                      \item Biased Exponent: $2+1023=1025 \equiv 10000000001_2$
+                  \end{itemize}
+            \item Bit pattern: \texttt{0100 0000 0001 1101 1000 0000 0000 0000 0000 0000}
+        \end{itemize}
+    \item[(b)]
+        \begin{itemize}
+            \item Bit pattern: \texttt{C05D00000} (hex)
+            \item Convert to binary: \texttt{1100 0000 0101 1101 0000 0000 0000 0000 0000 0000}
+            \item Sign bit: $1$ (negative)
+            \item Exponent: $100\ 0000\ 0101_2 = 1029 \rightarrow 1029 - 1023 = 6$
+            \item Significand:
+                  \begin{itemize}
+                      \item Remove trailing 0s and add leading "1."
+                      \item $1.011\ 1010_2 = 1.71875_{10}$
+                  \end{itemize}
+            \item Value: $-1.71875 \times 2^6 = -110.0$
+        \end{itemize}
+    \item[(c)] Largest number is given by $(2-2^{-24}) \cdot 2^{1023}$, which is $(2-2^{-24}) \cdot 2^{1023}$
+    \item[(d)] Smallest positive number is given by $2^{-1022}$, which is $2^{-1022}$
+\end{enumerate}
+
+\end{document}
