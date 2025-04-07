@@ -1,0 +1,166 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{COMP2120}
+\newcommand{\documentnumber}{3}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Problem 1}
+\hrule
+\vspace{0.5cm}
+
+Consider a hypothetical machine with 1K words of cache memory. They are in
+two-way set associative organization, with cache block size of 128 words, using LRU replacement algorithm. Suppose the cache hit time is 10ns, the time to transfer the first word from main memory to cache is 60ns, while subsequent words require 12ns/word.
+Consider the following read pattern (in blocks of 128 words, and block id starts from 0):
+
+1 2 3 5 6 2 3 4 9 10 11 6 3 6 1 7 8 4 5 9 11 1 2 4 5 12 13 14 15 13 14
+
+and assume each block contains an average of 48 references.
+
+\begin{enumerate}[label=(\alph*)]
+    \item What is the cache miss penalty (i.e., time to transfer one block of data from main memory to cache memory)?
+    \item Write down the content of the cache memory (for all the blocks) at the end of the memory references, assuming that the cache is empty at the beginning.
+    \item Write down the number of cache misses (the first reading of a block is also considered a miss), and the cache hit rate.
+    \item Calculate the average memory access time.
+\end{enumerate}
+
+\subsection*{Solution}
+
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{align*}
+              \text{Cache miss penalty} & = \text{Time to transfer first word} + \text{Time to transfer subsequent words} \\
+                                        & = 60ns + 12ns \times (128 - 1)                                                  \\
+                                        & = 60ns + 12ns \times 127                                                        \\
+                                        & = 60ns + 1524ns                                                                 \\
+                                        & = 1584ns
+          \end{align*}
+    \item \begin{align*}
+              \text{No. sets} & = \frac{\text{No. blocks} }2  \\
+                              & = \frac{1024}{128} \times 0.5 \\
+                              & = 4                           \\
+          \end{align*}
+          \[
+              \text{Set index} = \text{Block ID} \% \text{No. sets}
+          \]
+          LRU replacement algorithm will replace the block with the least recent usage. Insertion history after read pattern:
+          \begin{align*}
+              \text{Set } 0 : [4,8,4,12]           \\
+              \text{Set } 1 : [1,5,9,1,5,9,1,5,13] \\
+              \text{Set } 2 : [2,6,2,10,6,2,14]    \\
+              \text{Set } 3 : [3,11,3,7,11,15]     \\
+          \end{align*}
+          Therefore the contents of the cahce memory are:
+          \begin{table}[h]
+              \centering
+              \begin{tabular}{|c|}
+                  \hline
+                  4  \\
+                  12 \\
+                  \hline
+                  5  \\
+                  13 \\
+                  \hline
+                  2  \\
+                  14 \\
+                  \hline
+                  11 \\
+                  15 \\
+                  \hline
+              \end{tabular}
+          \end{table}
+    \item Number of cache miss is 23. Cache hit rate is $1-P(\text{miss}) = \frac{23}{31}$.
+    \item \begin{align*}
+              AMAT & = T_\text{Hit} + T_\text{Penalty} \times P(\text{miss}) \\
+                   & = 10ns + 1584ns \times (1-\frac{23}{31})                \\
+                   & = 418.77ns
+          \end{align*}
+\end{enumerate}
+
+\section*{Problem 2}
+\hrule
+\vspace{0.5cm}
+
+Redo Question 1 if the cache size is the same, but in direct-mapped organization,
+and the cache hit time is 9ns instead.
+
+\subsection*{Solution}
+
+\begin{enumerate}[label=(\alph*)]
+    \item $1584ns$
+    \item \begin{tabular}{|c|}
+              \hline
+              12 \\
+              \hline
+              13 \\
+              \hline
+              14 \\
+              \hline
+              15 \\
+              \hline
+          \end{tabular}
+    \item Number of cache miss is 26. Cache hit rate is $1-P(\text{miss}) = \frac{26}{31}$.
+    \item \begin{align*}
+              AMAT & = T_\text{Hit} + T_\text{Penalty} \times P(\text{miss}) \\
+                   & = 9ns + 1584ns \times (1-\frac{26}{31})                 \\
+                   & = 265.48ns                                              \\
+          \end{align*}
+\end{enumerate}
+
+\section*{Problem 3}
+\hrule
+\vspace{0.5cm}
+
+Consider a Hard Disk with an average seek time of 12ms and rotation speed of 7200rpm, and an average number of 500 sectors per track. Assume negligible transfer time.
+\begin{enumerate}[label=(\alph*)]
+    \item What is the average rotation latency?
+    \item What is the average time to rotate for 1 sector?
+    \item Consider the access of 5 sectors. Caculate the time required (ignoring tranfer time, but including rotation time for reading a sector) if
+          \begin{enumerate}[label=(\roman*)]
+              \item The sectors are consecutive in the same track.
+              \item The sectors are scattered in various places in the HDD.
+          \end{enumerate}
+\end{enumerate}
+
+\subsection*{Solution}
+
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{align*}
+              \text{Average rotation latency} T_\text{latency} & = \frac{1}{2} \times \text{Time for one rotation} \\
+                                                               & = \frac{1}{2} \times \frac{60s}{7200}             \\
+                                                               & = 4.17ms
+          \end{align*}
+    \item \begin{align*}
+              \text{Average time to rotate for 1 sector} T_\text{sector} & = \frac{1}{500} \times \text{Time for one rotation} \\
+                                                                         & = \frac{1}{500} \times \frac{60s}{7200}             \\
+                                                                         & = 0.0167ms
+          \end{align*}
+          \begin{enumerate}[label=(\roman*)]
+              \item \begin{align*}
+                        \text{Time required} & = T_\text{seek} + T_\text{latency} + 5 \times T_\text{sector} \\
+                                             & = 12ms + 4.17ms + 5 \times 0.0167ms                           \\
+                                             & = 16.25ms
+                    \end{align*}
+              \item \begin{align*}
+                        \text{Time required} & = (T_\text{seek} + T_\text{latency}) * 5 \\
+                                             & = (12ms + 4.17ms) * 5                    \\
+                                             & = 80.83ms
+                    \end{align*}
+          \end{enumerate}
+\end{enumerate}
+
+\end{document}

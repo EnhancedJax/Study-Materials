@@ -1,0 +1,41 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{IIMT2641}
+\newcommand{\documentnumber}{3}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\begin{enumerate}[label=\alph*.]
+      \item
+            \begin{enumerate}[label=\roman*.]
+                  \item Temp = -124.594 + -0.007 * CFC.11 + 0.004 * CFC.12 + 0.006 * CO2 + -0.017 * N2O + 0 * CH4 + -1.538 * Aerosols + 0.093 * TSI + 0.064 * MEI
+                  \item $R^2=0.7509$
+                  \item Multicollinearity: There are other variables that correlate with $N2O$ and $CFC.11$, which contribute to the cooling of the Earth.
+                  \item Variables highly correlated with N2O: CFC.12 CO2 CH4\\
+                        Variables highly correlated with CFC.11: CFC.12 CH4
+            \end{enumerate}
+      \item
+            \begin{enumerate}[label=\roman*.]
+                  \item Coefficient for N2O in the full model: -0.017 \\
+                        Coefficient for N2O in the simplified model: 0.025
+                  \item New $R^2=0.7261 < 0.7509$. All independent variables are significant. The model is overally a less good fit to the data, but avoids multicollinearity issues and provides coefficients that are more statistically significant.
+            \end{enumerate}
+      \item Test set $R^2 = 0.4968$\\ The model is only a moderate fit to the data, performing signiciantly worse on the test set than the training set. It is not generalizing well to unseen data.
+\end{enumerate}
+
+\end{document}

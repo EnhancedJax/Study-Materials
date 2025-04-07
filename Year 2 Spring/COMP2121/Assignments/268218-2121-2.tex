@@ -1,0 +1,262 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{COMP2121}
+\newcommand{\documentnumber}{2}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+\hrule
+\vspace{0.5cm}
+\begin{enumerate}
+    \item[a.] \begin{enumerate}
+            \item[i.] \[\begin{aligned}
+                        \overline{(\overline{A}\cap B)\cap(A\cup\overline{B})\cap(A\cup C)} & = \overline{(\overline{A}\cap B)}\cup\overline{(A\cup\overline{B})}\cup\overline{(A\cup C)} & \text{De Morgan's Law}  \\
+                                                                                            & = (A\cup\overline{B})\cup(\overline{A}\cap B)\cup(\overline{A}\cap\overline{C})             & \text{De Morgan's Law}  \\
+                                                                                            & = (A\cup\overline{B})\cup(\overline{A}\cap(B\cup\overline{C}))                              & \text{Distribution Law} \\
+                    \end{aligned}\]
+            \item [ii.]
+                  \begin{center}
+                      \centering
+                      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+                          \hline
+                          $A$ & $B$ & $C$ & $\overline{A}$ & $\overline{B}$ & $\overline{C}$ & $\overline{A} \cap B$ & $A \cup \overline{B}$ & $A \cup C$ & $(\overline{A} \cap B) \cap (A \cup \overline{B}) \cap (A \cup C)$ & $(A \cup \overline{B}) \cup (\overline{A} \cap (B \cup \overline{C}))$ \\ \hline
+                          0   & 0   & 0   & 1              & 1              & 1              & 0                     & 1                     & 0          & 0                                                                  & 1                                                                      \\ \hline
+                          0   & 0   & 1   & 1              & 1              & 0              & 0                     & 1                     & 1          & 0                                                                  & 1                                                                      \\ \hline
+                          0   & 1   & 0   & 1              & 0              & 1              & 1                     & 0                     & 0          & 0                                                                  & 1                                                                      \\ \hline
+                          0   & 1   & 1   & 1              & 0              & 0              & 1                     & 0                     & 1          & 0                                                                  & 1                                                                      \\ \hline
+                          1   & 0   & 0   & 0              & 1              & 1              & 0                     & 1                     & 1          & 0                                                                  & 1                                                                      \\ \hline
+                          1   & 0   & 1   & 0              & 1              & 0              & 0                     & 1                     & 1          & 0                                                                  & 1                                                                      \\ \hline
+                          1   & 1   & 0   & 0              & 0              & 1              & 0                     & 1                     & 1          & 0                                                                  & 1                                                                      \\ \hline
+                          1   & 1   & 1   & 0              & 0              & 0              & 0                     & 1                     & 1          & 0                                                                  & 1                                                                      \\ \hline
+                      \end{tabular}
+                  \end{center}
+        \end{enumerate}
+        Hence, $\overline{(\overline{A} \cap B) \cap (A \cup \overline{B}) \cap (A \cup C)} \equiv (A \cup \overline{B}) \cup (\overline{A} \cap (B \cup \overline{C}))$.
+    \item[b.] Consider an element set $X \in \mathcal{P}(A) \cup \mathcal{P}$(B).
+        \begin{enumerate}
+            \item[i.] $X \in \mathcal{P}(A)$, then $X$ is a subset of $A$.
+            \item[ii.] $X \in \mathcal{P}(B)$, then $X$ is a subset of $B$.
+            \item[iii.] $X$ is a subset of $A$ or $B$.
+        \end{enumerate}
+        Therefore, $\mathcal{P}(A) \cup \mathcal{P}(B) \subseteq \mathcal{P}(A\cup B)$.\\
+        Example to show that $\mathcal{P}(A) \cup \mathcal{P}(B) \neq \mathcal{P}(A\cup B)$: $\mathcal{P}(A) = \{1\}, \mathcal{P}(B) = \{2\}, \{1,2\} \in \mathcal{P}(A\cup B)$, but $\{1,2\} \notin \mathcal{P}(A) \cup \mathcal{P}(B)$.
+\end{enumerate}
+
+\section*{Question 2}
+\hrule
+\vspace{0.5cm}
+\begin{enumerate}
+    \item [a.] $X=\mathcal{P}(\{0,1,2\}),\quad R:=\bigg\{(U,V)\bigg|(U,V\in X)\wedge((|U|<|V|)\vee(U=V))\bigg\}.$\\
+          \textbf{REFLEXIVE}: Picking any two $U \in X$, $U=U$, so $(U,U) \in R$.\\
+          \textbf{ANTI-SYMMETRIC}: Consider the possible elements in $R$:
+          \begin{enumerate}
+              \item $(U,V) \in R$ can be either $|U|<|V|$ or $U=V$.
+              \item $(V,U) \in R$ can be either $|U|>|V|$ or $U=V$.
+          \end{enumerate}
+          Both inequality pairs cannot be true at the same time, so $(U,V) \land (V,U) \implies U=V$. (Anti-symmetric property holds.)\\
+          \textbf{TRANSITIVE}: Consider the possible elements in $R$:
+          \begin{enumerate}
+              \item $(U,V) \in R$ can be either $|U|<|V|$ or $U=V$.
+              \item $(V,W) \in R$ can be either $|V|<|W|$ or $V=W$.
+          \end{enumerate}
+          Consider the cases that $(U,V) \land (V,W) \in R$:
+          \begin{enumerate}
+              \item Both satisfies equality: $U=V=W \to (U,W) \in R$.
+              \item Both satisfies inequality: $|U|<|V|<|W| \to |U| < |W| \to (U,W) \in R$.
+              \item $|U|<|V|, V=W \to |U|<|W| \to (U,W) \in R$.
+              \item $U=V, |V|<|W| \to |U|<|W| \to (U,W) \in R$.
+          \end{enumerate}
+          In all cases, it shows that $(U,V) \land (V,W) \implies (U,W) \in R$.\\
+
+
+    \item [b.] \[\begin{aligned}
+                  X & = \{x | x \in \mathbb{N}, x < 20\}              \\
+                  R & :=\{(a,b)|(a^2-b^2)\text{ is a multiple of 3}\} \\
+                  S & :=\{(a,b)|(a^2+b^2)\text{ is a multiple of 3}\}
+              \end{aligned}
+          \]
+          Consider the possible elements in $R$:\\
+          \textbf{REFLEXIVE}: Picking any two same number $a \in X$, $(a^2-a^2)=0$ is a multiple of 3, so $(a,a) \in R$.\\
+          \textbf{SYMMETRIC}: Consider possible elements in $R$: If $(a^2-b^2)\in R$ (divisible by 3), the symmetric element can be observed to be $(b^2-a^2)=-(a^2-b^2)\in R$. (also divisible by 3)\\
+          \textbf{TRANSITIVE}: Consider the possible elements in $R$: If $(a,b) \land (b,c) \in R$, the element $(a,c) \to (a^2-c^2)=(a^2-b^2)+(b^2-c^2)$. (sum of two multiples of 3 is also a multiple of 3), which implies $(a,c) \in R$.\\
+          Therefore, $R$ is an equivalence relation, and $S$ is not by assumption.\\
+          \\
+          The equivalence classes of $R$ are:
+          \begin{enumerate}
+              \item $[0] = \{0,3,6,9,12,15,18\}$ (obviously divisible by 3)
+              \item $[1] = \{x | x \in \mathbb{N}, x < 20\} \setminus [0]$ (the square of any number not divisible by 3 minus 1 must be divisible by 3)
+          \end{enumerate}
+
+    \item [c.] \[S:=\left\{x-y\sqrt{5}\mid x,y\in\mathbb{Q}\mathrm{~and~}x-y\sqrt{5}\neq0\right\}\]
+    \item \begin{enumerate}
+              \item [i.] To prove $R = {(a,b) | \frac{a}{b} \in \mathbb{Q}}$ to be equivalence relation:\\
+                    \textbf{REFLEXIVE}: Pick any two same number $a \in S$, $(a,a) \in R$ since $\frac{a}{a}=1 \in \mathbb{Q}$.\\
+                    \textbf{SYMMETRIC}: Consider possible elements in $R$: If $(a,b) \in R$, then $\frac{a}{b} \in \mathbb{Q}$, which implies $\frac{b}{a}=\frac{1}{\frac{a}{b}} \in \mathbb{Q}$, so $(b,a) \in R$.\\
+                    \textbf{TRANSITIVE}: Consider the possible elements in $R$: If $(a,b) \land (b,c) \in R$, then $\frac{a}{b} \in \mathbb{Q}$ and $\frac{b}{c} \in \mathbb{Q}$, which implies $\frac{a}{c}=\frac{a}{b}\cdot\frac{b}{c} \in \mathbb{Q}$, so $(a,c) \in R$.\\
+
+              \item [ii. ] Our goal is to show that $[1-\sqrt{5}]=\{p-p\sqrt{5} \mid p \in \mathbb{Q} \setminus\{0\}\}$ is an equivalence class of $R$.\\
+                    Consider the pair $(a,1-\sqrt{5}) \in R, a \in S$. By the $R$ relation, we must satisfy:
+                    \[\begin{aligned}
+                            \frac{a}{1-\sqrt{5}} & = p, \text{for some number } p \in \mathbb{Q} \\
+                            a                    & = p - p\sqrt{5}                               \\
+                        \end{aligned}\]
+                    As $a \in S$, we must have $a \neq 0$, so $p \neq 0$:\\
+                    \[\begin{aligned}
+                            [1-\sqrt{5}] & =\{p-p\sqrt{5} \mid p,p\in\mathbb{Q}\mathrm{~and~}p-p\sqrt{5}\neq0\} \\
+                                         & = \{p-p\sqrt{5} \mid p \in \mathbb{Q} \setminus\{0\}\}               \\
+                        \end{aligned}\]
+          \end{enumerate}
+
+\end{enumerate}
+
+\section*{Question 3}
+\hrule
+\vspace{0.5cm}
+
+Part (a)
+
+\[\begin{aligned}M_{{R_{1}}}=\begin{pmatrix}0&1&0\\1&1&1\\0&1&1\end{pmatrix}\quad & \mathrm{and}\quad M_{{R_{2}}}=\begin{pmatrix}1&0&0\\0&1&1\\1&0&1\end{pmatrix} \\
+               M_{R_1\cap R_2}                                                  & = M_{R_1}\odot M_{R_2}                                                                                      \\
+                                                                                & = \begin{pmatrix}0&0&0\\0&1&1\\0&0&1\end{pmatrix}                                            \\
+               M_{R_1\cup R_2}                                                  & = M_{R_1} + M_{R_2} - M_{R_1}\odot M_{R_2}                                                                  \\
+                                                                                & = \begin{pmatrix}1&1&0\\1&1&1\\1&1&1\end{pmatrix}                                            \\
+               M_{R_1 - R_2}                                                    & = M_{R_1} - M_{R_1}\odot M_{R_2}                                                                            \\
+                                                                                & = \begin{pmatrix}0&1&0\\1&0&0\\0&1&0\end{pmatrix}                                            \\
+               M_{R_2 - R_1}                                                    & = M_{R_2} - M_{R_1}\odot M_{R_2}                                                                            \\
+                                                                                & = \begin{pmatrix}1&0&0\\0&0&0\\1&0&0\end{pmatrix}                                            \\
+               M_{R_1 \circ R_2}                                                & = M_{R_1}M_{R_2}                                                                                            \\
+                                                                                & = \begin{pmatrix}0&1&1\\1&1&1\\1&1&1\end{pmatrix}
+    \end{aligned}
+\]
+
+Part (b): Find reflexive, transitive and symmetric closure of R.
+
+\[\begin{aligned}
+        R & := { (1,2), (2,3), (3,1), (1,5), (5,6), (6,7) } \\
+    \end{aligned}\]
+
+Representation of R in matrix form:
+
+\[
+    \begin{bmatrix}
+        0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+        0 & 0 & 0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
+\]
+
+The reflective, symmetric and transitive closure of R is (step by step):
+\[
+    \begin{bmatrix}
+        1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+        0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        1 & 0 & 1 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 0 & 0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        0 & 0 & 0 & 0 & 0 & 1 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1
+    \end{bmatrix}
+\]
+
+\section*{Question 4}
+\hrule
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item[a.] Given $g \circ f = I_A$\\
+        \textbf{Injection of f } For $a \in A$:\[\begin{aligned}
+                \text{Assume } f(a_1) & = f(a_2)    \\
+                g(f(a_1))             & = g(f(a_2)) \\
+                I_A(a_1)              & = I_A(a_2)  \\
+                a_1                   & = a_2       \\
+            \end{aligned}\]
+        \textbf{Surjection of g } For all $b$ produced by $f(a)$: \[\begin{aligned}
+                b    & = f(a)    \\
+                g(b) & = g(f(a)) \\
+                g(b) & = I_A(a)  \\
+                g(b) & = a       \\
+            \end{aligned}\]
+        As $f(a)$ takes all $a \in A$ as input, $\forall a \exists b$ such that $g(b)=a$.\\
+
+    \item[b. ]  \[\begin{aligned}
+                \log_5 a & = 2 \log_5 b              \\
+                a        & = b^2                     \\
+                \\
+                81^b     & = 3^a                     \\
+                3^{4b}   & = 3^a                     \\
+                4b       & = a                       \\
+                4b       & = b^2                     \\
+                b^2 - 4b & = 0                       \\
+                b(b-4)   & = 0                       \\
+                b        & = 0 \text{ or } b = 4     \\
+                \\
+                a        & = b^2                     \\
+                a        & = 0^2 \text{ or } a = 4^2 \\
+            \end{aligned}\]
+        Solutions are $(0,0)$ and $(16,4)$.
+    \item[c.] \[\begin{aligned}
+                f(n)          & = 3n                                             \\
+                g(n)          & = \lfloor{n/3}\rfloor                            \\
+                h(n)          & = \lfloor{\frac{n+1}{3}}\rfloor                  \\
+                k(n)          & = \lfloor{\frac{n+2}{3}}\rfloor                  \\
+                \\
+                (g\circ f)(n) & = g(f(n)) = g(3n) = \lfloor{3n/3}\rfloor = n     \\
+                (h\circ f)(n) & = h(f(n)) = h(3n) = \lfloor{(3n+1)/3}\rfloor = n \\
+                (k\circ f)(n) & = k(f(n)) = k(3n) = \lfloor{(3n+2)/3}\rfloor = n \\
+            \end{aligned}\]
+\end{enumerate}
+
+\section*{Question 5}
+\hrule
+\vspace{0.5cm}
+
+\[f_2 < f_1 < f_6 < f_3 < f_5 < f_4\]
+
+\begin{enumerate}
+    \item $f_1 = \log n \cdot \log \log n = O(\log n \cdot \log \log n)$
+    \item $f_2 = \log \log \log^4 n = O(\log \log \log n)$
+    \item $f_3 = 100000n^8 + n^10 = O(n^{10})$
+    \item $f_4 = n! + 2^{n^2} = O(2^{n^2})$
+    \item $f_5 = 2^{n\log n} - 2^n = O(2^{n \log n})$
+    \item $f_6 = (n^3 + n \log n + n^5)(10n^2 + 15) = O(n^7)$
+\end{enumerate}
+
+\end{document}
