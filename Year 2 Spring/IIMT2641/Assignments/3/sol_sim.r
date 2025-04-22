@@ -9,6 +9,7 @@ test <- subset(data, Year > 2006)
 # The predictors are: CFC.11, CFC.12, CO2, N2O, CH4, Aerosols, TSI, MEI
 full_model <- lm(Temp ~ CFC.11 + CFC.12 + CO2 + N2O + CH4 + Aerosols + TSI + MEI, data = train)
 full_summary <- summary(full_model)
+print(full_summary)
 
 indep_vars <- train[, c("CFC.11", "CFC.12", "CO2", "N2O", "CH4", "Aerosols", "TSI", "MEI")]
 cor_matrix <- cor(indep_vars, use = "complete.obs")

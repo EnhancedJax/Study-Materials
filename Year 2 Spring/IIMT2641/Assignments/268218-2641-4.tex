@@ -22,6 +22,73 @@
 
 \begin{enumerate}[label=\alph*.]
       \item
+            \begin{enumerate}[label=\roman*.]
+                  \item The baseline accuracy (predicting all loans paid) is $0.8399$.
+
+                  \item
+                        \begin{verbatim}
+Call:
+glm(formula = NotFullyPaid ~ ., family = "binomial", data = Train)
+
+Coefficients:
+                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)     8.172e+00  1.559e+00   5.240 1.60e-07 ***
+CreditPolicy   -1.343e-01  1.027e-01  -1.307 0.191145    
+Purpose.CC     -5.267e-01  1.243e-01  -4.238 2.25e-05 ***
+Purpose.DC     -3.785e-01  8.734e-02  -4.334 1.47e-05 ***
+Purpose.Edu    -5.956e-02  1.873e-01  -0.318 0.750470    
+Purpose.MP     -3.892e-01  1.905e-01  -2.044 0.040993 *  
+Purpose.SB      5.331e-01  1.338e-01   3.984 6.79e-05 ***
+IntRate         1.769e+00  2.058e+00   0.859 0.390160    
+Installment     1.215e-03  2.091e-04   5.809 6.28e-09 ***
+LogAnnualInc   -4.150e-01  7.215e-02  -5.751 8.87e-09 ***
+Dti             8.940e-04  5.491e-03   0.163 0.870674    
+Fico           -8.703e-03  1.703e-03  -5.109 3.24e-07 ***
+DaysWithCrLine  7.414e-06  1.593e-05   0.465 0.641586    
+RevolBal        4.307e-06  1.181e-06   3.647 0.000265 ***
+RevolUtil       3.157e-03  1.547e-03   2.041 0.041269 *  
+InqLast6mths    1.126e-01  1.668e-02   6.750 1.48e-11 ***
+Delinq2yrs     -5.217e-02  6.372e-02  -0.819 0.412896    
+PubRec          3.569e-01  1.133e-01   3.150 0.001631 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+      Null deviance: 5896.6  on 6704  degrees of freedom
+Residual deviance: 5480.4  on 6687  degrees of freedom
+AIC: 5516.4
+
+Number of Fisher Scoring iterations: 5
+                        \end{verbatim}
+
+                        \textbf{Significant Predictors}: \texttt{Purpose.CC}, \texttt{Purpose.DC}, \texttt{Purpose.MP}, \texttt{Purpose.SB}, \texttt{Installment}, \texttt{LogAnnualInc}, \texttt{Fico}, \texttt{RevolBal}, \texttt{RevolUtil}, \texttt{InqLast6mths}, \texttt{and PubRec}
+
+                        The model shows that various \textit{loan-specific details} and \textit{borrower characteristics} have significant impacts on the probability of a loan not being fully paid.
+
+
+                  \item The difference in logit values between a loan with \texttt{FICO} 700 and 710 is \texttt{0.0870}.
+
+                  \item The table prints the confusion matrix:
+                        \begin{table}[H]
+                              \centering
+                              \begin{tabular}{ccc}
+                                      & FALSE & TRUE \\
+                                    \hline
+                                    0 & 2396  & 17   \\
+                                    1 & 451   & 9
+                              \end{tabular}
+                        \end{table}
+                        The model accuracy on the test set with threshold 0.5 is $\frac{2396 + 9}{2396 + 17 + 451 + 9}= 0.8371 < 0.8399$, which is slightly worse than the baseline model.
+
+            \end{enumerate}
+
+      \item
+            \begin{enumerate}[label=\roman*.]
+                  \item The simple model using only interest rate shows IntRate is highly significant (p $<$ 0.001), however it is not significant in the original model. This is probbly because the original model has more variables, where they might have a more signficiant effect on the outcome.
+
+                  \item The highest predicted probability of non-payment is $0.4440$, and no loans would be predicted as unpaid using a 0.5 threshold.
+            \end{enumerate}
 \end{enumerate}
 
 \end{document}

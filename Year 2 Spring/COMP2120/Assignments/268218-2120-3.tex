@@ -64,7 +64,7 @@ and assume each block contains an average of 48 references.
               \text{Set } 2 : [2,6,2,10,6,2,14]    \\
               \text{Set } 3 : [3,11,3,7,11,15]     \\
           \end{align*}
-          Therefore the contents of the cahce memory are:
+          Therefore the contents of the cache memory are (bottom slot in each set is most recent usage)
           \begin{table}[h]
               \centering
               \begin{tabular}{|c|}
@@ -83,11 +83,11 @@ and assume each block contains an average of 48 references.
                   \hline
               \end{tabular}
           \end{table}
-    \item Number of cache miss is 23. Cache hit rate is $1-P(\text{miss}) = \frac{23}{31}$.
+    \item Number of cache miss is 23. Cache hit rate is $1-P(\text{miss}) = 1 - \frac{\text{no. misses}}{\text{no. access} \times \text{avg. references}} = 1- \frac{23}{31\times 48} = 0.985$
     \item \begin{align*}
               AMAT & = T_\text{Hit} + T_\text{Penalty} \times P(\text{miss}) \\
-                   & = 10ns + 1584ns \times (1-\frac{23}{31})                \\
-                   & = 418.77ns
+                   & = 10ns + 1584ns \times \frac{23}{31 \times 48}          \\
+                   & = 34.48ns
           \end{align*}
 \end{enumerate}
 
@@ -104,6 +104,14 @@ and the cache hit time is 9ns instead.
     \item $1584ns$
     \item \begin{tabular}{|c|}
               \hline
+              8  \\
+              \hline
+              1  \\
+              \hline
+              2  \\
+              \hline
+              11 \\
+              \hline
               12 \\
               \hline
               13 \\
@@ -113,11 +121,11 @@ and the cache hit time is 9ns instead.
               15 \\
               \hline
           \end{tabular}
-    \item Number of cache miss is 26. Cache hit rate is $1-P(\text{miss}) = \frac{26}{31}$.
+    \item Number of cache miss is 26. Cache hit rate is $(1-\frac{21}{31\times 48}) = 0.956$.
     \item \begin{align*}
               AMAT & = T_\text{Hit} + T_\text{Penalty} \times P(\text{miss}) \\
-                   & = 9ns + 1584ns \times (1-\frac{26}{31})                 \\
-                   & = 265.48ns                                              \\
+                   & = 9ns + 1584ns \times \frac{21}{31 \times 48}           \\
+                   & =31.35ns
           \end{align*}
 \end{enumerate}
 
@@ -140,14 +148,14 @@ Consider a Hard Disk with an average seek time of 12ms and rotation speed of 720
 
 \begin{enumerate}[label=(\alph*)]
     \item \begin{align*}
-              \text{Average rotation latency} T_\text{latency} & = \frac{1}{2} \times \text{Time for one rotation} \\
-                                                               & = \frac{1}{2} \times \frac{60s}{7200}             \\
-                                                               & = 4.17ms
+              \text{Average rotation latency } T_\text{latency} & = \frac{1}{2} \times \text{Time for one rotation} \\
+                                                                & = \frac{1}{2} \times \frac{60s}{7200}             \\
+                                                                & = 4.17ms
           \end{align*}
     \item \begin{align*}
-              \text{Average time to rotate for 1 sector} T_\text{sector} & = \frac{1}{500} \times \text{Time for one rotation} \\
-                                                                         & = \frac{1}{500} \times \frac{60s}{7200}             \\
-                                                                         & = 0.0167ms
+              \text{Average time to rotate for 1 sector } T_\text{sector} & = \frac{1}{500} \times \text{Time for one rotation} \\
+                                                                          & = \frac{1}{500} \times \frac{60s}{7200}             \\
+                                                                          & = 0.0167ms
           \end{align*}
           \begin{enumerate}[label=(\roman*)]
               \item \begin{align*}
@@ -156,9 +164,9 @@ Consider a Hard Disk with an average seek time of 12ms and rotation speed of 720
                                              & = 16.25ms
                     \end{align*}
               \item \begin{align*}
-                        \text{Time required} & = (T_\text{seek} + T_\text{latency}) * 5 \\
-                                             & = (12ms + 4.17ms) * 5                    \\
-                                             & = 80.83ms
+                        \text{Time required} & = (T_\text{seek} + T_\text{latency} + T_\text{sector}) * 5 \\
+                                             & = (12ms + 4.17ms + 0.0167ms) * 5                           \\
+                                             & = 80.93ms
                     \end{align*}
           \end{enumerate}
 \end{enumerate}
