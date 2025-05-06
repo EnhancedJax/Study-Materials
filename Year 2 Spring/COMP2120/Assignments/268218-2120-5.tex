@@ -1,0 +1,104 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{COMP2120}
+\newcommand{\documentnumber}{5}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+
+\section*{Question 1}
+Consider a Serial Interface (e.g. Modem), containing a Control \& Status Register and two Buffer Registers , Input and Output Buffer Register, residing in memory location SCSR, SBRI and SBRO, The SCSR has the following format:
+\begin{verbatim}
+Bit 0   =1 if Device Error
+Bit 1   =1 if Device Ready
+Bit 2   =0 if next operation is Write, 1, Read
+Bit 3-5 =000 if speed = 4800 bps
+        =001 if speed = 9600 bps
+        =010 if speed = 19200 bps
+        =011 if speed = 57600 bps
+        =100 if speed = 115200 bps
+Bit 6   =0 if odd parity, 1 if even parity
+\end{verbatim}
+
+
+Write an assembly program, using any instructions set (you may invent your own instructions) to output an array of 10 characters by Program I/O, to the serial port, using a speed of 115200 bps and even parity. To simplify the problem, you may assume that the array of characters is stored in memory location LINE, with one character in one word.
+
+Only source program is needed.
+
+\begin{verbatim}
+start:
+    LD LINE, R0             # Load address of LINE into R0
+    AND R1, 0b00110000, R1  # Speed = 115200 bps, Even parity
+    MOV R1, SCSR            # Write to Control & Status Register
+
+    # Loop to send 10 characters
+    AND R2, #10, R2         # Counter for 10 chars
+loop:
+    LD (R0), R3             # Load character from LINE
+    ST R3, SBRO             # Output character to serial port
+    INC R0                  # Move to the next character
+    DEC R2                  # Decrement counter
+    BNZ loop                # Repeat until all characters are sent
+
+    HLT         
+\end{verbatim}
+
+\section*{Question 2}
+
+Given the data path of a CPU as in Assignment 4 with the modification that the MBR provides data to both S1-Bus and S2-Bus. Consider another instruction set, which allows memory operands, and the addressing mode information is stored in the same byte as the register operand. Describe the data transfer/transformation for the following 2-word instruction: \texttt{ADD OFF(R1), R2, R3} which will get the first operand from memory whose address is given by \texttt{OFF+R1} (displacement addressing mode), add it to R2 and put the result in R3. OFF is stored in the word following the instruction:
+
+\texttt{ADD R1(disp mode) R2 R3}
+
+\texttt{OFF}
+
+\begin{verbatim}
+Fetch and decode:
+---
+MAR <- PC
+PC <- PC + 4        # Update for next instruction
+IR <- mem[MAR]      # mem[] means to fetch the value stored at address MAR
+
+Execution:
+---
+CO1:    MAR <-  PC (move PC to MAR)
+        MBR <- mem[MAR]                         # disp in MBR
+        PC <- PC+4 
+        A <- RFOUT1 
+        B <- MBR 
+        C <- A+B                                # calculate effective address
+        MAR <- C 
+FO1:    MBR <- mem[MAR]                         # value of A in MBR
+        A <- MBR
+CO2:    MAR <- PC                               # find operand addr
+        PC <- PC+4
+        MBR <- mem[MAR]                         # addr of R2 in MBR
+        MAR <- MBR
+FO2:    MBR <- mem[MAR]                         # value of R2 in MBR
+        B <- MBR
+EI:     C <- A + B
+CO3:    MAR <- PC                               # write back result
+        PC <- PC+4
+        MBR <- mem[MAR]                         # addr of R3 in MBR
+        MAR <- MBR
+WO:     MBR <- C                                # value of R3 in MBR
+        mem[MAR] <- MBR                         # memory write
+\end{verbatim}
+
+
+\includegraphics[width=0.5\textwidth]{./5-2.png}
+
+\end{document}

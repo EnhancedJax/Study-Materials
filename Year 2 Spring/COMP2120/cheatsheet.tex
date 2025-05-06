@@ -1,0 +1,68 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{minted}
+\usepackage{amsmath, dsfont, mathtools, amssymb}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\pagestyle{empty}
+\geometry{top=0.5cm, bottom=0.5cm, left=0.5cm, right=0.5cm} 
+
+\setlength{\columnsep}{1pt} % Remove space between columns
+\setlength{\tabcolsep}{2pt} 
+
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\small\bfseries}}
+% \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+%                                 {-1explus -.5ex minus -.2ex}%
+%                                 {0.5ex plus .2ex}%
+%                                 {\normalfont\normalsize\bfseries}}
+% \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+%                                 {-1ex plus -.5ex minus -.2ex}%
+%                                 {1ex plus .2ex}%
+%                                 {\normalfont\small\bfseries}}
+\makeatother
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.2em}
+\setlist[enumerate]{noitemsep, topsep=0pt, leftmargin=*}
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+
+
+\begin{document}
+
+\small
+
+\begin{multicols*}{3}
+    \section{Evolution of computers}
+
+    Milestones: Vacuum tubes $\to$ Transistors $\to$ Integrated circuits $\to$ Very Large Scale Integration IC (VLSI); \textbf{Moore's Law}: No. Transistors doubles every two years;
+    \textbf{Cycle per second} $f$ (Hz); \textbf{Avg cycle per inst} $=\frac{\sum_i CPI_i \times I_i}{\sum_i I_i}$ for each inst $i$ count $I_i$; \textbf{Processor time} $T=\frac{I_c\times CPI}{f}$; Inst per sec $IPS=\frac{f}{CPI}$; MFLOPS: Million float point operations per sec
+
+    \section{Digital logic}
+
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        A & B & NOT            & AND   & OR    & XOR          & NAND            & NOR              & XNOR                    \\ \hline
+          &   & $\overline{A}$ & $AB$  & $A+B$ & $A \oplus B$ & $\overline{AB}$ & $\overline{A+B}$ & $\overline{A \oplus B}$ \\ \hline
+        0 & 0 & 1              & 0     & 0     & 0            & 1               & 1                & 1                       \\ \hline
+        0 & 1 & 1              & 0     & 1     & 1            & 1               & 0                & 0                       \\ \hline
+        1 & 0 & 0              & 0     & 1     & 1            & 1               & 0                & 0                       \\ \hline
+        1 & 1 & 0              & 1     & 1     & 0            & 0               & 0                & 1                       \\ \hline
+          &   & Dot            & Point & Round &              &                 &                  &                         \\ \hline
+    \end{tabular}
+
+\end{multicols*}
+\end{document}

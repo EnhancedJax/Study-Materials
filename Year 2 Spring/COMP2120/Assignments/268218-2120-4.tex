@@ -1,0 +1,81 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../../LaTeX-Preamables/Assign}
+
+\begin{document}
+\newcommand{\documentcourse}{COMP2120}
+\newcommand{\documentnumber}{4}
+
+% ------------------------------------ %
+%                Header                %
+% ------------------------------------ %
+
+\input{../../../LaTeX-Preamables/AssignHead-V1.tex}
+
+% ------------------------------------ %
+%                Content               %
+% ------------------------------------ %
+\begin{enumerate}
+    \item The purpose of \texttt{SQ} is to calculate the \textbf{square} of `R10`, input is R10, output is R11. The proc uses R12 and R13, need to save them on entry and restore them when exit.
+    \item Using \texttt{[]} instead of \texttt{mem[]} for simplicity. For \texttt{CALL}:
+          \begin{verbatim}
+Fetch:
+---
+MAR <- PC
+IR <- [MAR]
+Increment PC by 4
+    
+Execute:  
+---
+MAR <- PC
+MBR <- [MAR]
+MAR <- MBR​
+Increment PC by 4
+TEMP <- MAR
+Decrement SP by 4
+MAR <- SP
+MBR <- PC
+[MAR] <- MBR
+MAR <- TEMP
+PC <- MAR 
+\end{verbatim}
+          For \texttt{RET}:
+          \begin{verbatim}
+Fetch:
+---
+MAR <- PC
+IR <- [MAR]
+Increment PC by 4
+
+Execute:  
+---
+MAR <- SP
+Increment SP by 4
+MBR <- [MAR]
+PC <- MBR
+\end{verbatim}
+    \item The following is the modified \texttt{SQ} process in assembly. Please check the assembled code in \texttt{prog2-q3}
+          \begin{verbatim}
+SQ: 
+    PUSH R12
+    PUSH R13
+    LD P1, R13
+    AND R10, R13, R12
+    BNZ R12, SQ_ODD
+    SUB R12,R12,R12
+    SUB R12,R10,R11
+    BR SQ_END
+SQ_ODD:
+    MOV R10, R11
+SQ_END:
+    POP R12
+    POP R13
+    RET
+    \end{verbatim}
+\end{enumerate}
+
+\end{document}
