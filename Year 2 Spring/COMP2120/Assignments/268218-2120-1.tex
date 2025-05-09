@@ -61,12 +61,12 @@ Consider a 16-bit 2’s complement representation
     \item[(b).] Write down the bit-pattern representing 18, -18, 25, and -25, respectively.
     \item[(c).] What are the values of the above bit patterns if they are treated as unsigned numbers?
     \item[(d).] Add the bit patterns together for the following:
-        \begin{enumerate}
-            \item[(1).] $18 + 25$
-            \item[(2).] $18 + (-25)$
-            \item[(3).] $(-18) + 25$
-            \item[(4).] $(-18) + (-25)$
-        \end{enumerate}
+          \begin{enumerate}
+              \item[(1).] $18 + 25$
+              \item[(2).] $18 + (-25)$
+              \item[(3).] $(-18) + 25$
+              \item[(4).] $(-18) + (-25)$
+          \end{enumerate}
 \end{enumerate}
 
 \subsection*{Solution}
@@ -75,21 +75,21 @@ Consider a 16-bit 2’s complement representation
 \begin{enumerate}
     \item[(a).] Range is given by $r(n) = [-2^{n-1}, 2^{n-1}-1]$. Hence, smallest and largest values are $-2^{15}$ and $2^{15}-1$ respectively. (-32768 and 32767)
     \item[(b).] Bit patterns are as follows:
-        \begin{enumerate}
-            \item[] 18 = 0000 0000 0001 0010
-            \item[] -18 = 1111 1111 1110 1110
-            \item[] 25 = 0000 0000 0001 1001
-            \item[] -25 = 1111 1111 1110 0111
-        \end{enumerate}
+          \begin{enumerate}
+              \item[] 18 = 0000 0000 0001 0010
+              \item[] -18 = 1111 1111 1110 1110
+              \item[] 25 = 0000 0000 0001 1001
+              \item[] -25 = 1111 1111 1110 0111
+          \end{enumerate}
     \item[(c).] Their values are 18, 65518, 25, and 65511 respectively.
     \item[(d).] We join the bit patterns, ignoring computation and sign:
-        \begin{enumerate}
-            \item[(1).] 18 + 25 = 0000 0000 0010 1011
-            \item[(2).] 18 - 25 = 1111 1111 1111 1001
-            \item[(3).] -18 + 25 = 1 0000 0000 0000 0111
-            \item[(4).] -18 - 25 = 1 1111 1111 1101 0101
-        \end{enumerate}
-        Keep overflow as didn't specify if we should find the resulting value or simply add bit patterns.
+          \begin{enumerate}
+              \item[(1).] 18 + 25 = 0000 0000 0010 1011
+              \item[(2).] 18 - 25 = 1111 1111 1111 1001
+              \item[(3).] -18 + 25 = 1 0000 0000 0000 0111
+              \item[(4).] -18 - 25 = 1 1111 1111 1101 0101
+          \end{enumerate}
+          Keep overflow as didn't specify if we should find the resulting value or simply add bit patterns.
 \end{enumerate}
 
 \section*{Problem 3}
@@ -207,32 +207,32 @@ Here $E = 11 \ldots 1$ and $00 \ldots 0$ don’t have special meanings.
     \item[(a)] Largest number is given by $(2-2^{-f.bits}) \cdot 2^{2^{E}-1-(2^{E-1}-1)}$, which is $(2-2^{-28}) \cdot 2^{1024}$
     \item[(b)] Smallest positive number is given by $2^{-2^{E.bits-1}+1}$, which is $2^{-2^{10}+1} = 2^{-1023}$
     \item[(c)] \begin{itemize}
-            \item $15.3125 \equiv 1111.0101_2$
-            \item Sign bit: $0$ (positive)
-            \item Normalize: $+1.1110101_2 \times 2^3$
-                  \begin{itemize}
-                      \item $f=1110\ 101$
-                      \item Significand: \texttt{1110 1010 0000 0000 0000 0000 0000} (add trailing zeros)
-                  \end{itemize}
-            \item Exponent: 3
-                  \begin{itemize}
-                      \item Biased Exponent: $3+1023=1026 \equiv 10000000010_2$
-                  \end{itemize}
-            \item Bit pattern: \texttt{0100 0000 0010 1110 1010 0000 0000 0000 0000 0000}
-        \end{itemize}
+              \item $15.3125 \equiv 1111.0101_2$
+              \item Sign bit: $0$ (positive)
+              \item Normalize: $+1.1110101_2 \times 2^3$
+                    \begin{itemize}
+                        \item $f=1110\ 101$
+                        \item Significand: \texttt{1110 1010 0000 0000 0000 0000 0000} (add trailing zeros)
+                    \end{itemize}
+              \item Exponent: 3
+                    \begin{itemize}
+                        \item Biased Exponent: $3+1023=1026 \equiv 10000000010_2$
+                    \end{itemize}
+              \item Bit pattern: \texttt{0100 0000 0010 1110 1010 0000 0000 0000 0000 0000}
+          \end{itemize}
     \item[(d)]
-        \begin{itemize}
-            \item Bit pattern: \texttt{c06f800000} (hex)
-            \item Convert to binary: \texttt{1100 0000 0110 1111 1000 0000 0000 0000 0000 0000}
-            \item Sign bit: $1$ (negative)
-            \item Exponent: $100\ 0000\ 0110_2 = 1030 \rightarrow 1030 - 1023 = 7$
-            \item Significand:
-                  \begin{itemize}
-                      \item Remove trailing 0s and add leading "1."
-                      \item $1.111\ 1100_2 = 1.96875_{10}$
-                  \end{itemize}
-            \item Value: $-1.96875 \times 2^7 = -252$
-        \end{itemize}
+          \begin{itemize}
+              \item Bit pattern: \texttt{c06f800000} (hex)
+              \item Convert to binary: \texttt{1100 0000 0110 1111 1000 0000 0000 0000 0000 0000}
+              \item Sign bit: $1$ (negative)
+              \item Exponent: $100\ 0000\ 0110_2 = 1030 \rightarrow 1030 - 1023 = 7$
+              \item Significand:
+                    \begin{itemize}
+                        \item Remove trailing 0s and add leading "1."
+                        \item $1.111\ 1100_2 = 1.96875_{10}$
+                    \end{itemize}
+              \item Value: $-1.96875 \times 2^7 = -252$
+          \end{itemize}
     \item[(e)] New largest number is $(2-2^{-23}) \cdot 2^{2^{16}-1-(2^{16-1}-1)} = (2-2^{-23}) \cdot 2^{32768}$. The relation between range and precision is that as the range increases, the precision decreases (for a set number of bits). Exponent bits is proportional to range, while significand bits is proportional to precision.
 \end{enumerate}
 

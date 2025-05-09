@@ -41,13 +41,18 @@ Only source program is needed.
 
 \begin{verbatim}
 start:
-    LD LINE, R0             # Load address of LINE into R0
-    AND R1, 0b00110000, R1  # Speed = 115200 bps, Even parity
-    MOV R1, SCSR            # Write to Control & Status Register
+    LD LINE, R0             # Load address of first element of LINE into R0
+    MOV #0b01001000, R1     # Speed = 115200 bps, Even parity
+    ST R1, SCSR             # Write to Control & Status Register
 
     # Loop to send 10 characters
-    AND R2, #10, R2         # Counter for 10 chars
+    MOV #0x0A, R2           # Counter for 10 chars
 loop:
+    LD SCSR, R4 
+    AND R4, #0b00000011, R4 # Check Device Error and Ready bits
+    CMP R4, #0b00000010     # Match R4 with bit pattern (ready, no errors)
+    BNE loop                # Branch if not equal
+
     LD (R0), R3             # Load character from LINE
     ST R3, SBRO             # Output character to serial port
     INC R0                  # Move to the next character
@@ -74,31 +79,61 @@ IR <- mem[MAR]      # mem[] means to fetch the value stored at address MAR
 
 Execution:
 ---
-CO1:    MAR <-  PC (move PC to MAR)
-        MBR <- mem[MAR]                         # disp in MBR
-        PC <- PC+4 
-        A <- RFOUT1 
-        B <- MBR 
-        C <- A+B                                # calculate effective address
-        MAR <- C 
-FO1:    MBR <- mem[MAR]                         # value of A in MBR
-        A <- MBR
-CO2:    MAR <- PC                               # find operand addr
-        PC <- PC+4
-        MBR <- mem[MAR]                         # addr of R2 in MBR
-        MAR <- MBR
-FO2:    MBR <- mem[MAR]                         # value of R2 in MBR
-        B <- MBR
-EI:     C <- A + B
-CO3:    MAR <- PC                               # write back result
-        PC <- PC+4
-        MBR <- mem[MAR]                         # addr of R3 in MBR
-        MAR <- MBR
-WO:     MBR <- C                                # value of R3 in MBR
-        mem[MAR] <- MBR                         # memory write
+MAR <- PC (move PC to MAR)
+MBR <- mem[MAR]                         # disp in MBR
+PC <- PC+4 
+
+-> Read Register file (R1 is now in RFOUT1)
+A <- RFOUT1 
+B <- MBR 
+C <- A+B                                # calculate effective address
+MAR <- C 
+MBR <- mem[MAR]                         # value of A in MBR
+A <- MBR
+
+-> Read Register file (R2 is now in RFOUT2)
+B <- RFOUT2
+C <- A + B
+MAR <- C
+MBR <- mem[MAR] 
+RFIN <- MBR 
+-> Write Register file
 \end{verbatim}
 
+% \begin{verbatim}
+% Fetch and decode:
+% ---
+% MAR <- PC
+% PC <- PC + 4        # Update for next instruction
+% IR <- mem[MAR]      # mem[] means to fetch the value stored at address MAR
 
-\includegraphics[width=0.5\textwidth]{./5-2.png}
+% Execution:
+% ---
+% CO1:    MAR <- PC (move PC to MAR)
+%         MBR <- mem[MAR]                         # disp in MBR
+%         PC <- PC+4 
+%         A <- RFOUT1 
+%         B <- MBR 
+%         C <- A+B                                # calculate effective address
+%         MAR <- C 
+% FO1:    MBR <- mem[MAR]                         # value of A in MBR
+%         A <- MBR
+% CO2:    MAR <- PC                               # find operand addr
+%         PC <- PC+4
+%         MBR <- mem[MAR]                         # addr of R2 in MBR
+%         MAR <- MBR
+% FO2:    MBR <- mem[MAR]                         # value of R2 in MBR
+%         B <- MBR
+% EI:     C <- A + B
+% CO3:    MAR <- PC                               # write back result
+%         PC <- PC+4
+%         MBR <- mem[MAR]                         # addr of R3 in MBR
+%         MAR <- MBR
+% WO:     MBR <- C                                # value of R3 in MBR
+%         mem[MAR] <- MBR                         # memory write
+% \end{verbatim}
+
+
+\includegraphics[width=0.5\textwidth]{../ex-CPU.png}
 
 \end{document}

@@ -1,0 +1,119 @@
+\documentclass[a4paper,landscape]{article}
+\usepackage[margin=0.25cm]{geometry}
+\usepackage{lipsum} % For dummy text, remove if not needed
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+
+\scriptsize
+
+\begin{multicols*}{2}
+    \begin{tabularx}{\columnwidth}{@{}lX@{}}
+        \textbf{Concept}                           & \textbf{Formula}                                                                                                     \\\hline
+        Tautology                                  & Always true                                                                                                          \\
+        Identity law                               & $A \land 1 = A, A \lor 0 = A$                                                                                        \\
+        Domination law                             & $A \land 0 = 0, A \lor 1 = 1$                                                                                        \\
+        Idempotent law                             & $A \land A = A, A \lor A = A$                                                                                        \\
+        Negation law                               & $A \land \neg A = 0, A \lor \neg A = 1$                                                                              \\
+        Commutative law                            & $A \land B = B \land A, A \lor B = B \lor A$                                                                         \\
+        Associative law                            & $A \land (B \land C) = (A \land B) \land C, A \lor (B \lor C) = (A \lor B) \lor C$                                   \\
+        Bi-Implication law                         & $A \leftrightarrow B = (A \to B) \land (B \to A)$                                                                    \\
+        Contrapositive law                         & $A \to B = \neg B \to \neg A$                                                                                        \\
+        Implication law                            & $A \to B = \neg A \lor B$                                                                                            \\
+        Distributive law                           & $A \land (B \lor C) = (A \land B) \lor (A \land C), A \lor (B \land C) = (A \lor B) \land (A \lor C)$                \\
+        Do Morgan's law                            & $\neg (A \land B) = \neg A \lor \neg B, \neg (A \lor B) = \neg A \land \neg B$                                       \\
+        \\
+        Universal negation                         & $\neg \forall x P(x) = \exists x \neg P(x)$                                                                          \\
+        Existential negation                       & $\neg \exists x P(x) = \forall x \neg P(x)$                                                                          \\
+        Universal conjunction                      & $\forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)$                                                  \\
+        Universal disjunction                      & $ \exists x (P(x) \lor Q(x)) = \exists x P(x) \lor \exists x Q(x)$                                                   \\
+        \\
+        Power set                                  & $P(S) = \{A | A \subseteq S\}$                                                                                       \\
+        Reflexive                                  & $(a,a) \in R \forall a \in A$                                                                                        \\
+        Symmetric                                  & $(a,b) \in R \implies (b,a) \in R$                                                                                   \\
+        Transitive                                 & $(a,b) \in R \land (b,c) \in R \implies (a,c) \in R$                                                                 \\
+        Antisymmetric                              & $(a,b) \in R \land (b,a) \in R \implies a = b$                                                                       \\
+        Equivalence relation                       & $R$ is reflexive, symmetric, and transitive                                                                          \\
+        Equivalence class                          & $[a] = \{x | (a,x) \in R\}$                                                                                          \\
+        \\
+        $f: A \to B, f(a)=b$                       & Domain $A$, Codomain $B$; $b$ image of $a$ under $f$, $a$ preimage of $b$ under $f$                                  \\
+        Function of subset                         & $f: A \to B, S \subseteq A, f(S) = \{f(a) | a \in S\}$                                                               \\
+        Injection (one-to-one)                     & $f(a_1) = f(a_2) \implies a_1 = a_2$                                                                                 \\
+        Surjection (onto)                          & $\forall b \in B, \exists a \in A$ such that $f(a) = b$                                                              \\
+        Bijection (one-to-one correspondence)      & $f: A \to B$ is a bijection if it is both an injection and a surjection                                              \\
+        Total function                             & $\forall a \in A, \exists b \in B$ such that $f(a) = b$                                                              \\
+        Partial function                           & Not total                                                                                                            \\
+        Inverse function                           & $f(a)=b \to f^{-1}(b)=a$ (only bijection functions can have inverse function)                                        \\
+        Composition of function                    & $(f \circ g)(x) = f(g(x)),\quad (f \circ f^{-1})(x) = x$                                                             \\
+        Vertical line test                         & A relation is a function \textit{iff} no vertica line intersects graph at more than one point                        \\
+        \\
+        Mutually exclusive sets                    & No elements in common                                                                                                \\
+        Inclusion-exclusion principle              & $|A_1 \cup A_2 \cup \dots \cup A_n| = |A_1| + |A_2| + \dots + |A_n| - |A_1 \cap A_2| - \dots - |A_{n-1} \cap A_n|$   \\
+        Pigeonhole principle                       & If $n$ items are put into $m$ containers with $n > m$, at least one container must contain more than one item        \\
+        Permutations                               & $P(n,r) = {}^nP_r = \frac{n!}{(n-r)!},\quad P(n,n) = n!$                                                             \\
+        Arrangement of indistinguishable objects   & $\frac{n!}{n_1! n_2! \cdots n_k!}$                                                                                   \\
+        Combinations                               & $C(n,r) = {}^nC_r = \frac{n!}{r!(n-r)!},\quad C(n,n) = 1$                                                            \\
+        Property of binomial coefficients          & $C(n,r) = C(n,n-r)$                                                                                                  \\
+        Distributions of indistinguishable objects & $C(n+r-1, r-1)$                                                                                                      \\
+        Combinations with repetition               & $C(n+r-1, r)$                                                                                                        \\
+        \\
+        Mutually exclusive events                  & $P(A \cap B) = 0$                                                                                                    \\
+        Union                                      & $P(A \cup B) = P(A) + P(B) - P(A \cap B)$                                                                            \\
+        Union bound                                & $P(A \cup B) \leq P(A) + P(B)$                                                                                       \\
+        Conditional probability                    & $P(A|B) = \frac{P(A \cap B)}{P(B)},\quad P(A \cap B) = P(A|B)P(B)$                                                   \\
+        Bayes' theorem                             & $P(A|B) = \frac{P(B|A)P(A)}{P(B)} = \frac{P(B|A)P(A)}{P(B|A)P(A) + P(B|\neg A)P(\neg A)}$                            \\
+        Exhausive events                           & Set of events where at least one occur in a sample space.                                                            \\
+        Partition of sample space                  & Mutually exclusive, collectively exhausive, $P(A_i) \neq 0 \forall i$                                                \\
+        Law of total probability                   & $P(A) = \sum_{i=1}^n P(A|B_i)P(B_i)$                                                                                 \\
+        Independent events (no influence)          & $P(A \cap B) = P(A)P(B)$                                                                                             \\
+        Pairwise independent                       & For all pairs of events in set of events they are independent                                                        \\
+        Mutually independent                       & $P(\cap_{i=1}^n A_i) = \prod_{i=1}^n P(A_i)$; events are pairwise indep. but $n$ pairwise indep. might not be mutual \\
+        \\
+        Expected value                             & $E(X^n) = \sum_{i=1}^n x_i P(X=x_i)$; $E(aX+b) = aE(X)+b$                                                            \\
+        Variance                                   & $Var(X) = E(X^2) - (E(X))^2$; $Var(aX+b) = a^2Var(X)$                                                                \\
+        Binomial distribution                      & $P(X=k) = C(n,k)p^k(1-p)^{n-k}$;                                                                                     \\
+    \end{tabularx}
+    \begin{tabularx}{\columnwidth}{@{}lX@{}}
+        Multigraph                       & Graph with multiple edges between same nodes but no loops                                                \\
+        Psuedographs                     & Multigraph with loops                                                                                    \\
+        Simple                           & undirected, no loop, no multiple edges                                                                   \\
+        Neighbourhood                    & $N(v) = \{u | (u,v) \in E\}$                                                                             \\
+        Degree                           & $deg(v) = |N(v)|$                                                                                        \\
+        Handshaking theorem              & $2|E| = \sum_{v \in V} deg(v)$                                                                           \\
+        In / out degree                  & (In/out) degree: number of edges that point (to/from) a node                                             \\
+        Property of digraph degrees      & $\sum_{v\in V} deg_{in}(v) = \sum_{v\in V} deg_{out}(v) = |E|$                                           \\
+        \\
+        K (complete) graph               & All nodes connected to each other. $|E| = \frac{n(n-1)}{2}$                                              \\
+        Cycle graph                      & $C_n$ is a cycle with $n$ nodes. $|E| = n$                                                               \\
+        Wheels                           & $W_n$ is a cycle with $n$ nodes and a central node connected to all other nodes. $|E| = n + 1$           \\
+        Bipartition                      & $G = (V_1, V_2, E)$ is bipartite where no two nodes in the same set $V_1$ and $V_2$ are connected        \\
+        Complete bipartite graph         & $K_{m,n}$ is a bipartite graph with $m$ nodes in one set and $n$ in the other. $|E| = mn$                \\
+        \\
+        Hall's marriage theorem          & $|N(S)| \geq |S|$ for all $S \subseteq V_1 \to $ bipartite graph has perfect matching                    \\
+        Connected                        & Path between every pair of distinct nodes                                                                \\
+        Strongly connected               & Path between every pair of distinct nodes in both directions                                             \\
+        Node connectivity                & $\kappa(G)$ Minimum number of nodes to remove to disconnect graph                                        \\
+        Edge connectivity                & $\lambda(G)$ Minimum number of edges to remove to disconnect graph                                       \\
+        Property of conectivities        & $\forall G : \kappa(G) \leq \lambda(G) \leq \min_{v \in V} deg(v)$                                       \\
+        Number of path between two nodes & Represent as adjacency matrix, number of paths of length $k$ is given by $(i,j)$ of $A^k$                \\
+        Euler path / circuit             & Simple path / circuit that contains every edge in $E$                                                    \\
+        Euler circuit cond.              & All nodes have even edges                                                                                \\
+        Directed euler circuit cond.     & All node shave equal in and out degrees                                                                  \\
+        Euler path cond.                 & Exactly two nodes have odd degrees                                                                       \\
+        Hamiltonian path / circuit       & Simple path / circuit that contains every node in $V$                                                    \\
+        Ore's theorem                    & $deg(u) + deg(v) \geq |V|$ forall non-adjacent pair of nodes $(u,v)$, then $G$ has Hamiltonian circuit   \\
+        Chromatic number                 & $\chi(G)$ Minimum number of colours to colour graph such that no two adjacent nodes have the same colour \\
+        Planarity                        & If can drawn without edges crossing                                                                      \\
+        Euler's formula                  & Connected,planar,simple graph: $|R|=|E|-|V|+2$ (R set of regions)                                        \\
+        Corollary                        & Connected,planar,simple graph $|E| \leq 3|V| - 6, \exists v \in V : deg(v) \leq 5$                       \\
+        Homeomorphic                     & Two graphs are homeomorphic if they can be transformed into each other by contracting edges              \\
+        Kuratowski's theorem             & Graph is planar \textit{iff} it does not contain a subgraph that is homeomorphic to $K_5$ or $K_{3,3}$   \\
+    \end{tabularx}
+\end{multicols*}
+
+\end{document}
