@@ -7,6 +7,7 @@
 \usepackage{xcolor}
 \usepackage{wrapfig}
 \usepackage{graphicx}
+\usepackage{soul}
 \usepackage{enumitem}
 
 \pagestyle{empty}
@@ -20,8 +21,11 @@
 \makeatletter
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
                                 {-1ex plus -.5ex minus -.2ex}%
-                                {0.5ex plus .2ex}%x
-                                {\normalfont\small\bfseries}}
+                                {0.5ex plus .2ex}%
+                                {\normalfont\tiny\bfseries
+                                 \setlength{\fboxsep}{1pt}%
+                                 \setlength{\fboxrule}{0.5pt}%
+                                 \colorbox{pink}}}
 % \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
 %                                 {-1explus -.5ex minus -.2ex}%
 %                                 {0.5ex plus .2ex}%
@@ -100,8 +104,8 @@
         Price change \textbf{DOES NOT LEAD TO} demand / supply change, only \textbf{QUANTITY} demanded / supplied.
 
         \begin{minipage}{\linewidth}
-            \includegraphics[width=0.4\linewidth]{./csps.png}
-            \includegraphics[width=0.4\linewidth]{./csps2.jpg}
+            \includegraphics[width=0.3\linewidth]{./csps.png}
+            \includegraphics[width=0.3\linewidth]{./csps2.jpg}
         \end{minipage}
 
         Surplus $P > P^*, \textcolor{magenta}{Q_s} > \textcolor{orange}{Q_d}$; Shortage $P < P^*, \textcolor{magenta}{Q_s} < \textcolor{orange}{Q_d}$; $TES$ maximized at eq.; d/s curves shifts to right if increase.
@@ -159,7 +163,16 @@
         \section{Elasticity}
         Base $\eta=\frac{\%\Delta Q}{\%\Delta P}$; 2-pt $\eta = \frac{Q_1-Q_0}{Q1+Q_0}\cdot\frac{P_1+P_0}{P_1-P_0}$; line-pt $\eta = \frac{P}{Q}\cdot\frac{1}{\text{slope}}=-\frac{PQ_x}{QP_y}$; revenue $=PQ$; maximized \textbf{at mid-point} of demand curve
 
-    $\textcolor{orange}{\eta_d}$: $<-1$ elastic, $=-1$ unit elastic, $>-1$ inelastic, $=0$ perfectly inelastic, $=-\infty$ perfectly elastic; $\textcolor{magenta}{\eta_s}$: $<1$ elastic, $=1$ unit elastic, $>1$ inelastic;
+    $\textcolor{orange}{\eta_d} < 0$, $\textcolor{magenta}{\eta_s} > 0$; $|\eta|=1$ unit elastic; $|\eta|>1$ elastic; $|\eta|<1$ inelastic; $|\eta|=0$ perfectly inelastic; $|\eta|=\infty$ perfectly elastic;
+
+        \begin{tabular}{|l|l|l|}
+            \hline
+            $\textcolor{orange}{\eta_d}$ & $P\uparrow$                                   & $P\downarrow$                                   \\
+            \hline
+            Elastic $\eta<-1$            & $P\uparrow \times Q\Downarrow = PQ\downarrow$ & $P\downarrow \times Q\Uparrow = PQ\uparrow$     \\
+            Inelastic $\eta>-1$          & $P\uparrow \times Q\Uparrow = PQ\uparrow$     & $P\downarrow \times Q\Downarrow = PQ\downarrow$ \\
+            \hline
+        \end{tabular}
 
         Const: $\ln Q = a + b\ln P \to \eta=b$ @ all pts.; Only pay \$$m \to \eta = -1$; Supply y-intercept $P_s=m\textcolor{magenta}{Q_s}+c, c$ $>0\to\textcolor{magenta}{\eta_s}>1$, $=0\to\textcolor{magenta}{\eta_s}=1$,$<0\to\textcolor{magenta}{\eta_s}<1$
 
@@ -169,7 +182,7 @@
 
     $\uparrow\%\Delta P = \frac{\textcolor{orange}{\%\Delta Q_d}}{|\textcolor{orange}{\eta_d}|+\textcolor{magenta}{\eta_s}}= -\frac{\textcolor{magenta}{\%\Delta Q_s}}{|\textcolor{orange}{\eta_d}|+\textcolor{magenta}{\eta_s}}$; $\uparrow\%\Delta Q = \textcolor{magenta}{\eta_s}\times\%\Delta P$;
 
-        \includegraphics[width=.6\linewidth]{./total-revenue.png}
+
 
         Price elasticity of demand ($\textcolor{orange}{-\eta_d}$) $\propto$ \textbf{substitutes} / time to adjust (find subs.) / specifity of classification / luxurious nature / price point;
 
@@ -181,22 +194,22 @@
 
         Consumer per-unit share burden $|P_C-P^*|$; Producer per-unit share burden $|P_S-P^*|$; Less elastic side more burden / benefit, \textbf{ratio same} for $ts$ change.
 
-        DWL: The lost economic surplus when the socially optimal quantity of a good is not produced $\propto$ elasticity (imagine scissors) ($\propto \eta_s, \frac{1}{\eta_d}$)
+        DWL: The lost economic surplus when the socially optimal quantity of a good is not produced $\propto$ elasticity (imagine scissors) ($\propto \eta_s, \eta_d$)
 
 
         \begin{itemize}
             \item Given required DWL / cost: \textbf{Shift demand} by $ts$ -> re-subject to $P$, \textbf{equalize with S} to find $Q$ -> DWL / cost formula
         \end{itemize}
         \begin{minipage}{\linewidth}
-            \includegraphics[width=.48\linewidth]{./tax.png}
-            \includegraphics[width=.48\linewidth]{./tax2.png}
+            \includegraphics[width=.4\linewidth]{./tax.png}
+            \includegraphics[width=.4\linewidth]{./tax2.png}
         \end{minipage}'
 
         \section{Price ceiling}
 
     $P > P_e$ ineffective; $Q_D=\text{Intrst}(P=p,D)$; $Q_s=\text{Intrst}(P=p,S)$; Shortage $= Q_D-Q_S$;$COGS \downarrow \to S \uparrow$ and quality $\downarrow \to D \downarrow$; Misallocation of resources
 
-        Ways to allocate: (1) Bibery, (2) Wait line, (3) Highest valued; $BEq = y(\text{Intrst}(x=x(Q_S), D))-p$; $V=BEq\times Q$; Value by bribing = $V$; Welfare loss = $\begin{cases}
+        Ways to allocate: (1) Bibery, (2) Wait line, (3) Highest valued; $BEq = y(\text{Intrst}(x=x(Q_S), D))-p$; $V=BEq\times Q$; Value by bribing = $V$; \textit{\textbf{Welfare}} loss = $\begin{cases}
         DWL     & (1)(3) \\
         DWL + V & (2)    \\
     \end{cases}$; $CS = \begin{cases}
@@ -208,9 +221,9 @@
 
         Free market to maximize welfare; Market failure when inefficient allocation of resources; Externalities $C,B$ that doesn't directly accure to buyers or sellers; \textbf{Private CB} directly incurred; \textbf{External CB} incurred by 3rd party; \textbf{Social CB} = PCB + ECB;
 
-        (private) Market equilibrium at $MB=MC$ (demand = supply); $MSBC = MBC + EBC$ (upward shift); Social equilibrium $MSB = MSC$; Deadweight loss of externality: triangle by shifting curve upwards; $M$ is marginal
+        (private) Market equilibrium at $MB=MC$ (demand = supply); $MSB/C = MB/C + EB/C$ (upward shift) ($M$ marginal); Social equilibrium $MSB = MSC$; Deadweight loss of externality: triangle by shifting curve upwards; \hl{\textbf{TES}} = Area under MSB - Area under MSC
 
-        Implementing tax and subsidies are costly for the government to implement (requires cost to gather info); Know \textbf{value of externalities} use \textbf{pigouvian taxes/subsidies}. Know \textbf{social optimal output} use \textbf{tradable permits}; Pigouvian tax $ts = E$ ($E<0$ if cost)
+        Implementing tax and subsidies are costly for the government to implement (requires cost to gather info); Know \textbf{value of externalities} use \textbf{pigouvian taxes/subsidies}. Know \textbf{social optimal output} use \textbf{tradable permits}; Pigouvian tax $ts = E$ (\hl{$E<0$ if cost})
 
         \textbf{Coase}: Eventual market outcome is the \textbf{social optimal outcome} if property rights are well defined and \textbf{negotiation cost is zero}, \textbf{regardless} of the \textbf{initial allocation of property rights}; Transaction costs $\propto$ the number of parties involved; Property rights does not affect efficiency of outcome, but \textbf{affects distribution of welfare}.
 
@@ -226,31 +239,34 @@
             Non-rival & Club goods            & Public goods          \\
                       & Netflix, satellite TV & Air, National defence \\ \hline
         \end{tabular}
-        Private goods can be efficiencyly provided in comp. markets; More efficient for gov. to provide public goods as (1) greatest social benefit (2) more difficult to exclude non-payers
 
-    $MSB$ from $MB$ is $P_{MSB} = P_{MB1} + P_{MB2} + \ldots$;
+        \textbf{Private goods can be efficiently provided} in comp., free markets; More efficient for gov. to provide \textbf{public goods} as (1) greatest social benefit (2) more difficult to exclude non-payers
+
+    $MSB$ from $MB$ is \textbf{vertical aggregation}: $MSB=MB_1+MB_2+\dots$, \textbf{Find kind point(s)} and take higher portion;
 
         \section{Profit maximization perfect comp.}
 
         Perfect comp.: (1) many unassociated buyers n sellers (2) Identical products, price takers at $MR=P$; $TC = TVC + FC$; $MC = \frac{dTC}{dQ}$; $AVC = \frac{TVC}{Q}$; $AVC = \frac{TVC}{Q}$; $AC = ATC = \frac{TC}{Q} = AVC + \frac{FC}{Q} \implies $ Gap between $AC$ And $AVC$ curves is $\frac{FC}{Q}$ @ $Q$.
 
-        \textbf{Total profit} $\pi = TR-TC = P\times Q - AVC \times Q - FC$; $PS = TR - TVC$; \textbf{Profit maximization} at $MR=P=MC$; \textbf{Equilibrium price} convert to market: $F(q) \to F(\frac{q}{n})$; convert to individual $F(q) \to F(qn)$
+        \textbf{Total profit} $\pi = TR-TC = P\times Q - AVC \times Q - FC$; $PS = TR - TVC$; \textbf{Equilibrium price} convert to market: $F(q) \to F(\frac{q}{n})$; convert to individual $F(q) \to F(qn)$
 
-        \textbf{Economic} profit includes OC in TC, whereas \textbf{accounting} profit doesn't;
+        \textbf{Economic} profit includes OC in TC, whereas \textbf{accounting} profit doesn't; Entry of new firms in perfectly comp. market \hl{eliminates economic, not accounting profit}
 
-        \textbf{Short run} some inputs fixed, \textbf{no entry / exit}; \textbf{Long run} all inputs variable ($TR=TC \to$ profit $= 0$, \textbf{equilibrium }$P=ATC=AVC=MC$)
+        \textbf{Short run} some inputs fixed, \textbf{no entry / exit}, \hl{\textbf{Profit maxim.}} at $P=\text{Intrst}(MR, MC)$; \; \textbf{Long run} all inputs variable ($TR=TC \to$ \underline{ECONOMIC} profit $= 0$, \hl{\textbf{Profit maxim.}} at $P=\text{Intrst}(ATC=AVC,MC)) (same as exit price)$
 
-        Shutdown: stop production temporarily; Table for conditions (condition e.g. $P < y(ATC=MC)$)
+        \textbf{Find num firms in market}: Short: $D=S\to Q, P=MC \to q, n=\frac{Q}{q}$; Long: $P=\text{Intrst}(MC, ATC=AVC) \to MB(P) \to Q, n=\frac{Q}{q}$
+
+        Shutdown: stop production temporarily; Table for conditions
 
         \begin{tabular}{|l|l|l|}
             \hline
-              & Condition     & Effect                      \\\hline
-            S & $P < AVC$     & Shutdown at                 \\
-              & or $TR < TVC$ & $P=\min\{AVC\}\ y(AVC=MC)$  \\ \hline
-            L & $P > ATC$     & Entry of new firms          \\ \hline
-            L & $P < ATC$     & Exit of existing firms      \\ \hline
-            L & $P < AC$      &                             \\
-              & or $TR < TC$  & Exit at $P=\min\{AC\} = MC$ \\ \hline
+              & Condition     & Effect                                   \\\hline
+            S & $P < AVC$     & Shutdown at                              \\
+              & or $TR < TVC$ & $P=\min\{AVC\}=y(\text{Intrst}(AVC,MC))$ \\ \hline
+            L & $P > ATC$     & Entry of new firms                       \\ \hline
+            L & $P < ATC$     & Exit of existing firms                   \\ \hline
+            L & $P < AC$      & Exit at                                  \\
+              & or $TR < TC$  & $P=\min\{AC\}=y(\text{Intrst}(AC,MC))$   \\ \hline
         \end{tabular}
 
         \textbf{Increasing cost industries} greater cost as production expands;
@@ -268,30 +284,28 @@
 
         \section{Monopoly}
 
-        Simple monopoly: (1) can raise $P > MC$ without losing all customers (2) \textbf{maximize profit} at $MR=MC$; $MR$ curve has twice slope of $D$ curve ($MR = \frac{Q_D}{2}$);
+        Simple monopoly: (1) \textbf{Market power}: can raise $P > MC$ without losing all customers (2) \textbf{maximize profit} at $MR=MC$; $MR$ curve has twice slope of $D$ curve (coefficient of $Q\times2$)
 
-        Pricing: $Q* = x(\text{Intrst}(MR,MC))$; $P* = y(\text{Intrst}(x=Q*, D))$; $\eta_d \Uparrow \implies P \Downarrow$; Markup $=\frac{P-MC}{MC} = \frac{-1}{1+\eta_d}$
+        \textbf{Sources of market power}: (1) \textbf{Patents} (2) \textbf{Laws preventing entry} US Postal Service (3) \textbf{Scale} Subways, electricity (4) \textbf{Innovation} iPod, eBay; Does not: Futures, contracts; \textbf{R\&D} Perfect comp. market lacks incentives for R\&D, for company and society, R\&D \textbf{benefit outweighs cost}
+
+        Pricing: $Q* = x(\text{Intrst}(MR,MC))$; $P* = y(\text{Intrst}(x=Q*, D))$; $\eta_d \Uparrow \implies P \Downarrow$; Markup $=\frac{P-MC}{MC} = \frac{-1}{1+\eta_d} \times 100\%$; \hl{\textbf{Profit}} $(P-MC)Q-Fc$
 
         Efficiency loss = DWL; CS top part, PS bottom part including middle rectangle; $TVC$ area under PS; PS = profit if no FC;
 
-        Case price price ceiling: New MR will be line from $I = \text{Intersection}(D, P)$ to yAxis and xAxis (L-shaped). MR is constant for $q < x(I)$, where $x(I)$ is the \textbf{maximum quantity} that the market sells; $P @ D=MC \implies$ Profit maximizing, no dwl, socially optimal; $P @ D=AC \implies$ Zero profit, DWL triangle under $x(I)$ and above MC.
+        \textbf{Price ceilings}: New MR will be line from $I = \text{Intersection}(D, P)$ to yAxis and xAxis (L-shaped). MR is constant for $q < x(I)$, where $x(I)$ is the \textbf{maximum quantity} that the market sells; $P_c @ D=MC \implies$ Profit maximizing, \textbf{no dwl}, socially optimal; $P_c @ D=AC \implies$ \textbf{Zero profit}, DWL triangle under $x(I)$ and above MC.
+
+        \hl{\textbf{Subsidy elim. DWL}}: $I=\text{Intrst}(D,MC), MR(x(I))=y(I)-ts\to ts$ (shift supply curve by ts)
 
         \section{Price discrimination}
 
-        Prices are charged on different customers for the same goods for reasons unrelated to difference in costs, in order to maximize profits;
+        \hl{\textbf{Assume monopoly}}, Price on \textbf{different customers} for \textbf{same goods} for reasons unrelated to difference in costs, in order to maximize profits;
 
-        \textbf{Perfect price} charge by max. WTP; $MR=MB \implies$ PS extracts all CS to PS; Fictional; \textbf{Hurdles} charges based on quantity consumed; Multiple $MR$ curves; \textbf{Market segmentation} charge by group of elasticity; Multiple $MR,MB$ pairs (use horizontal aggregation); Conditions required (1) able identify diff. groups with diff. $\eta$ (2) prevent resale between groups; \textbf{Abitrage}: buy in one market, sell in another with higher price; Prevent: transport cost higher than diff. in price.
+        \hl{\textbf{Perfect price}} charge by max. WTP; $MR=MB \implies$ PS extracts all CS to PS, DWL=0 (Fictional); \hl{\textbf{Hurdles}} charges based on quantity consumed; Multiple $MR$ curves; \hl{\textbf{Market segmentation}} charge by group of elasticity; Multiple $MR,MB$ pairs (use horizontal aggregation); \textbf{Not always profitable};\textbf{Conditions} \textbf{(1)} able identify diff. groups with diff. $\eta$ \textbf{(2)} prevent resale between groups;  \textbf{Abitrage}: buy in one market, sell in another with higher price; Prevent: transport cost higher than diff. in price.
 
-    Tying: base good lower price, complementary higher price; Bundling: products sold together
+    Tying: base good lower price, complementary (variable good) higher price; Bundling: products sold together
 
 
     \section{[SOLS] Cost and Benefit}
-
-    "Summer vacation; Normally work 40 hours a week, \$12 per hour; Parents paying \$1500 for cabin; You have to pay \$200 for food; Usually pay \$300 rent, \$75 food; Travel cost to vacation \$50; Your opportunity cost for vacation"
-
-    Ignore: \$1500 cabin (not by you), \$300 rent (had to be paid anyway), total cost of food to go on vacation \$$200-75$
-
-    \rule{1\linewidth}{0.4pt}
 
     "Given table columns [Quantity, consumer1, consumer2...,], cells willingness to pay, consider the market demand curve, the marginal willingness to pay for the 5-th good is:"
 
@@ -403,48 +417,49 @@
 
         Change $S$ terms $P \to Q$, find $Q_m=Q_1+1_2$ -> find intersect (\textbf{kink points}) $Q_m,Q_1$ and $Q_m,Q_2$ -> identify intersection curve with $D$ -> find equilibrium $Q^*$ -> find intersects of $Q=Q^*\times 0.5$ with $D$ and market supply curve (identify intersection curve) -> area of polygon (4 points)
 
-        \section{[SOLS] Comparative statics}
+    \section{[SOLS] Comparative statics}
 
-        "For country A: D: $Q = 22.4-1.5P$; S: $Q=2P-16.57$"; Country A is considering opening up its milk market to its neighbouring country B for a year. If the market is opened up, Country B is expected to buy 1 million boxes per year from country A at any price. New equilibrium price? Surplus of local group?"
+    \hl{\textbf{Rightward shift in D does not raise consumer surplus}}
 
-        Shift D by $D_B: Q_B=Q_A+1$ -> Intersection $D_B$ with S
+    \rule{1\linewidth}{0.4pt}
 
-        \includegraphics[width=.8\linewidth]{./i2.png}
+    Spend expenditure \$n \hl{no matter what} $\to n=PQ$; \textbf{Elasticity} $\eta_d = -1$, supplier $\eta_s = 1$;
 
-        OCS: Area(di,E2i,E2im), OPS: Area(E2i,E2,si)
+    \rule{1\linewidth}{0.4pt}
 
-        "How will the local consumers and producers as seperate groups react to the opening of the milk market to country B?"
+    "For country A: D: $Q = 22.4-1.5P$; S: $Q=2P-16.57$"; Country A is considering opening up its milk market to its neighbouring country B for a year. If the market is opened up, Country B is expected to buy 1 million boxes per year from country A at any price. New equilibrium price? Surplus of local group?"
 
-        Cosumer willing to spend up to $|OCS-CS|$ to lobby the government ($OCS < CS$ ? against : for) opening.
-        Producer willing to spend up to $|OPS-PS|$ to lobby the government ($OPS < PS$ ? against : for) opening.
+    Shift D by $D_B: Q_B=Q_A+1$ -> Intersection $D_B$ with S
 
-        "To make two group happy, can tax by:"
+    \includegraphics[width=.5\linewidth]{./i2.png}
 
-        Tax ((Producer for) ? Producer : Consumer) amount $\in \{|OCS-CS|, |OPS-PS|\}$ and give to ((Producer for) ? Consumer : Producer).
+    OCS: Area(di,E2i,E2im), OPS: Area(E2i,E2,si)
 
-        \section{[SOLS] Elasticity}
+    "How will the local consumers and producers as seperate groups react to the opening of the milk market to country B?"
 
-        “Titanic” in cinemas is \textbf{less price elastic} than "Titanic" online, as online has more substitutes.
+    Cosumer willing to spend up to $|OCS-CS|$ to lobby the government ($OCS < CS$ ? against : for) opening.
+    Producer willing to spend up to $|OPS-PS|$ to lobby the government ($OPS < PS$ ? against : for) opening.
 
-        \rule{1\linewidth}{0.4pt}
+    "To make two group happy, can tax by:"
+
+    Tax ((Producer for) ? Producer : Consumer) amount $\in \{|OCS-CS|, |OPS-PS|\}$ and give to ((Producer for) ? Consumer : Producer).
+
+    \section{[SOLS] Elasticity}
+
+    “Titanic” in cinemas is \textbf{less price elastic} than "Titanic" online, as online has more substitutes.
+
+    \rule{1\linewidth}{0.4pt}
 
     $Q_x=10-3P_x+2P_y-0.7I$; Good X is an \textbf{inferior} good as $I\uparrow Q_x\downarrow$, Good Y is a \textbf{substitude} as $\frac{\Delta Q_A}{\Delta P_B} = 2 > 0$.
 
-        \rule{1\linewidth}{0.4pt}
+    \rule{1\linewidth}{0.4pt}
 
-        The CEO of a restaurant chain group said, “For each 1 percent price hike, we lose 5 percent of our diners.”; All of the following are not conclusions:
+    “For each 1 percent price hike, we lose 5 percent of our diners.”; All of the following are not conclusions: Demand is price inelastic; A price increase will increase total revenue; Price elasticity of demand is -0.5; Demand for dining will go up as price decreases.
 
-        (I) demand is price inelastic.
 
-        (II) a price increase will increase total revenue.
+    \rule{1\linewidth}{0.4pt}
 
-        (III) the price elasticity of demand is -0.5.
-
-        (IV) demand for dining will go up as price decreases.
-
-        \rule{1\linewidth}{0.4pt}
-
-        If a downward shift of the demand curve leads to a 5\% decrease in equilibrium price and a 10\% decrease in equilibrium quantity, the price elasticity of \textbf{supply} is $\frac{10}{5} = 2$.
+    If a downward shift of the demand curve leads to a 5\% decrease in equilibrium price and a 10\% decrease in equilibrium quantity, the price elasticity of \textbf{supply} is $\frac{10}{5} = 2$.
 
     \section{[SOLS] Taxes and subsidy}
 
@@ -491,6 +506,12 @@
     "Given demand and supply, limit dead weight loss due to price ceiling $C$ to $L$."
 
     Find $Eq=\text{Intrsct}(D, S), I_1=\text{Intrsct}(y=C, S), \text{Intrsct}(x=x(I_1), D)$ and calculate dead weight loss $=L$.
+
+    \rule{1\linewidth}{0.4pt}
+
+    "WTP 16,14,12,10,8,4,2: price ceiling $p=2$ $\to$ 3 units supplied"; Count left to right: $10\to p + BEq > 10\to BEq > 8$;
+
+
     \section{[SOLS] Externalities}
 
     Gain of supplier, negotiation cost:
@@ -524,11 +545,15 @@
         Property right not affect eff. of outcome, but affects distribution of welfare.
     \end{minipage}
 
+    \rule{1\linewidth}{0.4pt}
+
+    "$D:Q=205-0.4P,S:Q=-40+4P$, unregulated MARKET eq=182.73; Marginal damage equiv. to $2.15Q$" \textbf{MSC:}$P=Q/4+10+2.15Q$; TES to society from \textbf{unregulated MARKET eq} = Area under (D - MSC) \hl{at 182.73}; Induce market to min. welfare loss use tax (E<0), $P_C-P_P$; Permits price at $|ts|$, annual revenue $x(\text{Intrst}(D, MSC))\times|ts|$;
+
     \section{[SOLS] Public goods}
 
     Number of ppl $n_0$, spend unit of time, constant benefit action A $P_A=400$, dynamic benefit by market: action B $P_B(n)$; ("Cut tree")
 
-    No. ppl who do action B $n_i$ $P_B(n) > P_A$; Social optimality no. ppl do action B: $\pi = P_A(n_0-n) + n\times P_B(n) \to \frac{d\pi}{dn} = 0 \to n_s$; Tax $T$ on per $n$ sold in market should be in range of $[P(n_s) - T \geq P_A, P(n_s+1)-T < P_A]$; Cost to implement T must be $\leq \text{Benefit from T} = \pi(n_s) - \pi(n_i)$
+    No. ppl who do action B $n_i: P_B(n_i) > P_A$; Social optimality no. ppl do action B: $\pi = P_A(n_0-n_s) + n\times P_B(n_s) \to \frac{d\pi}{dn_s} = 0 \to n_s$; Tax $T$ on per $n$ sold in market should be in range of $[P(n_s) - T \geq P_A, P(n_s+1)-T < P_A]$; Cost to implement T must be $\leq \text{Benefit from T} = \pi(n_s) - \pi(n_i)$
 
 
     \rule{1\linewidth}{0.4pt}
@@ -545,11 +570,49 @@
 
     Individual no. drive 3 (compare col 2); Social no. drive 2 (compare col 3); Calculate no. drive with toll by calc $\text{Time}\times\text{OC} + \text{Toll}$ and compare with tram oc $9\times5$;
 
+    "Instead given $MC_1, MC_2$, use $MC_1=MC_2$ for individual no.; Total cost Social by total cost; Toll implementation cost $MC_1=MC_2(n)+T$;
+
+    \rule{1\linewidth}{0.4pt}
+
+    "Given table columns [n waste (decreasing), cost], suppose gov impose tax $T$ per waste"; Total amount find by calculating total costs and minimum number
+
     \section{[SOLS] Profit maximization}
 
-    Given $TC=50q^2+335q+2630,\quad MC=100q+335$; Further given firms $n=50$; Further given market demand $MB$
+    Given $TC=50q^2+335q+2630,MC=100q+335, MB$; Further given firms $n=50$; \hl{Const. cost industry}
 
-    \textbf{Shutdown price} $VC = 50q^2+335q \to AVC = 50q + 335 \to y(\text{Intrst}(AVC,MC))$; \textbf{Exit price (less than)} $AC = 50q+335+\frac{2630}{q} \to y(\text{Intrst}(AC,MC))$; Short run supply curve \textbf{of industry} with $n$ firms $q\to \frac{q}{n} \in MC\to P_s=2q+335$;  $\text{Intrst}(MC,MB) \to (Q*,P*)$: Short run equilibrium: price per unit $P*$, unit of service produced by \textbf{each firm} $\frac{Q*}{n}$; Short run economic profit: $PS - FC = PS - 2630$ ($PS: MB(nq)=MC(nq)$); Long run equilibrium $MC=AC \to 100q+335 = 50q^2+335q+\frac{2630}{q} \to q \to MC \to MC = P$; Long run firm count $MB(P)\to Q = nq \to n = \frac{Q}{q}$ (market quantity)
+    \textbf{Shutdown price} $VC = 50q^2+335q \to AVC = 50q + 335 \to AVC = MC \to q \to P$;
+
+    \textbf{Exit price (less than)} $AC = TC/q \to y(\text{Intrst}(AC,MC))$;
+
+    \textbf{Short run supply curve of industry} with $n=50$ firms $MC(\frac{q}{n})\to P_s=2q+335$;
+
+    \textbf{Short run equilibrium} $\text{Intrst}(MC,MB) \to (Q*,P*)$, unit by \textbf{each firm} $\frac{Q*}{n}$;
+
+    \textbf{Short run firm profit} $Pq-TC(q), q=\frac{Q*}{n}$;
+
+    \textbf{Long run equilibrium} $MC=AC \to q \to MC \to P$;
+
+    \textbf{Long run firm count} $MB(P)\to Q = nq \to n = \frac{Q}{q}$ (market quantity)
+
+    \rule{1\linewidth}{0.4pt}
+
+    "Given $TC=2q^2+160q+200, MC=4q+160$; If we reduce $MC$ by \$68, and increase fixed cost permanently by \$600, what is the post-change equilibrium price?"
+
+    $VC=2q^2+160q \to VC'=2q^2+160q-68q=2q^2+92q$; $MC'=4q+92$; $P=\text{Intrst}(ATC', MC') \to \frac{VC'}{q} = MC' \to q \to MC(q) \to P$;
+
+    \textbf{Subsidy amount for Q same as before change} Find market $Q_0 \to ts=Q_0-Q$
+
+    \rule{1\linewidth}{0.4pt}
+
+    "$D$, set price $P_0$, set quantity $Q_0$" \textbf{Shortage of } $x(\text{Intrsct}(D, P_0))-Q_0$;
+
+    "Now offer coupons for public trade which allows for purchase of one unit of good at $P_0$" \textbf{Coupon eq. price} $y(\text{Intrsct}(D, Q_0))-P_0$;
+
+    "Secretly sell coupons through a person with commision fee $C$" \textbf{Profit} $\pi(Q)=Q(\frac{620-Q}{4.4}-P_0-C)$; \textbf{Maximize profit pricing}: $\pi'(Q) = 0 \to Q* \to D(Q*) \to P$; \textbf{Coupon price for person to sell} $P-P_0$
+
+    "Suppose person can practice perfect price discrimination"; \textbf{Maximize profit quantity}: Area under $D(Q)-P_0=A(Q) \to \pi(Q) =A(Q) - CQ \to \pi'(Q*)=0$
+
+
 
     \section{[SOLS] Monopoly}
 
@@ -561,39 +624,33 @@
 
     Instead use per-unit subsidy, short run equilibrium: \textbf{SHIFT SUPPLY CURVE NOT DEMAND} $\text{Intrsct}(MR, Q+6.5-3.25) \to Q \to D \to P$; Profit: Area GFEH; DWL: Area FIJ (on original supply curve)
 
-    Use per-unit subsidy eliminate DWL: find Q that eliminates: $qe = x(I)$; $\frac{2qe-145}{-1.1} = y(I) - ts \to ts$ (shift supply curve by ts)
+    Use per-unit subsidy eliminate DWL: $qe = x(I)$; $\frac{2qe-145}{-1.1} = y(I) - ts$
 
-    \includegraphics[width=.6\linewidth]{./mono.png}
+    % \includegraphics[width=.6\linewidth]{./mono.png}
 
     \section{[SOLS] Price discrimination}
 
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        Customer & WTP & MR  & MC &                      \\
+        Customer & WTP     & MR  & MC &                      \\
         \hline
-        1        & 92  & 92  & 28 &                      \\
-        2        & 79  & 66  & 28 & (b 1st min. MR > MC) \\
-                 &     &     &    & (b sep)              \\
-        3        & 64  & 64  & 28 &                      \\
-        4        & 51  & 38  & 28 & (b 2nd min. MR > MC) \\
-        5        & 36  & 6   & 28 & (a)                  \\
-        6        & 22  & -20 & 28 &                      \\
+        1        & 92      & 92  & 28 &                      \\
+        2        & \hl{79} & 66  & 28 & (b 1st min. MR > MC) \\
+                 &         &     &    & (b sep)              \\
+        3        & 64      & 64  & 28 &                      \\
+        4        & \hl{51} & 38  & 28 & (b 2nd min. MR > MC) \\
+        5        & 36      & 6   & 28 & (a) $WTP-MC>0$       \\
+        6        & 22      & -20 & 28 &                      \\
         \hline
     \end{tabular}
 
-    The marginal cost is constant at \$28.
+    The marginal cost is constant at \$28. $MR=TR_1-TR_0$ (e.g. $2\times79-92$ for \textit{each separated group})
 
-    "(a) With perfect price discrimination, the store’s producer surplus will be ?"
+    \textbf{Perf. price discrimination} $PS_0 = 92+79+64+51+36-5\times28$;
 
-    $PS = 92+79+64+51+36-5\times28$
+    \textbf{Coupon for customers WTP $<\$70$, coupon value:} Each group find the min $MR>MC$ (maximize profit). Coupon amount = $66-38$
 
-    "(b) Suppose only consumers with willingness to pay below \$70 will clip coupons and use them. The store owner will optimally provide a coupon that takes ? off"
-
-    From the above table, we see that the coupon threshold is between WTP of customer 2 and 3. Then, for each separated group, find the minimum $MR>MC$ (maximize profit). Coupon amount = $66-38$
-
-    "(c) Continue with the previous question. The deadweight loss equals ? dollars"
-
-    Because for each group, we set the price as $79$ and $51$, $CS = (92-79) + (79-79) + (51-51) + (64-51) \implies DWL = 182 - CS - PS$.
+    \textbf{Listed price = 79}, $CS = (92-79) + (79-79) + (51-51) + (64-51)$, $PS = (79-28)\times2+(51-28)\times2$; $DWL = PS_0 - CS - PS$;
 
     \rule{1\linewidth}{0.4pt}
 
@@ -649,7 +706,6 @@
         \item Buy 2 bundles: $10\times2 - 2\times4 - 3 - 1 = 8$
     \end{itemize}
     Separately, profit of 10.
-
 
 \end{multicols*}
 \end{document}

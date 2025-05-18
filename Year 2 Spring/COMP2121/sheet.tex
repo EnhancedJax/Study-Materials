@@ -26,12 +26,12 @@
         Contrapositive law                         & $A \to B = \neg B \to \neg A$                                                                                        \\
         Implication law                            & $A \to B = \neg A \lor B$                                                                                            \\
         Distributive law                           & $A \land (B \lor C) = (A \land B) \lor (A \land C), A \lor (B \land C) = (A \lor B) \land (A \lor C)$                \\
-        Do Morgan's law                            & $\neg (A \land B) = \neg A \lor \neg B, \neg (A \lor B) = \neg A \land \neg B$                                       \\
+        De Morgan's law                            & $\neg (A \land B) = \neg A \lor \neg B, \neg (A \lor B) = \neg A \land \neg B$                                       \\
         \\
         Universal negation                         & $\neg \forall x P(x) = \exists x \neg P(x)$                                                                          \\
         Existential negation                       & $\neg \exists x P(x) = \forall x \neg P(x)$                                                                          \\
         Universal conjunction                      & $\forall x (P(x) \land Q(x)) = \forall x P(x) \land \forall x Q(x)$                                                  \\
-        Universal disjunction                      & $ \exists x (P(x) \lor Q(x)) = \exists x P(x) \lor \exists x Q(x)$                                                   \\
+        Existential disjunction                    & $ \exists x (P(x) \lor Q(x)) = \exists x P(x) \lor \exists x Q(x)$                                                   \\
         \\
         Power set                                  & $P(S) = \{A | A \subseteq S\}$                                                                                       \\
         Reflexive                                  & $(a,a) \in R \forall a \in A$                                                                                        \\
@@ -54,13 +54,12 @@
         \\
         Mutually exclusive sets                    & No elements in common                                                                                                \\
         Inclusion-exclusion principle              & $|A_1 \cup A_2 \cup \dots \cup A_n| = |A_1| + |A_2| + \dots + |A_n| - |A_1 \cap A_2| - \dots - |A_{n-1} \cap A_n|$   \\
-        Pigeonhole principle                       & If $n$ items are put into $m$ containers with $n > m$, at least one container must contain more than one item        \\
+        Pigeonhole principle                       & To put $n$ items in $m$ holes, one hole must contain at least $\lceil \frac{n}{m} \rceil$ items.                     \\
         Permutations                               & $P(n,r) = {}^nP_r = \frac{n!}{(n-r)!},\quad P(n,n) = n!$                                                             \\
         Arrangement of indistinguishable objects   & $\frac{n!}{n_1! n_2! \cdots n_k!}$                                                                                   \\
         Combinations                               & $C(n,r) = {}^nC_r = \frac{n!}{r!(n-r)!},\quad C(n,n) = 1$                                                            \\
         Property of binomial coefficients          & $C(n,r) = C(n,n-r)$                                                                                                  \\
         Distributions of indistinguishable objects & $C(n+r-1, r-1)$                                                                                                      \\
-        Combinations with repetition               & $C(n+r-1, r)$                                                                                                        \\
         \\
         Mutually exclusive events                  & $P(A \cap B) = 0$                                                                                                    \\
         Union                                      & $P(A \cup B) = P(A) + P(B) - P(A \cap B)$                                                                            \\
@@ -76,7 +75,8 @@
         \\
         Expected value                             & $E(X^n) = \sum_{i=1}^n x_i P(X=x_i)$; $E(aX+b) = aE(X)+b$                                                            \\
         Variance                                   & $Var(X) = E(X^2) - (E(X))^2$; $Var(aX+b) = a^2Var(X)$                                                                \\
-        Binomial distribution                      & $P(X=k) = C(n,k)p^k(1-p)^{n-k}$;                                                                                     \\
+        Law of total expectation                   & $E(X) = E(E(X|Y))$                                                                                                   \\
+        Binomial distribution                      & $P(X=k) = C(n,k)p^k(1-p)^{n-k}$; $E(X) = np, Var(X) = np(1-p)$                                                       \\
     \end{tabularx}
     \begin{tabularx}{\columnwidth}{@{}lX@{}}
         Multigraph                       & Graph with multiple edges between same nodes but no loops                                                \\
@@ -88,6 +88,7 @@
         In / out degree                  & (In/out) degree: number of edges that point (to/from) a node                                             \\
         Property of digraph degrees      & $\sum_{v\in V} deg_{in}(v) = \sum_{v\in V} deg_{out}(v) = |E|$                                           \\
         \\
+        Regular graph                    & $deg(v) = k \forall v \in V$                                                                             \\
         K (complete) graph               & All nodes connected to each other. $|E| = \frac{n(n-1)}{2}$                                              \\
         Cycle graph                      & $C_n$ is a cycle with $n$ nodes. $|E| = n$                                                               \\
         Wheels                           & $W_n$ is a cycle with $n$ nodes and a central node connected to all other nodes. $|E| = n + 1$           \\

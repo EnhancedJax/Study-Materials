@@ -4,7 +4,6 @@
 \usepackage{minted}
 \usepackage{amsmath, dsfont, mathtools, amssymb}
 \usepackage{fontspec}
-\usepackage{xcolor}
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{enumitem}
@@ -13,6 +12,7 @@
 \usepackage{multirow}
 \usepackage{soul}
 \usepackage{etoolbox}
+\usepackage[dvipsnames]{xcolor}
 
 \pagestyle{empty}
 \geometry{top=0.5cm, bottom=0.5cm, left=0.5cm, right=0.5cm} 
@@ -20,14 +20,22 @@
 \setlength{\columnsep}{1pt} % Remove space between columns
 \setlength{\tabcolsep}{2pt} 
 
+\newcommand{\hlblue}[1]{%
+    {%
+    \sethlcolor{SkyBlue}%
+    \hl{#1}%
+    }%
+}
 
 % Redefine section commands to use less space
 \makeatletter
-\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
                                 {-1ex plus -.5ex minus -.2ex}%
-                                {0.5ex plus .2ex}%x
-                                {\normalfont\normalsize\bfseries}}
+                                {0.5ex plus .2ex}%
+                                {\normalfont\tiny\bfseries
+                                 \setlength{\fboxsep}{1pt}%
+                                 \setlength{\fboxrule}{0.5pt}%
+                                 \colorbox{pink}}}
 % \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
 %                                 {-1explus -.5ex minus -.2ex}%
 %                                 {0.5ex plus .2ex}%
@@ -82,18 +90,8 @@
 
   For a given format with $E.bits$ exponent bits, $F.bits$ significand bits and $s=\text{have special case for 0 and } 2^e-1 ? 1 : 0$; \textbf{Range} $\in \pm[2^{s-b},(2-2^{-F.bits})\cdot2^{2^{E.bits-1}-2^{E.bits}-s}]$; Represented numbers are \textbf{unevenly spaced} as spacing depends on exponent, which scales \textit{logarithmically}; \textbf{Spacing grows} as we go further from 0 as scaling factor of $2^{e-(2^{E.bits-1}-1)}$; \hl{\textbf{Precision}}: range $\uparrow$ precision $\downarrow$ (for a set number of bits). Exponent bits is proportional to range, while significand bits is proportional to precision.
 
-  \colorbox{lightgray}{\parbox{.45\textwidth}{\underline{\textit{Converting 13.375 to IEEE Binary32}}: $13.375 \equiv 1101.001_2 \to$ Sign bit: $0$ (pos); expo: normalized $+1.101001_2 \times 2^3$; $f=101001_2$; add trailing zeros: \texttt{10100100000000000000000}; $e=3+b=130\equiv$ \texttt{10000010}; Sol \texttt{0100 0001 0101 0110 0000 0000 0000 0000}}}
-
-  \colorbox{lightgray}{\parbox{.45\textwidth}{\underline{\textit{Converting Binary32 to decimal}} $C0F210000_{16}$: sign \texttt{1}, expo \texttt{10000010}, significand \texttt{11100100000000000000000}; sign bit: $1$ (neg); expo: $10000010_2=130\to 130-127=3$; significand: remove training 0s and add leading "1": $1.111001_2=1.890625_{10}$; value: $-1.890625 \times 2^2 = -7.5625$;}}
-
 
   Multiply two's complement: \textbf{shift-and-add}; Add/sub \hl{\textbf{Overflow rule}}: same sign operation, result is different sign
-
-  \colorbox{lightgray}{\parbox{.45\textwidth}{\underline{\textit{Add 1.5 + 2.25}} align expo: $1.1_2 \times 2^0 + 10.01_2 \times 2^0$ Add numbers $10.01_2 + 1.1_2 = 11.11_2$ Normalize $1.111_2 \times 2^1$ Result $1.111_2 \times 2^1 = 3.75$}}
-
-  \colorbox{lightgray}{\parbox{.45\textwidth}{\underline{\textit{Multiply 1.5 * 2.25}} align expo: $1.1_2 \times 2^0 \times 1.001_2 \times 2^1$ Add expo: $0+1=1$ Multiply numbers $1.1_2 \times 1.001_2 = 1.1011_2$ Normalize $11.011_2 \times 2^1$ Normalize $1.1011_2 \times 2^1$ Result $1.1011_2 \times 2^1 = 3.375$}}
-
-  \colorbox{lightgray}{\parbox{.45\textwidth}{\underline{\textit{Multiply IEEE numbers}} $3fc00000_{16} \times 40100000_{16}$: $3fc00000_{16} =$ \texttt{0 01111111 10000000000000000000000}, $40100000_{16} =$ \texttt{0 10000000 00100000000000000000000}; Add exponents and subtract bias: $01111111_2 + 10000000_2 - 01111111_2 \equiv 127 + 128 - 127 = 10000000_2$; Extract numbers by removing trailing zeros and multiply: $1.1_2 \times 1.001_2 = 1.1011_2$; Normalize: $1.1011_2 \times 2^{10000000_2 - 01111111_2}$; Result: \texttt{0 10000000 10110000000000000000000} $=3.375$}}
 
   \section{Instructions}
 
@@ -110,32 +108,92 @@
 
   \textbf{Type of ops.} data transfe, arithmetric, logical, control flow, I/O, data conversion; \textbf{arithmetric} treat operands as numbers, consider sign; \textbf{logical} treat operands as bit patterns;
 
-  \begin{minipage}{.26\textwidth}
-    \begin{tabular}{|l|l|l|}
-      \hline
-      \textbf{Mne}         & \textbf{Assembled}             & \textbf{Assembly Syntax} \\
-      \hline
-      \texttt{ADD}         & \texttt{00\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
-      \texttt{SUB}         & \texttt{01\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
-      \texttt{AND}         & \texttt{02\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
-      \texttt{OR}          & \texttt{03\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
-      \texttt{NOT}         & \texttt{04\#\#00\#\#}          & \texttt{src1, dst}       \\
-      \texttt{MOV}         & \texttt{05\#\#00\#\#}          & \texttt{src1, dst}       \\
-      \texttt{LD}          & \texttt{0600ff\#\# 000000\$\$} & \texttt{adr, dst}        \\
-      \texttt{ST}          & \texttt{07\#\#ff00 000000\$\$} & \texttt{src1, adr}       \\
-      \texttt{BR} (branch) & \texttt{0800ff00 000000\$\$}   & \texttt{label}           \\
-      \texttt{BZ} (0)      & \texttt{0801ff00 000000\$\$}   & \texttt{label}           \\
-      \texttt{BNZ} (not 0) & \texttt{0802ff00 000000\$\$}   & \texttt{label}           \\
-      \texttt{HALT}        & \texttt{09000000}              & -                        \\
-      \texttt{PUSH}        & \texttt{0A\#\#0000}            & \texttt{r}               \\
-      \texttt{POP}         & \texttt{0B0000\#\#}            & \texttt{r}               \\
-      \texttt{CALL}        & \texttt{0C00ff00 000000\$\$}   & \texttt{label}           \\
-      \texttt{RET}         & \texttt{0D000000}              & -                        \\
-      \hline
-    \end{tabular}
+  \begin{minipage}{.22\textwidth}
+    \hl{\textbf{Floating-point add / sub / mult / div:}}
+
+    \vspace{-0.3cm}
+
+    \begin{verbatim}
+ADDITION / SUBTRACTION (X+-Y):::::
+  SUBTRACT ? Change sign of Y : skip
+  if X = 0 ? Z<-Y;ret : Y = 0 ? Z<-X;ret : cont
+  while not Exponents equal:
+    Increase smaller exponent
+    Shift significand to right
+    if Significand = 0:
+      Put other number in Z; ret
+  Add signed significands
+  if Significand = 0:
+    Z <- 0; ret
+  else:
+    if Significand overflow:
+      Shift significand to right
+      Increase exponent
+      if Exponent overflow:
+        Report overflow; ret
+    while not Results normalized:
+      Shift significand to right
+      Decrease exponent
+      if Exponent underflow:
+        Report underflow; ret
+    Round results; ret
+    \end{verbatim}
   \end{minipage}
-  \begin{minipage}{1\textwidth}
-    \includegraphics[width=0.18\textwidth]{./fp-division-flow.png}
+  \begin{minipage}{0.2\textwidth}
+    \begin{verbatim}
+DIVIDE / MULTIPLICATION (X/*Y)::::
+  if X = 0 ? Z<- 0;ret : Y = 0 ? Z<-inf;ret : cont
+  DIVIDE ? Subtract : Add, exponents
+  DIVIDE ? Add : Subtract, bias
+  if Exponent overflow: Report overflow; ret
+  if Exponent underflow: Report underflow; ret
+  DIVIDE ? Divide : Multiply, significands
+  Normalize; Round; ret
+  \end{verbatim}
+
+    \vspace{-0.5cm}
+
+    add,00\#\#\#\#\#\#,src1/src2/dst;
+    sub,01\#\#\#\#\#\#,src1/src2/dst;
+    and,02\#\#\#\#\#\#,src1/src2/dst;
+    or,03\#\#\#\#\#\#,src1/src2/dst;
+    not,04\#\#00\#\#,src1/dst;
+    mov,05\#\#00\#\#,src1/dst;
+    ld,0600ff\#\#\_000000\$\$,adr/dst;
+    st,07\#\#ff00\_000000\$\$,src1/adr;
+    br,0800ff00\_000000\$\$,label;
+    bz,0801ff00\_000000\$\$,label;
+    bnz,0802ff00\_000000\$\$,label;
+    halt,09000000,-;
+    push,0a\#\#0000,r;
+    pop,0b0000\#\#,r;
+    call,0c00ff00\_000000\$\$,label;
+    ret,0d000000,-;
+
+
+
+    % \begin{tabular}{|l|l|l|}
+    %   \hline
+    %   \textbf{Mne}         & \textbf{Assembled}             & \textbf{Assembly Syntax} \\
+    %   \hline
+    %   \texttt{ADD}         & \texttt{00\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
+    %   \texttt{SUB}         & \texttt{01\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
+    %   \texttt{AND}         & \texttt{02\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
+    %   \texttt{OR}          & \texttt{03\#\#\#\#\#\#}        & \texttt{src1, src2, dst} \\
+    %   \texttt{NOT}         & \texttt{04\#\#00\#\#}          & \texttt{src1, dst}       \\
+    %   \texttt{MOV}         & \texttt{05\#\#00\#\#}          & \texttt{src1, dst}       \\
+    %   \texttt{LD}          & \texttt{0600ff\#\# 000000\$\$} & \texttt{adr, dst}        \\
+    %   \texttt{ST}          & \texttt{07\#\#ff00 000000\$\$} & \texttt{src1, adr}       \\
+    %   \texttt{BR} (branch) & \texttt{0800ff00 000000\$\$}   & \texttt{label}           \\
+    %   \texttt{BZ} (0)      & \texttt{0801ff00 000000\$\$}   & \texttt{label}           \\
+    %   \texttt{BNZ} (not 0) & \texttt{0802ff00 000000\$\$}   & \texttt{label}           \\
+    %   \texttt{HALT}        & \texttt{09000000}              & -                        \\
+    %   \texttt{PUSH}        & \texttt{0A\#\#0000}            & \texttt{r}               \\
+    %   \texttt{POP}         & \texttt{0B0000\#\#}            & \texttt{r}               \\
+    %   \texttt{CALL}        & \texttt{0C00ff00 000000\$\$}   & \texttt{label}           \\
+    %   \texttt{RET}         & \texttt{0D000000}              & -                        \\
+    %   \hline
+    % \end{tabular}
   \end{minipage}
 
   \begin{tabular}{|p{1.4cm}|p{1cm}|p{2cm}|p{2cm}|p{2cm}|}
@@ -299,7 +357,7 @@
 
   \textbf{Dynamic Branch Prediction}: need two consecutive wrong predictions to change decision;
 
-  \textbf{Processor performance} Execution Time = Inst Cout $\times CPI \times$ Clock cycle time; Clock cycle time = 1 / Clock rate; Ways to \textbf{improve performance} Simplify inst set and use hardwired logic (Clock rate $\Uparrow$ Inst Count $\uparrow$), extensive pipelining ($CPI \Downarrow$)
+  \hl{\textbf{Processor performance}} Execution Time = Inst Cout $\times CPI \times$ Clock cycle time; Clock cycle time = 1 / Clock rate; Ways to \textbf{improve performance} Simplify inst set and use hardwired logic (Clock rate $\Uparrow$ Inst Count $\uparrow$), extensive pipelining ($CPI \Downarrow$)
 
   \textbf{RISC}: All inst are register-register type except LD ST; Fixed length and simple, fixed format insts; Relatively few operations and address modes; use of hardwired rather than microprogrammed control; Use of inst pipelining;
 
@@ -315,6 +373,20 @@
 
   8-bit two's complement: \textbf{(1)} 76+64: \texttt{01001100 + 01000000 = 10001100}; \textbf{Overflow} as result is negative;
   \textbf{(2)} (-42) - 40: \texttt{11010110 + 11011000 = 110011110 -> 10011110} \textbf{Carry out} (no overflow) as result is properly negative;
+
+  \rule{1\linewidth}{0.4pt}
+
+  \underline{\textit{Excess 63 of 24 and -24}}: $x = 24 \to x + 63 = 87 \to 87_{10} \equiv 01010111_2$; $x = -24 \to x + 63 = 39 \to 39_{10} \equiv 00100111_2$;
+
+  \underline{\textit{Converting 13.375 to IEEE Binary32}}: $13.375 \equiv 1101.001_2 \to$ Sign bit: $0$ (pos); expo: normalized $+1.101001_2 \times 2^3$; $f=101001_2$; add trailing zeros: \texttt{10100100000000000000000}; $e=3+b=130\equiv$ \texttt{10000010}; Sol \texttt{0100 0001 0101 0110 0000 0000 0000 0000};
+
+  \underline{\textit{Converting Binary32 to decimal}} $C0F210000_{16}$: sign \texttt{1}, expo \texttt{10000010}, significand \texttt{11100100000000000000000}; sign bit: $1$ (neg); expo: $10000010_2=130\to 130-127=3$; significand: remove training 0s and add leading "1": $1.111001_2=1.890625_{10}$; value: $-1.890625 \times 2^2 = -7.5625$;
+
+  \underline{\textit{Add 1.5 + 2.25}} align expo: $1.1_2 \times 2^0 + 10.01_2 \times 2^0$ Add numbers $10.01_2 + 1.1_2 = 11.11_2$ Normalize $1.111_2 \times 2^1$ Result $1.111_2 \times 2^1 = 3.75$;
+
+  \underline{\textit{Multiply 1.5 * 2.25}} align expo: $1.1_2 \times 2^0 \times 1.001_2 \times 2^1$ Add expo: $0+1=1$ Multiply numbers $1.1_2 \times 1.001_2 = 1.1011_2$ Normalize $11.011_2 \times 2^1$ Normalize $1.1011_2 \times 2^1$ Result $1.1011_2 \times 2^1 = 3.375$;
+
+  \underline{\textit{Multiply IEEE numbers}} $3fc00000_{16} \times 40100000_{16}$: $3fc00000_{16} =$ \texttt{0 01111111 10000000000000000000000}, $40100000_{16} =$ \texttt{0 10000000 00100000000000000000000}; Add exponents and subtract bias: $01111111_2 + 10000000_2 - 01111111_2 \equiv 127 + 128 - 127 = 10000000_2$; Extract numbers by removing trailing zeros and multiply: $1.1_2 \times 1.001_2 = 1.1011_2$; Normalize: $1.1011_2 \times 2^{10000000_2 - 01111111_2}$; Result: \texttt{0 10000000 10110000000000000000000} $=3.375$
 
   \rule{1\linewidth}{0.4pt}
 
@@ -346,50 +418,67 @@
 
   \rule{1\linewidth}{0.4pt}
 
-  \begin{minipage}{0.2\textwidth}
-    Data transfer sequence \texttt{ADD R1, R2, R3}:
-    \begin{verbatim}MAR <- PC
-PC <- PC + 4  
-IR <- mem[MAR] 
-CO1: MAR ←− PC
-      PC ←− PC+4
-      MBR ←− mem[MAR]
-      MAR ←− MBR
-FO1: MBR ←− mem[MAR]
-      ALU.i1 ←− MBR
-CO2: MAR ←− PC
-      PC ←− PC+4
-      MBR ←− mem[MAR]
-      MAR ←− MBR
-FO2: MBR ←− mem[MAR]
-      ALU.i2 ←− MBR
-EI:  ALU.output ←− ALU.i1 + ALU.i2
-CO3: MAR ←− PC
-      PC ←− PC+4
-      MBR ←− mem[MAR]
-      MAR ←− MBR
-WO:  MBR ←− ALU.out
-         mem[MAR] ←− MBR
-    \end{verbatim}
-  \end{minipage}
-  \begin{minipage}{0.25\textwidth}
-    Custom DIV:
-    \begin{verbatim}
-# in R10  dividend
-# in R11  divisor
-# out R12 quotient 
-# out R13 remainder 
-MYDIV:  SUB R12, R12, R12
-        MOV R10, R13
-        REP: SUB R13, R11, R13
-        BMI END1 # branch if minus
-        INC R12
-        GOTO REP
-END1:
-        ADD R13, R11, R13
-        RET
-        \end{verbatim}
-  \end{minipage}
+  Data transfer sequences. Shorthand [\textbf{GRA}]: \texttt{MAR <- PC; MBR <- mem[MAR]}
+
+  \hl{General fetch}: \texttt{MAR <- PC; PC <- PC + 4; IR <- mem[MAR]};
+  \hl{General execute (skip B if no second param)}: \texttt{readRF;}
+  \hlblue{ind(R\#)}: \texttt{\textcolor{red}{MAR <- RFOUT\#; TEMP <- mem[MAR]}} (stores indirect ref.ed value in TEMP);
+  \hlblue{disp(R\#) next word DISP}: \texttt{\textcolor{red}{GRA; A <- RFOUT\#; B <- MBR; C <- A + B; MAR <- C; MBR <- mem[MAR]}} (stores ref.ed value in MBR);
+  \hl{General ADD/SUB/AND/OR}: \texttt{A <- RFOUT1; B <- RFOUT2; C <- A op B (NOT: not A, MOV: A); RFIN <- C; writeRF};
+  \hl{LD}: \texttt{GRA; RFIN <- MBR};
+  \hl{ST}: \texttt{MAR <- PC; MBR <- RFOUT1; mem[MAR] <- MBR};
+  \hl{BR/BZ/BNZ}: \texttt{MAR <- PC; condition; PC <- MAR}
+  \hl{RET}: \texttt{MAR <- SP; MBR <- mem[MAR]; PC <- MBR; SP <- SP + 4}
+  \hl{PUSH}: \texttt{SP <- SP - 4; MAR <- SP; MBR <- RFOUT1; mem[MAR] <- MBR}
+  \hl{POP}: \texttt{MAR <- SP; MBR <- mem[MAR]; RFIN <- MBR; SP <- SP + 4}
+  \hl{CALL}: \texttt{SP <- SP - 4; MAR <- SP; MBR <- PC; mem[MAR] <- MBR; MAR <- PC; PC <- MBR};
+  \hlblue{LD disp(R1) - R2}: \texttt{\textcolor{red}{GRA; A <- RFOUT\#; B <- MBR; C <- A + B; MAR <- C; MBR <- mem[MAR]}; RFIN <- MBR};
+
+
+  %   \begin{minipage}{0.2\textwidth}
+  %     Data transfer sequence \texttt{ADD R1, R2, R3} 4 word:
+  %     \begin{verbatim}MAR <- PC
+  % PC <- PC + 4  
+  % IR <- mem[MAR] 
+  % CO1: MAR <- PC
+  %       PC <- PC+4
+  %       MBR <- mem[MAR]
+  %       MAR <- MBR
+  % FO1: MBR <- mem[MAR]
+  %       ALU.i1 <- MBR
+  % CO2: MAR <- PC
+  %       PC <- PC+4
+  %       MBR <- mem[MAR]
+  %       MAR <- MBR
+  % FO2: MBR <- mem[MAR]
+  %       ALU.i2 <- MBR
+  % EI:  ALU.output <- ALU.i1 + ALU.i2
+  % CO3: MAR <- PC
+  %       PC <- PC+4
+  %       MBR <- mem[MAR]
+  %       MAR <- MBR
+  % WO:  MBR <- ALU.out
+  %       mem[MAR] <- MBR
+  %     \end{verbatim}
+  %   \end{minipage}
+  %   \begin{minipage}{0.25\textwidth}
+  %     Custom DIV:
+  %     \begin{verbatim}
+  % # in R10  dividend
+  % # in R11  divisor
+  % # out R12 quotient 
+  % # out R13 remainder 
+  % MYDIV:  SUB R12, R12, R12
+  %         MOV R10, R13
+  %         REP: SUB R13, R11, R13
+  %         BMI END1 # branch if minus
+  %         INC R12
+  %         GOTO REP
+  % END1:
+  %         ADD R13, R11, R13
+  %         RET
+  %         \end{verbatim}
+  %   \end{minipage}
 
   \rule{1\linewidth}{0.4pt}
 
