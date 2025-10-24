@@ -1,0 +1,47 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/CleanV2}
+\newcommand{\documentdate}{Fall 2025}
+\newcommand{\documenttype}{Notes for UBC}
+
+
+\newcommand{\sectionbar}[1]{%
+    \noindent
+    \textcolor{gray}{#1}%
+    \hspace{0.5cm}%
+    \tikz[baseline]{%
+        \draw[gray, thin] (0,0.5ex) -- (\dimexpr\linewidth-0.5em-0.5em-1cm,0.5ex);
+    }%
+    \par
+}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\hypertarget{toc}{}
+\tableofcontents
+
+\newpage
+
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\include{./pages/internet-design}
+\include{./pages/network-performance}
+\include{./pages/application-layer-protocols}
+\include{./pages/transport-layer-protocols}
+
+\end{document}

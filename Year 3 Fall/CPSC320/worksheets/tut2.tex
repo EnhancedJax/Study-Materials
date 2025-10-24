@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+(1)
+
+Express the vertexes of the graph as variables of our SAT instance: For each vertex $v_i$, assign corresponding variable $X_i$.
+
+(2)
+
+Assign the meaning of the variable: if $X_i$ is true ? in set $U$ : in set $W$ (partite sets of the graph).
+
+Consider a pair of verticies $v_i, v_j$, if there is an edge between them, then they should be assigned different values (i.e., one in $U$ and the other in $W$).
+
+(3)
+
+To reduce the BGP problem to SAT:
+
+\[\forall (v_i, v_j) \in E: (X_i \lor X_j) \land (\neg X_i \lor \neg X_j)\]
+
+(4)
+
+Proof BGP -> SAT: Based on definition
+
+(5) 
+
+Proof of SAT -> BGP: 
+
+\end{document}

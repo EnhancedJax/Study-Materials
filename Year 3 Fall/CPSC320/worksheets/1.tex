@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+Imagine for example the task faced by UBC’s co-op office each semester, which seeks to match hundreds of student applicants to employer internships. To keep the problem as simple as possible for now, assume that every applicant has a full ranking of employers and vice versa (no ties).
+
+\textbf{Full ranking: } Every student ranks every company, and every company ranks every student.
+
+\subsection*{Notation}
+
+\begin{itemize}
+    \item $s$: students, $c$: companies
+    \item $n_s = n_c = n$ number of students, number of companies
+    \item Student preferences array: $P_s[s_i]=[c_1, c_2, c_3, \ldots]$
+    \item Company preferences array: $P_c[c_i]=[s_1, s_2, s_3, \ldots]$
+\end{itemize}
+
+\subsection*{Notation for describing solution}
+
+Return mapping $s \to c$
+
+\subsection*{What makes a solution good}
+
+\begin{itemize}
+    \item Return \textbf{stable matching}: No student-company pair $(s_i, c_j)$ such that $s_i$ prefers $c_j$ over their assigned company and $c_j$ prefers $s_i$ over their assigned student.
+    \item Return a \textbf{perfect matching}: Every student is assigned a company and every company is assigned a student.
+    \item Respects the preferences of both sides as much as possible
+    \item Deterministic results
+    \item Efficient algorithm
+\end{itemize}
+
+\end{document}

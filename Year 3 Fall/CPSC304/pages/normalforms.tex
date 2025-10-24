@@ -1,0 +1,243 @@
+\section{Normalization}
+
+The goal of normalization is to remove redundancies from relations.
+
+\begin{definition}
+    {Functional dependency}
+    FDs can detect redundancies as given $A \to B$ (A determines B): if two tuples have the same value for $A$, they must have the same value for $B$.
+
+    A \textit{trivial FD} is one where $B \subseteq AB, AB \to B$.
+
+    A \textit{Standard form} FD is one where $B$ is a single attribute (Decomposed: $A \to XY \implies A \to X, A \to Y$).
+\end{definition}
+
+\begin{definition}
+    {Closure of a set of attributes}
+
+    For a set of attributes $X$, the closure of $X$ is the set of all attributes that are \textbf{determined} by $X$.
+
+    A dependency is a \textbf{super key} if the closure of the dependency set contains all attributes. It can be a \textbf{candidate key} if it is a super key and no proper subset of it is a super key.
+\end{definition}
+
+\subsection{Proof of keys}
+
+\begin{theorem}
+    {Inference rules of FDs}
+    \begin{itemize}
+        \item Reflexive: $A \to A$
+        \item Transitive: $A \to B, B \to C \implies A \to C$
+        \item Augmentation: $A \to B \implies AC \to BC$
+        \item Union: $A \to B, A \to C \implies A \to BC$
+        \item Decomposition: $A \to BC \implies A \to B, A \to C$
+    \end{itemize}
+
+    For proofs, we can use the labels \textit{reflex}, \textit{trans}, \textit{aug}, \textit{union}, \textit{decomp}.
+\end{theorem}
+
+We can use these inference rules to prove whether a given set of attributes is a (super) key.
+
+\textit{Example: } Show that \{AD\} is a superkey of R(ABCDEF) with FDs:
+\begin{itemize}
+    \item FD1: A $\to$ B
+    \item FD2: B $\to$ C
+    \item FD3: D $\to$ E
+    \item FD4: AD $\to$ F
+\end{itemize}
+
+Proof:
+
+\begin{tabular}{l|l|l}
+    1 & A $\to$ C       & FD1, FD2, trans \\
+    2 & AD $\to$ CD     & 1, aug          \\
+    3 & AD $\to$ CDE    & 2, FD3, union   \\
+    4 & AD $\to$ CDEF   & 3, FD4, union   \\
+    5 & AD $\to$ AD     & reflex          \\
+    6 & AD $\to$ ADCEF  & 5, 4, union     \\
+    7 & AD $\to$ ABCDEF & 6, FD1, union   \\
+\end{tabular}
+
+To show that \{AD\} is a \textbf{candidate (minimal) key}, we need to show that it is a superkey and that no proper subset of \{AD\} is a superkey. This should be trivial.
+
+\subsection{Normal forms}
+
+Normal forms of relation (schemas) help decide whether decomposition will help.
+
+\begin{definition}
+    {1NF}
+
+    Each attribute value is \textbf{atomic} (cannot have multi-valued attributes).
+
+    \tcblower
+
+    Example:
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{id} & \textbf{attr} \\
+        \hline
+        1           & A, B          \\
+        \hline
+        \textbf{id} & \textbf{attr} \\
+        \hline
+        1           & A             \\
+        1           & B             \\
+        \hline
+    \end{tabular}
+
+    The first table is in 1NF, the second is not.
+
+\end{definition}
+
+\begin{definition}
+    {2NF}
+
+    \textbf{No partial key dependencies}: In 1NF and for every FD $X \to Y$ where X is a (minimal) key and Y is a non-key attribute, then no proper subset of X determines Y.
+
+    \tcblower
+
+    For FD \texttt{\{StreetPostalCode\} $\rightarrow$ City}, but because we can determine City from PostalCode, it is not in 2NF.
+
+    For FD \texttt{AB $\rightarrow$ C, B $\rightarrow$ D}, there are no partial key dependencies, so it is in 2NF.
+\end{definition}
+
+\begin{definition}
+    {BCNF}
+
+    \textbf{$X$ should determine all attributes}: For every FD $X \to Y$, X is a superkey.
+
+    Every relation in BCNF is also in 2NF. All two-attribute relations are in BCNF.
+
+    The decomposition of BCNF \textbf{does not preserve all FDs}.
+
+    \tcblower
+
+    For \texttt{R(ABC)}, FD \texttt{A $\rightarrow$ B, B $\rightarrow$ C}, A is a superkey, but B is not, so it is not in BCNF.
+
+    For \texttt{R(ABC)}, FD \texttt{A $\rightarrow$ B, B $\rightarrow$ CA}, A and B are superkeys, so it is in BCNF.
+\end{definition}
+
+\begin{definition}
+    {3NF}
+
+    \textbf{2NF + BCNF or Y is part of a key}: In 2NF, and for every FD $X \to Y$, X is a superkey or Y is part of a (candidate/minimal) key.
+
+    The decomposition of 3NF \textbf{preserves all FDs}.
+
+    \tcblower
+
+    For \texttt{R(ABCD)} with FD \texttt{AB $\rightarrow$ C, CD $\rightarrow$B}:
+    \begin{itemize}
+        \item $\{AB\}^+=\{ABC\}$ is not a key
+        \item $\{CD\}^+=\{CDA\}$ is not a key
+    \end{itemize}
+    $\therefore$ R is not in \textit{BCNF}.
+
+    Consider \textit{LMR} method:
+    \begin{tabular}{c|c|c}
+        L  & M  & R \\
+        \hline
+        BD & CA &   \\
+    \end{tabular}
+    \begin{itemize}
+        \item $\{BDA\}^+=\{ABCD\}$ is a key
+        \item $\{BDC\}^+=\{ABCD\}$ is a key
+    \end{itemize}
+    $\because$ \texttt{AB, CD} are part of the candidate / minimal keys
+    $\therefore$ R is in \textit{3NF}.
+\end{definition}
+
+\subsection{Decomposition}
+
+\begin{theorem}
+    {Decomposition into BCNF}
+
+    \begin{enumerate}
+        \item Find all keys by \textit{LMR} method
+        \item Filter out all FDs that have keys as dependencies (all FDs that are BCNF)
+        \item Repeat until all FDs are BCNF:
+              \begin{enumerate}
+                  \item Pick a FD $X \to Y$ that is not BCNF, decompose by to two relations:
+                        \begin{itemize}
+                            \item $R_1$ = $\{XY\}$
+                            \item $R_2$ = R - $\{Y\}$
+                        \end{itemize}
+                  \item Filter given FDs to exclude FDs with attributes not in $R_1$ or $R_2$
+                  \item If the FDs on the relationships are not BCNF, repeat
+              \end{enumerate}
+        \item Select all leafs (BCNF relations), and highlight the keys by the relevant FDs
+    \end{enumerate}
+
+    \tcblower
+
+    Consider \texttt(S(ABCDEF)) with FDs:
+    \begin{itemize}
+        \item $A \to B$
+        \item $B \to C$
+        \item $DE \to F$
+    \end{itemize}
+    Find the keys by the \textit{LMR} method:
+    \begin{tabular}{c|c|c}
+        L & M   & R  \\
+        \hline
+        A & BDE & CF \\
+    \end{tabular}
+
+    No keys found. Decomposition recursion starting with $A \to B$:
+    \begin{itemize}
+        \item $R_1 = \{AB\}$ with FDs $A \to B$ --- $\checkmark$ is in BCNF!
+        \item $R_2 = S - \{B\} = \{ACDEF\}$ with FDs $DE \to F$ --- $\times$ not in BCNF, recurse:
+              \begin{itemize}
+                  \item $R_{2,1} = \{DEF\}$ with FDs $DE \to F$ --- $\checkmark$ is in BCNF!
+                  \item $R_{2,2} = R_2 - \{F\} = \{ACDE\}$ with FDs $A \to C$ (\textbf{implied!}) --- $\times$ not in BCNF, recurse:
+                        \begin{itemize}
+                            \item $R_{2,2,1} = \{AC\}$ with FDs $A \to C$ --- $\checkmark$ is in BCNF!
+                            \item $R_{2,2,2} = R_2 - \{C\} = \{ADE\}$ with \textbf{no FDs} --- $\checkmark$ is in BCNF!
+                        \end{itemize}
+              \end{itemize}
+    \end{itemize}
+
+    $\therefore$ The decomposition is $S_1$(\underline{A},B), $S_2$(\underline{DE},F), $S_3$(\underline{A},C), $S_4$(\underline{ADE}), keys underlined.
+    % Consider \texttt(S(A,B,F,G,H,I)) with FDs:
+    % \begin{itemize}
+    %     \item $A \to BF$
+    %     \item $F \to GI$
+    %     \item $I \to H$
+    % \end{itemize}
+    % Find the keys by the \textit{LMR} method:
+    % \begin{tabular}{c|c|c}
+    %     L & M   & R  \\
+    %     \hline
+    %     A & BFI & GH \\
+    % \end{tabular}
+
+    % Verified $\{A\}^+ = \{A,B,F,G,H,I\}$ is a key, filtered out. Remaining FDs:
+    % \begin{itemize}
+    %     \item $F \to GI$ $\leftarrow$ Begin with this one
+    %     \item $I \to H$
+    % \end{itemize}
+
+    % Decomposition recursion:
+    % \begin{itemize}
+    %     \item $R_1 = \{F\}^+ = \{F,G,I,H\}$ with FDs $F \to GI, I \to H$ --- $\times$ is not in BCNF. Recurse:
+    %           \begin{itemize}
+    %               \item $R_{1,1} = \{I\}^+ = \{I,H\}$ with FDs $I \to H$ --- $\checkmark$ is BCNF!
+    %               \item $R_{1,2} = R_1 - \{I\}^+ + I = \{F,G,I\}$ with FDs $F \to GI$ --- $\checkmark$ is BCNF!
+    %           \end{itemize}
+    %     \item $R_2 = S - \{F\}^+ + F = \{A,B,F\}$ with FDs $A \to BF$ --- $\checkmark$ is BCNF!
+    % \end{itemize}
+
+    % $\therefore$ The decomposition is $S_1$(\underline{I},H), $S_2$(\underline{F},G,I), $S_3$(\underline{A},B,F), keys underlined.
+\end{theorem}
+
+\begin{theorem}
+    {Decomposition into minimal cover}
+
+    \begin{enumerate}
+        \item Put FDs into standard form
+        \item Minimize the dependencies of all FDs: $X \to Y, YX \to Z \implies X \to Z$. Do not remove any FDs.
+        \item Delete redundant (inferred) FDs (by rules)
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    {Decomposition into 3NF}
+\end{theorem}

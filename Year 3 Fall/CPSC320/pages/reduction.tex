@@ -1,0 +1,50 @@
+\section{Reduction}
+
+\subsection{Brute force}
+
+A brute force algorithm enumerates all potential solution, checks each one for correctness, and returns the first correct solution found.
+
+\subsection{Stable matching problem}
+
+\begin{itemize}
+    \item The Gale-Shapley algorithm solves the stable matching problem in $O(n^2)$ time.
+    \item Each employer ranks each applicant in order of preference, and vice versa.
+    \item Notation:
+    \item \begin{itemize}
+              \item $n$ Number of employers
+              \item $E$ Set of employers
+              \item $A$ Set of applicants
+              \item $P_E[i]$ is a list of preferences for employer $i$.
+              \item $P_A[j]$ is a list of preferences for applicant $j$
+          \end{itemize}
+    \item A \textbf{instability} is:
+          \begin{itemize}
+              \item \textit{One slot}: a matching where there are two people of different groups who would prefer each other over their current partners.
+              \item \textit{Multi-slots}: employer $e$ matched with residents ${a_1, a_2, \ldots, a_k}$, and $a$ matched with $e'$ such that $a$ prefers $e$ over $e'$ and $e$ prefers $a$ over \textbf{$a_k$} (worst member)
+          \end{itemize}
+\end{itemize}
+
+Brute force:
+
+\begin{lstlisting}[language=Python]
+def smp_brute_force(n, P_E, P_A):
+    for perfect_matching in all_perfect_matchings():
+        if not has_instability(perfect_matching, P_E, P_A):
+            return perfect_matching
+    return None
+\end{lstlisting}
+
+\subsection{Reduction}
+
+\begin{itemize}
+    \item Use a known algorithm to solve a similar problem
+    \item \begin{enumerate}
+              \item Transform problem instance into a known problem instance
+              \item Solve the known problem instance
+              \item Transform the solution back to the original problem
+          \end{enumerate}
+    \item Proof of correctness: \begin{enumerate}
+              \item The transformation from the original problem to the known problem is correct.
+              \item The transformation from the known problem solution to the original problem solution is correct.
+          \end{enumerate}
+\end{itemize}

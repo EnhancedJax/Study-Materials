@@ -1,0 +1,456 @@
+\section{Application-layer protocols}
+
+\subsection{Protocols and architectures}
+
+\begin{knBox}
+    {Open vs. proprietary protocols}
+    \begin{itemize}
+        \item \textbf{Open protocols}: Defined in "Request for Comments" documents, and each can have many different implementations
+        \item \textbf{Proprietary protocols}: Owned by a specific company or organization, and typically have restricted access and usage rights (more secure)
+    \end{itemize}
+\end{knBox}
+
+\begin{theorem}
+    {Client-Server Architecture}
+
+    \begin{itemize}
+        \item \textbf{Client}: Requests services or resources from a server
+        \item \textbf{Server}: Always on with permanent address
+        \item Connection is always between one client and one server, and the server must be able to handle multiple clients
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+    {Peer-to-Peer Architecture}
+
+    \begin{itemize}
+        \item Connections between peers with same hierarchical roles. A peer can both request a service and provide a service.
+        \item Self scaling: As more peers join, the total capacity of the system increases
+    \end{itemize}
+\end{theorem}
+
+Things to keep in mind for an application's quality of service:
+
+\begin{itemize}
+    \item \textbf{Data loss}: Some apps can tolerate some loss (e.g. audio), but others cannot (e.g. file transfer, email)
+    \item \textbf{Timing}: Some interactive apps require low delay to be effective
+    \item \textbf{Bandwidth}: Some apps require minimum bandwidth to be effective (e.g. video streaming), others can make use of whatever they get (elastic)
+\end{itemize}
+
+\begin{definition}
+    {TCP vs UDP}
+
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Protocol     & TCP              & UDP               \\
+        \hline
+        Nature       & Connection-based & No connection     \\
+        Ordered      & $\checkmark$     & $\times$          \\
+        Flow control & $\checkmark$     & $\times$          \\
+        Delays       & Higher           & Lower             \\
+        Loss         & $\times$         & Possible          \\
+        Named        & Reliable stream  & Unreliable packet \\
+        \hline
+    \end{tabular}
+
+    Examples
+    \begin{itemize}
+        \item TCP Stream: File transfer, HTTP, Email (SMTP / POP3 / IMAP), SSH, social media, texting, DNS
+        \item UDP Packet: Streaming, gaming, DNS
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    {Sockets}
+
+    Transport layer address: Pair of 32 bit IP host address and 16-bit port number.
+
+    Outside the application, (transport layer) protocols are controlled by the operating system.
+
+    The socket is for communication between application and transport layer.
+\end{theorem}
+
+\subsection{The Web}
+
+\begin{definition}
+    {HyperText Transfer Protocol (HTTP)}
+
+    \begin{itemize}
+        \item Client / server model
+        \item Uses \textbf{TCP} typically on port 80 (443 for HTTPS)
+        \item Each \textbf{Web object} identified by URL: Client send one request, server send one full response
+        \item Stateless
+    \end{itemize}
+\end{definition}
+
+\begin{knBox}
+    {Format}
+    ASCII text, with \texttt{<CR><LF>} at the end of each line.
+
+    Request:
+
+    \begin{lstlisting}[]
+METHOD /u/r/l.html HTTP/version
+Host: www.someschool.edu
+Header-name: Header-value
+...\end{lstlisting}
+
+    Response:
+
+    \begin{lstlisting}[]
+HTTP/version status-code-000 status-message
+Header-name: Header-value
+...\end{lstlisting}
+
+\end{knBox}
+
+\begin{definition}
+    {Request methods}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Method} & \textbf{Description}                                                        \\
+        \hline
+        GET             & Requests a representation of the specified resource.                        \\
+        \hline
+        POST            & Submits data to be processed to a specified resource.                       \\
+        \hline
+        HEAD            & GET without response body.  Used to check if existing content was modified. \\
+        \hline
+    \end{tabular}
+\end{definition}
+
+\begin{definition}
+    {Response status codes}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Code} & \textbf{Category} & \textbf{Description}                                     \\
+        \hline
+        2xx           & Success           & The action was successfully received                     \\
+        \hline
+        3xx           & Redirection       & Further action must be taken to complete                 \\
+        \hline
+        4xx           & Client Error      & The request contains bad syntax or cannot be fulfilled   \\
+        \hline
+        5xx           & Server Error      & The server failed to fulfill an apparently valid request \\
+        \hline
+    \end{tabular}
+\end{definition}
+
+\subsubsection{Connections}
+
+\begin{theorem}
+    {Persistent vs Non-persistent HTTP}
+
+    \textbf{HTTP/1.0}: For each object request, 2 RTTs are needed: One to establish TCP connection, one for Request\&Response
+
+    \textbf{HTTP/1.1}: Persistent TCP connections are used by default, allowing multiple requests/responses to be sent over a single TCP connection (response order maintained).
+
+    \tcblower
+
+    \textit{To request a HTML document with 10 images:}
+
+    \begin{itemize}
+        \item Non-persistent: 2 RTTs for base HTML + 2 RTTs $\times$ 10 images = 22 RTTs
+        \item Persistent: 1 RTT for connection + 1 RTT for base HTML + 10 RTTs for images = 12 RTTs
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+    {Pipelining}
+
+    Using persistent connection, multiple HTTP requests can be sent to the \textbf{same server} without waiting for each response.
+
+    \tcblower
+
+    \textit{To request a HTML document with 10 images:}
+
+    1 RTT for connection + 1 RTT for base HTML + 1 RTT for all images = 3 RTTs
+
+    \textit{To request a HTML document with 10 images, 5 on another server:}
+
+    3 RTTs from above + 1 RTT for connection + 1 RTT for 5 images = 5 RTTs
+\end{theorem}
+
+\begin{definition}
+    {Cookies}
+
+    Responses can include \texttt{Set-Cookie} header. Browser saves cookie associated with the server. Requests will then include the cookie in \texttt{Cookie} header.
+
+    Cookie has to be one line, can sizes can be limited by browser and maximum header size.
+\end{definition}
+
+\begin{definition}
+    {Web Cache and Cache validation}
+
+    A cached version of a web object can be maintained by the browser or by a proxy server.
+
+    \textit{Proxy: If browser sends request to proxy, return immediately if cached. Otherwise, forward to web server. (Proxy is usually closer to client than web server)}
+
+    Web servers can provide cache policy, like how long the object should be cached for and if the cache is private or shared.
+
+    \tcblower
+
+    \textit{To request HTML document with 10 images, where web cache contains HTML only:}
+
+    3 $RTT_\text{proxy}$ for connection, request base HTML and images + 2 $RTT_\text{server}$ for images = 3 $RTT_\text{proxy}$ + 2 $RTT_\text{server}$
+
+    \textit{To request HTML document with 10 images, where web cache contains nothing:}
+
+    3 $RTT_\text{proxy}$ for connection, request base HTML and images + 3 $RTT_\text{server}$ for connection, base HTML and images = 3 $RTT_\text{proxy}$ + 3 $RTT_\text{server}$
+\end{definition}
+
+\begin{theorem}
+    {Conditional GET}
+
+    Request page only if it has been modified since a certain date: \texttt{If-Modified-Since} header $\to$ \texttt{HTTP/1.1 304 Not Modified}
+\end{theorem}
+
+\subsection{DNS}
+
+DNS helps us find the IP address.
+
+\begin{definition}
+    {Domain Name System (DNS)}
+
+    \begin{itemize}
+        \item Distributed database implemented in a hierarchy of many name servers
+        \item Application-layer protocol to resolve names
+    \end{itemize}
+\end{definition}
+
+\begin{knBox}
+    {Design challenges}
+    Design challenges:
+    \begin{itemize}
+        \item Scale
+        \item Ease of management
+        \item Availability, consistency, security
+        \item Performance (handling large amounts of requests)
+    \end{itemize}
+
+    Solution:
+    \begin{itemize}
+        \item Hierarchical design
+        \item Caching
+        \item Replication
+    \end{itemize}
+\end{knBox}
+
+\begin{theorem}
+    {Hierarchial design and scalability}
+    Wider scope servers stores mapping of next level domain and IP addresses.
+    \begin{itemize}
+        \item \textbf{Top-level domain (TLD) servers}: com, org, net, edu, gov, ca, uk, fr, de, jp, au, ...
+        \item \textbf{Authoritative DNS servers}: Organization or ISP that provides DNS service, for an organization's subdomains and servers
+    \end{itemize}
+    Every server knows:
+    \begin{itemize}
+        \item The address of the root name servers (13 root servers worldwide)
+        \item The addresses of all TLD servers
+    \end{itemize}
+    Every node knows the addresses of it's children (local DNS server), storing a subset of the total DNS database. This makes DNS \textbf{scalable}.
+\end{theorem}
+
+\begin{theorem}
+    {Local Name Server \& DNS Lookups}
+    Does not belong to hierarchy, but is usually provided by the ISP. Each ISP has a few local DNS servers.
+
+    When a host makes a DNS query, it sends the query to its local DNS server, acting as a \textit{proxy}. Resolves queries \textbf{iteratively}:
+
+    Steps for DNS lookup:
+    \begin{enumerate}
+        \item Host $\to$ Local (DNS)
+        \item Local $\rightleftharpoons$ Root
+        \item Local $\rightleftharpoons$ TLD
+        \item Local $\rightleftharpoons$ Authoritative
+        \item Local $\to$ Host
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    {DNS Caching}
+    Local DNS server caches previous lookups for a period of time (TTL). If the record is cached, it can reply immediately to the host.
+
+    The top-level name servers very rarely changed, and popular sites are visited often, so caching is effective.
+\end{theorem}
+
+\begin{definition}
+    {DNS Records}
+
+    Resource records (\textbf{RR}s): \texttt{(name, type, value, TTL)}
+
+    \begin{tabular}{|lllp{3cm}|p{5cm}|}
+        \hline
+        \textbf{Type} & \textbf{Long}    & \textbf{Name} & \textbf{Value}                       & \textbf{Example}                                       \\
+        \hline
+        A             & Address          & hostname      & IP address                           & \texttt{(www.cs.ubc.ca, A, 142.103.6.5, TTL)}
+        \\
+        AAAA          & Address$\times4$ & hostname      & IPv6 address                         & \texttt{(www.cs.ubc.ca, AAAA, 2001:0db8:85a3..., TTL)}
+        \\
+        NS            & Name Server      & domain        & Authoritative name server for domain & \texttt{(ubc.ca, NS, ns1.ubc.ca, TTL)}
+        \\
+        CNAME         & Canonical Name   & alias         & Canonical name for an alias          & \texttt{(foo.com, CNAME, relay1.foo.com, TTL)}
+        \\
+        \hline
+    \end{tabular}
+
+    Inserting a record goes like this:
+    \begin{enumerate}
+        \item For $i$ in all authoritative name servers, insert two RRs into TLD server
+              \begin{itemize}
+                  \item \texttt{(domain, NS, authoritative-name-server-i)}
+                  \item \texttt{(authoritative-name-server-i, A, IP-address-i)}
+              \end{itemize}
+        \item Add type A record for my domain:
+              \begin{itemize}
+                  \item \texttt{(hostname, A, IP-address)}
+              \end{itemize}
+    \end{enumerate}
+\end{definition}
+
+\begin{knBox}
+    {DNS Protocol messages}
+    Query and reply messages, both with the same message format:
+
+    \begin{itemize}
+        \item \textbf{Identification}: 16-bit number set in the query; the reply uses the same number.
+        \item \textbf{Flags}: Indicates whether the message is a query or reply, and if the reply is authoritative.
+    \end{itemize}
+
+    \textbf{Resource Records (RRs)}:
+    \begin{itemize}
+        \item \texttt{Name}: A fully qualified domain name.
+        \item \texttt{Type}: A valid RR type (e.g., A, AAAA, ...).
+        \item \texttt{Class}: Mostly \texttt{IN} for internet applications.
+        \item \texttt{TTL}: Time-to-live for the record.
+        \item \texttt{RDLENGTH}: Length of the RDATA field.
+        \item \texttt{RDATA}: The data for the resource record.
+    \end{itemize}
+
+    \textbf{Resource Records (RR) in a query}:
+    \begin{itemize}
+        \item Questions are always \texttt{<Name, Type, Class>} tuples.
+        \item The question is the only section included in a query.
+    \end{itemize}
+
+    \textbf{Resource Records (RR) in a reply}:
+    \begin{itemize}
+        \item \textbf{Answers}: RRs that match the \texttt{Name, Type, Class} from the question.
+        \item If a DNS server has \texttt{CNAME} pointers for the requested query with the same class, it returns \texttt{CNAME} records in the answer.
+        \item There may be multiple answers, as there may be multiple RRs with the same labels.
+    \end{itemize}
+
+    \textbf{Authority RRs}:
+    \begin{itemize}
+        \item Type \texttt{NS} records pointing to name servers closer to the target name in the naming hierarchy.
+        \item Used to redirect the client to a “better” server.
+        \item This field is optional.
+    \end{itemize}
+
+    \textbf{Additional RRs}:
+    \begin{itemize}
+        \item Records that the name server believes may be useful to the client.
+        \item Most commonly used to supply \texttt{A} or \texttt{AAAA} (address) records for the name servers listed in the Authority section.
+    \end{itemize}
+\end{knBox}
+
+\subsection{Email}
+
+\begin{knBox}
+    {Email components}
+    \begin{itemize}
+        \item \textbf{User agents}: Client
+        \item \textbf{Mail servers}: Maintain mailboxes for each user, queue messages for delivery
+    \end{itemize}
+\end{knBox}
+
+\begin{definition}
+    {Email protocols}
+
+    \begin{itemize}
+        \item \textbf{SMTP} (Simple Mail Transfer Protocol): \textbf{Between} mail servers, and from user agent to mail server (\textbf{push})
+        \item \textbf{IMAP} (Internet Message Access Protocol): From mail server to user agent (\textbf{pull w/o delete})
+        \item \textbf{POP3} (Post Office Protocol v3): From mail server to user agent (\textbf{pull \& delete})
+    \end{itemize}
+
+    \begin{itemize}
+        \item POP3 and IMAP are used to retrieve messages from the server. POP3 downloads the email to the local device and usually deletes it from the server, while IMAP synchronizes the email between the server and multiple devices, keeping the messages on the server.
+        \item SMTP is used to send emails from a client to a mail server or between mail servers. It operates as a push protocol, meaning it pushes the email to the recipient's mail server.
+        \item All these protocols serves the same role as HTTP for web: retrieving and sending data.
+    \end{itemize}
+
+
+\end{definition}
+
+\subsection{Peer-to-peer}
+
+\begin{theorem}
+    {Bit-Torrent}
+
+    For $N$ machines having a file and $M$ machines requesting them, all machines that received the file can become \textbf{seeds} to upload the file to other machines. All hosts are called \textbf{peers}.
+
+    A file is broken into many pieces with fixed size (except for last one), protected by a hash. Parts of the file can be downloaded from different peers \textbf{simultaneously}! This makes sharing a file with large number of peers very efficient, as each peer can upload to others while downloading.
+
+    A torrent file contains the necessary startup information:
+    \begin{itemize}
+        \item How many pieces the file is divided into
+        \item Hash of each piece
+        \item Somewhere to start looking for peers (tracker)
+    \end{itemize}
+
+    Basic operation:
+    \begin{enumerate}
+        \item Peer contacts tracker, gets list of peers
+        \item Each peer tells the other peers it is talking to regarding the peers it knows about
+        \item Each peer talks to some subset of the group of peers at any time
+        \item Each peer shares the identity of the pieces it has with the peers it is talking to
+        \item A peer who doesn’t have a piece asks a peer who has to share it \begin{itemize}
+                  \item Rarest first: Request the piece that is least available among the peers it is talking to to improve the overall "health" of a file
+                  \item Tit-for-tat: A peer will only send pieces to peers that are sending pieces back to it, to prevent freeloading
+              \end{itemize}
+    \end{enumerate}
+
+    \begin{itemize}
+        \item Popular files can be obtained quickly but unpopular ones can be hard to find.
+        \item Used for pirating but also by tech companies to share content between servers
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+    {Time to transfer files - Architecture comparison}
+
+    To transfer a file of size $F$ bits to $N$ clients:
+
+    For \textbf{client-server} architecture: Server upload goodput $u_s$ bps, Client download goodput $d_i, i \in [1, N]$ bps.
+
+    \begin{itemize}
+        \item Time for each client: $t_i = \frac{F}{\min\{u_s, d_i\}}$
+        \item One by one: $\sum_{i \in [1, N]} t_i$
+        \item Simultaneously: $\max_{i \in [1, N]} \{t_i\}$
+    \end{itemize}
+
+    For \textbf{peer-to-peer} architecture: Total upload goodput $U_T$ bps, Total download goodput $D_T$ bps, Client download goodput $d_i, i \in [1, N]$ bps, Client missing portion of file $\lambda$
+
+    Time required: $\max\{\frac{NF\lambda}{U_T}, \frac{NF\lambda}{D_T} , \frac{F\lambda}{\min_{i}d_i}\}$
+
+\end{theorem}
+
+\begin{theorem}
+    {Blockchain}
+
+    Purpose: \textbf{De-centralized, unmodifiable} transaction history.
+
+    Blockchain is de-centralized, so it doesn't require a trusted agent (traditionally, a bank). The group of peers collaborate to decide which next "link" in the chain is accepted.
+
+    Mechanism:
+    \begin{enumerate}
+        \item All changes are broadcast to every other peer
+        \item Changes are grouped into blocks
+        \item When a block fills up, it is added to the chain
+        \item Every peer holds all of the history, so it makes it very hard to forget the history since it is replicated very heavily
+    \end{enumerate}
+    \begin{itemize}
+        \item When disagreement happens (e.g. concurrent modification), "proof of work" must be needed to demonstarte how much effort was spent to create a block
+        \item Likelihood for block being removed from history gets progressively lower as more blocks are added on top of it
+    \end{itemize}
+\end{theorem}

@@ -1,0 +1,139 @@
+\section{Conceptual Design}
+
+\begin{knBox}
+    {Level of abstraction}
+
+    \begin{itemize}
+        \item \textbf{View level}: How users interact with the database.
+        \item \textbf{Logical level}: How data is organized in the database.
+        \item \textbf{Physical level}: How data is stored in the database (indexes, bits, etc.)
+    \end{itemize}
+\end{knBox}
+
+\begin{definition}
+    {Schemas and instances}
+
+    \begin{itemize}
+        \item \textbf{Schema}: A collection of relation schemas.
+        \item \textbf{Instance}: A collection of relation instances, one for each relation
+    \end{itemize}
+\end{definition}
+
+\subsection{ER Model}
+
+\subsubsection{Entities}
+
+\begin{knBox}
+    {Entity}
+    Objects \textit{[Squares]} distinguished by a set of \textbf{attributes} \textit{[Circles]}.
+\end{knBox}
+
+\begin{knBox}
+    {Entity set}
+    A collection of similar entities
+    \begin{itemize}
+        \item Same set of attributes
+        \item Each attribute has type / domain
+        \item Keys
+    \end{itemize}
+\end{knBox}
+
+\begin{definition}
+    {Keys}
+
+    \textbf{Candidate keys}: All possible \textbf{minimal} attribute sets (combinations) that can identify uniquely an entity in an entity set.
+
+    \textbf{Primary key}: The candidate key that is chosen to uniquely identify entities in an entity set. \textit{[Underlined]}
+
+    \textbf{Superkeys}: All possible attribute sets that contain a candidate key.
+\end{definition}
+
+\subsubsection{Relationships}
+
+\begin{theorem}
+    {Relationship}
+    An association among two or more entities \textit{[Diamonds]}. Can also have attributes. A entity can only participate \textbf{once} in a relationship.
+
+    The \textbf{degree} or \textbf{arity} of entity sets in relationships is the number of entity sets that participate in the relationship. See \ref{def:ternary}.
+
+    We can uniquely identify a relationship by \text{relationship key}: the combination of the keys of the participating entities.
+
+    \tcblower
+
+    For example, if there are two entity sets, \texttt{STUDENT} and \texttt{COURSE}, then a relationship set \texttt{ENROLLED} that associates entities from these two sets is a \textbf{binary} relationship (degree 2).
+\end{theorem}
+
+\begin{theorem}
+    {Ternary / N-ary relationships}
+    A relationship that involves three or more entity sets.
+
+    We usually only promote an attribute of a relationship to an entity set if we need to \textbf{record multiple occurances} of the attribute in the relationship.
+    \label{def:ternary}
+\end{theorem}
+
+\begin{knBox}
+    {Relationship set}
+    A relationship set includes their entitiy sets and relationship attributes.
+\end{knBox}
+
+\begin{knBox}
+    {Cardinalities}
+    \begin{itemize}
+        \item \textbf{One-to-one (1:1)}: Each entity in A is associated with at most one entity in B, and vice versa.
+        \item \textbf{One-to-many (1:N)}: Each entity in A can be associated with multiple entities in B, but each entity in B is associated with at most one entity in A.
+        \item \textbf{Many-to-one (N:1)}: Each entity in B can be associated with multiple entities in A, but each entity in A is associated with at most one entity in B.
+        \item \textbf{Many-to-many (M:N)}: Entities in A can be associated with multiple entities in B, and vice versa.
+    \end{itemize}
+\end{knBox}
+
+\subsubsection{Relationship constraints}
+\label{sec:constraints}
+
+\begin{definition}
+    {Key constraints}
+    \begin{itemize}
+        \item \textbf{One-One} $\quad\text{[Country]} \rightarrow \text{<Has>} \leftarrow \text{[Capital]}$\\ \textit{Each country has at most one capital.}
+        \item \textbf{Many-One} $\quad\text{[Courses]} \rightarrow \text{<WorksIn>} - \text{[Profs]}$\\ \textit{Each course has at most one professor, but each professor can teach multiple courses.}
+        \item \textbf{Many-Many} $\quad\text{[Student]} - \text{<EnrolledIn>} - \text{[Course]}$\\ \textit{Each student can enroll in many courses, and each course can have many students enrolled.}
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Participation constraints}
+    \textbf{Total participation} means every entity in the entity set must be related to at least one entity in the related set. (\textit{[Thick line]})
+
+    With a participation constraint, deleting an entity from one set may require deleting related entities in another set to maintain database integrity.
+\end{definition}
+
+\begin{definition}
+    {Weak entities / Belongs to}
+    Entities that can only be uniquely identified by considering the primary key of another (\textbf{owner}) entity. Must have \textbf{total participation, one-to-many} relationship (\textit{many}) with owner (\textit{one}) entity. (\textit{[Thick square + diamond]})
+
+    The set of attributes that make up the the \text{relationship key} are called \textbf{partial key}. (\textit{[Dashed underline]})
+\end{definition}
+
+\begin{definition}
+    {Generalization / Specialization / IsA}
+
+    Associations between entity sets that represent super/subclasses. (\textit{[IsA Triangle, top = superclass, bottom = subclasses]})
+
+    The generalization can have the following constraints on the relation for the \textbf{superclass} with the subclasses:
+    \begin{itemize}
+        \item Lower bound:
+              \begin{itemize}
+                  \item \textbf{Total / covering}: $\geq 1$ subclass.
+                  \item \textbf{Partial}: $\geq 0$ subclass.
+              \end{itemize}
+        \item Upper bound:
+              \begin{itemize}
+                  \item \textbf{Disjoint}: $\leq 1$ subclass.
+                  \item \textbf{Overlapping}: $n$ subclasses.
+              \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Aggregation}
+
+    A relationship between entity or relationship sets. (\textit{[Dotted line around relationship set]})
+\end{definition}

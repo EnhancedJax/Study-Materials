@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\newcommand{\asbar}{\ |\ \ }
+
+
+\begin{document}
+
+\section*{PHIL200 - Assignment 5}
+
+\begin{enumerate}
+    \item \begin{tabular}{llp{5cm}l}
+              1 & | & \underline{$(P\land Q)\lor(P\land R)$} & PR                 \\
+              2 & | & \asbar $\underline{P\land Q}$          & AS                 \\
+              3 & | & \asbar $P$                             & $\land E,2$        \\
+              4 & | & \asbar $\underline{P\land R}$          & AS                 \\
+              5 & | & \asbar $P$                             & $\land E,4$        \\
+              6 & | & $P$                                    & $\lor E,1,2-3,4-5$ \\
+              \hline
+          \end{tabular}
+    \item \begin{tabular}{llp{5cm}l}
+              1 & | & \underline{$P\lor P$}  & PR                 \\
+              2 & | & \asbar $\underline{P}$ & AS                 \\
+              3 & | & \asbar $P$             & R, 2               \\
+              4 & | & \asbar $\underline{P}$ & AS                 \\
+              5 & | & \asbar $P$             & R, 2               \\
+              6 & | & $P$                    & $\lor E,1,2-3,4-5$ \\
+              \hline
+          \end{tabular}
+    \item \begin{tabular}{llp{5cm}l}
+              1  & | & \underline{$(P\to R)\land(Q\to R)$} & PR                 \\
+              2  & | & $P \to R$                           & $\land E,1$        \\
+              3  & | & $Q \to R$                           & $\land E,1$        \\
+              4  & | & \asbar $\underline{P\lor Q}$        & AS                 \\
+              5  & | & \asbar \asbar $\underline{P}$       & AS                 \\
+              6  & | & \asbar \asbar $R$                   & $\to E,2,5$        \\
+              7  & | & \asbar \asbar $\underline{Q}$       & AS                 \\
+              8  & | & \asbar \asbar $R$                   & $\to E,3,7$        \\
+              9  & | & \asbar $R$                          & $\lor E,4,5-6,7-8$ \\
+              10 & | & $ (P\lor Q) \to R$                  & $\to I,4-9$        \\
+              \hline
+          \end{tabular}
+    \item
+
+          \begin{tabular}{llp{5cm}l}
+              1 & | & \underline{$Q\to R$}          & PR                 \\
+              2 & | & \asbar $\underline{P\lor Q}$  & AS                 \\
+              3 & | & \asbar \asbar $\underline{P}$ & AS                 \\
+              4 & | & \asbar \asbar $P\lor R$       & $\lor I,3$         \\
+              5 & | & \asbar \asbar $\underline{Q}$ & AS                 \\
+              6 & | & \asbar \asbar $R$             & $\to E,1,5$        \\
+              7 & | & \asbar \asbar $P\lor R$       & $\lor I,6$         \\
+              8 & | & \asbar $P\lor R$              & $\lor E,2,3-4,5-7$ \\
+              9 & | & $(P\lor Q)\to (P\lor R)$      & $\to I,2-8$        \\
+              \hline
+          \end{tabular}
+
+    \item
+
+          \begin{tabular}{llp{5cm}l}
+              1 & | & \underline{$P$}              & PR            \\
+              2 & | & \underline{$\neg(P\land Q)$} & PR            \\
+              3 & | & \asbar $\underline{Q}$       & AS            \\
+              4 & | & \asbar $P\land Q$            & $\land I,1,3$ \\
+              5 & | & \asbar $\bot$                & $\neg E,2,4$  \\
+              6 & | & $\neg Q$                     & $\neg I,3-5$  \\
+              \hline
+          \end{tabular}
+
+    \item
+
+          \begin{tabular}{llp{5cm}l}
+              1 & | & \underline{$P\to Q$}               & PR           \\
+              2 & | & \asbar $\underline{P\land \neg Q}$ & AS           \\
+              3 & | & \asbar $P$                         & $\land E,2$  \\
+              4 & | & \asbar $\neg Q$                    & $\land E,2$  \\
+              5 & | & \asbar $Q$                         & $\to E,1,3$  \\
+              6 & | & \asbar $\bot$                      & $\neg E,4,5$ \\
+              7 & | & $\neg(P\land \neg Q)$              & $\neg I,2-6$ \\
+              \hline
+          \end{tabular}
+
+    \item
+
+          \begin{tabular}{llp{5cm}l}
+              1 & | & \underline{$\neg P\to Q$}   & PR           \\
+              2 & | & \underline{$\neg Q$}        & PR           \\
+              3 & | & \asbar $\underline{\neg P}$ & AS           \\
+              4 & | & \asbar $Q$                  & $\to E,1,3$  \\
+              5 & | & \asbar $\bot$               & $\neg E,2,4$ \\
+              6 & | & $P$                         & IP, 3-5      \\
+              \hline
+          \end{tabular}
+
+    \item Can't figure out how to do this without explosion as explosion is not discussed so far
+
+          \begin{tabular}{llp{5cm}l}
+              1 & | & \underline{$A\lor B$}  & PR                 \\
+              2 & | & \underline{$\neg B$}   & PR                 \\
+              3 & | & \asbar $\underline{A}$ & AS                 \\
+              4 & | & \asbar $A$             & R, 3               \\
+              5 & | & \asbar $\underline{B}$ & AS                 \\
+              6 & | & \asbar $\neg B$        & R, 2               \\
+              7 & | & \asbar $\bot$          & $\neg E,5,6$       \\
+              8 & | & \asbar $A$             & X, 7               \\
+              9 & | & $A$                    & $\lor E,1,3-4,5-8$ \\
+              \hline
+          \end{tabular}
+
+\end{enumerate}
+
+\end{document}

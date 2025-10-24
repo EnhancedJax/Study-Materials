@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+\section*{Relation Model 1}
+
+\begin{lstlisting}[language=SQL]
+CREATE TABLE D (
+    d1 INT PRIMARY KEY,
+    d2 INT
+);
+
+CREATE TABLE E (
+    e1 INT PRIMARY KEY,
+    e2 INT
+);
+
+CREATE TABLE F (
+    f1 INT PRIMARY KEY,
+    f2 INT
+);
+
+CREATE TABLE T (
+    d1 INT,
+    e1 INT UNIQUE,  -- enforces key constraint on E
+    f1 INT,
+    PRIMARY KEY (d1),  -- enforces key constraint on D
+    FOREIGN KEY (d1) REFERENCES D(d1),
+    FOREIGN KEY (e1) REFERENCES E(e1),
+    FOREIGN KEY (f1) REFERENCES F(f1)
+);
+\end{lstlisting}
+
+Total participation of E cannot be enforced in a relationship table, only for direct foreign keys between two tables.
+
+\end{document}

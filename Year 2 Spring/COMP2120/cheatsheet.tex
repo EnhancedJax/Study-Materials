@@ -78,7 +78,7 @@
       &   & \includegraphics[width=1cm]{./gate-not.png} & \includegraphics[width=1cm]{./gate-and.png} & \includegraphics[width=1cm]{./gate-or.png} & \includegraphics[width=1cm]{./gate-xor.png} & \includegraphics[width=1cm]{./gate-nand.png} & \includegraphics[width=1cm]{./gate-nor.png} & \includegraphics[width=1cm]{./gate-xnor.png} \\ \hline
   \end{tabular}
 
-  \textbf{Sum of product} if mostly 1s, else \textbf{Product of sum};
+  \textbf{Sum of product} if mostly 0s, else \textbf{Product of sum};
 
   \section{Number representation}
 
@@ -232,7 +232,7 @@ DIVIDE / MULTIPLICATION (X/*Y)::::
 
   Access: \textbf{(1)} Sequential Access(from front);\textbf{(2)} Random Access; \textbf{(3)} Associative(content-addressable)
 
-  \textbf{Big Endian}: Left to right (abcd); \textbf{Little Endian}: Right to left (dcba) for data[0] = a…
+  Multi-byte data is stored differently in memory on different architectures. \textbf{Big Endian}: Left to right (abcd); \textbf{Little Endian}: Right to left (dcba) for data[0] = a…
 
   \textbf{Error Detection}: Even parity (total “1” is even); Odd parity (total “1” is odd); hamming code;
 
@@ -297,7 +297,7 @@ DIVIDE / MULTIPLICATION (X/*Y)::::
 
   \textbf{Raid 3} Bit interleaved parity (extra HDDs contains parity bit of all other HDDs); adv: high read/write data transfer rate, disadv: complex design for controller;
 
-  \textbf{Raid 5} (\texttt{N-1} \texttt{F=2}) 1 extra HDD needed (parity strip used for error correction), adv: highest data transaction rate, disadv: complex controller design and difficult to rebuild in the event of a disk failure;
+  \textbf{Raid 5} (\texttt{N-1} \texttt{F=1}) 1 extra HDD needed (parity strip used for error correction), adv: highest data transaction rate, disadv: complex controller design and difficult to rebuild in the event of a disk failure;
 
   \textbf{Raid 6} (\texttt{N-2} \texttt{F=2}) 2 extra HDDs needed (use two parity strips, calculated using different methods), adv: extremely high data fault tolerance and can sustain multi. simultaneous drive failures, disadv: more complex controller design.
 
@@ -349,7 +349,7 @@ DIVIDE / MULTIPLICATION (X/*Y)::::
 
   \textbf{Pipelining} inc. the throughput of the CPU by processing different stages of different insts simultaneously, by having different hardware used for each stage, in one clock cycle; \hl{\textbf{Ideal throughput} 1 CPI}; \textbf{Modern processors} don't have memory operands, so no CO stage.
 
-  \textbf{Resource hazard} When two inst require the same hardware at the same clock cycle; Solutions: Dedicated hardware; Separate cache;
+  \textbf{Resource hazard} When two inst require the same hardware at the same clock cycle; Solutions: Dedicated hardware; Solve by split / separate cache;
 
   \hl{\textbf{Data hazard}} Read after write (RAW) when I1 writes to register and I2 reads from it, occur if read before write; Solutions: re-arrange inst., but depends on optimization, or data forwrading; WAR and WAW data hazards possible in parallel systems
 
@@ -378,13 +378,42 @@ DIVIDE / MULTIPLICATION (X/*Y)::::
 
   \underline{\textit{Excess 63 of 24 and -24}}: $x = 24 \to x + 63 = 87 \to 87_{10} \equiv 01010111_2$; $x = -24 \to x + 63 = 39 \to 39_{10} \equiv 00100111_2$;
 
-  \underline{\textit{Converting 13.375 to IEEE Binary32}}: $13.375 \equiv 1101.001_2 \to$ Sign bit: $0$ (pos); expo: normalized $+1.101001_2 \times 2^3$; $f=101001_2$; add trailing zeros: \texttt{10100100000000000000000}; $e=3+b=130\equiv$ \texttt{10000010}; Sol \texttt{0100 0001 0101 0110 0000 0000 0000 0000};
+  \underline{\textit{Converting 13.375 to IEEE Binary32}}:
 
-  \underline{\textit{Converting Binary32 to decimal}} $C0F210000_{16}$: sign \texttt{1}, expo \texttt{10000010}, significand \texttt{11100100000000000000000}; sign bit: $1$ (neg); expo: $10000010_2=130\to 130-127=3$; significand: remove training 0s and add leading "1": $1.111001_2=1.890625_{10}$; value: $-1.890625 \times 2^2 = -7.5625$;
+  Binary32: $8,23,127$; \texttt{13.375 = 1101.001}
+  \begin{itemize}
+    \item Sign bit: $0$ (positive)
+    \item Normalize: $+1.101001_2 \times 2^3$
+    \item $f=101001_2$ (ignore leading 1)
+    \item Significand: $10100100000000000000000$ (add trailing zeros)
+    \item Exponent: $3$
+    \item Biased Exponent: $3+127=130 \equiv 10000010_2$
+    \item Answer: \texttt{0100 0001 0101 0110 0000 0000 0000 0000}
+  \end{itemize}
+
+  % \underline{\textit{Converting 13.375 to IEEE Binary32}}: $13.375 \equiv 1101.001_2 \to$ Sign bit: $0$ (pos); expo: normalized $+1.101001_2 \times 2^3$; $f=101001_2$; add trailing zeros: \texttt{10100100000000000000000}; $e=3+b=130\equiv$ \texttt{10000010}; Sol \texttt{0100 0001 0101 0110 0000 0000 0000 0000};
+
+  \underline{\textit{Converting Binary32 to decimal}}:
+  Consider $C0F210000_{16}$:
+
+  $
+    \underbrace{1}_{\text{Sign bit}}\ \underbrace{100\ 0000\ 1}_{\text{Exponent}}\ \ \underbrace{111\ 0010\ 0001\ 0000\ 0000\ 0000}_{\text{Significand}}
+  $
+  \begin{itemize}
+    \item Sign bit: $1$ (negative)
+    \item Exponent: $100\ 0000\ 1_2 = 129 \rightarrow 129-127=2$
+    \item Significand:
+          \begin{itemize}
+            \item Remove training 0s and add leading "1."
+            \item $1.111\ 0010\ 0001_2 = 1.89111\dots_{10}$
+          \end{itemize}
+    \item $-1.89111 \times 2^2 = -7.56444$
+  \end{itemize}
+  % $C0F210000_{16}$: sign \texttt{1}, expo \texttt{10000010}, significand \texttt{11100100000000000000000}; sign bit: $1$ (neg); expo: $10000010_2=130\to 130-127=3$; significand: remove training 0s and add leading "1": $1.111001_2=1.890625_{10}$; value: $-1.890625 \times 2^2 = -7.5625$;
 
   \underline{\textit{Add 1.5 + 2.25}} align expo: $1.1_2 \times 2^0 + 10.01_2 \times 2^0$ Add numbers $10.01_2 + 1.1_2 = 11.11_2$ Normalize $1.111_2 \times 2^1$ Result $1.111_2 \times 2^1 = 3.75$;
 
-  \underline{\textit{Multiply 1.5 * 2.25}} align expo: $1.1_2 \times 2^0 \times 1.001_2 \times 2^1$ Add expo: $0+1=1$ Multiply numbers $1.1_2 \times 1.001_2 = 1.1011_2$ Normalize $11.011_2 \times 2^1$ Normalize $1.1011_2 \times 2^1$ Result $1.1011_2 \times 2^1 = 3.375$;
+  \underline{\textit{Multiply 1.5 * 2.25}} align expo: $1.1_2 \times 2^0 \times 1.001_2 \times 2^1$ Add expo: $0+1=1$ Multiply numbers $1.1_2 \times 1.001_2 = 1.1011_2$ Normalize $1.1011_2 \times 2^1$ Result $1.1011_2 \times 2^1 = 3.375$;
 
   \underline{\textit{Multiply IEEE numbers}} $3fc00000_{16} \times 40100000_{16}$: $3fc00000_{16} =$ \texttt{0 01111111 10000000000000000000000}, $40100000_{16} =$ \texttt{0 10000000 00100000000000000000000}; Add exponents and subtract bias: $01111111_2 + 10000000_2 - 01111111_2 \equiv 127 + 128 - 127 = 10000000_2$; Extract numbers by removing trailing zeros and multiply: $1.1_2 \times 1.001_2 = 1.1011_2$; Normalize: $1.1011_2 \times 2^{10000000_2 - 01111111_2}$; Result: \texttt{0 10000000 10110000000000000000000} $=3.375$
 
@@ -418,67 +447,34 @@ DIVIDE / MULTIPLICATION (X/*Y)::::
 
   \rule{1\linewidth}{0.4pt}
 
-  Data transfer sequences. Shorthand [\textbf{GRA}]: \texttt{MAR <- PC; MBR <- mem[MAR]}
+  \textit{"Make above CPU support CALL and RET"}: Add Stack Pointer (SP) with loop ($\pm$SP), and also TEMP looping with MAR.
 
-  \hl{General fetch}: \texttt{MAR <- PC; PC <- PC + 4; IR <- mem[MAR]};
-  \hl{General execute (skip B if no second param)}: \texttt{readRF;}
-  \hlblue{ind(R\#)}: \texttt{\textcolor{red}{MAR <- RFOUT\#; TEMP <- mem[MAR]}} (stores indirect ref.ed value in TEMP);
-  \hlblue{disp(R\#) next word DISP}: \texttt{\textcolor{red}{GRA; A <- RFOUT\#; B <- MBR; C <- A + B; MAR <- C; MBR <- mem[MAR]}} (stores ref.ed value in MBR);
+  \rule{1\linewidth}{0.4pt}
+
+  Data transfer sequences. Shorthand \texttt{GRA(\#) = MAR <- \#; MBR <- mem[MAR]} (reads the address of value \#)
+
+  \hl{all need}: \texttt{MAR <- PC; PC <- PC + 4; IR <- mem[MAR]; readRF};
+  \hlblue{ind(R\#)}: \texttt{\textcolor{red}{GRA(RFOUT\#)}} (stores indirect ref.ed value in TEMP);
+  \hlblue{disp(R\#) next word DISP}: \texttt{\textcolor{red}{GRA(PC); A <- RFOUT\#; B <- MBR; C <- A + B;}} (value of disp(R\#) in C, \textbf{might need to GRA to get value in address});
   \hl{General ADD/SUB/AND/OR}: \texttt{A <- RFOUT1; B <- RFOUT2; C <- A op B (NOT: not A, MOV: A); RFIN <- C; writeRF};
-  \hl{LD}: \texttt{GRA; RFIN <- MBR};
+  \hl{LD}: \texttt{\textcolor{purple}{GRA(PC);} RFIN <- MBR; writeRF};
   \hl{ST}: \texttt{MAR <- PC; MBR <- RFOUT1; mem[MAR] <- MBR};
   \hl{BR/BZ/BNZ}: \texttt{MAR <- PC; condition; PC <- MAR}
-  \hl{RET}: \texttt{MAR <- SP; MBR <- mem[MAR]; PC <- MBR; SP <- SP + 4}
   \hl{PUSH}: \texttt{SP <- SP - 4; MAR <- SP; MBR <- RFOUT1; mem[MAR] <- MBR}
-  \hl{POP}: \texttt{MAR <- SP; MBR <- mem[MAR]; RFIN <- MBR; SP <- SP + 4}
-  \hl{CALL}: \texttt{SP <- SP - 4; MAR <- SP; MBR <- PC; mem[MAR] <- MBR; MAR <- PC; PC <- MBR};
-  \hlblue{LD disp(R1) - R2}: \texttt{\textcolor{red}{GRA; A <- RFOUT\#; B <- MBR; C <- A + B; MAR <- C; MBR <- mem[MAR]}; RFIN <- MBR};
+  \hl{POP}: \texttt{GRA(SP); RFIN <- MBR; SP <- SP + 4}
+  \hl{CALL}: \texttt{\textcolor{purple}{MAR <- PC; PC <- PC + 4; MBR <- mem[MAR]}; MAR <- MBR; TEMP <- MAR; SP <- SP-4; MAR <- SP; MBR <- PC; mem[MAR] <- MBR; MAR <- TEMP; PC <- MAR};
+  \hl{RET}: \texttt{GRA(SP); PC <- MBR; SP <- SP + 4}
+  \hlblue{LD disp(R1) - R2}: \texttt{\textcolor{red}{GRA(PC); A <- RFOUT\#; B <- MBR; C <- A + B}; \textcolor{BlueViolet}{GRA(C)}; RFIN <- MBR};
+  \hlblue{ADD A B C}: \texttt{MAR <- PC; PC <- PC + 4; MBR <- mem[MAR]; MAR <- MBR; A <- MBR; MAR <- PC; PC <- PC + 4; MBR <- mem[MAR]; MAR <- MBR; B <- MBR; C <- A + B; MAR <- PC; PC <- PC + 4; MBR <- mem[MAR]; MAR <- MBR; MBR <- C; mem[MAR] <- MBR};
+  \hlblue{ADD disp(R1) ind(R2) R3}: \texttt{\textcolor{red}{GRA(PC); A <- RFOUT\#; B <- MBR; C <- A + B;} TEMP <- C; \textcolor{red}{GRA(RFOUT2)}; A <- TEMP; B <- MBR; C <- A + B; RFIN <- C; writeRF};
+  \hlblue{BR ind(R1)}: \texttt{\textcolor{red}{GRA(RFOUT1)}; MAR <- MBR; PC <- MAR};
+  \hlblue{CALL disp(R1)}: \texttt{\textcolor{red}{GRA(PC); A <- RFOUT1; B <- MBR; C <- A + B}; \textcolor{BlueViolet}{GRA(C)}; MBR <- C; MAR <- MBR; TEMP <- MAR; SP <- SP-4; MAR <- SP; MBR <- PC; mem[MAR] <- MBR; MAR <- TEMP; PC <- MAR};
 
+  Make sure you try the solution once and see if the data path is valid.
 
-  %   \begin{minipage}{0.2\textwidth}
-  %     Data transfer sequence \texttt{ADD R1, R2, R3} 4 word:
-  %     \begin{verbatim}MAR <- PC
-  % PC <- PC + 4  
-  % IR <- mem[MAR] 
-  % CO1: MAR <- PC
-  %       PC <- PC+4
-  %       MBR <- mem[MAR]
-  %       MAR <- MBR
-  % FO1: MBR <- mem[MAR]
-  %       ALU.i1 <- MBR
-  % CO2: MAR <- PC
-  %       PC <- PC+4
-  %       MBR <- mem[MAR]
-  %       MAR <- MBR
-  % FO2: MBR <- mem[MAR]
-  %       ALU.i2 <- MBR
-  % EI:  ALU.output <- ALU.i1 + ALU.i2
-  % CO3: MAR <- PC
-  %       PC <- PC+4
-  %       MBR <- mem[MAR]
-  %       MAR <- MBR
-  % WO:  MBR <- ALU.out
-  %       mem[MAR] <- MBR
-  %     \end{verbatim}
-  %   \end{minipage}
-  %   \begin{minipage}{0.25\textwidth}
-  %     Custom DIV:
-  %     \begin{verbatim}
-  % # in R10  dividend
-  % # in R11  divisor
-  % # out R12 quotient 
-  % # out R13 remainder 
-  % MYDIV:  SUB R12, R12, R12
-  %         MOV R10, R13
-  %         REP: SUB R13, R11, R13
-  %         BMI END1 # branch if minus
-  %         INC R12
-  %         GOTO REP
-  % END1:
-  %         ADD R13, R11, R13
-  %         RET
-  %         \end{verbatim}
-  %   \end{minipage}
+  \rule{1\linewidth}{0.4pt}
+
+  \textit{"If interrupt driven I/O is used, instead of programmed, which part of the assembly program will not be needed anymore?"}: The part where it waits for devices to ready.
 
   \rule{1\linewidth}{0.4pt}
 
@@ -502,6 +498,8 @@ DIVIDE / MULTIPLICATION (X/*Y)::::
   Tag: \texttt{110010010}$_2$ = 402; Set: \texttt{00}$_2$ = 0; Offset: \texttt{100101111}$_2$ = 303;
 
   Cache block containing address's range: \textbf{(1)} lower: set offset to 0 \texttt{C9000}$_{16}$, \textbf{(2)} upper: add block size to lower \texttt{C91FF}$_{16}$;
+
+  No. sets if direct-mapped: \texttt{1024 / 128 = 8};
 
   \rule{1\linewidth}{0.4pt}
 
@@ -530,15 +528,17 @@ DIVIDE / MULTIPLICATION (X/*Y)::::
 
   \rule{1\linewidth}{0.4pt}
 
-  "\textit{System with \textbf{two level cache}, L1: cache size \# words, th1=1ns, pHit1=.65, L2: cache size \# words, th2=6ns, pHit2=.95, block size s=128 bytes; System can read 4 32-bit words in parallel; First 4 words t0=60ns / 4 words, t=12ns / 4 words}"
+  "\textit{System with \textbf{two level cache}, L1: cache size \# words, th1=1ns (time hit 1), pHit1=.65, L2: cache size \# words, th2=6ns, pHit2=.95, block size s=128 bytes; System can read 4 32-bit words in parallel; Main memo access time: First 4 words t0=60ns / 4 words, t=12ns / 4 words}"
 
-  \textbf{* Cache miss penalty level 2} \texttt{32 / 8bit = 4} byte words $\to$ \texttt{tp = t0 + (s-4*4) * t / 4*4};
+  \textbf{* Cache miss penalty L2} \texttt{32 / 8bit = 4} byte words $\to$ \texttt{tp = t0 + ((s-4*4) * t) / (4*4) = 60 + (128-16) * 12 / 16 = 144ns};
 
-  \textbf{* Memo access time} \texttt{MAT1 = th1, MAT2 = th2}
+  \textbf{* MAT Memo access time at L1} \texttt{MAT1 = th1}
+
+  \textbf{* MAT in L2 but not L1} \texttt{MAT2 = th1 + th2}
 
   \textbf{* MAT if data in main mem} \texttt{MATa = th1 + th2 + tp}
 
-  \textbf{* AMAT} \texttt{AMAT = MAT1 * (pHit1) + (1-pHit1) * pHit2 * MAT2 + (1-pHit1) * (1-pHit2) * MATa}
+  \textbf{* AMAT} \texttt{AMAT = MAT1 * (pHit1) + (1-pHit1) * (pHit2 * MAT2 + (1-pHit2) * MATa) = 1 * .65 + (1-.65) * (.95 * (1+6) + (1-.95) * (1+6+144)) = 5.62ns}
 
   \rule{1\linewidth}{0.4pt}
 

@@ -1,0 +1,49 @@
+\section{Relational Algebra}
+
+\subsection{Basic operations}
+
+\begin{theorem}
+    {Picking data}
+    \begin{tabular}{l|l|l}
+        Operation  & Syntax                    & Description                                        \\
+        \hline
+        Selection  & $\sigma_{\theta}(R)$      & Select rows from R that satisfy condition $\theta$ \\
+        Projection & $\pi_{attr1,attr2...}(R)$ & Select columns from R (ordered)                    \\
+    \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+    {Combining relations}
+
+    For these operations, $R,S$ must have \textbf{the same attributes with same domains}
+
+    \begin{tabular}{l|l|p{10cm}}
+        Operation         & Syntax       & Description                                                                                                           \\
+        \hline
+        Union             & $R \cup S$   & Combine rows from R and S, removing duplicates                                                                        \\
+        Intersection      & $R \cap S$   & Rows that are in both R and S                                                                                         \\
+        Set Difference    & $R - S$      & Rows in R that are not in S                                                                                           \\
+        Cartesian Product & $R \times S$ & Combine each row of R with each row of S. For same named attributes, refer to them solely by \textbf{position index}.
+    \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+    {Rename and assignment}
+    \begin{tabular}{l|l|l}
+        Operation  & Syntax                       & Description                                       \\
+        \hline
+        Assignment & $X \gets E$                  & Assign expression E to X                          \\
+        Rename     & $\rho(X(attrs...), E)$       & Rename expression E to X                          \\
+        Rename     & $\rho(attr1 \to newname, E)$ & Rename attribute attr1 in expression E to newname \\
+    \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+    {Joins}
+    \begin{tabular}{l|l|l|p{8cm}}
+        Operation    & Syntax                 & Equivalent to                & Description                                                         \\
+        \hline
+        Natural Join & $R \bowtie S$          & $\sigma(R\times S)$          & Combine rows from R and S with matching values in common attributes \\
+        Theta Join   & $R \bowtie_{\theta} S$ & $\sigma_{\theta}(R\times S)$ & Combine rows from R and S that satisfy condition $\theta$           \\
+    \end{tabular}
+\end{theorem}

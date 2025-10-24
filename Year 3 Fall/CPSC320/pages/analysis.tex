@@ -1,0 +1,156 @@
+\section{Algorithm Analysis}
+
+We usually determine the efficiency of an algorithm by analyzing its time and space complexity.
+
+\begin{definition}
+    {Size of input}
+    An \textbf{input} is a data structure that is given to an algorithm to solve a problem.
+    The \textbf{size} of an input is the number $\mathbf{n}$ of elements in the input.
+\end{definition}
+
+\subsection{How do we assess time complexity?}
+
+When we analyize time complexity, we are interested in the efficiency of an algorithm as a function of the size of the input.
+
+As different machines have varying speeds of processors, time is not a good fit for measuring algorithm efficiency.
+
+We can consider the number of operations an algorithm performs relative to the size of the input, which will isolate the algorithm from the performing machines.
+
+However, different operations have varying efficiencies, so instead we consider the \textbf{growth rate} of the \textbf{total number of operations} as a function of the input size. The analysis of such is called \textbf{Asymptotic analysis}.
+
+
+\begin{definition}
+    {Time complexity}
+    The \textbf{rate of growth} of the \textbf{total number of operations} an algorithm performs relative to \textbf{size of input}.
+\end{definition}
+
+\begin{definition}
+    {Space complexity}
+    The \textbf{rate of growth} of the \textbf{total amount of memory} an algorithm uses relative to \textbf{size of input}.
+\end{definition}
+
+\subsection{Asymptotic notation}
+
+\begin{theorem}
+    {Growth rate / Complexity: The basis of asymptotic notations}
+    We are defining a certain function $\mathbf{T(n)}$ to represent the \textbf{total number of operations} with respect to $\mathbf{n}$ (the size of the input).
+
+    When we say $T(n)$ is $A$ of $(g(n))$ (or $T(n)\in A(g(n))$), we are saying that the \textbf{growth rate} of $T(n)$ is bounded by $A(g(n))$ under a specific mathematical inequality defined by $A$.
+\end{theorem}
+
+\begin{definition}
+    {General definition of asymptotic notations}
+    For non-strict boundaries ($\mathcolorbox{pink}{\leq \geq}$)
+    \[T(n) \in A(g(n))\ \text{iff}\ \mathcolorbox{yellow}{\exists\ c > 0}:\]
+    \[T(n) \mathcolorbox{pink}{\simeq} c\cdot g(n)\ \forall\ n \geq n_0 > 0\]
+    For strict boundaries: {$\mathcolorbox{pink}{< >}$}
+    \[T(n) \in a(g(n))\ \text{if}\ \mathcolorbox{yellow}{\forall\ c > 0\ \exists\ n_0 \geq 0}:\]
+    \[T(n) \mathcolorbox{pink}{\sim} c\cdot g(n)\ \forall\ n \geq n_0\]
+    Note that the $\in$ is interchangable with $=$. The meaning does not really matter.
+\end{definition}
+
+\begin{definition}
+    {Definition of all asymptotic notations}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Notation} & \textbf{Condition}                                                                     & \textbf{Asymptotic boundary} & \textbf{Name}               \\ \hline
+        $O(g)$            & $T(n) \mathcolorbox{pink}{\leq} c\cdot g(n)$                                           & Upper                        & Big O                       \\
+        $\Omega(g)$       & $T(n) \mathcolorbox{pink}{\geq} c\cdot g(n)$                                           & Lower                        & Big Omega                   \\
+        $\Theta(g)$       & $ c_1\cdot g(n)\mathcolorbox{pink}{\leq} T(n) \mathcolorbox{pink}{\leq} c_2\cdot g(n)$ & Tight                        & Big Theta / Order of growth \\
+        $o(g)$            & $T(n) \mathcolorbox{pink}{<} c\cdot g(n)$                                              & Strictly upper               & Little o                    \\
+        $\omega(g)$       & $T(n) \mathcolorbox{pink}{>} c\cdot g(n)$                                              & Strictly lower               & Little omega                \\ \hline
+    \end{tabular}
+\end{definition}
+
+\begin{knBox}
+    {Growth rate functions}
+    We use the likeness of $g(n)$ to describe the complexity of $T(n)$. The following gives the common growth rate functions (increasing order of growth):
+
+    \[
+        1 < \log n < \sqrt{n} < n < n\log n < n^2 < n^3 < 2^n < n! < n^n
+    \]
+
+    Note that the higher the growth rate, the more complex the algorithm.
+
+    Note the following growth rate equivilencies:
+    \begin{itemize}
+        \item $\log(n!)=\Theta(n\log(n))$ (prove not needed, related to \hyperref[thm:lower_bound_sort]{lower bound of sorting algorithms})
+        \item $\Theta(\log_2n)=\Theta(\log_{10}n)$ as $\log_2n = \frac{\log n}{\log 2} = c\times\log n$
+    \end{itemize}
+\end{knBox}
+
+\begin{theorem}
+    {Identifying asymptotic growths}
+    \textit{Non-strict}: Identify \textbf{the term with the highest growth rate} in $T(n)$ would be $g(n)$.
+
+    \textit{Strict}: Choose the \textbf{next / previous} growth rate function with reference to the list depending on if it's upper / lower.
+
+    You can use the same logic to determine if some $f(n)$ is $A/a$ of $g(n)$.
+
+    Note that as the defintions are specified by an \textbf{inequality}, there could be \textbf{multiple satisfying} $g(n)$ for the same $T(n)$ and all of them are valid. However, keep in mind the only useful $g(n)$ for analysis would be closest to the condition boundary.
+
+    If the function functuates, there is not a consistent growth rate unless a boundary is specified.
+    \tcblower
+    \label{thm:iasym}
+    \ref{eg:iasym_1}
+\end{theorem}
+
+\subsubsection{Big Theta of resursive relations}
+
+When tasked to find find the asymptotic notation of a recursive relation, we are required to give the Big Theta notation of the relation.
+
+The straight forward way is to find the closed-form expression and identify the growth rate. However, this is not always possible.
+
+\begin{knBox}
+    {Useful growth rates}
+    \begin{itemize}
+        \item \textbf{Sum of square series}: $\sum_{i=1}^{k}f(n, i)^2\in \Theta(n^3)$
+        \item \textbf{Sum of series}: $\sum_{i=1}^{k}f(n, i)\in \Theta(n^2)$
+    \end{itemize}
+\end{knBox}
+
+\subsection{Time complexity of code}
+
+\begin{knBox}
+    {Operation of time complexities}
+    By definition:
+    \[O(g)+O(g)=k\times O(g)=O(g)\]
+    \[O(g)\times O(g)=O(g\times g)\]
+    \[O(g_1)+O(g_2)=O(g_2),\quad g_2 > g_1\text{ in terms of order of growth}\]
+\end{knBox}
+
+Our goal is to examine how the runtime grows with respect to the input size. Consider the following example:
+
+\begin{lstlisting}[language=Python]
+                                        # Times ran O()
+def find_max(arr):                      # 1
+    if len(arr) == 0:                   # 1
+        return None                     # 1
+    max_val = arr[0]                    # 1
+    for num in arr:                     # n
+        if num > max_val:               # n
+            max_val = num               # n
+    return max_val                      # 1
+\end{lstlisting}
+
+It should be acknowledged that each operation / line would take different amounts of time to compute. However, as we are interested in the runtime $T(n)$'s growth rate, we can treat all operations to take $1$ unit of time.
+
+Hence, $T(n)=O(1)+O(1)+O(1)+O(1)+O(n)+O(n)+O(n)+O(1)=O(n)$
+
+\begin{theorem}
+    {Typical growth rates and common occurance}
+    \begin{tabular}{|l|p{0.7\textwidth}|}
+        \hline
+        \textbf{Growth} & \textbf{Occurance}                                                                                                                                        \\
+        $1$             & Statments that run a set number of times with no respect to the input size                                                                                \\
+        \hline
+        $\log n$        & Algorithms that solve a big problem by transformation into a series of smaller problems, cutting the problem size by some constant fraction at each step. \\
+        \hline
+        $n$             & "for" loops that has $n$ amount of iterations per program run                                                                                             \\
+        \hline
+        $n\log n$       & Algorithms that solve a problem by breaking it up into smaller sub-problems, solving them independently, and then combining the solutions.                \\
+        \hline
+        $n^k$           & Nested "for" loops that has n amount of iterations per program run                                                                                        \\
+        \hline
+    \end{tabular}
+\end{theorem}

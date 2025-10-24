@@ -1,0 +1,36 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/CleanV2}
+\newcommand{\documentdate}{Fall 2025}
+\newcommand{\documenttype}{Notes for UBC}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\hypertarget{toc}{}
+\tableofcontents
+
+\newpage
+
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\include{pages/design}
+\include{pages/relationalmodel}
+\include{pages/normalforms}
+\include{pages/relationalalgebra}
+
+\end{document}

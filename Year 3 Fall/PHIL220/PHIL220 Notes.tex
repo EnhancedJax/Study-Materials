@@ -1,0 +1,316 @@
+\documentclass{article}
+
+% ------------------------------------ %
+%             Document Info            %
+% ------------------------------------ %
+
+\usepackage{../../LaTeX-Preamables/CleanV2}
+\newcommand{\documentdate}{Fall 2025}
+\newcommand{\documenttype}{Notes for UBC}
+
+% ------------------------------------ %
+%              Title page              %
+% ------------------------------------ %
+\begin{document}
+\input{../../LaTeX-Preamables/Title-V1}
+
+% ------------------------------------ %
+%                  TOC                 %
+% ------------------------------------ %
+
+\newpage
+\hypertarget{toc}{}
+\tableofcontents
+
+\newpage
+
+% ------------------------------------ %
+%               Document               %
+% ------------------------------------ %
+
+\section{Introduction}
+
+\begin{definition}{Statement (Sentence)}
+    Strings that can be classified as true or false.
+
+    \tcblower
+
+    \textbf{Examples:}
+    \begin{itemize}
+        \item The sun will rise tomorrow. $\checkmark$
+        \item 2 + 2 = 5 $\checkmark$
+        \item Where is the library? $\times$
+        \item Please close the door. $\times$
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Argument}
+    A set of statements related in such a way that the \textbf{conclusion} statement is supported by the other \textbf{truthful} statements (\textbf{premises}).
+
+    Each argument has one conclusion and one or more premises.
+\end{definition}
+
+\begin{theorem}{Standard form}
+
+    \textit{Example argument in non-standard form:} "Marijuana should not be legalized because it is potentially dangerous and not enough is known about its long-term effects, and because use of marijuana leads to use of hard drugs."
+
+    The standard form would be as follows:
+
+    \begin{itemize}
+        \item \textbf{(1)} Marijuana is potentially dangerous
+        \item \textbf{(2)} Not enough is known about its long-term effects.
+        \item \textbf{(3)} Marijuana leads to use of hard drugs.
+        \item \textbf{(C)} Marijuana should not be legalized.
+    \end{itemize}
+\end{theorem}
+
+\begin{knBox}
+    {Indicator words}
+    Words that indicate the presence of premises or conclusions in an argument.
+
+    \textbf{Premise indicators:} since, because, owing to, given that, seeing that, for the reason that, etc.
+
+    \textbf{Conclusion indicators:} therefore, we may infer, we may conclude that, it must be that, entails that, so, hence, thus, implies that, consequently as a result, etc.
+\end{knBox}
+
+\begin{knBox}
+    {Argument analysis}
+
+    Steps:
+    \begin{enumerate}
+        \item Reconstruct the argument in standard form.
+        \item Test: Do premises support conclusion?
+        \item Test: Are each of the premises true?
+    \end{enumerate}
+\end{knBox}
+
+\subsection{Logical notions}
+
+
+\begin{definition}
+    {Joint possibility}
+
+    Statements are \textbf{jointly possible} \textit{iff} they can all be true at the same time.
+
+    \tcblower
+
+    \begin{itemize}
+        \item \textit{It is raining here. It is not raining here.} $\times$
+        \item \textit{It is raining in Vancouver. It is not raining in Hong Kong.} $\checkmark$
+    \end{itemize}
+
+\end{definition}
+
+\begin{definition}
+    {Necessary truth / falsehood}
+
+    A statement that is true / false in all possible circumstances.
+\end{definition}
+
+\begin{definition}
+    {Contingency}
+
+    A statement that is true in some possible circumstances and false in others.
+\end{definition}
+
+\begin{definition}
+    {Necessary equivalence}
+
+    Statements that are both true or both false in all possible circumstances.
+
+    \tcblower
+
+    \textit{"I don't want apple or bananas"} \& \textit{"I don't want apple and don't want bananas"}
+\end{definition}
+
+\subsection{Validity and Soundness}
+
+\begin{knBox}
+    {Consequence}
+
+    A statement is a \textbf{consequence} of (follows / entails) a set of premises \textit{iff} it is \textbf{impossible} for the premises to be all true and the conclusion false.
+\end{knBox}
+
+\begin{definition}
+    {Validity}
+
+    An argument is \textbf{valid / deductive} \textit{iff} the conclusion is a \textbf{consequence} of the premises.
+
+\end{definition}
+
+\begin{definition}
+    {Soundness}
+
+    An argument is \textbf{sound} \textit{iff} it is valid and all its premises are true.
+\end{definition}
+
+\begin{itemize}
+    \item Valid arguments can have false conclusions.
+    \item \textbf{Necessarily true} conclusions $\implies$ valid argument.
+    \item Jointly inconsistent premises $\implies$ valid, unsound argument.
+\end{itemize}
+
+\section{Truth-functional logic}
+
+Ordinary languages are full of vagueness and ambiguity, meaning can vary, in contrast to formal languages which are precise and unambiguous.
+
+\begin{knBox}
+    {Atomic letters}
+
+    Atomic letters are used to represent simple statements: $A_1, Z_{123}$ etc.
+\end{knBox}
+
+\begin{theorem}{Propositions}
+    A proposition $p$ is a statement that is either true or false, but not both, which must \textbf{declare a fact} and must have a truth value.
+
+    \tcblower
+    e.g. ``It is raining'', ``2 + 2 = 4'', ``The sky is blue''
+\end{theorem}
+
+\begin{definition}{Definitions}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Precedence & Definition      & Symbol                & Meaning                       & Truth table TLRF \\
+        \hline
+        1          & Negation        & $\neg p$              & Not $p$                       & -                \\
+        2          & Conjunction     & $p \land q$           & $p$ and $q$                   & TFFF             \\
+        3          & Disjunction     & $p \lor q$            & $p$ or $q$                    & TTTF             \\
+        4          & Exclusive or    & $p \oplus q$          & $p$ or $q$ but not both (XOR) & FTTF             \\
+        5          & Implication     & $p \rightarrow q$     & If $p$ then $q$               & TFTT             \\
+        6          & Bi-conditionals & $p \leftrightarrow q$ & $p$ if and only if $q$ (XNOR) & TFFT             \\
+        \hline
+    \end{tabular}
+
+    \textit{Precedence:} $p \rightarrow q \land r \lor s \equiv p\rightarrow ((q \land r)\lor s)$
+
+    For an implication $p \rightarrow q$:
+    \begin{itemize}
+        \item \textbf{Converse}: $q \rightarrow p$
+        \item \textbf{Inverse}: $\neg p \rightarrow \neg q$
+        \item \textbf{Contrapositive}: $\neg q \rightarrow \neg p$ (Same truth value as the original)
+    \end{itemize}
+
+    \tcblower
+    \textit{Why implication $|..T.|$?} The statement can still hold true even if $F \rightarrow T$:
+
+    Consider: ``Bob goes to work, it's Monday.'' The day can still be Monday even if Bob doesn't go to work.
+\end{definition}
+
+\subsection{Logic Equivalences}
+
+\begin{theorem}{Tautology}
+    Proposition that is always true, regardless of the truth values of the propositions it contains.
+
+    \tcblower
+    \begin{itemize}
+        \item $p \lor \neg p$ is always true
+        \item $p \rightarrow p$ is always true
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}{Contradiction}
+    Proposition that is always false.
+
+    \tcblower
+    \begin{itemize}
+        \item $p \land \neg p$ is always false
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}{Logical Equivalence}
+    If $p \leftrightarrow q$ is a tautology, then $p$ and $q$ are logically equivalent, denoted as $p \equiv q$.
+
+    \tcblower
+    \begin{itemize}
+        \item $p \land q \equiv q \land p$
+        \item $p \lor q \equiv q \lor p$
+    \end{itemize}
+\end{theorem}
+
+% The following are the methods \& laws of propositional logic:
+
+% \begin{definition}{Laws}
+%     \begin{tabular}{|c|c|}
+%         \hline
+%         Category        & Rule                                                                   \\
+%         \hline
+%         Identity        & $p \land \mathbf{T} \equiv p$                                          \\ & $p \lor \mathbf{F} \equiv p$ \\
+%         Domination      & $p \lor \mathbf{T} \equiv \mathbf{T}$                                  \\ & $p \land \mathbf{F} \equiv \mathbf{F}$ \\
+%         Idempotent      & $p \lor p \equiv p$                                                    \\ & $p \land p \equiv p$ \\
+%         Negation        & $p \lor \neg p \equiv \mathbf{T}$                                      \\ & $p \land \neg p \equiv \mathbf{F}$ \\
+%         Commutative     & $p \lor q \equiv q \lor p$                                             \\ & $p \land q \equiv q \land p$ \\
+%         Associative     & $(p \lor q) \lor r \equiv p \lor (q \lor r)$                           \\ & $(p \land q) \land r \equiv p \land (q \land r)$ \\
+%         Double Negation & $\neg \neg p \equiv p$                                                 \\
+%         Bi-Implication  & $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$ \\
+%         Contrapositive  & $p \rightarrow q \equiv \neg q \rightarrow \neg p$                     \\
+%         Implication     & $p \rightarrow q \equiv \neg p \lor q$                                 \\
+%         Distributive    & $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$               \\ & $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ \\
+%         De Morgan's     & $\neg (p \land q) \equiv \neg p \lor \neg q$                           \\ & $\neg (p \lor q) \equiv \neg p \land \neg q$ \\
+%         \hline
+%     \end{tabular}
+% \end{definition}
+
+\subsection{Satisfiability}
+
+\begin{theorem}{Satisfiability}
+    Proposition can be made true by some sort of assignment of truth values to its variables, called the \textbf{solution}.
+
+    \tcblower
+    \begin{itemize}
+        \item $p \land q$ is satisfiable when $p = T, q = T$
+        \item $p \land \neg p$ is unsatisfiable
+    \end{itemize}
+\end{theorem}
+
+\section{Natural deduction}
+
+Natural deduction is a proof system that uses a set of inference rules to derive conclusions from premises in a step-by-step manner.
+
+\begin{knBox}
+    {Formatting proofs}
+    \begin{itemize}
+        \item Each line should be numbered
+        \item Each line contains a statement and a justification by the rules with a number (n) or range (r) of lines
+        \item Premises and assumptions are underlined
+        \item \textbf{Subproofs} are proofs that start with an assumption and end when the assumption is discharged
+        \item Each subproof starting from the assumption should be indented
+        \item Use vertical bars to indicate the level of indentation
+    \end{itemize}
+\end{knBox}
+
+\begin{theorem}
+    {Contradiction}
+
+    $\bot$ denotes a contradiction, which is a statement that is always false. Can be introduced by \textbf{negation elimination} and eliminated by \textbf{negation introduction}.
+\end{theorem}
+
+\begin{definition}
+    {Natural deduction rules}
+
+    \colorbox{pink}{Start subproof}, \colorbox{yellow}{discharge assumption}, \colorbox{orange}{discharge multiple assumptions}
+
+    \begin{tabular}{l|lp{8cm}}
+        \hline
+        \textbf{Notation}           & \textbf{Name}                                 & \textbf{Explanation}                                                                                                    \\
+        \hline
+        R, n                        & Reiteration                                   & Copying a previous line                                                                                                 \\
+        \underline{PR}              & Premise                                       & Using a premise from the argument                                                                                       \\
+        \underline{AS}              & \colorbox{pink}{Assumption}                   & Start subproof by assuming a statement                                                                                  \\
+        $\land I$, n1, n2           & Conjunction Introduction                      & From $p$ and $q$, infer $p \land q$                                                                                     \\
+        $\land E$, n                & Conjunction Elimination                       & From $p \land q$, infer $p$ or $q$                                                                                      \\
+        $\rightarrow I$, r          & \colorbox{yellow}{Implication Introduction}   & \textit{Assuming} $p$ leading to $q$, infer $p \rightarrow q$                                                           \\
+        $\rightarrow E$, n1, n2     & Implication Elimination                       & From $p$ and $p \rightarrow q$, infer $q$                                                                               \\
+        $\leftrightarrow I$, r1, r2 & \colorbox{orange}{Biconditional Introduction} & \textit{Assuming} $p$ leading to $q$ and \textit{assuming} $q$ leading to $p$, infer $p \leftrightarrow q$              \\
+        $\leftrightarrow E$, n1, n2 & Biconditional Elimination                     & From $p \leftrightarrow q$ and $p$ or $q$ infer $q$ or $p$                                                              \\
+        $\lor I$, n                 & Disjunction Introduction                      & From $p$, infer $p \lor q$ or from $q$, infer $p \lor q$                                                                \\
+        $\lor E$, n1, r1, r2        & \colorbox{orange}{Disjunction Elimination}    & From $p \lor q$, and subproofs \textit{assuming} $p$ leading to $r$ and \textit{assuming} $q$ leading to $r$, infer $r$ \\
+        $\neg I$, r                 & \colorbox{yellow}{Negation Introduction}      & \textit{Assuming} $p$ leading to $\bot$, infer $\neg p$                                                                 \\
+        $\neg E$, n1, n2            & Negation Elimination                          & From $p$ and $\neg p$, infer $\bot$                                                                                     \\
+        IP r                        & \colorbox{yellow}{Indirect Proof}             & \textit{Assuming} $\neg p$ leading to $\bot$, infer $p$  (Proof by Contradiction)                                       \\
+        X, n                        & Explosion                                     & From $\bot$, infer any statement $p$                                                                                    \\
+    \end{tabular}
+\end{definition}
+
+
+\end{document}

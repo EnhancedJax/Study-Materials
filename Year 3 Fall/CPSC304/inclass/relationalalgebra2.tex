@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+
+\section*{Relational Algebra 2}
+\begin{enumerate}
+    \item
+          \[
+              \begin{aligned}
+                  JanShows     & \leftarrow \sigma_{year = 2020 \wedge month = 1}(Show)               \\
+                  FebShows     & \leftarrow \sigma_{year = 2020 \wedge month = 2}(Show)               \\
+                  JanPurchases & \leftarrow Purchase \bowtie_{Purchase.showID = JanShows.id} JanShows \\
+                  FebPurchases & \leftarrow Purchase \bowtie_{Purchase.showID = FebShows.id} FebShows \\
+                  JanEmails    & \leftarrow \pi_{email}(JanPurchases)                                 \\
+                  FebEmails    & \leftarrow \pi_{email}(FebPurchases)                                 \\
+                  Result       & \leftarrow JanEmails \cap FebEmails
+              \end{aligned}
+          \]
+
+    \item
+          \[
+              \begin{aligned}
+                  MaxAttendanceCount & \leftarrow max(\pi_{attendanceNumber}(Show))                                     \\
+                  TopShows           & \leftarrow \sigma_{Show.attendanceNumber = MaxAttendanceCount} (Show)            \\
+                  Result             & \leftarrow SongsPerformed \bowtie_{SongsPerformed.showID = TopShows.id} TopShows \\
+              \end{aligned}
+          \]
+
+    \item
+          \[
+              \begin{aligned}
+                  TchaikovskySongs   & \leftarrow \sigma_{composer = \text{"Tchaikovsky"}}(Song)        \\
+                  TchaikovskyShowIDs & \leftarrow \pi_{showID}(SongsPerformed \bowtie TchaikovskySongs) \\
+                  EmailShowIDPairs   & \leftarrow \pi_{email, showID}(Purchase)                         \\
+                  Result             & \leftarrow EmailShowIDPairs \div TchaikovskyShowIDs
+              \end{aligned}
+          \]
+\end{enumerate}
+
+
+
+\end{document}

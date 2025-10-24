@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+\section*{PHIL200 - Assignment 3}
+
+\begin{enumerate}
+      \item Truth table for $( P\to Q)\to( Q\to P)$:
+            \begin{center}
+                  \begin{tabular}{c|c|c|c|c}
+                        $ P$ & $ Q$ & \colorbox{yellow}{$ P\to Q$} & \colorbox{yellow}{$ Q\to P$} & \colorbox{pink}{$( P\to Q)\to( Q\to P)$} \\
+                        \hline
+                        T    & T    & T                            & T                            & T                                        \\
+                        T    & F    & F                            & T                            & T                                        \\
+                        F    & T    & T                            & F                            & F                                        \\
+                        F    & F    & T                            & T                            & T                                        \\
+                  \end{tabular}
+            \end{center}
+            So statement is a \textbf{contingency}.
+      \item Truth table for $( P\lor\neg P)\leftrightarrow( Q\land\neg Q)$:
+            \begin{center}
+                  \begin{tabular}{c|c|c|c|c|c|c}
+                        $P$ & $Q$ & \colorbox{yellow}{$P \lor \neg P$} & \colorbox{yellow}{$Q \land \neg Q$} & \colorbox{pink}{$(P \lor \neg P) \leftrightarrow (Q \land \neg Q)$} \\
+                        \hline
+                        T   & T   & T                                  & F                                   & F                                                                   \\
+                        T   & F   & T                                  & F                                   & F                                                                   \\
+                        F   & T   & T                                  & F                                   & F                                                                   \\
+                        F   & F   & T                                  & F                                   & F                                                                   \\
+                  \end{tabular}
+            \end{center}
+            So statement is a \textbf{contradiction}.
+      \item (1) $P \to Q$\\
+            (2) $P \to \neg Q$\\
+            (C) $\neg P$\\
+            \begin{center}
+                  \begin{tabular}{c|c|c|c|c|c}
+                        $P$ & $Q$ & $P \to Q$ & $P \to \neg Q$ & $\neg P$ \\
+                        \hline
+                        T   & T   & T         & F              & F        \\
+                        T   & F   & F         & T              & F        \\
+                        F   & T   & T         & T              & T        \\
+                        F   & F   & T         & T              & T        \\
+                  \end{tabular}
+            \end{center}
+            The argument is valid.
+      \item (1) $\neg(P \land Q)$\\
+            (2) $P \to \neg Q$\\
+            (C) $Q$\\
+            \begin{center}
+                  \begin{tabular}{c|c|c|c|c}
+                        $P$ & $Q$ & $\neg(P \land Q)$ & $P \to \neg Q$ & $Q$ \\
+                        \hline
+                        T   & T   & F                 & F              & T   \\
+                        T   & F   & T                 & T              & F   \\
+                        F   & T   & T                 & T              & T   \\
+                        F   & F   & T                 & T              & F   \\
+                  \end{tabular}
+            \end{center}
+            The argument is invalid. Rows 2 and 4 have both premises true but the conclusion $Q$ is false.
+      \item (1) $K\to\neg B$ \\
+            (2) $\neg K$\\
+            (C) $B$\\
+            \begin{center}
+                  \begin{tabular}{c|c|c|c|c}
+                        $K$ & $B$ & $\neg B$ & $K\to\neg B$ & $\neg K$ \\
+                        \hline
+                        T   & T   & F        & F            & F        \\
+                        T   & F   & T        & T            & F        \\
+                        F   & T   & F        & T            & T        \\
+                        F   & F   & T        & T            & T        \\
+                  \end{tabular}
+            \end{center}
+            The argument is invalid because for $K=F$ and $B=F$, both premises are true but the conclusion $B$ is false.
+      \item (1) $P \to Q$\\
+            (2) $R \to Q$\\
+            (C) $\neg Q \to (\neg P \land \neg R)$\\
+            \begin{center}
+                  \begin{tabular}{c|c|c|c|c|c|c}
+                        $P$ & $Q$ & $R$ & $P \to Q$ & $R \to Q$ & $\neg P \land \neg R$ & $\neg Q \to (\neg P \land \neg R)$ \\
+                        \hline
+                        T   & T   & T   & T         & T         & F                     & T                                  \\
+                        T   & T   & F   & T         & T         & F                     & T                                  \\
+                        T   & F   & T   & F         & F         & F                     & F                                  \\
+                        T   & F   & F   & F         & T         & F                     & F                                  \\
+                        F   & T   & T   & T         & T         & F                     & T                                  \\
+                        F   & T   & F   & T         & T         & T                     & T                                  \\
+                        F   & F   & T   & T         & F         & F                     & F                                  \\
+                        F   & F   & F   & T         & T         & T                     & T                                  \\
+                  \end{tabular}
+            \end{center}
+            The argument is valid. In all rows where the premises ($P \to Q$ and $R \to Q$) are true (rows 1, 2, 5, 6, 8), the conclusion ($\neg Q \to (\neg P \land \neg R)$) is also true.
+\end{enumerate}
+
+\end{document}

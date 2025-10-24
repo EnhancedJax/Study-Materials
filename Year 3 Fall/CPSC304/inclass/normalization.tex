@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+\section*{Normalization 2}
+
+Consider a relation $S(G, H, J, K)$. The following FDs are given:
+\begin{align}
+    G  & \to H \\
+    JK & \to G \\
+    H  & \to K
+\end{align}
+
+Is $S$ in BCNF? Why or why not? If it is not in BCNF:
+\begin{itemize}
+    \item Decompose into BCNF as covered in class.
+    \item Circle the relations in your final answer.
+    \item Underline the keys in your final answer.
+\end{itemize}
+
+Show your work.
+
+\textbf{Write your answer here:}
+
+Candidate keys:
+
+\begin{itemize}
+    \item $(JK)^+ = (JG)^+ = (JH)^+ = \{G, H, J, K\}$
+\end{itemize}
+
+Check BCNF:
+
+\begin{itemize}
+    \item $G\to H: G^+ = \{G, H, K\}$ is not a key $\implies$ not in BCNF
+    \item $JK \to G: (JK)^+$ is a key $\implies$ in BCNF
+    \item $H \to K: H^+ = \{H, K\}$ is not a key $\implies$ not in BCNF
+\end{itemize}
+
+Decomposition:
+
+\begin{itemize}
+    \item Decompose on $G \to H$:
+          \begin{itemize}
+              \item $R_1(G,H) \quad$ FDs: $G \to H$ is in BCNF as two elements
+              \item $R_2(G,J,K) \quad$ FDs: $JK \to G$ is in BCNF     as $JK$ is a key
+          \end{itemize}
+    \item Decompose on $H \to K$: Can be skipped as $R_1,R_2$ are both in BCNF and $H,K$ are not together in any relation.
+\end{itemize}
+
+\textbf{Answer}: $S_1(\underline{G}, H), S_2(\underline{J, K}, G)$
+
+\end{document}

@@ -1,4 +1,5 @@
 {
+  "emmet.showExpandedAbbreviation": "never",
   "C_Cpp.errorSquiggles": "disabled",
   "files.associations": {
     "*.txt": "markdown",
