@@ -1,0 +1,345 @@
+\section{Security}
+
+\begin{knBox}
+    {Principles of security}
+    \begin{enumerate}
+        \item Confidentiality: only the sender and the intended receiver should “understand” message contents
+        \item Authentication: the sender and receiver want to confirm each other's identity
+        \item Message integrity: the sender and receiver want to ensure that the message is not altered (in transit, or afterwards) without detection
+        \item Access and availability: services must be accessible and available to users
+    \end{enumerate}
+\end{knBox}
+
+\begin{knBox}
+    {Threat model}
+    \begin{itemize}
+        \item \textbf{Eavesdrop}
+        \item \textbf{Actively insert}
+        \item \textbf{Impersonation}
+        \item \textbf{Hijacking}
+        \item \textbf{Denial of service}
+    \end{itemize}
+\end{knBox}
+
+\subsection{Confidentiality}
+
+\subsubsection{Encryption}
+
+\begin{definition}
+    {Caesar cipher}
+    \begin{itemize}
+        \item Replace letters $K$ (key) positions ahead in the alphabet
+        \item Cost to decrypt: 25 tries (brute force)
+    \end{itemize}
+\end{definition}
+
+\begin{knBox}
+    {Encryption approaches}
+    \begin{itemize}
+        \item Naive approach: assume attacked unaware of decryption method
+        \item Secret key: assume attacker knows the method but not the key
+    \end{itemize}
+\end{knBox}
+
+\begin{theorem}
+    {Attacks on confidentiality}
+    Classes on attackes based on how much the attacker knows:
+    \begin{itemize}
+        \item \textbf{Ciphertext-only}: attacker only has access to ciphertext $K(m)$ but not $m$
+        \item \textbf{Known-plaintext}: attacker has access to some pairs of $(m, K(m))$
+        \item \textbf{Chosen-plaintext}: attacker have access to computing $K(x)$
+    \end{itemize}
+\end{theorem}
+
+\sectionbar{M08-L01}
+
+\subsubsection{Symmetric Key Encryption}
+
+\begin{itemize}
+    \item Same key used for encryption and decryption
+    \item Key must be kept secret
+\end{itemize}
+
+\begin{knBox}
+    {Substitution Cipher}
+    \begin{itemize}
+        \item Each letter replaced by another letter
+        \item Key: mapping of letters.
+        \item Cost to decrypt: $\frac{26!}{(26-n)!}$ tries (brute force), where $n$ is the number of unique letters in the message
+    \end{itemize}
+\end{knBox}
+
+\begin{knBox}
+    {Block Cipher}
+    \begin{itemize}
+        \item Operates on fixed-length groups of bits (blocks)
+        \item For a n-block and k-bit key, there are $2^k$ possible keys and $2^n$ possible blocks
+        \item Each block encrypted separately, methods can vary
+        \item Data Encryption Standard (DES): 64-bit blocks, 56-bit key
+        \item Advanced Encryption Standard (AES): 128-bit blocks, key sizes of 128, 192, or 256 bits
+        \item Keeping same key can e risky, to avoid this, we have two options:
+              \begin{enumerate}
+                  \item Use different keys every time
+                  \item Do additional operation on blocks (e.g., XOR with previous ciphertext block)
+              \end{enumerate}
+        \item Both parties must have its own copy of the key
+    \end{itemize}
+\end{knBox}
+
+\begin{definition}
+    {Diffie-hellman key exchange}
+    \begin{itemize}
+        \item Method for two parties to securely share a secret key over an insecure channel
+        \item Based on the difficulty of computing discrete logarithms
+        \item Suffers from \textbf{man-in-the-middle} attacks, where an intruder intercepts and replaces the public keys exchanged between the parties.
+    \end{itemize}
+
+    Steps:
+    \begin{itemize}
+        \item Shared info: \textbf{large} prime number $p$, base $g$ (primitive root mod $p$)
+        \item Alice chooses secret integer $a$, computes $A = g^a \mod p$, sends $A$ to Bob
+        \item Bob chooses secret integer $b$, computes $B = g^b \mod p$, sends $B$ to Alice
+        \item Alice computes shared secret $s = B^a \mod p$
+        \item Bob computes shared secret $s = A^b \mod p$
+    \end{itemize}
+\end{definition}
+
+
+\sectionbar{M08-L02}
+
+\subsubsection{Asymmetric Key Encryption}
+
+\begin{knBox}
+    {Private and public keys}
+    Denote private key $K^-$ and public key $K^+$. Given $K^+$ it should be computationally infeasible to determine $K^-$.
+\end{knBox}
+
+\begin{definition}
+    {Asymmetric Key Encryption}
+    For $A$ to send message $x$ to $B$:
+    \begin{itemize}
+        \item To provide \textbf{confidentiality}: $K_B^+(x)$ (B reads with $K_B^-$)
+        \item To provide \textbf{authentication}: $K_A^-(x)$ (B checks with $K_A^+$ to ensure sender is A)
+              % \item To provide \textbf{both confidentiality and authentication}: $K_A^-(K_B^+(x))$
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {RSA}
+
+    Steps:
+    \begin{enumerate}
+        \item Choose two large prime numbers $p,q$
+        \item Compute $n=pq, z=(p-1)(q-1)$
+        \item Choose $1<e<n$ such that no common factors with $z$
+        \item Choose $d < z$ such that $ed \mod z = 1$
+    \end{enumerate}
+    For message $m$ and encrypted message $c$:
+    \begin{itemize}
+        \item Encryption: $c = m^e \mod n$ where $K^+ = (n,e)$
+        \item Decryption: $m = c^d \mod n$ where $K^- = (n,d)$
+    \end{itemize}
+\end{definition}
+
+\begin{knBox}
+    {Problems with asymmetric cryptography}
+    \begin{itemize}
+        \item Asymmetric encryption is \textbf{computationally expensive}, too slow for extensive data transfer
+        \item Solution: use asymmetric encryption to \textbf{securely exchange a symmetric key}, then use symmetric encryption for data transfer
+        \item For $A$ to share symmetric key $K_s$ with $B$ with both confidentiality and authentication: $K^-_A(K^+_B(K_s))$
+    \end{itemize}
+\end{knBox}
+
+\subsection{Message Integrity}
+
+\begin{definition}
+    {Signed message digest}
+
+    \begin{itemize}
+        \item For hash function $H$, $A$ send ($m, K_A^-(H(m))$) to $B$. Have $B$ compute their $H_B(m)$ and check if $H_B(m) = K_A^+(K_A^-(H(m)))$ to verify integrity and authenticity.
+
+        \item It should be computationally infeasible to find:
+              \begin{enumerate}
+                  \item given $x$, found $y$ s.t. $H(y) = x$
+                  \item given $m$, found $m' \neq m$ s.t. $H(m) = H(m')$
+              \end{enumerate}
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Message Authentication Code (MAC)}
+    \begin{itemize}
+        \item Alterative to signed message digest using symmetric key encryption
+        \item Send $m$ and $h=H(m+s)$ where $s$ is shared secret. Have $B$ compute $H_B(m+s)$ and check if equal to $h$ to verify.
+        \item Faster since no asymmetric encryption needed
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Certification Authority (CA)}
+    \begin{itemize}
+        \item Trusted third party that issues digital certificates
+        \item Binds public keys to entities s.t. the certificate contains the entity's public key
+        \item Signed by CA's private key
+    \end{itemize}
+\end{definition}
+
+\sectionbar{M08-L03}
+
+\subsection{Authentication}
+
+\begin{theorem}
+    {Attacks on authentication}
+    \begin{itemize}
+        \item \textbf{Replay}: attacker intercepts valid message and replays it later to gain access
+        \item \textbf{Man-in-the-middle}: attacker intercepts and alters communication between two parties without their knowledge
+        \item \textbf{Reordering}: attacker manipulates sequence numbers to disrupt communication or gain unauthorized access
+        \item \textbf{Truncation}: attacker cuts off part of the communication to disrupt or manipulate the session
+    \end{itemize}
+\end{theorem}
+
+\begin{definition}
+    {Nonce}
+    \begin{itemize}
+        \item One time message used for authentication to prevent replay attacks
+        \item B sends random nonce $N$ to A
+        \item A sends back $K_s^-(N)$ to B
+        \item Note: If we use $K_A^-$ instead of $K_s^-$, this is only reliable if B can confirm $K_A^+$ belongs to A (e.g., through CA), however is still subjective to man-in-the-middle attacks
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    {Protocol security levels}
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Encrypt}         & \textbf{Confidentiality} & \textbf{Authentication} & \textbf{Replay Resistance} \\
+        \hline
+        Nothing                  &                          &                         &                            \\
+        \hline
+        Key                      & \checkmark               &                         &                            \\
+        \hline
+        Key and identity         & \checkmark               & \checkmark              &                            \\
+        \hline
+        Key, identity, and nonce & \checkmark               & \checkmark              & \checkmark                 \\
+        \hline
+    \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+    {Security protocol}
+    \begin{enumerate}
+        \item \textbf{Handshake}
+              \begin{enumerate}
+                  \item Establish TCP connection
+                  \item Verify identities (through certificate)
+                  \item Send session key securely
+              \end{enumerate}
+        \item \textbf{Key derivation}: Both parties derive symmetric keys:
+              \begin{itemize}
+                  \item $K_A, K_B$ (for encryption)
+                  \item $M_A, M_B$ (for MAC)
+              \end{itemize}
+        \item \textbf{Data transfer and connection termination}: Send message $m$ with length $l$ from A to B:
+              \begin{itemize}
+                  \item $(H(K_A(l,m) + M_A), K_A(l,m))$: Possible attack by reordering / replay
+                  \item $(H(K_A(l,m) + M_A + n), K_A(l,m))$: Use sequence number $n$ to prevent reordering / replay. \textbf{Vulnerable} to \textbf{truncation attack}
+                  \item $H(K_A(l,\phi,m)+M_A+n),K_A(l,\phi,m)$: Use flag $\phi=1$ to indicate termination to prevent truncation attack (else $\phi=0$)
+              \end{itemize}
+    \end{enumerate}
+\end{theorem}
+
+% \subsubsection{Security protocols}
+
+% \begin{knBox}
+%     {Handshkae}
+% \end{knBox}
+
+\sectionbar{M08-L04}
+
+\subsection{Security of different protocols}
+
+\begin{definition}
+    {VPN}
+    \begin{itemize}
+        \item Software association between two private networks over public network.
+        \item VPN wraps original payload with \textbf{more} metadata for routing and security
+        \item Leaving VPN router:
+    \end{itemize}
+
+    Information of messages:
+    \begin{itemize}
+        \item Leaving VPN router:
+              \begin{itemize}
+                  \item src IP: VPN router IP
+                  \item dest IP: dest VPN router IP
+              \end{itemize}
+        \item Arriving VPN router:
+              \begin{itemize}
+                  \item src IP: original src IP
+                  \item dest IP: original dest IP
+              \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Security on different layers}
+    \begin{itemize}
+        \item Communication between \textbf{abitary} peers must ensure \textbf{confidentiality, integrity, and sender authentication}. Includes:
+              \begin{itemize}
+                  \item \textbf{TLS} (Transport layer security):  symmetric encryption, MAC, public key encryption and certificate (\textit{application})
+                  \item \textbf{IPSec}: (\textit{network})
+                  \item \textbf{QUIC}: (\textit{transport}) (like TLS but over UDP)
+                  \item \textbf{GRE}, SSL, SSH: (\textit{application})
+                  \item \textbf{PGP}: (\textit{application})
+              \end{itemize}
+        \item Communication with public answers must ensure \textbf{integrity and sender authentication only}. Includes:
+              \begin{itemize}
+                  \item DNSSEC: (\textit{application})
+                  \item BGPsec: (\textit{application})
+              \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\subsection{Availability}
+
+\begin{definition}
+    {Firewalls}
+    \begin{itemize}
+        \item Isolate internal network from external network (typically through router)
+        \item Two types of packet filtering:
+              \begin{itemize}
+                  \item \textbf{Stateless} packet filtering: filter packet-by-packet based on \textbf{access control lists (ACL)}
+                  \item \textbf{Stateful} packet filtering: keep track of connection state (SYN, FIN etc.), track timeouts, track UDP connections etc.
+              \end{itemize}
+    \end{itemize}
+\end{definition}
+
+\begin{knBox}
+    {Application gateways}
+    \begin{itemize}
+        \item Filter based on application data, such as users rather than IP addresses
+    \end{itemize}
+\end{knBox}
+
+\sectionbar{M08-L05}
+
+
+\begin{theorem}
+    {Attacks on availability}
+    The following are examples of Denial of Service (DoS) attacks:
+    \begin{itemize}
+        \item \textbf{Syn Flood}: attacker sends large number of SYN requests but does not respond to SYN-ACK replies, causing server to run out of resources waiting for ACKs that never arrive
+        \item \textbf{Smurf}: attacker sends ICMP echo request (ping) packets with spoofed source IP (victim's IP) to a broadcast address, causing all devices on the network to reply to the victim, overwhelming it with traffic
+        \item \textbf{DNS Amplification}: attacker exploits DNS servers to amplify traffic towards a victim by sending DNS queries with the victim's spoofed IP address
+    \end{itemize}
+    Amplification of attacks methods include:
+    \begin{itemize}
+        \item Malware
+        \item Virus
+        \item Worm
+        \item Botnet
+    \end{itemize}
+\end{theorem}
+
+
+\sectionbar{M08-L06}

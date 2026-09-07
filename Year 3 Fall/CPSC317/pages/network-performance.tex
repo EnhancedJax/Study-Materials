@@ -68,16 +68,23 @@ Units of measurement in this course (Must use these units in assignments):
 
 \subsubsection{Types of delay}
 
+\begin{definition}
+    {Average service time}
+    The \textbf{average service time} (when the server is idle) is given by:
+    \[S = \frac{L}{R}\]
+
+    Where $L$ is the packet length (bits) and $R$ is the transmission rate (bps).
+\end{definition}
 
 
 \begin{definition}
     {Traffic Intensity}
 
-    How busy a link is:
+    The \textbf{traffic intensity / server utilization} measures how busy a link is:
 
-    \[\text{Traffic Intensity} = \frac{L \times a}{R}\]
+    \[U = \frac{L \times a}{R} = S \times a\]
 
-    Where $L$ is the packet length (bits), $a$ is the average packet arrival rate (packets/sec), and $R$ is the transmission rate (bps).
+    Where $a$ is the average packet arrival rate.
 
     \begin{itemize}
         \item If traffic intensity $> 1$, the queue will grow and the router will need to drop a significant number of packets
@@ -90,10 +97,7 @@ Units of measurement in this course (Must use these units in assignments):
         100 packets per second, averaging 500 bytes per packet. What is the traffic
         intensity?}
 
-
-    TODO: VERIFY
-
-    \[L = 500 \times 8 = 4000 \text{ bits}, a = 100 \text{ packets/sec}, R = 1 \times 10^6 \text{ bps}\]
+    \[L = 500 \times 8 = 4000 \text{ bits}, a = 100 \text{ packets/sec}, R = 1 \times 10^6 \text{ bps}, U = 0.4\]
 \end{definition}
 
 \begin{knBox}
@@ -102,12 +106,14 @@ Units of measurement in this course (Must use these units in assignments):
     Examine packet to decide where to direct it
 \end{knBox}
 
-\begin{knBox}
+\begin{definition}
     {Queuing delay}
 
-    Waiting time to get access to the link. Each link has a queue where packets wait to be transmitted.
-
-    The higher the \textbf{traffic intensity}, the link is busier, and higher probability that there is one or more packets in the queue.
+    Waiting time to get access to the link.
+    \begin{itemize}
+        \item Each link has a queue where packets wait to be transmitted.
+        \item The higher the \textbf{traffic intensity}, the link is busier, and higher probability that there is one or more packets in the queue.
+    \end{itemize}
 
     Assuming packets arrive at an exponential rate, total delay is:
 
@@ -116,9 +122,7 @@ Units of measurement in this course (Must use these units in assignments):
     Queing delay is:
 
     \[t_{\text{queue}} = D - S = \frac{S}{1-U} - S = \frac{U \times S}{1-U}\]
-
-    Where $S$ is average service time when server is idle, and $U$ is the traffic intensity (server utilization).
-\end{knBox}
+\end{definition}
 
 \begin{knBox}
     {Transmission delay}

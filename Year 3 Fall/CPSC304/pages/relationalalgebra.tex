@@ -12,8 +12,8 @@
     \end{tabular}
 \end{theorem}
 
-\begin{theorem}
-    {Combining relations}
+\begin{definition}
+    {Basic operators}
 
     For these operations, $R,S$ must have \textbf{the same attributes with same domains}
 
@@ -23,9 +23,9 @@
         Union             & $R \cup S$   & Combine rows from R and S, removing duplicates                                                                        \\
         Intersection      & $R \cap S$   & Rows that are in both R and S                                                                                         \\
         Set Difference    & $R - S$      & Rows in R that are not in S                                                                                           \\
-        Cartesian Product & $R \times S$ & Combine each row of R with each row of S. For same named attributes, refer to them solely by \textbf{position index}.
+        Cartesian Product & $R \times S$ & Combine each row of R with each row of S. For same named attributes, refer to them solely by \textbf{position index}. \\
     \end{tabular}
-\end{theorem}
+\end{definition}
 
 \begin{theorem}
     {Rename and assignment}
@@ -33,17 +33,29 @@
         Operation  & Syntax                       & Description                                       \\
         \hline
         Assignment & $X \gets E$                  & Assign expression E to X                          \\
-        Rename     & $\rho(X(attrs...), E)$       & Rename expression E to X                          \\
+        Rename     & $\rho(E1, E)$                & Rename expression E to E1                         \\
         Rename     & $\rho(attr1 \to newname, E)$ & Rename attribute attr1 in expression E to newname \\
     \end{tabular}
 \end{theorem}
 
 \begin{theorem}
-    {Joins}
+    {Extended operators}
     \begin{tabular}{l|l|l|p{8cm}}
-        Operation    & Syntax                 & Equivalent to                & Description                                                         \\
+        Operation    & Syntax                 & Equivalent to                & Description                                                                                                    \\
         \hline
-        Natural Join & $R \bowtie S$          & $\sigma(R\times S)$          & Combine rows from R and S with matching values in common attributes \\
-        Theta Join   & $R \bowtie_{\theta} S$ & $\sigma_{\theta}(R\times S)$ & Combine rows from R and S that satisfy condition $\theta$           \\
+        Natural Join & $R \bowtie S$          & $\sigma(R\times S)$          & Combine rows from R and S with matching values in common attributes                                            \\
+        Theta Join   & $R \bowtie_{\theta} S$ & $\sigma_{\theta}(R\times S)$ & Combine rows from R and S that satisfy condition $\theta$                                                      \\
+        Division     & $R \div S$             & See below                    & For relations R(A,B) and S(B), returns relation T(A) such that for each a in T, (a,b) is in R for every b in S \\
     \end{tabular}
+
+    $R\div S \equiv \pi_X(R)-\pi_X((\pi_X(R)\times S)-R)$, where $X$ is the set of attributes not present in S.
+
 \end{theorem}
+
+\begin{itemize}
+    \item "Only either" can be expressed as: $(R - S) \cup (S - R)$
+    \item "Maximum / Minimum" can be used by select condition $a > b$ under $\times$ cartesian product
+    \item "At least all those" can be expressed using division operator
+    \item "Exactly those" can be expressed using division and set difference operators
+    \item "Any one that matches" can be expressed by selecting under $\times$ cartesian product
+\end{itemize}

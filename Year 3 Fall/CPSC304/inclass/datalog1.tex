@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+
+\section*{Datalog 1}
+
+\begin{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1. Shows that had a Canadian musician perform in them
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+CanadianMusicianShow(S) :-
+    Musician(MID, _, _, _, "Canadian"),
+    PerformedIn(MID, S).
+
+Ans1(Y, M, D, A) :-
+    CanadianMusicianShow(S),
+    Show(S, Y, M, D, _, A).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2. Shows where both Mozart AND Beethoven were performed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+MozartShow(S) :-
+    SongsPerformed(S, "Mozart", _).
+
+BeethovenShow(S) :-
+    SongsPerformed(S, "Beethoven", _).
+
+Ans2(S) :-
+    MozartShow(S),
+    BeethovenShow(S).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3. Shows where at least one Mozart OR Beethoven song was performed
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ans3(S) :-
+    SongsPerformed(S, "Mozart", _).
+
+Ans3(S) :-
+    SongsPerformed(S, "Beethoven", _).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4. Songs performed by every violinist
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Violinist(MID) :-
+    Musician(MID, _, "violin", _, _).
+
+PlayedBy(MID, C, T) :-
+    Violinist(MID),
+    PerformedIn(MID, S),
+    SongsPerformed(S, C, T).
+
+Ans4(C, T) :-
+    Song(C, T),
+    Violinist(MID),
+    PlayedBy(MID, C, T).
+\end{verbatim}
+
+
+\end{document}

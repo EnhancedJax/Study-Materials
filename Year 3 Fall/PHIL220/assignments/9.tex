@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\newcommand{\asbar}{\ | \ }
+
+\begin{document}
+
+\section*{PHIL220 - Assignment 9}
+
+\begin{enumerate}
+
+    \item % Question 1
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1  & $\forall x\big((B(x)\land\neg P(x))\to D(x)\big)$ & PR            \\
+              2  & $B(e)$                                            & PR            \\
+              3  & $\neg D(e)$                                       & PR            \\
+              4  & $(B(e)\land\neg P(e))\to D(e)$                    & $\forall$E, 1 \\
+              5  & \asbar $\neg P(e)$                                & AS            \\
+              6  & \asbar $B(e)\land\neg P(e)$                       & $\land$I, 2,5 \\
+              7  & \asbar $D(e)$                                     & $\to$E, 4,6   \\
+              8  & \asbar $\bot$                                     & $\neg E, 7,3$ \\
+              9  & $\neg\neg P(e)$                                   & $\neg$I, 5--8 \\
+              10 & $P(e)$                                            & DNE, 9        \\
+              \hline
+          \end{tabular}
+
+          \vspace{6pt}
+
+    \item % Question 2
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1 & $\forall x\big(F(x)\to G(x)\big)$ & PR                  \\
+              2 & \asbar $\exists x,F(x)$           & AS                  \\
+              3 & \asbar \asbar AS, $F(a)$          & AS                  \\
+              4 & \asbar \asbar $F(a)\to G(a)$      & $\forall$E, 1       \\
+              5 & \asbar \asbar $G(a)$              & $\to$E, 4,3         \\
+              6 & \asbar \asbar $\exists x,G(x)$    & $\exists$I, 5       \\
+              7 & \asbar $\exists x,G(x)$           & $\exists$E, 2, 3--6 \\
+              8 & $\exists x,F(x)\to\exists x,G(x)$ & $\to$I, 2--7        \\
+              \hline
+          \end{tabular}
+
+          \vspace{6pt}
+
+    \item % Question 3
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1  & $\forall x\big(F(x)\to\neg D(x)\big)$ & PR            \\
+              2  & $\forall x\big(B(x)\to D(x)\big)$     & PR            \\
+              3  & \asbar $F(c)$                         & AS            \\
+              4  & \asbar $\neg D(c)$                    & $\forall$E, 1 \\
+              5  & \asbar \asbar AS, $B(c)$              & AS            \\
+              6  & \asbar \asbar $D(c)$                  & $\forall$E, 2 \\
+              7  & \asbar \asbar $\bot$                  & $\neg E, 6,4$ \\
+              8  & \asbar $\neg B(c)$                    & $\neg$I, 5--7 \\
+              9  & $F(c)\to\neg B(c)$                    & $\to$I, 3--8  \\
+              10 & $\forall x\big(F(x)\to\neg B(x)\big)$ & $\forall$I, 9 \\
+              \hline
+          \end{tabular}
+
+          \vspace{6pt}
+
+    \item % Question 4
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1  & $\forall x\big(G(x)\to\neg A(x)\big)$          & PR                   \\
+              2  & $\exists x\big(C(x)\land A(x)\big)$            & PR                   \\
+              3  & \asbar $C(d)\land A(d)$                        & AS                   \\
+              4  & \asbar $C(d)$                                  & $\land$E, 3          \\
+              5  & \asbar $A(d)$                                  & $\land$E, 3          \\
+              6  & \asbar \asbar AS, $G(d)$                       & AS                   \\
+              7  & \asbar \asbar $G(d)\to\neg A(d)$               & $\forall$E, 1        \\
+              8  & \asbar \asbar $\neg A(d)$                      & $\to$E, 7,6          \\
+              9  & \asbar \asbar $\bot$                           & $\neg E, 8,5$        \\
+              10 & \asbar $\neg G(d)$                             & $\neg$I, 6--9        \\
+              11 & \asbar $C(d)\land\neg G(d)$                    & $\land$I, 4,10       \\
+              12 & \asbar $\exists x\big(C(x)\land\neg G(x)\big)$ & $\exists$I, 11       \\
+              13 & $\exists x\big(C(x)\land\neg G(x)\big)$        & $\exists$E, 2, 3--12 \\
+              \hline
+          \end{tabular}
+
+          \vspace{6pt}
+
+    \item % Question 5
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1  & $\forall x\big(N(x)\to R(x)\big)$          & PR                   \\
+              2  & $\forall x\big(N(x)\to P(x)\big)$          & PR                   \\
+              3  & $\exists x,N(x)$                           & PR                   \\
+              4  & \asbar $N(t)$                              & AS                   \\
+              5  & \asbar $N(t)\to R(t)$                      & $\forall$E, 1        \\
+              6  & \asbar $R(t)$                              & $\to$E, 5,4          \\
+              7  & \asbar $N(t)\to P(t)$                      & $\forall$E, 2        \\
+              8  & \asbar $P(t)$                              & $\to$E, 7,4          \\
+              9  & \asbar $R(t)\land P(t)$                    & $\land$I, 6,8        \\
+              10 & \asbar $\exists x\big(R(x)\land P(x)\big)$ & $\exists$I, 9        \\
+              11 & $\exists x\big(R(x)\land P(x)\big)$        & $\exists$E, 3, 4--10 \\
+              \hline
+          \end{tabular}
+
+\end{enumerate}
+
+\end{document}

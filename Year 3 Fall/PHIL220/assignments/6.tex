@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\newcommand{\asbar}{\ |\ \ }
+
+
+\begin{document}
+
+\section*{PHIL200 - Assignment 6}
+
+\begin{enumerate}
+    \item \begin{tabular}{l|p{8cm}l}
+              1 & $\neg P$      & PR            \\
+              2 & \asbar $p$    & AS            \\
+              3 & \asbar $\bot$ & $\neg$E, 1, 2 \\
+              4 & \asbar $Q$    & X, 3          \\
+              5 & $P \to Q$     & $\to$I, 2-4   \\
+              \hline
+          \end{tabular}
+    \item \begin{tabular}{l|p{8cm}l}
+              1 & $P \to Q$        & PR            \\
+              2 & $Q \to R$        & PR            \\
+              3 & $P \land \neg R$ & PR            \\
+              4 & P                & $\land$E, 3   \\
+              5 & $\neg R$         & $\land$E, 3   \\
+              6 & Q                & $\to$E, 1, 4  \\
+              7 & R                & $\to$E, 6, 2  \\
+              8 & $\bot$           & $\neg$E, 5, 7 \\
+              9 & $S$              & X, 8          \\
+              \hline
+          \end{tabular}
+    \item \begin{tabular}{l|p{8cm}l}
+              1 & \asbar $P \to (Q \to R)$                          & AS           \\
+              2 & \asbar \asbar $P \to Q$                           & AS           \\
+              3 & \asbar \asbar \asbar P                            & AS           \\
+              4 & \asbar \asbar \asbar $Q$                          & $\to$E, 2, 3 \\
+              5 & \asbar \asbar \asbar $Q \to R$                    & $\to$E, 1, 3 \\
+              6 & \asbar \asbar \asbar $R$                          & $\to$E, 5, 4 \\
+              7 & \asbar \asbar $P \to R$                           & $\to$I, 3-6  \\
+              8 & \asbar $(P \to Q) \to (P \to R)$                  & $\to$I, 2-7  \\
+              9 & $(P \to (Q \to R)) \to ((P \to Q) \to (P \to R))$ & $\to$I, 1-8  \\
+              \hline
+          \end{tabular}
+    \item \begin{tabular}{l|p{8cm}l}
+              \hline
+              1  & \asbar $\neg (P \lor (P \to Q))$ & AS             \\
+              2  & \asbar \asbar $P$                & AS             \\
+              3  & \asbar \asbar $P \lor (P \to Q)$ & $\lor$I, 2     \\
+              4  & \asbar \asbar $\bot$             & $\neg$E, 1, 3  \\
+              5  & \asbar $ \neg P$                 & $\neg$I, 2-4   \\
+              6  & \asbar \asbar $P$                & AS             \\
+              7  & \asbar \asbar $\bot$             & $\neg$E, 5, 6  \\
+              8  & \asbar \asbar $Q$                & X, 7           \\
+              9  & \asbar $P \to Q$                 & $\to$I, 6-8    \\
+              10 & \asbar $P \lor (P \to Q)$        & $\lor$I, 9     \\
+              11 & \asbar $\bot$                    & $\neg$E, 1, 10 \\
+              12 & $ (P \lor (P \to Q))$            & IP, 1-11       \\
+          \end{tabular}
+    \item Consider $P,Q,R=T$, then consider premises:
+          \begin{itemize}
+              \item $P \to Q = T \to T = T$
+              \item $Q \to R = T \to T = T$
+              \item $\neg P \lor R = \neg T \lor T = F \lor T = T$
+          \end{itemize}
+          Notice all premises true but conclusion $P \to \neg R = T \to \neg T = T \to F = F$ is false. Thus the argument is invalid: $P \to Q, Q \to R, \neg P \lor R \not\models P \to \neg R$. Because of soundness of the proof system, there is no proof of the conclusion from the premises: $P \to Q , Q \to R, \neg P \lor R \nvdash P \to \neg R$.
+    \item Consider $P,Q=F, R=T$:
+          \begin{itemize}
+              \item $\neg P \lor Q =  \neg F \lor F = T \lor F = T$
+              \item $R \to P = T \to F = F$
+          \end{itemize}
+          The argument is hence not a tautology: $\not\models (\neg P \lor Q) \to (R \to P)$. By completeness of the proof system, there is no proof of the conclusion from the premises: $\nvdash (\neg P \lor Q) \to (R \to P)$.
+\end{enumerate}
+
+\end{document}

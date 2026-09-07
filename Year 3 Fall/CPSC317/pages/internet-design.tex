@@ -69,11 +69,13 @@
     Some rules might get \textbf{complicated} when considering slow responses, large sizes, etc.
 \end{theorem}
 
-\begin{knBox}
+\begin{definition}
     {Linked Finite State Machines}
 
     A protocol can be modeled as a set of linked finite state machines (FSMs), one for each role in the protocol.
-\end{knBox}
+
+    A \textbf{complete} FSM must define an action for every possible event in every possible state.
+\end{definition}
 
 \begin{definition}
     {Protocol Stack}

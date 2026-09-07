@@ -1,0 +1,86 @@
+\section{Data Mining}
+
+\begin{definition}
+    {Data Mining}
+
+    The exploration and analysis of large quantities of data in order to discover valid, novel, potentially useful, and ultimately understandable patterns in data.
+
+    \begin{itemize}
+        \item \textbf{Valid}: The patterns hold in general.
+        \item \textbf{Novel}: We did not know the pattern beforehand.
+        \item \textbf{Useful}: We can devise actions from the patterns (business intelligence).
+        \item \textbf{Understandable}: can interpret and comprehend the patterns.
+    \end{itemize}
+
+\end{definition}
+
+\subsection{Association Rule Mining}
+
+\begin{knBox}
+    {Association rules}
+
+    An association rule is an implication (cause and effect) of the form $X \rightarrow Y$, where $X$ and $Y$ are sets of items (itemsets), and $X \cap Y = \emptyset$.
+\end{knBox}
+
+\begin{definition}
+    {Support and confidence}
+
+    A rule $X \to Y$ holds with \textbf{support} $s$ in the transaction set $T$ if $s\%$ of $t \in T$ contains $X \cap Y$.
+
+    A rule $X \to Y$ holds with \textbf{confidence} $c$ if $c\%$ of $t \in T$ that contain $X$ also contain $Y$.
+
+    A rule is \textbf{valid} if $s$ and $c$ exceed user-specified minimum thresholds.
+\end{definition}
+
+\begin{definition}
+    {Itemsets}
+
+    \begin{itemize}
+        \item A \textbf{frequent itemset} is a set of items whose $s > s_\text{min}$.
+        \item For $n$ items, there are a total of $2^n - 1$ possible itemsets.
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    {Apriori algorithm}
+
+    Goal: Find all frequent itemsets in a transaction database.
+
+    \begin{enumerate}
+        \item Find all frequent itemsets of size 1 $F_1$
+        \item Loop $k$ from 2 to max itemset size
+              \begin{enumerate}
+                  \item \textbf{Only using $F_{k-1}$}, generate candidate itemsets of size $k$ $C_k$
+                  \item Determine support for each $C_k$
+                  \item $F_k = $ all itemsets in $C_k$ with sufficient support
+              \end{enumerate}
+        \item Return union of all $F_k$
+    \end{enumerate}
+
+    \tcblower
+
+    \begin{minipage}{0.65\textwidth}
+        \begin{enumerate}
+            \item $F_1 = \{\{b\}, \{c\}, \{d\}\}$
+            \item $C_1 = \{\{b, c\}, \{b, d\}, \{c, d\}\}$
+            \item $F_2 = \{\{b, c\}, \{c, d\}\}$
+            \item $C_3 = \{\{b, c, d\}\}$
+            \item $F_3 = \{\}$
+            \item Answer: $F_1 \cup F_2 \cup F_3 = \{\{b\}, \{c\}, \{d\}, \{b, c\}, \{c, d\}\}$
+        \end{enumerate}
+
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \begin{tabular}{l|l}
+            \textbf{Transactions} & \textbf{Items} \\
+            T1                    & a, d, e, c     \\
+            T2                    & c, d, b        \\
+            T3                    & a, c, d, b     \\
+            T4                    & c, b           \\
+        \end{tabular}
+
+        $s_\text{min} = 75\%$
+    \end{minipage}
+
+\end{theorem}

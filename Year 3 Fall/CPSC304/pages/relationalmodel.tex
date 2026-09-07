@@ -23,68 +23,24 @@
     \textbf{Cardinality}: Number of tuples;
 \end{knBox}
 
-\subsection{Relational models in SQL}
-
-Basic table operations:
-
-\begin{itemize}
-    \item \verb|CREATE TABLE <table_name> (...);|
-    \item \verb|DROP TABLE <table_name>;|
-    \item \verb|ALTER TABLE <table_name> ADD <column_name> <data_type> [constraints];|
-\end{itemize}
-
-Example:
-
-\begin{verbatim}
-    CREATE TABLE Grade (
-        sid INTEGER,
-        dept CHAR(4), 
-        mark INTEGER NOT NULL,
-        some_other_unique_attribute CHAR(4),   
-        PRIMARY KEY (sid,dep),
-        FOREIGN KEY (sid) 
-            REFERENCES Student
-            ON DELETE CASCADE
-            ON UPDATE CASCADE,
-        FOREIGN KEY (dept) REFERENCES Course(dept)
-            ON DELETE SET NULL
-            ON UPDATE CASCADE
-        UNIQUE (some_other_unique_attribute)
-    );
-\end{verbatim}
+\label{sec:relational_model}
+\subsection{Relational models}
 
 \begin{definition}
-    {Integrity constraints}
-    Conditions are must be true for any instance of the database
-
+    {Simplified relational model overview}
     \begin{itemize}
-        \item \texttt{... NOT NULL}: the column cannot be NULL
-        \item \texttt{UNIQUE(attr)}: the column cannot have duplicate values
-        \item \texttt{PRIMARY KEY (attr,)}: the column is the primary key of the table
-        \item \texttt{FOREIGN KEY (attr,) REFERENCES Table(attr,)}: the column is a foreign key of the table
-    \end{itemize}
-
-\end{definition}
-
-\begin{definition}
-    {Referential integrities}
-
-    Referential integrity constraints are used to enforce the relationship between tables.
-
-    \begin{itemize}
-        \item \texttt{ON DELETE ...}: what to do when the referenced tuple is deleted
-        \item \texttt{ON UPDATE ...}: what to do when the referenced tuple is updated
-    \end{itemize}
-
-    The following options are available:
-
-    \begin{itemize}
-        \item \texttt{CASCADE}: delete or update the tuples in the referencing table when the referenced tuple is deleted or updated.
-        \item \texttt{SET NULL}: set the foreign key values in the referencing table to NULL when the referenced tuple is deleted or updated.
-        \item \texttt{SET DEFAULT}: set the foreign key values in the referencing table to their default values when the referenced tuple is deleted or updated.
-        \item \texttt{NO ACTION}: reject the delete or update operation on the referenced tuple if there are any matching tuples in the referencing table.
+        \item Each table is a relation
+        \item A column is an attribute
+        \item A row is a tuple
+        \item Each attribute has a domain (data type)
+        \item Each relation has a primary key (pKey) - uniquely identifies each tuple
+        \item A foreign key (fKey) is an attribute in one relation that references the pKey of another relation
+        \item Not null columns cannot have NULL values
+        \item Unique columns cannot have duplicate values
     \end{itemize}
 \end{definition}
+
+For more information, refer to \ref{sec:sql_create}
 
 \subsection{ER Constraints to relational model}
 
@@ -93,12 +49,15 @@ Refer to \ref{sec:constraints}.
 \begin{theorem}
     {Key constraints}
     \begin{itemize}
-        \item \textbf{1-1 / 1-M}
-              \begin{itemize}
-                  \item $\forall$"1"key $\to$ Foreign key on other table, OR;
-                  \item +relation, $\forall$"1"key $\to$ Foreign key UNIQUE, pKey = all attrs
-              \end{itemize}
-        \item \textbf{M-M}: +relation, $\forall$"M"key $\to$ Foreign key, pKey = all attrs
+        \item \textbf{M-M}: +relation, $\forall$"M"key $\to$ fKeys, pKey = all attrs
+        \item \textbf{M-1}: Combine many with relationship, \texttt{ON DELETE SET NULL, UPDATE CASCADE}
+        \item \textbf{1-1}:  Combine either entity with relationship, choose one side to have fKey with UNIQUE constraint
+    \end{itemize}
+
+    For self-referencing relationships,
+    \begin{itemize}
+        \item \textbf{1-1}: +relation for relationship: ...{key1}, ...{key2}, pKey = (key1, key2), fKeys to reference entity table
+        \item \textbf{M-1}: +fKey = pKey of same table.
     \end{itemize}
 
     \tcblower
@@ -107,8 +66,7 @@ Refer to \ref{sec:constraints}.
     \begin{itemize}
         \item \texttt{[A](\underline{a})} $\rightarrow$ <R> $\leftarrow$ \texttt{[B](\underline{b})}:
               \begin{itemize}
-                  \item \texttt{RA(\underline{a}, \textbf{b}); RB(\underline{b}, \textbf{a})}
-                  \item \texttt{RA(\underline{a}); RB(\underline{b}); RAB(\textbf{\underline{a}} UNIQUE, \textbf{\underline{b}} UNIQUE)}
+                  \item \texttt{RA(\underline{a}, \textbf{b} UNIQUE); RB(\underline{b}, \textbf{a})}
               \end{itemize}
         \item \texttt{[A](\underline{a})} -- <R> -- \texttt{[B](\underline{b})}:
               \begin{itemize}
@@ -121,8 +79,13 @@ Refer to \ref{sec:constraints}.
     {Total participation constraint}
     Consider key constraints:
     \begin{itemize}
-        \item \textbf{1-1 / 1-M (Total participation on M side)}: Foreign key NOT NULL
-        \item \textbf{M-1 (Total participation on 1 side) / M-M}:  We cannot enforce total participation on data level directly. (Required triggers / application-level logic)
+        \item \textbf{1-1}: Two methods:
+              \begin{enumerate}
+                  \item Two relations: Foreign key NOT NULL
+                  \item Single relation with all attrs, UNIQUE NOT NULL
+              \end{enumerate}
+        \item \textbf{1-M (Total participation on M side)}: Foreign key NOT NULL
+        \item \textbf{M-1 (Total participation on 1 side) / M-M}: Assertions
     \end{itemize}
 \end{theorem}
 
@@ -151,9 +114,9 @@ Refer to \ref{sec:constraints}.
 
     \tcblower
 
-    Consider ER: \texttt{[General](\underline{a})} -- $\triangle$IsA -- \texttt{[Specific](b,c,d)}:
+    Consider ER: \texttt{[General](\underline{a}, b)} -- $\triangle$IsA -- \texttt{[Specific](c,d)}:
 
-    \texttt{RA(\underline{a}); RB(\underline{\textbf{a}}, b, c, d)}
+    \texttt{RA(\underline{a}, b); RB(\underline{\textbf{a}}, c, d)}
 \end{theorem}
 
 \begin{theorem}

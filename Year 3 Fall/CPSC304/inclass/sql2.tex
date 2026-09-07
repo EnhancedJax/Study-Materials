@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+
+\section*{SQL 2}
+
+\begin{enumerate}
+    \item \begin{verbatim}
+SELECT showID
+FROM SongsPerformed
+WHERE composer = 'Mozart'
+INTERSECT
+SELECT showID
+FROM SongsPerformed
+WHERE composer = 'Beethoven';
+    \end{verbatim}
+    \item \begin{verbatim}
+SELECT DISTINCT S1.showID
+FROM SongsPerformed S1
+WHERE 
+    EXISTS (
+        SELECT *
+        FROM SongsPerformed S2
+        WHERE S2.showID = S1.showID
+          AND S2.composer = 'Mozart'
+    )
+  AND EXISTS (
+        SELECT *
+        FROM SongsPerformed S3
+        WHERE S3.showID = S1.showID
+          AND S3.composer = 'Beethoven'
+    );
+    \end{verbatim}
+    \item \begin{verbatim}
+SELECT DISTINCT showID
+FROM SongsPerformed
+WHERE composer = 'Mozart'
+  AND showID IN (
+        SELECT showID
+        FROM SongsPerformed
+        WHERE composer = 'Beethoven'
+  );
+    \end{verbatim}
+    \item \begin{verbatim}
+SELECT DISTINCT M.showID
+FROM SongsPerformed M, SongsPerformed B
+WHERE M.showID = B.showID
+  AND M.composer = 'Mozart'
+  AND B.composer = 'Beethoven';
+    \end{verbatim}
+\end{enumerate}
+
+
+\end{document}

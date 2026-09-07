@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\newcommand{\asbar}{\ | \ }
+
+\begin{document}
+
+\section*{PHIL220 - Assignment 10}
+
+\begin{enumerate}
+
+    \item
+          Symbolization premises:
+          \begin{itemize}
+              \item $\neg L(a,c)$
+              \item $\exists x\,(B(x)\land L(a,x))$
+              \item $B(c)$
+          \end{itemize}
+          Symbolized conclusion: $\exists x\exists y\left(B(x)\wedge B(y)\wedge\neg(x=y)\right)$
+
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1  & $\neg L(a,c)$                                                & PR                    \\
+              2  & $\exists x\,(B(x)\land L(a,x))$                              & PR                    \\
+              3  & $B(c)$                                                       & PR                    \\
+              4  & \asbar $B(b)\land L(a,b)$                                    & AS                    \\
+              5  & \asbar $B(b)$                                                & $\land$E, 4           \\
+              6  & \asbar $L(a,b)$                                              & $\land$E, 4           \\
+              7  & \asbar \asbar $b=c$                                          & AS                    \\
+              8  & \asbar \asbar $L(a,c)$                                       & $=E$, 6,7             \\
+              9  & \asbar \asbar $\bot$                                         & $\neg E$, 8,1         \\
+              10 & \asbar $\neg(b=c)$                                           & $\neg I$, 7--9        \\
+              11 & \asbar $B(b)\land B(c)$                                      & $\land$I, 5,3         \\
+              12 & \asbar $B(b)\land B(c)\land \neg(b=c)$                       & $\land$I, 11,10       \\
+              13 & \asbar $\exists y\,(B(b)\land B(y)\land \neg(b=y))$          & $\exists I$, 12       \\
+              14 & \asbar $\exists x\exists y\,(B(x)\land B(y)\land \neg(x=y))$ & $\exists I$, 13       \\
+              15 & $\exists x\exists y\,(B(x)\land B(y)\land \neg(x=y))$        & $\exists E$, 2, 4--14 \\
+              \hline
+          \end{tabular}
+    \item \begin{tabular}{l|p{8cm}l}
+              \hline
+              1 & \asbar $a=b\land b=c$                                        & AS             \\
+              2 & \asbar $a=b$                                                 & $\land$E, 1    \\
+              3 & \asbar $b=c$                                                 & $\land$E, 1    \\
+              4 & \asbar $a=c$                                                 & $=E$, 2,3      \\
+              5 & $(a=b\land b=c)\to a=c$                                      & $\to I$, 1--4  \\
+              6 & $\forall z\big((a=b\land b=z)\to a=z\big)$                   & $\forall I$, 5 \\
+              7 & $\forall y\forall z\big((a=y\land y=z)\to a=z\big)$          & $\forall I$, 6 \\
+              8 & $\forall x\forall y\forall z\big((x=y\land y=z)\to x=z\big)$ & $\forall I$, 7 \\
+              \hline
+          \end{tabular}
+    \item For $\forall x\left(F(x)\to G(x)\right)\therefore \exists x\left(F(x)\land G(x)\right)$, consider domain $D=\{a\}$ where $F(a)=F, G(a)=F$.
+          \begin{itemize}
+              \item $\models \forall x\left(F(x)\to G(x)\right)$ as $F(a)\to G(a)$ is true.
+              \item $\not\models \exists x\left(F(x)\land G(x)\right)$ as $F(a)\land G(a)$ is false.
+              \item $\therefore \not\models \forall x\left(F(x)\to G(x)\right)\to \exists x\left(F(x)\land G(x)\right)$
+          \end{itemize}
+          Hence, argument is not a tautology. By soundness of proof system, there is no proof for the statement.
+
+    \item For $\forall xF(x)\vee\forall x\neg F(x)$, consider domain $D=\{a,b\}$ and $F(a)=T, F(b)=F$.
+          \begin{itemize}
+              \item $\not\models \forall xF(x)$ as $F(b)=F$
+              \item $\not\models \forall x\neg F(x)$ as $\neg F(a)=F$
+              \item $\therefore \not\models \forall xF(x)\vee\forall x\neg F(x)$
+          \end{itemize}
+          Hence, argument is not a tautology. By soundness of proof system, there is no proof for the statement.
+    \item \fbox{$\checkmark$}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,103 @@
+\section{Datalog}
+
+\begin{knBox}
+    {Datalog characteristics}
+    \begin{itemize}
+        \item Based on \textbf{logic notation}
+        \item Can express \textbf{recursions}
+    \end{itemize}
+\end{knBox}
+
+\subsection{Basic operations}
+
+\begin{definition}
+    {Atoms in datalog}
+    An atom can be:
+    \begin{itemize}
+        \item Constant: \texttt{Name('c1', 'c2', ...)}
+        \item Variable: \texttt{Name(X1, X2, ...)}
+        \item Comparisons: \texttt{X1 < X2}, \texttt{X1 = X2}, etc.
+        \item Negation: \texttt{not} <Atom>
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Datalog rule}
+    A datalog rule has the form:
+    \begin{center}
+        \texttt{Head} \texttt{:-} \texttt{Body}\(_1\), \texttt{Body}\(_2\), \ldots, \texttt{Body}\(_n\)
+    \end{center}
+    where Head and Body are atoms. The Head represents the conclusion.
+
+    \textbf{Union}: Multiple rules with the same Head represent a union of results.
+\end{definition}
+
+\begin{theorem}
+    {Variable atoms in rules}
+    Using variables, we can do \textbf{projection}, \textbf{selection}, and \textbf{join} operations in datalog rules.
+
+    Consider a relation \texttt{Collection(ID, Name, Year, Stuff)} and \texttt{Artist(ID, Name)}. We can express the following operations:
+    \begin{itemize}
+        \item Projection: \texttt{Ans(N) :- Collection(ID, N, \_, \_)} (\textit{gets names from Collection})
+        \item Selection 1: \texttt{Ans(ID, N) :- Collection(ID, N, 2020, \_)} (\textit{gets 2020 collections})
+        \item Selection 2: \texttt{Ans(ID, N) :- Collection(ID, N, Y, \_), Y > 2019} (\textit{gets collections after 2019})
+        \item Joins: \texttt{Ans(N, A) :- Collection(ID, N, \_), Artist(ID, A)} (\textit{gets collection names with artist names})
+    \end{itemize}
+
+    \begin{itemize}
+        \item The \texttt{\_} symbol is an \textbf{anonymous variable}, which can match any value but is not stored.
+        \item Every variable in the Head must appear in the Body.
+    \end{itemize}
+\end{theorem}
+
+\begin{definition}
+    {Negation atoms in rules}
+
+    Every variable in head \textbf{must appear} in positive (non-negated) body atoms. To be safe, \textbf{always project onto variables before negating}, do not use anonymous variables.
+
+    Example relation: \texttt{Student(ID, Name, Age, Major)}
+
+    Valid expressions:
+    \begin{itemize}
+        \item \texttt{Ans(N) :- Student(ID, N, A, \_), not A < 18} (\textit{gets names of students aged 18 or older})
+    \end{itemize}
+    Invalid expressions:
+    \begin{itemize}
+        \item \texttt{Ans(N) :- Student(\_, N, \_, \_), not Student(\_, 'Simon', \_, \_)} (\textit{antipattern})
+        \item \texttt{Ans(ID) :- not Student(ID, 'Simon', \_, \_)} (\textit{ID does not appear in a positive body atom})
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    {Division operation in datalog}
+    Consider relation \texttt{R(a, b, ...)} and \texttt{S(b, ...)}. We want to find all \texttt{a} values in \texttt{A} such that for every \texttt{b} in \texttt{B}, the pair \texttt{(a, b)} exists in \texttt{A} $R(a, b) \div S(b)$:
+
+    This takes 2 steps:
+    \begin{itemize}
+        \item \texttt{Witness(a, b) :- R(a, b, \_)}
+        \item \texttt{Bad(a) :- R(a, \_), S(b, \_), NOT Witness(a, b)}
+        \item \texttt{Good(a) :- R(a, \_), NOT Bad(a)}
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+    {Recursion in datalog}
+
+    We can express recursion using datalog rules. Examples:
+
+    \begin{itemize}
+        \item Consider relation \texttt{Parent(ParentName, ChildName)}. Find all ancestors of a person.
+              \begin{itemize}
+                  \item Base case: \texttt{Ancestor(A, C) :- Parent(A, C)}
+                  \item Recursive case: \texttt{Ancestor(A, C) :- Parent(A, X), Ancestor(X, C)}
+              \end{itemize}
+        \item Consider relation \texttt{Flight(airline,num,origin,destination)}. Find path from "YVR" to "HKG":
+              \begin{itemize}
+                  \item Base case: \texttt{Path(X, Y) :- Flight(\_, \_, X, Y)}
+                  \item Recursive case: \texttt{Path(X, Y) :- Flight(\_, \_, X, Z), Path(Z, Y)}
+                  \item Test if path exists: \texttt{Ans() :- Path('YVR', 'HKG')}
+              \end{itemize}
+    \end{itemize}
+
+    The recursion continues until recursion head no longer produces new results.
+\end{theorem}

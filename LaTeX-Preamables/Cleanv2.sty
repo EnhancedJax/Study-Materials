@@ -7,7 +7,6 @@
 \usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{circuitikz}
-\usetikzlibrary{calc}
 \usepackage{xcolor}
 \usepackage{stringstrings}
 \usepackage{colortbl}
@@ -172,3 +171,13 @@
 \fancyhf{}
 \fancyhead[R]{\hypersetup{linkcolor=gray}\hyperlink{toc}{Back to top}\hypersetup{linkcolor=blue}}
 \renewcommand{\headrulewidth}{0pt}
+
+\newlength{\sectionbartextwidth}
+\newcommand{\sectionbar}[1]{%
+    \settowidth{\sectionbartextwidth}{#1}%
+    \noindent
+    \textcolor{gray}{#1}%
+    \hspace{0.5cm}%1
+    \tikz[baseline]{\draw[gray, thin] (0,0.5ex) -- ($(\linewidth-\sectionbartextwidth-0.6cm,0.5ex)$);}%
+    \par
+}

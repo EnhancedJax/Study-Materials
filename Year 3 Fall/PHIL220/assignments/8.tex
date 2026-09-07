@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\newcommand{\asbar}{\ |\ \ }
+
+\begin{document}
+
+\section*{PHIL220 - Assignment 8}
+
+\begin{enumerate}
+    \item For domain $D={a}$, the statement $\exists x \neg(A(x) \lor B(x))$ not a validity. For this only element $a$, if we let $A(a)$ and $B(a)$ be true, then $\neg(A(a) \lor B(a))$ is false, so the existential statement is false.
+    \item For domain $D={d}$, intepret $a=d,b=d,F=\emptyset,G=\{d,d\}$, the statement $\forall x\big(F(x)\to G(x,a)\big),\quad G(b,a)\quad\therefore F(b)$ has a counterexample. Here, $F(d)$ is false, so the premise $\forall x\big(F(x)\to G(x,a)\big)$ is true (since the antecedent is false). Also, $G(b,a)$ is true since $G(d,d)$ is in the interpretation. However, the conclusion $F(b)$ is false since $F(d)$ is false. Thus, the argument is not an entailment.
+    \item For $\neg\exists x\big(C(x)\wedge A(x)\big),\quad\neg C(m)\quad\therefore\quad A(m)$, intepret $D={d},m=d,C=\emptyset, A=\emptyset$.
+
+          Here, $\exists x\big(C(x)\wedge A(x)\big)$ is false since there are no elements in $C$ or $A$, so its negation is true. Also, $\neg C(m)$ is true since $C(d)$ is false. However, the conclusion $A(m)$ is false since $A(d)$ is false. Thus, the argument is not an entailment.
+    \item Symbolization: \textbf{(1)} $W(x)$: "$x$ is a whale." \textbf{(2)} $M(x)$: "$x$ is a mammal." \textbf{(3)} $s$: Sammy.
+
+          Statement: $\forall x (W(x) \to M(x)), \neg M(s) \therefore \exists x \neg W(x)$.
+
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1 & $\forall x (W(x) \to M(x))$ & PR            \\
+              2 & $\neg M(s)$                 & PR            \\
+              3 & $W(s) \to M(s)$             & $\forall$E, 1 \\
+              4 & \asbar $W(s)$               & AS            \\
+              5 & \asbar $M(s)$               & $\to$E, 3, 4  \\
+              6 & $\bot$                      & $\neg$E, 2, 5 \\
+              7 & $\neg W(s)$                 & $\neg$I, 4-6  \\
+              8 & $\exists x \neg W(x)$       & $\exists$I, 7 \\
+              \hline
+          \end{tabular}
+
+    \item Statement: $\forall x(F(x)\to G(x)),\:\forall xF(x)\:\therefore\:\forall xG(x)$
+
+          \begin{tabular}{l|p{8cm}l}
+              \hline
+              1 & $\forall x(F(x)\to G(x))$ & PR            \\
+              2 & $\forall xF(x)$           & PR            \\
+              3 & $F(a)\to G(a)$            & $\forall$E, 1 \\
+              4 & $F(a)$                    & $\forall$E, 2 \\
+              5 & $G(a)$                    & $\to$E, 3, 4  \\
+              6 & $\forall xG(x)$           & $\forall$I, 5 \\
+              \hline
+          \end{tabular}
+\end{enumerate}
+
+
+\end{document}

@@ -7,7 +7,7 @@
 
 \subsection{User Datagram Protocol (UDP)}
 
-\includegraphics[width=0.5\textwidth]{images/m04-l01-1.png}
+% \includegraphics[width=0.5\textwidth]{images/m04-l01-1.png}
 
 \begin{theorem}
     {Checksums (Transport layer)}
@@ -66,9 +66,31 @@ NAK is short for \textbf{negative acknowledgement}.
     \end{itemize}
 \end{theorem}
 
-\sectionbar{M04-L04}
+\sectionbar{History start}
 
 \subsubsection{Sliding window protocols}
+
+\begin{definition}
+    {Windowing protocols}
+
+    \textit{Sliding window protocols} have attributes:
+    \begin{itemize}
+        \item Timeout
+        \item Window sizes (Sender, receiver) $SWS, RWS$
+        \item Sequence number count $K$ (0 to $K-1$) or Sequence number bits $k$ ($K = 2^k$)
+    \end{itemize}
+
+    \begin{itemize}
+        \item Sender can send up to $N$ segments without waiting for ACKs
+        \item Sender / receiver window slides to the next unACKed segment when ACK / segment is received
+        \item The \textbf{buffer} here refers to:
+              \begin{itemize}
+                  \item For sender: the space used to store \textbf{unACKed} frames
+                  \item For receiver: the space used to store \textbf{out-of-order} frames
+              \end{itemize}
+        \item $SWS$ and $RWS$ must be carefully chosen to avoid sequence number overlap when wrapping around
+    \end{itemize}
+\end{definition}
 
 \begin{knBox}
     {Cumulative ACKs}
@@ -76,35 +98,136 @@ NAK is short for \textbf{negative acknowledgement}.
 \end{knBox}
 
 \begin{theorem}
-    {Go-Back-N (GBN) Protocol}
+    {Go-Back-N (GBN) vs. Selective Repeat (SR) Protocols}
 
-    Attributes: \textit{Timeout, Window size $N$, sequence number bits $k$}
-
-    \begin{itemize}
-        \item Sender can send $N$ segments at once
-        \item Sender receiving an ACK will slide it's window forward to the next unACKed segment
-        \item Receiver has a \textbf{single}, in-order expected sequence number and sends cumulative ACKs
-        \item If sender receives NAK or timeout, it resends all segments in the current sliding window
-        \item The maximum window size is $N \leq 2^k - 1$ to avoid sequence number overlap
-    \end{itemize}
-
-    Visualization \href{https://media.pearsoncmg.com/aw/ecs_kurose_compnetwork_7/cw/content/interactiveanimations/go-back-n-protocol/index.html}{here}
+    \begin{tabular}{l|l|l}
+                                               & \textbf{Go-Back-N}                                                                                                                   & \textbf{Selective Repeat}                                                                                                                   \\
+        \hline
+        \textit{ACKs}                          & Cumulative                                                                                                                           & Individual                                                                                                                                  \\
+        \textit{Receiver expected seq. num}    & Next unreceived                                                                                                                      & Accepts out-of-order                                                                                                                        \\
+        \textit{Retransmission on NAK/timeout} & All in window                                                                                                                        & Missing segments only (selective!)                                                                                                          \\
+        \textit{SWS, RWS}                      & $SWS \leq K-1, RWS = 1$                                                                                                              & $SWS + RWS \leq K$                                                                                                                          \\
+        \textit{Protects strongly for}         & Lost ACKs                                                                                                                            & Lost data segments                                                                                                                          \\
+        \textit{SWS} $\uparrow$                & Time cost of errors $\uparrow$                                                                                                       & Buffer space cost $\uparrow$                                                                                                                \\
+        \textit{Visualization}                 & \href{https://media.pearsoncmg.com/aw/ecs_kurose_compnetwork_7/cw/content/interactiveanimations/go-back-n-protocol/index.html}{here} & \href{https://media.pearsoncmg.com/aw/ecs_kurose_compnetwork_7/cw/content/interactiveanimations/selective-repeat-protocol/index.html}{here} \\
+    \end{tabular}
 \end{theorem}
 
-\sectionbar{M04-L05}
+\sectionbar{M04-L04, M04-L05}
+
+\begin{definition}
+    {Receiver: Flow control}
+    Handles a \textit{slow receiver}. This can be done by:
+    \begin{itemize}
+        \item Receiver sends information about \textbf{how much data it can handle} through the \textbf{ACK}
+        \item Sender adjusts its window size based on this information
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Sender: Congestion control}
+    Handles a \textit{congested network}. This can be done by:
+    \begin{itemize}
+        \item Sender monitors the network conditions and reduce its window size when congestion is detected
+        \item Can increase back up when most ACKs are received
+    \end{itemize}
+\end{definition}
+
+\subsection{TCP}
+
+An overview of TCP properties:
+
+\begin{itemize}
+    \item Point to point
+    \item Connection oriented
+    \item Full duplex data
+    \item Send and receive buffers
+    \item Reliable and in order byte stream
+    \item Pipelined
+    \item Flow controlled
+\end{itemize}
+
+\sectionbar{M04-L06}
+
+\begin{definition}
+    {TCP: ACKs and Sequence numbers}
+    \begin{itemize}
+        \item For each segment, their seq. number gives the \textbf{byte position} of where the data in the segment is for the entire byte stream
+        \item ACKs (number) acknowledges the next \textbf{byte position expected}, cummulative (and indicates data received up to that point).
+              \\(i.e., ACK = seq. number + data size received)
+        \item Receiver stores packets in window buffer (like SR)
+        \item ACK Flag: \textbf{Except step 1 of \hyperref[sec:m04-l08]{connection establishment}}, all TCP segments have ACK flag set
+    \end{itemize}
+\end{definition}
 
 \begin{theorem}
-    {Selective Repeat (SR) Protocol}
+    {TCP: Retransmission}
+    \begin{itemize}
+        \item Timer set for first unACKed segment
+        \item If timeout, resend just that segmenet (like SR)
+        \item \textit{Fast retransmit:} If 4 of same ACKs received, resend unACKed segment immediately
+    \end{itemize}
+\end{theorem}
 
-    Attributes: \textit{Timeout, Window size $N$, sequence number bits $k$}
+\begin{theorem}
+    {TCP: Congestion and flow control}
 
     \begin{itemize}
-        \item Sender can send $N$ segments at once
-        \item Sender receiving an ACK will slide it's window forward to the next unACKed segment
-        \item Receiver accepts out-of-order segments, buffers them, and sends individual ACKs
-        \item If sender receives NAK or timeout, it resends only the specific segment
-        \item The maximum window size is $N \leq 2^{k-1}$ to avoid sequence number overlap
+        \item Retransmission refactors are used to detect congestion
+        \item Sender has a \textbf{congestion window} (cwnd), sized in \textbf{bytes}
+              \\ \textit{Actual sender window size = min(congestion window, receiver window)}
+        \item At first sign of congestion, cut congestion window in half
+        \item When appears that network is clear, increase congestion window by 1 segment per RTT (\textit{additive increase})
+        \item \textbf{Slow start}: Start with cwnd = 1 segment, increase by 1 segment for every ACK received (\textit{exponential growth})
     \end{itemize}
-
-    Visualization \href{https://media.pearsoncmg.com/aw/ecs_kurose_compnetwork_7/cw/content/interactiveanimations/selective-repeat-protocol/index.html}{here}
 \end{theorem}
+
+\sectionbar{M04-L07}
+
+\label{sec:m04-l08}
+\begin{theorem}
+    {TCP: Connection establishment}
+
+    TCP uses a \textbf{three-way handshake} to establish a connection:
+
+    \begin{enumerate}
+        \item Client: Send \texttt{SYN} with initial sequence number \texttt{ISN}
+        \item Server: Send \texttt{SYN/ACK} with its own \texttt{ISN}
+        \item Client: Send \texttt{ACK} and data
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    {TCP: Connection termination}
+
+    TCP uses a \textbf{four-way handshake} to terminate a connection:
+
+    \begin{enumerate}
+        \item Client: Send \texttt{FIN} when it has no more data to send
+        \item Server: Send \texttt{ACK}, close connection some time later after sending done, send \texttt{FIN}
+        \item Client: Send \texttt{ACK}, enters \textbf{"Timed wait"} state before connection closed. \\This is to resend \texttt{ACK} when last \texttt{ACK} was lost and server resends \texttt{FIN} to the client
+    \end{enumerate}
+
+    Termination requires an extra message because both sides may have data to send, matter of timing.
+\end{theorem}
+
+\sectionbar{M04-L08}
+
+\begin{knBox}
+    {TCP Limitations}
+
+    \begin{itemize}
+        \item \textbf{3-way handshake is too expensive}
+              \\ Higher latency for short connections (e.g., web requests)
+        \item \textbf{RTT estimation is difficult}
+              \\ Sequence number conflate ordering and reliable delivery
+    \end{itemize}
+\end{knBox}
+
+\subsection{Improvements in the Application Protocol}
+
+\begin{definition}
+    {QUIC }
+\end{definition}
+
+\sectionbar{M04-L09}

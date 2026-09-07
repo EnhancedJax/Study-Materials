@@ -1,0 +1,288 @@
+\section{Link layer}
+
+\begin{knBox}
+    {Link layer services}
+    \begin{itemize}
+        \item \textbf{Framing}: encapsulating network-layer datagrams into frames, adding headers and trailers
+        \item \textbf{Link access}: controlling access to the shared physical medium (e.g., CSMA/CD for Ethernet)
+        \item \textbf{Reliable delivery}: retransmission, error detection and correction to ensure frames are delivered without errors (e.g., CRC)
+    \end{itemize}
+\end{knBox}
+
+\begin{knBox}
+    {Network Interface Card (NIC)}
+    The link layer is implemented in the NIC.
+\end{knBox}
+
+\begin{definition}
+    {MAC Addressing}
+    \begin{itemize}
+        \item Used to get frame from one interface to another physically-connected inferface under the same \textbf{local area network}
+        \item Burned into NIC by manufacturer. Portable.
+        \item Unique in network
+        \item 48-bit
+        \item Also called the \textit{physical} or \textit{link-layer} address
+    \end{itemize}
+    \begin{itemize}
+        \item The source and destination MAC addresses of a packet is \textbf{changed} each time \textbf{it is sent} (passing through a router).
+    \end{itemize}
+\end{definition}
+
+\begin{knBox}
+    {MAC Address Assignment}
+    \begin{itemize}
+        \item Manufacturers purchase blocks of MAC addresses from IEEE
+        \item Portable: can move NIC from one computer to another
+    \end{itemize}
+\end{knBox}
+
+\subsection{Error Detection}
+
+\begin{theorem}
+    {Single Bit Parity Check}
+    Add 1 more bit to the data, value of which is set such that the total number of 1's in the data + parity bit is even (or odd).
+\end{theorem}
+
+\begin{theorem}
+    {Two Dimensional Parity Check}
+    Arrange data in a matrix. Add $r+c+1$ parity bits, where $r$ is the number of rows and $c$ is the number of columns.
+
+    Additional bits \texttt{(each row, each column, overall)} ensure even (or odd) parity.
+\end{theorem}
+
+\begin{theorem}
+    {Cyclic Redundancy Check (CRC)}
+    Given data $d$, bitstring $b$, CRC bit size $s$, compute CRC bits as follows:
+    \begin{enumerate}
+        \item Append $s$ zeros to $d$ at end to be $s_2$
+        \item Divide $s_2$ by $b$ using XOR binary division (\textit{long divison in base 2 using XOR (01->1) instead of the usual subtract})
+        \item Remainder $r$ is CRC bits
+    \end{enumerate}
+\end{theorem}
+
+\sectionbar{M07-L01}
+
+\subsection{Access control and ARP}
+
+\subsubsection{Access Control Protocols}
+
+\begin{definition}
+    {CSMA (Carrier Sense Multiple Access)}
+    \begin{itemize}
+        \item Listen before sending; transmit only if the medium is idle.
+        \item A random-access protocol that matches human conversational conventions.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {CSMA/CD (Carrier Sense Multiple Access with Collision Detection)}
+    \begin{itemize}
+        \item While transmitting, adapters listen for collisions.
+        \item If a collision is detected, abort transmission immediately to save time.
+        \item Behaviour also mirrors human conversations: both speakers stop and resolve who goes first.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Binary Exponential Backoff}
+    \begin{itemize}
+        \item After a collision, choose a random backoff interval before retrying.
+        \item The backoff is chosen uniformly from the range $[0,\,2^{n}-1]$, where $n$ is the number of consecutive collisions for that frame.
+        \item This adapts waiting time: small contention → short waits; large contention → longer waits.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Turn-Based Access Control}
+    \begin{itemize}
+        \item Senders take turns transmitting; if a sender has nothing to send, it passes its turn.
+        \item Can be implemented with either centralized control or decentralized (token-based) control.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Centralized Control}
+    \begin{itemize}
+        \item A single controller decides whose turn it is (polling or explicit request).
+        \item Example: Bluetooth master device controls when peripherals may send.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    {Decentralized Control (Token Passing)}
+    \begin{itemize}
+        \item A token is passed among nodes; only the token holder may transmit.
+        \item Complications: token loss or duplicate tokens require recovery (token regeneration/election).
+    \end{itemize}
+\end{definition}
+
+\subsubsection{Switches}
+
+\begin{definition}
+    {Switch}
+
+    \begin{itemize}
+        \item Link-layer device that learns the MAC addresses of connected devices and forwards frames only to the intended recipient, reducing unnecessary traffic.
+        \item Contains \textbf{forwarding table} with columns \texttt{(MAC address, interface, timestamp)}.
+        \item Entries time out after a certain period of inactivity (e.g., 5 minutes).
+        \item Never put broadcast address \texttt{(FF:FF:FF:FF:FF:FF)} in table.
+    \end{itemize}
+
+    Incoming frame format: \texttt{Source MAC, Destination MAC, Type, Interface} (Assume Type is always IP)
+
+    Handling process involves two steps. Consider \texttt{sMAC, dMAC, IP, I}:
+
+    \begin{enumerate}
+        \item \textbf{Source MAC (Learning):}
+              \begin{itemize}
+                  \item sMAC in table: replace row
+                  \item else: add new row
+              \end{itemize}
+        \item \textbf{Destination MAC (Forwarding):}
+              \begin{itemize}
+                  \item dMAC \textit{not} in table: send to all interfaces except \texttt{I}
+                  \item else for matching row interface \texttt{I\_0}:
+                        \begin{itemize}
+                            \item \texttt{I == I\_0}: discard frame
+                            \item \texttt{I != I\_0}: forward frame to interface \texttt{I\_0}
+                        \end{itemize}
+              \end{itemize}
+    \end{enumerate}
+
+\end{definition}
+
+\subsubsection{Address Resolution Protocol}
+
+Purpose: resolve IP address to MAC address
+
+\begin{definition}
+    {Address Resolution Protocol (ARP)}
+    \begin{itemize}
+        \item Each host and router on LAN has ARP table mapping IP addresses to MAC addresses.
+        \item If host wants to send datagram to IP address not in ARP table, it broadcasts ARP query packet asking "Who has IP address \texttt{x.x.x.x}?"
+        \item Host with that IP replies with ARP reply packet containing its MAC address.
+        \item Receiver caches sender IP-MAC mapping in its ARP table.
+        \item After receiving the reply, sender caches this mapping in its ARP table.
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    {Sending datagram as a new host on LAN}
+    \begin{itemize}
+        \item To send \colorbox{yellow}{\textbf{inside}} LAN, send ARP request for MAC address of \colorbox{yellow}{\textbf{destination}}.
+        \item To send \colorbox{pink}{\textbf{outside}} LAN, send ARP request for MAC address of \colorbox{pink}{\textbf{default gateway}}.
+    \end{itemize}
+    Process:
+    \begin{enumerate}
+        \item Host A wants to send datagram to Host B (IP address known, MAC address unknown).
+        \item A sends ARP request for IP of address \colorbox{yellow}{B (inside LAN)} / \colorbox{pink}{LAN gateway (outside LAN)}.
+              \begin{itemize}
+                  \item Source IP and MAC: A's
+                  \item Destination MAC: FF:FF:FF:FF:FF:FF (broadcast)
+                  \item Destination IP: \colorbox{yellow}{B's IP} / \colorbox{pink}{gateway's IP}
+              \end{itemize}
+        \item Host B (or default gateway) responds with ARP reply.
+              \begin{itemize}
+                  \item Source IP and MAC: \colorbox{yellow}{B's} / \colorbox{pink}{gateway's}
+                  \item Destination IP and MAC: A's
+              \end{itemize}
+        \item Datagram:
+              \begin{itemize}
+                  \item Source IP and MAC: A's
+                  \item Destination IP: B's
+                  \item Destination MAC: \colorbox{yellow}{B's MAC} / \colorbox{pink}{gateway's MAC}
+              \end{itemize}
+    \end{enumerate}
+\end{theorem}
+
+\begin{knBox}
+    {ARP Poisoning}
+
+    Done by swapping expected \textbf{MAC addresses} in ARP table to trudy's MAC address (not IP) to gain access to data.
+
+    This can be eased by \textbf{statically binding} MAC addresses of devices to IP addresses.
+\end{knBox}
+
+\sectionbar{M07-L02}
+
+\subsection{Dynamic Host Configuration Protocol}
+
+\begin{definition}
+    {Dynamic Host Configuration Protocol (DHCP)}
+    \begin{itemize}
+        \item \textbf{Application layer} protocol for \textbf{dynamically assigning IP addresses} to new hosts on a network.
+        \item Runs on top of \textbf{UDP}.
+        \item Allows hosts to obtain the needed info when joining a network:
+              \begin{enumerate}
+                  \item IP address
+                  \item Subnet mask
+                  \item Router (default gateway) address
+                  \item DNS server addresses
+              \end{enumerate}
+        \item \texttt{DHCP\_OFFER / DHCP\_ACK} also includes \textbf{lease time} for the assigned IP address.\\
+              Send new \texttt{DHCP\_REQUEST} when half lease left. If no response, repeat after some time. Send \texttt{DHCP\_RELEASE} as client when done with lease.
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    {New device joining a network}
+
+    Steps:
+    \begin{enumerate}
+        \item Client $\rightarrow$ \texttt{DHCP\_DISCOVER} $\rightarrow$ Server
+              \begin{itemize}
+                  \item src: \texttt{0.0.0.0:68}
+                  \item dst: \colorbox{yellow}{\texttt{255.255.255.255:67}}
+                  \item yiaddr: \texttt{0.0.0.0}
+              \end{itemize}
+        \item Client $\leftarrow$ \texttt{DHCP\_OFFER} $\leftarrow$ Server
+              \begin{itemize}
+                  \item src: \colorbox{pink}{\texttt{server\_ip:67}}
+                  \item dst: \colorbox{pink}{\texttt{255.255.255.255:68}}
+                  \item yiaddr: \colorbox{pink}{\texttt{offered\_ip}}
+              \end{itemize}
+        \item Client $\rightarrow$ \texttt{DHCP\_REQUEST} $\rightarrow$ Server
+              \begin{itemize}
+                  \item src: \texttt{0.0.0.0:68}
+                  \item dst: \colorbox{yellow}{\texttt{255.255.255.255:67}}
+                  \item yiaddr: \texttt{offered\_ip}
+              \end{itemize}
+        \item Client $\leftarrow$ \texttt{DHCP\_ACK} $\leftarrow$ Server
+              \begin{itemize}
+                  \item src: \colorbox{pink}{\texttt{server\_ip:67}}
+                  \item dst: \colorbox{pink}{\texttt{255.255.255.255:68}}
+                  \item yiaddr: \colorbox{pink}{\texttt{offered\_ip}}
+              \end{itemize}
+    \end{enumerate}
+
+    Note: all have same transaction ID.
+
+    (Discover $\to$ Offer $\to$ Request $\to$ Ack)
+\end{theorem}
+
+\sectionbar{M07-L03}
+
+\subsection{Physical transmission}
+
+Cables
+
+Modulation
+AM FM PM
+
+\begin{definition}
+    {Virtual Local Area Network (VLAN)}
+    \begin{itemize}
+        \item Logically separate LANs that share the same physical switch infrastructure.
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+    {Switches under switches}
+    \begin{itemize}
+        \item Full bi-section bandwidth: Hosts within the same switch can communicate at full link bandwidth.
+        \item Hosts across different switches share the bandwidth of the inter-switch link.
+        \item Throughput limited by bottleneck link, given by \texttt{bandwidth / number of communicating hosts}.
+    \end{itemize}
+\end{theorem}
+
+\sectionbar{M07-L04}

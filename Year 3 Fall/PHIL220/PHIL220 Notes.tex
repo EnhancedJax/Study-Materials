@@ -290,27 +290,146 @@ Natural deduction is a proof system that uses a set of inference rules to derive
 
     \colorbox{pink}{Start subproof}, \colorbox{yellow}{discharge assumption}, \colorbox{orange}{discharge multiple assumptions}
 
+    \begin{itemize}
+        \item \textit{Discharge explanation}: $x \cdots y \rightarrowtail a$: \textbf{Assuming} $x$ leading to $y$, infer $a$
+        \item \textit{Regular inference explaination}: $x, y \implies a$: From $x$ and $y$, infer $a$
+    \end{itemize}
+
+
     \begin{tabular}{l|lp{8cm}}
         \hline
-        \textbf{Notation}           & \textbf{Name}                                 & \textbf{Explanation}                                                                                                    \\
+        \textbf{Notation}           & \textbf{Name}                                 & \textbf{Explanation}                                                       \\
         \hline
-        R, n                        & Reiteration                                   & Copying a previous line                                                                                                 \\
-        \underline{PR}              & Premise                                       & Using a premise from the argument                                                                                       \\
-        \underline{AS}              & \colorbox{pink}{Assumption}                   & Start subproof by assuming a statement                                                                                  \\
-        $\land I$, n1, n2           & Conjunction Introduction                      & From $p$ and $q$, infer $p \land q$                                                                                     \\
-        $\land E$, n                & Conjunction Elimination                       & From $p \land q$, infer $p$ or $q$                                                                                      \\
-        $\rightarrow I$, r          & \colorbox{yellow}{Implication Introduction}   & \textit{Assuming} $p$ leading to $q$, infer $p \rightarrow q$                                                           \\
-        $\rightarrow E$, n1, n2     & Implication Elimination                       & From $p$ and $p \rightarrow q$, infer $q$                                                                               \\
-        $\leftrightarrow I$, r1, r2 & \colorbox{orange}{Biconditional Introduction} & \textit{Assuming} $p$ leading to $q$ and \textit{assuming} $q$ leading to $p$, infer $p \leftrightarrow q$              \\
-        $\leftrightarrow E$, n1, n2 & Biconditional Elimination                     & From $p \leftrightarrow q$ and $p$ or $q$ infer $q$ or $p$                                                              \\
-        $\lor I$, n                 & Disjunction Introduction                      & From $p$, infer $p \lor q$ or from $q$, infer $p \lor q$                                                                \\
-        $\lor E$, n1, r1, r2        & \colorbox{orange}{Disjunction Elimination}    & From $p \lor q$, and subproofs \textit{assuming} $p$ leading to $r$ and \textit{assuming} $q$ leading to $r$, infer $r$ \\
-        $\neg I$, r                 & \colorbox{yellow}{Negation Introduction}      & \textit{Assuming} $p$ leading to $\bot$, infer $\neg p$                                                                 \\
-        $\neg E$, n1, n2            & Negation Elimination                          & From $p$ and $\neg p$, infer $\bot$                                                                                     \\
-        IP r                        & \colorbox{yellow}{Indirect Proof}             & \textit{Assuming} $\neg p$ leading to $\bot$, infer $p$  (Proof by Contradiction)                                       \\
-        X, n                        & Explosion                                     & From $\bot$, infer any statement $p$                                                                                    \\
+        R, n                        & Reiteration                                   & Copying a previous line                                                    \\
+        \underline{PR}              & Premise                                       & Using a premise from the argument                                          \\
+        \underline{AS}              & \colorbox{pink}{Assumption}                   & Start subproof by assuming a statement                                     \\
+        $\land I$, n1, n2           & Conjunction Introduction                      & $x, y \implies x \land y$                                                  \\
+        $\land E$, n                & Conjunction Elimination                       & $x \land y \implies x / y$                                                 \\
+        $\rightarrow I$, r          & \colorbox{yellow}{Implication Introduction}   & $x \cdots y \rightarrowtail x \rightarrow y$                               \\
+        $\rightarrow E$, n1, n2     & Implication Elimination                       & $x, x \rightarrow y \implies y$                                            \\
+        $\leftrightarrow I$, r1, r2 & \colorbox{orange}{Biconditional Introduction} & $x \cdots y, y \cdots x \rightarrowtail x \leftrightarrow y$               \\
+        $\leftrightarrow E$, n1, n2 & Biconditional Elimination                     & $x \leftrightarrow y, x \implies y$ or $x \leftrightarrow y, y \implies x$ \\
+        $\lor I$, n                 & Disjunction Introduction                      & $x \implies x \lor y$                                                      \\
+        $\lor E$, n1, r1, r2        & \colorbox{orange}{Disjunction Elimination}    & $x \lor y, x \cdots a, y \cdots a \rightarrowtail a$                       \\
+        $\neg I$, r                 & \colorbox{yellow}{Negation Introduction}      & $x \cdots \bot \rightarrowtail \neg x$                                     \\
+        $\neg E$, n1, n2            & Negation Elimination                          & $x, \neg x \implies \bot$                                                  \\
+        IP r                        & \colorbox{yellow}{Indirect Proof}             & $\neg x \cdots \bot \rightarrowtail x$                                     \\
+        X, n                        & Explosion                                     & $\bot \implies$ any statement                                              \\
     \end{tabular}
 \end{definition}
+
+\sectionbar{Week 7}
+
+\subsection{Proof strategies}
+
+\begin{theorem}
+    {Working backwards}
+
+    Use the according introduction rules matching the conclusion shape:
+
+    \begin{tabular}{l|l|l}
+        \textbf{Conclusion} & \textbf{Use}                       & \textbf{Assume} \\
+        \hline
+        $p \land q$         & $\land I$                          & -               \\
+        $p \lor q$          & $\lor I$ (proof one of $p$ or $q$) & -               \\
+        $p \rightarrow q$   & $\rightarrow I$                    & Antecedent $p$  \\
+        $\neg p$            & $\neg I$                           & $p$             \\
+    \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+    {Working forwards}
+
+    Use the according elimination rules matching the premises shape:
+
+    \begin{tabular}{l|l|l}
+        \textbf{Premise}  & \textbf{Use}    & \textbf{Get}                         \\
+        \hline
+        $p \land q$       & $\land E$       & $p$ or $q$                           \\
+        $p \lor q$        & $\lor E$        & Some other value $r$ from $p$ or $q$ \\
+        $p \rightarrow q$ & $\rightarrow E$ & $q$                                  \\
+    \end{tabular}
+\end{theorem}
+
+\begin{theorem}
+    {Last resort}
+
+    When exhausted above strategies, use IP.
+\end{theorem}
+
+\begin{definition}
+    {Derived deduction rules}
+    \begin{tabular}{l|lp{8cm}}
+        \hline
+        \textbf{Notation} & \textbf{Name}               & \textbf{Explanation}                                                                                          \\
+        \hline
+        DS, n1, n2        & Disjunctive Syllogism       & From $p \lor q$ get the other disjunct when one is negated.                                                   \\
+        MT, n1, n2        & Modus Tollens               & From $p \rightarrow q$ and $\neg q$ get $\neg p$.                                                             \\
+        DNE, n            & Double Negation Elimination & From $\neg \neg p$ get $p$.                                                                                   \\
+        LEM, r1, r2       & Law of Excluded Middle      & From subproofs \textit{assuming} $p$ leading to $r$ and \textit{assuming} $\neg p$ leading to $r$, infer $r$. \\
+        DeM, n            & De Morgan's Laws            & $\neg(p \land q) \equiv \neg p \lor \neg q,\quad \neg(p \lor q) \equiv \neg p \land \neg q$                   \\
+    \end{tabular}
+\end{definition}
+
+\section{Metalogic}
+
+A different way compared to natural deduction to study logic itself. Useful for disproving arguments.
+
+\subsection{Definitions}
+
+\begin{definition}
+    {Entailment}
+
+    $a_1, ..., a_n \models b$ iff in every truth assignment where all $a_i$ are true, $b$ is also true.
+
+    $\models a$ means that $a$ is a tautology.
+\end{definition}
+
+\begin{definition}
+    {TFL Proof}
+
+    $a_1, ..., a_n \vdash b$ means there is a proof of $b$ from premises $a_1, ..., a_n$. ($\nvdash$ no proof)
+
+    \textit{A proof in TFL is a finite sequence of statements where each statement is either a premise or follows from previous statements by a rule of inference.}
+\end{definition}
+
+\begin{definition}
+    {Interderivable}
+
+    $a \vdash b$ and $b \vdash a$.
+\end{definition}
+
+\begin{definition}
+    {Consistency}
+    $a_1, ..., a_n \nvdash \bot$ (i.e. cannot derive a contradiction from the set of statements). \textit{Inconsistent} if otherwise.
+\end{definition}
+
+\subsection{Theorems}
+
+\begin{definition}
+    {Theorem}
+    $\vdash a$: there exists a proof of $a$ with no premises.
+\end{definition}
+
+\begin{theorem}
+    {Soundness}
+    A proof system is \textbf{sound} $a \vdash b \implies a \models b$: the proof system \textbf{never proofs something false}
+\end{theorem}
+
+\begin{theorem}
+    {Completeness}
+    A proof system is \textbf{complete} $a \models b \implies a \vdash b$: the proof system \textbf{can proof all valid arguments}
+\end{theorem}
+
+\begin{knBox}
+    {Importance of soundness \& completeness}
+
+    "$\models$" is defined in terms of truth values, while "$\vdash$" is defined in terms of formal proofs.
+
+    \textbf{Soundness} and \textbf{completeness} connects the notions and guarentees that the proof system is reliable and powerful enough to capture all logical truths.
+\end{knBox}
+
+\sectionbar{Week 8}
 
 
 \end{document}

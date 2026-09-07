@@ -1,0 +1,265 @@
+\section{Structured Query Language (SQL)}
+
+\begin{knBox}
+    {Lists vs Row values}
+    A list in SQL is like: \texttt{attr1, attr2, attr3, \ldots}
+
+    A row value in SQL is like: \texttt{(val1, val2, val3)}
+\end{knBox}
+
+\label{sec:sql_create}
+\subsection{Create}
+
+Related: \ref{sec:relational_model}
+
+\begin{definition}
+    {CREATE TABLE statement}
+    The \texttt{CREATE TABLE} statement is used to create a new table in the database. The basic syntax is:
+
+    \begin{verbatim}
+CREATE TABLE <table_name> (
+    <column_name> <data_type> [constraints],
+    ...,
+    [table_constraints]
+);
+    \end{verbatim}
+\end{definition}
+
+\begin{knBox}
+    {Data types}
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Data Type}                       & \textbf{Description}                                                                                                                                                          \\ \hline
+        \texttt{char(n)}                         & Fixed length character string with length \texttt{n}.                                                                                                                         \\
+        \texttt{varchar(n)}                      & Variable length character string with maximum length \texttt{n}.                                                                                                              \\
+        \texttt{int}                             & Integer (machine-dependent).                                                                                                                                                  \\
+        \texttt{smallint}                        & Small integer (machine-dependent).                                                                                                                                            \\
+        \texttt{numeric(p,d)}                    & Fixed point number, with user-specified precision of \texttt{p} digits, with \texttt{d} digits to the right of the decimal point.                                             \\
+        \texttt{real}, \texttt{double precision} & Floating point and double-precision floating point numbers, with machine-dependent precision.                                                                                 \\
+        \texttt{float(n)}                        & Floating point number, with user-specified precision of at least \texttt{n} digits.                                                                                           \\
+        \texttt{date}                            & Date containing a (4-digit) year, month, and day. Example: \texttt{DATE '2001-07-27'}.                                                                                        \\
+        \texttt{time}                            & Time of day in hours, minutes, and seconds. Examples: \texttt{TIME '09:00:30'}, \texttt{TIME '09:00:30.75'}.                                                                  \\
+        \texttt{timestamp}                       & Date plus time of day. Example: \texttt{TIMESTAMP '2001-07-27 09:00:30.75'}.                                                                                                  \\
+        \texttt{interval}                        & Period of time. Example: \texttt{INTERVAL '1' DAY}. Subtracting two date/time/timestamp values gives an interval; interval values can be added to date/time/timestamp values. \\ \hline
+    \end{tabular}
+
+\end{knBox}
+
+\begin{definition}
+    {Integrity constraints}
+    Conditions are must be true for any instance of the database
+
+    \begin{itemize}
+        \item \texttt{... NOT NULL}: the column cannot be NULL
+        \item \texttt{... UNIQUE}: the column cannot have duplicate values
+        \item \texttt{PRIMARY KEY (attr,)}: the column is the primary key of the table
+        \item \texttt{FOREIGN KEY (attr,) REFERENCES Table(attr,)}: the column is a foreign key of the table
+        \item \texttt{CHECK (condition)}: the column must satisfy the given \hyperref[conditions]{conditions}
+    \end{itemize}
+
+\end{definition}
+
+\begin{definition}
+    {Referential integrities}
+
+    Referential integrity constraints are used to enforce the relationship between tables.
+
+    \begin{itemize}
+        \item \texttt{ON DELETE ...}: what to do when the referenced tuple is deleted
+        \item \texttt{ON UPDATE ...}: what to do when the referenced tuple is updated
+    \end{itemize}
+
+    The following options are available:
+
+    \begin{itemize}
+        \item \texttt{CASCADE}: delete or update the tuples in the referencing table when the referenced tuple is deleted or updated.
+        \item \texttt{SET NULL}: set the foreign key values in the referencing table to NULL when the referenced tuple is deleted or updated.
+        \item \texttt{SET DEFAULT}: set the foreign key values in the referencing table to their default values when the referenced tuple is deleted or updated.
+        \item \texttt{NO ACTION}: reject the delete or update operation on the referenced tuple if there are any matching tuples in the referencing table.
+    \end{itemize}
+\end{definition}
+
+Example:
+
+\begin{verbatim}
+    CREATE TABLE Grade (
+        sid INTEGER,
+        dept CHAR(4), 
+        mark INTEGER NOT NULL,
+        some_other_unique_attribute CHAR(4),   
+        PRIMARY KEY (sid,dep),
+        FOREIGN KEY (sid) 
+            REFERENCES Student
+            ON DELETE CASCADE
+            ON UPDATE CASCADE,
+        FOREIGN KEY (dept) REFERENCES Course(dept)
+            ON DELETE SET NULL
+            ON UPDATE CASCADE
+        UNIQUE (some_other_unique_attribute)
+    );
+\end{verbatim}
+
+\begin{definition}
+    {Assertions}
+    Assertions are conditions that must hold true for the database to be in a valid state. They are used to enforce business rules and data integrity.
+
+    \begin{verbatim}
+CREATE ASSERTION <assertion_name>
+CHECK (<condition>);
+    \end{verbatim}
+\end{definition}
+
+\subsection{Query}
+
+\begin{definition}
+    {SELECT query statement}
+    \begin{verbatim}
+SELECT [DISTINCT] <attribute_list,aggregated(attribute),...>
+FROM <table>
+[WHERE <condition>]
+[GROUP BY <attribute_list>]
+[HAVING <condition>]
+[<JOIN_TYPE> JOIN <table> ON <condition>]
+[ORDER BY <attribute_list> [ASC|DESC]];
+    \end{verbatim}
+
+    \begin{itemize}
+        \item \texttt{DISTINCT} removes duplicate rows from the result set
+        \item Attributes can be renamed by \texttt{AS}: \texttt{attr1 AS new\_name}
+        \item Can "Create" new attributes with expressions by: \texttt{'string' as attr\_name} etc.
+        \item \texttt{*} selects all attributes from the table
+        \item Tables can be renamed by \texttt{Table t}
+        \item Specifying multiple tables in \texttt{FROM} means a \texttt{CROSS JOIN} (Cartesian product)
+        \item \texttt{WHERE} clause filters rows before grouping
+        \item Aggregation functions: \texttt{COUNT()}, \texttt{SUM()}, \texttt{AVG()}, \texttt{MIN()}, \texttt{MAX()}, pass \texttt{DISTINCT} to ignore duplicates
+              \begin{itemize}
+                  \item All aggregate functions ignore tuples with null values on the aggregated attributes, except:
+                  \item \texttt{COUNT(*)}: counts all rows, including NULLs
+                  \item \texttt{COUNT(attr)}: counts non-NULL values of \texttt{attr}. Use \texttt{COUNT(DISTINCT attr)} to count unique non-NULL values only
+              \end{itemize}
+        \item \texttt{GROUP BY} clause groups rows based on attribute values for aggregation. No effect if no aggregation functions are used.
+        \item \texttt{HAVING} clause filters groups after grouping. Can accept aggregate functions.
+        \item \texttt{JOIN} clause combines rows from two or more tables based on a related column between them
+        \item \texttt{ORDER BY} clause sorts the result set based on specified attributes
+    \end{itemize}
+\end{definition}
+
+\label{conditions}
+\begin{theorem}
+    {Conditions}
+    Conditions examples:
+    \begin{itemize}
+        \item \texttt{attr =/<>/>/</>=/<= value|subquery}
+        \item \texttt{attr IN (subquery|value1, value2, ...)}
+        \item \texttt{attr BETWEEN value1 AND value2}
+        \item \texttt{attr LIKE 'pattern'}
+        \item \texttt{EXISTS (subquery)}
+        \item \texttt{UNIQUE (subquery)}
+        \item \texttt{attr IS NULL}
+        \item Combine conditions with \texttt{AND}, \texttt{OR}, and \texttt{NOT}
+        \item Pattern matching with \texttt{LIKE}:
+              \begin{itemize}
+                  \item \texttt{\%}: matches any sequence of characters (including empty sequence)
+                  \item \texttt{\_}: matches any single character
+              \end{itemize}
+        \item Comparison with \texttt{null} always returns \textit{unknown} (false)
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}
+    {Subqueries}
+
+    A \texttt{SELECT} query nested inside another query.
+\end{theorem}
+
+\begin{theorem}
+    {Join types}
+    JOIN is based on the basis given after the \texttt{ON} keyword.
+
+    If the basis matches two rows, they are combined into a single row in the result set.
+
+    Rows not matched are said to be \textbf{dangling}.
+    \begin{itemize}
+        \item \texttt{<INNER> JOIN}: returns only the matching rows.
+        \item \texttt{LEFT / RIGHT JOIN}: returns all rows from the \textit{from/joined} table, and the matched rows from the other table. For dangling rows from the \textit{from/joined} table, NULLs are used to fill in missing values from the other table.
+        \item \texttt{FULL OUTER JOIN}: returns all rows from both tables with NULLs in places for dangling rows on either side.
+        \item \texttt{CROSS JOIN}: returns the Cartesian product of both tables, combining all rows from the first table with all rows from the second table.
+              % \item \texttt{SELF JOIN}: a table is joined with itself to compare rows within the same table.
+        \item \texttt{NATURAL JOIN}: automatically joins tables based on columns with the same names and compatible data types, eliminating duplicate columns in the result set.
+    \end{itemize}
+\end{theorem}
+
+\begin{definition}
+    {UNION / INTERSECT / EXCEPT}
+    Combine the results of two or more \texttt{SELECT} statements:
+    \begin{verbatim}
+SELECT ...
+UNION | INTERSECT | EXCEPT
+SELECT ...;
+    \end{verbatim}
+    Each automatically remove duplicate rows from the result set. Use \texttt{UNION|INTERSECT|EXCEPT ALL} to keep duplicates.
+\end{definition}
+
+\subsubsection{Relational algebra to query translation}
+\begin{tabular}{|l|l|p{6cm}|}
+    \hline
+    Relational algebra     & SQL equivalent                           & Notes / Example                                                                       \\ \hline
+    $\sigma_{\theta}(R)$   & \verb|SELECT ... FROM R WHERE <cond>|    & \verb|WHERE| filters rows; use boolean expressions and subqueries                     \\ \hline
+    $\pi_{a,b,\dots}(R)$   & \verb|SELECT DISTINCT a, b, ... FROM R|  & SQL keeps duplicates unless \verb|DISTINCT| is used (relational algebra is set-based) \\ \hline
+    $R \cup S$             & \verb|SELECT ...R UNION SELECT ...S|     & Removes duplicates; use \verb|UNION ALL| to keep duplicates                           \\ \hline
+    $R \cap S$             & \verb|SELECT ...R INTERSECT SELECT ...S| & Also supports \verb|INTERSECT ALL| in some DBs                                        \\ \hline
+    $R - S$                & \verb|SELECT ...R EXCEPT SELECT ...S|    & Some DBs use \verb|MINUS| instead of \verb|EXCEPT|                                    \\ \hline
+    $R \times S$           & \verb|SELECT * FROM R, S|                & Use with care; combine with \verb|WHERE| for theta-join                               \\ \hline
+    $R \bowtie S$          & \verb|SELECT * FROM R NATURAL JOIN S|    & Joins on all same-named columns; duplicates eliminated by engine                      \\ \hline
+    $R \bowtie_{\theta} S$ & \verb|SELECT * FROM R JOIN S ON <cond>|  & Explicit \verb|ON| condition implements arbitrary $\theta$                            \\ \hline
+\end{tabular}
+
+To convert $R(a,b) \div S(b)$:
+
+\begin{lstlisting}[language=SQL]
+select distinct R1.a from R R1
+where not exists (
+    select S.b from S
+    except
+    select R2.b from R R2
+    where R1.a = R2.a
+)
+\end{lstlisting}
+
+\subsection{Manipulation}
+
+\begin{definition}
+    {INSERT statement}
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Form}           & \textbf{Format}                                                            \\ \hline
+        Specific attributes     & \texttt{INSERT INTO <table> (attr1, attr2, ...) VALUES (val1, val2, ...);} \\
+        All values (positional) & \texttt{INSERT INTO <table> VALUES (val1, val2, ...);}                     \\
+        From another query      & \texttt{INSERT INTO <table> (attr1, attr2, ...) SELECT ...;}               \\ \hline
+    \end{tabular}
+\end{definition}
+
+\begin{definition}
+    {UPDATE statement}
+    \begin{verbatim}
+UPDATE <table>
+SET <attr1 = value1, attr2 = attr2 +-*/ value2, ...>
+[WHERE <condition>];
+    \end{verbatim}
+\end{definition}
+
+\begin{definition}
+    {DELETE statement}
+    \begin{verbatim}
+DELETE FROM <table>
+[WHERE <condition>];
+    \end{verbatim}
+\end{definition}
+
+\subsection{Tips}
+
+\begin{knBox}
+    {Evaluating SQL queries}
+
+    When dealing with evaluating joins, compute the join table then compute the \texttt{where} clause.
+\end{knBox}

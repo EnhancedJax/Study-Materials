@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{../../../LaTeX-Preamables/Base}
+
+\begin{document}
+
+
+\section*{SQL 2}
+
+\begin{enumerate}
+  \item \begin{verbatim}
+SELECT YEAR,MONTH,DAY,sum(ATTENDANCENUMBER) FROM SHOW GROUP BY (YEAR,MONTH,DAY);
+    \end{verbatim}
+  \item \begin{verbatim}
+SELECT instrument, count(instrument) AS count 
+FROM musician WHERE NATIONALITY = 'Canadian' GROUP BY instrument
+    \end{verbatim}
+  \item \begin{verbatim}
+SELECT composer, title 
+FROM SONGSPERFORMED s 
+JOIN (
+	SELECT t.SHOWID
+	FROM PURCHASE t 
+	JOIN person p
+	ON p.email = t.email
+	GROUP BY t.SHOWID
+	HAVING AVG(p.age) > (SELECT avg(age) FROM person)
+) r
+ON r.SHOWID = s.SHOWID
+    \end{verbatim}
+\end{enumerate}
+
+
+\end{document}

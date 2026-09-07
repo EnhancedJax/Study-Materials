@@ -104,9 +104,11 @@ Normal forms of relation (schemas) help decide whether decomposition will help.
 
     \textbf{$X$ should determine all attributes}: For every FD $X \to Y$, X is a superkey.
 
-    Every relation in BCNF is also in 2NF. All two-attribute relations are in BCNF.
+    \begin{itemize}
+        \item Every relation in BCNF is also in 2NF. All two-attribute relations are in BCNF.
+    \end{itemize}
 
-    The decomposition of BCNF \textbf{does not preserve all FDs}.
+
 
     \tcblower
 
@@ -119,8 +121,6 @@ Normal forms of relation (schemas) help decide whether decomposition will help.
     {3NF}
 
     \textbf{2NF + BCNF or Y is part of a key}: In 2NF, and for every FD $X \to Y$, X is a superkey or Y is part of a (candidate/minimal) key.
-
-    The decomposition of 3NF \textbf{preserves all FDs}.
 
     \tcblower
 
@@ -145,22 +145,51 @@ Normal forms of relation (schemas) help decide whether decomposition will help.
     $\therefore$ R is in \textit{3NF}.
 \end{definition}
 
+\begin{definition}
+    {Losing functional dependencies}
+
+    When  the set of decomposed relations no longer has a single relation that contains all of the attributes of the FD, the FD is said to be \textbf{lost}.
+\end{definition}
+
+\begin{theorem}
+    {Comparing BCNF and 3NF}
+
+    \begin{itemize}
+        \item BCNF is stricter than 3NF (subset of 3NF, all BCNF in 3NF)
+        \item BCNF \textbf{guarantees no redundancies}, but may lose FDs during decomposition
+        \item 3NF \textbf{preserves all FDs}, but may have redundancies
+    \end{itemize}
+\end{theorem}
+
 \subsection{Decomposition}
+
+\begin{knBox}
+    {Finding candidate keys using LMR Method}
+    \begin{itemize}
+        \item L: Attributes that never appear on the right side of any FD
+        \item R: Attributes that never appear on the left side of any FD
+        \item M: All other attributes (in the middle)
+    \end{itemize}
+\end{knBox}
 
 \begin{theorem}
     {Decomposition into BCNF}
 
+    The BCNF decomposition \textbf{can result in losing FDs}.
+
+    The algorithm is as follows:
+
     \begin{enumerate}
         \item Find all keys by \textit{LMR} method
         \item Filter out all FDs that have keys as dependencies (all FDs that are BCNF)
-        \item Repeat until all FDs are BCNF:
+        \item Repeat:
               \begin{enumerate}
                   \item Pick a FD $X \to Y$ that is not BCNF, decompose by to two relations:
                         \begin{itemize}
                             \item $R_1$ = $\{XY\}$
                             \item $R_2$ = R - $\{Y\}$
                         \end{itemize}
-                  \item Filter given FDs to exclude FDs with attributes not in $R_1$ or $R_2$
+                  \item Filter FDs (\textbf{including implied ones}) to exclude FDs with attributes not in $R_1$ or $R_2$.
                   \item If the FDs on the relationships are not BCNF, repeat
               \end{enumerate}
         \item Select all leafs (BCNF relations), and highlight the keys by the relevant FDs
@@ -176,12 +205,12 @@ Normal forms of relation (schemas) help decide whether decomposition will help.
     \end{itemize}
     Find the keys by the \textit{LMR} method:
     \begin{tabular}{c|c|c}
-        L & M   & R  \\
+        L   & M & R  \\
         \hline
-        A & BDE & CF \\
+        ADE & B & CF \\
     \end{tabular}
 
-    No keys found. Decomposition recursion starting with $A \to B$:
+    $ADE^+ = ABCDEF$. No FDs are in BCNF. Decomposition recursion starting with $A \to B$:
     \begin{itemize}
         \item $R_1 = \{AB\}$ with FDs $A \to B$ --- $\checkmark$ is in BCNF!
         \item $R_2 = S - \{B\} = \{ACDEF\}$ with FDs $DE \to F$ --- $\times$ not in BCNF, recurse:
@@ -239,5 +268,72 @@ Normal forms of relation (schemas) help decide whether decomposition will help.
 \end{theorem}
 
 \begin{theorem}
-    {Decomposition into 3NF}
+    {Decomposition into 3NF - Lossless join method}
+
+    The 3NF decomposition \textbf{preserves all FDs} (lossless).
+
+    \begin{enumerate}
+        \item Find the minimal cover of FDs.
+        \item Decompose using the minimal cover, decompose all the way down to BCNF.
+        \item After decomposition, for each FD $X\to Y$ lost during the decomposition, add $R(XY)$ to the decomposition result.
+    \end{enumerate}
+
+    \tcblower
+
+    Consider \texttt(R(ABCDE)) with FDs:
+    \begin{itemize}
+        \item $AB \to C$
+        \item $C \to D$
+    \end{itemize}
+
+    None are 3NF. Already minimal cover.
+
+    Decompose by BCNF:
+    \begin{itemize}
+        \item $R_1 = \{ABC\}$ with FDs $AB \to C$ --- $\checkmark$ is in BCNF!
+        \item $R_2 = R - \{C\} = \{ABDE\}$ with FDs $AB \to D$ (\textbf{implied!}) --- $\times$ not in BCNF, recurse:
+              \begin{itemize}
+                  \item $R_{2,1} = \{ABD\}$ with FDs $AB \to D$ --- $\checkmark$ is in BCNF!
+                  \item $R_{2,2} = R_2 - \{D\} = \{ABE\}$ with \textbf{no FDs} --- $\checkmark$ is in BCNF!
+              \end{itemize}
+    \end{itemize}
+
+    We lost FD $C \to D$, so we add $R_{n,1} = \{CD\}$.
+
+    $\therefore$ The decomposition is $S_1$(\underline{AB},C), $S_2$(\underline{AB},D), $S_3$(\underline{ABE}), $S_4$(\underline{CD}), keys underlined.
+\end{theorem}
+
+\begin{theorem}
+    {Decomposition into 3NF - Synthesis method}
+
+    \begin{enumerate}
+        \item Find the minimal cover of FDs.
+        \item For each FD $X \to Y$ in the minimal cover, create a relation $R(XY)$ to the result.
+        \item If there are no relations in the result that contain all of the attributes of a key of $R$, add one relation that contains a key.
+        \item Remove redundant relations (if a relation is a subset of another relation).
+    \end{enumerate}
+
+    \tcblower
+
+    Consider \texttt(R(ABCDE)) with FDs:
+    \begin{itemize}
+        \item $AB \to C$
+        \item $C \to D$
+    \end{itemize}
+
+    None are 3NF. Already minimal cover.
+
+    For each FD, create relations:
+    \begin{itemize}
+        \item $R_1 = \{ABC\}$ with FDs $AB \to C$
+        \item $R_2 = \{CD\}$ with FDs $C \to D$
+    \end{itemize}
+    No relation contains a key, so we add:
+    \begin{itemize}
+        \item $R_3 = \{ABE\}$
+    \end{itemize}
+
+    There are no redundant relations.
+
+    $\therefore$ The decomposition is $S_1$(\underline{AB},C), $S_2$(\underline{CD}), $S_3$(\underline{ABE}), keys underlined.
 \end{theorem}
